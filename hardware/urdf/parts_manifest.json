@@ -1,0 +1,176 @@
+{
+  "total_parts": 126,
+  "links": {
+    "base_link": [
+      "chassis",
+      "pod_neck",
+      "battery_cradle",
+      "Cabin_Front_Blue",
+      "Cabin_Back_Blue_Repaired",
+      "Mouth_Cannon_Grey",
+      "Head_Top_Eyecut#single",
+      "Head_Bottom_Blue#single",
+      "Head_Bottom_Cap_Grey#single",
+      "Head_Dome_Grey#single",
+      "Head_Plate_Grey#single",
+      "Head_Plug_Grey#single",
+      "Head_Screw_Grey_x2#1_measured",
+      "Head_Screw_Grey_x2#2_estimated_mirror",
+      "Head_Insert_Black_x4#1_measured",
+      "Head_Insert_Black_x4#2_estimated",
+      "Mouth_Cap_Grey#single",
+      "Mouth_Key_Grey#single",
+      "Mouth_Peg_Grey#single",
+      "Mouth_Ball_Grey#single",
+      "Mouth_Neck_Blue#single",
+      "Cabin_Eye_White#single",
+      "Cabin_Turrent_Left_Grey#single",
+      "Cabin_Turrent_Right_Grey#single",
+      "Cabin_Turret_Peg#left",
+      "Cabin_Turret_Peg#right",
+      "Cabin_RedLight_Large#front_left",
+      "Cabin_RedLight_Large#front_right",
+      "Cabin_RedLight_Large#back_left",
+      "Cabin_RedLight_Large#back_right",
+      "Cabin_RedLight_Small#front_left",
+      "Cabin_RedLight_Small#front_right",
+      "Cabin_RedLight_Small#back_left",
+      "Cabin_RedLight_Small#back_right",
+      "Cabin_Spinnarette_Grey#front_left",
+      "Cabin_Spinnarette_Grey#front_right",
+      "Cabin_Spinnarette_Grey#back_left",
+      "Cabin_Spinnarette_Grey#back_right",
+      "Cabin_Front_Insert_Front_Black#single",
+      "Cabin_Front_Insert_Left_Black#single",
+      "Cabin_Front_Insert_Right_Black#single",
+      "Cabin_Front_Insert_Back_Black#left",
+      "Cabin_Front_Insert_Back_Black#right",
+      "Cabin_Front_Insert_Bottom_Long_Black#left",
+      "Cabin_Front_Insert_Bottom_Long_Black#right",
+      "Cabin_Front_Insert_Bottom_Wide_Black#single",
+      "Head_TailJoint_Blue_Optional_Cross#single",
+      "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+    ],
+    "eye_pod_camera": [
+      "eye_pod_camera",
+      "camera_carrier"
+    ],
+    "camera_optical_frame": [],
+    "eye_r_pod": [
+      "eye_pod"
+    ],
+    "eye_l_pod": [
+      "eye_pod"
+    ],
+    "leg_fr_coxa": [
+      "coxa_bracket_m"
+    ],
+    "leg_fr_femur": [
+      "femur_link_m",
+      "thigh_cap",
+      "Leg_Thigh_Guard_Blue_x4#FR"
+    ],
+    "leg_fr_tibia": [
+      "tibia_link_m",
+      "leg_foot_bored",
+      "shin_shell_m",
+      "Leg_Shin_Guard_Grey_x4#FR",
+      "Leg_Toe_Black_x12#FR_0",
+      "Leg_Toe_Black_x12#FR_1",
+      "Leg_Toe_Black_x12#FR_2"
+    ],
+    "leg_fl_coxa": [
+      "coxa_bracket"
+    ],
+    "leg_fl_femur": [
+      "femur_link",
+      "thigh_cap",
+      "Leg_Thigh_Guard_Blue_x4#FL"
+    ],
+    "leg_fl_tibia": [
+      "tibia_link",
+      "leg_foot_bored",
+      "shin_shell",
+      "Leg_Shin_Guard_Grey_x4#FL",
+      "Leg_Toe_Black_x12#FL_0",
+      "Leg_Toe_Black_x12#FL_1",
+      "Leg_Toe_Black_x12#FL_2"
+    ],
+    "leg_rl_coxa": [
+      "coxa_bracket_m"
+    ],
+    "leg_rl_femur": [
+      "femur_link_m",
+      "thigh_cap",
+      "Leg_Thigh_Guard_Blue_x4#RL"
+    ],
+    "leg_rl_tibia": [
+      "tibia_link_m",
+      "leg_foot_bored",
+      "shin_shell_m",
+      "Leg_Shin_Guard_Grey_x4#RL",
+      "Leg_Toe_Black_x12#RL_0",
+      "Leg_Toe_Black_x12#RL_1",
+      "Leg_Toe_Black_x12#RL_2"
+    ],
+    "leg_rr_coxa": [
+      "coxa_bracket"
+    ],
+    "leg_rr_femur": [
+      "femur_link",
+      "thigh_cap",
+      "Leg_Thigh_Guard_Blue_x4#RR"
+    ],
+    "leg_rr_tibia": [
+      "tibia_link",
+      "leg_foot_bored",
+      "shin_shell",
+      "Leg_Shin_Guard_Grey_x4#RR",
+      "Leg_Toe_Black_x12#RR_0",
+      "Leg_Toe_Black_x12#RR_1",
+      "Leg_Toe_Black_x12#RR_2"
+    ],
+    "arm_r_shoulder": [
+      "shoulder_bracket"
+    ],
+    "arm_r_upper": [
+      "upper_arm",
+      "arm_pod_upper",
+      "arm_pod_lower",
+      "Arm_Right_Guard_Grey",
+      "elbow_shell"
+    ],
+    "arm_r_forearm": [
+      "forearm",
+      "claw_mount",
+      "Arm_Left_Claw_Grey",
+      "Arm_Left_Finger_Black_x3#0",
+      "Arm_Left_FingerTip_Grey_x3#0",
+      "Arm_Left_Finger_Black_x3#1",
+      "Arm_Left_FingerTip_Grey_x3#1",
+      "Arm_Left_Finger_Black_x3#2",
+      "Arm_Left_FingerTip_Grey_x3#2"
+    ],
+    "arm_l_shoulder": [
+      "shoulder_bracket"
+    ],
+    "arm_l_upper": [
+      "upper_arm",
+      "arm_pod_upper",
+      "arm_pod_lower",
+      "Arm_Right_Guard_Grey",
+      "elbow_shell"
+    ],
+    "arm_l_forearm": [
+      "forearm",
+      "claw_mount",
+      "Arm_Left_Claw_Grey",
+      "Arm_Left_Finger_Black_x3#0",
+      "Arm_Left_FingerTip_Grey_x3#0",
+      "Arm_Left_Finger_Black_x3#1",
+      "Arm_Left_FingerTip_Grey_x3#1",
+      "Arm_Left_Finger_Black_x3#2",
+      "Arm_Left_FingerTip_Grey_x3#2"
+    ]
+  }
+}

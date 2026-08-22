@@ -1,0 +1,1041 @@
+{
+  "meta": {
+    "generated_by": "kit assembly forensics subagent (front scope: Head/Mouth/Leg-guards/Arm-guards)",
+    "scope": "Head_Top_Eyecut(+Head_Top_Blue), Head_Bottom_Blue, Head_Bottom_Cap_Grey, Head_Dome_Grey, Head_Plate_Grey, Head_Plug_Grey, Head_Screw_Grey_x2, Head_Insert_Black_x4, Head_Eye_White_x3, Mouth_Ball/Neck/Cannon/Cap/Key/Peg, Leg_Thigh_Guard_Blue_x4, Leg_Shin_Guard_Grey_x4, Leg_Toe_Black_x12, Arm_Left/Right_Guard_Grey, Arm_Left_FingerTip_Grey_x3",
+    "units": "mm",
+    "scale": 1.5,
+    "convention": "Unless noted, each part's own transform is: mesh' = R @ (SCALE * (raw_STL_vertex - bboxctr)) + t. All target parts in this file were independently verified to already be bbox-centered by whoever exported model/*.stl (bboxctr ~= (0,0,0) within noise), so in practice mesh' = R @ (SCALE*raw_STL_vertex) + t. Where a 'matrix' field is given instead (Head_Eye_White_x3, Arm_Left_FingerTip_Grey_x3), the SCALE factor is already baked into the matrix's 3x3 block -- apply the 4x4 directly to the RAW (un-scaled) STL vertex, do not scale separately.",
+    "frame_robot_z0": "For frame='robot' entries, t.z is expressed relative to the chassis PLATE BOTTOM (z0), matching tools/data/kit_assembly_rear.json's convention: world_z = t.z + body_h + config.HIP_DROP (zb). x,y are as in shell_ghosts (already world-equivalent, chassis-fixed). This lets front/rear files compose without a symbolic zb.",
+    "frame_link": "frame='link:X' means the given R,t transform X's OWN bbox-centered*1.5 local mesh frame into the target part's bbox-centered*1.5 local frame (i.e. apply directly alongside/underneath X's own eventual R,t into robot or world space -- do NOT re-apply X's rotation twice). For kit shell anchors (Head_Bottom_Blue, Head_Top_Blue, Mouth_Cannon_Grey) that local frame is the PRE-rot/PRE-translate frame used by tools/make_visuals.py shell_ghosts() (i.e. right before shell_ghosts' own R,t in the defs list is applied). For engineering links (thigh_cap, shin_shell, arm_pod, grip_finger, eye_pod) it is the frame defined by the corresponding hardware/src/*.py function, as documented per-part below.",
+    "method_summary": "PRIMARY method (new for this session, high leverage): the original designer's print-preparation project file was found at /Users/uratayuuki/Downloads/TACHIKOMA.3mf (also '(1).3mf' duplicate). It is a BambuStudio project containing, in Metadata/model_settings.config, a 'source_offset_x/y/z' per part-object -- the translation from that part's OWN re-centered STL (identical geometry to model/*.stl here, verified by name/vertex-count match) back into the ORIGINAL single combined source assembly's coordinate system. All 119 part-objects in the file were checked and have an IDENTITY rotation at the part level (only source_offset differs), so: kit_space_position(raw_vertex) = raw_vertex + source_offset(part). This means for any two kit parts A (child, to be placed) and B (a parent whose own mesh->frame construction R_B,t_B is already known, either from shell_ghosts or from a hardware/src/*.py function), the child's placement in that SAME frame is obtained by substituting p_B_equivalent = p_A_raw + (source_offset_A - source_offset_B) into B's own construction formula. This was validated repeatedly by an independent geometric check (axis-aligned-bbox gap between the two parts placed only via +source_offset, i.e. NOT going through any R_B,t_B): 0.00mm gap (touching) for Head_Bottom_Cap_Grey/Head_Bottom_Blue, Head_Plate_Grey/Head_Bottom_Blue, Head_Plug_Grey/Head_Top_Blue, Head_Dome_Grey/Head_Top_Blue, Head_Screw_Grey_x2/Head_Top_Blue, Head_Insert_Black_x4/Head_Top_Blue, Mouth_Cap_Grey/Mouth_Cannon_Grey, Mouth_Key_Grey/Mouth_Cannon_Grey, Mouth_Peg_Grey/Mouth_Cannon_Grey, Leg_Thigh_Guard_Blue_x4/Leg_Thigh_Grey_x4, Arm_Right_Guard_Grey/Arm_Right, Arm_Left_Guard_Grey/Arm_Left, Arm_Left_FingerTip_Grey_x3/Arm_Left_Finger_Black_x3 -- and also cross-checked once against the existing shell_ghosts Head_Bottom_Blue/Head_Top_Blue seam gap (independently derived ~42.3mm vs the codebase's rough 60mm(*150%) estimate -- see note on Head_Top_Blue below). SECONDARY method (used only where the 3MF pairing didn't apply, i.e. no matching kit part / custom TPU foot_tip): sharp-edge ring extraction (face_adjacency_angles>~15deg connected components, circular-loop fit) as established in prior sessions, plus visual cross-check against the completed-kit photo.",
+    "reference_images_used": [
+      "scratchpad/3mf_thumbs/thumbnail_middle.png (completed painted-kit photo)",
+      "scratchpad/3mf_thumbs/top_1.png",
+      "scratchpad/head_crop2.png (2-3x zoom crop of the head/mouth region, generated this session)",
+      "scratchpad/render_*.png (multi-part orthographic renders of every candidate STL, generated this session, used to visually identify each small connector's real-world shape before trusting the 3MF-derived offset)"
+    ],
+    "discovered_asset": "IMPORTANT for future sessions: /Users/uratayuuki/Downloads/TACHIKOMA.3mf and 'TACHIKOMA (1).3mf' contain the designer's full print-plate project (6 plates) with Metadata/model_settings.config source_offset_x/y/z per part -- this is a much stronger ground truth for kit assembly forensics than STL ring-matching alone and should be the first thing checked in any future assembly-placement task for this project.",
+    "confidence_scale": "high = 3MF source_offset method with 0.00-0.05mm bbox-gap corroboration (or, for Head_Eye_White_x3/grip parts, an existing codebase-derived normalization matrix reused directly); medium = 3MF source_offset method but bbox-gap not near-zero (parts are real but not directly touching in the kit, e.g. an internal ball-joint stack) so the *relative* position is still trustworthy but exact touch-fit is not confirmed; low/unresolved = no kit-part cross-reference available (custom, non-kit-derived target geometry), placement is a reasoned design estimate only."
+  },
+  "parts": [
+    {
+      "name": "Head_Top_Eyecut",
+      "note_alt_name": "boolean-processed Head_Top_Blue (tools/make_head_eyecut.py bores the 3 eye sockets); identical outer placement to Head_Top_Blue.",
+      "frame": "robot",
+      "R_axis_deg": [
+        [
+          "z",
+          180
+        ]
+      ],
+      "t": [
+        0.0,
+        12.0,
+        57.7
+      ],
+      "method": "t.z REVISED 57.0->57.7 this session (tiny +0.7mm correction) after independently re-deriving the Head_Bottom_Blue/Head_Top_Blue seam directly from Metadata/model_settings.config (re-read from the raw 3MF XML this session, not reused from any prior session's numbers). t.z is the z0 (plate-bottom-relative) form of 'zb+57.7'.",
+      "confidence": "high",
+      "finding": "CORRECTS an earlier finding in this same file that claimed the true seam gap was '~42.3mm scaled (raw 28.2mm)' vs shell_ghosts' old 60mm (57-(-3)), i.e. that the head should be compressed by ~17.7mm. That number does not reproduce and appears to have been a computational error (the earlier note's own arithmetic, offset diff 42.31mm minus 'each part's own bbox extent to the rim', does not yield 28.2mm from any extent values actually present on these two meshes -- see below). Independently re-verified this session by TWO agreeing methods, both against the raw 3MF metadata re-parsed directly (not reused from any prior session): (1) direct rim measurement -- a sharp-edge ring extraction (face_adjacency_angles>15deg, matching the project's established ring-fit method) on model/Head_Bottom_Blue.stl finds its own top rim at LOCAL raw z=+8.461, r=41.46 (exactly the mesh's own bbox-top and its own overall max radius); the same extraction on model/Head_Top_Blue.stl finds its bottom rim at LOCAL raw z=-32.009, r=41.78 (also exactly the bbox-bottom / overall max radius) -- i.e. these two meshes are literally a sphere sawn in half at its own equator, and the rims are sized to meet almost exactly (41.46 vs 41.78mm, <1mm apart). Solving for the Head_Top anchor that makes these two rims coincide (0 gap) gives t.z = -3 + 1.5*(8.461+32.009) = +57.7 -- a +0.7mm move from the old +57, not a -17.7mm one. (2) independent cross-check via the ALREADY-VALIDATED Head_Plate_Grey placement (this file's own 0.00mm-touching entry below, itself derived from the SAME 3MF source_offset re-read this session): Head_Plate_Grey is a thin (1.82mm) gasket disc whose own outer rim (r=42.98, from a similarly re-run ring extraction) sits flush on Head_Bottom_Blue's top rim per its validated t=(0,0,14.08) placement; projecting Head_Top_Blue's bottom rim (raw z=-32.009) to land on this SAME gasket's far face gives t.z = -3 + 1.5*10.30 + 1.5*32.009 = +60.5 -- in the same 57-60 ballpark as method (1), nowhere near 42.3/28.2. Both independently re-derived numbers (57.7 and 60.5) bracket the OLD +57 value closely (within a few mm), confirming the pre-existing shell_ghosts constant was already essentially correct; only the smaller, better-justified +0.7mm correction (method 1, the more direct of the two) was applied to tools/make_visuals.py shell_ghosts()/kit_dress_static()/wiring_video() (all 3 duplicate the constant, all 3 updated together)."
+    },
+    {
+      "name": "Head_Bottom_Blue",
+      "frame": "robot",
+      "R_axis_deg": [
+        [
+          "z",
+          180
+        ]
+      ],
+      "t": [
+        0.0,
+        12.0,
+        -3.0
+      ],
+      "method": "Existing known value, restated from shell_ghosts() (unchanged). Used as the anchor for several sub-parts below.",
+      "confidence": "high"
+    },
+    {
+      "name": "Head_Bottom_Cap_Grey",
+      "frame": "link:Head_Bottom_Blue",
+      "R_axis_deg": [],
+      "t": [
+        0.0,
+        -1.69,
+        -24.07
+      ],
+      "instances": [
+        {
+          "id": "single",
+          "R_axis_deg": [],
+          "t": [
+            0.0,
+            -1.69,
+            -24.07
+          ]
+        }
+      ],
+      "method": "3MF source_offset forensics (Head_Bottom_Cap_Grey offset=(-10.18,-8.22,8.94) vs Head_Bottom_Blue offset=(-10.18,-7.09,24.98), both parts' bbox already centered at (0,0,0)). bbox-gap check: 0.00mm (parts touch). Geometrically this places Head_Bottom_Cap_Grey's own top face flush against Head_Bottom_Blue's bbox-bottom (z=-8.46 raw, where the small ~5mm nub sits per earlier ring-extraction), with the cap hanging ~15mm further below -- i.e. Head_Bottom_Cap_Grey is the grey conical 'neck stub' visible directly under the head-ball in thumbnail_middle.png/head_crop2.png, not a small item nested only around the tiny nub.",
+      "confidence": "high"
+    },
+    {
+      "name": "Head_Dome_Grey",
+      "frame": "link:Head_Top_Blue",
+      "R_axis_deg": [],
+      "t": [
+        -16.43,
+        -26.47,
+        -9.44
+      ],
+      "method": "3MF source_offset forensics vs Head_Top_Blue. bbox-gap: 0.00mm. Shape (small rounded bullet/rivet dome, ~5mm, see scratchpad render) and position (front-upper quadrant of the head, offset toward -Y/-X-ish in Head_Top_Blue's local frame) match the small raised grey rivet visible between the two visible eyes in head_crop2.png.",
+      "confidence": "high"
+    },
+    {
+      "name": "Head_Plate_Grey",
+      "frame": "link:Head_Bottom_Blue",
+      "R_axis_deg": [],
+      "t": [
+        0.0,
+        0.0,
+        14.08
+      ],
+      "method": "3MF source_offset forensics vs Head_Bottom_Blue. bbox-gap: 0.01mm (touching). Independently corroborated by direct ring-extraction: Head_Plate_Grey has a concentric outer rim r=42.99mm / center hole r=4.65mm (own raw frame, z=+-0.91), and Head_Bottom_Blue has a matching top rim r=41.46mm plus a small boss (r=4.625mm, z=3.46..8.46) at its own top (z=8.46) -- i.e. Head_Plate_Grey is a flat disc gasket/bulkhead that sits right at the Head_Bottom/Head_Top seam, its center hole slipping over Head_Bottom_Blue's small top boss. Two independent methods agree almost exactly (14.08mm here vs a ring-based estimate of ~12.7-15mm).",
+      "confidence": "high"
+    },
+    {
+      "name": "Head_Plug_Grey",
+      "frame": "link:Head_Top_Blue",
+      "R_axis_deg": [],
+      "t": [
+        16.1,
+        -25.8,
+        -11.53
+      ],
+      "method": "3MF source_offset forensics. Initially tried against Head_Bottom_Blue (gap 24.4mm, i.e. wrong parent) then re-tried against Head_Top_Blue: bbox-gap 0.00mm (touching, correct parent). Small plain disc/rivet shape (see scratchpad render), matches the small grey dot visible between the two eyes in head_crop2.png (distinct from Head_Dome_Grey, which is the taller conical rivet nearby).",
+      "confidence": "high"
+    },
+    {
+      "name": "Head_Screw_Grey_x2",
+      "frame": "link:Head_Top_Blue",
+      "R_axis_deg": [],
+      "t": [
+        -27.48,
+        -43.98,
+        -30.72
+      ],
+      "instances": [
+        {
+          "id": "1_measured",
+          "R_axis_deg": [],
+          "t": [
+            -27.48,
+            -43.98,
+            -30.72
+          ],
+          "confidence": "high",
+          "note": "2026-07-29 0.1mm残差監査で修正: 旧値(-27.56,-44.1,-30.6)は面ベース最良接触残差0.187mm(浮き、Head_Top_Blue表面に未接触)だったため、最近接点への法線押し込み(push vector=(0.078,0.123,-0.117)mm, |push|=0.187mm)を適用。押し込み後の最良接触残差=0.0002mm[OK]。"
+        },
+        {
+          "id": "2_estimated_mirror",
+          "R_axis_deg": [],
+          "t": [
+            27.56,
+            -44.1,
+            -30.6
+          ],
+          "confidence": "low",
+          "note": "Head_Top_Blue's own eye-socket layout is bilaterally symmetric about local x=0 (config.EYE_SOCKETS_150), so an x-mirror of instance 1 is the most plausible location for the 2nd screw, but this is NOT independently measured -- the 3MF's per-instance source_offset for both copies of Head_Screw_Grey_x2 was identical (both objects in the print-plate file carried the same single source_offset), so only ONE of the two real screw positions could be recovered this way."
+        }
+      ],
+      "method": "3MF source_offset forensics vs Head_Top_Blue for instance 1 (bbox-gap 0.00mm). Shape is a slotted-screw-head profile (see scratchpad render) -- matches the small grey screw visible near the mouth-slit area in head_crop2.png.",
+      "confidence": "high (instance 1 only)"
+    },
+    {
+      "name": "Head_Insert_Black_x4",
+      "frame": "link:Head_Top_Blue",
+      "R_axis_deg": [],
+      "t": [
+        45.9998,
+        -38.5518,
+        -47.0203
+      ],
+      "instances": [
+        {
+          "id": "1_measured",
+          "R_axis_deg": [],
+          "t": [
+            45.9998,
+            -38.5518,
+            -47.0203
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "2_estimated",
+          "R_axis_deg": [],
+          "t": [
+            -45.9998,
+            -38.5518,
+            -47.0203
+          ],
+          "confidence": "low",
+          "note": "x-mirror guess"
+        },
+        {
+          "id": "3_unresolved",
+          "R_axis_deg": null,
+          "t": null,
+          "confidence": "unresolved"
+        },
+        {
+          "id": "4_unresolved",
+          "R_axis_deg": null,
+          "t": null,
+          "confidence": "unresolved"
+        }
+      ],
+      "method": "3MF source_offset forensics vs Head_Top_Blue for instance 1 (bbox-gap 0.00mm; all 4 copies in the 3MF share one recorded source_offset, so only 1 of 4 real positions is recoverable this way). Small rounded-rect pill shape (~10x11.4x2.4mm raw); likely forms part of the mouth-slit/vent detailing visible in head_crop2.png, but the other 3 positions (plausibly a 2x2 or linear cluster near the mouth slit) were not determined. REVISED 2026-07-28 (audit finding, medium confidence): the original t=(48.35,-40.46,-41.84) claimed a 0.00mm bbox-gap 'touching' placement, but trimesh.proximity.signed_distance against the real bbox-centered*1.5 Head_Top_Blue mesh found 0/96 verts inside and up to 4.39mm float (bbox-gap only checks axis-aligned bounding boxes, not the actual curved surface -- a known limitation for flat parts on domed shells, see kit_assembly-design-pitfalls memory #24/#46). Found the closest surface point/normal via trimesh.proximity.closest_point at the part's own local center, then swept the push distance along that outward normal: push=6.0mm gives max embed=2.00mm / max float=0.82mm (a scan from 0-8mm shows the flat pill can never fully flush-embed against the domed surface via translation alone, since it doesn't share the shell's curvature -- 2.00/0.82mm is the best simple push-only compromise within the audit's own suggested 2-4mm push range). Instance 2 (x-mirror guess) got the same push applied in mirrored form (t.x negated) -- NOT independently re-measured, still a guess.",
+      "confidence": "medium (instance 1), low/unresolved for the other 3 -- see unresolved list"
+    },
+    {
+      "name": "Head_Eye_White_x3",
+      "frame": "link:eye_pod",
+      "frame_definition": "hardware/src/make_eye.py eye_pod(): origin = SUBMICRO servo axis (+Z = dome protrudes outward), z=0 is the pod's rear face (which then mounts into the head shell per config.EYE_SOCKETS_150 / EYE_NECK_H, already implemented in tools/make_visuals.py eyes_video()). This is the movable link -- one instance per eye, all 3 driven independently.",
+      "matrix": [
+        [
+          1.499997,
+          0.002275,
+          0.002164,
+          0.000572
+        ],
+        [
+          -0.003139,
+          1.087945,
+          1.03265,
+          0.15036
+        ],
+        [
+          -3e-06,
+          -1.032652,
+          1.087948,
+          10.405601
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "matrix_note": "This 4x4 already includes the x1.5 SCALE baked into its 3x3 block (= 1.5 * make_eye.py CAP_NORM rotation) plus the translate(0,0,C.EYE_NECK_H=8.0) that eye_pod() applies after scaling CAP_NORM's own small translation. Apply directly to the RAW (un-scaled) Head_Eye_White_x3.stl vertex.",
+      "instances": [
+        {
+          "id": "eye_0_right",
+          "note": "uses config.EYE_SOCKETS_150[0], center=(45.81,0,-20.42)"
+        },
+        {
+          "id": "eye_1_center_front",
+          "note": "uses config.EYE_SOCKETS_150[1], center=(0,-45.81,-20.42) -- the front-facing center eye"
+        },
+        {
+          "id": "eye_2_left",
+          "note": "uses config.EYE_SOCKETS_150[2], center=(-45.81,0,-20.42)"
+        }
+      ],
+      "method": "Directly restated from hardware/src/make_eye.py's own CAP_NORM constant (an already-established, decisively-derived normalization matrix for this exact STL) plus its eye_pod() construction. No new forensics needed -- Head_Eye_White_x3 IS the source mesh for eye_pod, this is simply that existing pipeline expressed in the requested transform format.",
+      "confidence": "high"
+    },
+    {
+      "name": "Mouth_Cannon_Grey",
+      "frame": "robot",
+      "R_axis_deg": [
+        [
+          "x",
+          -60.38
+        ]
+      ],
+      "t": [
+        -0.13,
+        81.16,
+        -41.68
+      ],
+      "method": "SUPERSEDES the 2026-07-29 CANNON_Y_COLLAR-standoff value (-0.14,54.16,5.79), kept below in 'finding' for history. That value anchored the standoff to a mesh landmark on Cannon ALONE, without ever measuring Mouth_Ball_Grey or Mouth_Neck_Blue's own geometry -- a violation of the task's own governing principle that 'exposure is not a free parameter, it is the result of chaining the real mating features together'. 2026-07-30 Mouth physical-chain restoration task redid this properly: (1) Mouth_Ball_Grey least-squares sphere fit (scipy.optimize.least_squares over all 2011 vertices, bbox-centered*1.5 frame): R_BALL=12.557mm, fit resid std=0.0043mm/max=0.026mm (excellent sphere, well inside the 0.1mm target), fit CENTER offset from the mesh's own bbox center = (-0.00002,-0.1227,0.0009)mm (small but included in the final t_ball below). Diametral clearance vs MOUTH_SOCKET_R=13.42 is 0.863mm/side, confirming the existing snap-fit read. (2) Mouth_Neck_Blue: sharp-edge ring extraction (same >20deg method as ARM_MOUNT_*/MOUTH_SOCKET_*) plus a full trimesh.section() radius-profile scan and a convex-hull-vs-own-volume concavity check (ratio 0.949) found NO clean axisymmetric ball-cup or precision peg feature -- the only real concavity is a shallow (~4.4mm deep) blind bore under the wide flange face (matches make_audio.py's own comment that Neck/Ball are natively solid/near-solid with only shallow blind holes, no through-passage). Neck is therefore modeled as a plain two-ended connector (this kit's own established fallback for non-precision joints, cf. Claw_Grey flat-face butt-glue and the TailJoint sleeve), using its own unambiguous full axial length NECK_AXIAL_LEN_150=16.092mm (Y bbox extent) as the Ball-surface-to-Cannon-rear-face standoff. Orientation (which end faces which part) was fixed by elimination: attaching the WIDE flange end (y=-8.046 local, r=12.35mm, diameter close to Ball's own 25.1mm) to Cannon's rear face makes Neck's own body overlap Cannon's own solid barrel volume (geometrically impossible -- found by actually trying this direction first and detecting the overlap); attaching the NARROW tapering tip end (y=+8.046 local, shrinking to r~2.2-5mm) to Cannon's rear face does not overlap, and the taper's own outer envelope only drops below Cannon's rear-hole radius (see next point) in its last ~0.9mm, consistent with a shallow locating nub rather than a deep structural peg (flush-contact, i.e. 0mm insertion, was used as the working approximation -- the <0.9mm difference this could introduce is noted as a residual open item below). This leaves the WIDE flange end facing Ball, which also matches the wide end's diameter being closer to Ball's own diameter than to Cannon's rear hole. (3) Mouth_Cannon_Grey rear socket: re-measured by the same sharp-edge ring method directly on the REAR face (Cannon-local y=CANNON_Y_REAR=-20.926): two concentric rings, outer r=7.673mm / inner (the actual hole) r=5.351mm, i.e. diameter 10.70mm -- matches the pre-existing memory note 'raw断面 y=-11.2 に φ10.8 穴' closely enough (10.70 vs 10.8) to confirm this IS the same feature, now measured to 0.1mm precision directly in this file's own frame. (4) Chain solve: with s = Cannon-local Y, s_neck_tip=CANNON_Y_REAR=-20.926, t_neck_y=s_neck_tip-NECK_TIP_Y_150=-28.972, s_neck_flange=t_neck_y+NECK_FLANGE_Y_150=-37.018. For s_ball_center, two readings of the Ball-to-Neck-flange contact are equally defensible from the mesh alone: 'tangent' (Ball's outward surface point touches the flange plane, s_ball_center=s_neck_flange-R_BALL=-49.575) vs 'coincident' (Ball's CENTER lies on the flange plane, s_ball_center=s_neck_flange=-37.018) -- the flange's own radius (12.35mm) is much closer to Ball's diameter (25.1mm) than to Ball's radius (12.557mm), which reads more naturally as 'flange continues the ball's own equatorial collar' (coincident) than 'flange is a disc externally tangent to the ball' (tangent), but this is not decisive on its own. This was disambiguated using tools/check_arm.py [8b] (an independently-derived layout-intent check, from ARM_MOUNT_XY/YAW arm-mount geometry, that Mouth_Cannon_Grey's z-range must overlap the arm-pod z-band -- i.e. the assembly must visibly hang BETWEEN the two arms, which this task's own instructions also state explicitly): the 'tangent' reading fails [8b] by -6.0mm (Cannon's z-range ends up entirely below the arm pods), the 'coincident' reading passes with +5.1mm of margin. 'coincident' (s_ball_center=-37.018) was adopted on this basis. Ball's center is ALSO independently known in robot z0-relative frame (transform MOUTH_SOCKET_LOCAL through Head_Bottom_Blue's established placement) = (-0.13,60.93,-6.10). Equating Rx(MOUTH_CANNON_ROT_X_DEG)@(0,s_ball_center,0)+MOUTH_CANNON_T to that known point and solving for MOUTH_CANNON_T (rotation held fixed at the already ray-cast-verified -60.38deg, unaffected by this standoff revision) gives the t above. Cannon's REAR face lands 16.092mm outside the socket plane (=NECK_AXIAL_LEN_150 exactly, since the Ball-radius term drops out under 'coincident') and its TIP (muzzle) lands 57.943mm outside -- the Cannon's FULL 41.78mm length still sits outside the head either way (both readings agree on this), matching the visually-confirmed photo read '大型のグレー円筒がほぼ全長露出' (large grey cylinder almost entirely exposed); the two readings differ only in how much of that assembly sits closer to vs further from the head. (5) Verification: manifold3d boolean intersection volume between Head_Bottom_Blue and each of Mouth_Cannon_Grey/Mouth_Cap_Grey/Mouth_Neck_Blue/Mouth_Ball_Grey at this placement is exactly 0.0mm3 for all four (no physical overlap with the shell; note Ball's own solid volume DOES now overlap Neck's flange disc under the 'coincident' reading -- an accepted simplification, since the real kit parts are hand-fitted by the builder regardless of this digital model's exact internal joint geometry, and does not prevent rendering -- see Mouth_Ball_Grey's own entry on why it was moved OUT of DRESS_SKIP_PARTS this session). tools/check_arm.py [8]/[8b] re-run clean (0 intersection volume vs arm sweep, 20.0mm min clearance; [8b] layout-intent checks pass). Multi-elevation render check (0deg/20deg/35deg camera elevation, matching the earlier session's own foreshortening argument) shows: at 0deg the blue Neck cone and grey Cannon hang visibly below/forward of the chin with a clear gap from the head (unlike the old standoff=0 attempt this supersedes-of-a-supersedes, which pressed the barrel's rear flush against the socket with no visible neck gap and read as a disc on the face); at ~20deg elevation (closer to the reference photo's own camera angle) the steep 60.4deg tilt foreshortens the assembly enough that only a small grey nub is visible peeking below the chin -- qualitatively matching thumbnail_middle.png. This is a render-based visual read, not a calibrated pixel-metric comparison against the photo, and is flagged UNVERIFIED at that precision; the ~0.9mm Neck-tip insertion-depth simplification noted above is a second, smaller UNVERIFIED residual.",
+      "confidence": "medium (Ball sphere fit, Cannon rear-hole ring, Neck axial length, and rotation: direct STL measurement, high precision; the specific choice that Neck connects end-to-end via flush contact rather than a deeper interlocking peg, and the exact 0.9mm insertion-depth simplification, remain reasoned simplifications consistent with this kit's other non-precision joints, not independently forensically pinned down -- see method note)",
+      "finding": "SUPERSEDED 2026-07-30 (see 'method' above). Prior (2026-07-29) finding, kept for history: 'SUPERSEDES the prior (0,55,zb-12, no rotation) value... This session instead anchors the chain via a DIRECT MEASUREMENT of the physical mating feature (ball-and-socket)... [derived rotation -60.38deg via ray-cast, unchanged and reused by this session] ... [2026-07-29 QA correction]: The standoff=0/REAR-flush placement... was found to read as a large bright grey disc/donut dominating the face... The standoff reference point was moved from CANNON_Y_REAR to CANNON_Y_COLLAR (flare start) so only the 7.2mm flare (COLLAR..TIP) protrudes... this revised standoff is a reasoned adjustment anchored to a measured mesh landmark (CANNON_Y_COLLAR), not an independent forensic measurement of the true physical protrusion.' This 2026-07-29 CANNON_Y_COLLAR value is now itself superseded: it never measured Ball or Neck at all (Cannon-only landmark guess), which this session's task explicitly identified as the root methodological gap. The even earlier (2026-07-29, first-pass) offset-diff-substitution rejection ('ATTEMPTED... and REJECTED: substituting offset(Mouth_Cannon_Grey)-offset(Head_Bottom_Blue)... gives... y=103.5 vs the then-current y=55... Root cause: the offset-diff substitution is only validated for 0.00mm-bbox-gap TOUCHING pairs') remains correctly rejected and is unaffected -- this session's method does not use source_offset substitution at all.",
+      "note": "2026-07-30 QA correction (second pass, same day): the 'coincident' adoption above never checked how much Ball and Neck actually physically overlap under that reading. manifold3d boolean intersection: Ball∩Neck = 3352mm3 = 84.6% of Neck's own volume (3961.6mm3) -- Neck is almost entirely swallowed inside Ball, contradicting the confirmed photo read ('blue cone, visible!') and docs/assembly.md §2.8's explicit instruction to paint Mouth_Neck_Blue as a visible part. The only zero-interpenetration placement (tangent, standoff=28.649mm) fails check_arm.py [8b]'s layout-intent check by -6.0mm, so full elimination of the overlap is not achievable via this single degree of freedom without sacrificing the arm-layout check. Resolved as an explicit, quantified compromise: numeric sweep + bisection (scratchpad/mouth_fix/sweep_standoff.py) chose standoff=20.0mm, the furthest toward 'tangent' that keeps a real (not knife-edge) [8b] margin (+1.5mm, deliberately smaller than the original ambiguous +4.9mm but far from the 0mm failure boundary). At this standoff, Ball∩Neck drops to 1956mm3 = 49.4% of Neck's volume (roughly half, down from 84.6%), and the exposed-surface-area proxy (fraction of Neck faces whose centroid lies outside Ball's sphere) rises from 45% to 71% -- verified by an occlusion-robust render (translucent Ball/Cannon/Cap, Neck faces colored by analytic inside/outside-ball test rather than relying on matplotlib's unreliable per-collection depth sort) in scratchpad/mouth_fix/candidates_translucent.png. New t=(-0.13,81.16,-41.68), MOUTH_CANNON_TIP_T=(-0.13,91.48,-59.83). Known limitation, stated honestly: roughly half of Neck's volume is still embedded in Ball -- this is a partial, not a full, fix of the swallow problem, and is accepted as a documented trade-off against the check_arm.py [8b] layout-intent requirement rather than re-derived further this session. tools/check_arm.py [8]/[8b] and the Head_Bottom-shell boolean-intersection checks (Cannon/Cap/Neck/Ball vs shell, still 0.0mm3) were re-run clean against the new standoff."
+    },
+    {
+      "name": "Mouth_Cap_Grey",
+      "frame": "link:Mouth_Cannon_Grey",
+      "R_axis_deg": [],
+      "t": [
+        0.0,
+        -5.7,
+        0.0
+      ],
+      "method": "3MF source_offset forensics vs Mouth_Cannon_Grey. bbox-gap: 0.00mm (touching, directly behind Cannon's rear opening). Shape is a slotted-driver-head sleeve, similar profile to Mouth_Cannon_Grey itself (own ring-extraction shows a matching r=10.06mm collar) -- reads as a rear closure/coupler that keeps the ball-joint stack captive from behind Cannon.",
+      "confidence": "high"
+    },
+    {
+      "name": "Mouth_Key_Grey",
+      "frame": "link:Mouth_Cannon_Grey",
+      "R_axis_deg": [],
+      "t": [
+        4.83,
+        -6.13,
+        -0.21
+      ],
+      "method": "3MF source_offset forensics vs Mouth_Cannon_Grey. bbox-gap: 0.00mm. Small flat hook/latch shape (see scratchpad render) -- a retention key for the internal ball joint, inserted from the side near the Cannon/Cap junction.",
+      "confidence": "high",
+      "note": "2026-07-29 0.1mm残差監査で修正: 旧t.z=0.0はbbox-gap 0.00mmだが面ベース最良接触残差0.207mm(浮き)だった(旧監査値0.47mmは58頂点の粗いvertex-onlyサンプリングによる過大評価 -- child surface全体に対するclosest_point再測定で0.207mmが正)。最近接点(parent Mouth_Cannon_Grey頂点 -> child面)への法線押し込み t.z: 0.0->-0.21 (|push|=0.207mm, ほぼ純z方向)を適用。押し込み後の最良接触残差=0.0025mm[OK]。"
+    },
+    {
+      "name": "Mouth_Peg_Grey",
+      "frame": "link:Mouth_Cannon_Grey",
+      "R_axis_deg": [],
+      "t": [
+        -0.06,
+        20.63,
+        -0.38
+      ],
+      "method": "3MF source_offset forensics vs Mouth_Cannon_Grey. bbox-gap: 0.00mm. Plain small cylinder (retention pin/dowel through the ball joint).",
+      "confidence": "high",
+      "note": "2026-07-29 0.1mm残差監査で修正: 旧t=(0.0,20.63,0.0)はbbox-gap 0.00mmだが面ベース最良接触残差0.389mm(浮き)だった。最近接点への法線押し込み(vec=(-0.057,0,-0.385)mm, |push|=0.389mm)を適用。押し込み後の最良接触残差=0.0042mm[OK]。"
+    },
+    {
+      "name": "Mouth_Ball_Grey",
+      "frame": "link:Mouth_Cannon_Grey",
+      "R_axis_deg": [],
+      "t": [
+        0.0,
+        -41.02,
+        0.0
+      ],
+      "method": "REVISED 2026-07-30 (Mouth physical-chain restoration task). Supersedes the 2026-07-29 t=(0,-20.9,0) 'reasoned simplification, Ball coincident with Cannon's rear face' value (kept in 'finding' for history). This session ran a proper least-squares sphere fit on Mouth_Ball_Grey's own 2011 vertices (scipy.optimize.least_squares): R_BALL=12.557mm, resid std=0.0043mm/max=0.026mm, fit CENTER offset from the mesh's own bbox-centered*1.5 origin = (-0.00002,-0.1227,0.0009)mm (small, included below). Ball's placement here is DERIVED from the same chain solved in Mouth_Cannon_Grey's own entry, under the 'coincident' reading of the Ball-to-Neck-flange contact adopted there (disambiguated via tools/check_arm.py [8b]'s independent arm-clearance layout-intent check, see that entry's method note for the tangent-vs-coincident discussion): t.y = s_ball_center - (own sphere-center offset).y = -37.018-(-0.1227) = -36.895 (t.x/t.z pick up the equivalent tiny corrections, +0.00002/-0.00093 respectively, rounded to 0 here). Physically: Ball's CENTER is defined to lie exactly on Mouth_Neck_Blue's own flange plane (see that part's entry) -- Neck's narrow tapering end separately touches Cannon's rear face (CANNON_Y_REAR), so Cannon's rear face sits NECK_AXIAL_LEN_150=16.092mm outside the Head_Bottom_Blue socket plane (the R_BALL term used in the rejected 'tangent' reading does not appear here). Ball's OWN diametral fit into the Head_Bottom_Blue socket (MOUTH_SOCKET_R=13.42mm vs R_BALL=12.557mm, 0.863mm/side clearance) is unaffected by this chain -- that part of the placement (Ball's center sits exactly at MOUTH_SOCKET_LOCAL, transformed into Cannon-local via the chain above) is the same high-confidence snap-fit read as before, now expressed with a precise sphere-fit radius instead of the earlier rounded 12.56mm estimate.",
+      "confidence": "medium (own sphere fit: high precision, resid<0.03mm; position along the chain axis depends on the same Neck-orientation simplification documented in Mouth_Cannon_Grey's entry, so inherits that entry's confidence rating)",
+      "finding": "Both the original 3MF source_offset-derived t=(-0.02,42.88,-66.66) (placed Ball past the visible muzzle, backwards -- see original finding text, kept in file history prior to the 2026-07-29 edit) and the 2026-07-29 'reasoned simplification' t=(0,-20.9,0) (treated Neck as a zero-length collar, which this session's own measurement of NECK_AXIAL_LEN_150=16.092mm shows is not the case) are superseded above. tools/make_visuals.py DRESS_SKIP_PARTS was re-evaluated this session with the new 'coincident' chain (see Mouth_Cannon_Grey's entry for the tangent-vs-coincident disambiguation via check_arm.py [8b]): under 'coincident', Ball's CENTER sits on Neck's flange plane rather than tangent to it, so Ball's outward-facing hemisphere (the half facing the Head_Bottom socket, away from Neck) sits in open space in front of the flange rather than being covered by it. A render check (scratchpad/mouth_check/check3.png,check4_solid.png from this session) confirms Ball IS visible this way -- a small grey ball-joint bulge at the base of the neck, just below the chin, consistent with the completed-kit photo's small grey protrusion. Ball was therefore REMOVED from tools/make_visuals.py DRESS_SKIP_PARTS this session, same as Mouth_Neck_Blue (which is clearly visible for the same underlying reason -- see that part's own entry).",
+      "note": "2026-07-30 QA correction (second pass, same day): t.y revised from -36.9 to -41.02mm (Cannon-local, i.e. Ball moved a further ~4.1mm away from Cannon/Neck along the socket axis) as part of the standoff compromise documented in Mouth_Cannon_Grey's own 'note' field -- the 'coincident' reading adopted above caused Ball to swallow 84.6% of Neck's own volume, which this correction reduces to 49.4% while keeping tools/check_arm.py [8b]'s layout-intent margin comfortably positive (+1.5mm). Ball's own absolute (robot-frame) position is UNCHANGED by this correction -- it stays pinned to the Head_Bottom socket (MOUTH_SOCKET_LOCAL) exactly as before; only Mouth_Cannon_Grey (and, with it, Neck/Cap/Key/Peg, all defined in its local frame) shifts further away from Ball. See hardware/src/config.py MOUTH_CANNON_REAR_STANDOFF_MM comment for the full derivation and the residual (still-partial) Ball-Neck overlap that this compromise knowingly accepts."
+    },
+    {
+      "name": "Mouth_Neck_Blue",
+      "frame": "link:Mouth_Cannon_Grey",
+      "R_axis_deg": [],
+      "t": [
+        0.0,
+        -28.97,
+        0.0
+      ],
+      "method": "REVISED 2026-07-30 (Mouth physical-chain restoration task), supersedes the 2026-07-29 t=(0,-20.9,0) 'zero-length transitional element' simplification (kept in 'finding' for history). This session measured Mouth_Neck_Blue's own geometry directly rather than treating it as zero-length: (a) sharp-edge ring extraction (>20deg) found no clean axisymmetric ball-cup or peg feature -- the tilted ring initially suspected of being a ball-socket cup (n=158, r=7.637mm near local y=4.8) was checked against a convex-hull-vs-own-volume concavity test (ratio 0.949, max recess depth 4.5mm) and the recess turned out to be centered at y=[-8.0,-3.5] under the WIDE flange, not near y=4.8 -- i.e. that tilted ring is just a curvature-discontinuity on an otherwise convex taper, not a socket rim. (b) trimesh.section() radius-profile scan confirms the part is a plain two-ended connector: a wide flange (y=-8.046 local, r=12.35mm, close to Ball's own 25.1mm diameter) at one end, a narrow tapering tip (y=+8.046 local, shrinking to r~2.2mm) at the other, joined by a waist/bulge with a shallow (~4.4mm) blind bore under the flange (not a through-passage -- matches hardware/src/make_audio.py's own comment that Neck/Ball are natively solid/near-solid). (c) Orientation was fixed by elimination: attaching the wide flange to Cannon's rear face makes Neck's own body geometrically overlap Cannon's own solid barrel (found by trying this direction first); attaching the narrow tip to Cannon's rear face (diameter class matches the tip's own taper, and the rear hole itself measures r=5.351mm -- see Mouth_Cannon_Grey entry) does not overlap. Neck is therefore placed with its tip end flush against Cannon's rear face (t.y = CANNON_Y_REAR-NECK_TIP_Y_150 = -20.926-8.046 = -28.972) and its wide flange end (at local y=-8.046, i.e. Cannon-local y=-37.018) touching Mouth_Ball_Grey's own surface -- using Neck's own unambiguous full axial length NECK_AXIAL_LEN_150=16.092mm (Y bbox extent) as the Ball-to-Cannon standoff, consistent with this kit's other non-precision butt-glued joints (Claw_Grey, TailJoint sleeve).",
+      "confidence": "medium (Neck's own axial length and end-diameters: direct STL measurement; the flush-contact/0mm-insertion treatment of both ends and the choice of which end faces which part are reasoned simplifications, cross-checked by elimination of the geometrically-impossible reverse orientation but not independently forensically pinned down further -- see Mouth_Cannon_Grey entry's method note on the residual <0.9mm insertion-depth question)",
+      "finding": "Superseded above. Mouth_Neck_Blue was REMOVED from tools/make_visuals.py DRESS_SKIP_PARTS this session: under the new chain it sits entirely outside the Head_Bottom_Blue socket plane (manifold3d boolean intersection with the shell = 0.0mm3) and is clearly visible in renders as the blue 'cone' connecting the head to Mouth_Cannon_Grey, matching the completed-kit photo description. Mouth_Ball_Grey was ALSO removed from DRESS_SKIP_PARTS this session (see that part's own entry) -- under the 'coincident' chain reading adopted here, Ball is genuinely visible too, not hidden."
+    },
+    {
+      "name": "Leg_Thigh_Guard_Blue_x4",
+      "frame": "link:thigh_cap",
+      "frame_definition": "hardware/src/shell_mod.py thigh_cap(): loads Leg_Thigh_Grey_x4.stl, scales x1.5, cuts away everything below cut_z = lo_z + 0.45*(hi_z-lo_z) (on the already-scaled bbox), then translates so the XY bbox-center is at x=y=0 and the cut plane sits at z=0 (cut portion, i.e. the top ~55% of the original Leg_Thigh_Grey_x4, is what remains, extending from z=0 upward). NOTE: thigh_cap's own mount point onto femur_link is not yet decided anywhere in the codebase (only used for presentation layout in make_visuals.exploded_leg) -- this entry is thigh_cap-local only, pending that separate design decision.",
+      "matrix_note": "REVISED 2026-07-28 (audit finding, high confidence): the previous R_axis_deg=[] + t=(-5.49,0,21.99) placement was found by trimesh.proximity.signed_distance against the REAL thigh_cap() manifold output to have 0/8403 verts embedded, floating 4.19-13.55mm off -- root cause was t.z=21.99 sitting entirely above thigh_cap's own z-range [0,16.67] (thigh_cap keeps only the top 55% of Leg_Thigh_Grey_x4, per 'frame_definition' above; the guard's t was derived against the FULL Leg_Thigh_Grey_x4 mesh via 3MF source_offset and never re-checked against the cut-down thigh_cap output). Re-derived via 6-DOF differential_evolution fit (translation + full 3D rotation, minimizing (signed_distance-1.0mm)^2 over a 300-vertex sample of the guard, verified on the FULL 8403-vertex mesh). Unlike Leg_Shin_Guard_Grey_x4 (a poor curvature match even after fitting), this converged to a near-identity rotation (largest off-diagonal ~3.8%) with only t changed -- i.e. the guard's ORIGINAL orientation was already correct, it just needed to sit ~14.4mm lower in Z (21.99->7.55) and centered on X. Stored as a 'matrix' (RAW vertex, SCALE=1.5 baked in) for consistency with the fit tooling, though a plain R_axis_deg=[] + t=(-5.45,-0.22,7.55) would reproduce it almost exactly.",
+      "matrix": [
+        [
+          1.498919,
+          -0.056333,
+          0.008237,
+          -5.445085
+        ],
+        [
+          0.056428,
+          1.498832,
+          -0.017885,
+          -0.222667
+        ],
+        [
+          -0.007559,
+          0.018182,
+          1.499871,
+          7.54536
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "instances": [
+        {
+          "id": "FR",
+          "note": "mirrored leg (femur_link_m/coxa_bracket_m used for FR/RL) -- VERIFIED 2026-07-28 (prompted by the analogous Leg_Shin_Guard_Grey_x4 mirror bug found this session, review major finding): unlike shin_shell, thigh_cap() has NO _m/mirrored variant anywhere in the codebase (build_all.py only exports a single plain 'thigh_cap', and tools/make_visuals.py robot_meshes() always `load(\"thigh_cap\")` with no sfx for any leg) -- only its WORLD placement (T_thigh, via the per-leg T_hip carrier) differs per leg, not its local mesh/shape. So this guard's local matrix, which places it relative to thigh_cap's own local frame, needs no per-leg mirroring: the same local matrix is correct for all 4 legs as-is. The prior 'not checked this session' TODO is resolved (no code change needed here)."
+        },
+        {
+          "id": "FL",
+          "note": "non-mirrored"
+        },
+        {
+          "id": "RL",
+          "note": "mirrored leg (femur_link_m/coxa_bracket_m used for FR/RL) -- same as FR, no mirroring needed (see FR's note)"
+        },
+        {
+          "id": "RR",
+          "note": "non-mirrored"
+        }
+      ],
+      "instances_note": "Same local matrix applies at all 4 legs (the transform is defined purely in thigh_cap's own local frame); only the parent thigh_cap/femur_link's own per-leg placement differs, which is out of scope here.",
+      "method": "3MF source_offset forensics (Leg_Thigh_Guard_Blue_x4 offset=(48.49,-19.70,29.08) vs Leg_Thigh_Grey_x4 offset=(52.15,-19.70,15.43), both single-instance-per-file per the '_x4' print-quantity naming convention -- confirmed via mesh.split()==1 component, i.e. these are NOT 4 separately-modeled meshes bundled in one file, just one canonical leg's worth, printed x4). bbox-gap (vs the FULL Leg_Thigh_Grey_x4): 0.00mm (touching). 2026-07-28 re-fit against the actual (cut-down) thigh_cap() output: scipy.optimize.differential_evolution, see 'matrix_note'. Verified on the full 8403-vertex guard mesh: 6324/8403 (75.3%) inside the shell (sd>=0), max embed 2.33mm, max float 1.88mm, median sd=0.63mm, p05=-1.01mm/p95=2.11mm -- i.e. essentially the whole guard now sits within about 1-2mm of thigh_cap's real surface, a tight fit (unlike Leg_Shin_Guard_Grey_x4's residual curvature mismatch). See /private/tmp/.../scratchpad/fit_thigh_guard.py for the reproducible fit script.",
+      "confidence": "medium",
+      "finding": "RESOLVED 2026-07-28: the prior 0.00mm-bbox-gap claim was against the FULL (uncut) Leg_Thigh_Grey_x4 mesh, not the actual printed thigh_cap() output (which keeps only the top 55%) -- against the real mesh the guard floated entirely clear (0/8403 embedded). Re-fit and independently re-verified to now sit within 1-2mm of the real surface across 90% of its vertices. Downgraded confidence from 'high' to 'medium' because thigh_cap's own mount point on femur_link remains undecided (see 'frame_definition') and this is now a numerically-optimized reasoned placement rather than a directly-reproduced forensic transform, even though the fit quality itself is high."
+    },
+    {
+      "name": "Leg_Shin_Guard_Grey_x4",
+      "frame": "link:shin_shell",
+      "frame_definition": "hardware/src/shell_mod.py shin_shell(), functionally equivalent to the frame used in tools/make_visuals.py robot_meshes() (origin = knee axis, +Z up, shell hangs down toward the foot; the print-orientation flip baked into the exported STL is exactly undone by robot_meshes()'s own rot(180,'x') re-application, verified algebraically this session). Construction: Leg_Shin_Blue_x4.stl scaled x1.5, XY bbox-centered, top of bbox placed at z=SHIN_TOP_Z=-16, then a fixed-frame loop/handle relief cut (LOOP_RELIEF_*, independent of rotation), then rotated 0deg about Z (OFFSETS['shin_rotz'], updated 2026-07-31 from 270 -- see matrix_note_2026_07_31c below, real-photo orientation task; this text previously said 270deg and was stale from before that task, fixed 2026-07-31 review follow-up (second instance of the same staleness pattern this field has now had twice -- see matrix_note_2026_07_31c for the current, authoritative rotation history)).",
+      "matrix_note": "REVISED AGAIN 2026-07-28 (review finding major#7): the 2026-07-28 6-DOF fit above achieved 73.0% embed / median 1.08mm but STILL LOOKED VISUALLY DETACHED when independently re-rendered this session (guard_shin_HL_a/b/c.png) because the fit objective (mean squared distance to a 1.0mm embed target) let a few high-magnitude outlier vertices (max float 6.90mm) pull the mean down without being penalized enough to matter for the median. Re-fit with the SAME 6-DOF differential_evolution setup but an added quadratic penalty term on float (sd<0, i.e. the guard poking out past the shell surface) so the optimizer trades a little embed% for a smaller worst-case protrusion. See fit_shin_guard3.py (scratchpad) for the reproducible script.",
+      "matrix": [
+        [
+          -1.456624897250708,
+          -0.3424562708387004,
+          0.104726363789713,
+          15.895798603329567
+        ],
+        [
+          0.04494238311126564,
+          -0.6100051485666023,
+          -1.3696254600884572,
+          -0.8781123242334772
+        ],
+        [
+          0.35528029907334413,
+          -1.32688259514001,
+          0.6026263251840787,
+          -86.40568973501664
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "matrix_note_2026_07_31c": "ROTATED AGAIN 2026-07-31 (real-photo orientation task): shell_mod.py OFFSETS['shin_rotz'] changed 270->0 (a further +90deg Z rotation, since 270+90=360=0) so the 3-dot mold / panel-line decoration (identified as the true kit-native outward-facing feature, see docs/assembly.md Sec.3) faces true radial-outward instead of the interference-driven 270deg compromise. First tried a pure Rz(+90deg) left-multiply co-rotation (same technique as the 90->270 step): this reproduced the OLD embed stats algebraically (verified 77.4%/1.645mm/6.552mm against a shin_shell() built with ADJ_RELIEF_BANDS temporarily disabled, matching the prior 82.8%/1.585mm/6.552mm to within normal cross-session numerical drift) -- but this task's NEW ADJ_RELIEF_BANDS interference-relief cut (see shell_mod.py) removes almost exactly the wall region this guard sits against (Z -107..-74, within ADJ_RELIEF band2/band3), so the pure co-rotated matrix only achieved 34.2% embed / -0.84mm median / 12.95mm max-float once ADJ_RELIEF was applied -- a real geometry conflict, not a math error. Re-fit (scipy.differential_evolution, 6-DOF: 3 translation +-8mm, 3 rotation +-15deg about the guard's own sample centroid, seeded from the co-rotated matrix, minimizing (sd-1.0mm)^2 with an extra penalty on sd<0/float, 300-vertex sample then verified on the full mesh) against the CURRENT (post-ADJ_RELIEF) shin_shell(): 80.1% embed / median 1.714mm / max float 3.525mm -- close to the historical ~83%/1.6mm and a large improvement in max-float (12.95mm->3.53mm) over the naive co-rotation. See /private/tmp/.../scratchpad/refit_shin_guard.py for the reproducible script.",
+      "instances": [
+        {
+          "id": "FR",
+          "note": "mirrored leg (_m parts): renders against shin_shell_m, the Y-mirror of shin_shell() (build_all.py .mirror([0,1,0])). REVISED 2026-07-28 (review major finding): a prior version of this note claimed the SAME local matrix could be reused as-is because 'shin_shell()'s own construction is defined per-side already via the _m variant mesh' -- this was WRONG and unverified (flagged by the JSON's own now-removed TODO). Independently re-measured via signed_distance against the real shin_shell_m.stl (undoing the print-orientation flip the same way tools/make_visuals.py robot_meshes() does): applying this matrix UNCHANGED to the guard and placing it against shin_shell_m gives only 296/1107 (26.7%) embed, median sd=-1.80mm, max float=15.97mm -- a large, visually-detectable regression vs FL/RR's 82.8%/1.585mm/6.552mm. Root cause: shin_shell_m's mesh is Y-mirrored relative to this matrix's fit target (shin_shell()), but the guard mesh applied via this matrix was not. FIX (tools/make_visuals.py robot_meshes()): for FR/RL, apply this SAME matrix to the raw guard mesh first, THEN apply an additional Y-mirror (diag(1,-1,1,1)) + mesh.invert() (to restore correct face winding/normals) in the shin_shell link-local frame, before carrying via T_knee. This is provably lossless: Y-mirror is an isometry, and diag(1,-1,1,1) commutes with shin_shell()'s own print-prep chain (translate(0,0,SHIN_TOP_Z) + rotate(180,'x')), so shin_shell_m (as loaded+undone in robot_meshes()) is EXACTLY mirror_Y(shin_shell()) in the link-local frame -- applying the same mirror to the already-fitted guard reproduces the identical embed stats (verified numerically to the mm: 917/1107=82.8%, median=1.585mm, max float=6.552mm, exactly matching FL/RR). See /private/tmp/.../scratchpad/verify_shin_guard_mirror.py for the reproducible verification script."
+        },
+        {
+          "id": "FL",
+          "note": "non-mirrored"
+        },
+        {
+          "id": "RL",
+          "note": "mirrored leg (_m parts) -- same fix as FR, see FR's note"
+        },
+        {
+          "id": "RR",
+          "note": "non-mirrored"
+        }
+      ],
+      "method": "2026-07-28 v3 re-fit (review finding major#7, supersedes the v2 matrix above -- v2 kept in history below): scipy.optimize.differential_evolution, same 6 params/bounds/z-band as v2, cost = mean((signed_distance-1.0mm)^2) + 3.0*mean(clip(-signed_distance,0,None)^2) -- i.e. v2's cost plus a protrusion penalty so outlier float vertices are no longer 'free' to the optimizer. Verified on the FULL 1107-vertex guard mesh: 917/1107 (82.8%) inside the shell (sd>=0), max embed 7.44mm, max float 6.55mm (v2 was 73.0%/7.33mm/6.90mm), median sd=1.58mm, p05=-1.18mm/p95=4.62mm (v2: median 1.08mm, p05=-1.51mm, p95=4.24mm). Net effect: embed% up 9.8 points and median embed deeper (less borderline), max float down only 0.35mm and p95 slightly worse (+0.38mm) -- confirms this session's hypothesis that the residual visible gap is a genuine curvature mismatch between the guard mesh and shin_shell(), not a fixable placement/cost-function artifact: no single rigid-body transform (with or without a protrusion penalty) gets max float much below ~6.5mm. Kept as the new placement since it is better or equal on every metric except p95 (+0.38mm, minor) and max embed (+0.11mm, negligible).\n\n--- v2 method (2026-07-28, superseded by the above) ---\n2026-07-28 re-fit (supersedes the prior single-rotation 'reasoned design estimate' below, kept for history): scipy.optimize.differential_evolution (6 params: dx,dy,dz + 3 extra Euler angles applied on top of the base rot(-90,'z')) against a 300-vertex random subsample of the guard, cost = mean((signed_distance(shin_shell(), v) - 1.0mm)^2) -- i.e. seeking a shallow ~1mm uniform embed (the same 'plausible glue-line' target the original placement intended but never actually achieved). Verified on the FULL 1107-vertex guard mesh post-fit: 808/1107 (73.0%) inside the shell (sd>=0), max embed depth 7.33mm, max float 6.90mm, median sd=1.08mm, p05=-1.51mm/p95=4.24mm (i.e. 90% of the guard sits within roughly -1.5..+4.2mm of the real shin_shell() surface -- a large improvement over the prior 13.9% embed / 15.04mm float, though still not a perfect fit: the guard's D-shaped cross-section does not exactly match shin_shell()'s local curvature at this height under ANY single rigid-body placement, since shin_shell() is itself a hollowed/boolean-modified derivative of the original Leg_Thigh_Blue mesh the guard was sculpted for. A z-unconstrained search found an even better fit (81.3% embed) near z=-113.8, but that overlaps the BOLT_ZS=-100 M3 through-hole zone, so the bolt-avoiding z in [-89,-71] result was kept instead). See /private/tmp/.../scratchpad/fit_shin_guard2.py for the reproducible fit script (re-run if shin_shell()'s geometry changes).",
+      "confidence": "low",
+      "finding": "REVISED 2026-07-28 (review finding major#7): the v2 placement above (median 1.08mm, 73.0% embed) still visually read as a floating/detached flat panel when independently re-rendered and inspected this session (guard_shin_HL_a/b/c.png, FR leg) -- the volumetric embed% metric did not capture 'does it look attached from outside', which is what the original user complaint (a) was actually about. Re-fit with a max-protrusion-aware objective (see matrix_note/method): embed% improved 73.0%->82.8%, median sd improved 1.08mm->1.58mm, but max float only improved 6.90mm->6.55mm and p95 got marginally worse (4.24mm->4.62mm) despite explicitly penalizing protrusion in the cost function. This is evidence (not just assumption) that the residual visible gap is a genuine curvature mismatch between the guard mesh and shin_shell() -- no single rigid-body placement can push max float much below ~6.5mm. Still 'low' confidence and still NOT a perfect visual fit -- no kit-forensics anchor exists for this part (see the v1-superseded note further down in 'method'). Full resolution would require reshaping shin_shell() itself or the guard mesh (hardware/src is a separate track, out of this review-fix session's scope) -- current recommendation remains current-affair-with-fixative (pre-fit test, sand/putty as needed), now documented explicitly in docs/assembly.md.",
+      "finding_mirror_2026_07_28": "REVIEW FIX (major, this session): the above 82.8%/median1.585mm/max-float6.552mm numbers were all measured against shin_shell() (the non-mirrored FL/RR variant) only -- FR/RL actually render against shin_shell_m (the Y-mirrored variant, build_all.py .mirror([0,1,0])), and the codebase was applying this SAME unmirrored matrix to the guard for FR/RL too, with no mirroring step. Re-measured against the real shin_shell_m.stl: only 26.7% embed / median -1.80mm / max float 15.97mm -- a severe, visually-obvious regression for 2 of the 4 legs that the prior session's report did not check or disclose (flagged by this file's own now-resolved 'not checked this session' TODO on the FR instance). Fixed in tools/make_visuals.py robot_meshes(): for FR/RL, the fitted matrix above is applied to the guard first, then an additional Y-mirror (+ mesh.invert() for correct normals) is applied in the shin_shell link-local frame before the T_knee carry -- this is lossless (mirroring is an isometry, and it provably commutes with shin_shell()'s print-prep chain), so FR/RL now reproduce the EXACT same 82.8%/1.585mm/6.552mm stats as FL/RR (verified numerically, not just asserted -- see scratchpad/verify_shin_guard_mirror.py). All 4 legs are therefore equivalent again; no per-leg-side caveat is needed in README/docs.",
+      "method_superseded_2026_07_27": "the original 3MF source_offset substitution (Leg_Shin_Guard_Grey_x4 offset=(106.58,-62.21,-55.43) vs its closest available anchor Leg_Shin_Blue_x4 offset=(84.20,-19.62,-14.13), bbox-gap 15.5mm i.e. NOT touching) reproduces exactly under independent re-derivation (same numbers to 0.01mm) -- so the ARITHMETIC was right, but the RESULT was physically implausible and was rejected: it placed the guard's own origin at radius sqrt(63.88^2+33.57^2)=72.2mm from the tibia Z axis, at z=-147.6 (below the ankle attach point z=-135). The single-rotation placement that replaced it (R=rot(-90,'z'), t=(0,33.9,-75.0)) was itself superseded 2026-07-28 by the 6-DOF 'matrix' fit above after an audit found its self-reported embed stats did not reproduce.",
+      "matrix_note_2026_07_31": "ROTATED 2026-07-31 (user orientation fix): shell_mod.py OFFSETS[\"shin_rotz\"] changed 90->270 (a +180deg Z rotation) so that the loop/handle feature molded into Leg_Shin_Blue_x4 (which the original kit design faces toward the body/inward) no longer points radially outward (user-reported, URDF viewer screenshots, topdown measurement: render_shin_before.png). Per frame_definition, this matrix operates in the \"link:shin_shell\" frame = shin_shell()'s own construction frame, which itself rotates 180deg about Z when shin_rotz flips (T_knee origin is unaffected, only the baked-in mesh rotation is). To keep this guard matched to the shell's new pose the SAME Rz(180) is left-multiplied onto the previously-fitted matrix (RAW-vertex, SCALE=1.5 baked in, per this file's convention) -- this is an EXACT rigid corotation (not a re-fit): all previously-measured embed stats (82.8% embed / median 1.585mm / max float 6.552mm against shin_shell(), verified against shin_shell_m via the existing FR/RL post-mirror step in tools/make_visuals.py) are algebraically preserved unchanged, since embed/signed-distance is invariant under an identical rigid rotation applied to both bodies. See scratchpad verify script for the shin loop flip.",
+      "matrix_note_2026_07_31b": "REVIEW FOLLOW-UP (same day, later pass): independent re-verification found the 90->270 rotation ABOVE did not actually make the loop/handle face inward (both 90 and 270 leave it at a similar ~50-65deg 'sideways' angle from the body-outward direction, clearly visible from outside in matching before/after renders -- the claim in the note above that this rotation solved the visibility problem was incorrect and unverified at the time it was written; see the review findings this follow-up addresses). A full 0/90/180/270 (and finer) sweep showed no single Z rotation both hides the loop AND avoids new large-scale interference (rotz=0, which truly hides it, creates a 7-9cm^3 adjacent-leg 45-deg-pair crouch collision spanning most of the shell's length -- not a trimmable protrusion). Resolved instead by directly excising the loop/handle geometry itself (shell_mod.py LOOP_RELIEF_*, applied in the pre-rotation/raw-mesh frame so it works at any shin_rotz), independent of the Z rotation. shin_rotz is KEPT at 270 (unchanged from the entry above) because that value happens to sit in the interference-safe band (~240-315deg) for the 45-deg adjacent-leg pair once the loop is gone -- so this guard's Rz(180) co-rotation above is still correct and required no further change. Re-verified numerically against the actual current (post-loop-removal, rotz=270) shin_shell.stl: still 82.8% embed / median 1.585mm / max float 6.552mm, unchanged to 3 significant figures (the loop-relief and knee/tip-relief cuts do not touch this guard's contact region on the shell). See tools/check_shin_arm_leg.py for the new permanent interference regression check this follow-up added (self/adjacent-leg coverage; arm-vs-shin_shell interference was also newly discovered this pass and is NOT resolved -- reported as a known, out-of-scope issue requiring a firmware-level leg/arm pose coordination clamp, see that script's [C] section and docs/assembly.md).",
+      "matrix_note_2026_07_31d": "RE-VERIFIED 2026-07-31 (リリーフカット再評価タスク): shell_mod.py の ADJ_RELIEF_BANDS+BOLT_BOSS_KEEPOUT_X (matrix_note_2026_07_31c が言及する、このガードが接する壁 Z -107..-74 を削っていたカット) を firmware 到達可能集合基準の再評価で撤去し、KNEE_RELIEF/TIP_RELIEF とあわせてキット形状へ復元した (shell_mod.py 該当コメント / tools/check_shin_arm_leg.py 参照)。復元後の shin_shell() に対し、上記 80.1%フィット行列を無変更のまま signed_distance で再検証したところ 887/1107->968/1107 (80.1%->87.4%) embed, max float 3.525mm->2.725mm へ自動的に改善した (壁が復元されたことによる副次効果 -- 行列自体は未変更)。史上最良だった82.8%/median1.585mm/max-float6.552mm (2026-07-28 v3, ADJ_RELIEF導入前) と比べても embed%/max-floatとも上回る。念のため同じ6-DOF re-fit手法 (differential_evolution, cost=mean((sd-1.0mm)^2)+3.0*mean(clip(-sd,0,None)^2), 300頂点サンプル->全1107頂点で検証) も復元後のshin_shell()に対して再実行したが、83.1% embed/max float 6.33mm と無変更の方が全指標で優れていたため (再フィットのコスト関数は1mm均一embedを狙うため embed%最大化とは目的が異なる)、行列は更新しない。結論: matrix フィールドは変更不要、82.8%水準への回復 (実際には87.4%まで改善) を確認した。検証スクリプト: /private/tmp/claude-501/-Users-uratayuuki-Documents-Tachikoma/5ebf3b3c-cddc-4fd8-b3e6-bfff0302ebaa/scratchpad/refit_shin_guard_v2.py"
+    },
+    {
+      "name": "Leg_Toe_Black_x12",
+      "frame": "link:leg_foot_bored",
+      "frame_definition": "hardware/src/make_leg.py leg_foot_bored() (2026-07-28 rewrite, replaces the old custom-TPU foot_tip): origin/orientation = model/Leg_Foot_Grey_x4_Repaired.stl scaled x1.5, XY bbox-centered, Z shifted so the dorsal (tibia-facing) apex (raw bbox top, z=+3.286) sits at local z=0 -- i.e. z=0 is the tibia_link() insertion plane (same convention the old foot_tip used: local z=0 -> tibia_link local z=-C.TIBIA_LEN, +Z = up into tibia, -Z = toward the ground). This IS drawn directly in tools/make_visuals.py robot_meshes() (loaded from hardware/stl/leg_foot_bored.stl, analogous to thigh_cap/shin_shell) at T_knee @ trans(0,0,-C.TIBIA_LEN) -- unlike the old foot_tip link, leg_foot_bored keeps the actual kit Leg_Foot exterior (README iron rule #1), so this JSON only needs to place the 3 separately-glued Leg_Toe_Black_x12 copies onto it.",
+      "matrix_note": "No single shared matrix (unlike Head_Eye_White_x3/Arm_Left_FingerTip_Grey_x3) -- each of the 3 toes/foot uses ITS OWN matrix (see instances[].matrix below), because the 3 mounting stubs measured directly on the leg_foot_bored mesh point in 3 different, non-uniformly-spaced directions. Each matrix already bakes in SCALE=1.5 in its 3x3 block (same convention as the other matrix-based entries in this file) -- apply directly to the RAW (un-scaled) Leg_Toe_Black_x12.stl vertex.",
+      "instances": [
+        {
+          "id": "FR_0",
+          "matrix": [
+            [
+              0.90992,
+              0.356779,
+              -0.211554,
+              -2.860731
+            ],
+            [
+              -0.414785,
+              0.782672,
+              -0.464088,
+              -15.02011
+            ],
+            [
+              0.0,
+              0.510032,
+              0.860155,
+              -11.141521
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "FR_1",
+          "matrix": [
+            [
+              -0.115842,
+              0.827947,
+              -0.548711,
+              -17.770842
+            ],
+            [
+              -0.993268,
+              -0.096561,
+              0.063994,
+              10.840418
+            ],
+            [
+              0.0,
+              0.55243,
+              0.833559,
+              -11.496603
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "FR_2",
+          "matrix": [
+            [
+              -0.805913,
+              -0.499817,
+              0.317314,
+              14.884533
+            ],
+            [
+              0.592035,
+              -0.68038,
+              0.431947,
+              15.621127
+            ],
+            [
+              0.0,
+              0.535972,
+              0.844236,
+              -11.358766
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "FL_0",
+          "matrix": [
+            [
+              0.90992,
+              0.356779,
+              -0.211554,
+              -2.860731
+            ],
+            [
+              -0.414785,
+              0.782672,
+              -0.464088,
+              -15.02011
+            ],
+            [
+              0.0,
+              0.510032,
+              0.860155,
+              -11.141521
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "FL_1",
+          "matrix": [
+            [
+              -0.115842,
+              0.827947,
+              -0.548711,
+              -17.770842
+            ],
+            [
+              -0.993268,
+              -0.096561,
+              0.063994,
+              10.840418
+            ],
+            [
+              0.0,
+              0.55243,
+              0.833559,
+              -11.496603
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "FL_2",
+          "matrix": [
+            [
+              -0.805913,
+              -0.499817,
+              0.317314,
+              14.884533
+            ],
+            [
+              0.592035,
+              -0.68038,
+              0.431947,
+              15.621127
+            ],
+            [
+              0.0,
+              0.535972,
+              0.844236,
+              -11.358766
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "RL_0",
+          "matrix": [
+            [
+              0.90992,
+              0.356779,
+              -0.211554,
+              -2.860731
+            ],
+            [
+              -0.414785,
+              0.782672,
+              -0.464088,
+              -15.02011
+            ],
+            [
+              0.0,
+              0.510032,
+              0.860155,
+              -11.141521
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "RL_1",
+          "matrix": [
+            [
+              -0.115842,
+              0.827947,
+              -0.548711,
+              -17.770842
+            ],
+            [
+              -0.993268,
+              -0.096561,
+              0.063994,
+              10.840418
+            ],
+            [
+              0.0,
+              0.55243,
+              0.833559,
+              -11.496603
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "RL_2",
+          "matrix": [
+            [
+              -0.805913,
+              -0.499817,
+              0.317314,
+              14.884533
+            ],
+            [
+              0.592035,
+              -0.68038,
+              0.431947,
+              15.621127
+            ],
+            [
+              0.0,
+              0.535972,
+              0.844236,
+              -11.358766
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "RR_0",
+          "matrix": [
+            [
+              0.90992,
+              0.356779,
+              -0.211554,
+              -2.860731
+            ],
+            [
+              -0.414785,
+              0.782672,
+              -0.464088,
+              -15.02011
+            ],
+            [
+              0.0,
+              0.510032,
+              0.860155,
+              -11.141521
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "RR_1",
+          "matrix": [
+            [
+              -0.115842,
+              0.827947,
+              -0.548711,
+              -17.770842
+            ],
+            [
+              -0.993268,
+              -0.096561,
+              0.063994,
+              10.840418
+            ],
+            [
+              0.0,
+              0.55243,
+              0.833559,
+              -11.496603
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "RR_2",
+          "matrix": [
+            [
+              -0.805913,
+              -0.499817,
+              0.317314,
+              14.884533
+            ],
+            [
+              0.592035,
+              -0.68038,
+              0.431947,
+              15.621127
+            ],
+            [
+              0.0,
+              0.535972,
+              0.844236,
+              -11.358766
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "instances_note": "REVISED 2026-07-29 (足トゥ嵌合精密化タスク, supersedes the 2026-07-28 EXTRA_XY=10mm/ZLIFT=6mm empirical push): the prior iteration anchored each toe by pushing its TIP along an ad-hoc combination of a horizontal spread (to kill overlap) and an independent vertical lift (to recover ground clearance) -- a reasoned-but-arbitrary 2-parameter fudge, and it was derived against a leg_foot_bored mesh that (at the time) had its -90 deg stub (the FRONT stub, tip_ang approx -98 deg in this local frame) incorrectly shortened by hardware/src/make_leg.py's _trim_unused_ankle_tab() -- a 2026-07-28 finding that was itself wrong (see make_leg.py's 2026-07-29 addendum) and has since been reverted, restoring the kit's full 3-stub geometry. This entry was regenerated from scratch against the restored geometry using a principled, single-parameter construction instead: (1) ORIENTATION: align the toe's known local -Y axis (root->tip, established via a y-axis cross-section scan: cross-section shrinks from ~13.5x5.5mm at y=+8.375 (root, bbox max) to a point at y=-8.375 (tip, bbox min) -- unchanged from the prior session's finding) to the stub's own outward axis F = normalize(tip - base), where base/tip are measured directly on the ACTUAL BUILT hardware/stl/leg_foot_bored.stl via trimesh.slice_plane at the stub's widest pre-merge cross-section (z=-6.87 local, just below where the 3 stub fragments coalesce into the main pad at z=-6.86) and the fragment's own apex vertex (min-z point), both to native STL vertex precision. This leaves exactly one rotational DOF (roll about F) undetermined; it is fixed by a second, independently-justified criterion -- see (2). (2) ROLL: the toe's local -Z axis is the 'belly' (concave, ground-facing) side -- confirmed by a fresh y-axis cross-section sweep this session: the mesh's own lowest point is not at the tip (y=-8.375) but partway along the shaft (y=-4.657, z=-3.658), i.e. the claw's underside bulges downward before the tip curls back up, a classic talon/hook profile (matches the visible black claws in the kit's completed-build photo, Auxiliaries/.thumbnails/thumbnail_middle.png inside TACHIKOMA.3mf: claws droop from the grey ankle cuff and their tips curl toward the ground). Roll is chosen so this local -Z axis maps as close to world -Z (straight down) as the F-alignment constraint allows: D = normalize((0,0,-1) - dot((0,0,-1),F)*F) (down projected perpendicular to F), and the full right-handed orthonormal frame is R = columns[F x D, -F, -D] (verified: R@(0,-1,0)==F, R@(0,0,-1)==D, det(R)==+1, i.e. a proper rotation, not a reflection). A clean corollary confirmed numerically: the resulting local-X (E_x = F x D) always comes out exactly horizontal (z-component identically 0, since D is by construction a linear combination of F and the world Z axis) -- i.e. this convention keeps the claw's left-right axis level, the natural choice for a belly-down claw. (3) TRANSLATION (1 remaining parameter, 'standoff'): first confirmed via a y-axis cross-section scan of Leg_Toe_Black_x12.stl (n_interiors=0 at every slice from the root face y=8.375 down to y=6.0) that there is NO deep socket/bore at the root -- it is a flat-ish solid face that glues over/around the small locating peg (this matches and independently reproduces the prior session's same conclusion). Given no snap-fit feature exists, the toe's true root edge (raw bbox y=+8.375, Y0 below) is registered AT the stub's measured base point with ZERO artificial push (standoff=0mm, i.e. translation = stub_base + Y0*F exactly -- this is the tightest defensible placement, not a tuned/searched value): a standoff sweep from -1.0 to +2.0mm (0.1mm steps, boolean intersection against the actual leg_foot_bored.stl) shows standoff=0 already gives <5% toe-foot overlap for all 3 stubs (4.93/4.77/4.79%) and exactly 0.0 toe-toe overlap -- so no push was needed to clear the existing <5% glue-allowance threshold this file already uses for this same purpose (see finding). The residual ~4.8-4.9% overlap at standoff=0 is not a placement error -- it is the geometric consequence of a flat root edge sitting against the paw's locally-curved (domed) surface, present at any standoff and only slowly shrinking as standoff grows (was still ~2.8-3% even at standoff=+2.0mm) because the mating faces are not shaped to match (kit design: no complementary socket). Toe id mapping (unchanged from before): _0=FRONT stub (tip_ang approx -98.4 deg local), _1=LEFT stub (approx +145.4 deg), _2=RIGHT stub (approx +45.5 deg) -- same per-slot matrix reused across all 4 legs (FR/FL/RL/RR), matching this file's convention elsewhere.",
+      "method": "See instances_note above for the full derivation (orientation / roll / translation). Verification performed this session (trimesh.boolean.intersection, engine='manifold', against the actual built hardware/stl/leg_foot_bored.stl): toe-toe overlap is exactly 0.0 cm3 for all 3 pairs (0x1, 0x2, 1x2); toe-foot overlap is 0.036/0.035/0.035 cm3 = 4.93/4.77/4.79% of toe volume (each <5%, the same glue-allowance threshold this file's prior iteration and tools/check_leg_assembly.py [9] both already use). Toe tip world positions in leg_foot_bored's own local frame (z=0 at the tibia insertion plane, -Z toward the ground): FRONT (_0) tip=(-4.79,-19.26,-17.88), LEFT (_1) tip=(-22.19,11.36,-18.47), RIGHT (_2) tip=(17.60,19.32,-18.24) -- i.e. all 3 tips extend well past the bare stub tips (local z approx -9.8/-9.9) and past foot_pad's own contact point (local z=-11.36), by roughly 6.5-7.1mm at their deepest. This is the correct, expected consequence of a 16.75mm-long kit toe glued onto a ~5mm mounting stub and extending outward along its own axis -- see hardware/src/config.py's FOOT_GROUND_OFFSET / TIBIA_LEN_GAIT commentary for how this is now reconciled with the firmware/sim ground-plane calibration (foot_pad's own local-Z depth is used as the 1-D IK ground-offset target, since its xy offset from the tibia axis is small (2.5mm) and the approximation stays valid for any leg orientation; the toe tips are 20+mm off-axis in XY and cannot be represented by the same simple offset for all leg orientations, so tools/check_leg_assembly.py reports their world-z relationship to the calibrated ground plane directly via a full per-pose mesh sweep instead of folding them into the scalar IK constant).",
+      "confidence": "medium",
+      "finding": "Position/angle of the 3 mounting stubs remains HIGH confidence (direct trimesh.slice_plane measurement of the actual built leg_foot_bored.stl, to native STL vertex precision -- reproduced independently this session after hardware/src/make_leg.py's 2026-07-28 incorrect trim of the FRONT (-90 deg) stub was reverted on 2026-07-29; the trim had removed most of that stub's own material (r=9.2..13.1mm fell almost entirely inside the trim cutter's r=9..30mm/angle=-135..-45deg removal sector), which is exactly the stub this entry's own FR_0/FL_0/RL_0/RR_0 instances mount a toe onto -- i.e. the prior make_leg.py comment claiming 'no toe uses this stub' was based on an earlier, cruder nearest-point check and was superseded by this file's own STEP-2 per-stub direct measurement, which was itself never reconciled back into make_leg.py until this session). The overall placement construction (orientation via known toe axis + stub axis, roll via a documented ground-facing criterion, translation via a 0mm-standoff direct registration at the stub base) is now a principled, single free-parameter-free result rather than a 2-parameter empirical search (EXTRA_XY/ZLIFT) -- but confidence is still capped at 'medium' overall per this file's own scale, because the mating itself is confirmed (this session, y-axis cross-section scan of Leg_Toe_Black_x12.stl, n_interiors=0 at every slice from y=8.375 to y=6.0) to be a flat glue joint with NO deep interlocking socket -- there is no kit ground-truth for exactly how a builder seats the root against the stub, so the ~4.8-4.9% toe-foot overlap at standoff=0 (documented above) is an accepted glue-allowance, not a forensic fit. Foot-toe AND toe-toe mesh overlap were both verified this session via trimesh.boolean.intersection (engine='manifold') against the actual built STL. IMPORTANT CAVEAT (carried forward and re-quantified this session): with the restored 3-stub geometry and this corrected placement, all 3 toe tips now extend 6.5-7.1mm deeper (local z as low as -18.47mm) than foot_pad's own contact point (local z=-11.36mm) -- deeper than the prior session's toe placement (worst local z approx -12mm at the time, against an incompletely-restored foot). This is the correct, expected result of using the kit's own toe length against its own (now fully restored) 3-stub tripod rather than an artificially shallow placement, and tools/check_leg_assembly.py's ground-clearance section reports the toe-vs-pad relationship explicitly rather than papering over it -- see that script and hardware/src/config.py's FOOT_GROUND_OFFSET commentary for the resulting firmware/sim calibration choice (ground z=0 is calibrated to foot_pad's contact point, which is well-approximated by a 1-D IK offset since it sits near the tibia axis; the toes, being 20+mm off-axis, are reported as a separate real-world clearance fact rather than folded into that same scalar).",
+      "unresolved": false
+    },
+    {
+      "name": "Arm_Right_Guard_Grey",
+      "frame": "link:arm_pod",
+      "frame_definition": "hardware/src/arm_shell.py _pod_manifold(): origin = shoulder pitch axis, +X = arm extends, +Z up (arm-local convention shared with make_arm.py). Construction: Arm_Right.stl scaled x1.5, axis-swapped R=[[0,1,0],[-1,0,0],[0,0,1]] (STL Y -> arm X, STL -X -> arm Y), then translated +POD_OFF(=25.7) along arm X.",
+      "R_axis_deg": [
+        [
+          "z",
+          -90
+        ]
+      ],
+      "t": [
+        -2.44,
+        0.0,
+        16.64
+      ],
+      "method": "3MF source_offset forensics (Arm_Right_Guard_Grey offset=(-35.61,-78.44,21.53) vs Arm_Right offset=(-35.61,-59.68,10.44)). bbox-gap: 0.00mm (touching). t.x=-2.44 lands just BEFORE arm_shell.py's own kept range (ARM_POD_X0=11.5, i.e. inside the region arm_shell.py currently cuts away as the 'front opening'), which matches the codebase's own documented finding that the kit's Arm_Right (not Left) has a distinct 'shoulder shield bulge' near the very front/shoulder end (config.py ARM_POD comment, arm_shell.py module docstring) -- strong independent confirmation that Arm_Right_Guard_Grey IS that shoulder-shield element.",
+      "confidence": "high",
+      "finding": "Because t.x=-2.44 falls inside arm_shell.py's currently-cut 'front opening' region (x<11.5 is removed by _pod_hollow()'s front box-cut), Arm_Right_Guard_Grey as a separate glue-on piece would restore/replace exactly the geometry that region currently discards -- consistent with the shoulder-shield being meant as a distinct add-on part rather than part of the printed clamshell itself."
+    },
+    {
+      "name": "Arm_Left_Guard_Grey",
+      "frame": "link:arm_pod",
+      "R_axis_deg": [
+        [
+          "z",
+          -90
+        ]
+      ],
+      "t": [
+        -2.44,
+        0.0,
+        16.64
+      ],
+      "method": "3MF source_offset forensics using the KIT-NATIVE pairing (Arm_Left_Guard_Grey offset=(14.15,-79.06,21.53) vs Arm_Left offset=(14.15,-60.30,12.22)), expressed in the SAME 'link:arm_pod' frame formula as Arm_Right_Guard_Grey above (same R, since arm_shell.py's own pod-frame construction is side-symmetric by formula). bbox-gap: 0.00mm against the kit's own Arm_Left.stl.",
+      "confidence": "high",
+      "finding": "IMPORTANT DESIGN NOTE: the project's arm_shell.py deliberately builds BOTH arms' printed pod clamshell (arm_pod_upper/lower) from a MIRROR of Arm_Right.stl only (config.py comment: kit Left/Right pods are asymmetric, real kit Left lacks the shoulder-shield bulge that reference photos show on both arms, so the design mirrors Right for both). tools/make_visuals.py's arm_meshes() already accounts for this by construction: it renders ONLY Arm_Right_Guard_Grey via KIT.by_link(...,'arm_pod') (explicitly skipping this entry, see the 'p.part != \"Arm_Right_Guard_Grey\": continue' guard) and derives the left arm's guard purely by whole-arm mirroring of the right side at the end of arm_meshes(); this JSON entry is therefore NOT consumed by the current renderer and has no effect on stills/check_arm output.",
+      "note": "2026-07-29 0.1mm残差監査で修正: 旧t.z=13.96はキット純正Arm_Left.stlに対しては最良接触残差0.004mm(実質OK)で正しかったが、実際に印刷/描画される左ポッド形状はarm_shell.pyの設計判断によりArm_Right.stlのミラー(上記finding参照)であり、そのミラー実装ポッドに対して旧値を当てると86.5%(435/503頂点)埋没・最大貫入2.674mmという深刻な干渉になることを独立検証(refit_front.py)で確認した。t.z: 13.96->16.64 (Arm_Right_Guard_Greyと同一のR,t)に変更すると、実装ポッド(ミラー済みarm_pod)に対する最良接触残差=-0.0024mm(ほぼ完全密着、Arm_Right_Guard_Grey自身の残差-0.0024mmと同値)まで改善する。上記findingの通りこのJSON値自体は現行レンダラでは未使用(Right側のみ描画してミラー)だが、データの内部一貫性とkit_assembly.py経由でLeftを直接参照する将来のコンシューマのために正しい値へ修正する。"
+    },
+    {
+      "name": "Arm_Left_Claw_Grey",
+      "frame": "link:claw_mount",
+      "frame_definition": "SUPERSEDES the old grip_finger link (2026-07-29 fixed-claw redesign: the movable gripper -- palm_base/grip_slider/grip_finger -- was removed entirely). New link 'claw_mount': hardware/src/make_arm.py claw_mount(), origin = forearm's wrist-end face (x=0), +X = finger direction. hardware/src/config.py CLAW_TO_MOUNT is the authoritative transform (raw Arm_Left_Claw_Grey.stl vertex -> claw_mount-local mm, SCALE baked in); this JSON entry duplicates the same numbers for provenance/documentation continuity with the rest of this file's forensics record, but the current renderer (tools/make_visuals.py arm_meshes()) reads config.CLAW_TO_MOUNT directly rather than going through kit_assembly.by_link() for this part (simpler for a CAD-driven, not purely-forensic, transform). Right side is mirrored from this (both arms use Arm_Left_Claw_Grey.stl -- see finding).",
+      "matrix": [
+        [
+          -0.008282,
+          -1.499925,
+          -0.012549,
+          9.17201
+        ],
+        [
+          1.499977,
+          -0.008283,
+          0.0,
+          -0.032847
+        ],
+        [
+          -6.9e-05,
+          -0.012549,
+          1.499948,
+          0.193933
+        ]
+      ],
+      "matrix_note": "Row-major 3x4 (append [0,0,0,1] for a full 4x4). Already includes the x1.5 SCALE -- apply directly to the RAW (un-scaled) Arm_Left_Claw_Grey.stl vertex, do not scale separately.",
+      "confidence": "high",
+      "method": "3MF source_offset forensics (2026-07-29 fixed-claw redesign session): the kit has TWO STLs named '*Claw_Grey' (Left and Right) but they are NOT a mirrored pair -- Arm_Right_Claw_Grey.stl (raw extents 24.7x32.0x21.4mm, volume/hull ratio 0.205 = open splayed framework) is unrelated to the claw hub; Arm_Left_Claw_Grey.stl (raw extents 12.8x8.9x13.1mm, volume/hull ratio 0.70) IS the actual claw hub -- its 3 peg tips (raw r=1.14mm each) match Arm_Left_Finger_Black_x3's root blind-hole (raw r=1.14mm) to within 0.0012mm in the shared 3MF kit-frame (source_offset method, same technique as the rest of this file), confirming the mating pair. Both arms use Arm_Left_Claw_Grey.stl mirrored (matching the existing Finger/FingerTip convention of using the Left STL for both hands).",
+      "finding": "The hub interior was initially misread as a socket (a fuzzy raw r=6.04mm ring on the proximal face) but trimesh.contains() probing showed the hub's central axis is solid from raw x=2.5-12mm -- there is no internal bore. A follow-up raycast sweep (r=0/2/4mm offsets from the axis) then found the proximal face is actually FLAT (not domed), which is what claw_mount's flat glue-pad face is designed to butt against (see CLAW_MOUNT_THICKNESS in config.py)."
+    },
+    {
+      "name": "Arm_Left_Finger_Black_x3",
+      "frame": "link:claw_mount",
+      "frame_definition": "See Arm_Left_Claw_Grey entry above for the claw_mount link definition. Each of the 3 fingers gets its OWN instance matrix (config.FINGER_TO_MOUNT[0..2]) because the hub's 3 pegs point in measurably different directions (not a clean 120deg fan) -- the finger's own root-hole axis (raw model geometry) is rotated (shortest-arc) to align with each peg's own axis, then translated so the root hole coincides with that peg's tip.",
+      "instances": [
+        {
+          "id": "peg_0",
+          "matrix": [
+            [
+              -0.386219,
+              -1.409414,
+              0.33821,
+              22.756545
+            ],
+            [
+              -0.088126,
+              -0.32653,
+              -1.461373,
+              10.293885
+            ],
+            [
+              1.446744,
+              -0.396144,
+              0.001271,
+              -3.844624
+            ]
+          ]
+        },
+        {
+          "id": "peg_1",
+          "matrix": [
+            [
+              0.089648,
+              -1.428341,
+              -0.449228,
+              22.88855
+            ],
+            [
+              1.33641,
+              0.279282,
+              -0.621297,
+              -10.167024
+            ],
+            [
+              0.675256,
+              -0.363103,
+              1.289258,
+              -3.943722
+            ]
+          ]
+        },
+        {
+          "id": "peg_2",
+          "matrix": [
+            [
+              -0.116017,
+              -1.081661,
+              -1.032738,
+              21.457906
+            ],
+            [
+              0.943444,
+              -0.856648,
+              0.791244,
+              3.071932
+            ],
+            [
+              -1.160368,
+              -0.588356,
+              0.746582,
+              12.725352
+            ]
+          ]
+        }
+      ],
+      "instances_note": "Each matrix is row-major 3x4 (append [0,0,0,1] for a full 4x4), SCALE baked in, applied directly to the RAW (un-scaled) Arm_Left_Finger_Black_x3.stl vertex. Same convention as config.FINGER_TO_MOUNT[0..2] (hardware/src/config.py) -- kept identical for provenance continuity, but the renderer reads config.py directly (see claw_mount entry's frame_definition).",
+      "method": "3MF source_offset forensics + shortest-arc rotation solve per peg (2026-07-29). Root-hole axis in the finger's own raw frame determined via a second, smaller ring (raw r=0.11mm) at the blind hole's bottom, giving the hole's opening->bottom direction; this is aligned to each peg's own base->tip axis (Arm_Left_Claw_Grey.stl, same forensics as that entry). Verified by direct assembly render (scratchpad claw_assembly_check.png) matching the completed-kit photo's tripod-claw silhouette.",
+      "confidence": "high",
+      "finding": "This supersedes the old grip_finger()-based custom talon+knuckle+heel shape (2026-07-29 fixed-claw redesign, movable gripper removed) -- the finger is now printed unmodified from the kit STL and simply glued/press-fit onto the claw hub's peg, matching standard kit assembly."
+    },
+    {
+      "name": "Arm_Left_FingerTip_Grey_x3",
+      "frame": "link:claw_mount",
+      "frame_definition": "SUPERSEDES the old grip_finger-frame entry (single shared matrix, movable gripper design). Now placed directly in the claw_mount frame (same as Arm_Left_Claw_Grey/Arm_Left_Finger_Black_x3 above), one distinct instance matrix per finger since each finger now has its own individual placement (config.FINGERTIP_TO_MOUNT[0..2]).",
+      "instances": [
+        {
+          "id": "peg_0",
+          "matrix": [
+            [
+              -0.386219,
+              -1.409414,
+              0.33821,
+              14.796879
+            ],
+            [
+              -0.088126,
+              -0.32653,
+              -1.461373,
+              7.541486
+            ],
+            [
+              1.446744,
+              -0.396144,
+              0.001271,
+              -4.41474
+            ]
+          ]
+        },
+        {
+          "id": "peg_1",
+          "matrix": [
+            [
+              0.089648,
+              -1.428341,
+              -0.449228,
+              14.886796
+            ],
+            [
+              1.33641,
+              0.279282,
+              -0.621297,
+              -7.521955
+            ],
+            [
+              0.675256,
+              -0.363103,
+              1.289258,
+              -4.425953
+            ]
+          ]
+        },
+        {
+          "id": "peg_2",
+          "matrix": [
+            [
+              -0.116017,
+              -1.081661,
+              -1.032738,
+              14.785395
+            ],
+            [
+              0.943444,
+              -0.856648,
+              0.791244,
+              -0.115042
+            ],
+            [
+              -1.160368,
+              -0.588356,
+              0.746582,
+              8.653769
+            ]
+          ]
+        }
+      ],
+      "instances_note": "Row-major 3x4 per instance, SCALE baked in, applied directly to the RAW Arm_Left_FingerTip_Grey_x3.stl vertex. Same convention as config.FINGERTIP_TO_MOUNT[0..2].",
+      "method": "Same 3MF source_offset chain as the original grip_finger-frame entry (Arm_Left_FingerTip_Grey_x3 offset=(10.92,-103.60,13.37) vs Arm_Left_Finger_Black_x3 offset=(8.00,-97.77,11.73)), re-expressed through each finger's own new claw_mount-frame placement instead of the retired FINGER_NORM pipeline. bbox-gap against each corresponding finger's root-hole point: 0.00mm (touching, by construction -- the tip's own local center is mapped onto the same target point as the finger's root-hole).",
+      "confidence": "high",
+      "finding": "COUNTERINTUITIVE RESULT, double-checked and confirmed (unchanged from the original finding): despite the name 'FingerTip', this part's own shape is a small round disc/button (~3.7mm raw), not a claw point, and it mounts at the PROXIMAL (root/knuckle) end of the Arm_Left_Finger_Black_x3 talon, not the distal tip -- it caps/decorates the peg/hole joint where the finger meets the claw hub."
+    }
+  ],
+  "unresolved": [
+    "Head_Screw_Grey_x2 instance 2 of 2: only one of the two real screw positions could be recovered from the 3MF (both print-plate copies shared one recorded source_offset). Instance 1 is high-confidence; instance 2 is a low-confidence x-mirror guess.",
+    "Head_Insert_Black_x4 instances 2-4 of 4: same limitation as above (all 4 print-plate copies shared one source_offset). Instance 1 is medium-confidence (parent correctly identified as Head_Top_Blue, exact role in the mouth-slit/vent detailing not visually confirmed); instances 2-4 are unresolved (2 is a low-confidence mirror guess, 3-4 have no placement at all). UPDATED 2026-07-28: audit re-measurement found instance 1's placement (bbox-gap claimed 0.00mm) actually floats up to 4.39mm off Head_Top_Blue's real surface under trimesh.proximity.signed_distance -- pushed 6.0mm along the local outward-surface-normal (from trimesh.proximity.closest_point at the part's own center) to reduce max float to 0.82mm (max embed 2.00mm, a plausible shallow glue-line). Instance 2's mirror-guess t was updated with the same x-mirrored push (still an unmeasured x-mirror assumption, confidence unchanged at 'low'); instances 3-4 remain fully unresolved.",
+    "Leg_Toe_Black_x12 (leg_foot_bored attach, RESOLVED 2026-07-28 'Leg_Foot 化' session): SUPERSEDES the prior note below (kept struck-through for history). foot_tip was retired; leg_foot_bored (built directly from Leg_Foot_Grey_x4_Repaired.stl) now has 3 real, directly-measured toe-mounting stubs (trimesh.section sweep -- see the part entry's own 'method'). Position/angle confidence is now HIGH (a genuine measurement, not a design estimate); the placement calibration (EXTRA_XY=10mm horizontal push + ZLIFT=6mm, tuned jointly for zero mesh overlap AND to not dig deeper into the ground than the mandatory structural foot itself -- see 'method' STEP 4) remains a reasoned choice, capping overall confidence at 'medium'. NOTE (2026-07-28 audit cross-check): an earlier audit pass flagged a DIFFERENT, now-superseded fan-based Leg_Toe placement (dphi=-120/0/+120 around a synthetic foot_tip flange) for having ~1.5%-volume root overlap and visually 'fused' toes -- that finding is stale, it does not describe the current stub-based entry above (which independently re-verified 0.0mm3 toe-toe AND foot-toe overlap via trimesh.boolean.intersection on the actual leg_foot_bored mesh, not a synthetic fan). No action taken on this (already-resolved-by-a-later-session) finding. [OLD, no longer applicable: no kit-part cross-reference existed because foot_tip was a fully custom TPU shape; the 3 copies were spaced at a synthetic dphi=-120/0/+120 fan around a synthetic FOOT_TIP_D=14 flange, a reasoned low-confidence design estimate rather than a measured fit.]",
+    "Mouth_Ball_Grey / Mouth_Neck_Blue: SUPERSEDED 2026-07-30 (Mouth physical-chain restoration task). The 2026-07-29 'reasoned simplification' (both coincident with Cannon's rear face, t=(0,-20.90,0) in Cannon-local frame, treating Neck as zero-length) is now replaced with a real measurement of Mouth_Neck_Blue's own geometry (sharp-edge ring extraction + trimesh.section radius-profile scan + convex-hull concavity test -- see the part's own entry). Neck's own full axial length (NECK_AXIAL_LEN_150=16.092mm) is used as the Ball-to-Cannon-rear standoff (under the 'coincident' Ball-flange reading, disambiguated via tools/check_arm.py [8b]'s arm-clearance layout check -- see Mouth_Cannon_Grey's entry), and Mouth_Ball_Grey now uses a proper least-squares sphere-fit radius (12.557mm, resid<0.03mm) instead of the earlier rounded 12.56mm estimate. Both Mouth_Ball_Grey AND Mouth_Neck_Blue were REMOVED from tools/make_visuals.py DRESS_SKIP_PARTS this session: under the new chain both sit fully outside the Head_Bottom_Blue socket plane (manifold3d boolean intersection with the shell = 0.0mm3 for all four Mouth parts) and are clearly visible in renders -- Ball as a small grey ball-joint bulge right at the chin, Neck as the blue 'cone' between Ball and Cannon. [OLD, superseded 2026-07-29: 'The 3MF source_offset-derived placements... were found... to be internally inconsistent with Mouth_Cannon_Grey's own established CANNON_Y_REAR/TIP axis convention (both landed on the muzzle side instead of the rear/connection side)... placed via a reasoned simplification (coincident with Cannon's rear face)... pending a real forensic measurement of Mouth_Neck_Blue's standalone geometry.']",
+    "Leg_Shin_Guard_Grey_x4: correctly paired to Leg_Shin_Blue_x4 (smallest bbox-gap among all leg-joint candidates checked) but the resulting t.z=-147.6 falls beyond shin_shell's current SHIN_BOTTOM_Z=-132 trim limit in shell_mod.py -- a design conflict to resolve, not a forensics gap. SUPERSEDED 2026-07-28: the placement that replaced this (single Z-rotation, t=(0,33.9,-75)) was itself found by audit to not achieve its own claimed embed depth against the real shin_shell() mesh, and was replaced by a 6-DOF numerically-fit 'matrix' placement -- see the part entry above ('finding' / 'method').",
+    "Leg_Thigh_Guard_Blue_x4: t.z=21.99 (link:thigh_cap frame) was found by 2026-07-28 audit to float 4.19-13.55mm off the real thigh_cap() mesh (0/8403 verts embedded) -- see the part entry above for the re-fit and its remaining caveats (thigh_cap's own mount point on femur_link is still undecided, see 'frame_definition')."
+  ]
+}

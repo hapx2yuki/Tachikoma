@@ -1,0 +1,746 @@
+<?xml version="1.0" ?>
+<robot name="tachikoma">
+  <!-- 自動生成: tools/export_urdf.py — 手編集しないこと (docs/urdf.md 参照) -->
+  <material name="mat_black">
+    <color rgba="0.1373 0.1490 0.1686 1.0000"/>
+  </material>
+  <material name="mat_bracket_grey">
+    <color rgba="0.5765 0.6392 0.7098 1.0000"/>
+  </material>
+  <material name="mat_chassis_grey">
+    <color rgba="0.5333 0.6000 0.6667 1.0000"/>
+  </material>
+  <material name="mat_coxa_blue">
+    <color rgba="0.3333 0.4667 0.8000 1.0000"/>
+  </material>
+  <material name="mat_grey">
+    <color rgba="0.6039 0.6431 0.6902 1.0000"/>
+  </material>
+  <material name="mat_kit_blue">
+    <color rgba="0.1765 0.3333 0.7216 1.0000"/>
+  </material>
+  <material name="mat_palm_grey">
+    <color rgba="0.3529 0.3922 0.4471 1.0000"/>
+  </material>
+  <material name="mat_red">
+    <color rgba="0.8000 0.1333 0.1333 1.0000"/>
+  </material>
+  <material name="mat_shell_blue">
+    <color rgba="0.2314 0.3843 0.7686 1.0000"/>
+  </material>
+  <material name="mat_white">
+    <color rgba="0.9569 0.9529 0.9412 1.0000"/>
+  </material>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/base_link__vis_chassis_grey.stl"/>
+      </geometry>
+      <material name="mat_chassis_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/base_link__vis_kit_blue.stl"/>
+      </geometry>
+      <material name="mat_kit_blue"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/base_link__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/base_link__vis_black.stl"/>
+      </geometry>
+      <material name="mat_black"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/base_link__vis_white.stl"/>
+      </geometry>
+      <material name="mat_white"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/base_link__vis_red.stl"/>
+      </geometry>
+      <material name="mat_red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/base_link__col_0.stl"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/base_link__col_1.stl"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/base_link__col_2.stl"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/base_link__col_3.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.000024404 -0.070553467 0.032047134" rpy="0 0 0"/>
+      <mass value="1.516523023"/>
+      <inertia ixx="1.742235679075e-02" ixy="2.502494116994e-05" ixz="-1.217034512356e-06" iyy="4.998492579476e-03" iyz="4.170567356634e-03" izz="1.581781818290e-02"/>
+    </inertial>
+  </link>
+  <link name="leg_fr_coxa">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fr_coxa__vis_coxa_blue.stl"/>
+      </geometry>
+      <material name="mat_coxa_blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_fr_coxa__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.021965095 0.000071480 -0.003484681" rpy="0 0 0"/>
+      <mass value="0.091059341"/>
+      <inertia ixx="1.823236606945e-05" ixy="-6.668006206450e-08" ixz="3.401879149815e-06" iyy="3.865097088324e-05" iyz="-2.920583613981e-09" izz="2.832402309381e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_fr_femur">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fr_femur__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fr_femur__vis_kit_blue.stl"/>
+      </geometry>
+      <material name="mat_kit_blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_fr_femur__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.054839828 -0.001827029 -0.003306305" rpy="0 0 0"/>
+      <mass value="0.095793916"/>
+      <inertia ixx="2.312934667026e-05" ixy="-7.225580185671e-06" ixz="9.243515945348e-06" iyy="6.299727385347e-05" iyz="5.872285254363e-07" izz="5.321473023923e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_fr_tibia">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fr_tibia__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fr_tibia__vis_shell_blue.stl"/>
+      </geometry>
+      <material name="mat_shell_blue"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fr_tibia__vis_black.stl"/>
+      </geometry>
+      <material name="mat_black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_fr_tibia__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.005297100 -0.001543525 -0.077006152" rpy="0 0 0"/>
+      <mass value="0.087444704"/>
+      <inertia ixx="1.197919214464e-04" ixy="-7.256632561680e-07" ixz="2.565565502250e-06" iyy="1.181280195017e-04" iyz="1.031035952963e-05" izz="1.939557786625e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_fl_coxa">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fl_coxa__vis_coxa_blue.stl"/>
+      </geometry>
+      <material name="mat_coxa_blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_fl_coxa__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.021965095 -0.000071480 -0.003484681" rpy="0 0 0"/>
+      <mass value="0.091059341"/>
+      <inertia ixx="1.823236606945e-05" ixy="6.668006206450e-08" ixz="3.401879149815e-06" iyy="3.865097088324e-05" iyz="2.920583613981e-09" izz="2.832402309381e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_fl_femur">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fl_femur__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fl_femur__vis_kit_blue.stl"/>
+      </geometry>
+      <material name="mat_kit_blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_fl_femur__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.054839828 0.001817353 -0.003306305" rpy="0 0 0"/>
+      <mass value="0.095793916"/>
+      <inertia ixx="2.313272495007e-05" ixy="7.203188795661e-06" ixz="9.243515945348e-06" iyy="6.299727385347e-05" iyz="-5.670344229314e-07" izz="5.321810851904e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_fl_tibia">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fl_tibia__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fl_tibia__vis_shell_blue.stl"/>
+      </geometry>
+      <material name="mat_shell_blue"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fl_tibia__vis_black.stl"/>
+      </geometry>
+      <material name="mat_black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_fl_tibia__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.005297100 0.002004755 -0.077006152" rpy="0 0 0"/>
+      <mass value="0.087444704"/>
+      <inertia ixx="1.196488116876e-04" ixy="8.427600584236e-07" ixz="2.565565502250e-06" iyy="1.181280195017e-04" iyz="-7.680107397358e-06" izz="1.925246810747e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_rl_coxa">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rl_coxa__vis_coxa_blue.stl"/>
+      </geometry>
+      <material name="mat_coxa_blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_rl_coxa__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.021965095 0.000071480 -0.003484681" rpy="0 0 0"/>
+      <mass value="0.091059341"/>
+      <inertia ixx="1.823236606945e-05" ixy="-6.668006206450e-08" ixz="3.401879149815e-06" iyy="3.865097088324e-05" iyz="-2.920583613981e-09" izz="2.832402309381e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_rl_femur">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rl_femur__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rl_femur__vis_kit_blue.stl"/>
+      </geometry>
+      <material name="mat_kit_blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_rl_femur__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.054839828 -0.001827029 -0.003306305" rpy="0 0 0"/>
+      <mass value="0.095793916"/>
+      <inertia ixx="2.312934667026e-05" ixy="-7.225580185671e-06" ixz="9.243515945348e-06" iyy="6.299727385347e-05" iyz="5.872285254363e-07" izz="5.321473023923e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_rl_tibia">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rl_tibia__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rl_tibia__vis_shell_blue.stl"/>
+      </geometry>
+      <material name="mat_shell_blue"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rl_tibia__vis_black.stl"/>
+      </geometry>
+      <material name="mat_black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_rl_tibia__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.005297100 -0.001543525 -0.077006152" rpy="0 0 0"/>
+      <mass value="0.087444704"/>
+      <inertia ixx="1.197919214464e-04" ixy="-7.256632561680e-07" ixz="2.565565502250e-06" iyy="1.181280195017e-04" iyz="1.031035952963e-05" izz="1.939557786625e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_rr_coxa">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rr_coxa__vis_coxa_blue.stl"/>
+      </geometry>
+      <material name="mat_coxa_blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_rr_coxa__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.021965095 -0.000071480 -0.003484681" rpy="0 0 0"/>
+      <mass value="0.091059341"/>
+      <inertia ixx="1.823236606945e-05" ixy="6.668006206450e-08" ixz="3.401879149815e-06" iyy="3.865097088324e-05" iyz="2.920583613981e-09" izz="2.832402309381e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_rr_femur">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rr_femur__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rr_femur__vis_kit_blue.stl"/>
+      </geometry>
+      <material name="mat_kit_blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_rr_femur__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.054839828 0.001817353 -0.003306305" rpy="0 0 0"/>
+      <mass value="0.095793916"/>
+      <inertia ixx="2.313272495007e-05" ixy="7.203188795661e-06" ixz="9.243515945348e-06" iyy="6.299727385347e-05" iyz="-5.670344229314e-07" izz="5.321810851904e-05"/>
+    </inertial>
+  </link>
+  <link name="leg_rr_tibia">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rr_tibia__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rr_tibia__vis_shell_blue.stl"/>
+      </geometry>
+      <material name="mat_shell_blue"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rr_tibia__vis_black.stl"/>
+      </geometry>
+      <material name="mat_black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/leg_rr_tibia__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.005297100 0.002004755 -0.077006152" rpy="0 0 0"/>
+      <mass value="0.087444704"/>
+      <inertia ixx="1.196488116876e-04" ixy="8.427600584236e-07" ixz="2.565565502250e-06" iyy="1.181280195017e-04" iyz="-7.680107397358e-06" izz="1.925246810747e-05"/>
+    </inertial>
+  </link>
+  <link name="arm_r_shoulder">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_r_shoulder__vis_bracket_grey.stl"/>
+      </geometry>
+      <material name="mat_bracket_grey"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/arm_r_shoulder__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.015958109 -0.000151948 -0.014209606" rpy="0 0 0"/>
+      <mass value="0.023752007"/>
+      <inertia ixx="2.046426790297e-06" ixy="2.235326208874e-08" ixz="5.699451179094e-07" iyy="4.158388583065e-06" iyz="-7.905308045907e-09" izz="3.223915147907e-06"/>
+    </inertial>
+  </link>
+  <link name="arm_r_upper">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_r_upper__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_r_upper__vis_shell_blue.stl"/>
+      </geometry>
+      <material name="mat_shell_blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/arm_r_upper__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.041269770 0.000489657 0.000662638" rpy="0 0 0"/>
+      <mass value="0.036488675"/>
+      <inertia ixx="4.610820055577e-06" ixy="1.083484853345e-06" ixz="2.973531827939e-07" iyy="1.450683356891e-05" iyz="1.574668533145e-08" izz="1.305532072606e-05"/>
+    </inertial>
+  </link>
+  <link name="arm_r_forearm">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_r_forearm__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_r_forearm__vis_palm_grey.stl"/>
+      </geometry>
+      <material name="mat_palm_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_r_forearm__vis_black.stl"/>
+      </geometry>
+      <material name="mat_black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/arm_r_forearm__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.017545505 0.001567462 0.000209087" rpy="0 0 0"/>
+      <mass value="0.010796046"/>
+      <inertia ixx="9.821804117682e-07" ixy="2.610263677732e-07" ixz="-5.072595620624e-08" iyy="1.933550401016e-06" iyz="-1.839455204034e-08" izz="2.127948028918e-06"/>
+    </inertial>
+  </link>
+  <link name="arm_l_shoulder">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_l_shoulder__vis_bracket_grey.stl"/>
+      </geometry>
+      <material name="mat_bracket_grey"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/arm_l_shoulder__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.015958109 -0.000151948 -0.014209606" rpy="0 0 0"/>
+      <mass value="0.023752007"/>
+      <inertia ixx="2.046426790297e-06" ixy="-2.235326208874e-08" ixz="-5.699451179094e-07" iyy="4.158388583065e-06" iyz="-7.905308045907e-09" izz="3.223915147907e-06"/>
+    </inertial>
+  </link>
+  <link name="arm_l_upper">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_l_upper__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_l_upper__vis_shell_blue.stl"/>
+      </geometry>
+      <material name="mat_shell_blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/arm_l_upper__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.041269770 0.000489657 0.000662638" rpy="0 0 0"/>
+      <mass value="0.036488675"/>
+      <inertia ixx="4.610820055577e-06" ixy="-1.083484853345e-06" ixz="-2.973531827939e-07" iyy="1.450683356891e-05" iyz="1.574668533145e-08" izz="1.305532072606e-05"/>
+    </inertial>
+  </link>
+  <link name="arm_l_forearm">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_l_forearm__vis_grey.stl"/>
+      </geometry>
+      <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_l_forearm__vis_palm_grey.stl"/>
+      </geometry>
+      <material name="mat_palm_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm_l_forearm__vis_black.stl"/>
+      </geometry>
+      <material name="mat_black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/arm_l_forearm__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.017545505 0.001567462 0.000209087" rpy="0 0 0"/>
+      <mass value="0.010796046"/>
+      <inertia ixx="9.821804117682e-07" ixy="-2.610263677732e-07" ixz="5.072595620624e-08" iyy="1.933550401016e-06" iyz="-1.839455204034e-08" izz="2.127948028918e-06"/>
+    </inertial>
+  </link>
+  <link name="eye_r_pod">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/eye_r_pod__vis_white.stl"/>
+      </geometry>
+      <material name="mat_white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/eye_r_pod__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.000036726 0.000024812 0.011415847" rpy="0 0 0"/>
+      <mass value="0.007552717"/>
+      <inertia ixx="6.735217181922e-07" ixy="-2.836131571384e-12" ixz="-2.572727912974e-09" iyy="6.737263478701e-07" iyz="-5.178674812219e-10" izz="9.078392767606e-07"/>
+    </inertial>
+  </link>
+  <link name="eye_l_pod">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/eye_l_pod__vis_white.stl"/>
+      </geometry>
+      <material name="mat_white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/eye_l_pod__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.000036726 0.000024812 0.011415847" rpy="0 0 0"/>
+      <mass value="0.007552717"/>
+      <inertia ixx="6.735217181922e-07" ixy="-2.836131571384e-12" ixz="-2.572727912974e-09" iyy="6.737263478701e-07" iyz="-5.178674812219e-10" izz="9.078392767606e-07"/>
+    </inertial>
+  </link>
+  <link name="eye_pod_camera">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/eye_pod_camera__vis_white.stl"/>
+      </geometry>
+      <material name="mat_white"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/eye_pod_camera__vis_chassis_grey.stl"/>
+      </geometry>
+      <material name="mat_chassis_grey"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/eye_pod_camera__col_0.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.000000943 0.001377921 0.010530962" rpy="0 0 0"/>
+      <mass value="0.010798933"/>
+      <inertia ixx="1.040566032908e-06" ixy="-9.066397281803e-12" ixz="3.145309396445e-11" iyy="1.115407686946e-06" iyz="-2.674847445929e-11" izz="1.397984415906e-06"/>
+    </inertial>
+  </link>
+  <link name="camera_optical_frame">
+    <inertial>
+      <origin xyz="0.000000000 0.000000000 0.000000000" rpy="0 0 0"/>
+      <mass value="0.001000000"/>
+      <inertia ixx="4.166666666667e-09" ixy="0.000000000000e+00" ixz="0.000000000000e+00" iyy="4.166666666667e-09" iyz="0.000000000000e+00" izz="4.166666666667e-09"/>
+    </inertial>
+  </link>
+  <joint name="leg_fr_yaw" type="revolute">
+    <parent link="base_link"/>
+    <child link="leg_fr_coxa"/>
+    <origin xyz="0.049165625 0.013173889 0.000000000" rpy="0.000000000 0.000000000 0.261799388"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit lower="-0.698132" upper="0.698132" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_fr_pitch" type="revolute">
+    <parent link="leg_fr_coxa"/>
+    <child link="leg_fr_femur"/>
+    <origin xyz="0.026000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="-0.785398" upper="0.959931" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_fr_knee" type="revolute">
+    <parent link="leg_fr_femur"/>
+    <child link="leg_fr_tibia"/>
+    <origin xyz="0.070000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="-0.767945" upper="0.767945" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_fl_yaw" type="revolute">
+    <parent link="base_link"/>
+    <child link="leg_fl_coxa"/>
+    <origin xyz="-0.049165625 0.013173889 0.000000000" rpy="0.000000000 0.000000000 2.879793266"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit lower="-0.698132" upper="0.698132" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_fl_pitch" type="revolute">
+    <parent link="leg_fl_coxa"/>
+    <child link="leg_fl_femur"/>
+    <origin xyz="0.026000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
+    <axis xyz="-0.000000 1.000000 0.000000"/>
+    <limit lower="-0.785398" upper="0.959931" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_fl_knee" type="revolute">
+    <parent link="leg_fl_femur"/>
+    <child link="leg_fl_tibia"/>
+    <origin xyz="0.070000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
+    <axis xyz="-0.000000 1.000000 0.000000"/>
+    <limit lower="-0.767945" upper="0.767945" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_rl_yaw" type="revolute">
+    <parent link="base_link"/>
+    <child link="leg_rl_coxa"/>
+    <origin xyz="-0.044080693 -0.025450000 0.000000000" rpy="0.000000000 0.000000000 -2.617993878"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit lower="-0.698132" upper="0.698132" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_rl_pitch" type="revolute">
+    <parent link="leg_rl_coxa"/>
+    <child link="leg_rl_femur"/>
+    <origin xyz="0.026000000 -0.000000000 0.000000000" rpy="0.000000000 0.000000000 -0.000000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="-0.785398" upper="0.959931" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_rl_knee" type="revolute">
+    <parent link="leg_rl_femur"/>
+    <child link="leg_rl_tibia"/>
+    <origin xyz="0.070000000 -0.000000000 0.000000000" rpy="0.000000000 0.000000000 -0.000000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="-0.767945" upper="0.767945" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_rr_yaw" type="revolute">
+    <parent link="base_link"/>
+    <child link="leg_rr_coxa"/>
+    <origin xyz="0.044080693 -0.025450000 0.000000000" rpy="0.000000000 0.000000000 -0.523598776"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit lower="-0.698132" upper="0.698132" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_rr_pitch" type="revolute">
+    <parent link="leg_rr_coxa"/>
+    <child link="leg_rr_femur"/>
+    <origin xyz="0.026000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
+    <axis xyz="-0.000000 1.000000 0.000000"/>
+    <limit lower="-0.785398" upper="0.959931" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="leg_rr_knee" type="revolute">
+    <parent link="leg_rr_femur"/>
+    <child link="leg_rr_tibia"/>
+    <origin xyz="0.070000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
+    <axis xyz="-0.000000 1.000000 0.000000"/>
+    <limit lower="-0.767945" upper="0.767945" effort="1.96" velocity="6.5"/>
+  </joint>
+  <joint name="arm_r_yaw" type="revolute">
+    <parent link="base_link"/>
+    <child link="arm_r_shoulder"/>
+    <origin xyz="0.031689429 0.048765991 0.025600000" rpy="0.000000000 0.000000000 0.872664626"/>
+    <axis xyz="0.000000 0.000000 -1.000000"/>
+    <limit lower="-0.261799" upper="0.261799" effort="0.22" velocity="13.0"/>
+  </joint>
+  <joint name="arm_r_pitch" type="revolute">
+    <parent link="arm_r_shoulder"/>
+    <child link="arm_r_upper"/>
+    <origin xyz="0.020000000 0.000000000 -0.016400000" rpy="0.000000000 0.000000000 -0.000000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="-0.785398" upper="1.483530" effort="0.22" velocity="13.0"/>
+  </joint>
+  <joint name="arm_r_elbow" type="revolute">
+    <parent link="arm_r_upper"/>
+    <child link="arm_r_forearm"/>
+    <origin xyz="0.055000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 -0.000000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.000000" upper="1.658063" effort="0.22" velocity="13.0"/>
+  </joint>
+  <joint name="arm_l_yaw" type="revolute">
+    <parent link="base_link"/>
+    <child link="arm_l_shoulder"/>
+    <origin xyz="-0.031689429 0.048765991 0.025600000" rpy="0.000000000 0.000000000 -0.872664626"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit lower="-0.261799" upper="0.261799" effort="0.22" velocity="13.0"/>
+  </joint>
+  <joint name="arm_l_pitch" type="revolute">
+    <parent link="arm_l_shoulder"/>
+    <child link="arm_l_upper"/>
+    <origin xyz="-0.020000000 0.000000000 -0.016400000" rpy="0.000000000 0.000000000 0.000000000"/>
+    <axis xyz="0.000000 -1.000000 0.000000"/>
+    <limit lower="-0.785398" upper="1.483530" effort="0.22" velocity="13.0"/>
+  </joint>
+  <joint name="arm_l_elbow" type="revolute">
+    <parent link="arm_l_upper"/>
+    <child link="arm_l_forearm"/>
+    <origin xyz="-0.055000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
+    <axis xyz="0.000000 -1.000000 0.000000"/>
+    <limit lower="0.000000" upper="1.658063" effort="0.22" velocity="13.0"/>
+  </joint>
+  <joint name="eye_r_roll" type="revolute">
+    <parent link="base_link"/>
+    <child link="eye_r_pod"/>
+    <origin xyz="-0.038594400 0.011000000 0.057252800" rpy="0.589580281 0.507447391 -2.199045152"/>
+    <axis xyz="0.000000 -0.000000 1.000000"/>
+    <limit lower="-1.396263" upper="1.396263" effort="0.03" velocity="8.0"/>
+  </joint>
+  <joint name="eye_l_roll" type="revolute">
+    <parent link="base_link"/>
+    <child link="eye_l_pod"/>
+    <origin xyz="0.038594400 0.011000000 0.057252800" rpy="0.589580281 -0.507447391 2.199045152"/>
+    <axis xyz="0.000000 -0.000000 1.000000"/>
+    <limit lower="-1.396263" upper="1.396263" effort="0.03" velocity="8.0"/>
+  </joint>
+  <joint name="eye_pod_camera_fixed" type="fixed">
+    <parent link="base_link"/>
+    <child link="eye_pod_camera"/>
+    <origin xyz="0.000000000 0.049594400 0.057252800" rpy="0.757674651 0.000000000 3.141592654"/>
+  </joint>
+  <joint name="camera_optical_fixed" type="fixed">
+    <parent link="eye_pod_camera"/>
+    <child link="camera_optical_frame"/>
+    <origin xyz="0.000000000 -0.010930747 0.018570718" rpy="0.663225116 0.000000000 0.000000000"/>
+  </joint>
+</robot>

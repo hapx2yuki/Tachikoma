@@ -1,0 +1,19 @@
+# ---- 環境・ビルド産物 (すべて再生成可能) ----
+.venv/
+firmware/.pio/
+__pycache__/
+*.pyc
+.DS_Store
+.claude/
+
+# ---- URDF スナップショット (hardware/urdf/ が最新。tools/export_urdf.py で再生成可能) ----
+tachikoma_urdf_*/
+tachikoma_urdf_*.zip
+
+# ---- ローカル秘密 (APIキー等は環境変数/.env 運用 — コミット禁止) ----
+.env
+.env.*
+credentials.json
+token.json
+*.pem
+*.key
