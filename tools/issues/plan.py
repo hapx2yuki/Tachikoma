@@ -454,10 +454,12 @@ issue("P-08", "P-08 [運営] イシュー運用の立ち上げ (CONTRIBUTING / �
 `docs/build_plan.md`, `tools/issues/`) は 2026-09-03 のセッションでローカル作成済み。
 
 ## オーナーがやること
-- [ ] 上記ファイルを確認して `main` へコミット・push (テンプレートは push 後に有効になる)
-- [ ] `gh auth refresh -h github.com -s project,read:project` でスコープ追加 → `tools/issues/setup_project.sh` を実行して
-      Projects v2 ボード (Board / Table / Roadmap ビュー) を作り、全イシューを追加
-- [ ] Project の Visibility を Public にする (アカウント無しの人も URL で閲覧可)
+- [x] 上記ファイルを `main` へコミット・push 済み (65fba4e, 2026-09-03)
+- [x] `tools/issues/setup_project.sh` 実行済み → [Project #2「Tachikoma 物理製作」](https://github.com/users/hapx2yuki/projects/2) に全 72 件を投入
+      (Status: Todo/Ready/In Progress/Blocked/Done、レーン = エピック、Board + Table ビュー)
+- [x] Project の Visibility は Public (アカウント無しの人も URL で閲覧可)
+- [ ] Board ビューの Swimlane を「レーン」に設定 (UI: ビューの ⋯ → Slice/Group 設定。API では設定不可)
+- [ ] Workflows で「Item closed → Done」「Item reopened → Todo」が ON か確認
 - [ ] 協力者を Collaborator に招待 (Settings → Collaborators)。作業者は GitHub アカウント必須 (Assignee になるため)
 - [ ] 最初の「Ready」なイシュー (依存なし: {{{{P-01}}}} {{{{P-02}}}} {{{{P-03}}}} {{{{P-06}}}} {{{{P-07}}}} {{{{EL-01}}}} {{{{EL-02}}}} {{{{EL-03}}}} {{{{EL-05}}}} {{{{EL-06}}}} {{{{PR-01}}}} {{{{PR-02}}}} {{{{PR-03}}}}) を周知。
       Cabin 組立 {{{{S-05}}}} は小物印刷 (PR-01〜03) が終わり次第ボランティア向けに解放

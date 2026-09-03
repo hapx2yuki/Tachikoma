@@ -13,7 +13,7 @@
 | **何の流れ** (作業ストリーム) | エピック `E1 準備` / `E2 印刷キュー` / `E3 電装` / `E4 脚・歩行` / `E5 腕` / `E6 頭部` / `E7 意匠シェル` / `E8 統合` — 子イシューを **サブイシュー** で束ねる | エピックを開くと進捗バー |
 | **順番** (直列/並列) | **blocked by / blocking** (イシューの Relationships) | サイドバー。`is:open -is:blocked` 検索で「今できること」 |
 | **誰が・何が要るか** | ラベル `area/*` `skill/*` `res/プリンタ` `res/本体` `並行作業OK` `prio/P0-2` `type/ゲート` `type/要判断` | Labels |
-| **見える化** | Projects v2 ボード (Status: Todo / Ready / In progress / Blocked / Done) — Public 設定でアカウント無しでも閲覧可 | Projects |
+| **見える化** | [Projects v2 ボード「Tachikoma 物理製作」](https://github.com/users/hapx2yuki/projects/2) (Status: Todo / Ready / In Progress / Blocked / Done、レーン = エピック) — Public なのでアカウント無しでも閲覧可 | Projects |
 
 キー体系 (タイトル先頭): `P`=準備 / `PR`=印刷 / `EL`=電装 / `L`=脚・歩行 / `A`=腕 / `H`=頭部 / `S`=意匠シェル / `I`=統合。
 口頭やチャットでは「L-02 どう?」のようにキーで呼ぶ。
@@ -21,7 +21,7 @@
 ## 2. 作業を取る (5 ステップ)
 
 1. **探す**: [Issues](https://github.com/hapx2yuki/Tachikoma/issues) を `is:open -is:blocked no:assignee` で絞る
-   (または Project ボードの **Ready** 列)。自分の得意に合わせて `label:skill/はんだ` `label:並行作業OK` `label:"good first issue"` で更に絞る。
+   (または [Project ボード](https://github.com/users/hapx2yuki/projects/2) の **Ready** 列)。自分の得意に合わせて `label:skill/はんだ` `label:並行作業OK` `label:"good first issue"` で更に絞る。
    - `res/プリンタ` の付いたものは **同時に 1 件だけ** (X2D は 1 台)。順番は E2 印刷キューのエピック本文
    - `res/本体` の付いたものは本体を占有する。同時に取るときは先に着手している人と調整
 2. **宣言する**: イシューにコメント「担当します (いつ頃)」→ 自分を **Assignee** に。宣言なしで着手しない (二重作業防止)。

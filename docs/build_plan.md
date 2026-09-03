@@ -2,7 +2,8 @@
 
 作成 2026-09-03。計画の正は [`tools/issues/plan.py`](../tools/issues/plan.py)、
 GitHub Issues への同期は [`tools/issues/sync_github_issues.py`](../tools/issues/sync_github_issues.py)、
-作業の取り方は [`CONTRIBUTING.md`](../CONTRIBUTING.md)。
+作業の取り方は [`CONTRIBUTING.md`](../CONTRIBUTING.md)、
+ボードは [GitHub Project「Tachikoma 物理製作」](https://github.com/users/hapx2yuki/projects/2) (Public)。
 **部品は調達済み、印刷は一部完了** (2026-08-31 スナップショット) という現況を起点にしている。
 
 ## 1. 構造 (2 軸 + 依存)
