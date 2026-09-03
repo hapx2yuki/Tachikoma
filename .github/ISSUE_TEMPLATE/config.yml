@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 作業の取り方・運用ルール (CONTRIBUTING.md)
+    url: https://github.com/hapx2yuki/Tachikoma/blob/main/CONTRIBUTING.md
+    about: イシューの選び方、宣言、証拠の残し方、Close の条件
+  - name: 全体図 (docs/build_plan.md)
+    url: https://github.com/hapx2yuki/Tachikoma/blob/main/docs/build_plan.md
+    about: 依存グラフ・マイルストーン・今すぐ着手できるイシュー

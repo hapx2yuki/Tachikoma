@@ -1,0 +1,49 @@
+name: 組立・配線ステップ
+description: サブアセンブリの組立、配線、仕上げなど 1 人が 1 回で終えられる物理作業
+title: "[組立] "
+labels: ["type/タスク", "area/組立"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        手順の正は `docs/assembly.md` (組立) / `docs/wiring.md` (配線)。節番号で参照してください。
+        本体 (シャーシ組立品) を占有する作業は `res/本体` ラベルを、手元の部品だけで進められる作業は `並行作業OK` を付けてください。
+  - type: input
+    id: target
+    attributes:
+      label: 対象サブアセンブリ
+      placeholder: "脚 FR (ミラー版 _m)"
+    validations:
+      required: true
+  - type: input
+    id: ref
+    attributes:
+      label: 参照ドキュメント
+      placeholder: "docs/assembly.md §1-2〜6"
+    validations:
+      required: true
+  - type: input
+    id: blocked_by
+    attributes:
+      label: 前提 (blocked by)
+      placeholder: "#20 (tibia 印刷), #31 (サーボ中立化)"
+  - type: textarea
+    id: steps
+    attributes:
+      label: 手順 (要点だけ。詳細は docs へ)
+  - type: textarea
+    id: dod
+    attributes:
+      label: 完了条件 (Definition of Done)
+      value: |
+        - [ ] ねじ締結にガタ・脱落なし、ホーンの共締め済み
+        - [ ] 可動域を手で動かして干渉なし (設計値: docs/assembly.md「関節可動域」)
+        - [ ] 使ったサーボの個体番号を記録
+        - [ ] 写真 (全体 + 関節クローズアップ) をコメント
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: 注意・落とし穴
+      placeholder: "FR/RL はミラー脚。取り違えると 45° ペアの股ピッチサーボが干渉して組めない"

@@ -1,0 +1,30 @@
+name: 要判断
+description: オーナー (@hapx2yuki) の決定が必要な事項 (設計方針・意匠・購入・再印刷の可否)
+title: "[要判断] "
+labels: ["type/要判断"]
+assignees: ["hapx2yuki"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: 決めてほしいこと
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: 選択肢と根拠 (実測値・コスト・写真)
+      value: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: blocks
+    attributes:
+      label: この判断を待っているイシュー
+      placeholder: "#40, #41"
+  - type: markdown
+    attributes:
+      value: |
+        決定はこのイシューのコメントに **理由付きで** 残し、その後 Close してください (チャットで決めた場合も転記)。

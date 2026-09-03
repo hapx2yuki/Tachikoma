@@ -1,0 +1,47 @@
+name: 不具合・現物合わせ NG
+description: 印刷不良、はめあい NG、設計と現物の齟齬、故障、電気的トラブル
+title: "[不具合] "
+labels: ["type/不具合"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        「設計どおりに嵌まらない / 動かない」は設計側の修正対象になり得ます。**現物を削る前に**まず報告してください
+        (見える意匠パーツの無断改変は禁止。内部の加工は可)。
+  - type: input
+    id: where
+    attributes:
+      label: どのパーツ / どの工程で
+      placeholder: "tibia_link のホーンポケットに DS3218 付属ホーンが入らない (L-01)"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 何が起きたか (実測値付き)
+      placeholder: "ポケット内径 実測 φ21.2 に対しホーンハブ φ21.5。0.3mm 干渉"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 証拠 (写真・ノギス・ログ)
+      description: 画像はドラッグ&ドロップで添付できます
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 影響
+      options:
+        - 現物合わせで吸収できる (ヤスリ・接着代)
+        - 該当パーツの再印刷が必要
+        - config.py / 設計の修正が必要 (再生成 → 再検証 → 再印刷)
+        - 部品の交換・追加購入が必要
+    validations:
+      required: true
+  - type: input
+    id: related
+    attributes:
+      label: 関連イシュー
+      placeholder: "#25"

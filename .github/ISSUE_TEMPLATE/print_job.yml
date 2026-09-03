@@ -1,0 +1,46 @@
+name: 印刷ジョブ
+description: Bambu X2D で 1 プレート (または単体パーツ) を印刷するタスク
+title: "[印刷] "
+labels: ["type/タスク", "area/印刷", "res/プリンタ", "skill/プリンタ操作"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        プレート構成の正は `docs/print_manifest.md`「単色プレート 3mf 一覧」。3mf は `hardware/stl/*.3mf`。
+        キット STL (`model/`) は 150% 必須、`hardware/stl/*.stl` は 150% 済み。
+  - type: input
+    id: plate
+    attributes:
+      label: 対象 (3mf / STL とオブジェクト)
+      placeholder: "hardware/stl/PETG_Walk_3_Tibia.3mf (tibia_link ×2 + _m ×2)"
+    validations:
+      required: true
+  - type: input
+    id: material
+    attributes:
+      label: 材料 / スロット / 設定
+      placeholder: "PETG A4, 壁4 / 40%, 0.2mm, 立てて印刷 (3mf 焼き込み済み)"
+    validations:
+      required: true
+  - type: input
+    id: blocked_by
+    attributes:
+      label: 前提 (blocked by)
+      description: 作成後にサイドバーの Relationships → "Mark as blocked by" でも設定できます
+      placeholder: "#12 (サーボ実測 → config 確定)"
+  - type: textarea
+    id: dod
+    attributes:
+      label: 完了条件 (Definition of Done)
+      value: |
+        - [ ] 全オブジェクトが欠けなく印刷され、反り・層剥離・糸引きが許容範囲
+        - [ ] 嵌合部 (ポケット・穴・プラグ) のバリ取り済み
+        - [ ] 標準 / ミラー (`_m`, `_L`) をマーキング済み
+        - [ ] ベッド上の写真をコメント、パーツを棚卸し箱へ
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: 備考 (除外オブジェクト・フィラメント差替・注意)
+      placeholder: "Mouth 2 点は音声実測まで Studio 上で削除 / 黒は右 Ext へ割当変更"
