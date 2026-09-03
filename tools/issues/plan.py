@@ -458,7 +458,7 @@ issue("P-08", "P-08 [運営] イシュー運用の立ち上げ (CONTRIBUTING / �
 - [x] `tools/issues/setup_project.sh` 実行済み → [Project #2「Tachikoma 物理製作」](https://github.com/users/hapx2yuki/projects/2) に全 72 件を投入
       (Status: Todo/Ready/In Progress/Blocked/Done、レーン = エピック、Board + Table ビュー)
 - [x] Project の Visibility は Public (アカウント無しの人も URL で閲覧可)
-- [ ] Board ビューの Swimlane を「レーン」に設定 (UI: ビューの ⋯ → Slice/Group 設定。API では設定不可)
+- [x] Board ビューの Swimlane を「レーン」に設定済み (2026-09-03。UI: View → Swimlanes → レーン → Save view → 確認ダイアログの Save)
 - [ ] Workflows で「Item closed → Done」「Item reopened → Todo」が ON か確認
 - [ ] 協力者を Collaborator に招待 (Settings → Collaborators)。作業者は GitHub アカウント必須 (Assignee になるため)
 - [ ] 最初の「Ready」なイシュー (依存なし: {{{{P-01}}}} {{{{P-02}}}} {{{{P-03}}}} {{{{P-06}}}} {{{{P-07}}}} {{{{EL-01}}}} {{{{EL-02}}}} {{{{EL-03}}}} {{{{EL-05}}}} {{{{EL-06}}}} {{{{PR-01}}}} {{{{PR-02}}}} {{{{PR-03}}}}) を周知。
