@@ -180,6 +180,9 @@ class Gait {
  private:
   float phase_ = 0;
   bool holding_ = true;  // 起動直後は静止
+ public:
+  bool moving() const { return !holding_; }  // main の walking 判定はこれを使う (F-04)
+ private:
   JointAngles lastOk_[4];          // 直近の IK 成功角 (二重失敗時の保持)
   bool lastOkValid_[4] = {false, false, false, false};
 };

@@ -12,7 +12,7 @@ class Servos {
   void begin() {
     for (int b = 0; b < 2; b++) {
       pwm_[b] = Adafruit_PWMServoDriver(PCA_ADDR[b]);
-      pwm_[b].begin();
+      i2cOk_[b] = pwm_[b].begin();   // PCA9685 が I2C に応答したか (F-05)
       pwm_[b].setOscillatorFrequency(25000000);
       pwm_[b].setPWMFreq(SERVO_FREQ);
     }
@@ -76,6 +76,7 @@ class Servos {
     started_ = N_CH;  // softStart 再開防止 (再開は enableAll)
   }
   void enableAll() { started_ = 0; }
+  bool i2cOk(int b) const { return (b == 0 || b == 1) ? i2cOk_[b] : false; }
 
   int trim(int ch) const { return (ch >= 0 && ch < N_CH) ? trim_us_[ch] : 0; }
 
@@ -105,6 +106,7 @@ class Servos {
   bool enabled_[N_CH] = {false};
   bool used_[N_CH] = {false};
   int started_ = 0;
+  bool i2cOk_[2] = {false, false};
   uint32_t lastStart_ = 0;
   volatile bool dirty_ = false;
   volatile uint32_t lastTrimMs_ = 0;

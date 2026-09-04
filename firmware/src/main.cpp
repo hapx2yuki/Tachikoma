@@ -9,6 +9,7 @@
 #include <Preferences.h>
 #include <WiFi.h>
 #include <Wire.h>
+#include <esp_task_wdt.h>
 
 #include "arms.h"
 #include "audio.h"
@@ -49,6 +50,7 @@ void onWsEvent(AsyncWebSocket*, AsyncWebSocketClient* client, AwsEventType type,
   AwsFrameInfo* info = (AwsFrameInfo*)arg;
   if (!info->final || info->index != 0 || info->len != len ||
       info->opcode != WS_TEXT) return;
+  if (len > 512) return;  // UI の指令は数十バイト。異常フレームは捨てる (F-09)
   JsonDocument doc;
   if (deserializeJson(doc, data, len)) return;
   cmd_vx = constrain((float)(doc["vx"] | 0.0f), -1.0f, 1.0f);
@@ -59,9 +61,13 @@ void onWsEvent(AsyncWebSocket*, AsyncWebSocketClient* client, AwsEventType type,
   cmd_led = (doc["led"] | 1) != 0;
   cmd_ptt = (doc["ptt"] | 0) != 0;  // PTT ボタン押下中 (loop 側で edge 検出)
   // 腕 (存在するキーのみ反映。UI はスライダ操作時のみ送ってくる)
-  if (!doc["ay"].isNull()) arms.target[0].yaw = doc["ay"].as<float>();
-  if (!doc["ap"].isNull()) arms.target[0].pitch = doc["ap"].as<float>();
-  if (!doc["ae"].isNull()) arms.target[0].elbow = doc["ae"].as<float>();
+  {  // 3 フィールドをまとめて 1 回で代入 (loop 側の読み出しと新旧混在させない, F-08)
+    ArmTarget nt = arms.target[0];
+    if (!doc["ay"].isNull()) nt.yaw = doc["ay"].as<float>();
+    if (!doc["ap"].isNull()) nt.pitch = doc["ap"].as<float>();
+    if (!doc["ae"].isNull()) nt.elbow = doc["ae"].as<float>();
+    arms.target[0] = nt;
+  }
   if (!doc["amir"].isNull()) arms.mirror = doc["amir"].as<int>() != 0;
   lastCmdMs = millis();
 }
@@ -75,6 +81,7 @@ void onAudioWsEvent(AsyncWebSocket* s, AsyncWebSocketClient* c, AwsEventType typ
 // あれば iPhone テザリングへ join を試みる (資格情報はソースに置かない)
 void setupWiFi() {
   WiFi.mode(WIFI_AP_STA);
+  WiFi.setAutoReconnect(true);  // テザリング切断後の STA 再接続 (F-10)
   WiFi.softAP(AP_SSID, AP_PASS);
 
   Preferences p;
@@ -184,6 +191,12 @@ void setup() {
   setupWeb();
   audio.begin(&wsAudio);
   servos.enableAll();
+  if (!servos.i2cOk(0) || !servos.i2cOk(1))
+    Serial.printf("!! PCA9685 not responding: board0=%d board1=%d (check wiring / A0 jumper)\n",
+                  servos.i2cOk(0), servos.i2cOk(1));
+  // タスク WDT: loop が 3 秒止まったらリブート (最後のパルスで固まったままを防ぐ, F-06)
+  esp_task_wdt_init(3, true);
+  esp_task_wdt_add(NULL);
   peri.queueTrack(1);  // 起動音 (SD にあれば, loop 側で再生)
   Serial.println("Tachikoma ready: http://192.168.4.1/ / http://tachikoma.local/");
 }
@@ -191,10 +204,13 @@ void setup() {
 void loop() {
   static uint32_t lastUs = micros();
   static uint32_t lastTelem = 0;
+  esp_task_wdt_reset();
   const uint32_t nowUs = micros();
-  const float dt = (nowUs - lastUs) * 1e-6f;
+  float dt = (nowUs - lastUs) * 1e-6f;
   if (dt < 0.02f) return;  // 50Hz 制御
   lastUs = nowUs;
+  // 1 周期が伸びても (NVS 書込・I2C 詰まり) 位相を一気に進めない (F-03)
+  if (dt > 0.05f) dt = 0.05f;
 
   servos.softStart();
   servos.persistTrims();
@@ -212,6 +228,8 @@ void loop() {
 
 #ifdef CALIBRATION_MODE
   servos.allUs(cal_us);
+  peri.setLedMode(LED_IDLE);
+  peri.tick(false);  // 低電圧監視/テレメトリは校正中も生かす (F-02)
 #else
   const bool timeout = millis() - lastCmdMs > 1500;  // 通信断で停止
   const float vx = timeout ? 0 : cmd_vx;
@@ -223,7 +241,8 @@ void loop() {
 
   // 起動/脱力の状態遷移
   static bool wasStanding = true;
-  if (standAllowed && !wasStanding) servos.enableAll();   // 再起動: ソフトスタート
+  static bool legCurInit = false;   // 脚スルー段の初期化フラグ (F-01)
+  if (standAllowed && !wasStanding) { servos.enableAll(); legCurInit = false; }  // 再起動: ソフトスタート
   if (!standAllowed && wasStanding) servos.disableAll();  // 脱力: パルス停止
   wasStanding = standAllowed;
 
@@ -235,16 +254,27 @@ void loop() {
   if (standAllowed && servos.ready()) {
     gait.bodyH = cmd_h;
     gait.update(dt, vx, vy, wz, legs);
+    // 出力スルー段 (arms.h の cur_ と同じ 2 段構え)。無信号→有信号の初回は
+    // 「現在角は不明」なので中立 (0°) から LEG_SLEW_DPS で目標へ寄せる (F-01/F-03)
+    static JointAngles legCur[4];
+    if (!legCurInit) {
+      for (int leg = 0; leg < 4; leg++) legCur[leg] = JointAngles{0, 0, 0};
+      legCurInit = true;
+    }
+    const float step = LEG_SLEW_DPS * dt;
     for (int leg = 0; leg < 4; leg++) {
-      servos.writeJoint(leg, 0, legs[leg].ang.yaw);  // ヨーは取付方位基準
-      servos.writeJoint(leg, 1, legs[leg].ang.pitch);
-      servos.writeJoint(leg, 2, legs[leg].ang.knee);
+      legCur[leg].yaw   += constrain(legs[leg].ang.yaw   - legCur[leg].yaw,   -step, step);
+      legCur[leg].pitch += constrain(legs[leg].ang.pitch - legCur[leg].pitch, -step, step);
+      legCur[leg].knee  += constrain(legs[leg].ang.knee  - legCur[leg].knee,  -step, step);
+      servos.writeJoint(leg, 0, legCur[leg].yaw);  // ヨーは取付方位基準
+      servos.writeJoint(leg, 1, legCur[leg].pitch);
+      servos.writeJoint(leg, 2, legCur[leg].knee);
     }
     // CH_HEAD: 旋回操作に連動して駆動 (物理対象は未確定 — docs/wiring.md「頭部ヨー (CH_HEAD) の物理対象」参照。頭部シェル自体は完全固定)
     servos.writeDeg(CH_HEAD, wz * 25.0f);
   }
 
-  const bool walking = fabsf(vx) + fabsf(vy) + fabsf(wz) > 0.05f;
+  const bool walking = standAllowed && servos.ready() && gait.moving();  // gait と同じ判定 (F-04)
   if (standAllowed && servos.ready()) {
     // 前脚(FR/FL)×腕 連成クランプ用 (arms.h ARM_LEG_YAW_GATE_DEG 参照)。
     // 同じ standAllowed ブロックで直前に更新された legs[FR]/legs[FL] を使う
@@ -262,6 +292,7 @@ void loop() {
     doc["vbat"] = peri.vbat();
     doc["low"] = peri.lowBattery();
     doc["cut"] = peri.cutout();
+    doc["i2c"] = servos.i2cOk(0) && servos.i2cOk(1);  // PCA9685 ×2 応答 (F-05)
     String out;
     serializeJson(doc, out);
     ws.textAll(out);

@@ -154,6 +154,10 @@ constexpr float ARM_PITCH_MAX = 85.0f;    // 下げ限界 (垂れ下げ)
 constexpr float ARM_ELBOW_MIN = 0.0f;     // 伸ばし
 constexpr float ARM_ELBOW_MAX = 95.0f;    // 曲げ
 constexpr float ARM_SLEW_DPS = 150.0f;    // 腕のスルーレート (deg/s)
+// 脚の出力スルーレート (deg/s)。歩容の関節速度は最大 ~100 dps (遊脚 0.4s で膝 ~30°)
+// なので通常歩行では効かず、(a) 通電/再有効化直後の「無信号→立位」の直撃と
+// (b) dt が伸びた周期での位相飛びだけを抑える (2026-09-04 レビュー F-01/F-03)
+constexpr float LEG_SLEW_DPS = 240.0f;
 // 幾何 (hardware/src/config.py と一致): 上腕 55, 前腕+手 = 肘→指先 47.70
 // (2026-07-29 固定爪化: 可動グリッパを廃止しキット原型の爪 (Arm_Claw_Grey
 // 爪ハブ+Finger×3+FingerTip×3) を直結。前腕16 (手首面まで) + claw_mount
