@@ -33,6 +33,9 @@ AsyncWebSocket wsAudio("/audio");  // 音声系 (ブリッジがクライアン�
 volatile float cmd_vx = 0, cmd_vy = 0, cmd_wz = 0;
 volatile float cmd_h = BODY_H_DEF;
 volatile bool cmd_stand = true, cmd_led = true, cmd_ptt = false;
+#ifdef CALIBRATION_MODE
+volatile int cal_us = 1500;   // /cal?us= で 500..2500 (全 ch 一括)。既定は中立
+#endif
 uint32_t lastCmdMs = 0;
 
 // STA (iPhone テザリング) 資格情報は NVS 保存 (setupWiFi() と /wifi POST
@@ -113,6 +116,19 @@ void setupWeb() {
     else if (p == "wave") arms.startWave();
     r->send(200, "text/plain", "ok");
   });
+#ifdef CALIBRATION_MODE
+  // 可動端確認: /cal?us=500 / 2500 / 1500。180° 品なら 1500→500 で -90°、
+  // 1500→2500 で +90° 振れる (270° 品は ±135°)。応答は現在値
+  server.on("/cal", HTTP_GET, [](AsyncWebServerRequest* r) {
+    if (r->hasParam("us")) {
+      int us = r->getParam("us")->value().toInt();
+      if (us < US_MIN) us = US_MIN;
+      if (us > US_MAX) us = US_MAX;
+      cal_us = us;
+    }
+    r->send(200, "text/plain", String(cal_us));
+  });
+#endif
   server.on("/trim", HTTP_GET, [](AsyncWebServerRequest* r) {
     if (r->hasParam("ch") && r->hasParam("us")) {
       servos.setTrim(r->getParam("ch")->value().toInt(),
@@ -195,7 +211,7 @@ void loop() {
   }
 
 #ifdef CALIBRATION_MODE
-  servos.allNeutral();
+  servos.allUs(cal_us);
 #else
   const bool timeout = millis() - lastCmdMs > 1500;  // 通信断で停止
   const float vx = timeout ? 0 : cmd_vx;

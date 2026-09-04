@@ -56,10 +56,18 @@ class Servos {
     writeDeg(PCA_CH[leg][joint], deg * JOINT_SIGN[leg][joint]);
   }
 
-  void allNeutral() {
+  void allNeutral() { allUs(1500); }
+
+  // CALIBRATION_MODE 用: 全 ch に同一パルス幅 (トリム込み, US_MIN..US_MAX にクランプ)。
+  // 500/2500 を出してホーンの振れ角を分度器で確認し、180° 品か 270° 品かを
+  // 組付け前に見分ける (assembly.md §1-1, 2026-09-04 レビュー E-06)
+  void allUs(int us) {
     for (int ch = 0; ch < N_CH; ch++)
-      if (enabled_[ch])
-        pwm_[ch / 16].writeMicroseconds(ch % 16, 1500 + trim_us_[ch]);
+      if (enabled_[ch]) {
+        int v = us + trim_us_[ch];
+        v = v < US_MIN ? US_MIN : (v > US_MAX ? US_MAX : v);
+        pwm_[ch / 16].writeMicroseconds(ch % 16, v);
+      }
   }
 
   void disableAll() {
