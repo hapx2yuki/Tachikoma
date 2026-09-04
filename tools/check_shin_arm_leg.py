@@ -454,9 +454,10 @@ def main():
     duty_lo, duty_hi = min(duty_fracs) * 100, max(duty_fracs) * 100
     cycle_t = float(re.search(r"CYCLE_T\s*=\s*([\d.]+)f", fw).group(1))
     print(f"  歩容周期 CYCLE_T={cycle_t}s のうち約"
-          f" {duty_lo:.0f}-{duty_hi:.0f}% (速度に依らずほぼ一定) でクランプが"
-          f" 発火する — 「前方へ大きく振れる瞬間だけの一瞬」ではなく通常歩行に"
-          f" 組み込まれた常態的な挙動である。docs/assembly.md §3/§4 参照。")
+          f" {duty_lo:.0f}-{duty_hi:.0f}% (低速→最大速度) でクランプが発火する。"
+          f" 2026-09-04 の重心対応スタンス (STANCE_OFF_Y -30) で FR の前方ヨー使用量が"
+          f" 減り、旧 42-44% (速度非依存・常態) から速度依存の低頻度へ変わった。"
+          f" docs/assembly.md §3/§4 参照。")
     # regression 監視: 速度依存性が急変したり (=歩容パラメータの変更で
     # onset挙動が変わった)、比率が極端に振れたりしていないかだけを緩く見る
     # (「ゼロにすべき」種類のチェックではない — 発火自体は安全機構として
@@ -467,9 +468,11 @@ def main():
     # 12mmから実質1mm相当まで縮小したため、発火比率は hub_y=0時代の
     # 約70-74%から旧hub_y=12時代相当の約42-44%まで低下した (実測 42.5-
     # 44.2%) — レンジを追従して更新
-    ok_duty = 35.0 < duty_lo and duty_hi < 55.0
+    # 2026-09-04: 重心対応の後方スタンス (STANCE_OFF_Y -30 / 後脚 SWAY 40) で実測
+    # 0.0-12.7% (vx 0.1→1.0 で単調増加)。レンジを「最大速度で 25% 未満」に追従
+    ok_duty = duty_hi < 25.0
     overall_ok &= ok_duty
-    print(f"  ({'OK' if ok_duty else 'NG'}, 35-55%の想定レンジ内かを監視 — "
+    print(f"  ({'OK' if ok_duty else 'NG'}, 最大速度で 25% 未満の想定レンジ内かを監視 — "
           f"レンジ外なら docs/assembly.md の数値記述も要更新)")
 
     def shin_world_leg(leg_name, yaw_d, pitch_d, knee_d):

@@ -21,7 +21,9 @@ constexpr float FEMUR_LEN = 70.0f;   // 股ピッチ軸→膝軸 (STD サーボ�
 // TIBIA_LEN_GAIT と一致させること。tools/sim_gait.py が regex 突合で
 // 検査する)。ik.h はこの定数を物理形状目的では使っていないため、値を
 // 実効値にしても他の意味は壊れない。
-constexpr float TIBIA_LEN = 153.6f;  // 膝軸→足先接地点 (実効値, IK専用)
+constexpr float TIBIA_LEN = 155.98f;  // 膝軸→足先接地点 (実効値, IK専用)。2026-09-04 153.6→155.98
+                                      // (重心対応スタンスで最悪位相の脛傾きが増えた分の再校正,
+                                      // config.py FOOT_GROUND_OFFSET 20.98)
 constexpr float HIP_R = 50.9f;       // ヨー軸の配置半径 (円形ハブ v3, 放射配置)
 
 // 脚インデックスと取付方位 (脚が伸びる向き, ボディ座標 +X右 +Y前)
@@ -85,7 +87,9 @@ constexpr int YAW_IN_SIGN[4] = {-1, +1, -1, +1};
 // v3: ポッド (Cabin) が後方の脚と同じ高さに接続されるため、後脚の
 // ポッド側 (後方中央向き) ヨーを別途制限する。歩容の使用量は ~15.4°、
 // check_leg_assembly でこの限界値 × IK 到達姿勢の実メッシュ干渉 0 を検証
-constexpr float LIM_YAW_POD = 22.0f;
+constexpr float LIM_YAW_POD = 30.0f;  // 2026-09-04: 22→30。実メッシュ掃引 (IK 到達極値姿勢) で
+                                       // ポッド/バッテリー実体との接触は 34° から (32° まで 0.000cm³)。
+                                       // 重心オフセット吸収の後方スタンスに必要 (config.py CG_XY 参照)
 constexpr int YAW_POD_SIGN[4] = {0, 0, +1, -1};  // RL:+ / RR:- がポッド向き
 constexpr float LIM_PITCH_UP = -45.0f, LIM_PITCH_DN = 55.0f;
 constexpr float LIM_KNEE = 44.0f;  // 機構限界 45° の手前で止める
@@ -98,13 +102,19 @@ constexpr int JOINT_SIGN[4][3] = {
 
 // ---------------- 歩容デフォルト
 constexpr float BODY_H_DEF = 115.0f;  // 股ピッチ軸から接地面までの高さ
-constexpr float BODY_H_MIN = 105.0f, BODY_H_MAX = 130.0f;
-// MIN の根拠 (ハブ v2 更新): STANCE_R=129 では膝リミットに ~30mm の余裕が
-// あるが、検証済み範囲 (歩容スイープ/安定/干渉は 105-130 で実施) を保守的に
-// 維持する。広げる場合は 5 点検証の BODY_H_RANGE を先に更新すること
+constexpr float BODY_H_MIN = 110.0f, BODY_H_MAX = 130.0f;
+// MIN の根拠: 2026-09-04 に 105→110。中立足先を重心側へ 30mm 寄せた (STANCE_OFF_Y)
+// 結果、体高 105 では前脚の遊脚持ち上げ時に股ピッチが LIM_PITCH_UP (-45°) を
+// 0.3° 超えて IK 失敗する姿勢が出るため (sim_gait.py [2] 全域スイープで 31/41600)。
+// 110 以上では失敗 0。広げる場合は sim_gait の BODY_H_RANGE を先に更新すること
 constexpr float STANCE_R = 129.0f;    // 中立時のヨー軸→足先 水平距離。ハブ v2 で
                                       // 股が内寄せされた分を拡大し足先位置=旧設計
                                       // 相当を維持 (旧 r92.2+88 ≈ 新 r50.9+129)
+// 中立足先パターン全体のボディ座標オフセット (config.py STANCE_OFF_XY と一致)。
+// 全機体重心が Cabin のため y=-39mm (config.py CG_XY) にあり、支持多角形の中心を
+// 重心へ寄せるために足先を後方へ 30mm ずらす (2026-09-04 S-01 対応。sim_gait.py
+// [4] 重心基準マージン: 旧 -23.7mm → +10.9mm)
+constexpr float STANCE_OFF_X = 0.0f, STANCE_OFF_Y = -30.0f;
 constexpr float STEP_H = 18.0f;       // 遊脚の持ち上げ高さ
 constexpr float CYCLE_T = 1.6f;       // 歩容 1 周期 (s)
 constexpr float MAX_STEP = 30.0f;     // 最大歩幅 (片振幅)
@@ -117,18 +127,20 @@ constexpr float DUTY = 0.75f;         // 接地時間率
 // 重心シフト: 遊脚と反対側へボディを寄せ、支持三角形マージンを確保する。
 // シフト窓は遊脚区間より SWAY_LEAD (位相) だけ前後に広げ、離地の瞬間に
 // 既にシフトが乗っている状態を作る (静的クロールの定石)
-constexpr float SWAY_MM = 34.0f;   // v3: 前脚遊脚時の必要シフトが増えたため 30→34
+// 脚ごとの振幅 {FR, FL, RL, RR}: 後脚遊脚時は重心が後寄りのため支持三角形の
+// 後辺に近く、前脚より大きなシフトが要る (2026-09-04: 後脚 34→40, sim_gait [4])
+constexpr float SWAY_MM[4] = {34.0f, 34.0f, 40.0f, 40.0f};
 constexpr float SWAY_LEAD = 0.11f; // v3: 離地瞬間のシフト率を上げる (0.08→0.11 で
                                    // 窓の sin 立上りが 58%→68%。sim_gait スキャン)
 // ワークスペース射影 (gait.h): 膝リミット 44° に対応する股ピッチ軸→足先の
 // 最大距離。v3 では遊脚の反対側 66° 隣の脚が sway で外側へ押されるため、
 // 足先目標をこの円内へ平面クランプして膝リミット超過を防ぐ
-constexpr float D_KNEE_MAX = 207.9f;  // sqrt(F²+T²+2FT·cos46°) - 0.5
+constexpr float D_KNEE_MAX = 210.2f;  // sqrt(F²+T²+2FT·cos46°) - 0.5 (2026-09-04 T=155.98 で再計算)
                                       // (T=TIBIA_LEN=153.6, 2026-07-29 接地
                                       // オフセット校正で 189.9→207.9)
 // 同 折り畳み側 (膝 +44°) の最小距離。近すぎる足先目標を外側へ押し出す
 // (対称性のため追加 — 歩容の最小使用 rr は ~80 で通常は発火しない)
-constexpr float D_KNEE_MIN = 116.9f;  // sqrt(F²+T²+2FT·cos134°) + 0.5
+constexpr float D_KNEE_MIN = 119.1f;  // sqrt(F²+T²+2FT·cos134°) + 0.5 (2026-09-04 T=155.98 で再計算)
                                       // (2026-07-29: 100.5→116.9)
 
 // ---------------- 腕の可動域・動作 (deg)

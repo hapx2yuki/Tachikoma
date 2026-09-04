@@ -372,7 +372,7 @@ INMP441 (I2S マイク) + φ20mm 8Ω1W 薄型スピーカーを Mouth_Cannon 内
 
 | 項目 | 目安 |
 |---|---|
-| 意匠シェル PLA 全色 (壁2/インフィル8% 計算値, 2026-07-31 shin_shell リリーフカット再評価タスク後の再計算 -- KNEE_RELIEF/TIP_RELIEF/ADJ_RELIEF_BANDS 撤去でキット形状復元、shin_shell +17g) | ~1,173g |
+| 意匠シェル PLA 全色 (壁2/インフィル8% 計算値, 2026-07-31 shin_shell リリーフカット再評価タスク後の再計算 -- KNEE_RELIEF/TIP_RELIEF/ADJ_RELIEF_BANDS 撤去でキット形状復元、shin_shell +17g) | ~1,096g (2026-09-04 `filament_calc.py` 実行値 青833+灰189+黒40+白30+赤4。旧 1,173g は Head_Top ホロー化前) |
 | 脚骨格+シャーシ PETG (chassis/coxa/femur/tibia) | ~460g |
 | 腕骨格 PETG (左右, claw_mount 込み。旧 palm_base/grip_slider/grip_finger 廃止で 115g→軽量化) | ~55g |
 | サーボ 12×DS3218 (60g) + SG90×1 | ~730g |

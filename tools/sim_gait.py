@@ -38,7 +38,8 @@ ORIGIN = np.array([_C.HIPS[k] for k in _LEGS])
 LIM_YAW, LIM_PITCH, LIM_KNEE = 40.0, (-45.0, 55.0), 44.0  # LIM_YAW は下で突合
 LIM_YAW_IN = 17.5      # 45°ペア内側ヨー 単側 (firmware LIM_YAW_IN と突合)
 LIM_YAW_IN_SUM = 26.0  # 同 ペア同時内側の和 (firmware LIM_YAW_IN_SUM と突合)
-LIM_YAW_POD = 22.0     # 後脚ポッド側ヨー (firmware LIM_YAW_POD と突合)
+LIM_YAW_POD = 30.0     # 後脚ポッド側ヨー (firmware LIM_YAW_POD と突合)。2026-09-04 22→30
+                       # (check_leg_assembly.py の実メッシュ掃引で接触開始 34°)
 YAW_POD_SIGN = np.array([0, 0, +1, -1])
 YAW_IN_SIGN = np.array([-1, +1, -1, +1])
 BODY_H, STANCE_R, STEP_H = 115.0, _C.STANCE_R, 18.0
@@ -59,12 +60,20 @@ _m = re.findall(r"\{([+-][\d.]+)f,\s*([+-][\d.]+)f\}", _fw)
 _fw_origin = np.array([[float(a), float(b)] for a, b in _m[:4]])
 assert np.allclose(_fw_origin, ORIGIN, atol=0.05), \
     f"firmware LEG_ORIGIN={_fw_origin.tolist()} が config.py の {ORIGIN.tolist()} と不一致"
-BODY_H_RANGE = (105.0, 130.0)
+BODY_H_RANGE = (110.0, 130.0)   # firmware BODY_H_MIN/MAX と突合 (2026-09-04 105→110)
 MAX_STEP, MAX_TURN = 30.0, np.radians(12.0)
 PHASE_OFF, DUTY = [0.25, 0.50, 0.75, 0.0], 0.75  # 遊脚順 RL→FL→FR→RR (回転順)
 _fwtxt = (Path(__file__).resolve().parent.parent /
           "firmware" / "src" / "config.h").read_text()
-SWAY_MM = float(re.search(r"SWAY_MM\s*=\s*([\d.]+)f", _fwtxt).group(1))
+_m = re.search(r"SWAY_MM\[4\]\s*=\s*\{([^}]+)\}", _fwtxt).group(1)
+SWAY_MM = np.array([float(s) for s in re.findall(r"([\d.]+)f", _m)])   # 脚ごと {FR,FL,RL,RR}
+assert SWAY_MM.shape == (4,), f"firmware SWAY_MM[4] が読めない: {_m}"
+# 中立足先パターンのオフセットと全機体重心 (config.py が正、firmware と突合)
+STANCE_OFF = np.array(_C.STANCE_OFF_XY, float)
+CG_XY = np.array(_C.CG_XY, float)
+for _name, _py in (("STANCE_OFF_X", STANCE_OFF[0]), ("STANCE_OFF_Y", STANCE_OFF[1])):
+    _v = float(re.search(rf"{_name}\s*=\s*(-?[\d.]+)f", _fwtxt).group(1))
+    assert abs(_v - _py) < 0.05, f"firmware {_name}={_v} が config.py の {_py} と不一致 (要同期)"
 SWAY_LEAD = float(re.search(r"SWAY_LEAD\s*=\s*([\d.]+)f", _fwtxt).group(1))
 D_KNEE_MAX = float(re.search(r"D_KNEE_MAX\s*=\s*([\d.]+)f", _fwtxt).group(1))
 D_KNEE_MIN = float(re.search(r"D_KNEE_MIN\s*=\s*([\d.]+)f", _fwtxt).group(1))
@@ -85,8 +94,8 @@ assert abs(D_KNEE_MIN - _d_expect2) < 0.1, \
 # (tools/check_leg_assembly.py が実ビルド STL から実測して drift を検査)
 for _name, _py in (("COXA_LEN", COXA), ("FEMUR_LEN", FEMUR), ("TIBIA_LEN", TIBIA),
                    ("LIM_PITCH_UP", -45.0), ("LIM_PITCH_DN", 55.0),
-                   ("LIM_KNEE", 44.0), ("BODY_H_MIN", 105.0),
-                   ("BODY_H_MAX", 130.0), ("STEP_H", 18.0),
+                   ("LIM_KNEE", 44.0), ("BODY_H_MIN", BODY_H_RANGE[0]),
+                   ("BODY_H_MAX", BODY_H_RANGE[1]), ("STEP_H", 18.0),
                    ("MAX_STEP", 30.0), ("MAX_TURN_DEG", 12.0), ("DUTY", 0.75)):
     _v = float(re.search(rf"{_name}\s*=\s*(-?[\d.]+)f", _fwtxt).group(1))
     assert abs(_v - _py) < 0.05, \
@@ -133,9 +142,10 @@ def leg_fk(yaw_d, pitch_d, knee_d):
 
 
 def neutral_xy(leg):
-    # 中立足先は STANCE 方位 (取付方位 + 中立ヨー, gait.h と同一)
-    return (ORIGIN[leg, 0] + STANCE_R * np.cos(STANCE[leg]),
-            ORIGIN[leg, 1] + STANCE_R * np.sin(STANCE[leg]))
+    # 中立足先は STANCE 方位 (取付方位 + 中立ヨー) + パターン全体のオフセット
+    # STANCE_OFF (重心側へ寄せる, gait.h と同一)
+    return (ORIGIN[leg, 0] + STANCE_R * np.cos(STANCE[leg]) + STANCE_OFF[0],
+            ORIGIN[leg, 1] + STANCE_R * np.sin(STANCE[leg]) + STANCE_OFF[1])
 
 
 def swing_state(phase):
@@ -161,7 +171,7 @@ def sway_of(phase):
             continue
         nx, ny = neutral_xy(leg)
         nn = np.hypot(nx, ny)
-        k = SWAY_MM * np.sin(np.pi * u / win)
+        k = SWAY_MM[leg] * np.sin(np.pi * u / win)
         sx += -nx / nn * k
         sy += -ny / nn * k
     return sx, sy
@@ -210,18 +220,34 @@ def foot_body_xy(leg, phase, vx, vy, wz):
     return (lx * c - ly * s + ORIGIN[leg, 0], lx * s + ly * c + ORIGIN[leg, 1])
 
 
-def polygon_margin(phase, vx, vy, wz):
-    """向きを正規化した安定マージン (正=CG が支持多角形内)。
-
-    足上げ高さ < LIFT_EPS の脚は接地扱い (境界瞬間の 4 点支持を正しく評価)。
-    """
+def stance_points(phase, vx, vy, wz):
+    """接地脚 index と、そのボディ座標足先 XY (足上げ高さ < LIFT_EPS は接地扱い)。"""
     stance = []
     for leg in range(4):
         _, _, lz = foot_target(leg, phase, vx, vy, wz)
         if lz > -BODY_H + LIFT_EPS:
             continue  # 空中
         stance.append(leg)
-    pts = np.array([foot_body_xy(i, phase, vx, vy, wz) for i in stance])
+    return stance, np.array([foot_body_xy(i, phase, vx, vy, wz) for i in stance])
+
+
+def leg_loads(pts):
+    """静的 3/4 点支持の鉛直脚荷重 (N): ΣF=W, ΣF·x=W·CGx, ΣF·y=W·CGy を解く
+    (3 点は一意、4 点は最小ノルム解)。重心オフセット CG_XY 込み。"""
+    W = TOTAL_KG * 9.81
+    A = np.vstack([np.ones(len(pts)), pts[:, 0], pts[:, 1]])
+    b = np.array([W, W * CG_XY[0], W * CG_XY[1]])
+    return np.linalg.lstsq(A, b, rcond=None)[0]
+
+
+def polygon_margin(phase, vx, vy, wz):
+    """向きを正規化した静的安定マージン (正=全機体重心 CG_XY が支持多角形内)。
+
+    足上げ高さ < LIFT_EPS の脚は接地扱い (境界瞬間の 4 点支持を正しく評価)。
+    2026-09-04: 旧実装は原点 (0,0) からの距離を返しており「重心=原点」を暗黙に
+    仮定していた (S-01)。実重心 (config.py CG_XY, y=-39mm) 基準へ修正。
+    """
+    _, pts = stance_points(phase, vx, vy, wz)
     cen = pts.mean(axis=0)
     ang = np.arctan2(pts[:, 1] - cen[1], pts[:, 0] - cen[0])
     pts = pts[np.argsort(ang)]  # CCW
@@ -229,9 +255,18 @@ def polygon_margin(phase, vx, vy, wz):
     for i in range(len(pts)):
         a, b = pts[i], pts[(i + 1) % len(pts)]
         e = b - a
-        cross = e[0] * (-a[1]) - e[1] * (-a[0])
+        cross = e[0] * (CG_XY[1] - a[1]) - e[1] * (CG_XY[0] - a[0])
         dists.append(cross / np.linalg.norm(e))
     return min(dists)
+
+
+# 安定マージン/トルク評価に使う指令セット (前後左右・斜め・旋回・複合・静止)
+EVAL_CMDS = [(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0),
+             (0.7, 0.7, 0), (0.7, -0.7, 0), (-0.7, 0.7, 0), (-0.7, -0.7, 0),
+             (0, 0, 1), (0, 0, -1), (0.5, 0.5, 0.5), (0, 0, 0)]
+# DS3218 系 20kg 級の実力目安: 6.8V カタログ 20kgf·cm、UBEC 6.0V 運用では
+# ~18kgf·cm (出典間で 18-21.5 とばらつく, UNVERIFIED — L-02 ベンチで実測)
+T_HIP_WARN, T_HIP_NG = 18.0, 20.0
 
 
 def main():
@@ -274,7 +309,7 @@ def main():
                                                   a[0] * YAW_POD_SIGN[leg])
                         max_in = max(max_in, *inw)
                         max_sum = max(max_sum, inw[0] + inw[3], inw[1] + inw[2])
-    print(f"[2] 歩容全域スイープ (体高105-130含む): {total} 姿勢中 IK 失敗 {fails} "
+    print(f"[2] 歩容全域スイープ (体高{BODY_H_RANGE[0]:.0f}-{BODY_H_RANGE[1]:.0f}含む): {total} 姿勢中 IK 失敗 {fails} "
           f"({'OK' if fails == 0 else 'NG — 歩幅/体高/SWAYの見直しが必要'})")
     ok2b = (max_in < LIM_YAW_IN - 0.5 and max_sum < LIM_YAW_IN_SUM - 2
             and max_pod < LIM_YAW_POD - 1)
@@ -283,30 +318,52 @@ def main():
           f"後脚ポッド側 {max_pod:.1f}°/{LIM_YAW_POD}° "
           f"({'OK' if ok2b else 'NG — クランプが歩容に干渉'})")
 
-    # ---- 3. 静的トルク概算 (総重量 TOTAL_KG, 3 脚接地, 最悪脚 40% 負担)
-    load = TOTAL_KG * 9.81 * 0.40
-    x, y, z = foot_target(0, 0.3, 1.0, 0, 0)
-    a = leg_ik(x, y, z)
-    if a:
-        pitch = np.radians(a[1])
-        knee_r = COXA + FEMUR * np.cos(pitch)
-        foot_r = np.hypot(x, y)
-        t_knee = load * abs(foot_r - knee_r) / 1000 * 10.197
-        t_hip = load * abs(foot_r - COXA) / 1000 * 10.197
-        print(f"[3] 静的トルク概算 (総重量{TOTAL_KG}kg): 膝 {t_knee:.2f} kg·cm, "
-              f"股ピッチ {t_hip:.2f} kg·cm (DS3218 定格 ~20 kg·cm @6.8V)")
+    # ---- 3. 静的トルク (総重量 TOTAL_KG, 重心 CG_XY): 全指令 × 全位相で
+    #      3/4 点支持の静力学から脚荷重を解き、股ピッチ = F·|foot_r-COXA|,
+    #      膝 = F·|foot_r-knee_r| の最悪値を取る。2026-09-04 (S-02): 旧実装は
+    #      1 点 (FR, phase 0.3, vx=1)・「最悪脚 40%」仮定で 8.92 kgf·cm と報告して
+    #      いたが、全域では 18 kgf·cm 級 (重心が支持三角形の辺に寄る瞬間は 1 脚に
+    #      1.6kgf 以上が乗る)。DS3218 の 6V 実力とほぼ同水準 — L-02 ベンチ試験の
+    #      荷重条件はこの値で決める
+    w_hip, w_knee, w_load, w_at = 0.0, 0.0, 0.0, None
+    for cmd in EVAL_CMDS:
+        for phase in np.linspace(0, 1, 200, endpoint=False):
+            st, pts = stance_points(phase, *cmd)
+            F = leg_loads(pts)
+            for i, leg in enumerate(st):
+                x, y, z = foot_target(leg, phase, *cmd)
+                a = leg_ik(x, y, z)
+                if a is None:
+                    continue
+                foot_r = np.hypot(x, y)
+                knee_r = COXA + FEMUR * np.cos(np.radians(a[1]))
+                t_hip = F[i] * abs(foot_r - COXA) / 1000 * 10.197
+                t_knee = F[i] * abs(foot_r - knee_r) / 1000 * 10.197
+                w_load = max(w_load, F[i] / 9.81)
+                w_knee = max(w_knee, t_knee)
+                if t_hip > w_hip:
+                    w_hip, w_at = t_hip, (_LEGS[leg], cmd, round(phase, 3),
+                                          round(F[i] / 9.81, 2), round(foot_r, 1))
+    verdict = ("NG — サーボ定格超過 (歩幅/STANCE_R/重量の見直し or 高トルク品)"
+               if w_hip > T_HIP_NG else
+               ("要注意 — 6V 実力 (~18) と同水準。L-02 で実測" if w_hip > T_HIP_WARN
+                else "OK"))
+    print(f"[3] 静的トルク最悪 (総重量{TOTAL_KG}kg, 重心 y={CG_XY[1]:+.0f}mm, 3/4点支持静力学): "
+          f"股ピッチ {w_hip:.2f} kgf·cm at {w_at[0]} cmd={w_at[1]} phase={w_at[2]} "
+          f"(脚荷重 {w_at[3]} kgf, foot_r {w_at[4]}mm), 膝 {w_knee:.2f} kgf·cm, "
+          f"最大脚荷重 {w_load:.2f} kgf → {verdict}")
 
-    # ---- 4. 静的安定マージン (重心シフト込み)
+    # ---- 4. 静的安定マージン (重心シフト込み, 実重心 CG_XY 基準)
     worst_m, worst_at = np.inf, None
-    for vx, vy, wz in [(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0),
-                       (0.7, 0.7, 0), (0.7, -0.7, 0), (-0.7, 0.7, 0), (-0.7, -0.7, 0),
-                       (0, 0, 1), (0, 0, -1), (0.5, 0.5, 0.5), (0, 0, 0)]:
+    for vx, vy, wz in EVAL_CMDS:
         for phase in np.linspace(0, 1, 200, endpoint=False):
             m = polygon_margin(phase, vx, vy, wz)
             if m < worst_m:
                 worst_m, worst_at = m, (vx, vy, wz, phase)
-    print(f"[4] 静的安定マージン最小 {worst_m:.1f} mm at cmd={worst_at[:3]} "
-          f"phase={worst_at[3]:.2f} ({'OK' if worst_m >= 8 else 'NG — SWAY_MM を増やす'})")
+    print(f"[4] 静的安定マージン最小 {worst_m:.1f} mm (重心 ({CG_XY[0]:+.0f},{CG_XY[1]:+.0f})mm, "
+          f"足先オフセット ({STANCE_OFF[0]:+.0f},{STANCE_OFF[1]:+.0f})mm, SWAY {SWAY_MM.tolist()}) "
+          f"at cmd={worst_at[:3]} phase={worst_at[3]:.2f} "
+          f"({'OK' if worst_m >= 8 else 'NG — STANCE_OFF/SWAY_MM を見直す'})")
 
     # ---- 軌道プロット
     fig = plt.figure(figsize=(12, 4.5))

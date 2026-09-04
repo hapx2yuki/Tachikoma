@@ -43,7 +43,7 @@ hardware/src/    コード CAD (Python/trimesh/manifold3d, 単位 mm)
   config.py        ★寸法の唯一の正 (リンク長・関節リミット・配置定数)。変更はここだけで全連動
   build_all.py     全カスタム STL の再生成エントリポイント
   make_*.py        各サブシステムの生成 (leg/arm/head/chassis/eye/audio/camera/shell_mod)
-hardware/stl/    カスタム STL 39 個 (★150% スケール済み — スライサでの拡大不要)
+hardware/stl/    カスタム STL 41 個 (★150% スケール済み — スライサでの拡大不要。2026-08-19 eye_pod_camera の shell/base 分割で 39→41)
 model/           キット元 STL 58 個 (★100% のまま — 印刷時はスライサで 150% 指定必須)
 tools/           チェッカー群 (§3)・export_urdf.py・sim_physics.py・make_visuals.py・
                  kit_assembly.py + data/kit_assembly_{front,rear}.json (意匠パーツ配置 DB)
@@ -66,7 +66,8 @@ docs/            全ドキュメント (AGENTS.md のドキュメントマップ
 |---|---|
 | check_leg_assembly | 脚の全姿勢干渉・隣接脚・接地高さ (worst z +0.05mm)・トゥ嵌合 |
 | check_screw_bosses | 全ネジボスの環状肉厚 (fill ≥70%)・ケース開口とのクリアランス |
-| sim_gait | IK/FK 往復誤差 0・歩容 41,600 姿勢 IK 失敗 0・静的安定 +8.8mm・firmware 定数 regex 突合 |
+| sim_gait | IK/FK 往復誤差 0・歩容 41,600 姿勢 IK 失敗 0・静的安定 +10.9mm (実重心 CG_XY 基準)・静的トルク全域 18.5kgf·cm (3/4 点支持静力学)・firmware 定数 regex 突合 |
+| check_leg_link_strength | tibia/femur の断面応力スキャン (SF ≥2.0, 荷重 3.8kgf 動的込み)。tibia 膝ネック SF 2.1 |
 | check_arm | 腕の取付/干渉/トルク/砲身スイープ [8]・Ball/Neck/Cannon×シェル [1d] |
 | check_eye / check_audio / check_camera | 目モジュール収容 / 音声クレードル肉厚・ボア連通 / カメラ FOV 遮蔽 0% (8 姿勢) |
 | check_shin_arm_leg | 脛シェル×骨格/隣接脚/腕 (到達可能集合基準 + クランプ再現 + 発火率 [C-duty]) |
@@ -145,6 +146,22 @@ docs/            全ドキュメント (AGENTS.md のドキュメントマップ
   XIAO ESP32S3 Sense のセンサー (現行出荷は OV3660 — FOV/EFL は OV2640 前提のため実測要) /
   URDF 慣性 (均質密度仮定) / PETG 曲げ強度 70MPa (文献値) / Ball↔Neck の実接触様式
 
+### §6.5 2026-09-04 全体レビューで残った要判断・要実測 (システム/機構/電装監査)
+
+- **股ピッチトルク余裕ゼロ** (S-02): 全域最悪 18.5kgf·cm vs DS3218 ~18@6V/20@6.8V。L-02 ベンチ実測で
+  No-Go なら L-11 で 7.4V 給電 (サーボ許容電圧要確認) / 高トルク品 / 低トルク歩容 (STANCE_R 122 + 歩幅 26 → 17.0) を選ぶ
+- **重心 y=-39mm** (S-01): Cabin 534g が主因で動かせない。歩容側で吸収 (STANCE_OFF_Y -30 / 後脚 SWAY 40)。
+  I-01 の実測重心で `config.py CG_XY` を更新し sim_gait [4] を再実行
+- **UBEC 10A 連続定格 vs 歩行 9〜14A 級見積り** (S-03): L-10 でクランプ実測 → EL-09 で 15〜20A 級への変更を判断
+- **装飾トゥが foot_pad より最大 11mm 深く出る姿勢がある** (S-04, 体高 110・後脚 SWAY 極端位相, check_leg_assembly 2026-09-04 再校正後 -11.35mm): 接地力を細いトゥが受ける
+  可能性。L-02/L-10 で観察し、必要なら trim/体高下限で回避
+- **PETG 脚の撓み+ホーンガタ** (S-05): 弱軸 11mm/強軸 3.5mm + バックラッシュ 4〜8mm の足先誤差見積り。マージン +10.9mm
+  は名目値で、実機では体高・歩幅を落として開始 (I-02)
+- **アイドル発熱** (S-07): firmware に無指令時の脱力/休止姿勢が無い (低電圧カットのみ) → EL-10
+- **sim_physics の metrics/help 文言不一致・関節トルク飽和未計測** (S-08/S-10) → I-08
+- **ホーン形状 HORN_* は未実測** (M-08): 実ホーンが大きいとネック増厚部が更に削れる → P-03 でホーン実測後に
+  `check_leg_link_strength.py` を再実行
+
 ## §7 外部連携
 
 - **友人への Isaac Sim 配布**: `tachikoma_urdf_20260822.zip` (リポジトリ直下, 14MB)。
@@ -182,7 +199,7 @@ docs/            全ドキュメント (AGENTS.md のドキュメントマップ
 2. **膝サーボ角の規約が2通り混在しやすい**: firmware は femur 相対角。干渉チェッカーを絶対角で書くと過酷すぎる姿勢を検査してしまう (check_leg_assembly は firmware 規約に統一済み)。
 3. **遊脚時に膝が最も折れる**: 接地時でなく足上げ (STEP_H) 時に膝リミットへ達する。体高最小値はここで決まる。
 4. **併進+旋回の同時指令で合成歩幅が上限超過**: 歩幅ベクトルのノルムクランプが必須 (gait.h 実装済み)。
-5. **tibia 上部構造は膝±45°回転で femur 側に刺さる**: 45°ウェッジ面取りで解決 (make_leg.py)。
+5. **tibia 上部構造は膝±45°回転で femur 側に刺さる**: 旧解は左右対称の 45°ウェッジ面取りだったが、femur は膝軸の股側 (-X) にしか無く、+X 側まで削った結果ネックが 11mm² (SF 0.1) に痩せていた (2026-09-04 M-01)。現在は femur 側障害物 (箱枠+ウェブ) の ±47° 回転掃引領域を数値的に減算し、外側 3mm 増厚 (make_leg.py `_femur_knee_sweep`)。**幾何だけでなく断面応力も見る** (`check_leg_link_strength.py`)。
 6. 元モデルの小パーツはブーリアン加工に耐えない (φ18穴で崩壊)。装飾は接着対応にする。
 7. **干渉チェックにサーボ実体を忘れるとケース貫通を全部見落とす**: STD サーボはタブ下 28.2mm が反対側へ突き出る。チェッカーはサーボダミー (実寸) を合体させて検査する。
 8. **ブーリアンの順序バグ 2 種**: (a) ポケット減算後に正形状を足すとポケットが埋まる → 正形状を全合成してから負形状を最後にまとめて引く。(b) 面取り後にビームを足すと掃引域に角が残る。

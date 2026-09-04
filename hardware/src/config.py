@@ -31,7 +31,8 @@ STD = dict(
     HOLE_PITCH=49.5, HOLE_SPREAD=10.0, TAB_HOLE_D=2.8, SHAFT_OFF=10.0,
     ABOVE_TAB=11.0, WIRE_W=7.0,
     HORN_ARM_L=32.0, HORN_ARM_W=9.5, HORN_T=2.8, HORN_HUB_D=11.5,
-    HORN_HUB_H=6.5, HORN_SCREW_D=3.2, HORN_PILOT_D=2.0,
+    HORN_HUB_H=6.5, HORN_SCREW_D=3.2, HORN_PILOT_D=2.2,   # 共締め M2.6 タッピング下穴。旧 2.0 (径比 0.77) は
+                                                        # 締付トルク過大でネック割れの恐れ → 0.85 へ (2026-09-04 M-02)
 )
 YAW_SERVO = STD        # 股ヨー (シャーシ搭載)
 LEG_SERVO = STD        # 股ピッチ / 膝
@@ -71,6 +72,20 @@ LEG_ANGLES = {"FR": 15.0, "FL": 165.0, "RL": 210.0, "RR": 330.0}
 STANCE_ANGLES = {"FR": 33.0, "FL": 147.0, "RL": 208.0, "RR": 332.0}
 STANCE_R = 129.0       # 中立時のヨー軸→足先 水平距離 (足先位置は旧設計と同等:
                        # 旧 hip r92.2+88 ≈ 新 r50.9+129。firmware STANCE_R と一致)
+# ---- 重心と足先パターンのオフセット (2026-09-04 システム監査 S-01)
+# 全機体重心はボディ原点 (股ヨー軸円の中心) ではなく、Cabin (534g, y≈-167/-230)
+# のため y=-39mm にある (tools/export_urdf.py の質量モデル = URDF から算出:
+# base_link 1.517kg@y-70.6 + 脚 4 本 + 腕 → 2.78kg@y-39.0)。sim_gait.py [4] の
+# 静的安定マージンはこの CG_XY を基準に評価する (旧実装は原点=重心と仮定して
+# +8.8mm と報告していたが、実重心では -23.7mm = 旋回時に転倒域だった)。
+# 対策として中立足先パターン全体を STANCE_OFF_XY だけ重心側へ寄せる
+# (支持多角形の中心を重心へ近づける)。-39 まで寄せると後脚のポッド側ヨーが
+# 実接触 (34°) に近づき IK 失敗も出るため -30 で妥協 (体高 110-130, 後脚 SWAY
+# 40mm と組合せて最悪マージン +10.9mm, IK 失敗 0, ポッド側ヨー 28.9°/30°)。
+# 実重量・重心を I-01 で実測したら CG_XY を更新し sim_gait.py を再実行すること
+CG_XY = (0.0, -39.0)          # 全機体重心のボディ座標 (mm, +Y 前)。URDF 質量モデル値
+STANCE_OFF_XY = (0.0, -30.0)  # 中立足先パターンのボディ座標オフセット (mm)。firmware
+                              # STANCE_OFF_X/Y と一致 (sim_gait.py が突合)
 
 import math as _math
 import numpy as _np
@@ -242,7 +257,10 @@ FOOT_PAD_PROTRUDE = 1.5     # パッドが甲全体の最下点 (トゥ取付ス
 #      hardware/stl/leg_foot_bored.stl+foot_pad.stl と tools/sim_gait.py の
 #      実際の foot_target()/leg_ik() を使ってこの校正を毎回再現・報告する
 #      (このコメントの数値ではなく実行結果が正)。
-FOOT_GROUND_OFFSET = 18.6   # [実測+校正, 0.1mm精度] SWAY込み歩容スタンス
+FOOT_GROUND_OFFSET = 20.98  # [実測+校正, 0.1mm精度] SWAY込み歩容スタンス
+                            # 2026-09-04: 18.6→20.98 — 重心対応の後方スタンス (STANCE_OFF_Y -30,
+                            # 後脚 SWAY 40, 体高 110-130) で最悪位相の脛傾きが増え、旧値では
+                            # foot_pad 底が -2.05mm 埋まる (check_leg_assembly 再校正値 155.98)
                             # 全域 (体高105-130, 全位相) で foot_pad 底が
                             # world z を下回らない最小の押し下げ量
 TIBIA_LEN_GAIT = TIBIA_LEN + FOOT_GROUND_OFFSET

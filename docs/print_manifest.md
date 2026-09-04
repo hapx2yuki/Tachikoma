@@ -42,7 +42,9 @@ cd hardware/src && ../../.venv/bin/python build_all.py   # 全 watertight=True
                                                #  ARM_LEG_YAW_GATE_DEG=20.0°)
 .venv/bin/python tools/check_urdf.py          # 380/380 OK
 .venv/bin/python tools/filament_calc.py       # 色別合計が docs/filament.md と完全一致
-                                               # (青911/灰189/黒40/白29/赤4/PETG570/TPU2 g)
+                                               # (2026-09-04 実行値: 青833/灰189/黒40/白30/赤4/PETG573/TPU2 g
+                                               #  — 旧記載 青911/PETG570 は Head_Top_Eyecut ホロー化 (2026-08-22)
+                                               #  前の値だった。以下の経緯メモは履歴として残す)
                                                # (2026-07-31 shin_shell 装飾面放射外向き化
                                                #  タスクで ADJ_RELIEF_BANDS 追加により
                                                #  shin_shell 実体積が減り、青が 913→895g へ
@@ -144,8 +146,10 @@ printing.md の表へも同条件で追記済み (末尾「発見した齟齬と
 「条件付き(任意)」1 件。**58 件全てに分類がつくことを確認済み
 (未分類ゼロ)**。
 
-集計: **印刷する 39 件 + 条件付き印刷 1 件 (Stand_mount_Optional) +
-加工版で置換 11 件 + 不使用 7 件 = 58 件**。
+集計: **印刷する 37 件 + 条件付き印刷 1 件 (Stand_mount_Optional) +
+加工版で置換 11 件 + 不使用 7 件 + 印刷しない 2 件 (Head_Plate_Grey /
+Head_Bottom_Cap_Grey, 2026-08-20/21 に不使用化) = 58 件** (2026-09-04 集計訂正:
+旧「39 件」は印刷しない 2 件を印刷する側に数えたままだった)。
 
 | # | ファイル | kit数量 | 分類 | 対応・理由 |
 |---|---|---|---|---|
@@ -281,9 +285,9 @@ PETG骨格は色替え不要の単色プレートにまとめる (filament.md �
   (assembly.md §2.8 前提)。その後 `Mouth_Cannon_Bored`/`Mouth_Neck_Bored`/
   `Mouth_Ball_Bored` (PLA灰/青/灰) + `audio_cradle_mic`/`audio_cradle_spk`
   (PETG)
-- キット (150%): Head一式 (`Head_Plate_Grey`, `Head_Peg_Lower`,
-  `Head_Peg_Upper`, `Head_Bottom_Cap_Grey`, `Head_Dome_Grey`,
-  `Head_Plug_Grey`, `Head_Screw_Grey_x2`, `Head_Insert_Black_x4`) /
+- キット (150%): Head一式 (`Head_Peg_Lower`, `Head_Peg_Upper`, `Head_Dome_Grey`,
+  `Head_Plug_Grey`, `Head_Screw_Grey_x2`, `Head_Insert_Black_x4` —
+  **`Head_Plate_Grey` / `Head_Bottom_Cap_Grey` は印刷しない** (§2 #34/#28)) /
   Mouth一式 (`Mouth_Cap_Grey`, `Mouth_Key_Grey`, `Mouth_Peg_Grey`) /
   TailJoint一式 (`Head_TailJoint_Blue_Optional_Cross`,
   `Head_TailJoint_Ball_Grey_Optional_Cross`, `Head_TailJoint_Peg`,
@@ -424,13 +428,13 @@ Stand_mount_Optional (任意治具) と Head_Plate_Grey / Head_Bottom_Cap_Grey (
 | PLA_Black_1 | Leg_Toe×12 + 指×6 + Cabin/Head Insert 12個 | 1→**黒に差替** | 34g / 2.2h |
 | PLA_Red_1 | RedLight 大×4 + 小×4 | 1→**赤に差替** | 2.5g / 0.16h |
 | PETG_1_Chassis | chassis + eye_carrier×2 + claw_mount×2 + audio_spk | 4 PETG | 54g / 2.9h |
-| PETG_2_Tibia | tibia_link×2 + _m×2 (立て) + pod_neck | 4 PETG | 168g / 10.4h |
+| PETG_2_Tibia | tibia_link×2 + _m×2 (立て) + pod_neck | 4 PETG | ~177g / ~11h (2026-09-04 ネック増厚後の概算, 要再スライス) |
 | PETG_3_Femur | femur_link×2 + _m×2 + battery_cradle | 4 PETG | 129g / 8.7h |
 | PETG_4_CoxaArm | coxa×4 + shoulder×2 + upper_arm×2 + forearm×2 + camera_carrier | 4 PETG | 153g / 9.9h |
 | PETG_5_Mic | audio_cradle_mic (**レイヤー 0.12**) | 4 PETG | 1.9g / 0.26h |
 | PETG_Walk_1_Chassis | 歩行最小① chassis + battery_cradle + audio_cradle_mic | 4 PETG | 66g / 3.7h |
 | PETG_Walk_2_CoxaFemur | 歩行最小② coxa_bracket×4 + femur_link×4 | 4 PETG | 210g / 13.8h |
-| PETG_Walk_3_Tibia | 歩行最小③ tibia_link×4 (立て) | 4 PETG | 151g / 9.3h |
+| PETG_Walk_3_Tibia | 歩行最小③ tibia_link×4 (立て) | 4 PETG | ~160g / ~9.8h (2026-09-04 ネック増厚後の概算, 要再スライス) |
 | PETG_Walk_4_Rest | 残りPETG一括: pod_neck + 肩×2 + 上腕×2 + 前腕×2 + eye_carrier×2 + camera_carrier + claw_mount×2 + spk (mic は Walk_1 で印刷済) | 4 PETG | 84g / 5.2h |
 | elbow_shells_PLA_Matte | elbow_shell + _L | 3 灰 | (生成済み) |
 | eye_pod_camera_base_x2 | eye_pod_camera_base ×2 (予備) | 2 白 | (生成済み) |
@@ -447,6 +451,14 @@ Stand_mount_Optional (任意治具) と Head_Plate_Grey / Head_Bottom_Cap_Grey (
   web_x1=FEMUR_LEN-22.5)。chassis/femur/tibia を含む 6 プレート
   (PETG_1/2/3, PETG_Walk_1/2/3) は新メッシュで再生成・再スライス済み。
   **修正前の 3mf や印刷済みの旧 femur/tibia は使用不可**
+- **2026-09-04 tibia 膝ネック強度修正 (要再ダウンロード)**: 機構レビュー M-01 —
+  上記 45° ウェッジ×2 は femur が存在しない +X 側まで削り、ネックプレートが z=-23 で
+  3.7×3.0mm (11mm², σ≈240MPa, 破断確実) しか残っていなかった。femur 側障害物の膝
+  ±47° 掃引領域を数値減算する方式 (`_femur_knee_sweep`) + 外側 3mm 増厚に変更
+  (断面 115mm², `check_leg_link_strength.py` SF 2.1)。tibia 体積 32.4→34.3cm³。
+  `PETG_Walk_3_Tibia` / `PETG_2_Tibia` を再生成。あわせて全ホーン共締め下穴
+  `HORN_PILOT_D` 2.0→2.2 (coxa/femur も STL 変更、印刷済み品はドリル追加工可)。
+  **2026-09-04 より前の tibia 3mf/印刷物は使用不可**
 - **PETG_Walk_1〜3 (2026-08-21)**: 歩行チェーン (chassis→coxa→femur→tibia) +
   battery_cradle だけの歩行実験最小セット (番号 = 印刷推奨順)。腕・目・カメラ・
   pod_neck・spk は含まない。PETG_1〜4 と部品が重複するので**どちらか一方の系列

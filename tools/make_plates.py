@@ -49,7 +49,7 @@ SCALE = 1.5
 # 4=PETG Translucent。black/red は AMS 非搭載 — スロット1へ出力するので
 # **印刷前に Studio でフィラメント割当を黒/赤へ差し替えること** (ファイル名で
 # 色を明示して事故防止)
-COLOR_SLOT = {"blue": "1", "gray": "3", "white": "2", "petg": "4",
+COLOR_SLOT = {"blue": "1", "gray": "3", "white": "2", "petg": "4", "tpu": "1",  # tpu: 外部スプール (AMS 不可) — Studio 側で手動割当
               "black": "1", "red": "1"}
 
 # name -> (rule, qty, wall_loops, sparse_infill, color, kit)
@@ -129,6 +129,21 @@ PARTS = {
     "camera_carrier.stl":   ("flat_down", 1, 4, "40%", "petg", False),
     "audio_cradle_mic.stl": ("flat_min",  1, 4, "40%", "petg", False),
     "audio_cradle_spk.stl": ("flat_down", 1, 4, "40%", "petg", False),
+    # ---- 2026-09-04 追加登録 (D-01): 既に印刷済み/生成済みだったが PARTS 未登録で
+    #      `verify` の照合対象外だった 14 STL。向きは既存 3mf の埋め込みに合わせる
+    "Head_Top_Eyecut.stl":       ("identity",  1, 2, "8%",  "blue",  False),  # v2 ホロー (2026-08-22)
+    "shin_shell.stl":            ("identity",  2, 2, "6%",  "blue",  False),
+    "shin_shell_m.stl":          ("identity",  2, 2, "6%",  "blue",  False),
+    "thigh_cap.stl":             ("flat_down", 4, 2, "6%",  "gray",  False),
+    "leg_foot_bored.stl":        ("flip_x180", 4, 3, "20%", "gray",  False),  # プラグ側(+Z)を下
+    "Mouth_Ball_Bored.stl":      ("identity",  1, 2, "8%",  "gray",  False),
+    "Mouth_Cannon_Bored.stl":    ("rot_x90",   1, 2, "8%",  "gray",  False),  # 砲口を上 (筒を立てる)
+    "eye_pod.stl":               ("identity",  2, 2, "8%",  "white", False),  # 背面(z=0 平面)を下
+    "eye_pod_camera_shell.stl":  ("identity",  1, 2, "8%",  "white", False),
+    "eye_pod_camera_base.stl":   ("identity",  1, 2, "8%",  "white", False),
+    "elbow_shell.stl":           ("identity",  1, 2, "15%", "gray",  False),  # 既存 3mf (印刷済み) と同じ立て置き
+    "elbow_shell_L.stl":         ("identity",  1, 2, "15%", "gray",  False),
+    "foot_pad.stl":              ("identity",  4, 3, "30%", "tpu",   False),  # TPU 95A 外部スプール
 }
 
 # プレート構成は固定 (再パッキングで Blue_1 等と構成が混ざるのを防ぐ)。
@@ -138,6 +153,19 @@ PARTS = {
 # 埋め込みメッシュは verify で全 OK — メッシュが変わらない限り再生成不要。
 # 再生成した場合は本定義の構成に変わる (どちらも全部品を網羅しており等価)
 PLATES = {
+    # ---- 2026-09-04 追加登録 (D-01) — 既存 3mf に対応するプレート定義
+    "PLA_Matte_Blue_1": dict(   # 印刷済み (Head_Top は v1 で印刷 → PR-08 で v2 再印刷)
+        items=["Head_Top_Eyecut.stl", "shin_shell.stl", "shin_shell_m.stl"], color="blue", gap=12),
+    "PLA_Matte_Blue_5_HeadTop": dict(   # PR-08: Head_Top_Eyecut v2 (ホロー 52cm3) 単独再印刷
+        items=["Head_Top_Eyecut.stl"], color="blue", gap=12),
+    "PLA_Matte_Gray": dict(     # 未印刷 (PR-05 系)
+        items=["Mouth_Ball_Bored.stl", "Mouth_Cannon_Bored.stl", "thigh_cap.stl", "leg_foot_bored.stl"],
+        color="gray", gap=10),
+    "PLA_Matte_White": dict(    # 印刷済み
+        items=["eye_pod.stl", "eye_pod_camera_shell.stl", "eye_pod_camera_base.stl"], color="white", gap=10),
+    "elbow_shells_PLA_Matte": dict(items=["elbow_shell.stl", "elbow_shell_L.stl"], color="gray", gap=10),
+    "foot_pad": dict(items=["foot_pad.stl"], color="tpu", gap=10),
+    # 管理外 (印刷済み・単発): leg_foot_bored.3mf, claw_mount_L.3mf, eye_pod_camera_base_x2.3mf
     "PLA_Matte_Blue_2": dict(
         items=["Head_Bottom_Armcut.stl", "arm_pod_upper.stl", "arm_pod_upper_L.stl",
                "arm_pod_lower.stl", "arm_pod_lower_L.stl", "Mouth_Neck_Bored.stl"],
@@ -296,6 +324,8 @@ def load_oriented(fname: str, rot90: bool = False) -> trimesh.Trimesh:
         m.apply_transform(_rot_flat_face_down(m))
     elif rule == "flat_min":
         m.apply_transform(_rot_flat_face_down(m, min_height=True))
+    elif rule == "rot_x90":   # +Y → +Z (Y 軸方向の筒を立てる)
+        m.apply_transform(trimesh.transformations.rotation_matrix(np.pi / 2, [1, 0, 0]))
     elif rule != "identity":
         raise ValueError(rule)
     if rot90:
@@ -352,7 +382,7 @@ def _preview_png(out_path, plate_name, items, meshes, color):
     from matplotlib.collections import PolyCollection
     fig, ax = plt.subplots(figsize=(5.12, 5.12), dpi=100)
     ax.add_patch(plt.Rectangle((0, 0), 256, 256, fc="#3a3d44", ec="none"))
-    cols = {"blue": [0.28, 0.42, 0.85], "gray": [0.62, 0.63, 0.64],
+    cols = {"blue": [0.28, 0.42, 0.85], "gray": [0.62, 0.63, 0.64], "tpu": [0.15, 0.15, 0.15],
             "white": [0.92, 0.92, 0.9], "black": [0.25, 0.25, 0.28],
             "red": [0.85, 0.2, 0.18], "petg": [0.55, 0.75, 0.72]}[color]
     for (fname, cx, cy) in items:

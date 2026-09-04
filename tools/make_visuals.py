@@ -690,10 +690,11 @@ def robot_meshes(phase, vx, vy, wz, body_h, body_xyz=(0, 0, 0), body_yaw=0.0,
         lz = lz + (BODY_H - body_h)  # 体高変更
         a = leg_ik(lx, ly, lz)
         if a is None:
-            from sim_gait import STANCE
-            d = STANCE[leg] - MOUNT[leg]
-            a = leg_ik(STANCE_R * np.cos(d), STANCE_R * np.sin(d),
-                       -body_h) or (0, -20, 20)
+            from sim_gait import neutral_xy   # STANCE_OFF 込みの中立 (gait.h と同一)
+            nx, ny = neutral_xy(leg)
+            gx, gy = nx - ORIGIN[leg, 0], ny - ORIGIN[leg, 1]
+            c_, s_ = np.cos(-MOUNT[leg]), np.sin(-MOUNT[leg])
+            a = leg_ik(gx * c_ - gy * s_, gx * s_ + gy * c_, -body_h) or (0, -20, 20)
         yaw_d, pitch_d, knee_d = a
         mnt = np.degrees(MOUNT[leg])
         leg_name = LEG_NAMES[leg]             # "FR"/"FL"/"RL"/"RR"

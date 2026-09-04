@@ -7,7 +7,9 @@
     (SpotMicro 等の同クラス実績に準拠)
   - 箱枠はタブビス 4 本 (M3 セルフタップ) が全て肉に噛むよう FRAME_X1 を
     タブ穴位置から導出
-  - tibia 上部は 2 方向の 45° ウェッジで膝 ±45° の全掃引を保証
+  - tibia 上部は femur 側近接構造 (箱枠+ウェブ) の膝 ±47° 回転掃引領域を
+    数値的に減算して非干渉を保証 (2026-09-04: 旧 45° ウェッジ×2 はネックを
+    11mm² まで痩せさせていた — _femur_knee_sweep() 参照)
 
 座標系 (脚ローカル): +X = 脚が伸びる radial 方向, +Z = 上。
 股ピッチ軸 = (COXA_LEN, *, 0) の Y 軸平行線。膝軸 = femur ローカル X=FEMUR_LEN。
@@ -77,6 +79,10 @@ FRAME_X0 = _hole_lo - 4.6                        # -39.7
 COXA_TOP = FRAME_TOP + 3.8                       # coxa 天板の上面 Z (16.9)
 SWING_R = 43.0        # femur 中央部が coxa 箱枠 (max r=41.8) を躱す半径
 DISC_R = 15.0         # ホーン結合円板の半径
+WEB_RECESS = DISC_R + 7.5   # femur ウェブ終端の膝軸からの後退量 (22.5)。femur_link() と
+                            # _femur_knee_sweep() が共有 (tibia ネックの掃引障害物の位置)
+NECK_DOUBLER_T = 3.0  # tibia ネックの外側 (+Y) 増厚。ホーンポケットで 3mm に減る
+                      # プレート芯を 6mm へ戻す (2026-09-04 M-01 対応)
 
 
 def servo_frame() -> Manifold:
@@ -136,7 +142,7 @@ def femur_link() -> Manifold:
     # (2026-08-21 ユーザー発見)。ネックを残す代わりにウェブを 5.5mm 後退:
     # 掃引最遠 21.3mm + 1.2mm 余裕 = 22.5。ジョグブロック (x>=SWING_R=43) とは
     # web_x1 = FEMUR_LEN-22.5 = 47.5 で 4.5mm 重なり結合を維持
-    web_x1 = C.FEMUR_LEN - (DISC_R + 7.5)
+    web_x1 = C.FEMUR_LEN - WEB_RECESS
     # --- 正形状を全て合成
     m = cyl_y(PLATE_T, 2 * DISC_R).translate([0, PLATE_IN + PLATE_T / 2, 0])
     m += servo_frame().translate([C.FEMUR_LEN, 0, 0])  # 枠 (ポケットは最後に再減算)
@@ -161,6 +167,37 @@ def femur_link() -> Manifold:
     return m
 
 
+def _femur_knee_sweep(clr: float = 1.2, ang: float = 47.0, step: float = 1.0) -> Manifold:
+    """膝軸原点系 (= tibia ローカル) で femur 側の膝近傍構造を膝可動域 ±ang° に
+    回転掃引した占有領域 (負形状)。tibia_link() がこれを減算する。
+
+    障害物 = サーボ箱枠 (x FRAME_X0..X1, |y| ≤ FRAME_Y, |z| ≤ FRAME_TOP) と
+    +Y 帯のウェブ+ジョグブロック (x ≤ -WEB_RECESS, y FRAME_Y..PLATE_OUT,
+    |z| ≤ FRAME_TOP)。各面 clr だけ拡大し、±ang° (LIM_KNEE 44° + 3°) を step°
+    刻みで合成する。
+
+    2026-09-04 機構レビュー M-01: 旧実装は「femur 底面 z=-13.1 を ±45° 回転後に
+    躱す」を左右対称の 45° ウェッジ×2 (+ガード円筒 r23) で近似していたが、
+    femur は膝軸の -X 側 (股側) にしか存在しない。+X 側まで削った結果、
+    ネックプレートは z=-23 で 3.7×3.0mm (11mm²) しか残らず、1.2kgf 足先荷重で
+    σ≈240MPa (PETG 曲げ強度 50-70MPa) — Phase 1 リフト試験で破断確実だった。
+    実障害物の掃引領域だけを減算することで +X 側の肉を全て残し、-X 側も
+    真に必要な分だけ削る。検算: check_leg_assembly.py [10] (実 STL 膝 ±45°
+    密掃引 femur∩tibia=0) と check_leg_link_strength.py (断面応力スキャン)。
+    """
+    frame = box(FRAME_X1 - FRAME_X0 + 2 * clr, 2 * FRAME_Y + 2 * clr,
+                2 * FRAME_TOP + 2 * clr).translate([(FRAME_X0 + FRAME_X1) / 2, 0, 0])
+    web_len = 100.0
+    web = box(web_len, PLATE_OUT - FRAME_Y + 2 * clr, 2 * FRAME_TOP + 2 * clr).translate(
+        [-WEB_RECESS + clr - web_len / 2, (FRAME_Y + PLATE_OUT) / 2, 0]
+    )
+    obst = frame + web
+    sweep = obst
+    for th in np.arange(-ang, ang + 1e-6, step):
+        sweep += obst.rotate([0, float(th), 0])
+    return sweep
+
+
 def tibia_link() -> Manifold:
     """膝ホーン ←→ 足先。原点=膝軸、脚は -Z へ。"""
     neck_z = -26.0
@@ -170,6 +207,13 @@ def tibia_link() -> Manifold:
     m = cyl_y(PLATE_T, 2 * DISC_R).translate([0, PLATE_IN + PLATE_T / 2, 0])
     # ネックプレート: 円板と同じ +Y 帯で下へ (z -13..-49)
     m += box(beam_w, PLATE_T, 36).translate([0, PLATE_IN + PLATE_T / 2, -31])
+    # ネック増厚 (外側 +Y, z -5..-35): ホーンポケット (深さ HORN_T+CLEAR=3mm) で
+    # プレート芯が 3mm に減る帯を外側から NECK_DOUBLER_T 補い、共締めビスの
+    # 有効ねじ込み長も 3→6mm にする。femur ウェブ外面 (y=PLATE_OUT) より外なので
+    # 膝掃引とは無関係 (掃引減算で必要な分だけ自動的に欠ける)
+    m += box(beam_w, NECK_DOUBLER_T, 30.0).translate(
+        [0, PLATE_OUT + NECK_DOUBLER_T / 2, -20.0]
+    )
     # 集約ブロック: +Y 帯 → 中央ビームへの遷移 (z -34..-49)
     m += rbox(beam_w, PLATE_OUT + 11, 15, r=3).translate(
         [0, (PLATE_OUT - 11) / 2, -41.5]
@@ -181,21 +225,11 @@ def tibia_link() -> Manifold:
     m += cyl(8, C.FOOT_TIP_D + 4).translate([0, 0, -C.TIBIA_LEN + 4])
     # --- 負形状 (最後にまとめて)
     m -= _horn_negative("-z")
-    # 45° ウェッジ面取り ×2: 膝 ±45° 回転後の全上部構造が femur の底面
-    # (z=-13.1) を躱す。関節まわりはガード円筒で保護。
-    # ガード半径は 23.0 (2026-08-21 修正): 旧 16.5 はウェッジ底 (x=0 で z=-21)
-    # より浅く、ネックプレートを z-16.5..-21 の帯で完全切断して膝ディスク
-    # (3.36cm3) が分離した部品を黙って出力していた (ユーザーがスライサ上で
-    # 発見)。r23 はネック角 (r22.9) まで保護する。ウェッジが本来除去すべき
-    # だった「掃引で femur ウェブに届く角」は femur 側のウェブ後退
-    # (web_x1 = FEMUR_LEN-22.5, femur_link() 参照) で回避する設計に変更。
-    # 検算: check_leg_assembly.py [10] が実メッシュで膝 ±45° 密掃引の
-    # femur∩tibia = 0 と tibia 単一ボディを回帰検査する
-    guard = cyl_y(60, 46.0)
-    wedge1 = box(300, 60, 300).rotate([0, -45, 0]).translate([-95.5, 0, 95.5])
-    wedge2 = box(300, 60, 300).rotate([0, 45, 0]).translate([95.5, 0, 95.5])
-    m -= (wedge1 - guard)
-    m -= (wedge2 - guard)
+    # femur 側近接構造の膝 ±47° 掃引領域を減算 (旧 45° ウェッジ×2 + ガード
+    # 円筒 r23 を置換, 2026-09-04 M-01。経緯は _femur_knee_sweep() docstring)。
+    # 2026-08-21 の「ガード r16.5 でネックが切断され膝ディスクが分離」回帰は
+    # check_leg_assembly.py [10] の単一ボディ検査で引き続き監視する
+    m -= _femur_knee_sweep()
     # leg_foot_bored 差込ソケット (旧 TPU foot_tip と同一寸法。tibia 側は
     # 無変更のため互換維持 — leg_foot_bored() の差込プラグがこの寸法へ
     # 合わせにいく)。単純な定径貫通穴 (段付きカウンターボアなし) —

@@ -42,10 +42,10 @@ class Gait {
         if (u < -0.5f) u += 1.0f;
         if (u < 0 || u > winLen) continue;
         const float m = STANCE_DEG[leg] / 57.29578f;
-        const float nx = LEG_ORIGIN[leg][0] + STANCE_R * cosf(m);
-        const float ny = LEG_ORIGIN[leg][1] + STANCE_R * sinf(m);
+        const float nx = LEG_ORIGIN[leg][0] + STANCE_R * cosf(m) + STANCE_OFF_X;
+        const float ny = LEG_ORIGIN[leg][1] + STANCE_R * sinf(m) + STANCE_OFF_Y;
         const float nn = sqrtf(nx * nx + ny * ny);
-        const float k = SWAY_MM * sinf(3.14159265f * u / winLen);
+        const float k = SWAY_MM[leg] * sinf(3.14159265f * u / winLen);
         swayX += -nx / nn * k;
         swayY += -ny / nn * k;
       }
@@ -55,8 +55,9 @@ class Gait {
       const float mountRad = LEG_MOUNT_DEG[leg] / 57.29578f;
       // 中立足先は STANCE_DEG 方位 (取付方位 + 中立ヨー ±12°, v3 実物ポーズ)
       const float stanceRad = STANCE_DEG[leg] / 57.29578f;
-      const float nx = LEG_ORIGIN[leg][0] + STANCE_R * cosf(stanceRad);
-      const float ny = LEG_ORIGIN[leg][1] + STANCE_R * sinf(stanceRad);
+      // STANCE_OFF: パターン全体を重心側へ寄せる (config.h 参照)
+      const float nx = LEG_ORIGIN[leg][0] + STANCE_R * cosf(stanceRad) + STANCE_OFF_X;
+      const float ny = LEG_ORIGIN[leg][1] + STANCE_R * sinf(stanceRad) + STANCE_OFF_Y;
 
       // 併進 + 旋回を合成した 1 周期分の変位 (ボディ座標)
       const float turn = wz * MAX_TURN_DEG / 57.29578f;
@@ -107,8 +108,9 @@ class Gait {
 
       out[leg].ok = legIK(lx, ly, lz, out[leg].ang);
       if (!out[leg].ok) {  // 到達不能時は中立へフォールバック (成否も反映)
-        const float d = stanceRad - mountRad;
-        out[leg].ok = legIK(STANCE_R * cosf(d), STANCE_R * sinf(d), -bodyH,
+        const float gx = nx - LEG_ORIGIN[leg][0], gy = ny - LEG_ORIGIN[leg][1];
+        out[leg].ok = legIK(gx * cosf(-mountRad) - gy * sinf(-mountRad),
+                            gx * sinf(-mountRad) + gy * cosf(-mountRad), -bodyH,
                             out[leg].ang);
       }
       if (!out[leg].ok) {
