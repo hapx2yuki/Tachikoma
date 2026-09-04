@@ -59,7 +59,7 @@ GitHub Issues への同期は [`tools/issues/sync_github_issues.py`](../tools/is
 以下は `sync_github_issues.py --plan-doc` が `issue_map.json` から生成する。手で編集しない。
 
 <!-- BEGIN GENERATED (tools/issues/sync_github_issues.py --plan-doc) -->
-_生成: 2026-09-04 / イシュー数 76 / 依存 120_
+_生成: 2026-09-04 / イシュー数 77 / 依存 121_
 
 ### 依存グラフ (矢印 = 先行 → 後続。エピックは省略)
 
@@ -85,6 +85,7 @@ flowchart LR
     PR_07["PR-07 Mouth_Cannon_Bored + Mouth_B"]
     PR_08["PR-08 Head_Top_Eyecut v2 単体"]
     PR_09["PR-09 (条件付き) 骨格の再印刷 — P-05 で「再印刷」と"]
+    PR_10["PR-10 eye_pod_camera_base 再印刷"]
   end
   subgraph E3["E3 電装・電源・ファームウェア"]
     EL_01["EL-01 電源系ベンチ組立"]
@@ -209,6 +210,7 @@ flowchart LR
   EL_04 --> H_01
   P_07 --> H_02
   PR_06 --> H_02
+  PR_10 --> H_02
   PR_07 --> H_03
   PR_06 --> H_03
   P_02 --> H_03
@@ -286,6 +288,7 @@ flowchart LR
 - #19 PR-01 [印刷] PLA_Matte_Gray_2 — キット灰意匠 21 種 36 個 (70g / 3.7h, A3 灰)
 - #20 PR-02 [印刷] PLA_Black_1 — トゥ×12 + 指×6 + Insert×12 (34g / 2.2h, 黒へ差替)
 - #21 PR-03 [印刷] PLA_Red_1 — 赤ランプ 大×4 小×4 (2.5g, 赤へ差替 or 白+赤塗装)
+- #79 PR-10 [印刷] eye_pod_camera_base 再印刷 (白 5g) — 印刷済み品は旧 rev (ポケット壁 ~1mm 違い)
 - #28 EL-01 [電装] 電源系ベンチ組立 (LiPo→ヒューズ→SW→UBEC 6V / DC-DC 5V, バスバー, コンデンサ, 分圧)  ← 並行作業OK
 - #29 EL-02 [電装] PCA9685 ×2 準備 (board1 A0 ジャンパ→0x41, ヘッダ実装規約) + ESP32 I2C 疎通  ← 並行作業OK
 - #30 EL-03 [ファーム] CALIBRATION_MODE ビルド + ESP32 書き込み + AP 接続確認  ← 並行作業OK
@@ -335,7 +338,7 @@ flowchart LR
 | A-03 | #48 A-03 [組立] 肩ヨーサーボ ×2 をシャーシへ + 両腕を吊り下げ + 配線 + ベンチ確認 (TUCK/READY/REACH/WAVE) | M3 サブアセンブリ | #46, #47, #41, #33, #34 | 🤖 |
 | EL-06 | #33 EL-06 [配線] 腕・目サーボハーネス製作 (MG90S ×6 / ES9251II ×2, AWG26/30) | M3 サブアセンブリ | — | ✅ |
 | H-01 | #50 H-01 [組立] 目ポッド ×2 (キョロキョロ) — ドット黒仕上げ / ES9251II / ホーン先付け / 中立位相 | M3 サブアセンブリ | #24, #31 | ✅ |
-| H-02 | #51 H-02 [組立] カメラ目 — 子基板→camera_carrier→base→shell 接着, XIAO ファーム + WiFi 静止画疎通 | M3 サブアセンブリ | #17, #24 | ✅ |
+| H-02 | #51 H-02 [組立] カメラ目 — 子基板→camera_carrier→base→shell 接着, XIAO ファーム + WiFi 静止画疎通 | M3 サブアセンブリ | #17, #24, #79 | ✅ |
 | H-03 | #52 H-03 [組立] 音声ユニット組込 — INMP441→cradle_mic 圧入 / φ20 SPK / cradle_spk / 8 芯を Neck・Ball ボアへ | M3 サブアセンブリ | #25, #24, #12 | ✅ |
 | H-04 | #53 H-04 [電装] MAX98357A + I2S ベンチ配線 → voice_bridge --mock で PTT 録音 / 440Hz 再生を確認 | M3 サブアセンブリ | #52, #34 |  |
 | H-05 | #54 H-05 [組立] Mouth 一式 (Ball→Neck→Cannon チェーン + Cap/Key/Peg) をキット標準で組む | M3 サブアセンブリ | #52, #19 | ✅ |
@@ -343,6 +346,7 @@ flowchart LR
 | PR-02 | #20 PR-02 [印刷] PLA_Black_1 — トゥ×12 + 指×6 + Insert×12 (34g / 2.2h, 黒へ差替) | M3 サブアセンブリ | — | 🖨 |
 | PR-06 | #24 PR-06 [印刷] PETG_Walk_4_Rest — pod_neck + 腕骨格 ×2 + eye_carrier ×2 + camera_carrier + claw_mount ×2 + spk (84g / 5.2h) | M3 サブアセンブリ | #14 | 🖨 |
 | PR-07 | #25 PR-07 [印刷] Mouth_Cannon_Bored + Mouth_Ball_Bored (+ Neck / mic クレードルは変更時のみ) | M3 サブアセンブリ | #16 | 🖨 |
+| PR-10 | #79 PR-10 [印刷] eye_pod_camera_base 再印刷 (白 5g) — 印刷済み品は旧 rev (ポケット壁 ~1mm 違い) | M3 サブアセンブリ | — | 🖨 |
 | A-04 | #49 A-04 [仕上げ] 腕シェル被せ (arm_pod 上下 ×2 / elbow_shell ×2 / Arm Guard 左右) | M4 フルドレス | #48 |  |
 | EL-08 | #35 EL-08 [電装] WS2812 ×12 + 74AHCT125 + DFPlayer (+microSD 音源) のベンチ配線・点灯/再生確認 | M4 フルドレス | #34 | ✅ |
 | H-06 | #55 H-06 [要判断] ESP32 DevKit の恒久マウント位置 (頭内は全姿勢不成立 → 頭外 3 択) | M4 フルドレス | — |  |

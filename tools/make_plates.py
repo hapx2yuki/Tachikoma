@@ -165,6 +165,8 @@ PLATES = {
         items=["eye_pod.stl", "eye_pod_camera_shell.stl", "eye_pod_camera_base.stl"], color="white", gap=10),
     "elbow_shells_PLA_Matte": dict(items=["elbow_shell.stl", "elbow_shell_L.stl"], color="gray", gap=10),
     "foot_pad": dict(items=["foot_pad.stl"], color="tpu", gap=10),
+    "PLA_Matte_White_3_CamBase": dict(   # 2026-09-04: 印刷済み eye_pod_camera_base は旧 rev (ポケット壁が
+        items=["eye_pod_camera_base.stl"], color="white", gap=10),  # y 方向に ~1mm 違う, 体積 2.7% 差) → 再印刷用 (5g)
     # 管理外 (印刷済み・単発): leg_foot_bored.3mf, claw_mount_L.3mf, eye_pod_camera_base_x2.3mf
     "PLA_Matte_Blue_2": dict(
         items=["Head_Bottom_Armcut.stl", "arm_pod_upper.stl", "arm_pod_upper_L.stl",
