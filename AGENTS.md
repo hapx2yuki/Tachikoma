@@ -12,7 +12,11 @@
 ## 実行環境
 
 - Python: `.venv/bin/python` (trimesh / manifold3d / mujoco / yourdfpy / scikit-image [2026-08-22 追加, make_head_eyecut.py の marching cubes 用] 等導入済み)
-- PlatformIO: `.venv/bin/pio` (**PATH に pio は無い**)
+- PlatformIO: `.venv/bin/pio` (**PATH に pio は無い**)。`firmware/platformio.ini` は **`espressif32@6.12.0` に固定**
+  (Arduino core 2.0.17, legacy `driver/i2s.h`)。2026-09-04 に未固定のまま同居していた pioarduino 55.x へ解決され
+  SCons が TypeError で落ちた。その pioarduino が `tool-esptoolpy` を 5.x に差し替えた副作用で `.venv` に
+  `intelhex` が必要 (`.venv/bin/pip install intelhex` 済み)。`firmware/src/idf_component.yml` が生成されたら
+  pioarduino 経由のビルドなので削除して platform を確認する
 - **このリポジトリは git 管理外** — 破壊的変更の前にはバックアップを取ること
 - キット元データ: `~/Downloads/TACHIKOMA.3mf` (組立座標フォレンジクスと完成写真の一次情報)
 

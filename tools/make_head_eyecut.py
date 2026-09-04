@@ -338,8 +338,8 @@ if __name__ == "__main__":
 
     # [4b] スタック包絡と新内面の実距離 (>= 1.5mm)
     from scipy.spatial import cKDTree
-    head_pts, _ = trimesh.sample.sample_surface(_to_trimesh(out_ch), 30000)
-    env_pts, _ = trimesh.sample.sample_surface(_to_trimesh(env), 8000)
+    head_pts, _ = trimesh.sample.sample_surface(_to_trimesh(out_ch), 30000, seed=0)
+    env_pts, _ = trimesh.sample.sample_surface(_to_trimesh(env), 8000, seed=1)
     dmin = float(cKDTree(head_pts).query(env_pts)[0].min())
     ok &= dmin >= 1.5
     print(f"  [4b] スタック包絡 → 頭内面 実距離 min = {dmin:.2f} mm "
@@ -351,7 +351,9 @@ if __name__ == "__main__":
     base_ch = bored.copy()
     base_ch.apply_transform(_rotz(180))
     base_ch.apply_translation([0, C.ARM_MOUNT_HUB_Y, HEAD_TOP_Z_OFFSET])
-    pts, fidx = trimesh.sample.sample_surface(base_ch, 6000)
+    # 2026-09-04: 乱数シード固定 + サンプル数 6000→24000。未固定だと [4b]/[5] が実行毎に
+    # 揺れ (実測 98.3/98.6/98.5% で OK/NG が入れ替わる) 回帰検査として成立していなかった
+    pts, fidx = trimesh.sample.sample_surface(base_ch, 24000, seed=2)
     nrm = base_ch.face_normals[fidx]
     keep = pts[:, 2] > 20.0
     R180_ = np.array([[-1, 0, 0], [0, -1, 0], [0, 0, 1]])
