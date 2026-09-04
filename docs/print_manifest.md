@@ -431,6 +431,7 @@ Stand_mount_Optional (任意治具) と Head_Plate_Grey / Head_Bottom_Cap_Grey (
 | PETG_Walk_1_Chassis | 歩行最小① chassis + battery_cradle + audio_cradle_mic | 4 PETG | 66g / 3.7h |
 | PETG_Walk_2_CoxaFemur | 歩行最小② coxa_bracket×4 + femur_link×4 | 4 PETG | 210g / 13.8h |
 | PETG_Walk_3_Tibia | 歩行最小③ tibia_link×4 (立て) | 4 PETG | 151g / 9.3h |
+| PETG_Walk_4_Rest | 残りPETG一括: pod_neck + 肩×2 + 上腕×2 + 前腕×2 + eye_carrier×2 + camera_carrier + claw_mount×2 + spk (mic は Walk_1 で印刷済) | 4 PETG | 84g / 5.2h |
 | elbow_shells_PLA_Matte | elbow_shell + _L | 3 灰 | (生成済み) |
 | eye_pod_camera_base_x2 | eye_pod_camera_base ×2 (予備) | 2 白 | (生成済み) |
 | foot_pad | foot_pad ×4 (TPU, 外部スプール) | TPU | (既存) |

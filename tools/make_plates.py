@@ -218,6 +218,16 @@ PLATES = {
     "PETG_Walk_3_Tibia": dict(
         items=["tibia_link.stl", "tibia_link_m.stl"],
         color="petg", gap=12.0, rot90=()),
+    # ---- 残り PETG 一括 (2026-08-31): Walk_1/2/3 と印刷済み分 (mic は Walk_1
+    # で印刷済み) を除く全 PETG。旧 PETG_1/2/4 系列の未印刷分を 1 枚に集約。
+    # claw_mount/_L は先行印刷分と重複の可能性あり — 手元にある側は Studio で
+    # オブジェクト削除して印刷してよい
+    "PETG_Walk_4_Rest": dict(
+        items=["pod_neck.stl", "shoulder_bracket.stl", "shoulder_bracket_L.stl",
+               "upper_arm.stl", "upper_arm_L.stl", "forearm.stl", "forearm_L.stl",
+               "eye_carrier.stl", "camera_carrier.stl", "claw_mount.stl",
+               "claw_mount_L.stl", "audio_cradle_spk.stl"],
+        color="petg", gap=12.0, rot90=("pod_neck.stl",)),
 }
 
 # オブジェクト単位の追加印刷設定 (model_settings.config の object metadata へ
