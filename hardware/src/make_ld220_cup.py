@@ -63,15 +63,23 @@ FLANGE_W = 2 * FRAME_Y                     # 26.2
 
 
 def _cup(zb: float, flange_x=FLANGE_X, flange_w=FLANGE_W) -> Manifold:
-    """カップ本体 (取付面 z=0, ケース底面 z=zb)。"""
+    """カップ本体 (取付面 z=0, ケース底面 z=zb)。
+
+    出力軸から遠い側 (-x) は端壁を持たない開放端 (x0 = ケース端の 0.8mm 手前まで)。
+    後脚の股ピッチカップは firmware LIM_YAW_POD (30°) のポッド側ヨーでバッテリー
+    パック側面に最も近づき、ケース端より外に出る端壁 (2mm) がそのまま食い込む
+    ため (DS3218 ケース自体は通る)。x 方向の位置決めは +x 端壁 (配線穴側) と
+    箱枠ポケットが担う。
+    """
     fl = K["FLANGE"]
     h = zb + K["FLOOR"]
+    x0 = -CAV_L / 2 + K["OPEN_END_SETBACK"]
     # フランジ (箱枠フットプリント) + 壁+底板の外形
     m = box(flange_x[1] - flange_x[0], flange_w, fl).translate(
         [(flange_x[0] + flange_x[1]) / 2, 0, fl / 2])
-    m += box(OUT_L, OUT_W, h).translate([0, 0, h / 2])
-    # ケースの空洞 (取付面より下 = ポケット側へ貫通)
-    m -= box(CAV_L, CAV_W, zb + 5).translate([0, 0, (zb - 5) / 2])
+    m += box(OUT_L / 2 - x0, OUT_W, h).translate([(x0 + OUT_L / 2) / 2, 0, h / 2])
+    # ケースの空洞 (取付面より下 = ポケット側へ貫通、-x 側は開放)
+    m -= box(CAV_L / 2 - x0 + 10, CAV_W, zb + 5).translate([(x0 - 10 + CAV_L / 2) / 2, 0, (zb - 5) / 2])
     # 補助軸ボスの逃がし (底板貫通)
     m -= cyl(K["FLOOR"] + 2, LD["REAR_BOSS_D"] + 1.0).translate([0, 0, zb + K["FLOOR"] / 2])
     # 底面ねじ穴 (実測が入っているときだけ)
@@ -97,7 +105,12 @@ def _cup(zb: float, flange_x=FLANGE_X, flange_w=FLANGE_W) -> Manifold:
     # 後脚の股ピッチカップがポッド側ヨー (LIM_YAW_POD) でバッテリーパック側面に
     # 2.4mm 食い込むのを避ける (tools/check_ld220_cup.py / check_leg_assembly.py
     # クレードル検査)。面取りは空洞 (ケース角) を露出させない範囲に収める
-    m -= _corner_chamfer(-OUT_L / 2, h, run_x=K["CHAMFER_X"], run_z=K["CHAMFER_Z"])
+    # 開放端側 FLOOR_SETBACK の区間は「ケース底面より下」(底板と側壁の下部) を
+    # 持たない: 後脚の股ピッチカップは LIM_YAW_POD (30°) でバッテリーパック側面が
+    # ちょうどケース底面の高さを通るため、そこに肉があると食い込む
+    x_cut = -CAV_L / 2 + K["FLOOR_SETBACK"]
+    m -= box(60, OUT_W + 4, 20).translate([x_cut - 30, 0, zb + 10])
+    m -= _corner_chamfer(x_cut, h, run_x=K["CHAMFER_X"], run_z=K["CHAMFER_Z"])
     return m
 
 
