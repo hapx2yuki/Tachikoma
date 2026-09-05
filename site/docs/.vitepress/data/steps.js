@@ -1,7 +1,7 @@
 // ===== 進捗データ (ここを書き換えて再デプロイすると全ページに反映される) =====
 // status: 'todo' | 'doing' | 'done' | 'blocked'
 // now:    true にした作業がロードマップ上で「イマココ!」表示になる (複数可)
-export const updatedAt = '2026-09-05 16:00'
+export const updatedAt = '2026-09-05 19:30'
 
 export const lanes = [
   { id: 'a', name: 'サーボ & 脚',   icon: '🦿', color: '#ef6c2f', owner: '', desc: 'サーボの実測・中立出し、脚 1 本の組立とベンチ試験' },
@@ -50,6 +50,7 @@ export const steps = [
 
 // 直近の出来事 (トップページの「最新情報」に表示。新しいものを上に)
 export const news = [
+  { date: '2026-09-05', text: '脚サーボが LD-220MG (タブ無し) だったため、箱枠に固定するカップ ld220_cup_leg ×8 を設計 (干渉検証 OK)。ヨー用は底面ねじ穴の実測待ち' },
   { date: '2026-09-05', text: '3D プリント全パーツ完了。4 人体制で物理製作を開始' },
   { date: '2026-09-05', text: 'ファームを CALIBRATION_MODE でビルド成功 (書き込み待ち)' },
   { date: '2026-08-22', text: 'ESP32 起動 + Wi-Fi AP 確認。PCA9685 は 0x41 のみ応答、0x40 未応答で I2C エラー継続 (B1 で解決する)' },

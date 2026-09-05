@@ -36,6 +36,8 @@ export const parts = [
   P('camera_carrier', 'print-frame', 'camera_carrier (カメラ子基板ホルダ)', 1, 'camera_carrier.png', 'カメラのレンズ側子基板をはめる小さなホルダ。eye_pod_camera_base の斜めポケットに入る。', { mat: 'PETG', steps: ['d3'] }),
   P('audio_cradle_mic', 'print-frame', 'audio_cradle_mic (マイク受け)', 1, 'audio_cradle_mic.png', '砲身の奥に圧入する円筒。INMP441 を保持し、キー突起で向きが決まる。', { mat: 'PETG', steps: ['d2'] }),
   P('audio_cradle_spk', 'print-frame', 'audio_cradle_spk (スピーカー抜け止め)', 1, 'audio_cradle_spk.png', 'スピーカーの奥に押し込むリング (ワッシャ)。', { mat: 'PETG', steps: ['d2'] }),
+  P('ld220_cup_leg', 'print-frame', 'ld220_cup_leg (LD-220MG 固定カップ, 脚用)', 8, 'ld220_cup_leg.png', '届いたサーボ (Hiwonder LD-220MG, タブ無し) を coxa / femur の箱枠に固定するカップ。箱枠の裏側 (ホーンの反対側) から被せ、既存のタブ穴に M3×10 ×4。ミラー脚も同じ部品。2026-09-05 追加、要印刷。', { mat: 'PETG', steps: ['a1', 'a2', 'c2'], note: '新規・要印刷' }),
+  P('ld220_cup_yaw', 'print-frame', 'ld220_cup_yaw (LD-220MG 固定カップ, ヨー用)', 4, 'ld220_cup_yaw.png', 'シャーシのヨーサーボ用。上から被せて外側 2 本のビス + 底板のねじでサーボを吊る。底面ねじ穴の実測 (config.py LD220.BOT_HOLES) を入れてから印刷する。', { mat: 'PETG', steps: ['c1'], note: '新規・実測待ち' }),
   P('foot_pad', 'print-frame', 'foot_pad (足裏パッド)', 4, 'foot_pad.png', '足の甲の隠しポケットに圧入する柔らかい接地パッド。実際に床に触れる部分。', { mat: 'TPU', steps: ['a2', 'c2'] }),
 
   // ---- 3D 意匠・加工版 ----
