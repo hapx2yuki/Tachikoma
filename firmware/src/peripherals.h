@@ -1,5 +1,6 @@
 #pragma once
 #include <Adafruit_NeoPixel.h>
+#include <atomic>
 #include <DFRobotDFPlayerMini.h>
 #include <HardwareSerial.h>
 #include "config.h"
@@ -33,7 +34,7 @@ class Peripherals {
   }
 
   float vbat() const { return vbat_avg_; }
-  bool lowBattery() const { return vbat_avg_ > 3.0f && vbat_avg_ < VBAT_WARN; }
+  bool lowBattery() const { return batterySeen_ && vbat_avg_ < VBAT_WARN; }
   bool cutout() const { return cut_; }
 
   // loop から毎周期呼ぶ
@@ -41,9 +42,8 @@ class Peripherals {
     const uint32_t t = millis();
 
     // 再生キュー
-    if (df_ok_ && pending_track_ > 0) {
-      const int n = pending_track_;
-      pending_track_ = 0;
+    const int n = pending_track_.exchange(0);
+    if (df_ok_ && n > 0) {
       df_.playMp3Folder(n);  // ACK 無効なのでブロックしない
     }
 
@@ -52,7 +52,9 @@ class Peripherals {
       lastVbat_ = t;
       const float v = analogReadMilliVolts(PIN_VBAT) / 1000.0f * VBAT_DIV;
       vbat_avg_ = (vbat_avg_ <= 0.1f) ? v : vbat_avg_ * 0.9f + v * 0.1f;
-      if (vbat_avg_ > 3.0f && vbat_avg_ < VBAT_CUT) {
+      // USB のみの校正は許容するが、一度検知した電池の 0V 喪失は無視しない。
+      if (v > 3.0f) batterySeen_ = true;
+      if (batterySeen_ && vbat_avg_ < VBAT_CUT) {
         if (belowSince_ == 0) belowSince_ = t;
         if (t - belowSince_ > 3000) cut_ = true;
       } else {
@@ -85,7 +87,8 @@ class Peripherals {
   DFRobotDFPlayerMini df_;
   bool df_ok_ = false;
   LedMode mode_ = LED_IDLE;
-  volatile int pending_track_ = 0;
+  std::atomic<int> pending_track_{0};
+  bool batterySeen_ = false;
   float vbat_avg_ = 0;
   uint32_t lastVbat_ = 0, lastLed_ = 0, belowSince_ = 0;
   bool cut_ = false;

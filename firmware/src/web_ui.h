@@ -41,10 +41,10 @@ border:1px solid #2a3550;border-radius:8px;padding:7px 8px;font-size:.85rem}
 </main>
 <footer>
  <div class="row"><label>体高</label>
-  <input type="range" id="h" min="105" max="130" value="115"></div>
+  <input type="range" id="h" min="110" max="130" value="115"></div>
  <div class="row">
-  <button id="stand" class="on">起動</button>
-  <button id="rest">脱力</button>
+  <button id="stand">起動</button>
+  <button id="rest" class="on">脱力</button>
   <button id="led" class="on">LED</button>
   <button id="eyeBtn" class="on">目:キョロ</button>
   <button id="snd1">♪1</button><button id="snd2">♪2</button>
@@ -79,30 +79,39 @@ border:1px solid #2a3550;border-radius:8px;padding:7px 8px;font-size:.85rem}
 </footer>
 <script>
 "use strict";
-let ws, wsOK=false, vx=0, vy=0, wz=0, standing=true, led=true, ptt=0;
+const b=id=>document.getElementById(id);
+let ws, wsOK=false, vx=0, vy=0, wz=0, standing=false, led=true, ptt=0;
 const stat=document.getElementById('stat');
 function connect(){
   ws=new WebSocket('ws://'+location.host+'/ws');
   ws.onopen=()=>{wsOK=true;stat.textContent='online'};
-  ws.onclose=()=>{wsOK=false;stat.textContent='reconnecting…';setTimeout(connect,800)};
+  ws.onclose=()=>{wsOK=false;releaseControls();stat.textContent='reconnecting…';setTimeout(connect,800)};
   ws.onmessage=e=>{
     const d=JSON.parse(e.data);
+    if(typeof d.h==='number' && !heightDirty) b('h').value=d.h;
+    if(typeof d.stand==='boolean'){
+      standing=d.stand;b('stand').classList.toggle('on',standing);
+      b('rest').classList.toggle('on',!standing);
+    }
     stat.innerHTML=(d.vbat>0?d.vbat.toFixed(2)+'V ':'')+
       (d.cut?'<span class="warn">低電圧遮断</span>':
+       d.i2c===false?'<span class="warn">サーボ通信異常・配線確認後に再起動</span>':
        d.low?'<span class="warn">LOW BATT</span>':'online');
   };
 }
 connect();
 // 腕キーは「ユーザーがスライダを操作した時だけ」送る。毎ティック送ると
 // /arm プリセットで書いた target を 100ms で上書きしてしまう
-let armDirty=false;
+let armDirty=false, heightDirty=false;
+b('h').addEventListener('input',()=>{heightDirty=true;});
 for(const id of ['ay','ap','ae'])
   document.getElementById(id).addEventListener('input',()=>{armDirty=true;});
 // 操作系メッセージの送出。100ms 周期の他、PTT ボタンの押下/解放時にも即時
 // 呼ぶ (録音開始/停止のレイテンシを抑えるため周期を待たない)
-function sendState(){ if(!wsOK) return;
-  const msg={vx,vy,wz, h:+document.getElementById('h').value,
-    stand:standing?1:0, led:led?1:0, amir:1, ptt};
+function sendState(standCommand){ if(!wsOK || ws.readyState!==WebSocket.OPEN) return;
+  const msg={vx,vy,wz, led:led?1:0, amir:1, ptt};
+  if(typeof standCommand==='boolean') msg.stand=standCommand?1:0;
+  if(heightDirty){msg.h=+b('h').value;heightDirty=false;}
   if(armDirty){
     msg.ay=+document.getElementById('ay').value;
     msg.ap=+document.getElementById('ap').value;
@@ -112,6 +121,15 @@ function sendState(){ if(!wsOK) return;
   ws.send(JSON.stringify(msg));
 }
 setInterval(sendState,100);
+// 通信断・別アプリ移動で指を離した通知を失っても再接続後に動作を復活させない。
+function releaseControls(){
+  vx=vy=wz=ptt=0;
+  b('pttBtn').classList.remove('on');
+  sendState();
+}
+window.addEventListener('blur',releaseControls);
+window.addEventListener('pagehide',releaseControls);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)releaseControls();});
 
 function armPose(p){
   fetch('/arm?pose='+p);
@@ -158,11 +176,10 @@ function setupPad(id, cb, spring){
 setupPad('joy',(x,y)=>{vx=x; vy=-y;},true);
 setupPad('turn',(x,y)=>{wz=x;},true);
 
-const b=id=>document.getElementById(id);
 b('stand').onclick=()=>{standing=true;b('stand').classList.add('on');
-  b('rest').classList.remove('on');};
+  b('rest').classList.remove('on');sendState(true);};
 b('rest').onclick=()=>{standing=false;b('rest').classList.add('on');
-  b('stand').classList.remove('on');};
+  b('stand').classList.remove('on');releaseControls();sendState(false);};
 b('led').onclick=()=>{led=!led;b('led').classList.toggle('on',led);};
 b('snd1').onclick=()=>fetch('/play?n=1');
 b('snd2').onclick=()=>fetch('/play?n=2');

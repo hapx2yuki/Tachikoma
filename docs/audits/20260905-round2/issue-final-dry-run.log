@@ -1,0 +1,38 @@
+== labels ==
+== milestones ==
+== issues ==
+  + issue RV-13: RV-13 [機構不具合] 頭の7固定穴から外殻へ届く支持柱・受け座を設計する
+  + issue RV-14: RV-14 [機構不具合] シャーシと大腿カバーの実交差を解消する
+  + issue RV-15: RV-15 [機構不具合] 首・Cabin・装飾を全長で組み合わせ、支持と挿入を成立させる
+  ~ body/meta P-01 (#11): ['body']
+  ~ body/meta EL-04 (#31): ['body']
+  ~ body/meta EL-06 (#33): ['body']
+  ~ body/meta L-01 (#36): ['body']
+  ~ body/meta EL-09 (#75): ['body']
+  ~ body/meta L-11 (#77): ['body']
+  ~ body/meta H-02 (#51): ['body']
+  ~ body/meta H-06 (#55): ['labels']
+  ~ body/meta S-01 (#57): ['body']
+  ~ body/meta S-02a (#58): ['body']
+  ~ body/meta S-02b (#59): ['body']
+  ~ body/meta S-02c (#60): ['body']
+  ~ body/meta S-02d (#61): ['body']
+  ~ body/meta S-03 (#62): ['body']
+  ~ body/meta S-05 (#64): ['body']
+  ~ body/meta RV-04 (#84): ['body']
+  ~ body/meta RV-05 (#85): ['body']
+  ~ body/meta RV-06 (#87): ['body']
+  ~ body/meta RV-07 (#88): ['body']
+  ~ body/meta RV-09 (#90): ['body']
+  ~ body/meta RV-10 (#91): ['body']
+  ~ body/meta RV-12 (#93): ['body']
+== relations ==
+  blocked #57 (S-01) by #88 (RV-07)
+  blocked #58 (S-02a) by #87 (RV-06)
+  blocked #59 (S-02b) by #87 (RV-06)
+  blocked #60 (S-02c) by #87 (RV-06)
+  blocked #61 (S-02d) by #87 (RV-06)
+  planned RV-13: parent=E7, blocked_by=['RV-09']
+  planned RV-14: parent=E4, blocked_by=['RV-09']
+  planned RV-15: parent=E7, blocked_by=[]
+  wrote docs/build_plan.md

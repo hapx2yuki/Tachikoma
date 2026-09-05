@@ -1,0 +1,28 @@
+{
+  "source_sha256": "7d4186efee9460492e439d96a3ef72930442e8c58708ff3eff156528b83939a8",
+  "cases": [
+    {
+      "mass_scale": 1.0,
+      "sum_mass_kg": 2.7475382889999995,
+      "base_subtree_mass_kg": 2.7475382890000004,
+      "first_servo_invweight": 442.53810990487887,
+      "max_difference_after_mj_setConst": {
+        "body_subtreemass": 0.0,
+        "body_invweight0": 0.0,
+        "dof_invweight0": 0.0
+      }
+    },
+    {
+      "mass_scale": 1.3,
+      "sum_mass_kg": 3.5717997757000006,
+      "base_subtree_mass_kg": 3.5717997756999997,
+      "first_servo_invweight": 380.28808118132224,
+      "max_difference_after_mj_setConst": {
+        "body_subtreemass": 0.0,
+        "body_invweight0": 0.0,
+        "dof_invweight0": 0.0
+      }
+    }
+  ],
+  "audit": "build_modelコンパイル後のモデル変更は0箇所。実行中のactuator_forcerangeだけは速度/通電状態に応じた毎ステップ更新。剛体/関節/geom/solver定数はコンパイル前に確定。"
+}

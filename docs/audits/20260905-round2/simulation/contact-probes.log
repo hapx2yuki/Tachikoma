@@ -1,0 +1,23 @@
+contact_parts_self INVALID_INITIAL_CONTACT_MODEL roll 178.07 pitch 17.72 power {'mean': 11.361754784595037, 'max': 168.79765304868855, 'p95': 46.53117793549475} self initial mm 19.02939531901515
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: divide by zero encountered in divide
+  center_mass = integrated[1:4] / volume
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999996.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+Traceback (most recent call last):
+  File "/Users/uratayuuki/Documents/Tachikoma/tools/sim_stress.py", line 168, in <module>
+    for case in cases:execute(case,args.out)
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uratayuuki/Documents/Tachikoma/tools/sim_stress.py", line 53, in execute
+    m,idx=S.build_model(options.get('friction',1.),gains['kp'],gains['kv'],
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uratayuuki/Documents/Tachikoma/tools/sim_physics.py", line 369, in build_model
+    model = spec.compile()
+            ^^^^^^^^^^^^^^
+ValueError: Error: mesh 'part_47_12' has coplanar vertices, cannot compute convex hull. Consider using a primitive geom type (plane or thin box) instead
+Element name 'part_47_12', id 905

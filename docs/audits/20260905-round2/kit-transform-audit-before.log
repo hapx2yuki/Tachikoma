@@ -1,0 +1,199 @@
+{
+  "pass": false,
+  "unresolved_placements": 2,
+  "note": "位置不明は別件として残す。参照/行列の整合は組立可能性の証明ではない。",
+  "placements": [
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FR_0",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000005788227793,
+        0.9999997465435116,
+        0.9999995490129074
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FR_1",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000004735684689,
+        0.9999996862348373,
+        0.9999995678244396
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FR_2",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000006763225755,
+        1.0000003805336928,
+        0.9999999314274286
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FL_0",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000005788227793,
+        0.9999997465435116,
+        0.9999995490129074
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FL_1",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000004735684689,
+        0.9999996862348373,
+        0.9999995678244396
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FL_2",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000006763225755,
+        1.0000003805336928,
+        0.9999999314274286
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RL_0",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000005788227793,
+        0.9999997465435116,
+        0.9999995490129074
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RL_1",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000004735684689,
+        0.9999996862348373,
+        0.9999995678244396
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RL_2",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000006763225755,
+        1.0000003805336928,
+        0.9999999314274286
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RR_0",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000005788227793,
+        0.9999997465435116,
+        0.9999995490129074
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RR_1",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000004735684689,
+        0.9999996862348373,
+        0.9999995678244396
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RR_2",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.0000006763225755,
+        1.0000003805336928,
+        0.9999999314274286
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": false,
+      "pass": false
+    }
+  ]
+}

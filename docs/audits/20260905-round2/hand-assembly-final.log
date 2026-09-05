@@ -1,0 +1,375 @@
+{
+  "status": "FAIL",
+  "pass": false,
+  "coordinate_frame": "claw_mount原点。左腕はこの全体の鏡映で同じ交差体積。",
+  "parts": [
+    "forearm",
+    "claw_mount",
+    "claw",
+    "finger_0",
+    "finger_1",
+    "finger_2",
+    "tip_0",
+    "tip_1",
+    "tip_2"
+  ],
+  "pairs": [
+    {
+      "a": "forearm",
+      "b": "claw_mount",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "forearm",
+      "b": "claw",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "forearm",
+      "b": "finger_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "forearm",
+      "b": "finger_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "forearm",
+      "b": "finger_2",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "forearm",
+      "b": "tip_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "forearm",
+      "b": "tip_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "forearm",
+      "b": "tip_2",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "claw_mount",
+      "b": "claw",
+      "intersection_mm3": 4.628435635497927
+    },
+    {
+      "a": "claw_mount",
+      "b": "finger_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "claw_mount",
+      "b": "finger_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "claw_mount",
+      "b": "finger_2",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "claw_mount",
+      "b": "tip_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "claw_mount",
+      "b": "tip_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "claw_mount",
+      "b": "tip_2",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "claw",
+      "b": "finger_0",
+      "intersection_mm3": 0.07566379560388252
+    },
+    {
+      "a": "claw",
+      "b": "finger_1",
+      "intersection_mm3": 0.0612908232841202
+    },
+    {
+      "a": "claw",
+      "b": "finger_2",
+      "intersection_mm3": 0.05825072775353609
+    },
+    {
+      "a": "claw",
+      "b": "tip_0",
+      "intersection_mm3": 15.880571123478338
+    },
+    {
+      "a": "claw",
+      "b": "tip_1",
+      "intersection_mm3": 15.878608568581257
+    },
+    {
+      "a": "claw",
+      "b": "tip_2",
+      "intersection_mm3": 15.878478878632498
+    },
+    {
+      "a": "finger_0",
+      "b": "finger_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "finger_0",
+      "b": "finger_2",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "finger_0",
+      "b": "tip_0",
+      "intersection_mm3": 17.070867764651933
+    },
+    {
+      "a": "finger_0",
+      "b": "tip_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "finger_0",
+      "b": "tip_2",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "finger_1",
+      "b": "finger_2",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "finger_1",
+      "b": "tip_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "finger_1",
+      "b": "tip_1",
+      "intersection_mm3": 17.07088360004491
+    },
+    {
+      "a": "finger_1",
+      "b": "tip_2",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "finger_2",
+      "b": "tip_0",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "finger_2",
+      "b": "tip_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "finger_2",
+      "b": "tip_2",
+      "intersection_mm3": 17.070881279970042
+    },
+    {
+      "a": "tip_0",
+      "b": "tip_1",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "tip_0",
+      "b": "tip_2",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "tip_1",
+      "b": "tip_2",
+      "intersection_mm3": 0.0
+    }
+  ],
+  "collisions": [
+    {
+      "a": "claw_mount",
+      "b": "claw",
+      "intersection_mm3": 4.628435635497927
+    },
+    {
+      "a": "claw",
+      "b": "finger_0",
+      "intersection_mm3": 0.07566379560388252
+    },
+    {
+      "a": "claw",
+      "b": "finger_1",
+      "intersection_mm3": 0.0612908232841202
+    },
+    {
+      "a": "claw",
+      "b": "finger_2",
+      "intersection_mm3": 0.05825072775353609
+    },
+    {
+      "a": "claw",
+      "b": "tip_0",
+      "intersection_mm3": 15.880571123478338
+    },
+    {
+      "a": "claw",
+      "b": "tip_1",
+      "intersection_mm3": 15.878608568581257
+    },
+    {
+      "a": "claw",
+      "b": "tip_2",
+      "intersection_mm3": 15.878478878632498
+    },
+    {
+      "a": "finger_0",
+      "b": "tip_0",
+      "intersection_mm3": 17.070867764651933
+    },
+    {
+      "a": "finger_1",
+      "b": "tip_1",
+      "intersection_mm3": 17.07088360004491
+    },
+    {
+      "a": "finger_2",
+      "b": "tip_2",
+      "intersection_mm3": 17.070881279970042
+    }
+  ],
+  "mount_face_rays": [
+    {
+      "y_mm": 0.0,
+      "z_mm": 0.0,
+      "gap_mm": -0.0003863163237980416
+    },
+    {
+      "y_mm": 0.0,
+      "z_mm": 0.0,
+      "gap_mm": -0.0003863163237980416
+    },
+    {
+      "y_mm": 0.0,
+      "z_mm": 0.0,
+      "gap_mm": -0.0003863163237980416
+    },
+    {
+      "y_mm": -0.0,
+      "z_mm": 0.0,
+      "gap_mm": -0.0003863163237980416
+    },
+    {
+      "y_mm": -0.0,
+      "z_mm": 0.0,
+      "gap_mm": -0.0003863163237980416
+    },
+    {
+      "y_mm": -0.0,
+      "z_mm": -0.0,
+      "gap_mm": -0.0003863163237980416
+    },
+    {
+      "y_mm": -0.0,
+      "z_mm": -0.0,
+      "gap_mm": -0.0003863163237980416
+    },
+    {
+      "y_mm": 0.0,
+      "z_mm": -0.0,
+      "gap_mm": -0.0003863163237980416
+    },
+    {
+      "y_mm": 2.0,
+      "z_mm": 0.0,
+      "gap_mm": -0.011429922024433381
+    },
+    {
+      "y_mm": 1.4142135623730951,
+      "z_mm": 1.414213562373095,
+      "gap_mm": -0.020027045632598828
+    },
+    {
+      "y_mm": 1.2246467991473532e-16,
+      "z_mm": 2.0,
+      "gap_mm": -0.017118896386573823
+    },
+    {
+      "y_mm": -1.414213562373095,
+      "z_mm": 1.4142135623730951,
+      "gap_mm": -0.004409028673261872
+    },
+    {
+      "y_mm": -2.0,
+      "z_mm": 2.4492935982947064e-16,
+      "gap_mm": 0.01065728937684085
+    },
+    {
+      "y_mm": -1.4142135623730954,
+      "z_mm": -1.414213562373095,
+      "gap_mm": 0.01925441298500985
+    },
+    {
+      "y_mm": -3.6739403974420594e-16,
+      "z_mm": -2.0,
+      "gap_mm": 0.01634626373897774
+    },
+    {
+      "y_mm": 1.4142135623730947,
+      "z_mm": -1.4142135623730954,
+      "gap_mm": 0.0036363960256693417
+    },
+    {
+      "y_mm": 4.0,
+      "z_mm": 0.0,
+      "gap_mm": -0.02247352772506872
+    },
+    {
+      "y_mm": 2.8284271247461903,
+      "z_mm": 2.82842712474619,
+      "gap_mm": -0.03966777494140672
+    },
+    {
+      "y_mm": 2.4492935982947064e-16,
+      "z_mm": 4.0,
+      "gap_mm": -0.033851476449349605
+    },
+    {
+      "y_mm": -2.82842712474619,
+      "z_mm": 2.8284271247461903,
+      "gap_mm": -0.008431741022729256
+    },
+    {
+      "y_mm": -4.0,
+      "z_mm": 4.898587196589413e-16,
+      "gap_mm": 0.02170089507747619
+    },
+    {
+      "y_mm": -2.8284271247461907,
+      "z_mm": -2.82842712474619,
+      "gap_mm": 0.03889514229381774
+    },
+    {
+      "y_mm": -7.347880794884119e-16,
+      "z_mm": -4.0,
+      "gap_mm": 0.03307884380175352
+    },
+    {
+      "y_mm": 2.8284271247461894,
+      "z_mm": -2.8284271247461907,
+      "gap_mm": 0.007659108375133172
+    }
+  ],
+  "joint_allowance_status": "UNVERIFIED: 元キットの圧入量、接着座、公差の実証がない。1mm残差や50mm3食い込みを許容とみなさない。",
+  "numerical_volume_tolerance_mm3": 0.01,
+  "limitations": "元STLの意図した圧入だったとしても、剛体交差そのものは残る。原型側の仕様/実測に基づく受け座と挿入検証が必要。接着・強度も別途確認。"
+}

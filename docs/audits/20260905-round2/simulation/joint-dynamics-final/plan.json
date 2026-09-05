@@ -1,0 +1,312 @@
+{
+  "created_utc": "2026-09-05T08:10:36.835290+00:00",
+  "script_sha256": "5195971b48b743194da551f63688703873f373842a9e0025f68d7a1f3608f078",
+  "cases": [
+    {
+      "name": "armature_0.0001_dt0.002",
+      "controller": "native",
+      "model": {
+        "timestep": 0.002
+      },
+      "joint_dynamics_override": {
+        "armature_kg_m2": 0.0001,
+        "damping_Nm_s_per_rad": 0.02
+      },
+      "gains": {
+        "kp": {
+          "leg": 24.0,
+          "arm": 0.8,
+          "eye": 0.05
+        },
+        "kv": {
+          "leg": 0.4,
+          "arm": 0.03,
+          "eye": 0.005
+        }
+      },
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "armature_0.0001_dt0.0005",
+      "controller": "native",
+      "model": {
+        "timestep": 0.0005
+      },
+      "joint_dynamics_override": {
+        "armature_kg_m2": 0.0001,
+        "damping_Nm_s_per_rad": 0.02
+      },
+      "gains": {
+        "kp": {
+          "leg": 24.0,
+          "arm": 0.8,
+          "eye": 0.05
+        },
+        "kv": {
+          "leg": 0.4,
+          "arm": 0.03,
+          "eye": 0.005
+        }
+      },
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "armature_0_dt0.002",
+      "controller": "native",
+      "model": {
+        "timestep": 0.002
+      },
+      "joint_dynamics_override": {
+        "armature_kg_m2": 0.0,
+        "damping_Nm_s_per_rad": 0.02
+      },
+      "gains": {
+        "kp": {
+          "leg": 24.0,
+          "arm": 0.8,
+          "eye": 0.05
+        },
+        "kv": {
+          "leg": 0.4,
+          "arm": 0.03,
+          "eye": 0.005
+        }
+      },
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "armature_0_dt0.0005",
+      "controller": "native",
+      "model": {
+        "timestep": 0.0005
+      },
+      "joint_dynamics_override": {
+        "armature_kg_m2": 0.0,
+        "damping_Nm_s_per_rad": 0.02
+      },
+      "gains": {
+        "kp": {
+          "leg": 24.0,
+          "arm": 0.8,
+          "eye": 0.05
+        },
+        "kv": {
+          "leg": 0.4,
+          "arm": 0.03,
+          "eye": 0.005
+        }
+      },
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "damping_0",
+      "controller": "native",
+      "model": {
+        "timestep": 0.002
+      },
+      "joint_dynamics_override": {
+        "armature_kg_m2": 0.001,
+        "damping_Nm_s_per_rad": 0.0
+      },
+      "gains": {
+        "kp": {
+          "leg": 24.0,
+          "arm": 0.8,
+          "eye": 0.05
+        },
+        "kv": {
+          "leg": 0.4,
+          "arm": 0.03,
+          "eye": 0.005
+        }
+      },
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "damping_0.05",
+      "controller": "native",
+      "model": {
+        "timestep": 0.002
+      },
+      "joint_dynamics_override": {
+        "armature_kg_m2": 0.001,
+        "damping_Nm_s_per_rad": 0.05
+      },
+      "gains": {
+        "kp": {
+          "leg": 24.0,
+          "arm": 0.8,
+          "eye": 0.05
+        },
+        "kv": {
+          "leg": 0.4,
+          "arm": 0.03,
+          "eye": 0.005
+        }
+      },
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "gain_0.5",
+      "controller": "native",
+      "model": {
+        "timestep": 0.002
+      },
+      "joint_dynamics_override": {
+        "armature_kg_m2": 0.001,
+        "damping_Nm_s_per_rad": 0.02
+      },
+      "gains": {
+        "kp": {
+          "leg": 12.0,
+          "arm": 0.4,
+          "eye": 0.025
+        },
+        "kv": {
+          "leg": 0.2,
+          "arm": 0.015,
+          "eye": 0.0025
+        }
+      },
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "gain_2",
+      "controller": "native",
+      "model": {
+        "timestep": 0.002
+      },
+      "joint_dynamics_override": {
+        "armature_kg_m2": 0.001,
+        "damping_Nm_s_per_rad": 0.02
+      },
+      "gains": {
+        "kp": {
+          "leg": 48.0,
+          "arm": 1.6,
+          "eye": 0.1
+        },
+        "kv": {
+          "leg": 0.8,
+          "arm": 0.06,
+          "eye": 0.01
+        }
+      },
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    }
+  ],
+  "criterion": "sim_stress既定。2msで発散した低慣性の条件は0.5msとも比較し、数値計算破綻と物理転倒を区別する。",
+  "limitations": "任意の感度幅。購入サーボのロータ・歯車慣性、粘性、内部制御ゲインを測った値ではない。"
+}

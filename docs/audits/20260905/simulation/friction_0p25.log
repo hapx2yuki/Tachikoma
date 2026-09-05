@@ -1,0 +1,6 @@
+simulation_acceptance = PASS  physical_readiness = UNVERIFIED
+walk = {'available': True, 'axis_frame': 'initial world +X right, +Y forward', 'right_m': 0.062325288514236826, 'forward_m': 0.12447491105359, 'xy_norm_m': 0.13920648357810783, 'commanded_direction_m': 0.12447491105359, 'averaging_window_s': 1.6, 'effective_elapsed_s': 6.3999999999994595, 'commanded_direction_speed_m_s': 0.01944920485212508}
+turn_deg = 15.31252563532351  max_roll = 1.896  max_pitch = 1.266  fell = False
+max_leg_saturation_fraction = 0.00246  nonfoot_ground_contact_steps = 0
+failed_checks = 
+metrics saved -> docs/audits/20260905/simulation/friction_0p25.json

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "check_leg_assembly",
+    "exit_code": 0,
+    "seconds": 30.11,
+    "log": "docs/audits/20260905/logs/baseline-check_leg_assembly.log"
+  },
+  {
+    "name": "check_screw_bosses",
+    "exit_code": 0,
+    "seconds": 0.56,
+    "log": "docs/audits/20260905/logs/baseline-check_screw_bosses.log"
+  },
+  {
+    "name": "sim_gait",
+    "exit_code": 0,
+    "seconds": 1.08,
+    "log": "docs/audits/20260905/logs/baseline-sim_gait.log"
+  },
+  {
+    "name": "check_leg_link_strength",
+    "exit_code": 0,
+    "seconds": 0.58,
+    "log": "docs/audits/20260905/logs/baseline-check_leg_link_strength.log"
+  },
+  {
+    "name": "check_arm",
+    "exit_code": 0,
+    "seconds": 10.09,
+    "log": "docs/audits/20260905/logs/baseline-check_arm.log"
+  },
+  {
+    "name": "check_eye",
+    "exit_code": 0,
+    "seconds": 0.42,
+    "log": "docs/audits/20260905/logs/baseline-check_eye.log"
+  },
+  {
+    "name": "check_audio",
+    "exit_code": 0,
+    "seconds": 1.95,
+    "log": "docs/audits/20260905/logs/baseline-check_audio.log"
+  },
+  {
+    "name": "check_camera",
+    "exit_code": 0,
+    "seconds": 5.4,
+    "log": "docs/audits/20260905/logs/baseline-check_camera.log"
+  },
+  {
+    "name": "check_shin_arm_leg",
+    "exit_code": 0,
+    "seconds": 61.22,
+    "log": "docs/audits/20260905/logs/baseline-check_shin_arm_leg.log"
+  },
+  {
+    "name": "check_head_pod_clearance",
+    "exit_code": 0,
+    "seconds": 0.51,
+    "log": "docs/audits/20260905/logs/baseline-check_head_pod_clearance.log"
+  },
+  {
+    "name": "check_pod_neck_strength",
+    "exit_code": 0,
+    "seconds": 0.62,
+    "log": "docs/audits/20260905/logs/baseline-check_pod_neck_strength.log"
+  },
+  {
+    "name": "check_urdf",
+    "exit_code": 0,
+    "seconds": 12.17,
+    "log": "docs/audits/20260905/logs/baseline-check_urdf.log"
+  }
+]

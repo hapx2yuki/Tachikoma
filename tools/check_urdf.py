@@ -356,8 +356,8 @@ def gait_case(phase, vx, vy, wz, body_h):
     """foot_target()+leg_ik() で全脚 IK 成功する脚角一式を返す (失敗なら None)。"""
     out = {}
     for li, leg in enumerate(E.LEGS):
-        lx, ly, lz = foot_target(li, phase, vx, vy, wz)
-        lz = lz + (BODY_H - body_h)
+        lx, ly, lz = foot_target(li, phase, vx, vy, wz, body_h,
+                                  holding=max(abs(vx), abs(vy), abs(wz)) == 0)
         a = leg_ik(lx, ly, lz)
         if a is None:
             return None
@@ -498,55 +498,32 @@ check_eye_roll_fk()
 
 
 # ============================================================ [4] 接地
-print("\n[4] 接地 (標準立ち姿勢: 4足 foot_pad 底面の共面性 ±0.1mm, base高さ≈BODY_H)")
-STAND_BODY_H = 115.0
-# check[3] の姿勢 (phase=0,v=0) は SWAY_LEAD の窓境界がちょうど phase=0/1
-# 境界に重なるため sway が厳密に 0 にならず (実測: sway_of(0.0)≈(0,21.8mm))、
-# 前脚/後脚で追加の前後シフトがかかり足高さが対称にならない (これは歩容の
-# 仕様であって URDF のバグではない — gait.h の sway 窓は常時どこかの脚の
-# 遊脚区間をカバーするよう設計されている)。「静止して立つ」ための姿勢は
-# robot_meshes() 自身が leg_ik 失敗時に使うフォールバック式 (STANCE 方位・
-# STANCE_R・body_h への直接到達, sway 非依存) を使う — 4 脚とも半径
-# STANCE_R・高さ body_h が同一なので幾何学的に厳密対称になる
-def standing_leg_angles(body_h):
-    out = {}
-    for li, leg in enumerate(E.LEGS):
-        d = STANCE[li] - MOUNT[li]
-        a = leg_ik(STANCE_R * np.cos(d), STANCE_R * np.sin(d), -body_h)
-        assert a is not None, f"standing pose IK 失敗: {leg}"
-        out[leg] = a
-    return out
-
-
-leg_angles_stand = standing_leg_angles(STAND_BODY_H)
-q_stand = {}
-for leg, (yaw_d, pitch_d, knee_d) in leg_angles_stand.items():
-    lo = leg.lower()
-    q_stand[f"leg_{lo}_yaw"] = np.radians(yaw_d)
-    q_stand[f"leg_{lo}_pitch"] = np.radians(pitch_d)
-    q_stand[f"leg_{lo}_knee"] = np.radians(knee_d)
-world = fk_all(JOINTS, q_stand)
+print("\n[4] 接地 (実firmwareの停止立位: TPU支持、硬い形状の先行接地)")
+STAND_BODY_H = E._fw_const("BODY_H_DEF")
+import sim_physics as SP
+q_rad, leg_angles_stand = SP.compute_leg_targets(0, 0, 0, 0, {}, holding=True, body_h=STAND_BODY_H)
+world = fk_all(JOINTS, q_rad)
 shiftz = trans(0, 0, STAND_BODY_H)
-foot_pad_local = load("foot_pad")
-foot_pad_local.apply_transform(trans(0, 0, -C.TIBIA_LEN))
-foot_zs = {}
+foot_zs = {}; hard_zs = {}
 for leg in E.LEGS:
-    lo = leg.lower()
-    Fw = shiftz @ _m_to_mm(world[f"leg_{lo}_tibia"])
-    fp = foot_pad_local.copy(); fp.apply_transform(Fw)
-    foot_zs[leg] = float(fp.vertices[:, 2].min())
-zs = np.array(list(foot_zs.values()))
-coplanar = float(zs.max() - zs.min())
-print(f"  foot_pad 底面 world z (mm, 標準立ち姿勢): "
-     + ", ".join(f"{leg}={foot_zs[leg]:+.4f}" for leg in E.LEGS))
-check(coplanar < 0.1, f"4足 foot_pad 底面の共面性: {coplanar:.4f}mm < 0.1mm")
-base_h_actual = STAND_BODY_H  # base_link 原点 = 股ヨー/ピッチ軸高さ平面 = 定義上 body_h そのもの
-check(abs(base_h_actual - 115.0) < 1e-6,
-     f"base_link 高さ = body_h = {base_h_actual:.1f}mm ≈ BODY_H_DEF(115)")
-print(f"  (foot_pad 底が world z=0 からずれる量は FOOT_GROUND_OFFSET の校正が "
-     f"SWAY込み歩容全域の worst-case 用であるため — 静止立ち姿勢はその対象で"
-     f"はなく z=0 に厳密一致しなくてよい。config.py FOOT_GROUND_OFFSET コメント "
-     f"参照。ここでの合否は「4足が同一平面にあるか」のみ判定する)")
+    link = f"leg_{leg.lower()}_tibia"
+    Fw = shiftz @ _m_to_mm(world[link])
+    heights = {}
+    for mesh, _, name in PARTS[link]:
+        points = trimesh.transform_points(mesh.vertices, Fw)
+        heights[name] = float(points[:, 2].min())
+    foot_zs[leg] = heights["foot_pad"]
+    hard_zs[leg] = min(z for n, z in heights.items() if n != "foot_pad")
+    check(foot_zs[leg] <= hard_zs[leg] + 0.1,
+          f"{leg}: TPU底z={foot_zs[leg]:+.4f}mm、硬い形状最低z={hard_zs[leg]:+.4f}mm、"
+          f"TPUが先行接地 (0.1mm許容)", "4")
+coplanar = max(foot_zs.values()) - min(foot_zs.values())
+check(coplanar < 0.1, f"実停止立位の4足TPU共面性: {coplanar:.4f}mm < 0.1mm", "4")
+# 指定高さを同じ定数と比較する旧チェックは測定にならない。実支持面が
+# 地面z=0に来るときの股軸高さを形状から再計算する。
+lowest = min(min(foot_zs.values()), min(hard_zs.values()))
+print(f"  最低支持形状を床へ置くときの股軸高さ={STAND_BODY_H-lowest:.4f}mm "
+      f"(指定{STAND_BODY_H:.1f}mm)。軟質材圧縮・姿勢緩和はこの静的検査の範囲外")
 
 
 # ============================================================ [5] 慣性
@@ -555,10 +532,12 @@ grand_total = 0.0
 for name, l in LINKS.items():
     m, com, I = l["mass"], l["com"], l["I"]
     grand_total += m
+    check(np.isfinite(com).all() and np.isfinite(I).all() and np.isfinite(m), f"{name}: 質量特性が有限", "5")
     check(m > 0, f"{name}: mass={m*1000:.2f}g > 0", "5")
     check(np.allclose(I, I.T, atol=1e-15), f"{name}: 慣性テンソル対称", "5")
     eig = np.linalg.eigvalsh(I)
     check(bool((eig > 0).all()), f"{name}: 慣性テンソル正定値 (固有値 {np.round(eig,12)})", "5")
+    check(eig[0] + eig[1] >= eig[2] - 1e-12, f"{name}: 主慣性の三角不等式", "5")
 check(2.5 <= grand_total <= 3.5, f"総質量 {grand_total:.4f} kg (目標 2.5〜3.5kg)")
 
 # ---- [5b] 質量の独立再計算 (leg_fr_coxa の代表例)

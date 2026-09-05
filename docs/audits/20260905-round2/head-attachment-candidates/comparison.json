@@ -1,0 +1,2228 @@
+{
+  "status": "FAIL: 既存の頭固定穴は7本とも頭殻へ向かう軸線外。移設/支持構造の再設計が必要",
+  "method": "全原材Boolean/垂直軸レイ/面距離サンプル/18実出力姿勢。現90度タブは口逃げ後の3mm増しカラーを含む。候補半径は穴位置だけを比較し、本体円板やケース穴を再設計したとは扱わない。",
+  "current_holes_with_vertical_head_path": 0,
+  "cap_visible_surface_collision": [
+    {
+      "leg": "FR",
+      "surface_samples_inside_chassis": 532,
+      "upward_surface_samples_inside_chassis": 532,
+      "intersection_mm3": 116.06587423465437,
+      "intersection_radial_range_mm": [
+        69.3521340969317,
+        84.8301840121517
+      ]
+    },
+    {
+      "leg": "FL",
+      "surface_samples_inside_chassis": 519,
+      "upward_surface_samples_inside_chassis": 519,
+      "intersection_mm3": 116.15335342809219,
+      "intersection_radial_range_mm": [
+        69.3507767701876,
+        84.83138109606676
+      ]
+    },
+    {
+      "leg": "RL",
+      "surface_samples_inside_chassis": 1278,
+      "upward_surface_samples_inside_chassis": 612,
+      "intersection_mm3": 411.0498149217771,
+      "intersection_radial_range_mm": [
+        72.02804694420257,
+        87.10041133677741
+      ]
+    },
+    {
+      "leg": "RR",
+      "surface_samples_inside_chassis": 1290,
+      "upward_surface_samples_inside_chassis": 624,
+      "intersection_mm3": 411.01638806277543,
+      "intersection_radial_range_mm": [
+        72.02756926553633,
+        87.10041133677741
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "radius_mm": 78,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 90,
+      "hole_xy_mm": [
+        4.776122516674678e-15,
+        78.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 2.6864959716796903,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 78,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 30,
+      "hole_xy_mm": [
+        67.54998149518622,
+        38.99999999999999
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.949751412502634,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": [
+        {
+          "pose": "holding",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 82.51287812651468
+        },
+        {
+          "pose": "holding",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 47.270637244138264
+        },
+        {
+          "pose": "walk_02",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 0.20668549779823345
+        },
+        {
+          "pose": "walk_02",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 0.05065416612676217
+        },
+        {
+          "pose": "walk_03",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 24.16094641994393
+        },
+        {
+          "pose": "walk_03",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 17.58434511559364
+        },
+        {
+          "pose": "walk_04",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 152.0371473834469
+        },
+        {
+          "pose": "walk_04",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 65.97333390557168
+        },
+        {
+          "pose": "walk_05",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 299.183325150379
+        },
+        {
+          "pose": "walk_05",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 92.53693078578947
+        },
+        {
+          "pose": "walk_06",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 336.763162390032
+        },
+        {
+          "pose": "walk_06",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 94.30185481184672
+        },
+        {
+          "pose": "walk_07",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 218.81170916907618
+        },
+        {
+          "pose": "walk_07",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 80.1385702753015
+        },
+        {
+          "pose": "walk_08",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 79.52785178535879
+        },
+        {
+          "pose": "walk_08",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 46.144031336087586
+        },
+        {
+          "pose": "walk_09",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 123.55069632950295
+        },
+        {
+          "pose": "walk_09",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 58.77461539365097
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 122.39455162829245
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 58.53868888278903
+        },
+        {
+          "pose": "walk_11",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 44.21377902481619
+        },
+        {
+          "pose": "walk_11",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 28.20047285911148
+        }
+      ]
+    },
+    {
+      "radius_mm": 78,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 150,
+      "hole_xy_mm": [
+        -67.54998149518622,
+        38.99999999999999
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.908801965796048,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": [
+        {
+          "pose": "holding",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 82.59563008618719
+        },
+        {
+          "pose": "holding",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 51.52837940895105
+        },
+        {
+          "pose": "walk_05",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 0.446918525437088
+        },
+        {
+          "pose": "walk_05",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 0.8672115346236965
+        },
+        {
+          "pose": "walk_06",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 122.49282751162653
+        },
+        {
+          "pose": "walk_06",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 61.77059742890504
+        },
+        {
+          "pose": "walk_07",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 262.8038171517321
+        },
+        {
+          "pose": "walk_07",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 89.61699194387614
+        },
+        {
+          "pose": "walk_08",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 375.57428364310465
+        },
+        {
+          "pose": "walk_08",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 100.09680706559622
+        },
+        {
+          "pose": "walk_09",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 554.7917924763236
+        },
+        {
+          "pose": "walk_09",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 111.56706414600319
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 652.1993807037212
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 109.60385357870778
+        },
+        {
+          "pose": "walk_11",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 585.4307002593678
+        },
+        {
+          "pose": "walk_11",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 111.75895272499271
+        },
+        {
+          "pose": "walk_12",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 363.661914826564
+        },
+        {
+          "pose": "walk_12",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 94.14436737210217
+        },
+        {
+          "pose": "walk_13",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 91.11920902476609
+        },
+        {
+          "pose": "walk_13",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 54.07283456511098
+        },
+        {
+          "pose": "walk_14",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 0.2110738701724583
+        },
+        {
+          "pose": "walk_14",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 0.7470644871655169
+        }
+      ]
+    },
+    {
+      "radius_mm": 78,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 210,
+      "hole_xy_mm": [
+        -67.54998149518622,
+        -39.00000000000001
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 17.595640561248825,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": [
+        {
+          "pose": "holding",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 411.04979831025645
+        },
+        {
+          "pose": "holding",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 126.6039263808602
+        },
+        {
+          "pose": "zero",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 0.07930033476811178
+        },
+        {
+          "pose": "walk_00",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 29.50543841563519
+        },
+        {
+          "pose": "walk_00",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 14.659438338800376
+        },
+        {
+          "pose": "walk_01",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 250.39044122538962
+        },
+        {
+          "pose": "walk_01",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 113.15411346142582
+        },
+        {
+          "pose": "walk_02",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 345.5285563240591
+        },
+        {
+          "pose": "walk_02",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 122.44153337812847
+        },
+        {
+          "pose": "walk_03",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 315.33802582660195
+        },
+        {
+          "pose": "walk_03",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 122.92365283830978
+        },
+        {
+          "pose": "walk_04",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 205.21425075350365
+        },
+        {
+          "pose": "walk_04",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 94.03043069204234
+        },
+        {
+          "pose": "walk_05",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 276.68109579824534
+        },
+        {
+          "pose": "walk_05",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 124.13337531266242
+        },
+        {
+          "pose": "walk_06",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 337.5021569904052
+        },
+        {
+          "pose": "walk_06",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 130.72003682573677
+        },
+        {
+          "pose": "walk_07",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 426.94586467579427
+        },
+        {
+          "pose": "walk_07",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 131.48595608723735
+        },
+        {
+          "pose": "walk_08",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 563.035001662413
+        },
+        {
+          "pose": "walk_08",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 145.9023219260395
+        },
+        {
+          "pose": "walk_09",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 566.5882657855836
+        },
+        {
+          "pose": "walk_09",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 133.23938438330262
+        },
+        {
+          "pose": "walk_10",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 474.852009187522
+        },
+        {
+          "pose": "walk_10",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 111.76378052927845
+        },
+        {
+          "pose": "walk_11",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 352.37148063587654
+        },
+        {
+          "pose": "walk_11",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 100.40229440066467
+        },
+        {
+          "pose": "walk_12",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 234.41781798022635
+        },
+        {
+          "pose": "walk_12",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 100.59024423462367
+        },
+        {
+          "pose": "walk_13",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 155.77714801949986
+        },
+        {
+          "pose": "walk_13",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 82.31291575776153
+        },
+        {
+          "pose": "walk_14",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 117.03825969267083
+        },
+        {
+          "pose": "walk_14",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 65.39720453071828
+        },
+        {
+          "pose": "walk_15",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 74.60771465136426
+        },
+        {
+          "pose": "walk_15",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 42.19350884341259
+        }
+      ]
+    },
+    {
+      "radius_mm": 78,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 330,
+      "hole_xy_mm": [
+        67.54998149518619,
+        -39.000000000000036
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 17.621007481244053,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": [
+        {
+          "pose": "holding",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 411.01638297617455
+        },
+        {
+          "pose": "holding",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 123.10964996838601
+        },
+        {
+          "pose": "zero",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 0.07942143700024464
+        },
+        {
+          "pose": "walk_00",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 297.63915823366955
+        },
+        {
+          "pose": "walk_00",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 117.57935513975642
+        },
+        {
+          "pose": "walk_01",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 301.1522250076854
+        },
+        {
+          "pose": "walk_01",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 113.1939886489924
+        },
+        {
+          "pose": "walk_02",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 287.03070835457873
+        },
+        {
+          "pose": "walk_02",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 107.96912060997131
+        },
+        {
+          "pose": "walk_03",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 276.46855541593925
+        },
+        {
+          "pose": "walk_03",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 104.50207737167878
+        },
+        {
+          "pose": "walk_04",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 309.4521135917882
+        },
+        {
+          "pose": "walk_04",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 103.96413156018797
+        },
+        {
+          "pose": "walk_05",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 389.1924869208798
+        },
+        {
+          "pose": "walk_05",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 96.18131350789834
+        },
+        {
+          "pose": "walk_06",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 474.7815718543775
+        },
+        {
+          "pose": "walk_06",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 107.4620828284526
+        },
+        {
+          "pose": "walk_07",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 515.9753557691146
+        },
+        {
+          "pose": "walk_07",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 122.8401745805366
+        },
+        {
+          "pose": "walk_08",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 492.8576323911598
+        },
+        {
+          "pose": "walk_08",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 136.38150425102077
+        },
+        {
+          "pose": "walk_09",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 361.1286454176494
+        },
+        {
+          "pose": "walk_09",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 127.27205594287211
+        },
+        {
+          "pose": "walk_10",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 265.6600397044594
+        },
+        {
+          "pose": "walk_10",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 116.46821210523049
+        },
+        {
+          "pose": "walk_11",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 135.8714766383906
+        },
+        {
+          "pose": "walk_11",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 60.51979159040868
+        },
+        {
+          "pose": "walk_12",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 20.022170167663464
+        },
+        {
+          "pose": "walk_12",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 5.151181310117554
+        },
+        {
+          "pose": "walk_13",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 214.6585130612934
+        },
+        {
+          "pose": "walk_13",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 97.28078655148465
+        },
+        {
+          "pose": "walk_14",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 345.51047516557577
+        },
+        {
+          "pose": "walk_14",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 120.58209246217616
+        },
+        {
+          "pose": "walk_15",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 364.3517151073252
+        },
+        {
+          "pose": "walk_15",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 118.6798925929091
+        }
+      ]
+    },
+    {
+      "radius_mm": 78,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 245,
+      "hole_xy_mm": [
+        -32.96422441577454,
+        -70.6920073888587
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 17.565130987001623,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 78,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 295,
+      "hole_xy_mm": [
+        32.96422441577457,
+        -70.69200738885868
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 17.577716182080813,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 70,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 90,
+      "hole_xy_mm": [
+        4.2862637970157365e-15,
+        70.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        11.050000381469731,
+        19.282761384294492
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 70,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 30,
+      "hole_xy_mm": [
+        60.62177826491071,
+        34.99999999999999
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": [
+        {
+          "pose": "holding",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 1.7445451342899811
+        },
+        {
+          "pose": "holding",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 0.04446938141311395
+        },
+        {
+          "pose": "walk_04",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 23.508080057224436
+        },
+        {
+          "pose": "walk_04",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 10.332213718101869
+        },
+        {
+          "pose": "walk_05",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 99.34079757769993
+        },
+        {
+          "pose": "walk_05",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 51.52077564647697
+        },
+        {
+          "pose": "walk_06",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 123.75980139341696
+        },
+        {
+          "pose": "walk_06",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 62.40475398915614
+        },
+        {
+          "pose": "walk_07",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 52.26389353409768
+        },
+        {
+          "pose": "walk_07",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 26.607009097665408
+        },
+        {
+          "pose": "walk_08",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 1.4684190742965333
+        },
+        {
+          "pose": "walk_08",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 0.019509062428538036
+        },
+        {
+          "pose": "walk_09",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 24.60608850819474
+        },
+        {
+          "pose": "walk_09",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 11.745423291427212
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FR",
+          "part": "thigh_cap",
+          "intersection_mm3": 22.206003703625555
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FR",
+          "part": "Leg_Thigh_Guard_Blue_x4#FR",
+          "intersection_mm3": 10.183940537601284
+        }
+      ]
+    },
+    {
+      "radius_mm": 70,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 150,
+      "hole_xy_mm": [
+        -60.62177826491071,
+        34.99999999999999
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": [
+        {
+          "pose": "holding",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 1.7515419335731715
+        },
+        {
+          "pose": "holding",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 0.7116339073420112
+        },
+        {
+          "pose": "walk_06",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 22.244458515076108
+        },
+        {
+          "pose": "walk_06",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 15.50966826668694
+        },
+        {
+          "pose": "walk_07",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 84.79090139921335
+        },
+        {
+          "pose": "walk_07",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 51.1596989202511
+        },
+        {
+          "pose": "walk_08",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 120.8018898365068
+        },
+        {
+          "pose": "walk_08",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 67.81501562710756
+        },
+        {
+          "pose": "walk_09",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 248.52578620816672
+        },
+        {
+          "pose": "walk_09",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 102.16171419973917
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 302.5725370970103
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 103.5981649655343
+        },
+        {
+          "pose": "walk_11",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 271.35890468687376
+        },
+        {
+          "pose": "walk_11",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 102.56057351868009
+        },
+        {
+          "pose": "walk_12",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 141.35367528933187
+        },
+        {
+          "pose": "walk_12",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 74.48278799757435
+        },
+        {
+          "pose": "walk_13",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 5.949274532396311
+        },
+        {
+          "pose": "walk_13",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 3.5541168859048797
+        }
+      ]
+    },
+    {
+      "radius_mm": 70,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 210,
+      "hole_xy_mm": [
+        -60.6217782649107,
+        -35.00000000000001
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 12.494992250240148,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": [
+        {
+          "pose": "holding",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 121.60690889181474
+        },
+        {
+          "pose": "holding",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 58.56537518475065
+        },
+        {
+          "pose": "walk_01",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 19.473471868187293
+        },
+        {
+          "pose": "walk_01",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 8.575831302636608
+        },
+        {
+          "pose": "walk_02",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 73.8787116279727
+        },
+        {
+          "pose": "walk_02",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 35.02666683942354
+        },
+        {
+          "pose": "walk_03",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 44.29815955057221
+        },
+        {
+          "pose": "walk_03",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 20.105988820622326
+        },
+        {
+          "pose": "walk_04",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 1.2200761426996893
+        },
+        {
+          "pose": "walk_05",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 11.034281130044507
+        },
+        {
+          "pose": "walk_05",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 2.5967995075700405
+        },
+        {
+          "pose": "walk_06",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 43.105873465253346
+        },
+        {
+          "pose": "walk_06",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 18.361446399629372
+        },
+        {
+          "pose": "walk_07",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 111.55193761594839
+        },
+        {
+          "pose": "walk_07",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 52.55744905706339
+        },
+        {
+          "pose": "walk_08",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 186.0018528860633
+        },
+        {
+          "pose": "walk_08",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 82.50842217107024
+        },
+        {
+          "pose": "walk_09",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 211.25808529138484
+        },
+        {
+          "pose": "walk_09",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 88.27057151685047
+        },
+        {
+          "pose": "walk_10",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 210.97103893552227
+        },
+        {
+          "pose": "walk_10",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 88.1869005122336
+        },
+        {
+          "pose": "walk_11",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 164.37446784286735
+        },
+        {
+          "pose": "walk_11",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 77.35698994343093
+        },
+        {
+          "pose": "walk_12",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 73.76494309059734
+        },
+        {
+          "pose": "walk_12",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 39.14494244116855
+        },
+        {
+          "pose": "walk_13",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 19.441881800856766
+        },
+        {
+          "pose": "walk_13",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 9.040354995679236
+        },
+        {
+          "pose": "walk_14",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 4.2502424586793435
+        },
+        {
+          "pose": "walk_14",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 0.96299064900028
+        }
+      ]
+    },
+    {
+      "radius_mm": 70,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 330,
+      "hole_xy_mm": [
+        60.62177826491069,
+        -35.00000000000003
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 12.515896658942292,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": [
+        {
+          "pose": "holding",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 121.59288939781297
+        },
+        {
+          "pose": "holding",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 56.973920723760074
+        },
+        {
+          "pose": "walk_00",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 47.52016543691804
+        },
+        {
+          "pose": "walk_00",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 20.45800374782328
+        },
+        {
+          "pose": "walk_01",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 75.3829098004907
+        },
+        {
+          "pose": "walk_01",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 33.53095205911738
+        },
+        {
+          "pose": "walk_02",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 90.96658259522992
+        },
+        {
+          "pose": "walk_02",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 41.593975031203684
+        },
+        {
+          "pose": "walk_03",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 99.63994666852327
+        },
+        {
+          "pose": "walk_03",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 46.367795128199184
+        },
+        {
+          "pose": "walk_04",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 136.73864624104496
+        },
+        {
+          "pose": "walk_04",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 64.37599027289409
+        },
+        {
+          "pose": "walk_05",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 188.79571122756946
+        },
+        {
+          "pose": "walk_05",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 81.99866919366484
+        },
+        {
+          "pose": "walk_06",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 210.96181589606766
+        },
+        {
+          "pose": "walk_06",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 87.15758695120921
+        },
+        {
+          "pose": "walk_07",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 199.29520896665994
+        },
+        {
+          "pose": "walk_07",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 83.55371293319996
+        },
+        {
+          "pose": "walk_08",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 156.2729854256143
+        },
+        {
+          "pose": "walk_08",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 71.19051757913546
+        },
+        {
+          "pose": "walk_09",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 71.68680592892802
+        },
+        {
+          "pose": "walk_09",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 32.95551203486493
+        },
+        {
+          "pose": "walk_10",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 13.965135155963065
+        },
+        {
+          "pose": "walk_10",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 4.491750122144151
+        },
+        {
+          "pose": "walk_13",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 5.416141763359106
+        },
+        {
+          "pose": "walk_13",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 0.7354300748320161
+        },
+        {
+          "pose": "walk_14",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 73.86747707573598
+        },
+        {
+          "pose": "walk_14",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 33.465784064517464
+        },
+        {
+          "pose": "walk_15",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 94.4148903198014
+        },
+        {
+          "pose": "walk_15",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 43.53556247951111
+        }
+      ]
+    },
+    {
+      "radius_mm": 70,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 245,
+      "hole_xy_mm": [
+        -29.58327832184894,
+        -63.441545092565505
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 10.385131064695374,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 70,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 295,
+      "hole_xy_mm": [
+        29.583278321848972,
+        -63.44154509256549
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 10.387884450300668,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 90,
+      "hole_xy_mm": [
+        3.796405077356795e-15,
+        62.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        12.849997711181643,
+        16.950843765773733
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.794490215583101,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 30,
+      "hole_xy_mm": [
+        53.6935750346352,
+        30.999999999999996
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        15.956425047108127,
+        21.56621210050177
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 150,
+      "hole_xy_mm": [
+        -53.6935750346352,
+        30.999999999999996
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        15.956425274173718,
+        21.5618186393182
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": [
+        {
+          "pose": "walk_09",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 0.2966183426901632
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 13.241747351610076
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 6.066702703754399
+        },
+        {
+          "pose": "walk_11",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 4.181756248878327
+        },
+        {
+          "pose": "walk_11",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 1.0616720908655946
+        }
+      ]
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 210,
+      "hole_xy_mm": [
+        -53.693575034635195,
+        -31.000000000000007
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 9.149244660417988,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": [
+        {
+          "pose": "walk_09",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 3.2481681500720128
+        },
+        {
+          "pose": "walk_09",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 0.23090919197787413
+        },
+        {
+          "pose": "walk_10",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 3.7998747233586325
+        },
+        {
+          "pose": "walk_10",
+          "leg": "RL",
+          "part": "Leg_Thigh_Guard_Blue_x4#RL",
+          "intersection_mm3": 0.41802565995639296
+        },
+        {
+          "pose": "walk_11",
+          "leg": "RL",
+          "part": "thigh_cap",
+          "intersection_mm3": 0.16581992256678646
+        }
+      ]
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 330,
+      "hole_xy_mm": [
+        53.69357503463518,
+        -31.00000000000003
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 9.082074282585083,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": [
+        {
+          "pose": "walk_05",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 1.289211324195119
+        },
+        {
+          "pose": "walk_06",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 3.796019303276971
+        },
+        {
+          "pose": "walk_06",
+          "leg": "RR",
+          "part": "Leg_Thigh_Guard_Blue_x4#RR",
+          "intersection_mm3": 0.22912027407992552
+        },
+        {
+          "pose": "walk_07",
+          "leg": "RR",
+          "part": "thigh_cap",
+          "intersection_mm3": 1.484977335123482
+        }
+      ]
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 245,
+      "hole_xy_mm": [
+        -26.20233222792335,
+        -56.191082796272305
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.734058587518311,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 295,
+      "hole_xy_mm": [
+        26.202332227923375,
+        -56.19108279627229
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.752081240135528,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 90,
+      "hole_xy_mm": [
+        3.3065463576978537e-15,
+        54.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 10.673179595283333,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 30,
+      "hole_xy_mm": [
+        46.76537180435969,
+        26.999999999999996
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        24.049998746596508,
+        27.665879315065194
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.909890216915765,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 150,
+      "hole_xy_mm": [
+        -46.76537180435969,
+        26.999999999999996
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        24.049998746596494,
+        27.66304245910285
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.928584731012116,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 210,
+      "hole_xy_mm": [
+        -46.76537180435968,
+        -27.000000000000007
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 7.246487705034246,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 330,
+      "hole_xy_mm": [
+        46.765371804359674,
+        -27.000000000000025
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 7.243102577796263,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 245,
+      "hole_xy_mm": [
+        -22.821386133997756,
+        -48.940620499979104
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 0.0,
+      "angle_deg": 295,
+      "hole_xy_mm": [
+        22.82138613399778,
+        -48.94062049997909
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 90,
+      "hole_xy_mm": [
+        3.796405077356795e-15,
+        73.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        5.68649597167969,
+        10.467803315236882
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 30,
+      "hole_xy_mm": [
+        53.6935750346352,
+        42.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        5.68649597167969,
+        10.434662461655028
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 150,
+      "hole_xy_mm": [
+        -53.6935750346352,
+        42.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        5.68649597167969,
+        10.42518648663588
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": [
+        {
+          "pose": "walk_10",
+          "leg": "FL",
+          "part": "thigh_cap",
+          "intersection_mm3": 0.6562279708064266
+        },
+        {
+          "pose": "walk_10",
+          "leg": "FL",
+          "part": "Leg_Thigh_Guard_Blue_x4#FL",
+          "intersection_mm3": 0.527099314370325
+        }
+      ]
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 210,
+      "hole_xy_mm": [
+        -53.693575034635195,
+        -20.000000000000007
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 330,
+      "hole_xy_mm": [
+        53.69357503463518,
+        -20.00000000000003
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 245,
+      "hole_xy_mm": [
+        -26.20233222792335,
+        -45.191082796272305
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        5.68649597167969,
+        10.417446416601798
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 62,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 295,
+      "hole_xy_mm": [
+        26.202332227923375,
+        -45.19108279627229
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        5.68649597167969,
+        10.423056644307511
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 90,
+      "hole_xy_mm": [
+        3.3065463576978537e-15,
+        65.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        16.55000153426252,
+        20.121973814226607
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 30,
+      "hole_xy_mm": [
+        46.76537180435969,
+        38.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        22.18462624111559,
+        26.4577496528904
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 150,
+      "hole_xy_mm": [
+        -46.76537180435969,
+        38.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        22.18462622539025,
+        26.45448389871869
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 210,
+      "hole_xy_mm": [
+        -46.76537180435968,
+        -16.000000000000007
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        22.384627051231142,
+        26.453797137787973
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.74465022262578,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {
+        "leg_rl_yaw_servo_case": 357.5397551507047
+      },
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 330,
+      "hole_xy_mm": [
+        46.765371804359674,
+        -16.000000000000025
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        22.38462705123115,
+        26.45707571631403
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.726094597561907,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {
+        "leg_rr_yaw_servo_case": 357.53975515070704
+      },
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 245,
+      "hole_xy_mm": [
+        -22.821386133997756,
+        -37.940620499979104
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        22.387993558445203,
+        26.466356070758238
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {
+        "leg_rl_yaw_servo_case": 29.75163437242255
+      },
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 54,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 295,
+      "hole_xy_mm": [
+        22.82138613399778,
+        -37.94062049997909
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        22.38799355844518,
+        26.466568606602543
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 5.68649597167969,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {
+        "leg_rr_yaw_servo_case": 29.751634372423545
+      },
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 46,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 90,
+      "hole_xy_mm": [
+        2.8166876380389124e-15,
+        57.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 8.322924281760594,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": null,
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 46,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 30,
+      "hole_xy_mm": [
+        39.83716857408418,
+        34.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        31.712829900036922,
+        35.11850333179565
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 7.3581345857784095,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {
+        "arm_r_yaw_servo_case": 64.75935471441655
+      },
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 46,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 150,
+      "hole_xy_mm": [
+        -39.83716857408418,
+        34.0
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        31.712829900036922,
+        35.116257559924705
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 7.40440788573788,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {
+        "arm_l_yaw_servo_case": 64.75935471441656
+      },
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 46,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 210,
+      "hole_xy_mm": [
+        -39.837168574084174,
+        -12.000000000000004
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        31.412830662976376,
+        35.1154015804476
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 9.226580402006663,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 46,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 330,
+      "hole_xy_mm": [
+        39.83716857408417,
+        -12.000000000000021
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        31.412830662976383,
+        35.11765598177982
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 9.276597721848589,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {},
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 46,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 245,
+      "hole_xy_mm": [
+        -19.44044004007216,
+        -30.690158203685904
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        31.6194023553943,
+        35.12183673943884
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 7.606713169754902,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {
+        "leg_rl_yaw_servo_case": 796.0560284375285
+      },
+      "moving_part_intersections": []
+    },
+    {
+      "radius_mm": 46,
+      "circle_center_y_mm": 11.0,
+      "angle_deg": 295,
+      "hole_xy_mm": [
+        19.440440040072183,
+        -30.69015820368589
+      ],
+      "vertical_hole_axis_head_crossings_above_plate_mm": [
+        31.619402031117204,
+        35.122779453197666
+      ],
+      "tab_head_intersection_mm3": 0.0,
+      "sampled_tab_surface_to_head_min_mm": 7.587051106346919,
+      "servo_case_intersections_mm3": {},
+      "vertical_support_d6_case_intersections_mm3": {
+        "leg_rr_yaw_servo_case": 796.0560284375284
+      },
+      "moving_part_intersections": []
+    }
+  ],
+  "limitations": [
+    "r内寄せだけでも本体円板r72の前脚交差が残る。",
+    "垂直軸が殻を通る候補でも、支持柱/ねじ座/ドライバー/外面非貫通保持は未設計。",
+    "入力18姿勢外の全到達集合は別検査。",
+    "表面サンプル最小距離は厳密な全三角形最短距離ではない。"
+  ]
+}

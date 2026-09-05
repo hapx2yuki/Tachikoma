@@ -27,8 +27,8 @@ LLM (対話) → TTS (音声合成) を経由して会話する。**運用は PT
 - **ESP32 が WebSocket サーバ** (`/audio`)、**ブリッジがクライアント**として
   接続しにいく (操作系の `/ws` とは別エンドポイント。両方 ESP32 側がサーバ)
 - 音声フォーマットは全経路で **PCM 16kHz / 16bit / mono** (リトルエンディアン)
-  に統一。STT 送信時のみブリッジ側で WAV コンテナに包む (whisper API の要件)
-- **半二重運用**: 再生中 (`tts_begin`〜`tts_end`) は ESP32 側が録音を止める
+  に統一。ESP32内のI2S DMAは32bitで、音声サンプルと明示的に変換する。STT 送信時のみブリッジ側で WAV コンテナに包む (whisper API の要件)
+- **半二重運用**: 再生中 (`tts_begin`から受信済み音声の再生終了まで) は ESP32 側が録音を止める
   (firmware `Audio` クラス。マイクがスピーカー音を拾うエコーの回避。AEC 無し)
 - I2S ピン割当・電源配線は `docs/wiring.md` の「音声ユニット (I2S) 配線」参照
 - 会話の押し込み口 (PTT) は既存 Web UI (`/ws`) 側のボタンから
@@ -159,7 +159,7 @@ CameraWebServer サンプル等, 本リポジトリの `firmware/` 外) で MJPE
 - `tools/voice_bridge.py --camera-url http://<camera-ip>/capture` を付けて
   起動すると、**発話 (ptt_end) を処理するたびに** このURLへ HTTP GET で
   静止画を1枚取得し、LLM (Anthropic API) へ画像コンテンツブロックとして
-  渡す。画像は毎ターンの「今の一枚」のみを送り、会話履歴には残さない
+  渡す。MJPEGの場合は最初のJPEGで接続を閉じ、4MiBの上限と取得期限を設ける。画像は毎ターンの「今の一枚」のみを送り、会話履歴には残さない
   (`fetch_camera_image_block`/`llm_respond` 実装参照)
 - 取得に失敗した場合 (カメラ未起動/URL誤り/タイムアウト等) は警告ログを
   出して**画像なしで音声パイプラインを継続する** — カメラの不調で音声会話
@@ -198,7 +198,7 @@ CameraWebServer サンプル等, 本リポジトリの `firmware/` 外) で MJPE
 - 応答の途中 (特に長めの返答) で音声がぶつ切りになる/後半が無音になる:
   配線よりも先に、ブリッジの TTS 送信ペーシングとファームウェア側の
   再生リングバッファ溢れを疑う。ESP32 の再生リングバッファは約 0.5 秒分
-  しかなく、溢れた分は無言で切り捨てられる。`voice_bridge.py` は
+  しかなく、溢れるとサンプル単位で切り捨て、シリアルとWebSocketのoverflow通知を出す。`voice_bridge.py` は
   ElevenLabs から届いた PCM を実時間の再生速度 (16kHz/16bit/mono =
   32000 bytes/秒) に合わせてペーシング送信するようになっているので、
   この症状が出る場合はまず `voice_bridge.py` が最新か (ペーシング処理が
@@ -209,3 +209,10 @@ CameraWebServer サンプル等, 本リポジトリの `firmware/` 外) で MJPE
   `カメラ画像の取得に失敗しました` と例外が出ているはず)。取得できていても
   応答に反映されない場合は `--anthropic-model` が画像入力対応モデルか確認
   する
+
+## 2026-09-05の検証範囲
+
+実コードのホスト試験、ローカルWebSocket、疑似HTTP応答で録音・再生・取消・部分書込を検証した。
+本番API・実マイク・スピーカー・カメラの往復は未実施。結果は[第2次制御監査](audits/20260905-round2/firmware.md)。
+既定の`claude-sonnet-5`は[Anthropicのモデル一覧](https://platform.claude.com/docs/en/models/overview)で
+2026-09-05に存在を確認したが、使用アカウントでの利用可否は未確認。

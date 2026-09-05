@@ -1,0 +1,2324 @@
+{
+  "date": "2026-09-05",
+  "files": [
+    {
+      "path": "docs/audits/20260905-round2/build_manufacturing_diff.py",
+      "sha256": "739253fd54605c9669311a75572caccc4f267af8ce641bf7b02f79cdd9010558",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "開始時tarのSHAを検証してSTL比較。配置と形状の差を分離。124既存ファイルの保存を照合。"
+      ]
+    },
+    {
+      "path": "docs/audits/20260905-round2/classify_static_assembly.py",
+      "sha256": "440e75b5d6c5d217551cb86f5c444e089add9625782007082fa8872a0c55b7ea",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "実測全99交差を7課題へ対応。未知分類を例外にし、接着や圧入として自動免除しない。"
+      ]
+    },
+    {
+      "path": "tools/check_print_artifacts.py",
+      "sha256": "3047888b271f48b94a8e7cd1eea8637cdfdf4de42ada99408f8216abb3fc343d",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "全27MFを実入力で照合。ルートPhase0も標準対象へ追加し空対象を合格にしない。形状/材料/数量を分離。"
+      ]
+    },
+    {
+      "path": "tools/tests/test_integration_audit.py",
+      "sha256": "c54194b26909c24efba7cc5203fce3a0820ff6d3fcb0d946b11fb582a29bb4e9",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "担当作成7試験を読み、ZIP内メンバーの変更/欠落/破損の回帰を追加。合計8試験PASS。"
+      ]
+    },
+    {
+      "path": "tools/build_audit_coverage.py",
+      "sha256": "1e9b513cd14a12f285cd373ca51b15969dc1f95a6d3da32a2ffa65792dbedb83",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "担当の記録が全開始ファイルを覆い現在SHA一致か照合。新規の読解事実を捏造せず未検査/要更新を終了1とする。"
+      ]
+    },
+    {
+      "path": "tools/check_static_assembly.py",
+      "sha256": "731336abb8980f4577b4759ca1216b092351af662ed23dbe77c7ced96783e241",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "全link152部品1898組/191AABBの実体交差を検査。未解釈99交差を全てIssueへ分類、計算エラー0。"
+      ]
+    },
+    {
+      "path": "tools/check_coxa_sweep.py",
+      "sha256": "aaad2c7dae0698a4371e65873727128fd86cf3c20fec40480985383c235f69a5",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "6脚ペア全到達角包絡・格子間保守界・実ホーン座/ケース枠保持/鏡映を検査。独立レビューを反映。"
+      ]
+    },
+    {
+      "path": "tools/run_design_audit.py",
+      "sha256": "8adca30da18ab547693603da546b10eb9e255d789ac0391a69f1a19f77c9dff8",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "生成3工程直列、検査23工程2並列。異常時の既存証拠保護/結果保存を実回帰。最終14PASS/8FAIL/1UNVERIFIED。"
+      ]
+    },
+    {
+      "path": "tools/tests/test_print_artifacts.py",
+      "sha256": "7fa28486f743d4d74f3df86fe28892c0e7e625b11cf8d9994d020e725c26501f",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "同体積異形状・剛体変換同一形状・誤材質と元3MF保護の負例を確認。3回帰PASS。"
+      ]
+    },
+    {
+      "path": "tools/filament_calc.py",
+      "sha256": "73208a3c44a9f354eaa3f2b5d3c4f6f6d5b89c63074503e0230d06e74400ec28",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "不使用Head2部品の除外、倍率config参照、_Repaired数量を修正。概算質量は実測ではない。"
+      ]
+    },
+    {
+      "path": "tools/extract_meshes.py",
+      "sha256": "ca280077a5344601a1e4cda9e7bd84f754a971ac53be4244ac5fbead426b2571",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "regex依存・単位無視・同名形状の勝手な置換・原型上書きを修正。4件の合成3MF回帰。元Downloadsは欠落のため再抽出していない。"
+      ]
+    },
+    {
+      "path": "tools/preview.py",
+      "sha256": "0d34a193d6e068291de752ab59cf788ce56a1499ce9f85d3a4d43ee58a7e3ae9",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "単品プレビューの入力/正規化/描画経路を確認。組立や物理の検証には使わない。"
+      ]
+    },
+    {
+      "path": "tools/preview_robot.py",
+      "sha256": "8b6801bc1c327aee84b2390420984ba1ff77c0e59f9a5e64239f1ea6565f6f1e",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "保持姿勢を共通描画へ統一。別出力先指定。"
+      ]
+    },
+    {
+      "path": "tools/make_visuals.py",
+      "sha256": "600a652877cdf91a29f203b727aec82eda12ff9e3005faa9f0e26ce1ecbc33b8",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "体高射影順・左右法線・キャッシュ・実加工Mouth・Cabin配置・配線図SW・起動姿勢・運動学表記を修正。"
+      ]
+    },
+    {
+      "path": "tools/kit_assembly.py",
+      "sha256": "f3810e68432190f91437c02cd982b2cee88bb99473d813ab87187b21158a8b9e",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "元座標を保つMouth加工版差替、Cabin設定/Peg2本、assembly_used処理を追加。toe倍率修正は機構担当と照合。"
+      ]
+    },
+    {
+      "path": "tools/render_shin_orientation.py",
+      "sha256": "4abc1979b2be89070c91d5fe4d24810f545ab59139248ab1474229167066deb2",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "保持姿勢/出力先を修正。"
+      ]
+    },
+    {
+      "path": "tools/render_head_center.py",
+      "sha256": "2846886db3f00cb8b48451ad4ed20d29113b87de2168b2cdd93ddbe35ee72aec",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "廃止hub寸法の表示を修正。"
+      ]
+    },
+    {
+      "path": "tools/render_head_center_sweep.py",
+      "sha256": "79003fde956f6d1d4f09d462110b79156aa16963edd2bf6ecbd9bb38dc146630",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "旧配置比較の有限探索として確認。現行完成証明ではない。"
+      ]
+    },
+    {
+      "path": "tools/render_urdf_compare.py",
+      "sha256": "2bcd6b62d42c172117ac62ffc679f8dc5ab4bff5950284adbb9e4a49d4266ca4",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "保持姿勢・床高さ・別出力先を修正。"
+      ]
+    },
+    {
+      "path": "tools/tests/test_issue_sync.py",
+      "sha256": "2db5165fdfc6ae48a46c348be5eb41c4e35c146ccba21ed7657e89c7bd182a88",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "同期・dry-run・依存・独自ラベル保持の実回帰9件。"
+      ]
+    },
+    {
+      "path": "tools/tests/test_audit_gates.py",
+      "sha256": "2d30deaa91da8f6e01ff29fe7a85710567f1fbd8a8135cf229300357ba0ef12c",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "既存幾何検査へNaN/失敗/不合格を注入する試験として確認。"
+      ]
+    },
+    {
+      "path": "tools/issues/plan.py",
+      "sha256": "7e7d18dadbcad20170c8687df1e50b151b18c9b16d91f402d4c3c5e8e0c0c7e8",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "全Issue本文と依存を読み、片脚先行・不合格時の対策・CAD担当範囲・最新機構/電装不具合を修正。"
+      ]
+    },
+    {
+      "path": "tools/issues/sync_github_issues.py",
+      "sha256": "272bec31f86b15ab00ff0d8ae77be3b7d9ea380e9f0fe6f86824162f4a7c9bf8",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "既存Issue比較/書込/依存/API経路を読解。dry-runで既存差分を表示、進捗/ラベル/範囲保持を回帰検査。"
+      ]
+    },
+    {
+      "path": "tools/issues/sync_project.py",
+      "sha256": "d03a047a41da2d0c768eff95c33785776367e0808ea3eadcbbc2ec63fb11f193",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "既存Status値と選択肢を保持、新規項目だけ初期化。dry-run/applyと再実行を確認。"
+      ]
+    },
+    {
+      "path": "tools/issues/setup_project.sh",
+      "sha256": "be3286464ac92e095f7f0b62b4a8ad5d8ae8c2afe0b0df18010dd27b52458c38",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "実行経路と破壊的全Status再設定を除去、同期スクリプトへ委譲。"
+      ]
+    },
+    {
+      "path": "tools/tests/test_render_contracts.py",
+      "sha256": "cac2e1bc1a2ad874c2412b10ef91188bb9bfde37fe7d9910096d4d9f195c72cd",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "表示契約9件を実行。Head高さとYの設定参照、鏡映、キャッシュ、IK失敗、停止姿勢を確認。"
+      ]
+    },
+    {
+      "path": "tools/tests/test_extract_meshes.py",
+      "sha256": "5b3f23d4185fe23f5ae80bd9d8b16bbaee6cebe548c18c5cd95392b1cae52564",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "XML表記/単位/同名形状/元ファイル保存の回帰4件。"
+      ]
+    },
+    {
+      "path": "tools/check_power_budget.py",
+      "sha256": "c586157b35d03550459de805e3ced86b297ab5b2172027dd5b8a96dc2dda79ce",
+      "review_method": "全文読解・参照元と出力/試験の照合",
+      "findings": [
+        "異電圧の電力換算54条件を計算。未実測を終了2に分離。"
+      ]
+    },
+    {
+      "path": "docs/audits/20260905-round2/README.md",
+      "sha256": "8b476ee205661f042b64aab3a30acac79bc87ade933ac7e1322b1ffbbf8068b6",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/audits/20260905-round2/manufacturing.md",
+      "sha256": "bb566d05a549b2fb3f5497cace3523195d765a7e02ad8922f75da46352878fc8",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/audits/20260905-round2/static-assembly.md",
+      "sha256": "72d36ae3b4783f07f1bf0d8787e083f52aedfa2dd4b51e02999e6ab40a642b5b",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "README.md",
+      "sha256": "bd381d5e8645f60c8a393fe8fda5f66b5e3b42e43e4aa52c294bc5e3cf270282",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "dd9ec02516100d1a053641ab4c3613364e899fb87d61ab19d059facef6c9b01b",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "597a23c5a96b853928626cceb8fe39ac4c8dc71d4847d5a75e682d309c6eaeec",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "LICENSE-MODELS.md",
+      "sha256": "1ac9f3d97f5434c27785704b50c7729dcff83373d5a5a7fc06560acf8492d7c2",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/BOM.md",
+      "sha256": "a72f7b10723117af12b7a6df026993d4efbe951dc79a49ed3eb6bab79fa3b638",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/voice.md",
+      "sha256": "780c06f08e65134a9c101d51719efd9053599025abcf85d5fa659945bd66f059",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/assembly.md",
+      "sha256": "86413963105d45fc5dbf397ce54d2e57959b35eb4dc5bf8c1aa5d31be7b7218b",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/print_manifest.md",
+      "sha256": "900d12b1abb2965b90e0217a00007c1dd4f3dc5208859d5c574ab9c798921f27",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/printing.md",
+      "sha256": "b1db1ac95ae2fcc1347f428991d800265a911445c8eab2ea92215ae684cec947",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/wiring.md",
+      "sha256": "2928f56b4dd9e35736fafe5624db271c5c6fafee830663003f8ed64df2b0cfab",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/filament.md",
+      "sha256": "ff431f52fe8b93c3f91b7308e0f0b26e5da8a6465316ce32781c800a4de1338b",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/build_plan.md",
+      "sha256": "6845e2a3c5e9c1a39094ec55157e5cd2993fc21bdc56964b4cab3a50a43a8461",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/shopping.md",
+      "sha256": "61736120ecaf8ede2ba5b45d0dcb20b2cd5a5fca92907782615d26b7f47419fa",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/HANDOFF.md",
+      "sha256": "4ad5dcc4c29862588f2dd7685b68444c03ed829e14e16ca8df12c5a6893f677a",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
+      ]
+    },
+    {
+      "path": "docs/audits/20260905/README.md",
+      "sha256": "75e6696a686aa6368bc6afc8d0c8cf788c99e99a57e4853fedcffd0ae44b5024",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "第1次記録は当時の証拠として保持。後続で判明した欠陥や変更は第2次記録を優先。"
+      ]
+    },
+    {
+      "path": "docs/audits/20260905/firmware.md",
+      "sha256": "fad9de2e759cb652f9f29cbdd7c2f74e59ae72ee08a10d43c2c8210e19248879",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "第1次記録は当時の証拠として保持。後続で判明した欠陥や変更は第2次記録を優先。"
+      ]
+    },
+    {
+      "path": "docs/audits/20260905/simulation.md",
+      "sha256": "4a0043f4e88674cddb1a3f74afe9583719687fdfec5797e6bddbc7b237fd013d",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "第1次記録は当時の証拠として保持。後続で判明した欠陥や変更は第2次記録を優先。"
+      ]
+    },
+    {
+      "path": "docs/audits/20260905/mechanical.md",
+      "sha256": "40a36866ef0dadbf2237383b2be2ecb6e71eea41d6a0f0b627b386ec3bcd49da",
+      "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
+      "findings": [
+        "第1次記録は当時の証拠として保持。後続で判明した欠陥や変更は第2次記録を優先。"
+      ]
+    },
+    {
+      "path": ".DS_Store",
+      "sha256": "d7d47b81bf2625586e165be8aa1ebd2e657feb02d39755bb1713109d34033bff",
+      "review_method": "Finder管理用バイナリの種別/ヘッダ/サイズ確認。設計データ対象外。",
+      "findings": [],
+      "evidence": {
+        "header_hex": "00000001427564310000100000000800",
+        "bytes": 6148
+      }
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "180d35e67901c57b9a19437db296558b361e6469a1101e481220b091be2556fe",
+      "review_method": "全文読解 (ライセンス・無視設定・Issueテンプレート)。",
+      "findings": [],
+      "evidence": {
+        "lines": 31
+      }
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "ae4e480aa5c2f84236d5cc09f852698a641f7509ee1f4d5f36ad15b8d0a22c6a",
+      "review_method": "全文読解 (ライセンス・無視設定・Issueテンプレート)。",
+      "findings": [],
+      "evidence": {
+        "lines": 31
+      }
+    },
+    {
+      "path": "firmware/platformio.ini",
+      "sha256": "10ce5b2baa686fb06545bc34556915f8d0e7451d82371a97f007989ff89971c0",
+      "review_method": "全文読解 (ライセンス・無視設定・Issueテンプレート)。",
+      "findings": [],
+      "evidence": {
+        "lines": 20
+      }
+    },
+    {
+      "path": "tools/issues/issue_map.json",
+      "sha256": "bc1abb841a4cc300852d667f1ecb931714f2b89cefe32c1c635686df6f91fb74",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "A-01",
+          "A-02",
+          "A-03",
+          "A-04",
+          "E1",
+          "E2",
+          "E3",
+          "E4",
+          "E5",
+          "E6",
+          "E7",
+          "E8",
+          "E9",
+          "EL-01",
+          "EL-02",
+          "EL-03",
+          "EL-04",
+          "EL-05",
+          "EL-06",
+          "EL-07",
+          "EL-08",
+          "EL-09",
+          "EL-10",
+          "H-01",
+          "H-02",
+          "H-03",
+          "H-04",
+          "H-05",
+          "H-06",
+          "H-07",
+          "I-01",
+          "I-02",
+          "I-03",
+          "I-04",
+          "I-05",
+          "I-06",
+          "I-07",
+          "I-08",
+          "L-01",
+          "L-02"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "hardware/.DS_Store",
+      "sha256": "8831dd907ab456feb074b17ce1bb120d59288ead9db452255bd1e749718373ed",
+      "review_method": "Finder管理用バイナリの種別/ヘッダ/サイズ確認。設計データ対象外。",
+      "findings": [],
+      "evidence": {
+        "header_hex": "00000001427564310000100000000800",
+        "bytes": 6148
+      }
+    },
+    {
+      "path": ".claude/scheduled_tasks.lock",
+      "sha256": "6583563033ac8729a38725d08a747366bab48dcd82a06a16aa400526307ff95f",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "sessionId",
+          "pid",
+          "procStart",
+          "acquiredAt"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/physics_walk_metrics.json",
+      "sha256": "3cde27c713660a32b86420e50dc3030060f02f74f7199013044ee00d2e3687a0",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "engine",
+          "mujoco_version",
+          "fallback_reason",
+          "timestep_s",
+          "total_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "friction_lateral",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "success_forward_ge_0p3m",
+          "video_frames",
+          "video_path",
+          "arm_leg_yaw_gate",
+          "timeseries"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/print_artifacts.json",
+      "sha256": "8534b9063e822cb29be86e81f8c386ed9f6dabdd792d1b3ed9f46b1ec693dcfb",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "list",
+        "root_keys": null
+      }
+    },
+    {
+      "path": "docs/audits/20260905/firmware-host-tests.log",
+      "sha256": "7b2c9452a4691d00b0ebb8a9cf34528fb0cf52e7c510ede35ba131db68fabb26",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 379,
+        "matched_lines": [
+          "PASS: 10000 changing-command frames keep finite angles and leg yaw constraints",
+          "PASS: trim update during NVS write remains pending and is saved next time",
+          "PASS: I2S keeps PCM16 and requests 64 BCLK per WS frame",
+          "PASS: rejected second connection cannot reset the active playback",
+          "PASS: overflow/wrap/read sizes retain PCM16 sample boundaries; odd frames rejected",
+          "PASS: owner disconnect clears playback; I2S reset is deferred to audio task",
+          "PASS: UI initialization, rest, reconnect, background stop",
+          "[self-test] PASS",
+          "========================= [SUCCESS] Took 6.95 seconds =========================",
+          "esp32cal       SUCCESS   00:00:06.954",
+          "========================= [SUCCESS] Took 7.50 seconds =========================",
+          "PASS: all firmware host checks and both builds"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/toe_contact.json",
+      "sha256": "abebed4938ae314440569d617e46e05f3b1aff31bb1cf7b9db6e367d0f64e7b0",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "phase_samples",
+          "interpretation",
+          "results"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/strength_sensitivity.json",
+      "sha256": "3fcf1d0d3aaaf3a79770eea2ba840dadb880d7e66a6bd773f1bebc68776c981f",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "status",
+          "results"
+        ],
+        "summary_fields": {
+          "status": "SENSITIVITY_ONLY_UNVERIFIED_PRINT_PATH"
+        }
+      }
+    },
+    {
+      "path": "docs/audits/20260905/firmware-build.log",
+      "sha256": "53df9a0ab9c2a71c71ff60625ddd6378383455a3ea83fd9b2f4074cbe65c06e3",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 159,
+        "matched_lines": [
+          "========================= [SUCCESS] Took 9.65 seconds ========================="
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/firmware-before.log",
+      "sha256": "dc5876a09f715b4d74dbeb861659ce40d59e955dba205a43a3073b37c0971473",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 22,
+        "matched_lines": [
+          "ReferenceError: Cannot access 'b' before initialization"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/firmware-host-regression.log",
+      "sha256": "a0f96a710843b2ceb398e602673a0700f43bc17b1b9712b628e911b5a240ea83",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 50,
+        "matched_lines": [
+          "PASS: boot full-off, actual sequential neutral pulses, unused camera channel, disabled latch",
+          "PASS: real low-voltage latch stops calibration PWM and cannot restart itself",
+          "PASS: front leg slew exit keeps both arms in retreat (actual PWM output)",
+          "PASS: 10000 changing-command frames keep finite angles and leg yaw constraints",
+          "PASS: trim update during NVS write remains pending and is saved next time",
+          "PASS: I2S keeps PCM16 and requests 64 BCLK per WS frame",
+          "PASS: rejected second connection cannot reset the active playback",
+          "PASS: overflow/wrap/read sizes retain PCM16 sample boundaries; odd frames rejected",
+          "PASS: owner disconnect clears playback; I2S reset is deferred to audio task",
+          "PASS: UI initialization, rest, reconnect, background stop",
+          "[self-test] PASS",
+          "PASS: all firmware host checks"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/final-verification.json",
+      "sha256": "aa9c2055006852f86f44b7e38c01bfcab7d09451b13b8b2bf8d12c422f2e2535",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "verified_at",
+          "branch",
+          "base_head",
+          "source_is_local_uncommitted",
+          "protected_baseline_files",
+          "protected_changed",
+          "source_sha256",
+          "audit_artifact_sha256"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/firmware-hashes.json",
+      "sha256": "4a1ecaaa8279b8a69395a941b762c5fef40953044b00a51d7b366b5de9ff74d3",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "checked_at",
+          "files"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/baseline.json",
+      "sha256": "ed5b6d2703ea808b56df67ab3f03c5600705e089bba92b6295a94f0c270c09ed",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "backup",
+          "head",
+          "tracked_files",
+          "dirty_before"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/mass_1p3.json",
+      "sha256": "a8134e592716138e0c0f4e4588840e1dcfb6b49542e61deba57e66e7556f1349",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "physics_warning_counts",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/forward_nominal.json",
+      "sha256": "1b355e8f882a6513af75744ba03b2994bf34ab306be51fa5ebcdbad3925679ae",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "physics_warning_counts",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/combined.json",
+      "sha256": "6e8129161585ff4bea09be4b9ce1243662ac3e911c3dd7d021f010055b6e7f6c",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "physics_warning_counts",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/regression.log",
+      "sha256": "0a9b881ac90c0d5b317a5d34ff51241ed6210a70c1cbb17486d2964a560d333d",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 13,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/backward.json",
+      "sha256": "286b8dda135abc4153cc63cd59ba564dbc18b83f2889eca7293090f587257fe0",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "physics_warning_counts",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/sideways.log",
+      "sha256": "827e3dd896e4d5603789447236bc199110fd45f47dd253af0e86cfe71792bca1",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": [
+          "simulation_acceptance = PASS  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/backward.log",
+      "sha256": "d533cb2887b891d03eea66a207472081bc8b1683e933c0ad6866156be11142d6",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": [
+          "simulation_acceptance = PASS  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/mass_1p3.log",
+      "sha256": "706d1d7430decb2a7ac5b31f191f50e9fd6671849b4e51a4fdaddf500541c7cf",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": [
+          "simulation_acceptance = PASS  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/sideways.json",
+      "sha256": "bccb8d993f20b7d00f6c06389879d93de257a863629c0a078cf596872d9e9624",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "physics_warning_counts",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/timestep_0p001.log",
+      "sha256": "3b0da61a9955464596490b933228ba3d2fa061fad58b492b04ed8e000f362a1b",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": [
+          "simulation_acceptance = PASS  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/final_refresh_plan.json",
+      "sha256": "4d377c44c1e9e64029220ba4b1bbaa4b764f2b056962580d68dbc2108da44b40",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "current_input_sha256",
+          "cases"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/final_refresh_evidence.json",
+      "sha256": "9703d3828a5e1c7e3d574ad2057c35a132473fedafd21d12d6fa504b3420b22c",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "verified_at_utc",
+          "verified_at_jst",
+          "current_input_sha256",
+          "cases",
+          "video_probe",
+          "video_sha256",
+          "baseline_sha256",
+          "regression_log",
+          "regression_pass",
+          "mujoco_warning_log",
+          "mujoco_warning_log_sha256",
+          "root_mujoco_log_removed",
+          "root_mujoco_log_absent"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/friction_0p5.log",
+      "sha256": "462a149bff193d25514f4f80b56086adae546868d2bc1934be68c39e3355b12c",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": [
+          "simulation_acceptance = PASS  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/final_regression.log",
+      "sha256": "0a9b881ac90c0d5b317a5d34ff51241ed6210a70c1cbb17486d2964a560d333d",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 13,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/scenario_summary.json",
+      "sha256": "83f02c46db1fb4f98db726c007fe545ade038e476fefbbaa93c76ee88a2f3679",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "list",
+        "root_keys": null
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/zero_friction.log",
+      "sha256": "e7ec8fa4e5ba4902881afeef10095bae99f8b2bfe2bc90ad5177b4f074f7afb2",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 8,
+        "matched_lines": [
+          "WARNING: Nan, Inf or huge value in QACC at DOF 9. The simulation is unstable. Time = 0.0540.",
+          "simulation_acceptance = FAIL  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/friction_0p25.log",
+      "sha256": "ecdf8e33a8ef28131d285209cd470eb650382b2aa291831508156e3568eb846d",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": [
+          "simulation_acceptance = PASS  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/corrected_default.log",
+      "sha256": "4517db8e84a33bd1b9d76752215091098fd34840c016a214d781cac0a1003f8f",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": [
+          "simulation_acceptance = PASS  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/baseline.log",
+      "sha256": "4f30d9420aa0553dcf18c359865c2185ac8881e465537056e619c605e649c71f",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 8,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/baseline.json",
+      "sha256": "9764b7af45f60c138463e05630c902bd7121db182bddd30bb6c07a42678ba470",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "engine",
+          "mujoco_version",
+          "fallback_reason",
+          "timestep_s",
+          "total_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "friction_lateral",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "success_forward_ge_0p3m",
+          "video_frames",
+          "video_path",
+          "arm_leg_yaw_gate",
+          "timeseries"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/combined.log",
+      "sha256": "9da9671ee8ef36ae448433f9525d8c3db81cf53f19e203edf99e5e975afd6f16",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": [
+          "simulation_acceptance = PASS  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/torque_0p9.json",
+      "sha256": "73e25a713155e6370c2e62fad2e4a4870962d7f9a2d7754bbfe9b4227a54faaf",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "physics_warning_counts",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/timestep_0p001.json",
+      "sha256": "0576d6dc0512096279ee77d80d5d86b568b40af76841650f603aa88f8c61621e",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "physics_warning_counts",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/forward_nominal.log",
+      "sha256": "cbc9a062f9df387a059ac8186218a15a2e284b4bbea443a7bdae44824b01391d",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 72,
+        "matched_lines": [
+          "simulation_acceptance = PASS  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/corrected_default.json",
+      "sha256": "64ea95347c793ddd238fecb4aed3383e91c92a14d1c68b1a2ce68ea12d5d466f",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames",
+          "video_path"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/zero_friction.json",
+      "sha256": "36575882a2750e206a80da92a67649c01d10b4a112a221bf85ba52de78917904",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "physics_warning_counts",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/mujoco-numerical-warnings.log",
+      "sha256": "b74a4bcf51c1de6fa6a25dfce0763135a8624d7d95ba74b35c57e7578c7c488d",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 8,
+        "matched_lines": [
+          "WARNING Sat Sep  5 15:11:36 2026: Nan, Inf or huge value in QACC at DOF 9. The simulation is unstable. Time = 0.0540.",
+          "WARNING Sat Sep  5 15:13:32 2026: Nan, Inf or huge value in QACC at DOF 9. The simulation is unstable. Time = 0.0540.",
+          "WARNING Sat Sep  5 15:19:29 2026: Nan, Inf or huge value in QACC at DOF 9. The simulation is unstable. Time = 0.0540.",
+          "WARNING Sat Sep  5 15:23:10 2026: Nan, Inf or huge value in QACC at DOF 9. The simulation is unstable. Time = 0.0540."
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/torque_0p9.log",
+      "sha256": "809f79c413d4c39e182468484842006f922a51f553532058a87acdf26bf0c3a8",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": [
+          "simulation_acceptance = PASS  physical_readiness = UNVERIFIED"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/friction_0p25.json",
+      "sha256": "5ef6bedfd675c505710acd794812d5990f65dc9f993e7cc32f4b1397de6ec182",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "physics_warning_counts",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/simulation/friction_0p5.json",
+      "sha256": "eabac107e13de69380c01b355290af0bb7ffe11e519878e213a179e6925e041f",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "schema_version",
+          "created_at_utc",
+          "engine",
+          "mujoco_version",
+          "python_version",
+          "platform",
+          "input_sha256",
+          "arguments",
+          "timestep_s",
+          "controller_hz",
+          "total_sim_time_s",
+          "requested_sim_time_s",
+          "schedule_s",
+          "commands",
+          "gains",
+          "mass_kg",
+          "initialization",
+          "free_base_damping",
+          "free_base_armature",
+          "friction_lateral",
+          "torque_model",
+          "unverified_assumptions",
+          "walk_displacement",
+          "forward_distance_during_walk_phase_m",
+          "net_xy_distance_start_to_end_m",
+          "turn_angle_deg",
+          "max_abs_roll_deg",
+          "max_abs_pitch_deg",
+          "fell",
+          "fell_time_s",
+          "ik_fallback_count",
+          "ik_double_failure_count",
+          "joint_order",
+          "actuators",
+          "physics_warning_counts",
+          "contacts",
+          "arm_leg_yaw_gate",
+          "simulation_acceptance",
+          "physical_readiness",
+          "video_frames"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/test-audit-gates.log",
+      "sha256": "57bebc6fed5e0000e6b35f591cf9501dae4fa4c3e6a7377562ae82bbdc5499b6",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 5,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/issues-evidence-plan-apply.log",
+      "sha256": "4c60619e47fd25f364b41b9c72355aabd04056093132167f70a93813650fafaf",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 7,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_head_pod_clearance.log",
+      "sha256": "aecc0faa015589d6c5db61c0f1e843cb81e1701ba695c9d2e68ec87ad496a189",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 8,
+        "matched_lines": [
+          "RESULT: PASS"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_arm.log",
+      "sha256": "66f62719c42a6af919874e3f60a52eaa032493c55f0736b5a3bf0fdabd66fae0",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 68,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/project-idempotent.log",
+      "sha256": "6982d9683cf8089106d9da4d7c841dff7b249a7176f3a7e37bf6eff49cc93e66",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 1,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/issues-plan-dry-run.log",
+      "sha256": "a4aefd16244b990f0087245d344a3ea132bb3846aae3dfd3618765c4a3f71c3c",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 7,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_screw_bosses.log",
+      "sha256": "3f3bafc54e2572913e45c7b38fdae3eff1a655c657a5655810b316557950e3fe",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 30,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_urdf.log",
+      "sha256": "734263f69d8cc3b1aa33aa802ecc36de785d2e53b47b794bc74653f027612e2d",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 427,
+        "matched_lines": [
+          "合計 380 項目: OK=380 NG=0",
+          "RESULT: PASS"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/check_print_strength_sensitivity.log",
+      "sha256": "5a1a97aa093316cc84ead966185a06c059a2d9f698c9488d770b7ce63d1de95e",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": [
+          "tibia_link: wall=1.6mm core=100% SF=2.110 at -24.786mm / required=2 [近似・現物UNVERIFIED]",
+          "tibia_link: wall=1.6mm core=40% SF=2.010 at -24.786mm / required=2 [近似・現物UNVERIFIED]",
+          "tibia_link: wall=1.8mm core=40% SF=2.057 at -24.786mm / required=2 [近似・現物UNVERIFIED]",
+          "pod_neck: wall=1.6mm core=100% SF=3.088 at -43.186mm / required=3 [近似・現物UNVERIFIED]",
+          "pod_neck: wall=1.6mm core=40% SF=2.710 at -43.186mm / required=3 [近似・現物UNVERIFIED]",
+          "pod_neck: wall=1.8mm core=40% SF=2.791 at -43.186mm / required=3 [近似・現物UNVERIFIED]"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/project-sync.log",
+      "sha256": "93f886245860dab6db340a85c16fb6de0469eb7106e0b18010f2c4d43035b325",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 18,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_leg_assembly.log",
+      "sha256": "d0a0a5a57e3d4dac89baea678fa68c2da622bd86b8b05f10c9bca486de56123e",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 70,
+        "matched_lines": [
+          "  config.py TIBIA_LEN_GAIT = 155.98mm での worst world z = -0.002mm (OK — 埋め込み側 -0.15mm 未満は NG, 浮き側は body_h の現物合わせで吸収できる範囲として 1.5mm まで許容)"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-results.json",
+      "sha256": "38f734dbafc83b28f7ea448aaf0bffe54625e323e1a08a39a7e36c3785d86562",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "list",
+        "root_keys": null
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/github-evidence-comments.json",
+      "sha256": "63a122867be0685135763c649ff42165e0b869de334e344a2a3b3004457c1165",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "list",
+        "root_keys": null
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_audio.log",
+      "sha256": "56cae6d7a5bded23e43051bcd410811bc1aac531fde8e53c89b2a776d5a2396d",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 59,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_camera.log",
+      "sha256": "42e92e13aad73cc60c9d8876655e2d600e194650d281f93354fdbd12aee8f7cb",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 50,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_leg_assembly.log",
+      "sha256": "7c51976de43e520e3096737d63582e8e42b08a79d8d009a137798933e8498db8",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 72,
+        "matched_lines": [
+          "  config.py TIBIA_LEN_GAIT = 155.98mm での worst world z = -0.002mm (OK — 埋め込み側 -0.15mm 未満は NG, 浮き側は body_h の現物合わせで吸収できる範囲として 1.5mm まで許容)",
+          "RESULT: PASS"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/issues-plan-apply.log",
+      "sha256": "fe586511581335644f6e71a088975a27553c4da870993a5f5cc054a08a8519cf",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 19,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_screw_bosses.log",
+      "sha256": "3f3bafc54e2572913e45c7b38fdae3eff1a655c657a5655810b316557950e3fe",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 30,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/build_review_plate.log",
+      "sha256": "694c86f3708fa9160417362c84f0b1036bec5a44fc1563d21643c23ef85ab4e0",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 4,
+        "matched_lines": [
+          "PASS: separate output and embedded geometry/material for four structural leg parts"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_urdf.log",
+      "sha256": "734263f69d8cc3b1aa33aa802ecc36de785d2e53b47b794bc74653f027612e2d",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 427,
+        "matched_lines": [
+          "合計 380 項目: OK=380 NG=0",
+          "RESULT: PASS"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/github-verification.json",
+      "sha256": "2ed003446e11a88bfaf5ea5ff1664362fe032072acba6ce1527fe9d023ea1af9",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "dict",
+        "root_keys": [
+          "issues",
+          "dependencies",
+          "relations_errors",
+          "existing_nonempty_statuses_changed",
+          "project_items",
+          "verified_at"
+        ],
+        "summary_fields": {}
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_arm.log",
+      "sha256": "66f62719c42a6af919874e3f60a52eaa032493c55f0736b5a3bf0fdabd66fae0",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 68,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/make_plates_verify.log",
+      "sha256": "87d562f03d70468db0537b1b8649b204eecd3d71762de8787d530981fc2afa9b",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 116,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-sim_gait.log",
+      "sha256": "081966af4d41d906ace085f063c6db36e9fd192c5a65a60ecddcd5053d2d3a77",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 8,
+        "matched_lines": [
+          "RESULT: PASS",
+          "注: PASSは計算上の既存閾値への適合。6V実機の連続トルク・発熱・接地は未検証。"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/make-head-eyecut.log",
+      "sha256": "9f1c244bf507299d1015a6e006a467bbadb822f0325dc106b428d06576aa00e8",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 34,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_eye.log",
+      "sha256": "f42733605b65e6b8ac6804a8b9a536812da20c0846fc215f9d6fb8fb5db807e2",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 33,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/test_print_artifacts.log",
+      "sha256": "f91e5625eddc1c3c2c08a349e17f684c6814873a93d683816b1260477036f21b",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 10,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_camera.log",
+      "sha256": "196d183e15e64e9fb13e3463099475cc5b7213cf8c558490dcb000d27502818c",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 50,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_shin_arm_leg.log",
+      "sha256": "799d519f7f529ae93c854b3735f7740a5013a398afd8293ee33064821c8ada80",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 52,
+        "matched_lines": [
+          "overall = PASS",
+          "(shin-shin[B]・tibia-tibia[B] は共に firmware到達可能集合 (pk_reachable()) に統一した基準で overall に算入する -- 2026-07-31 リリーフカット再評価タスクで shin-shin も tibia-tibia と同じ基準に統一し、旧 KNOWN_BOLT_BOSS_CEILING 特例 (worst<1.0cm^3を KNOWN NGとしてPASS扱い) は shell_mod.py ADJ_RELIEF_BANDS 撤去により不要化・削除した。 腕干渉[C]は 2026-07-31 の連成クランプ追加により overall に 算入するようになった)"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/project-audit-sync.log",
+      "sha256": "1eabc0d9a4f88de3021b2208844aafe6d928a6eba555faef0d846f3191bb360b",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 4,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/cli_validation.log",
+      "sha256": "d5b7213aa30ba387a411a61b3ccf2cf0fbbafee7847b245eefdfe137f05fa690",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 3,
+        "matched_lines": [
+          "PASS: --phases 0 rejected with code2",
+          "PASS: --phases -1 rejected with code2",
+          "PASS: CLI existing production file overwrite rejected, source hash unchanged"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_pod_neck_strength.log",
+      "sha256": "8531445df4cdc3687973ddd54a9316ba00882c4b18eb7b97dd898c38a3a8e4b2",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 16,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-results.json",
+      "sha256": "75bb8f0889c51ef4ce2101277f94a6d13ed392ed2cc713142b50f9cffebff147",
+      "review_method": "全JSON構文解析・集計/合否/参照パスの抽出。生時系列の全行を人手読解したという意味ではない。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "root_type": "list",
+        "root_keys": null
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/issues-mechanical-apply.log",
+      "sha256": "6a7f87ee60addb739bbcb0bd5d0cc4c172483b78ef8c5caa9df59e74c0be04d7",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 12,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/issues-arm-apply.log",
+      "sha256": "0ef8333f689ed000ec1cc416e3834fb9bb64cf64142a0c7bb82ac0c847a80934",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_pod_neck_strength.log",
+      "sha256": "8531445df4cdc3687973ddd54a9316ba00882c4b18eb7b97dd898c38a3a8e4b2",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 16,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/check_print_artifacts.log",
+      "sha256": "6abaed25fc5351786659265c6463dac841e50c995380e2bcfddee6abe68b820c",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 40,
+        "matched_lines": [
+          "  PRINT_SETTINGS_REVIEW: forearm_L.stl 壁/充填が生成定義未満",
+          "  PRINT_SETTINGS_REVIEW: forearm.stl 壁/充填が生成定義未満",
+          "  PRINT_SETTINGS_REVIEW: claw_mount_L.stl 壁/充填が生成定義未満",
+          "  PRINT_SETTINGS_REVIEW: upper_arm_L.stl 壁/充填が生成定義未満",
+          "  PRINT_SETTINGS_REVIEW: upper_arm.stl 壁/充填が生成定義未満",
+          "  PRINT_SETTINGS_REVIEW: shoulder_bracket_L.stl 壁/充填が生成定義未満",
+          "  PRINT_SETTINGS_REVIEW: shoulder_bracket.stl 壁/充填が生成定義未満"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/issues-initial-sync.log",
+      "sha256": "d3be821cdd6e04a4098b9b8df5296f93285ee66178c492ba3a3c52c13e02a9d9",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 22,
+        "matched_lines": [
+          "  + issue RV-03: RV-03 [不具合] 幾何・歩容検査のNGと計算失敗を終了コードへ反映する"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/export-urdf.log",
+      "sha256": "f45768de27b1766c77c007a3baf3b80eba7a43060ca1f0f2b22f773f63717c46",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 11,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_leg_link_strength.log",
+      "sha256": "584ae260cdd8b20b065de325431c6c518374a03da418274093afcf0f59e3cd52",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 3,
+        "matched_lines": [
+          "荷重 F=3.8kgf (動的係数込み), σ_allow=55.0MPa (UNVERIFIED 文献値), 要求 SF≥2.0 → ALL OK"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/test-issue-sync.log",
+      "sha256": "bba69393211f4e9c0af4bc3ed09a15509753129438f4a83e1fe47a01ef65333e",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 5,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/build-all.log",
+      "sha256": "4ec7ec5c8536865b0c7f9dc7797b49278b935b97f4349dd52d2f199937fab12e",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 81,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_audio.log",
+      "sha256": "e3767c5cec29e2581f8968bb65265708c1cc36b8bebc297bf2a861f8210bcab0",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 59,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/issues-arm-dry-run.log",
+      "sha256": "521931be6440676c4cf9027d9f059fe0c9c4c7c944e246736ad8475c67e5f8cd",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 5,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_eye.log",
+      "sha256": "02c141bf52318ac8e704588972c3d661fc47e3e7f6893f099e8f9f07ef1fff17",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 33,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_head_pod_clearance.log",
+      "sha256": "aecc0faa015589d6c5db61c0f1e843cb81e1701ba695c9d2e68ec87ad496a189",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 8,
+        "matched_lines": [
+          "RESULT: PASS"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-sim_gait.log",
+      "sha256": "770df7d7fa50be47f7075b571b54b59d24d3cc2253a070c1918f2bce0267b37e",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 6,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/final-check_shin_arm_leg.log",
+      "sha256": "799d519f7f529ae93c854b3735f7740a5013a398afd8293ee33064821c8ada80",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 52,
+        "matched_lines": [
+          "overall = PASS",
+          "(shin-shin[B]・tibia-tibia[B] は共に firmware到達可能集合 (pk_reachable()) に統一した基準で overall に算入する -- 2026-07-31 リリーフカット再評価タスクで shin-shin も tibia-tibia と同じ基準に統一し、旧 KNOWN_BOLT_BOSS_CEILING 特例 (worst<1.0cm^3を KNOWN NGとしてPASS扱い) は shell_mod.py ADJ_RELIEF_BANDS 撤去により不要化・削除した。 腕干渉[C]は 2026-07-31 の連成クランプ追加により overall に 算入するようになった)"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/baseline-check_leg_link_strength.log",
+      "sha256": "584ae260cdd8b20b065de325431c6c518374a03da418274093afcf0f59e3cd52",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 3,
+        "matched_lines": [
+          "荷重 F=3.8kgf (動的係数込み), σ_allow=55.0MPa (UNVERIFIED 文献値), 要求 SF≥2.0 → ALL OK"
+        ]
+      }
+    },
+    {
+      "path": "docs/audits/20260905/logs/check_toe_contact.log",
+      "sha256": "e5c46fc79ac68bd1efb431bb2e9c42901bcde36d5ccc3d728d5ffb3ba8502510",
+      "review_method": "全ログの読込・失敗/警告/最終判定抽出・同時期JSONとの対応確認。旧検証記録。",
+      "findings": [
+        "履歴資料/メタデータとして確認。現在の実機成立の根拠にはしない。"
+      ],
+      "evidence": {
+        "lines": 30,
+        "matched_lines": []
+      }
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/problem.yml",
+      "sha256": "22f57041b72d68dd36ea88b3025c29edcb41ebd439290ccdd0ccb085c8f16681",
+      "review_method": "全文読解 (ライセンス・無視設定・Issueテンプレート)。",
+      "findings": [],
+      "evidence": {
+        "lines": 47
+      }
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/print_job.yml",
+      "sha256": "3d3a01f5f508ca7841f6b30bfe7d09cfd9d469197992ea214cea2c1f615df489",
+      "review_method": "全文読解 (ライセンス・無視設定・Issueテンプレート)。",
+      "findings": [],
+      "evidence": {
+        "lines": 46
+      }
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "sha256": "30c198a751746729c50bee67172b2249e1df46d0e3f90fd005998a31973efdf8",
+      "review_method": "全文読解 (ライセンス・無視設定・Issueテンプレート)。",
+      "findings": [],
+      "evidence": {
+        "lines": 8
+      }
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/decision.yml",
+      "sha256": "c050f49d3cb3e940dcb41dd899cbf80676d62496d1b88d79092d6926b4b79e01",
+      "review_method": "全文読解 (ライセンス・無視設定・Issueテンプレート)。",
+      "findings": [],
+      "evidence": {
+        "lines": 30
+      }
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/assembly_step.yml",
+      "sha256": "1159e9134252472c78b5f690a9ff55df035211184bc9e3852e8578060963fdcd",
+      "review_method": "全文読解 (ライセンス・無視設定・Issueテンプレート)。",
+      "findings": [],
+      "evidence": {
+        "lines": 49
+      }
+    }
+  ]
+}

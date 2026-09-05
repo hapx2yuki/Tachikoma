@@ -1,0 +1,12 @@
+test_generate_stops_on_first_failure (tools.tests.test_integration_audit.AuditRunnerGuards.test_generate_stops_on_first_failure) ... ok
+test_preexisting_evidence_prevents_any_command (tools.tests.test_integration_audit.AuditRunnerGuards.test_preexisting_evidence_prevents_any_command) ... ok
+test_subprocess_error_keeps_all_other_results (tools.tests.test_integration_audit.AuditRunnerGuards.test_subprocess_error_keeps_all_other_results) ... ok
+test_boolean_failure_is_recorded (tools.tests.test_integration_audit.StaticAssemblyGuards.test_boolean_failure_is_recorded) ... ok
+test_empty_base_and_missing_link_are_rejected (tools.tests.test_integration_audit.StaticAssemblyGuards.test_empty_base_and_missing_link_are_rejected) ... ok
+test_nonbase_same_body_collision_is_rejected (tools.tests.test_integration_audit.StaticAssemblyGuards.test_nonbase_same_body_collision_is_rejected) ... ok
+test_valid_empty_optical_frame_is_allowed (tools.tests.test_integration_audit.StaticAssemblyGuards.test_valid_empty_optical_frame_is_allowed) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.013s
+
+OK

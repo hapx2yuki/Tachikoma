@@ -1,0 +1,74 @@
+[1] 肩マウント (シャーシ吊り下げ式) の整合
+  OK  MICRO ケース開口 10 点すべて貫通 (中実=0)
+  OK  タブボスのネジ肉 (r1.8 リング 48 点) 中実=48
+  OK  MICRO 後側ボスと STD 開口の間に肉が残る (y=23.9, ボス南端24.3/脚開口北端23.6)
+  OK  ブラケットのホーンポケット/ピッチ軸ポケットが貫通
+[1b] 肩ブラケット vs 前脚 coxa (脚ヨー最大 ±45° での干渉)
+  最大交差体積: 0 mm3 (腕ヨー±15° × 脚ヨー0-40°)
+  OK  肩ブラケット/上腕と coxa の干渉なし
+  腕ヨー+15° × 脚ヨー+40° でのクリアランス: 3.3 mm
+  OK  ヨーリミットで 1.5mm 以上のクリアランス
+[1c] shoulder_bracket vs Head_Bottom_Armcut (肩ヨー可動域全域, 左右)
+  最大交差体積 (右実配置 + X ミラー左): 0.00 mm3 (肩ヨー±15°全域)
+  OK  shoulder_bracket と Head_Bottom_Armcut の干渉なし
+
+[1d] Mouth_Ball/Neck/Cannon (現在のポーズ) vs Head_Bottom_Armcut シェル
+  Ball vs Head_Bottom_Armcut   = 0.0000 cm^3
+  Neck vs Head_Bottom_Armcut   = 0.0000 cm^3
+  Cannon vs Head_Bottom_Armcut = 0.0000 cm^3
+  OK  Mouth_Ball/Neck/Cannon と Head_Bottom_Armcut の干渉なし
+[2] 腕トルク (MG90S 定格 2.2 kg·cm @6V)
+  肩ピッチ: ペイロード50g込み 0.84 kg·cm (38%), ペイロード無し 0.33 kg·cm (15%)
+  肘:       ペイロード50g込み 0.29 kg·cm (13%)
+  OK  肩ピッチが定格の 75% 未満 (50g ペイロード時)
+  OK  肘が定格の 75% 未満
+  肩ヨー軸の常時曲げ相当 (50g ペイロード込み): 1.11 kg·cm (51%) [要実測: 軸受形式]
+  OK  肩ヨー軸の曲げ相当負荷が定格の 75% 未満
+[3] claw_mount ↔ 爪ハブ (Arm_Left_Claw_Grey) 接着継手の成立性
+  爪ハブ近位面 vs claw_mount 前面の残差 (n=24): mean=-0.00mm max|.|=0.04mm
+  OK  爪ハブ近位面が claw_mount 前面と面一 (残差<1.0mm, 現物合わせ許容内)
+  OK  指ペグ位置 3 点が claw_mount 本体の外側 (中実=0)
+  爪ハブ+指一体 vs claw_mount 交差体積: 4.6 mm3 (接着面での軽微な重なりは想定内)
+  OK  爪ハブ+指一体が claw_mount と過大に交差しない
+[3b] ARM_HAND_REACH_MM-FOREARM_LEN (定数, config.py) が実メッシュの worst-case reach を上回るか (QA minor 指摘: 旧 [4] は firmware config.h と config.py 定数同士の突合のみで、どちらも人力複写値のためtautological — 実メッシュとの乖離を検出できなかった。[5b] の HAND_HALFと同型の drift 対策として新設。[3] で組んだ hand_tm を再利用)
+  実メッシュ (claw_mount+爪ハブ+指+指先チップ) の局所+X最大値 (手首面=claw_mount原点基準, worst-case=finger[1]): 31.689mm vs 定数=31.70mm
+  OK  ARM_HAND_REACH_MM 由来の reach 定数が実メッシュの worst-case reach を上回る (安全マージン 0.011mm)
+[4] 腕作業域 vs 前脚 (高さ帯別モデル, ヨー±15° + 内側クランプ + 地面ガード)
+  OK  firmware 腕長定数が実寸と一致 (REACH 48=48, UPPER 55=55)
+  手先/肘と脚モデルの最小距離 (体高105-130): 2 mm
+  OK  全姿勢グリッドで脚モデルへの進入なし (ヨー±15° + ガード)
+  (モデルは粗近似。実機では脚静止状態で腕の可動域を先に確認すること)
+[5] 腕相互の接触回避 (内側ヨークランプ, firmware 連成リミット2)
+  OK  firmware ARM_MOUNT_X_MM が config と一致 (32)
+  OK  firmware ARM_MOUNT_YAW_DEG が config と一致 (40)
+  クランプ適用後の右手中心 x 最小値: 28.5 mm (HAND_HALF=14.5mm)
+  OK  両腕ミラー動作で手先が接触しない (中心 x ≥ ~14mm)
+[5b] HAND_HALF (14.5mm) が実メッシュの手の横幅を上回るか (firmware/check_arm 両方が使う定数の裏取り, 2026-07-29 固定爪化で palm_base 廃止に伴い根拠が入れ替わったため — pitfalls #31 と同型の drift 対策)
+  実メッシュ (claw_mount+爪ハブ+指+指先チップ) の局所|Y|最大値: 14.30mm vs HAND_HALF=14.5mm
+  OK  HAND_HALF が実メッシュの手の横幅を上回る (安全マージン 0.20mm)
+[6] プリセットの接地クリアランス (firmware 地面ガード適用後)
+  全プリセット × 体高105-130 での手先最低高さ: 41.9 mm
+  OK  地面ガード適用後、手先が床に潜らない
+[7] 殻パーツ (元キット加工) の成立性
+  OK  arm_pod_upper: 単一連結体 (bodies=1) + watertight=True
+  OK  arm_pod_lower: 単一連結体 (bodies=1) + watertight=True
+  OK  elbow_shell: 単一連結体 (bodies=1) + watertight=True
+  OK  arm_pod_upper_L: 単一連結体 (bodies=1) + watertight=True
+  OK  arm_pod_lower_L: 単一連結体 (bodies=1) + watertight=True
+  OK  elbow_shell_L: 単一連結体 (bodies=1) + watertight=True
+  OK  ポッド vs 骨格+前腕/claw_mount 掃引 (肘0-95°) 交差体積 0.000 mm3
+[8] 肩ブラケット/upper_arm/forearm+claw_mount vs Mouth_Cannon_Bored (肩ピッチ全域×肘0-95°×腕ヨー±15°)
+  最大交差体積: 0 mm3 (肩ピッチ-45..85°×肘0-95°×腕ヨー±15°)
+  最小クリアランス: 32.2 mm (yaw=-15°, pitch=20°, elbow=60°)
+  OK  腕 (ブラケット/上腕/前腕+パーム) と Mouth_Cannon の干渉なし
+[8b] レイアウト意図: Mouth_Cannon は腕マウント x=±mx の間、z 帯は腕ポッド上部と重なる
+  OK  Mouth_Cannon x範囲 [-15.2,15.0] が腕マウント x=±31.7 の内側
+  OK  Mouth_Cannon z=[-39.6,-3.8] と 腕ポッド z=[-21.2,17.2] が重なる (overlap=17.4mm)
+
+[9] 隣接する腕関節の実体干渉 (0.25°刻み・URDF非依存)
+  OK  shoulder_upper: 最大交差 0.0000mm3
+  OK  upper_forearm: 最大交差 0.0000mm3
+  OK  elbow_shell_forearm: 最大交差 0.0000mm3
+  OK  関節全域・ホーン円板・肩サーボ枠の保持・形状連結性
+
+result: OK

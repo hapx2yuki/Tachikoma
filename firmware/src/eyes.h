@@ -20,6 +20,8 @@ class Eyes {
   enum Mode { KYORO = 0, FRONT = 1, SCAN = 2 };
   int mode = KYORO;
 
+  void resetOutput() { cur_[0] = cur_[1] = 0; }
+
   // 50Hz で呼ぶ。歩行指令があれば進行/旋回方向へ視線をバイアスする
   // vy = 前後 (+前, ボディ座標は +Y 前。config.h / gait.h と同じ規約)
   void update(float dt, Servos& servos, float vy, float wz) {

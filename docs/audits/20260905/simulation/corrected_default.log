@@ -1,0 +1,6 @@
+simulation_acceptance = PASS  physical_readiness = UNVERIFIED
+walk = {'available': True, 'axis_frame': 'initial world +X right, +Y forward', 'right_m': 0.021404888092950162, 'forward_m': 0.14559120160189093, 'xy_norm_m': 0.14715626802197102, 'commanded_direction_m': 0.14559120160189093, 'averaging_window_s': 1.6, 'effective_elapsed_s': 6.3999999999994595, 'commanded_direction_speed_m_s': 0.022748625250297378}
+turn_deg = 18.596275311324746  max_roll = 3.320  max_pitch = 1.717  fell = False
+max_leg_saturation_fraction = 0.00262  nonfoot_ground_contact_steps = 0
+failed_checks = 
+metrics saved -> docs/audits/20260905/simulation/corrected_default.json

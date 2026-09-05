@@ -118,7 +118,12 @@ def chassis() -> Manifold:
         a = np.radians(ang)
         x, y = 78 * np.cos(a), 78 * np.sin(a)
         plate += rbox(16, 16, t, r=5).translate([x, y, t / 2])
-        plate -= cyl(t + 2, 3.2).translate([x, y, t / 2])
+        extra = C.MOUTH_FRONT_TAB_BOSS_H if ang == 90 else 0.0
+        if extra:
+            # 口の逃げは前タブ下面をかすめる。穴位置は保ち、上面側の
+            # 一体カラーでz2以上に5mm厚の無欠損リングを確保する。
+            plate += cyl(extra, 10).translate([x, y, t + extra/2])
+        plate -= cyl(t + extra + 2, 3.2).translate([x, y, (t + extra)/2])
 
     # ---- 配線通し穴 (ケース間の空き φ9 ×2)
     for sx in (-1, 1):
@@ -155,7 +160,29 @@ def chassis() -> Manifold:
         f"chassis が {len(parts)} 個の分離ボディ: "
         f"{sorted((round(p.volume()) for p in parts), reverse=True)} mm3 — "
         "ボスが開口上に浮いていないか確認せよ")
+    # 頭下部の球とNeck/Capはプレート高さを横切る。頭皿の座グリとは別に、
+    # シャーシにも固定組立包絡を設ける。visibleなキット部品は削らない。
+    plate -= mouth_clearance()
+    # 複雑な実口形状との差で生じた重複頂点/ゼロ厚面をSTL往復前に整理する。
+    # 0.001mmで体積差0.004mm3未満。外形・支持材の保持は別検査する。
+    plate = plate.simplify(C.MOUTH_CHASSIS_SIMPLIFY_MM)
     return plate
+
+
+def mouth_clearance() -> Manifold:
+    """口の固定部品+0.3mmの逃げ。原型Cannon座標→chassis座標を共用する。"""
+    import make_audio as audio
+    # Ballの配線ボア内へ薄いプレート片を残すと、下方からの挿入で引掛かる。
+    # 球のみ凸包に戻してボア内を含める（0.13mm³の経路干渉を独立検査で再現）。
+    shapes = [audio.mouth_ball_bored().hull().translate([0, C.MOUTH_BALL_LOCAL_Y, 0]),
+              audio.mouth_neck_bored().translate([0, C.MOUTH_NECK_LOCAL_Y, 0]),
+              audio._load("Mouth_Cap_Grey").translate([0, C.MOUTH_CAP_LOCAL_Y, 0])]
+    # 凸包ではCapの空洞まで埋めて前タブを余分に削るため、実体を膨張する。
+    # 1閉体/ボス保持と下側からの組立経路はcheck_mouth_chassis.pyで確認する。
+    negative = Manifold()
+    for shape in shapes:
+        negative += shape.minkowski_sum(Manifold.sphere(C.MOUTH_CHASSIS_CLEAR, 16))
+    return negative.rotate([C.MOUTH_CANNON_ROT_X_DEG, 0, 0]).translate(C.MOUTH_CANNON_T)
 
 
 # ---- 頭部逃がしカット (2026-07-31, 任務: 頭部中央寄せ ①B) ----------------

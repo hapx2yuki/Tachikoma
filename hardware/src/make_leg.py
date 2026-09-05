@@ -107,9 +107,17 @@ def coxa_bracket() -> Manifold:
     plate = rbox(C.COXA_LEN + 42, 26.0, plate_h, r=4).translate(
         [(C.COXA_LEN + 14) / 2 - 7, 0, COXA_TOP - plate_h / 2]
     )
+    # 外側へ開くと前後の天板の後ろ端同士が衝突する。ホーン中心・
+    # サーボ箱枠は動かさず、取付座より後方の天板の張出しだけを短くする。
+    # 箱枠の後端はこの境界より後ろなので、union後の切削にしてはいけない。
+    plate -= box(100, 100, 100).translate([C.COXA_REAR_MIN_X - 50, 0, 0])
     m = frame + plate
     # ヨーホーン (STD) のポケット (天板上面から沈める)。アームは +X (脚方向)
     m -= horn_pocket(C.YAW_SERVO).translate([0, 0, COXA_TOP])
+    # 天板unionが股ピッチのケース/タブ空間を埋め戻す。全正形状の合成後に
+    # 再貫通し、主ケースだけでなくギヤ側・タブ・配線出口も確保する。
+    m -= servo_pocket(P).rotate([-90, 0, 0]).translate([C.COXA_LEN, 0, 0])
+    m -= servo_tab_holes(P).rotate([-90, 0, 0]).translate([C.COXA_LEN, 0, 0])
     return m
 
 

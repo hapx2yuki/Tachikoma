@@ -1,0 +1,37 @@
+test_boolean_error_is_not_a_clearance (tools.tests.test_audit_gates.AuditGateTests.test_boolean_error_is_not_a_clearance) ... ok
+test_detected_intersection_fails_full_leg_check (tools.tests.test_audit_gates.AuditGateTests.test_detected_intersection_fails_full_leg_check) ... ok
+test_insufficient_torque_fails_full_gait_check (tools.tests.test_audit_gates.AuditGateTests.test_insufficient_torque_fails_full_gait_check) ... ok
+test_nan_volume_is_not_a_clearance (tools.tests.test_audit_gates.AuditGateTests.test_nan_volume_is_not_a_clearance) ... ok
+test_conflicting_modes_fail_before_network (tools.tests.test_issue_sync.IssueSyncTests.test_conflicting_modes_fail_before_network) ... ok
+test_dry_run_does_not_invent_existing_relations (tools.tests.test_issue_sync.IssueSyncTests.test_dry_run_does_not_invent_existing_relations) ... ok
+test_dry_run_reports_existing_body_change_without_writing (tools.tests.test_issue_sync.IssueSyncTests.test_dry_run_reports_existing_body_change_without_writing) ... ok
+test_duplicate_remote_key_refuses_overwrite (tools.tests.test_issue_sync.IssueSyncTests.test_duplicate_remote_key_refuses_overwrite) ... ok
+test_managed_label_change_preserves_custom_labels (tools.tests.test_issue_sync.IssueSyncTests.test_managed_label_change_preserves_custom_labels) ... ok
+test_manual_status_is_preserved (tools.tests.test_issue_sync.IssueSyncTests.test_manual_status_is_preserved) ... ok
+test_plan_doc_second_run_is_identical (tools.tests.test_issue_sync.IssueSyncTests.test_plan_doc_second_run_is_identical) ... ok
+test_ready_uses_actual_closed_dependencies (tools.tests.test_issue_sync.IssueSyncTests.test_ready_uses_actual_closed_dependencies) ... ok
+test_reconcile_preserves_retired_key_dependencies (tools.tests.test_issue_sync.IssueSyncTests.test_reconcile_preserves_retired_key_dependencies) ... ok
+test_same_volume_and_height_are_not_shape_identity (tools.tests.test_print_artifacts.PrintArtifactsTests.test_same_volume_and_height_are_not_shape_identity) ... ok
+test_tpu_regeneration_preserves_source_and_rejects_overwrite (tools.tests.test_print_artifacts.PrintArtifactsTests.test_tpu_regeneration_preserves_source_and_rejects_overwrite) ... ok
+test_vertex_order_translation_and_rotation_are_allowed (tools.tests.test_print_artifacts.PrintArtifactsTests.test_vertex_order_translation_and_rotation_are_allowed) ... ok
+test_asymmetric_internal_cut_keeps_original_reference_frame (tools.tests.test_render_contracts.RenderContracts.test_asymmetric_internal_cut_keeps_original_reference_frame) ... ok
+test_failed_ik_does_not_render_invented_pose (tools.tests.test_render_contracts.RenderContracts.test_failed_ik_does_not_render_invented_pose) ... ok
+test_foot_render_matches_projected_workspace_at_height_limits (tools.tests.test_render_contracts.RenderContracts.test_foot_render_matches_projected_workspace_at_height_limits) ... ok
+test_holding_is_independent_of_gait_phase (tools.tests.test_render_contracts.RenderContracts.test_holding_is_independent_of_gait_phase) ... ok
+test_mirrored_arm_retains_outward_winding (tools.tests.test_render_contracts.RenderContracts.test_mirrored_arm_retains_outward_winding) ... ok
+test_previews_share_current_holding_pose (tools.tests.test_render_contracts.RenderContracts.test_previews_share_current_holding_pose) ... ok
+test_replaced_stl_refreshes_in_same_process (tools.tests.test_render_contracts.RenderContracts.test_replaced_stl_refreshes_in_same_process) ... ok
+test_conflicting_duplicate_refuses_entire_batch (tools.tests.test_extract_meshes.ExtractMeshesTests.test_conflicting_duplicate_refuses_entire_batch) ... ok
+test_existing_part_is_not_overwritten (tools.tests.test_extract_meshes.ExtractMeshesTests.test_existing_part_is_not_overwritten) ... ok
+test_xml_attribute_order_single_quotes_and_units (tools.tests.test_extract_meshes.ExtractMeshesTests.test_xml_attribute_order_single_quotes_and_units) ... ok
+test_boolean_failure_is_not_clearance (tools.tests.test_mesh_checks.MeshChecks.test_boolean_failure_is_not_clearance) ... ok
+test_empty_mesh_is_zero (tools.tests.test_mesh_checks.MeshChecks.test_empty_mesh_is_zero) ... ok
+test_missing_and_invalid_volume_fail (tools.tests.test_mesh_checks.MeshChecks.test_missing_and_invalid_volume_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 59.863s
+
+OK
+    brim: foot_pad.stl (contact 8mm2)
+  built foot_pad.3mf: 4 instances / 1 objects / 1 plate(s) / 65KB
+Peg                                              10.0 x   10.0 x   10.0 mm  watertight=True

@@ -1,0 +1,5207 @@
+{
+  "mode": "source",
+  "step_deg": 0.25,
+  "firmware_limits_match": {
+    "ARM_PITCH_MIN": true,
+    "ARM_PITCH_MAX": true,
+    "ARM_ELBOW_MIN": true,
+    "ARM_ELBOW_MAX": true
+  },
+  "pairs": {
+    "shoulder_upper": {
+      "worst_mm3": 0.0,
+      "samples": [
+        {
+          "angle_deg": -45.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -44.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -44.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -44.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -44.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -43.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -43.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -43.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -43.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -42.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -42.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -42.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -42.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -41.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -41.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -41.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -41.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -40.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -40.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -40.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -40.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -39.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -39.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -39.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -39.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -38.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -38.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -38.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -38.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -37.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -37.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -37.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -37.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -36.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -36.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -36.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -36.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -35.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -35.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -35.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -35.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -34.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -34.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -34.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -34.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -33.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -33.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -33.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -33.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -32.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -32.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -32.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -32.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -31.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -31.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -31.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -31.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -30.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -30.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -30.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -30.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -29.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -29.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -29.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -29.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -28.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -28.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -28.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -28.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -27.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -27.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -27.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -27.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -26.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -26.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -26.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -26.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -25.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -25.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -25.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -25.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -24.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -24.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -24.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -24.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -23.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -23.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -23.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -23.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -22.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -22.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -22.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -22.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -21.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -21.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -21.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -21.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -20.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -20.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -20.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -20.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -19.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -19.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -19.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -19.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -18.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -18.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -18.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -18.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -17.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -17.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -17.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -17.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -16.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -16.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -16.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -16.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -15.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -15.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -15.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -15.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -14.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -14.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -14.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -14.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -13.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -13.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -13.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -13.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -12.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -12.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -12.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -12.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -11.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -11.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -11.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -11.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -10.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -10.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -10.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -10.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -9.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -9.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -9.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -9.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -8.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -8.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -8.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -8.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -7.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -7.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -7.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -7.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -6.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -6.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -6.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -6.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -5.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -5.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -5.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -5.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -4.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -4.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -4.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -4.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -3.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -3.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -3.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -3.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -2.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -2.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -2.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -2.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -1.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -1.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -1.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -1.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -0.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -0.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": -0.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 0.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 0.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 0.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 0.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 85.0,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    "upper_forearm": {
+      "worst_mm3": 0.0,
+      "samples": [
+        {
+          "angle_deg": 0.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 0.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 0.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 0.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 85.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 85.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 85.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 85.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 86.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 86.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 86.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 86.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 87.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 87.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 87.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 87.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 88.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 88.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 88.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 88.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 92.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 92.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 92.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 92.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 93.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 93.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 93.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 93.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 94.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 94.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 94.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 94.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 95.0,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    "elbow_shell_forearm": {
+      "worst_mm3": 0.0,
+      "samples": [
+        {
+          "angle_deg": 0.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 0.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 0.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 0.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 1.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 2.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 3.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 4.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 5.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 6.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 7.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 8.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 9.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 10.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 11.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 12.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 13.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 14.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 15.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 16.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 17.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 18.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 19.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 20.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 21.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 22.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 23.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 24.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 25.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 26.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 27.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 28.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 29.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 30.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 31.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 32.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 33.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 34.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 35.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 36.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 37.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 38.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 39.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 40.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 41.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 42.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 43.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 44.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 45.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 46.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 47.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 48.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 49.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 50.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 51.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 52.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 53.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 54.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 55.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 56.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 57.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 58.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 59.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 60.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 61.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 62.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 63.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 64.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 65.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 66.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 67.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 68.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 69.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 70.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 71.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 72.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 73.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 74.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 75.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 76.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 77.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 78.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 79.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 80.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 81.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 82.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 83.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 84.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 85.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 85.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 85.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 85.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 86.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 86.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 86.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 86.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 87.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 87.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 87.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 87.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 88.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 88.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 88.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 88.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 92.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 92.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 92.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 92.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 93.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 93.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 93.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 93.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 94.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 94.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 94.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 94.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 95.0,
+          "intersection_mm3": 0.0
+        }
+      ]
+    }
+  },
+  "forearm_horn_disc_lost_mm3": 5.554706542822141e-16,
+  "shoulder_servo_frame_lost_mm3": 0.0,
+  "forearm_sections": [
+    {
+      "x_mm": 10.0,
+      "area_mm2": 153.3092768825835
+    },
+    {
+      "x_mm": 12.0,
+      "area_mm2": 175.3278696285374
+    },
+    {
+      "x_mm": 14.0,
+      "area_mm2": 312.7763689651378
+    },
+    {
+      "x_mm": 15.0,
+      "area_mm2": 494.0921020212334
+    },
+    {
+      "x_mm": 15.9,
+      "area_mm2": 453.96273103582575
+    }
+  ],
+  "parts": {
+    "shoulder_bracket": {
+      "volume_mm3": 7513.883799595132,
+      "components": 1,
+      "watertight": true
+    },
+    "upper_arm": {
+      "volume_mm3": 8413.954863149298,
+      "components": 1,
+      "watertight": true
+    },
+    "forearm": {
+      "volume_mm3": 2951.1798855192296,
+      "components": 1,
+      "watertight": true
+    },
+    "elbow_shell": {
+      "volume_mm3": 1490.602597546249,
+      "components": 1,
+      "watertight": true
+    }
+  },
+  "strength_status": "UNVERIFIED: 断面積は幾何記録。接着・層間強度と疲労の実証ではない",
+  "pass": true
+}

@@ -12,6 +12,29 @@
 
 struct LegCmd { JointAngles ang; bool ok; };
 
+
+// 単脚・隣接ペアの出力角制約。目標段とスルー後の双方で同じ条件を評価する。
+inline void clampLegYaw(JointAngles angles[4]) {
+  for (int leg = 0; leg < 4; ++leg) {
+    angles[leg].yaw = constrain(angles[leg].yaw, -LIM_YAW, LIM_YAW);
+    if (angles[leg].yaw * YAW_IN_SIGN[leg] > LIM_YAW_IN)
+      angles[leg].yaw = LIM_YAW_IN * YAW_IN_SIGN[leg];
+    if (YAW_POD_SIGN[leg] && angles[leg].yaw * YAW_POD_SIGN[leg] > LIM_YAW_POD)
+      angles[leg].yaw = LIM_YAW_POD * YAW_POD_SIGN[leg];
+  }
+  const int pairs[2][2] = {{FR, RR}, {FL, RL}};
+  for (const auto& pair : pairs) {
+    const int a = pair[0], b = pair[1];
+    const float ia = angles[a].yaw * YAW_IN_SIGN[a];
+    const float ib = angles[b].yaw * YAW_IN_SIGN[b];
+    if (ia > 0 && ib > 0 && ia + ib > LIM_YAW_IN_SUM) {
+      const float k = LIM_YAW_IN_SUM / (ia + ib);
+      angles[a].yaw = ia * k * YAW_IN_SIGN[a];
+      angles[b].yaw = ib * k * YAW_IN_SIGN[b];
+    }
+  }
+}
+
 class Gait {
  public:
   float bodyH = BODY_H_DEF;
@@ -106,6 +129,7 @@ class Gait {
         }
       }
 
+      out[leg].ang = {0, 0, 0};  // IK の距離判定失敗時も未初期化値を出さない
       out[leg].ok = legIK(lx, ly, lz, out[leg].ang);
       if (!out[leg].ok) {  // 到達不能時は中立へフォールバック (成否も反映)
         const float gx = nx - LEG_ORIGIN[leg][0], gy = ny - LEG_ORIGIN[leg][1];
@@ -141,32 +165,11 @@ class Gait {
           out[leg].ang.knee = constrain(out[leg].ang.knee, -LIM_KNEE, LIM_KNEE);
         }
       }
-      // 45° ペア内側ヨーの安全クランプ 1: 単側 (通常歩容では発火しない)。
-      // ヨーのみ書換えても pitch/knee は同じ (r,z) の解のまま = クランプ後も
-      // 自己整合な到達姿勢 (足先が同半径のまま方位だけずれる)。接地 z は
-      // 変わらないため安全側。sim_gait [2b] が歩容中の非発火を検証する
-      if (out[leg].ang.yaw * YAW_IN_SIGN[leg] > LIM_YAW_IN) {
-        out[leg].ang.yaw = LIM_YAW_IN * YAW_IN_SIGN[leg];
-      }
-      // 後脚のポッド側ヨー制限 (v3: ポッドが脚高さの後方に接続)
-      if (YAW_POD_SIGN[leg] != 0 &&
-          out[leg].ang.yaw * YAW_POD_SIGN[leg] > LIM_YAW_POD) {
-        out[leg].ang.yaw = LIM_YAW_POD * YAW_POD_SIGN[leg];
-      }
     }
-
-    // 45° ペア内側ヨーの安全クランプ 2: ペア同時内側の和 (config.h 参照)
-    const int pairIdx[2][2] = {{FR, RR}, {FL, RL}};
-    for (int p = 0; p < 2; p++) {
-      const int a = pairIdx[p][0], b = pairIdx[p][1];
-      const float ia = out[a].ang.yaw * YAW_IN_SIGN[a];
-      const float ib = out[b].ang.yaw * YAW_IN_SIGN[b];
-      if (ia > 0 && ib > 0 && ia + ib > LIM_YAW_IN_SUM) {
-        const float k = LIM_YAW_IN_SUM / (ia + ib);
-        out[a].ang.yaw = ia * k * YAW_IN_SIGN[a];
-        out[b].ang.yaw = ib * k * YAW_IN_SIGN[b];
-      }
-    }
+    JointAngles limited[4];
+    for (int leg = 0; leg < 4; ++leg) limited[leg] = out[leg].ang;
+    clampLegYaw(limited);
+    for (int leg = 0; leg < 4; ++leg) out[leg].ang = limited[leg];
 
     // 直近の成功角を保存 (二重失敗時の保持用)
     for (int leg = 0; leg < 4; leg++) {

@@ -18,7 +18,9 @@ robot_meshes(dress=True) が実装する FK・パーツ→リンク対応を「�
 from __future__ import annotations
 
 import json
+import shutil
 import sys
+import tempfile
 import xml.dom.minidom as minidom
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
@@ -349,10 +351,8 @@ def base_link_parts():
     parts.append((cr, COL["chassis"], "battery_cradle"))
 
     # ポッド外装 (pod_dress_shells と同一式)
-    defs = [
-        ("Cabin_Front_Blue", rot(180, "z") @ rot(90, "x"), (0, -156, ZB + 55)),
-        ("Cabin_Back_Blue_Repaired", rot(180, "y") @ rot(90, "x"), (0, -235, ZB + 55)),
-    ]
+    defs = [(name, KIT.cabin_transform(name), (0, 0, ZB))
+            for name in C.CABIN_POSES]
     for name, R, t in defs:
         m = trimesh.load(MODEL / f"{name}.stl")
         m.apply_translation(-(m.bounds[0] + m.bounds[1]) / 2)
@@ -363,9 +363,7 @@ def base_link_parts():
 
     # マウス砲身 (config.py MOUTH_CANNON_T/ROT_X_DEG から直接。kit_dress_static
     # と同一式)
-    _m = trimesh.load(MODEL / "Mouth_Cannon_Grey.stl")
-    _m.apply_translation(-(_m.bounds[0] + _m.bounds[1]) / 2)
-    _m.apply_scale(C.SCALE)
+    _m = KIT.normalized_mesh("Mouth_Cannon_Grey")
     _m.apply_transform(MOUTH_T)
     parts.append((_m, KIT.kit_color("Mouth_Cannon_Grey"), "Mouth_Cannon_Grey"))
 
@@ -434,6 +432,9 @@ def leg_parts(leg: str):
     ft = load("leg_foot_bored")
     ft.apply_transform(trans(0, 0, -C.TIBIA_LEN))
     out["tibia"].append((ft, COL["foot"], "leg_foot_bored"))
+    fp = load("foot_pad")
+    fp.apply_transform(trans(0, 0, -C.TIBIA_LEN))
+    out["tibia"].append((fp, "#333333", "foot_pad"))
     sh = load(f"shin_shell{sfx}")
     sh.apply_transform(trans(0, 0, -16) @ rot(180, "x"))
     out["tibia"].append((sh, COL["shell"], f"shin_shell{sfx}"))
@@ -443,7 +444,6 @@ def leg_parts(leg: str):
         m = KIT.oriented_mesh(p)
         if sfx == "_m":
             m.apply_transform(np.diag([1.0, -1.0, 1.0, 1.0]))
-            m.invert()
         out["tibia"].append((m, p.color, f"{p.part}#{p.instance}"))
     for p in KIT.by_link(KIT_PLACEMENTS, "leg_foot_bored"):
         if not (p.instance == leg or p.instance.startswith(leg + "_")):
@@ -535,6 +535,24 @@ def collect_all_parts() -> dict:
     return parts
 
 
+def validate_input_parts(parts: dict):
+    """個別部品の閉体を検査する。意図的な複数閉殻は単一成分へ強制しない。"""
+    errors=[]
+    for link,items in parts.items():
+        for mesh,_,name in items:
+            label=f'{link}/{name}'
+            if not isinstance(mesh,trimesh.Trimesh) or len(mesh.vertices)<4 or len(mesh.faces)<4:
+                errors.append(f'{label}: empty/insufficient mesh');continue
+            if not np.isfinite(mesh.vertices).all():
+                errors.append(f'{label}: non-finite vertices');continue
+            if not mesh.is_watertight or not mesh.is_winding_consistent:
+                errors.append(f'{label}: non-closed or inconsistent winding');continue
+            if not np.isfinite(mesh.volume) or mesh.volume<=0:
+                errors.append(f'{label}: non-positive/non-finite volume')
+    if errors:
+        raise ValueError('URDF input geometry rejected:\n'+'\n'.join(errors))
+
+
 # ============================================================ 質量・慣性
 # 方針 (CLAUDE.md 記載どおり): パーツごとに trimesh の均質密度 (density=1)
 # 慣性/COM を求め、tools/filament_calc.py と同じ物理モデル (表面積×壁厚+
@@ -596,18 +614,10 @@ class MassItem:
 
 
 def _ensure_outward(mesh: trimesh.Trimesh) -> trimesh.Trimesh:
-    """面の巻き順(法線の向き)を「体積が正 (=外向き)」になるよう正規化する。
+    """質量計算用に面を外向きへ統一する。頂点位置は変更しない。
 
-    matplotlib のライティング用に mesh.invert() を挟む処理 (leg_xx_tibia の
-    FR/RL 用ミラー等, make_visuals.py 由来) は「頂点座標」は正しく再現する
-    (tools/export_urdf.py の FK 数値照合で確認済み) が、面の巻き順について
-    trimesh は反射変換単体では自動修正しない (実測: apply_transform だけの
-    段階では体積+のまま=正しい向き、直後の invert() で体積-に反転=誤った
-    向きになる。逆に言えば「反射で裏返るので invert が必要」という make_visuals
-    側コメントの前提は法線の見た目 [光源計算] には影響しても符号付き体積の
-    向き規約とは逆に効く)。質量・慣性計算や CAD 出力では面の向きが物理的な
-    意味 (体積符号) を持つため、ここで体積が正になるよう統一する
-    (頂点位置は不変 — invert() は面のインデックス順だけを変える)。
+    trimesh.apply_transformの鏡映は面順も補正するため追加invertは不要。
+    頂点を直接鏡映した場合は面順の補正が必要。この最終検査で両者を揃える。
     """
     if mesh.volume < 0:
         mesh = mesh.copy()
@@ -664,39 +674,70 @@ def combine_mass_items(items: list[MassItem]):
 SERVO_STD_G = 60.0
 SERVO_MICRO_G = 14.0
 SERVO_SUBMICRO_G = 3.7      # [要実測] config.py SUBMICRO comment
-STD_BOX = (40.7, 20.2, 39.2)      # servo_box() (make_visuals.py)
-MICRO_BOX = (23.0, 12.4, 26.0)    # servo_box_micro()
-SUBMICRO_BOX = (20.0, 8.6, 20.0)  # C.SUBMICRO の L/W から概算 (H は未計測なので W 相当で近似)
 
 ZT = ZB + C.CHASSIS_T  # プレート上面 (base_link 相対)
 
 
-def leg_servo_items(leg: str):
-    """(base_link 用ヨーサーボ1個, coxa用股ピッチサーボ1個, femur用膝サーボ1個)。
-    位置は概算 (関節軸まわりに±20mm 程度, exploded_leg() の配置図を参考)。"""
+def servo_mass_item(p, mass_g, frame, label):
+    """タブ下面を原点とする実取付座標でケースの箱近似を置く。
+
+    軸+Z時、ケースは-TAB_BELOW、ギヤ側は+ABOVE_TAB。寸法・取付位置は
+    CADと共有するが、内部密度と実測COMは未確認なのでverified=False。
+    """
+    cx = p["L"] / 2 - p["SHAFT_OFF"]
+    height = p["TAB_BELOW"] + p["ABOVE_TAB"]
+    center = np.array([-cx, 0., (p["ABOVE_TAB"] - p["TAB_BELOW"]) / 2, 1.])
+    item = box_mass_item(mass_g, (p["L"], p["W"], height),
+                         (frame @ center)[:3], label, verified=False)
+    item.I_com = frame[:3, :3] @ item.I_com @ frame[:3, :3].T
+    return item
+
+
+def leg_servo_frames(leg: str):
+    from make_chassis import BOSS_H, CASE_ANG
     ox, oy = C.HIPS[leg]
-    yaw = box_mass_item(SERVO_STD_G, STD_BOX, (ox, oy, -10.0),
-                        f"leg_{leg.lower()}_yaw_servo", verified=False)
-    pitch = box_mass_item(SERVO_STD_G, STD_BOX, (C.COXA_LEN, 0, -8.0),
-                          f"leg_{leg.lower()}_pitch_servo", verified=False)
-    knee = box_mass_item(SERVO_STD_G, STD_BOX, (C.FEMUR_LEN - 6.0, 0, -8.0),
-                         f"leg_{leg.lower()}_knee_servo", verified=False)
-    return yaw, pitch, knee
+    yaw_frame = trans(ox, oy, ZB + C.CHASSIS_T + BOSS_H) @ rot(CASE_ANG[leg], "z") @ rot(180, "x")
+    mirror = np.diag([1., -1. if leg in MIRROR_LEGS else 1., 1., 1.])
+    pitch_frame = mirror @ trans(C.COXA_LEN, 0, 0) @ rot(-90, "x")
+    knee_frame = mirror @ trans(C.FEMUR_LEN, 0, 0) @ rot(-90, "x")
+    return dict(yaw=yaw_frame, pitch=pitch_frame, knee=knee_frame)
+
+
+def leg_servo_items(leg: str):
+    return tuple(servo_mass_item(C.LEG_SERVO, SERVO_STD_G, frame,
+                  f"leg_{leg.lower()}_{kind}_servo") for kind, frame in leg_servo_frames(leg).items())
+
+
+def arm_servo_frames(tag: str):
+    sx = -1.0 if tag == "l" else 1.0
+    mx, my = C.ARM_MOUNT_XY
+    yaw_frame = trans(sx * mx, my, ZB + C.CHASSIS_T + C.ARM_BOSS_H) @ rot(90, "z") @ rot(180, "x")
+    mirror = np.diag([sx, 1., 1., 1.])
+    pitch_frame = mirror @ trans(20., 0, -_arm_pitch_dn()) @ rot(-90, "x")
+    elbow_frame = mirror @ trans(C.UPPER_ARM_LEN, 0, 0) @ rot(-90, "x")
+    return dict(yaw=yaw_frame, pitch=pitch_frame, elbow=elbow_frame)
 
 
 def arm_servo_items(tag: str):
-    """右腕基準の位置に対し、左腕は arm_parts() のメッシュミラー規約
-    (リンクローカル X を反転) と揃えて X を反転させる (揃えないと
-    combine_mass_items() の COM が左右非対称になってしまう)。"""
-    sx = -1.0 if tag == "l" else 1.0
-    mx, my = C.ARM_MOUNT_XY
-    yaw = box_mass_item(SERVO_MICRO_G, MICRO_BOX, (sx * mx, my, ZB - 6.0),
-                        f"arm_{tag}_yaw_servo", verified=False)
-    pitch = box_mass_item(SERVO_MICRO_G, MICRO_BOX, (sx * 20.0, 0, -_arm_pitch_dn()),
-                          f"arm_{tag}_pitch_servo", verified=False)
-    elbow = box_mass_item(SERVO_MICRO_G, MICRO_BOX, (sx * C.UPPER_ARM_LEN, 0, 0),
-                          f"arm_{tag}_elbow_servo", verified=False)
-    return yaw, pitch, elbow
+    return tuple(servo_mass_item(C.ARM_SERVO, SERVO_MICRO_G, frame,
+                  f"arm_{tag}_{kind}_servo") for kind, frame in arm_servo_frames(tag).items())
+
+
+def eye_servo_frame(idx):
+    """固定ケースのタブ下面。ポッド関節角では回転しない。
+
+    make_eyeのホーン積層から逆算。接着時の軸周り角は未確定なので、
+    _eye_mountの名目ロールを使う（収納確定を意味しない）。
+    """
+    p = C.EYE_SERVO
+    setback = p['ABOVE_TAB'] + p['HORN_HUB_H'] - (p['HORN_T'] + C.CLEAR)
+    return _eye_mount(idx) @ trans(0, 0, -setback)
+
+
+def eye_carrier_mesh(idx):
+    m = load('eye_carrier')
+    m.apply_transform(eye_servo_frame(idx))
+    return m
 
 
 def base_link_electronics_items():
@@ -719,27 +760,17 @@ def base_link_electronics_items():
         # docs/printing.md 電装バジェット行 ~350g との整合を取るための
         # 一括計上, UNVERIFIED)
         ("wiring_misc", (40, 40, 10), (0, 0, C.CHASSIS_T / 2), 97.0),
-        # 頭部ヨーサーボ (SG90/MG90S, CH_HEAD): 物理マウント/駆動対象は
-        # 2026-07-30 実測で未確定 (docs/BOM.md #2 参照)。位置は不明のため
-        # シャーシ中心へ仮置き — 質量のみ設計重量バジェットに合わせて計上
-        ("head_yaw_servo_unmounted", (23.0, 12.4, 26.0), (0, 0, C.CHASSIS_T + 10), 9.0),
     ]
     for label, size, pos, mass in boxes:
-        items.append(box_mass_item(mass, size, pos, label, verified=False))
-    # 目サーボ (SUBMICRO ×2) — eye_carrier に保持され頭部シェル (base_link)
-    # に固定 (回転しない)。位置は目ソケット直下付近の概算
+        items.append(box_mass_item(mass, size, (pos[0], pos[1], pos[2] + ZB), label, verified=False))
+    # 目サーボと保持板はbase_link固定。頭部180度回転と板の実COMも含める。
     for idx, tag in ((0, "r"), (2, "l")):
-        ctr, n = np.array(C.EYE_SOCKETS_150[idx][0]), np.array(C.EYE_SOCKETS_150[idx][1])
-        pos = ctr - n * (_SETBACK + 10.0)
-        items.append(box_mass_item(SERVO_SUBMICRO_G, SUBMICRO_BOX,
-                                   (pos[0], pos[1] + C.ARM_MOUNT_HUB_Y, pos[2] + ZB + HEAD_TOP_Z_OFFSET),
-                                   f"eye_{tag}_servo", verified=False))
-        # eye_carrier 自体の質量 (PETG, filament_calc.new_parts 準拠) も点質量で計上
-        carr = load("eye_carrier")
-        mi = part_mass_item(carr, f"eye_{tag}_carrier")
-        items.append(MassItem(mi.mass_kg,
-                              np.array([pos[0], pos[1] + C.ARM_MOUNT_HUB_Y, pos[2] + ZB + HEAD_TOP_Z_OFFSET]) * MM,
-                              mi.I_com, f"eye_{tag}_carrier", verified=False))
+        items.append(servo_mass_item(C.EYE_SERVO, SERVO_SUBMICRO_G,
+                     eye_servo_frame(idx), f"eye_{tag}_servo"))
+        mi = part_mass_item(eye_carrier_mesh(idx), 'eye_carrier')
+        mi.label = f'eye_{tag}_carrier'
+        mi.verified = False  # 接着ロールと実重量は未実測。
+        items.append(mi)
     return items
 
 
@@ -818,7 +849,7 @@ def build_collisions(parts: dict) -> dict:
             continue
         if link != "base_link":
             meshes = [m for (m, c, n) in items]
-            if link.endswith("_tibia"):
+            if link.endswith("_tibia") and not any(n == 'foot_pad' for _, _, n in items):
                 fp = load("foot_pad")
                 fp.apply_transform(trans(0, 0, -C.TIBIA_LEN))
                 meshes = meshes + [fp]
@@ -882,16 +913,17 @@ def bake_visual_meshes(parts: dict) -> dict:
     return out
 
 
-def write_meshes(visuals: dict, collisions: dict):
-    MESH_DIR.mkdir(parents=True, exist_ok=True)
-    for f in MESH_DIR.glob("*.stl"):
-        f.unlink()
+def write_meshes(visuals: dict, collisions: dict, mesh_dir: Path | None = None):
+    mesh_dir=MESH_DIR if mesh_dir is None else mesh_dir
+    mesh_dir.mkdir(parents=True, exist_ok=True)
+    for pattern in ('*__vis_*.stl','*__col_*.stl'):
+        for f in mesh_dir.glob(pattern):f.unlink()
     vis_files: dict[str, list[tuple[str, str]]] = {}   # link -> [(path, color_hex)]
     for link, items in visuals.items():
         vis_files[link] = []
         for c, mesh_m in items:
             fname = f"{link}__vis_{_color_name(c)}.stl"
-            mesh_m.export(MESH_DIR / fname)
+            mesh_m.export(mesh_dir / fname)
             vis_files[link].append((fname, c))
     col_files: dict[str, list[str]] = {}
     for link, hulls in collisions.items():
@@ -900,7 +932,7 @@ def write_meshes(visuals: dict, collisions: dict):
             hm = h.copy()
             hm.apply_scale(MM)
             fname = f"{link}__col_{i}.stl"
-            hm.export(MESH_DIR / fname)
+            hm.export(mesh_dir / fname)
             col_files[link].append(fname)
     return vis_files, col_files
 
@@ -977,25 +1009,73 @@ def build_urdf(parts: dict, mass_items: dict, vis_files: dict, col_files: dict) 
 
 
 # アクチュエータ effort/velocity 上限 (docs/urdf.md に出典・UNVERIFIED区分を記載)。
-# DS3218: 1.96 N*m (20 kgf*cm @ 6.8V 級, カタログ値換算) / 6.5 rad/s 級
-# MG90S : 0.22 N*m (2.2 kgf*cm) / 13 rad/s 級
-# ES9251II 級 (目): 0.03 N*m / 8 rad/s 級 (SUBMICRO 一般値, UNVERIFIED)
-ACTUATOR_LIMITS = {
-    "_default": {"effort": 1.96, "velocity": 6.5},
-    "eye_r_roll": {"effort": 0.03, "velocity": 8.0},
-    "eye_l_roll": {"effort": 0.03, "velocity": 8.0},
-}
+# メーカー端点と運用電圧はconfigへ集約。内挿は計算仮定で、購入個体の
+# 同定・連続トルク・電圧適合を保証しない。目の数値は従来の未実測仮定。
+def servo_limits_at_voltage(voltage):
+    def interp(points):
+        (v0,a),(v1,b)=points
+        if not v0<=voltage<=v1:raise ValueError('サーボ資料の端点範囲外')
+        return a+(voltage-v0)/(v1-v0)*(b-a)
+    ds=C.POWER_COMPONENTS['DS3218']['points']
+    mg=C.POWER_COMPONENTS['MG90S']
+    limits={}
+    for label,torque_points,speed_points in (
+        ('leg',[(p[0],p[1]) for p in ds],[(p[0],p[3]) for p in ds]),
+        ('arm',mg['torque_points_v_kgfcm'],mg['speed_points_v_s_per_60deg'])):
+        limits[label]={'effort':interp(torque_points)*.0980665,
+                       'velocity':np.pi/3/interp(speed_points)}
+    limits['eye']={'effort':.03,'velocity':8.}
+    return limits
+
+_operating_limits=servo_limits_at_voltage(C.POWER_AUDIT['servo_v'])
+ACTUATOR_LIMITS = {'_default': _operating_limits['leg'],
+                  'eye_r_roll': _operating_limits['eye'],
+                  'eye_l_roll': _operating_limits['eye']}
 for _side in ("r", "l"):
     for _j in ("yaw", "pitch", "elbow"):
-        ACTUATOR_LIMITS[f"arm_{_side}_{_j}"] = {"effort": 0.22, "velocity": 13.0}
+        ACTUATOR_LIMITS[f"arm_{_side}_{_j}"] = _operating_limits['arm']
 
 
-def write_manifest(parts: dict):
+def write_manifest(parts: dict, out: Path | None = None):
     manifest = {link: [n for (m, c, n) in items] for link, items in parts.items()}
     total = sum(len(v) for v in manifest.values())
-    (OUT / "parts_manifest.json").write_text(
+    ((OUT if out is None else out) / "parts_manifest.json").write_text(
         json.dumps({"total_parts": total, "links": manifest}, ensure_ascii=False, indent=2))
     return total
+
+
+def save_output_bundle(parts: dict, mass_items: dict, visuals: dict, collisions: dict):
+    """既存出力は完成まで維持。生成失敗時に有効なURDFだけを失わない。"""
+    OUT.parent.mkdir(parents=True,exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix='.urdf-export-',dir=OUT.parent) as temp:
+        stage=Path(temp)/'next'
+        if OUT.exists():shutil.copytree(OUT,stage)
+        else:stage.mkdir()
+        vis_files,col_files=write_meshes(visuals,collisions,stage/'meshes')
+        for kind,files in (('visual',[f for items in vis_files.values() for f,_ in items]),
+                           ('collision',[f for items in col_files.values() for f in items])):
+            for name in files:
+                mesh=trimesh.load(stage/'meshes'/name)
+                if not len(mesh.vertices) or not len(mesh.faces) or not np.isfinite(mesh.vertices).all():
+                    raise ValueError(f'Invalid serialized {kind}: {name}')
+                # 結合後visualは複数部品の共有境界が非多様体になることがある。
+                # 物理凸包はその例外にせず、保存後も閉じた正の体積を要求する。
+                if kind=='collision' and not mesh.is_volume:
+                    raise ValueError(f'Invalid serialized collision solid: {name}')
+        robot=build_urdf(parts,mass_items,vis_files,col_files)
+        xml_str=ET.tostring(robot,encoding='unicode')
+        pretty=minidom.parseString(xml_str).toprettyxml(indent='  ')
+        pretty='\n'.join(line for line in pretty.split('\n') if line.strip())
+        (stage/'tachikoma.urdf').write_text(pretty+'\n')
+        count=write_manifest(parts,stage)
+        previous=Path(temp)/'previous'
+        if OUT.exists():OUT.rename(previous)
+        try:
+            stage.rename(OUT)
+        except BaseException:
+            if previous.exists():previous.rename(OUT)
+            raise
+    return vis_files,col_files,count
 
 
 def main():
@@ -1003,6 +1083,10 @@ def main():
     parts = collect_all_parts()
     total = sum(len(v) for v in parts.values())
     print(f"  {total} パーツ ({len(parts)} リンク)")
+
+    print('[export_urdf] 個別入力の閉体・有限値...')
+    validate_input_parts(parts)
+    validate_input_parts({'fixed_inertial_prints':[(eye_carrier_mesh(i),'#444444',f'eye_carrier#{i}') for i in (0,2)]})
 
     print("[export_urdf] 質量・慣性...")
     mass_items = build_link_mass_items(parts)
@@ -1014,16 +1098,7 @@ def main():
 
     print("[export_urdf] メッシュ焼き出し (m)...")
     visuals = bake_visual_meshes(parts)
-    vis_files, col_files = write_meshes(visuals, collisions)
-
-    print("[export_urdf] URDF 組み立て...")
-    robot = build_urdf(parts, mass_items, vis_files, col_files)
-    xml_str = ET.tostring(robot, encoding="unicode")
-    pretty = minidom.parseString(xml_str).toprettyxml(indent="  ")
-    pretty = "\n".join(line for line in pretty.split("\n") if line.strip())
-    (OUT / "tachikoma.urdf").write_text(pretty + "\n")
-
-    n_manifest = write_manifest(parts)
+    vis_files,col_files,n_manifest=save_output_bundle(parts,mass_items,visuals,collisions)
     print(f"[export_urdf] 完了: {OUT / 'tachikoma.urdf'}")
     print(f"  visual STL: {sum(len(v) for v in vis_files.values())} 枚")
     print(f"  collision STL: {sum(len(v) for v in col_files.values())} 枚")

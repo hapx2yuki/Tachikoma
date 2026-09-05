@@ -1,0 +1,3 @@
+PASS: --phases 0 rejected with code2
+PASS: --phases -1 rejected with code2
+PASS: CLI existing production file overwrite rejected, source hash unchanged

@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-05T16:23:55.395536+09:00",
+  "phase": "generate",
+  "results": [
+    {
+      "name": "build-all",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/hardware/src/build_all.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 7.534,
+      "log": "docs/audits/20260905-round2/final/build-all.log",
+      "log_sha256": "b6c146fa1ad0bdf03d9c2089903b30cf948ea6a3432ffbaa81fc09e0064c3278"
+    },
+    {
+      "name": "head-eyecut",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/make_head_eyecut.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 10.429,
+      "log": "docs/audits/20260905-round2/final/head-eyecut.log",
+      "log_sha256": "9f1c244bf507299d1015a6e006a467bbadb822f0325dc106b428d06576aa00e8"
+    },
+    {
+      "name": "export-urdf",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/export_urdf.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 2.866,
+      "log": "docs/audits/20260905-round2/final/export-urdf.log",
+      "log_sha256": "9fe601cd46d7d4f0c6c0f8bf4c15bcbf8e3357f8acefa31cc3ac2f7788f2ffc2"
+    }
+  ]
+}

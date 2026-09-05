@@ -1,0 +1,120 @@
+{
+  "files": [
+    {
+      "path": "tools/check_static_assembly.py",
+      "sha256": "731336abb8980f4577b4759ca1216b092351af662ed23dbe77c7ced96783e241",
+      "review_method": "全行読解、旧base限定の偽PASS再現、新版4負例/例外確認、全non-base97候補Boolean。最終改訂の該当部を再読し負例/依存/保存経路を再照合",
+      "findings": [
+        "旧見逃しを修正、60組の追加交差を担当へ報告"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/integration-peer-review.md",
+        "docs/audits/20260905-round2/integration-peer-tests.log",
+        "docs/audits/20260905-round2/integration-peer-review.md"
+      ]
+    },
+    {
+      "path": "tools/run_design_audit.py",
+      "sha256": "8adca30da18ab547693603da546b10eb9e255d789ac0391a69f1a19f77c9dff8",
+      "review_method": "全行読解、既存ログによる結果欠落再現、新版の事前拒否/例外記録/生成停止を模擬実行。最終改訂の該当部を再読し負例/依存/保存経路を再照合。最終固定後に該当差分を再読・対応回帰/入力照合を再実行",
+      "findings": [
+        "旧結果欠落を修正、追加検査の収載を依頼"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/integration-peer-review.md",
+        "docs/audits/20260905-round2/integration-peer-tests.log",
+        "docs/audits/20260905-round2/integration-peer-review.md",
+        "docs/audits/20260905-round2/stl-export-and-integration-final.log"
+      ]
+    },
+    {
+      "path": "tools/kit_assembly.py",
+      "sha256": "f3810e68432190f91437c02cd982b2cee88bb99473d813ab87187b21158a8b9e",
+      "review_method": "頭部配置修正と前後loaderを読解、実config y=11/7.3の回帰実行。最終固定後に該当差分を再読・対応回帰/入力照合を再実行",
+      "findings": [
+        "現行配置形式の頭部座標一致PASS"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/integration-peer-review.md",
+        "docs/audits/20260905-round2/integration-peer-tests.log",
+        "docs/audits/20260905-round2/stl-export-and-integration-final.log"
+      ]
+    },
+    {
+      "path": "tools/issues/plan.py",
+      "sha256": "99db1b566432154b99168025be50d0cf94bcfe0855bae6481fffa75c0e970bd3",
+      "review_method": "RV13/14/15と関連前提/完了条件読解、全依存+親完了待ち辺DFS。最終改訂の該当部を再読し負例/依存/保存経路を再照合。最終固定後に該当差分を再読・対応回帰/入力照合を再実行",
+      "findings": [
+        "循環0、PR06の未確定部品除外/前提追加を依頼"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/integration-peer-review.md",
+        "docs/audits/20260905-round2/integration-peer-tests.log",
+        "docs/audits/20260905-round2/integration-peer-review.md",
+        "docs/audits/20260905-round2/stl-export-and-integration-final.log"
+      ]
+    },
+    {
+      "path": "tools/build_audit_coverage.py",
+      "sha256": "1e9b513cd14a12f285cd373ca51b15969dc1f95a6d3da32a2ffa65792dbedb83",
+      "review_method": "全行読解、実515開始時ファイルで実行しhash更新待ちを確認。最終改訂の該当部を再読し負例/依存/保存経路を再照合",
+      "findings": [
+        "記録なし0、更新待ち17、追加ファイルの現hashは未判定"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/integration-peer-review.md",
+        "docs/audits/20260905-round2/integration-peer-tests.log",
+        "docs/audits/20260905-round2/integration-peer-review.md"
+      ]
+    },
+    {
+      "path": "tools/tests/test_integration_audit.py",
+      "sha256": "c54194b26909c24efba7cc5203fce3a0820ff6d3fcb0d946b11fb582a29bb4e9",
+      "review_method": "負例7試験を作成・全行自己読解・実行。最終改訂の該当部を再読し負例/依存/保存経路を再照合",
+      "findings": [
+        "7試験PASS"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/integration-peer-review.md",
+        "docs/audits/20260905-round2/integration-peer-tests.log",
+        "docs/audits/20260905-round2/integration-peer-review.md"
+      ]
+    },
+    {
+      "path": "tools/inspect_coxa_pocket_candidate.py",
+      "sha256": "a96ac8c83fe05ae74ac616a56332744ebcf4baa521e52c304d5f123720b2bb0d",
+      "review_method": "作成・全行自己読解、2実STLのBoolean/断面/荷重感度/128穴周囲レイを実行",
+      "findings": [
+        "幾何PASS、上板旧新不変、印刷強度UNVERIFIED"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/coxa-pocket-peer.md",
+        "docs/audits/20260905-round2/coxa-pocket-peer-final.json"
+      ]
+    },
+    {
+      "path": "tools/check_coxa_sweep.py",
+      "sha256": "aaad2c7dae0698a4371e65873727128fd86cf3c20fec40480985383c235f69a5",
+      "review_method": "全行独立読解、合法ケース空間をr10保持座から除く改訂と過剰切除負例を確認",
+      "findings": [
+        "物理的に存在できない旧座の基準を是正、C=-1負例検出を維持"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/coxa-pocket-peer.md",
+        "docs/audits/20260905-round2/coxa-pocket-peer-final.json"
+      ]
+    },
+    {
+      "path": "hardware/src/make_leg.py",
+      "sha256": "ebbdba644c92a7547d2bae2dd3c049aea6c39684b8b4357a953a618be84d1723",
+      "review_method": "coxa関数とservo_frame/負形状共通処理を独立読解、候補STLを断面・負形状で照合",
+      "findings": [
+        "正形状union後にpocket/tabを再貫通する修正は直接上板を保存"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/coxa-pocket-peer.md",
+        "docs/audits/20260905-round2/coxa-pocket-peer-final.json"
+      ]
+    }
+  ]
+}

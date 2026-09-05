@@ -1,0 +1,115 @@
+{
+  "input_sha256": {
+    "tools/check_coxa_sweep.py": "aaad2c7dae0698a4371e65873727128fd86cf3c20fec40480985383c235f69a5",
+    "hardware/src/config.py": "23c9c32156265855d26e93f65392649d11161207061a1bba0122214e9a78b169",
+    "hardware/src/lib.py": "ab7a9bf68f4b6f55d4bc4805a3036815f7ce75f2a00b2c60cf4d55a5874bc392",
+    "hardware/src/make_leg.py": "ebbdba644c92a7547d2bae2dd3c049aea6c39684b8b4357a953a618be84d1723",
+    "firmware/src/config.h": "b5888d388d6f91f4faf3066e8028dacb98050d8293621225fbf5a45e25eee4b6",
+    "hardware/stl/coxa_bracket.stl": "c60d06fb3b41dee9163b10b30549ecb198efcacfb2582af122e62e2b4733a37a",
+    "hardware/stl/coxa_bracket_m.stl": "6d34009bb4eabbab118c4902485693c2296c2039a0124f7833751fa463e5368e"
+  },
+  "mirror_max_vertex_error_mm": 0.0,
+  "mirror_pass": true,
+  "mode": "STL",
+  "method": "XY凸包の全角度組合せと格子間最大回転量による保守的距離下界。ケース/他の部品は別検査。",
+  "step_deg": 0.10000000000000142,
+  "radius_mm": 47.93158323098032,
+  "pairs": [
+    {
+      "pair": [
+        "FR",
+        "RR"
+      ],
+      "tested_angle_pairs": 328834,
+      "worst_angles_deg": [
+        23.800000000000004,
+        -23.8
+      ],
+      "sampled_convex_hull_gap_mm": 1.0467541953189308,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": 0.9630978036659982,
+      "pass": true
+    },
+    {
+      "pair": [
+        "FL",
+        "RL"
+      ],
+      "tested_angle_pairs": 328834,
+      "worst_angles_deg": [
+        -23.8,
+        23.800000000000004
+      ],
+      "sampled_convex_hull_gap_mm": 1.0467541953189299,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": 0.9630978036659973,
+      "pass": true
+    },
+    {
+      "pair": [
+        "FR",
+        "FL"
+      ],
+      "tested_angle_pairs": 332929,
+      "worst_angles_deg": [
+        28.700000000000003,
+        -28.7
+      ],
+      "sampled_convex_hull_gap_mm": 60.42082989677992,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": 60.33717350512699,
+      "pass": true
+    },
+    {
+      "pair": [
+        "RL",
+        "RR"
+      ],
+      "tested_angle_pairs": 332929,
+      "worst_angles_deg": [
+        13.700000000000003,
+        -13.7
+      ],
+      "sampled_convex_hull_gap_mm": 50.25096688580861,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": 50.16731049415568,
+      "pass": true
+    },
+    {
+      "pair": [
+        "FR",
+        "RL"
+      ],
+      "tested_angle_pairs": 332929,
+      "worst_angles_deg": [
+        40.0,
+        38.80000000000001
+      ],
+      "sampled_convex_hull_gap_mm": 63.463319332160616,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": 63.379662940507686,
+      "pass": true
+    },
+    {
+      "pair": [
+        "FL",
+        "RR"
+      ],
+      "tested_angle_pairs": 332929,
+      "worst_angles_deg": [
+        -40.0,
+        -38.8
+      ],
+      "sampled_convex_hull_gap_mm": 63.46331933216061,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": 63.37966294050768,
+      "pass": true
+    }
+  ],
+  "frame_material_lost_mm3": 0.00035370920269806234,
+  "horn_seat_lost_mm3": 2.2975616626584855e-05,
+  "required_servo_pocket_removed_from_old_seat_mm3": 867.1631234659014,
+  "mirror_symmetric_difference_mm3": 0.0,
+  "watertight_single_body": true,
+  "pass": true
+}

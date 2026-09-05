@@ -1,0 +1,537 @@
+{
+  "status": "UNVERIFIED",
+  "components": {
+    "DS3218": {
+      "source": "https://www.dsservo.com/down.asp?id=22",
+      "checked": "2026-09-05",
+      "voltage_range_v": [
+        4.8,
+        6.8
+      ],
+      "points": [
+        [
+          5.0,
+          18.0,
+          1.8,
+          0.16
+        ],
+        [
+          6.8,
+          21.5,
+          2.2,
+          0.14
+        ]
+      ],
+      "purchased_identity": "UNVERIFIED"
+    },
+    "MG90S": {
+      "source": "https://towerpro.com.tw/product/mg90s-3/",
+      "checked": "2026-09-05",
+      "torque_points_v_kgfcm": [
+        [
+          4.8,
+          1.8
+        ],
+        [
+          6.6,
+          2.2
+        ]
+      ],
+      "speed_points_v_s_per_60deg": [
+        [
+          4.8,
+          0.1
+        ],
+        [
+          6.0,
+          0.08
+        ]
+      ],
+      "rated_voltage_note": "同ページのOperating Voltage欄は4.8V。6.6Vトルク表との不整合があり、内挿は計算仮定。購入個体の6V運用適合は未確認",
+      "purchased_identity": "UNVERIFIED",
+      "stall_current_a": null
+    },
+    "UBEC_10A_V2_30603003": {
+      "source": "https://www.hobbywing.com/products/ubec-10a-car79",
+      "checked": "2026-09-05",
+      "continuous_a": 10.0,
+      "peak_a": 15.0,
+      "purchased_identity": "UNVERIFIED",
+      "loaded_dropout": "UNVERIFIED"
+    }
+  },
+  "assumptions": {
+    "servo_v": 6.0,
+    "logic_v": 5.0,
+    "standard_servo_count": 12,
+    "logic_supply_a": 3.0,
+    "battery_v_cases": [
+      8.4,
+      7.4,
+      6.4
+    ],
+    "servo_load_a_cases": [
+      6.0,
+      10.0,
+      14.0
+    ],
+    "logic_load_a_cases": [
+      1.5,
+      3.0
+    ],
+    "efficiency_cases": [
+      0.8,
+      0.9,
+      0.95
+    ],
+    "existing_switch_a": 10.0,
+    "proposed_fuse_a": 15.0,
+    "status": "仮定の感度計算。歩行電流、効率、端子温度、DC定格、溶断曲線は未実測"
+  },
+  "cases": [
+    {
+      "servo_a": 6.0,
+      "logic_a": 1.5,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 6.473214285714286,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 1.5,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 5.753968253968254,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 1.5,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 5.451127819548873,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 1.5,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 7.347972972972973,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 1.5,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 6.531531531531532,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 1.5,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 6.187766714082504,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 1.5,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 8.49609375,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 1.5,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 7.552083333333333,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 1.5,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 7.154605263157896,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 3.0,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 7.5892857142857135,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 3.0,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 6.746031746031746,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 3.0,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 6.390977443609023,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 3.0,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 8.614864864864865,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 3.0,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 7.657657657657658,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 3.0,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 7.2546230440967285,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 3.0,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 9.9609375,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 3.0,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 8.854166666666666,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 6.0,
+      "logic_a": 3.0,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 8.388157894736842,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 1.5,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 10.044642857142856,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 1.5,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 8.928571428571429,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 1.5,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 8.458646616541353,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 1.5,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 11.402027027027026,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 1.5,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 10.135135135135135,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 1.5,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 9.601706970128022,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 1.5,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 13.18359375,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 1.5,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 11.71875,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 1.5,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 11.101973684210526,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 3.0,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 11.160714285714285,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 3.0,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 9.920634920634921,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 3.0,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 9.398496240601503,
+      "exceeds_old_10a_switch": false
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 3.0,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 12.668918918918918,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 3.0,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 11.261261261261263,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 3.0,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 10.668563300142246,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 3.0,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 14.6484375,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 3.0,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 13.020833333333334,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 10.0,
+      "logic_a": 3.0,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 12.335526315789473,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 1.5,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 13.616071428571429,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 1.5,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 12.103174603174601,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 1.5,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 11.466165413533833,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 1.5,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 15.45608108108108,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 1.5,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 13.738738738738737,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 1.5,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 13.01564722617354,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 1.5,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 17.87109375,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 1.5,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 15.885416666666664,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 1.5,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 15.049342105263156,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 3.0,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 14.732142857142856,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 3.0,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 13.095238095238095,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 3.0,
+      "battery_v": 8.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 12.406015037593985,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 3.0,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 16.722972972972972,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 3.0,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 14.864864864864865,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 3.0,
+      "battery_v": 7.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 14.082503556187767,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 3.0,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.8,
+      "input_a": 19.3359375,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 3.0,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.9,
+      "input_a": 17.1875,
+      "exceeds_old_10a_switch": true
+    },
+    {
+      "servo_a": 14.0,
+      "logic_a": 3.0,
+      "battery_v": 6.4,
+      "assumed_efficiency": 0.95,
+      "input_a": 16.282894736842106,
+      "exceeds_old_10a_switch": true
+    }
+  ],
+  "standard_servos_all_stalled": {
+    "interpolated_each_a": 2.022222222222222,
+    "total_a_excluding_arms_and_eyes": 24.266666666666666,
+    "method": "メーカー5V/6.8Vの点から6Vを線形補間。実測値でも通常歩行電流でもない"
+  },
+  "unverified": [
+    "実購入サーボ/UBEC型番。LD20MG/LD220MG/HENGEと設計値DS3218/Hobbywingの相違",
+    "全関節の無負荷/保持/過渡電流と6V/5V/電池入力の同時測定",
+    "2S末期のUBEC負荷時降圧余裕、効率と温度上昇",
+    "スイッチDC開閉定格、配線/コネクタ容量、ヒューズ溶断特性",
+    "独立停止時のPWM停止と転倒防止。ソフト停止はI2C断線中の出力を消せない"
+  ]
+}

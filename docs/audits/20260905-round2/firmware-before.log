@@ -1,0 +1,4 @@
+Actual Peripherals before revision: initial_vbat=7.39964; 10s_after_sense_disconnect vbat=0 cutout=0
+UI fresh connection sends stand:1 in periodic state; previous rest state is overwritten.
+actual round1 Audio run: enqueued=640 written=128 ring_remaining=0 lost=512 bytes
+actual round1 Servos: board1_online=0 ready=1

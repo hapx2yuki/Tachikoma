@@ -1,0 +1,181 @@
+{
+  "created_utc": "2026-09-05T08:12:57.922066+00:00",
+  "case_count": 4,
+  "all_input_hashes_match_current": true,
+  "all_cases_match_plan": true,
+  "physical_readiness": "UNVERIFIED: conditional support comparison only; fixed head/servo intersections remain, material friction/compression and attachment strength unmeasured; candidate not adopted",
+  "cases": [
+    {
+      "name": "toe_shoe_forward_mu0.35",
+      "status": "PASS",
+      "all_checks": {
+        "completed": true,
+        "numeric_stability": true,
+        "no_fall": true,
+        "no_nonleg_contact": true,
+        "no_ik_fallback": true,
+        "initial_self_penetration_le_0p1mm": true,
+        "leg_saturation_le_5pct": true,
+        "inputs_unchanged": true,
+        "translation_progress": true,
+        "rotation_progress": true
+      },
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "mass_kg": 2.745791234439507,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "TPU": 266.5927907243478,
+          "PLA": 0.21732550722059493
+        },
+        "fraction": 0.9991854675141628,
+        "status": "PASS",
+        "threshold_fraction": 0.95
+      },
+      "max_roll_deg": 3.3118665714242064,
+      "max_pitch_deg": 1.9029208412871768,
+      "positive_mechanical_power_W": {
+        "mean": 1.2454708612208896,
+        "max": 33.5187548859016,
+        "p95": 4.03864853829467
+      },
+      "path_m": {
+        "settle": 0.0,
+        "walk": 0.15562739218330437,
+        "stop": 0.0
+      },
+      "old_generator_reported_status": "FAIL",
+      "old_generator_validity": "INVALID_MODEL: inertia frame modified after compile; collision tree retained old inertial coordinates; these are not physical failures",
+      "file": "docs/audits/20260905-round2/simulation/foot-candidate-final/toe_shoe_forward_mu0.35.json"
+    },
+    {
+      "name": "toe_shoe_forward_mu0.6",
+      "status": "PASS",
+      "all_checks": {
+        "completed": true,
+        "numeric_stability": true,
+        "no_fall": true,
+        "no_nonleg_contact": true,
+        "no_ik_fallback": true,
+        "initial_self_penetration_le_0p1mm": true,
+        "leg_saturation_le_5pct": true,
+        "inputs_unchanged": true,
+        "translation_progress": true,
+        "rotation_progress": true
+      },
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "mass_kg": 2.745791234439507,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "TPU": 266.5520215954111,
+          "PLA": 0.39363017890857904
+        },
+        "fraction": 0.9985254295161123,
+        "status": "PASS",
+        "threshold_fraction": 0.95
+      },
+      "max_roll_deg": 3.75087518104116,
+      "max_pitch_deg": 2.06004293560068,
+      "positive_mechanical_power_W": {
+        "mean": 1.2413054969782278,
+        "max": 34.01966585277026,
+        "p95": 4.155260703495015
+      },
+      "path_m": {
+        "settle": 0.0,
+        "walk": 0.167883719432465,
+        "stop": 0.0
+      },
+      "old_generator_reported_status": "FALL",
+      "old_generator_validity": "INVALID_MODEL: inertia frame modified after compile; collision tree retained old inertial coordinates; these are not physical failures",
+      "file": "docs/audits/20260905-round2/simulation/foot-candidate-final/toe_shoe_forward_mu0.6.json"
+    },
+    {
+      "name": "toe_shoe_forward_mu1.0",
+      "status": "PASS",
+      "all_checks": {
+        "completed": true,
+        "numeric_stability": true,
+        "no_fall": true,
+        "no_nonleg_contact": true,
+        "no_ik_fallback": true,
+        "initial_self_penetration_le_0p1mm": true,
+        "leg_saturation_le_5pct": true,
+        "inputs_unchanged": true,
+        "translation_progress": true,
+        "rotation_progress": true
+      },
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "mass_kg": 2.745791234439507,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "TPU": 266.39502802702765,
+          "PLA": 0.43055151123747526
+        },
+        "fraction": 0.9983863934185676,
+        "status": "PASS",
+        "threshold_fraction": 0.95
+      },
+      "max_roll_deg": 4.166769376617567,
+      "max_pitch_deg": 2.358066382379311,
+      "positive_mechanical_power_W": {
+        "mean": 1.3063338007530343,
+        "max": 35.23624613216348,
+        "p95": 4.404537793341037
+      },
+      "path_m": {
+        "settle": 0.0,
+        "walk": 0.16916680091945954,
+        "stop": 0.0
+      },
+      "old_generator_reported_status": "FAIL",
+      "old_generator_validity": "INVALID_MODEL: inertia frame modified after compile; collision tree retained old inertial coordinates; these are not physical failures",
+      "file": "docs/audits/20260905-round2/simulation/foot-candidate-final/toe_shoe_forward_mu1.0.json"
+    },
+    {
+      "name": "toe_shoe_right_mu0.6",
+      "status": "PASS",
+      "all_checks": {
+        "completed": true,
+        "numeric_stability": true,
+        "no_fall": true,
+        "no_nonleg_contact": true,
+        "no_ik_fallback": true,
+        "initial_self_penetration_le_0p1mm": true,
+        "leg_saturation_le_5pct": true,
+        "inputs_unchanged": true,
+        "translation_progress": true,
+        "rotation_progress": true
+      },
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "mass_kg": 2.745791234439507,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "TPU": 266.6702587311897,
+          "PLA": 0.5583269706311056
+        },
+        "fraction": 0.9979106764751053,
+        "status": "PASS",
+        "threshold_fraction": 0.95
+      },
+      "max_roll_deg": 3.8288725823648293,
+      "max_pitch_deg": 1.943609097467265,
+      "positive_mechanical_power_W": {
+        "mean": 1.337809289975155,
+        "max": 34.01589555002342,
+        "p95": 4.5558131194506855
+      },
+      "path_m": {
+        "settle": 0.0,
+        "walk": 0.1638086554136928,
+        "stop": 0.0
+      },
+      "old_generator_reported_status": "FAIL",
+      "old_generator_validity": "INVALID_MODEL: inertia frame modified after compile; collision tree retained old inertial coordinates; these are not physical failures",
+      "file": "docs/audits/20260905-round2/simulation/foot-candidate-final/toe_shoe_right_mu0.6.json"
+    }
+  ]
+}

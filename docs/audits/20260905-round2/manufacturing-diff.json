@@ -1,0 +1,230 @@
+[
+  {
+    "path": "hardware/stl/forearm.stl",
+    "before_sha256": "75de00facf130d71dae716bb0bb65c3c0ce49f16d45cae27121623a956463f4e",
+    "after_sha256": "6fda2647e6de4c1634c2feb2a5a1904023d2303cfdb9e8532c56cc3fb92f97e7",
+    "before_volume_mm3": 4587.466030414676,
+    "after_volume_mm3": 2802.386047392842,
+    "volume_change_mm3": -1785.0799830218343,
+    "bbox_center_change_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": false,
+    "centered_vertex_distance_mm": 5.050548738755272,
+    "classification": "geometry_changed",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/Mouth_Cannon_Bored.stl",
+    "before_sha256": "e7914844ba4c6cc90b3e48af7eaeddc705ccda3c1e7c8afa5314fb6579952a5c",
+    "after_sha256": "e886c2b1f4955ae9fca2aeb9753e0ccc945745dd26d8868f900b57eeb183b544",
+    "before_volume_mm3": 7432.866790372628,
+    "after_volume_mm3": 7332.7029192127475,
+    "volume_change_mm3": -100.16387115988073,
+    "bbox_center_change_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": false,
+    "centered_vertex_distance_mm": 3.423381165176724,
+    "classification": "geometry_changed",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/coxa_bracket_m.stl",
+    "before_sha256": "c6490332e66369faca156445fc2144712fb0c21361bdeaa3df720f5e148d877f",
+    "after_sha256": "6d34009bb4eabbab118c4902485693c2296c2039a0124f7833751fa463e5368e",
+    "before_volume_mm3": 24447.215884098478,
+    "after_volume_mm3": 18729.996383637677,
+    "volume_change_mm3": -5717.2195004608,
+    "bbox_center_change_mm": [
+      3.6500000953674316,
+      0.0,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": false,
+    "centered_vertex_distance_mm": 9.965298871959833,
+    "classification": "geometry_changed",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/forearm_L.stl",
+    "before_sha256": "eb2fee06403a343137cac290a62191efc12c8cf762b3c56be2ca60a0e60b4eb5",
+    "after_sha256": "e8c3d5d3c8c64aa034f4c5f1c10b651a053ce2cb30c9ff2408c46b9063fe898f",
+    "before_volume_mm3": 4587.466030414676,
+    "after_volume_mm3": 2802.386047392842,
+    "volume_change_mm3": -1785.0799830218343,
+    "bbox_center_change_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": false,
+    "centered_vertex_distance_mm": 5.050548738755272,
+    "classification": "geometry_changed",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/shoulder_bracket.stl",
+    "before_sha256": "70a3a385d0c2ef0664ce7f90f139b3d4a578749e0cd2545f5733a55527ed34e8",
+    "after_sha256": "fa013741ee7d97ed34fd0a3808c3f48722040a7f05a1e79591cf5aa892bf6d0a",
+    "before_volume_mm3": 7678.745442836448,
+    "after_volume_mm3": 7513.884647105989,
+    "volume_change_mm3": -164.86079573045936,
+    "bbox_center_change_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": false,
+    "centered_vertex_distance_mm": 7.375616073608398,
+    "classification": "geometry_changed",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/Head_Bottom_Armcut.stl",
+    "before_sha256": "bff185a254387ed0500b73e2a82d9ebb79b6a834d2b5de109c4df8da35f571c1",
+    "after_sha256": "abd5219b7dacefa2aa158fcc1879ae8efb96609d39207e4dc8c6201f1fce1743",
+    "before_volume_mm3": 23667.739920953707,
+    "after_volume_mm3": 25962.11572128422,
+    "volume_change_mm3": 2294.375800330512,
+    "bbox_center_change_mm": [
+      0.0,
+      0.0,
+      -0.3826580047607422
+    ],
+    "same_centered_vertex_set_0_00002mm": false,
+    "centered_vertex_distance_mm": 11.449427255946107,
+    "classification": "geometry_changed",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/Mouth_Neck_Bored.stl",
+    "before_sha256": "e11d80f6ef47003772cdb280c2ccb0643e14dc266dcfb63df5c6f9bbd30b287e",
+    "after_sha256": "8c4b48164c87b39c107768aa169eeaf90b4a4a8f497cea9f9122c5516c90f047",
+    "before_volume_mm3": 3671.6640342717787,
+    "after_volume_mm3": 1492.9640198883228,
+    "volume_change_mm3": -2178.7000143834557,
+    "bbox_center_change_mm": [
+      0.0,
+      -0.4167943000793457,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": false,
+    "centered_vertex_distance_mm": 7.539373215997625,
+    "classification": "geometry_changed",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/elbow_shell_L.stl",
+    "before_sha256": "0e4e04d1ea79aa58fe60f4ed07e6570734741f3e60c58ffb51223a27f9e1421c",
+    "after_sha256": "bec5174283e0049cab004c2813a649e92ccbb8cbfe8e3432edbe1b9b6f86e3bb",
+    "before_volume_mm3": 1490.5664602330842,
+    "after_volume_mm3": 1490.566159956322,
+    "volume_change_mm3": -0.0003002767621183011,
+    "bbox_center_change_mm": [
+      0.0,
+      13.799999713897705,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": true,
+    "centered_vertex_distance_mm": 1.430511474609375e-06,
+    "classification": "placement_only",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/coxa_bracket.stl",
+    "before_sha256": "581dec2230fece6ad5feb835ccbe8b99fe01a9332ed0a9afa55b14fb3881b327",
+    "after_sha256": "c60d06fb3b41dee9163b10b30549ecb198efcacfb2582af122e62e2b4733a37a",
+    "before_volume_mm3": 24447.215884098478,
+    "after_volume_mm3": 18729.996383637677,
+    "volume_change_mm3": -5717.2195004608,
+    "bbox_center_change_mm": [
+      3.6500000953674316,
+      0.0,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": false,
+    "centered_vertex_distance_mm": 9.965298871959833,
+    "classification": "geometry_changed",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/chassis.stl",
+    "before_sha256": "319a6196be836cb37646e9c8f2278a4f38ceedc061ccc735b4d9e68dc45357ff",
+    "after_sha256": "61a376aa3aa97ea032062d4ece411f3366999cf0dd59393c7722a25f175ea2a5",
+    "before_volume_mm3": 55796.687666515216,
+    "after_volume_mm3": 54609.82333902774,
+    "volume_change_mm3": -1186.8643274874776,
+    "bbox_center_change_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": false,
+    "centered_vertex_distance_mm": 20.040558483691566,
+    "classification": "geometry_changed",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/elbow_shell.stl",
+    "before_sha256": "27de20d721845cb0762ce77ac28f837e5be202732c9488d57c5b1416696e7430",
+    "after_sha256": "62437434b49e02f48f7ad7602c29427d55f5321d9a7350c315075c49c944949f",
+    "before_volume_mm3": 1490.6025822209733,
+    "after_volume_mm3": 1490.6022811901955,
+    "volume_change_mm3": -0.00030103077779131127,
+    "bbox_center_change_mm": [
+      0.0,
+      -13.799999713897705,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": true,
+    "centered_vertex_distance_mm": 1.430511474609375e-06,
+    "classification": "placement_only",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  },
+  {
+    "path": "hardware/stl/shoulder_bracket_L.stl",
+    "before_sha256": "a45a647c9b7118a54d18a9be8146b70cd359b2f8494d5c0ea67b27e0612c8fbf",
+    "after_sha256": "19a95533434203892282e1048695403b23cde736886613bee355421b2fa5cfba",
+    "before_volume_mm3": 7678.745442836448,
+    "after_volume_mm3": 7513.884647105989,
+    "volume_change_mm3": -164.86079573045936,
+    "bbox_center_change_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "same_centered_vertex_set_0_00002mm": false,
+    "centered_vertex_distance_mm": 7.375616073608398,
+    "classification": "geometry_changed",
+    "after_watertight": true,
+    "after_winding_consistent": true,
+    "after_components": 1
+  }
+]

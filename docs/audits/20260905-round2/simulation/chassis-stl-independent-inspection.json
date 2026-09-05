@@ -1,0 +1,9 @@
+{
+  "path": "hardware/stl/chassis.stl",
+  "sha256": "06d522f69cdfe3c4cb6efcc3bd3e7b3e3358bda2f57eacb2300a423414cb2210",
+  "watertight": false,
+  "body_count": 1,
+  "volume_mm3": 54609.82030879756,
+  "faces": 24226,
+  "nondegenerate_face_count": 24226
+}

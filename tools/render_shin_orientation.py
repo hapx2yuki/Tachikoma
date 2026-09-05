@@ -49,7 +49,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 import config as C  # noqa: E402
 import shell_mod as SM  # noqa: E402
 from sim_gait import (leg_ik, ORIGIN, MOUNT, STANCE, STANCE_R,  # noqa: E402
-                      BODY_H, _LEGS as LEG_NAMES)
+                      BODY_H, foot_target, _LEGS as LEG_NAMES)
 
 MODEL = ROOT / "model"
 MIRROR_LEGS = {"FR", "RL"}
@@ -102,11 +102,10 @@ def local_frame_normal(raw_n):
 
 
 def stance_pose(leg_idx, body_h=BODY_H):
-    """STANCE 方位直接到達式 (sway非依存, make_visuals.robot_meshes() の
-    IK失敗時フォールバックと同一式) で標準立位の (yaw_d,pitch_d,knee_d) を返す。"""
-    d = STANCE[leg_idx] - MOUNT[leg_idx]
-    a = leg_ik(STANCE_R * np.cos(d), STANCE_R * np.sin(d), -body_h)
-    assert a is not None, f"leg {leg_idx}: STANCE 直接到達式が IK 失敗 (想定外)"
+    """firmwareの保持姿勢。重心用のSTANCE_OFFを含める。"""
+    x, y, z = foot_target(leg_idx, 0.0, 0.0, 0.0, 0.0, holding=True)
+    a = leg_ik(x, y, z + BODY_H - body_h)
+    assert a is not None, f"leg {leg_idx}: 保持姿勢IK失敗"
     return a
 
 
@@ -130,7 +129,9 @@ def radial_dir(leg_idx, yaw_d):
     return np.array([np.cos(ang), np.sin(ang)])
 
 
-def main():
+def main(output_dir=None):
+    output_dir = Path(output_dir) if output_dir else ROOT / "docs"
+    output_dir.mkdir(parents=True, exist_ok=True)
     print("[render_shin_orientation] shin_rotz =", SM.OFFSETS["shin_rotz"],
           " (shell_mod.py 現在値, fresh import)")
     results = {}
@@ -171,7 +172,7 @@ def main():
                   "実線=ドット法線の水平投影, 破線=放射外向き方位 (両者が重なれば OK)",
                   fontsize=10)
     fig.tight_layout()
-    out1 = ROOT / "docs" / "vis_shin_orientation_check.png"
+    out1 = output_dir / "vis_shin_orientation_check.png"
     fig.savefig(out1, dpi=130, facecolor="white")
     plt.close(fig)
     print(f"  saved {out1}")
@@ -243,7 +244,7 @@ def main():
                  f"標準立位 (yaw={yaw_d:.1f}, pitch={pitch_d:.1f}, knee={knee_d:.1f})  "
                  f"cos_sim={cos_sim:.4f}", fontsize=10)
     fig.tight_layout()
-    out2 = ROOT / "docs" / "vis_shin_shell_detail.png"
+    out2 = output_dir / "vis_shin_shell_detail.png"
     fig.savefig(out2, dpi=130, facecolor="white")
     plt.close(fig)
     print(f"  saved {out2}")
@@ -253,4 +254,7 @@ def main():
 
 if __name__ == "__main__":
     import japanize_matplotlib  # noqa: F401 (日本語タイトル文字化け対策, tools/render_urdf_compare.py と同じ流儀)
-    sys.exit(main())
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path)
+    sys.exit(main(parser.parse_args().output_dir))

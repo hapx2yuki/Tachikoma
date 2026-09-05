@@ -1,0 +1,288 @@
+{
+  "back_translation_before_mm": [
+    0,
+    -235,
+    55
+  ],
+  "back_translation_after_mm": [
+    0,
+    -235,
+    48.69250297546387
+  ],
+  "back_delta_z_mm": -6.307497024536133,
+  "datum": "Front/Back lower bounds and two existing peg sockets",
+  "back_decorations": [
+    {
+      "key": "Cabin_RedLight_Large#back_left",
+      "source_stl": "Cabin_RedLight_Large.stl",
+      "frame": "robot",
+      "before_pos_mm": [
+        -36.972,
+        -258.343,
+        111.302
+      ],
+      "after_pos_mm": [
+        -36.972,
+        -258.343,
+        104.99450297546387
+      ]
+    },
+    {
+      "key": "Cabin_RedLight_Large#back_right",
+      "source_stl": "Cabin_RedLight_Large.stl",
+      "frame": "robot",
+      "before_pos_mm": [
+        36.973,
+        -250.209,
+        111.946
+      ],
+      "after_pos_mm": [
+        36.973,
+        -250.209,
+        105.63850297546387
+      ]
+    },
+    {
+      "key": "Cabin_RedLight_Small#back_left",
+      "source_stl": "Cabin_RedLight_Small.stl",
+      "frame": "robot",
+      "before_pos_mm": [
+        -20.943,
+        -258.623,
+        114.843
+      ],
+      "after_pos_mm": [
+        -20.943,
+        -258.623,
+        108.53550297546387
+      ]
+    },
+    {
+      "key": "Cabin_RedLight_Small#back_right",
+      "source_stl": "Cabin_RedLight_Small.stl",
+      "frame": "robot",
+      "before_pos_mm": [
+        20.943,
+        -258.249,
+        114.873
+      ],
+      "after_pos_mm": [
+        20.943,
+        -258.249,
+        108.56550297546387
+      ]
+    },
+    {
+      "key": "Cabin_Spinnarette_Grey#back_left",
+      "source_stl": "Cabin_Spinnarette_Grey.stl",
+      "frame": "robot",
+      "before_pos_mm": [
+        -24.731,
+        -246.682,
+        -31.527
+      ],
+      "after_pos_mm": [
+        -24.731,
+        -246.682,
+        -37.834497024536134
+      ]
+    },
+    {
+      "key": "Cabin_Spinnarette_Grey#back_right",
+      "source_stl": "Cabin_Spinnarette_Grey.stl",
+      "frame": "robot",
+      "before_pos_mm": [
+        24.732,
+        -251.168,
+        -31.882
+      ],
+      "after_pos_mm": [
+        24.732,
+        -251.168,
+        -38.18949702453614
+      ]
+    }
+  ],
+  "pegs": [
+    {
+      "name": "lower",
+      "source_stl": "Cabin_Peg_x2.stl",
+      "count": 1,
+      "frame": "robot",
+      "position_normalized_scaled_mm": [
+        0,
+        -211.0932502746582,
+        9.95
+      ],
+      "R_axis_deg": [
+        [
+          "x",
+          90
+        ]
+      ],
+      "raw_to_chassis_matrix": [
+        [
+          1.5,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          9.184850993605148e-17,
+          -1.5,
+          -211.0932502746582
+        ],
+        [
+          0.0,
+          1.5,
+          9.184850993605148e-17,
+          9.95
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "normalized_scaled_to_chassis_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.123233995736766e-17,
+          -1.0,
+          -211.0932502746582
+        ],
+        [
+          0.0,
+          1.0,
+          6.123233995736766e-17,
+          9.95
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_bbox_center_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "original_color": "UNVERIFIED (STL stores no material)",
+      "display_color_rgba": [
+        150,
+        150,
+        155,
+        255
+      ],
+      "corrected_shell_overlap_mm3": 0.0,
+      "current_shell_overlap_same_peg_mm3": 2944.5125084365636,
+      "clearance_0p1mm_expanded_overlap_mm3": 0.0,
+      "zero_overlap_z_range_sampled_0p05mm": [
+        9.500000000000021,
+        10.250000000000032
+      ]
+    },
+    {
+      "name": "upper",
+      "source_stl": "Cabin_Peg_x2.stl",
+      "count": 1,
+      "frame": "robot",
+      "position_normalized_scaled_mm": [
+        0,
+        -211.0932502746582,
+        94.05
+      ],
+      "R_axis_deg": [
+        [
+          "x",
+          90
+        ],
+        [
+          "y",
+          90
+        ]
+      ],
+      "raw_to_chassis_matrix": [
+        [
+          9.184850993605148e-17,
+          1.5,
+          9.184850993605148e-17,
+          0.0
+        ],
+        [
+          0.0,
+          9.184850993605148e-17,
+          -1.5,
+          -211.0932502746582
+        ],
+        [
+          -1.5,
+          9.184850993605148e-17,
+          5.624099184981966e-33,
+          94.05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "normalized_scaled_to_chassis_matrix": [
+        [
+          6.123233995736766e-17,
+          1.0,
+          6.123233995736766e-17,
+          0.0
+        ],
+        [
+          0.0,
+          6.123233995736766e-17,
+          -1.0,
+          -211.0932502746582
+        ],
+        [
+          -1.0,
+          6.123233995736766e-17,
+          3.749399456654644e-33,
+          94.05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_bbox_center_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "original_color": "UNVERIFIED (STL stores no material)",
+      "display_color_rgba": [
+        150,
+        150,
+        155,
+        255
+      ],
+      "corrected_shell_overlap_mm3": 0.0,
+      "current_shell_overlap_same_peg_mm3": 782.678271812178,
+      "clearance_0p1mm_expanded_overlap_mm3": 0.0,
+      "zero_overlap_z_range_sampled_0p05mm": [
+        92.59999999999991,
+        95.44999999999975
+      ]
+    }
+  ]
+}

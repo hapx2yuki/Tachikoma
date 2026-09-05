@@ -1,0 +1,18 @@
+INIT PR-10 Status=Ready
+INIT EL-09 Status=Blocked
+INIT EL-10 Status=Blocked
+INIT L-11 Status=Blocked
+INIT I-08 Status=Ready
+ADD E9 https://github.com/hapx2yuki/Tachikoma/issues/80
+INIT E9 Status=Todo
+ADD RV-01 https://github.com/hapx2yuki/Tachikoma/issues/81
+INIT RV-01 Status=Ready
+ADD RV-02 https://github.com/hapx2yuki/Tachikoma/issues/82
+INIT RV-02 Status=Ready
+ADD RV-03 https://github.com/hapx2yuki/Tachikoma/issues/83
+INIT RV-03 Status=Ready
+ADD RV-04 https://github.com/hapx2yuki/Tachikoma/issues/84
+INIT RV-04 Status=Ready
+ADD RV-05 https://github.com/hapx2yuki/Tachikoma/issues/85
+INIT RV-05 Status=Blocked
+APPLIED: 17 changes; existing statuses/options preserved

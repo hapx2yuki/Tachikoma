@@ -1,6 +1,9 @@
 <?xml version="1.0" ?>
 <robot name="tachikoma">
   <!-- 自動生成: tools/export_urdf.py — 手編集しないこと (docs/urdf.md 参照) -->
+  <material name="mat_333333">
+    <color rgba="0.2000 0.2000 0.2000 1.0000"/>
+  </material>
   <material name="mat_black">
     <color rgba="0.1373 0.1490 0.1686 1.0000"/>
   </material>
@@ -89,9 +92,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.000024404 -0.070553467 0.032047134" rpy="0 0 0"/>
-      <mass value="1.516523023"/>
-      <inertia ixx="1.742235679075e-02" ixy="2.502494116994e-05" ixz="-1.217034512356e-06" iyy="4.998492579476e-03" iyz="4.170567356634e-03" izz="1.581781818290e-02"/>
+      <origin xyz="0.000032780 -0.076496491 0.047800635" rpy="0 0 0"/>
+      <mass value="1.466825865"/>
+      <inertia ixx="1.591414614220e-02" ixy="2.423250424630e-05" ixz="-1.231996368882e-06" iyy="3.506990608027e-03" iyz="2.463388095468e-03" izz="1.529729254902e-02"/>
     </inertial>
   </link>
   <link name="leg_fr_coxa">
@@ -107,9 +110,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.021965701 0.000071489 -0.003486428" rpy="0 0 0"/>
-      <mass value="0.091047964"/>
-      <inertia ixx="1.823009067659e-05" ixy="-6.667612153430e-08" ixz="3.401108205520e-06" iyy="3.864834428031e-05" iyz="-2.931957395278e-09" izz="2.832365921648e-05"/>
+      <origin xyz="0.016059702 0.006263254 0.001080865" rpy="0 0 0"/>
+      <mass value="0.083787095"/>
+      <inertia ixx="1.540048053421e-05" ixy="1.072108882923e-07" ixz="-5.086552449618e-07" iyy="2.306648206396e-05" iyz="5.672199909634e-07" izz="2.837874648856e-05"/>
     </inertial>
   </link>
   <link name="leg_fr_femur">
@@ -131,9 +134,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.054842002 -0.001826041 -0.003306496" rpy="0 0 0"/>
+      <origin xyz="0.052117246 0.003560833 0.001704550" rpy="0 0 0"/>
       <mass value="0.095788395"/>
-      <inertia ixx="2.312764563944e-05" ixy="-7.222008412773e-06" ixz="9.242827362092e-06" iyy="6.298931088837e-05" iyz="5.869154441922e-07" izz="5.320519304881e-05"/>
+      <inertia ixx="2.359902702554e-05" ixy="-1.063231276787e-05" ixz="4.402100812272e-06" iyy="4.991895861086e-05" iyz="5.899634726195e-07" izz="5.803435416973e-05"/>
     </inertial>
   </link>
   <link name="leg_fr_tibia">
@@ -142,6 +145,12 @@
         <mesh filename="meshes/leg_fr_tibia__vis_grey.stl"/>
       </geometry>
       <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fr_tibia__vis_333333.stl"/>
+      </geometry>
+      <material name="mat_333333"/>
     </visual>
     <visual>
       <geometry>
@@ -161,9 +170,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.005217057 -0.002010195 -0.075689986" rpy="0 0 0"/>
-      <mass value="0.089251573"/>
-      <inertia ixx="1.269061192287e-04" ixy="-9.183622869730e-07" ixz="3.055401058000e-06" iyy="1.244913892376e-04" iyz="1.258780802162e-05" izz="2.030522493096e-05"/>
+      <origin xyz="0.004813252 -0.001704383 -0.079532817" rpy="0 0 0"/>
+      <mass value="0.094299363"/>
+      <inertia ixx="1.529682043433e-04" ixy="-9.471276078886e-07" ixz="4.417807998431e-07" iyy="1.506398565501e-04" iyz="1.456209173459e-05" izz="2.307185528985e-05"/>
     </inertial>
   </link>
   <link name="leg_fl_coxa">
@@ -179,9 +188,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.021965701 -0.000071489 -0.003486428" rpy="0 0 0"/>
-      <mass value="0.091047964"/>
-      <inertia ixx="1.823009067659e-05" ixy="6.667612153430e-08" ixz="3.401108205520e-06" iyy="3.864834428031e-05" iyz="2.931957395278e-09" izz="2.832365921648e-05"/>
+      <origin xyz="0.016059702 -0.006263254 0.001080865" rpy="0 0 0"/>
+      <mass value="0.083787095"/>
+      <inertia ixx="1.540048053421e-05" ixy="-1.072108882923e-07" ixz="-5.086552449618e-07" iyy="2.306648206396e-05" iyz="-5.672199909634e-07" izz="2.837874648856e-05"/>
     </inertial>
   </link>
   <link name="leg_fl_femur">
@@ -203,9 +212,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.054842002 0.001816364 -0.003306496" rpy="0 0 0"/>
+      <origin xyz="0.052117246 -0.003570510 0.001704550" rpy="0 0 0"/>
       <mass value="0.095788395"/>
-      <inertia ixx="2.313102208610e-05" ixy="7.199615007427e-06" ixz="9.242827362092e-06" iyy="6.298931088837e-05" iyz="-5.667211650345e-07" izz="5.320856949546e-05"/>
+      <inertia ixx="2.359241639258e-05" ixy="1.061244516463e-05" ixz="4.402100812272e-06" iyy="4.991895861086e-05" iyz="-5.744143467674e-07" izz="5.802774353677e-05"/>
     </inertial>
   </link>
   <link name="leg_fl_tibia">
@@ -214,6 +223,12 @@
         <mesh filename="meshes/leg_fl_tibia__vis_grey.stl"/>
       </geometry>
       <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_fl_tibia__vis_333333.stl"/>
+      </geometry>
+      <material name="mat_333333"/>
     </visual>
     <visual>
       <geometry>
@@ -233,9 +248,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.005217057 0.002462088 -0.075689986" rpy="0 0 0"/>
-      <mass value="0.089251573"/>
-      <inertia ixx="1.267257424367e-04" ixy="1.032230805833e-06" ixz="3.055401058000e-06" iyy="1.244913892376e-04" iyz="-9.904472077691e-06" izz="2.012484813897e-05"/>
+      <origin xyz="0.004813252 0.002528501 -0.079532817" rpy="0 0 0"/>
+      <mass value="0.094299363"/>
+      <inertia ixx="1.526392508156e-04" ixy="8.422832345104e-07" ixz="4.417807998431e-07" iyy="1.506398565501e-04" iyz="-9.464086234627e-06" izz="2.274290176213e-05"/>
     </inertial>
   </link>
   <link name="leg_rl_coxa">
@@ -251,9 +266,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.021965701 0.000071489 -0.003486428" rpy="0 0 0"/>
-      <mass value="0.091047964"/>
-      <inertia ixx="1.823009067659e-05" ixy="-6.667612153430e-08" ixz="3.401108205520e-06" iyy="3.864834428031e-05" iyz="-2.931957395278e-09" izz="2.832365921648e-05"/>
+      <origin xyz="0.016059702 0.006263254 0.001080865" rpy="0 0 0"/>
+      <mass value="0.083787095"/>
+      <inertia ixx="1.540048053421e-05" ixy="1.072108882923e-07" ixz="-5.086552449618e-07" iyy="2.306648206396e-05" iyz="5.672199909634e-07" izz="2.837874648856e-05"/>
     </inertial>
   </link>
   <link name="leg_rl_femur">
@@ -275,9 +290,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.054842002 -0.001826041 -0.003306496" rpy="0 0 0"/>
+      <origin xyz="0.052117246 0.003560833 0.001704550" rpy="0 0 0"/>
       <mass value="0.095788395"/>
-      <inertia ixx="2.312764563944e-05" ixy="-7.222008412773e-06" ixz="9.242827362092e-06" iyy="6.298931088837e-05" iyz="5.869154441922e-07" izz="5.320519304881e-05"/>
+      <inertia ixx="2.359902702554e-05" ixy="-1.063231276787e-05" ixz="4.402100812272e-06" iyy="4.991895861086e-05" iyz="5.899634726195e-07" izz="5.803435416973e-05"/>
     </inertial>
   </link>
   <link name="leg_rl_tibia">
@@ -286,6 +301,12 @@
         <mesh filename="meshes/leg_rl_tibia__vis_grey.stl"/>
       </geometry>
       <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rl_tibia__vis_333333.stl"/>
+      </geometry>
+      <material name="mat_333333"/>
     </visual>
     <visual>
       <geometry>
@@ -305,9 +326,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.005217057 -0.002010195 -0.075689986" rpy="0 0 0"/>
-      <mass value="0.089251573"/>
-      <inertia ixx="1.269061192287e-04" ixy="-9.183622869730e-07" ixz="3.055401058000e-06" iyy="1.244913892376e-04" iyz="1.258780802162e-05" izz="2.030522493096e-05"/>
+      <origin xyz="0.004813252 -0.001704383 -0.079532817" rpy="0 0 0"/>
+      <mass value="0.094299363"/>
+      <inertia ixx="1.529682043433e-04" ixy="-9.471276078886e-07" ixz="4.417807998431e-07" iyy="1.506398565501e-04" iyz="1.456209173459e-05" izz="2.307185528985e-05"/>
     </inertial>
   </link>
   <link name="leg_rr_coxa">
@@ -323,9 +344,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.021965701 -0.000071489 -0.003486428" rpy="0 0 0"/>
-      <mass value="0.091047964"/>
-      <inertia ixx="1.823009067659e-05" ixy="6.667612153430e-08" ixz="3.401108205520e-06" iyy="3.864834428031e-05" iyz="2.931957395278e-09" izz="2.832365921648e-05"/>
+      <origin xyz="0.016059702 -0.006263254 0.001080865" rpy="0 0 0"/>
+      <mass value="0.083787095"/>
+      <inertia ixx="1.540048053421e-05" ixy="-1.072108882923e-07" ixz="-5.086552449618e-07" iyy="2.306648206396e-05" iyz="-5.672199909634e-07" izz="2.837874648856e-05"/>
     </inertial>
   </link>
   <link name="leg_rr_femur">
@@ -347,9 +368,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.054842002 0.001816364 -0.003306496" rpy="0 0 0"/>
+      <origin xyz="0.052117246 -0.003570510 0.001704550" rpy="0 0 0"/>
       <mass value="0.095788395"/>
-      <inertia ixx="2.313102208610e-05" ixy="7.199615007427e-06" ixz="9.242827362092e-06" iyy="6.298931088837e-05" iyz="-5.667211650345e-07" izz="5.320856949546e-05"/>
+      <inertia ixx="2.359241639258e-05" ixy="1.061244516463e-05" ixz="4.402100812272e-06" iyy="4.991895861086e-05" iyz="-5.744143467674e-07" izz="5.802774353677e-05"/>
     </inertial>
   </link>
   <link name="leg_rr_tibia">
@@ -358,6 +379,12 @@
         <mesh filename="meshes/leg_rr_tibia__vis_grey.stl"/>
       </geometry>
       <material name="mat_grey"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/leg_rr_tibia__vis_333333.stl"/>
+      </geometry>
+      <material name="mat_333333"/>
     </visual>
     <visual>
       <geometry>
@@ -377,9 +404,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.005217057 0.002462088 -0.075689986" rpy="0 0 0"/>
-      <mass value="0.089251573"/>
-      <inertia ixx="1.267257424367e-04" ixy="1.032230805833e-06" ixz="3.055401058000e-06" iyy="1.244913892376e-04" iyz="-9.904472077691e-06" izz="2.012484813897e-05"/>
+      <origin xyz="0.004813252 0.002528501 -0.079532817" rpy="0 0 0"/>
+      <mass value="0.094299363"/>
+      <inertia ixx="1.526392508156e-04" ixy="8.422832345104e-07" ixz="4.417807998431e-07" iyy="1.506398565501e-04" iyz="-9.464086234627e-06" izz="2.274290176213e-05"/>
     </inertial>
   </link>
   <link name="arm_r_shoulder">
@@ -395,9 +422,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.015958109 -0.000151948 -0.014209606" rpy="0 0 0"/>
-      <mass value="0.023752007"/>
-      <inertia ixx="2.046426790297e-06" ixy="2.235326208874e-08" ixz="5.699451179094e-07" iyy="4.158388583065e-06" iyz="-7.905308045907e-09" izz="3.223915147907e-06"/>
+      <origin xyz="0.012620364 -0.004259118 -0.014288842" rpy="0 0 0"/>
+      <mass value="0.023542634"/>
+      <inertia ixx="2.188045146541e-06" ixy="2.115658113807e-07" ixz="4.060419919926e-07" iyy="3.072814817634e-06" iyz="-1.876918658591e-07" izz="3.532928286948e-06"/>
     </inertial>
   </link>
   <link name="arm_r_upper">
@@ -419,9 +446,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.041269770 0.000489657 0.000662638" rpy="0 0 0"/>
-      <mass value="0.036488675"/>
-      <inertia ixx="4.610820055577e-06" ixy="1.083484853345e-06" ixz="2.973531827939e-07" iyy="1.450683356891e-05" iyz="1.574668533145e-08" izz="1.305532072606e-05"/>
+      <origin xyz="0.039121158 -0.002799232 0.000662638" rpy="0 0 0"/>
+      <mass value="0.036488674"/>
+      <inertia ixx="5.542341709004e-06" ixy="2.421471121685e-06" ixz="2.454023897416e-07" iyy="1.201524218299e-05" iyz="-6.377531461388e-08" izz="1.271381102884e-05"/>
     </inertial>
   </link>
   <link name="arm_r_forearm">
@@ -449,9 +476,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.017545505 0.001567462 0.000209087" rpy="0 0 0"/>
-      <mass value="0.010796046"/>
-      <inertia ixx="9.821804117682e-07" ixy="2.610263677732e-07" ixz="-5.072595620624e-08" iyy="1.933550401016e-06" iyz="-1.839455204034e-08" izz="2.127948028918e-06"/>
+      <origin xyz="0.019166790 0.002228285 0.000228135" rpy="0 0 0"/>
+      <mass value="0.008528994"/>
+      <inertia ixx="8.296760774773e-07" ixy="3.064038287623e-07" ixz="-4.968446614607e-08" iyy="1.763957866001e-06" iyz="-1.759709252529e-08" izz="1.920640681535e-06"/>
     </inertial>
   </link>
   <link name="arm_l_shoulder">
@@ -467,9 +494,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="-0.015958109 -0.000151948 -0.014209606" rpy="0 0 0"/>
-      <mass value="0.023752007"/>
-      <inertia ixx="2.046426790297e-06" ixy="-2.235326208874e-08" ixz="-5.699451179094e-07" iyy="4.158388583065e-06" iyz="-7.905308045907e-09" izz="3.223915147907e-06"/>
+      <origin xyz="-0.012620364 -0.004259118 -0.014288842" rpy="0 0 0"/>
+      <mass value="0.023542634"/>
+      <inertia ixx="2.188045146541e-06" ixy="-2.115658113807e-07" ixz="-4.060419919926e-07" iyy="3.072814817634e-06" iyz="-1.876918658591e-07" izz="3.532928286948e-06"/>
     </inertial>
   </link>
   <link name="arm_l_upper">
@@ -491,9 +518,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="-0.041269770 0.000489657 0.000662638" rpy="0 0 0"/>
-      <mass value="0.036488675"/>
-      <inertia ixx="4.610820055577e-06" ixy="-1.083484853345e-06" ixz="-2.973531827939e-07" iyy="1.450683356891e-05" iyz="1.574668533145e-08" izz="1.305532072606e-05"/>
+      <origin xyz="-0.039121158 -0.002799232 0.000662638" rpy="0 0 0"/>
+      <mass value="0.036488674"/>
+      <inertia ixx="5.542341709004e-06" ixy="-2.421471121685e-06" ixz="-2.454023897416e-07" iyy="1.201524218299e-05" iyz="-6.377531461388e-08" izz="1.271381102884e-05"/>
     </inertial>
   </link>
   <link name="arm_l_forearm">
@@ -521,9 +548,9 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="-0.017545505 0.001567462 0.000209087" rpy="0 0 0"/>
-      <mass value="0.010796046"/>
-      <inertia ixx="9.821804117682e-07" ixy="-2.610263677732e-07" ixz="5.072595620624e-08" iyy="1.933550401016e-06" iyz="-1.839455204034e-08" izz="2.127948028918e-06"/>
+      <origin xyz="-0.019166790 0.002228285 0.000228135" rpy="0 0 0"/>
+      <mass value="0.008528994"/>
+      <inertia ixx="8.296760774773e-07" ixy="-3.064038287623e-07" ixz="4.968446614607e-08" iyy="1.763957866001e-06" iyz="-1.759709252529e-08" izz="1.920640681535e-06"/>
     </inertial>
   </link>
   <link name="eye_r_pod">
@@ -598,126 +625,126 @@
     <child link="leg_fr_coxa"/>
     <origin xyz="0.049165625 0.013173889 0.000000000" rpy="0.000000000 0.000000000 0.261799388"/>
     <axis xyz="0.000000 0.000000 1.000000"/>
-    <limit lower="-0.698132" upper="0.698132" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.698132" upper="0.698132" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_fr_pitch" type="revolute">
     <parent link="leg_fr_coxa"/>
     <child link="leg_fr_femur"/>
     <origin xyz="0.026000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
     <axis xyz="0.000000 1.000000 0.000000"/>
-    <limit lower="-0.785398" upper="0.959931" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.785398" upper="0.959931" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_fr_knee" type="revolute">
     <parent link="leg_fr_femur"/>
     <child link="leg_fr_tibia"/>
     <origin xyz="0.070000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
     <axis xyz="0.000000 1.000000 0.000000"/>
-    <limit lower="-0.767945" upper="0.767945" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.767945" upper="0.767945" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_fl_yaw" type="revolute">
     <parent link="base_link"/>
     <child link="leg_fl_coxa"/>
     <origin xyz="-0.049165625 0.013173889 0.000000000" rpy="0.000000000 0.000000000 2.879793266"/>
     <axis xyz="0.000000 0.000000 1.000000"/>
-    <limit lower="-0.698132" upper="0.698132" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.698132" upper="0.698132" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_fl_pitch" type="revolute">
     <parent link="leg_fl_coxa"/>
     <child link="leg_fl_femur"/>
     <origin xyz="0.026000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
     <axis xyz="-0.000000 1.000000 0.000000"/>
-    <limit lower="-0.785398" upper="0.959931" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.785398" upper="0.959931" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_fl_knee" type="revolute">
     <parent link="leg_fl_femur"/>
     <child link="leg_fl_tibia"/>
     <origin xyz="0.070000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
     <axis xyz="-0.000000 1.000000 0.000000"/>
-    <limit lower="-0.767945" upper="0.767945" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.767945" upper="0.767945" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_rl_yaw" type="revolute">
     <parent link="base_link"/>
     <child link="leg_rl_coxa"/>
     <origin xyz="-0.044080693 -0.025450000 0.000000000" rpy="0.000000000 0.000000000 -2.617993878"/>
     <axis xyz="0.000000 0.000000 1.000000"/>
-    <limit lower="-0.698132" upper="0.698132" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.698132" upper="0.698132" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_rl_pitch" type="revolute">
     <parent link="leg_rl_coxa"/>
     <child link="leg_rl_femur"/>
     <origin xyz="0.026000000 -0.000000000 0.000000000" rpy="0.000000000 0.000000000 -0.000000000"/>
     <axis xyz="0.000000 1.000000 0.000000"/>
-    <limit lower="-0.785398" upper="0.959931" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.785398" upper="0.959931" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_rl_knee" type="revolute">
     <parent link="leg_rl_femur"/>
     <child link="leg_rl_tibia"/>
     <origin xyz="0.070000000 -0.000000000 0.000000000" rpy="0.000000000 0.000000000 -0.000000000"/>
     <axis xyz="0.000000 1.000000 0.000000"/>
-    <limit lower="-0.767945" upper="0.767945" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.767945" upper="0.767945" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_rr_yaw" type="revolute">
     <parent link="base_link"/>
     <child link="leg_rr_coxa"/>
     <origin xyz="0.044080693 -0.025450000 0.000000000" rpy="0.000000000 0.000000000 -0.523598776"/>
     <axis xyz="0.000000 0.000000 1.000000"/>
-    <limit lower="-0.698132" upper="0.698132" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.698132" upper="0.698132" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_rr_pitch" type="revolute">
     <parent link="leg_rr_coxa"/>
     <child link="leg_rr_femur"/>
     <origin xyz="0.026000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
     <axis xyz="-0.000000 1.000000 0.000000"/>
-    <limit lower="-0.785398" upper="0.959931" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.785398" upper="0.959931" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="leg_rr_knee" type="revolute">
     <parent link="leg_rr_femur"/>
     <child link="leg_rr_tibia"/>
     <origin xyz="0.070000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
     <axis xyz="-0.000000 1.000000 0.000000"/>
-    <limit lower="-0.767945" upper="0.767945" effort="1.96" velocity="6.5"/>
+    <limit lower="-0.767945" upper="0.767945" effort="1.955881861111111" velocity="7.033416388633864"/>
   </joint>
   <joint name="arm_r_yaw" type="revolute">
     <parent link="base_link"/>
     <child link="arm_r_shoulder"/>
     <origin xyz="0.031689429 0.048765991 0.025600000" rpy="0.000000000 0.000000000 0.872664626"/>
     <axis xyz="0.000000 0.000000 -1.000000"/>
-    <limit lower="-0.261799" upper="0.261799" effort="0.22" velocity="13.0"/>
+    <limit lower="-0.261799" upper="0.261799" effort="0.2026707666666667" velocity="13.08996938995747"/>
   </joint>
   <joint name="arm_r_pitch" type="revolute">
     <parent link="arm_r_shoulder"/>
     <child link="arm_r_upper"/>
     <origin xyz="0.020000000 0.000000000 -0.016400000" rpy="0.000000000 0.000000000 -0.000000000"/>
     <axis xyz="0.000000 1.000000 0.000000"/>
-    <limit lower="-0.785398" upper="1.483530" effort="0.22" velocity="13.0"/>
+    <limit lower="-0.785398" upper="1.483530" effort="0.2026707666666667" velocity="13.08996938995747"/>
   </joint>
   <joint name="arm_r_elbow" type="revolute">
     <parent link="arm_r_upper"/>
     <child link="arm_r_forearm"/>
     <origin xyz="0.055000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 -0.000000000"/>
     <axis xyz="0.000000 1.000000 0.000000"/>
-    <limit lower="0.000000" upper="1.658063" effort="0.22" velocity="13.0"/>
+    <limit lower="0.000000" upper="1.658063" effort="0.2026707666666667" velocity="13.08996938995747"/>
   </joint>
   <joint name="arm_l_yaw" type="revolute">
     <parent link="base_link"/>
     <child link="arm_l_shoulder"/>
     <origin xyz="-0.031689429 0.048765991 0.025600000" rpy="0.000000000 0.000000000 -0.872664626"/>
     <axis xyz="0.000000 0.000000 1.000000"/>
-    <limit lower="-0.261799" upper="0.261799" effort="0.22" velocity="13.0"/>
+    <limit lower="-0.261799" upper="0.261799" effort="0.2026707666666667" velocity="13.08996938995747"/>
   </joint>
   <joint name="arm_l_pitch" type="revolute">
     <parent link="arm_l_shoulder"/>
     <child link="arm_l_upper"/>
     <origin xyz="-0.020000000 0.000000000 -0.016400000" rpy="0.000000000 0.000000000 0.000000000"/>
     <axis xyz="0.000000 -1.000000 0.000000"/>
-    <limit lower="-0.785398" upper="1.483530" effort="0.22" velocity="13.0"/>
+    <limit lower="-0.785398" upper="1.483530" effort="0.2026707666666667" velocity="13.08996938995747"/>
   </joint>
   <joint name="arm_l_elbow" type="revolute">
     <parent link="arm_l_upper"/>
     <child link="arm_l_forearm"/>
     <origin xyz="-0.055000000 0.000000000 0.000000000" rpy="0.000000000 0.000000000 0.000000000"/>
     <axis xyz="0.000000 -1.000000 0.000000"/>
-    <limit lower="0.000000" upper="1.658063" effort="0.22" velocity="13.0"/>
+    <limit lower="0.000000" upper="1.658063" effort="0.2026707666666667" velocity="13.08996938995747"/>
   </joint>
   <joint name="eye_r_roll" type="revolute">
     <parent link="base_link"/>

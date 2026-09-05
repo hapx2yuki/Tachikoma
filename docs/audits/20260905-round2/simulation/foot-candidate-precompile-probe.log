@@ -1,0 +1,2 @@
+toe_shoe_forward_mu0.6 PASS roll 3.77 pitch 2.06 power {'mean': 1.2474191862273183, 'max': 34.01099040853938, 'p95': 4.173078655614522} self initial mm 0
+SCENARIO RESULTS: {'PASS': 1}

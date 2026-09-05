@@ -1,0 +1,5 @@
+toe_shoe_forward_mu0.35 FAIL roll 24.41 pitch 21.72 power {'mean': 2.350567653774911, 'max': 34.557438651490536, 'p95': 6.735633321010532} self initial mm 0
+toe_shoe_forward_mu0.6 FALL roll 30.75 pitch 22.1 power {'mean': 2.3247709077762653, 'max': 31.704049819987084, 'p95': 6.618387802801673} self initial mm 0
+toe_shoe_forward_mu1.0 FAIL roll 25.94 pitch 25.2 power {'mean': 2.4165286315798356, 'max': 35.171298210035445, 'p95': 6.622849333383406} self initial mm 0
+toe_shoe_right_mu0.6 FAIL roll 30.0 pitch 25.89 power {'mean': 2.3511155955035945, 'max': 33.640993009945845, 'p95': 6.601141933138022} self initial mm 0
+SCENARIO RESULTS: {'FAIL': 3, 'FALL': 1}

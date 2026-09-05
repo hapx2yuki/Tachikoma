@@ -1,0 +1,16 @@
+pod_neck 曲げ強度検証 (ARM_MOUNT_HUB_Y=11.0, HEAD_RELIEF_PROTECT_H=8.0, CHAMFER_RUN_MM=12.0)
+pod_neck bounds (y): [-108.0, -43.0]
+  OK  全区間 (-107.7〜-43.3, 0.2mm刻み) で 322 断面を評価
+
+[1] 全区間スキャンによる真の最弱点 (σ(y)=M(y)/Z(y) 最大点):
+    y=-43.50mm  Z=194.77mm^3  arm=143.60mm  sigma=8.679MPa  SF_nominal=8.065
+  OK  Kt=1.5: SF_effective = SF_nominal/Kt = 8.065/1.5 = 5.377 (>= 要求安全率3.0)
+  OK  Kt=2.0: SF_effective = SF_nominal/Kt = 8.065/2.0 = 4.033 (>= 要求安全率3.0)
+  OK  Kt=2.5: SF_effective = SF_nominal/Kt = 8.065/2.5 = 3.226 (>= 要求安全率3.0)
+
+    最も保守的な Kt=2.5 での実効安全率 3.226 (マージン 7.5%)
+
+[2] 参考: Z(y) 最小点のみで評価した場合 (旧手法, 過去の docs 記載方式)
+    Z(y) 最小点: y=-103.90  Z=172.04mm^3 (σ(y) 最大点 y=-43.50 とは不一致)
+
+result: OK

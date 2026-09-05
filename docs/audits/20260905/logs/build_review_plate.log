@@ -1,0 +1,4 @@
+  built PETG_Walk_3_Tibia.3mf: 4 instances / 2 objects / 1 plate(s) / 135KB
+    tibia_link.stl: 2 instance(s), PETG, distance=4.999401973659867e-06mm
+    tibia_link_m.stl: 2 instance(s), PETG, distance=4.999401973659867e-06mm
+PASS: separate output and embedded geometry/material for four structural leg parts

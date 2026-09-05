@@ -1,0 +1,37 @@
+[
+  {
+    "path": "docs/vis_walk.mp4",
+    "returncode": 0,
+    "seconds": 0.218,
+    "stderr": "",
+    "method": "全フレームのデコード整合性。視覚内容の全フレーム確認ではない。"
+  },
+  {
+    "path": "docs/vis_eyes.mp4",
+    "returncode": 0,
+    "seconds": 0.059,
+    "stderr": "",
+    "method": "全フレームのデコード整合性。視覚内容の全フレーム確認ではない。"
+  },
+  {
+    "path": "docs/vis_physics_walk.mp4",
+    "returncode": 0,
+    "seconds": 0.236,
+    "stderr": "",
+    "method": "全フレームのデコード整合性。視覚内容の全フレーム確認ではない。"
+  },
+  {
+    "path": "docs/vis_wiring.mp4",
+    "returncode": 0,
+    "seconds": 0.149,
+    "stderr": "",
+    "method": "全フレームのデコード整合性。視覚内容の全フレーム確認ではない。"
+  },
+  {
+    "path": "docs/audits/20260905/simulation/forward_nominal.mp4",
+    "returncode": 0,
+    "seconds": 0.167,
+    "stderr": "",
+    "method": "全フレームのデコード整合性。視覚内容の全フレーム確認ではない。"
+  }
+]

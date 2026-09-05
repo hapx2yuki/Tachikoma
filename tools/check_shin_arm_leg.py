@@ -95,13 +95,8 @@ def to_tm(m):
 
 
 def inter_vol(a, b):
-    try:
-        r = trimesh.boolean.intersection([a, b], engine="manifold")
-    except Exception:
-        return float("nan")
-    if r is None or r.is_empty:
-        return 0.0
-    return float(r.volume) / 1000.0
+    from mesh_checks import intersection_volume_mm3
+    return intersection_volume_mm3(a, b) / 1000.0
 
 
 def pk_reachable(pitch_deg, knee_deg):
@@ -416,7 +411,8 @@ def main():
                                    tri_verts=np.asarray(faces, dtype=np.uint32)))
 
     def inter_vol_mani(a_mani, tm):
-        return float((a_mani ^ to_manifold(tm)).volume()) / 1000.0
+        from mesh_checks import checked_volume
+        return checked_volume((a_mani ^ to_manifold(tm)).volume()) / 1000.0
 
     BODY_H = 115.0
     zb = BODY_H + C.HIP_DROP

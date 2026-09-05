@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": 71,
+  "failed": {},
+  "physical_unverified": [
+    "purchased HENGE and main-board/header/USB dimensions",
+    "latch retention force, creep and fatigue",
+    "neck reinforcement and harness bend radius",
+    "thermal rise and service-loop slack",
+    "Front-only adhesive bond and tap-screw holding strength"
+  ]
+}

@@ -1,0 +1,1288 @@
+{
+  "status": "候補: ケース底y=-19.5とカバー切欠底y=-6の差が13.5mm。片側0.3mmを加え-13.8を検討。",
+  "coordinate_frame": "elbow_shell原点（肘軸）局所。軸/サーボ/骨格/外形は変更せず取付Yだけを移す。",
+  "poses": 18,
+  "variants": [
+    {
+      "offset_local_y_mm": 0.0,
+      "actual_contacts": [
+        {
+          "pose": "holding",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "holding",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "holding",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "holding",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "zero",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043081265343
+        },
+        {
+          "pose": "zero",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7946132218837
+        },
+        {
+          "pose": "zero",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6042857194282
+        },
+        {
+          "pose": "zero",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79461804517206
+        },
+        {
+          "pose": "walk_00",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_00",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_00",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_00",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_01",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_01",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_01",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_01",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_02",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_02",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_02",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_02",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_03",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_03",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_03",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_03",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_04",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_04",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_04",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_04",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_05",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_05",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_05",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_05",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_06",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_06",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_06",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_06",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_07",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_07",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_07",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_07",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_08",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_08",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_08",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_08",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_09",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_09",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_09",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6045889030932
+        },
+        {
+          "pose": "walk_09",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.7945286870369
+        },
+        {
+          "pose": "walk_10",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_10",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_10",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6045889030932
+        },
+        {
+          "pose": "walk_10",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.7945286870369
+        },
+        {
+          "pose": "walk_11",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_11",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_11",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6045889030932
+        },
+        {
+          "pose": "walk_11",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.7945286870369
+        },
+        {
+          "pose": "walk_12",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_12",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_12",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_12",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_13",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_13",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_13",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_13",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_14",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_14",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_14",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_14",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        },
+        {
+          "pose": "walk_15",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.6043495331123
+        },
+        {
+          "pose": "walk_15",
+          "side": "r",
+          "other_link": "arm_r_upper",
+          "part": "arm_r_elbow_servo_case",
+          "intersection_mm3": 402.7945545446452
+        },
+        {
+          "pose": "walk_15",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "upper_arm",
+          "intersection_mm3": 370.604352090425
+        },
+        {
+          "pose": "walk_15",
+          "side": "l",
+          "other_link": "arm_l_upper",
+          "part": "arm_l_elbow_servo_case",
+          "intersection_mm3": 402.79455454464534
+        }
+      ]
+    },
+    {
+      "offset_local_y_mm": -13.5,
+      "actual_contacts": [
+        {
+          "pose": "holding",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "holding",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "zero",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 53.260057992305065
+        },
+        {
+          "pose": "zero",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 53.26005470348002
+        },
+        {
+          "pose": "walk_00",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_00",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_01",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_01",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_02",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_02",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_03",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_03",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_04",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_04",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_05",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_05",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_06",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_06",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_07",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_07",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_08",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_08",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_09",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_09",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875286900508094
+        },
+        {
+          "pose": "walk_10",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_10",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875286900508094
+        },
+        {
+          "pose": "walk_11",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_11",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875286900508094
+        },
+        {
+          "pose": "walk_12",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_12",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_13",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_13",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_14",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_14",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        },
+        {
+          "pose": "walk_15",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.875299203647806
+        },
+        {
+          "pose": "walk_15",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 46.87529915577193
+        }
+      ]
+    },
+    {
+      "offset_local_y_mm": -13.8,
+      "actual_contacts": [
+        {
+          "pose": "holding",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "holding",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "zero",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 48.312524981347906
+        },
+        {
+          "pose": "zero",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 48.31252834513733
+        },
+        {
+          "pose": "walk_00",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_00",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_01",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_01",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_02",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_02",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_03",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_03",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_04",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_04",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_05",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_05",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_06",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_06",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_07",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_07",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_08",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_08",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_09",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_09",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47083332551267
+        },
+        {
+          "pose": "walk_10",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_10",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47083332551267
+        },
+        {
+          "pose": "walk_11",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_11",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47083332551267
+        },
+        {
+          "pose": "walk_12",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_12",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_13",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_13",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_14",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_14",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        },
+        {
+          "pose": "walk_15",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.470801685611455
+        },
+        {
+          "pose": "walk_15",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 42.47080189341432
+        }
+      ]
+    },
+    {
+      "offset_local_y_mm": -14.0,
+      "actual_contacts": [
+        {
+          "pose": "holding",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "holding",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "zero",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 44.998617681726195
+        },
+        {
+          "pose": "zero",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 44.99861887656645
+        },
+        {
+          "pose": "walk_00",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_00",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_01",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_01",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_02",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_02",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_03",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_03",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_04",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_04",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_05",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_05",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_06",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_06",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_07",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_07",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_08",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_08",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_09",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_09",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.52279184792754
+        },
+        {
+          "pose": "walk_10",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_10",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.52279184792754
+        },
+        {
+          "pose": "walk_11",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_11",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.52279184792754
+        },
+        {
+          "pose": "walk_12",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_12",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_13",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_13",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_14",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_14",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        },
+        {
+          "pose": "walk_15",
+          "side": "r",
+          "other_link": "arm_r_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.522791801290545
+        },
+        {
+          "pose": "walk_15",
+          "side": "l",
+          "other_link": "arm_l_forearm",
+          "part": "forearm",
+          "intersection_mm3": 39.5227954274313
+        }
+      ]
+    }
+  ],
+  "limits": "18実姿勢と0姿勢のみ。全到達集合/接着/可視配置の採用判断は別途。"
+}

@@ -115,8 +115,8 @@ def arm_pod_lower() -> Manifold:
 def elbow_shell() -> Manifold:
     """肘の化粧カバー: 元 Elbow_Grey の大球 (φ25.1) を半殻化。
 
-    肘サーボの突出ケース底 (-Y 側) に被せて接着する。球のどちら側を
-    使うかは現物合わせ (キットの球+コブのうち大球のみ流用)。
+    肘サーボの突出ケース底 (-Y 側) に被せる。原球中心と肘軸は一致せず、
+    ケース底へ通し欠き底を合わせた Y 位置を使う。接着強度は未検証。
     """
     tm = trimesh.load(MODEL / "Arm_Right_Elbow_Grey.stl")
     parts = tm.split(only_watertight=False)
@@ -131,8 +131,23 @@ def elbow_shell() -> Manifold:
     m -= box(60, 60, 60).translate([0, 34.0, 0])       # 半殻カット (y>4 を除去)
     # サーボケース通し欠き。y ≥ -6 に限定 (原点貫通させると -Y キャップまで
     # 分断され半殻が 2 ピースに割れる)。ケース底は欠き底 y=-6 に当たる
-    m -= box(26, 60, 14).translate([0, 24.0, 0])
-    return _largest_body(m, "elbow_shell").simplify(0.01)
+    m -= box(26, 60, 14).translate([0, C.ARM_ELBOW_COVER_CUT_Y + 30, 0])
+    return _largest_body(m, "elbow_shell").simplify(0.01).translate([0, C.ARM_ELBOW_COVER_Y, 0])
+
+
+def elbow_shell_swept_clearance() -> Manifold:
+    """全肘角でカバー外形を包含する、回転不変の保守的な球状負形状。
+
+    球中心は肘軸の Y 線上なので、肘の Y 回転で包絡が変わらない。
+    三角形の内接球近似による不足も補正して、実メッシュ全頂点を含める。
+    """
+    m = elbow_shell()
+    v = np.asarray(m.to_mesh().vert_properties)[:, :3].astype(float)
+    v[:, 1] -= C.ARM_ELBOW_COVER_Y
+    radius = float(np.linalg.norm(v, axis=1).max()) + C.ARM_JOINT_CLEAR
+    segments = 128
+    radius /= np.cos(np.pi / segments) ** 2
+    return Manifold.sphere(radius, segments).translate([0, C.ARM_ELBOW_COVER_Y, 0])
 
 
 def build_all() -> dict:

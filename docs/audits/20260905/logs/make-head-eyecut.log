@@ -1,0 +1,34 @@
+[hollow] voxelize ...
+[hollow] erosion ...
+[hollow] carve mask 305 cm3
+[notch] case_FR: 残交差 0.65 cm3 → box x36..62 y1..26 z9..20
+[notch] screw_FR_+14_-5: 残交差 0.03 cm3 → box x61..64 y1..16 z9..15
+[notch] case_FL: 残交差 0.65 cm3 → box x-62..-36 y1..26 z9..20
+[notch] screw_FL_+14_-5: 残交差 0.02 cm3 → box x-64..-61 y11..23 z9..15
+[notch] screw_FL_+14_+5: 残交差 0.02 cm3 → box x-64..-61 y1..12 z9..15
+[notch] case_RL: 残交差 1.15 cm3 → box x-57..-31 y-38..-13 z9..20
+[notch] case_RR: 残交差 1.15 cm3 → box x31..57 y-38..-13 z9..20
+[notch] case_ARM-1: 残交差 0.04 cm3 → box x-40..-33 y47..57 z9..14
+[notch] screw_ARM-1_+8: 残交差 0.02 cm3 → box x-38..-30 y57..64 z9..13
+[notch] case_ARM+1: 残交差 0.04 cm3 → box x33..40 y47..57 z9..14
+[notch] screw_ARM+1_+8: 残交差 0.02 cm3 → box x30..38 y58..64 z9..13
+[debris] 8 mm3  x62..62 y6..22 z10..16
+[debris] 6 mm3  x-5..5 y50..53 z10..11
+[debris] 5 mm3  x-5..5 y48..50 z10..11
+[debris] 0 mm3  x-62..-62 y6..16 z15..16
+[hollow] 分離スリバー 4 個 (20 mm3) を除去
+saved /Users/uratayuuki/Documents/Tachikoma/hardware/stl/Head_Top_Eyecut.stl
+  123.7 x 125.3 x 96.0 mm  watertight=True  vol=52cm3 (ボア加工後の中実 306cm3)
+  [1] ボア貫通プローブ: OK (中実=0/3)
+  [2] ∩ chassis = 0.000 cm3 (OK)
+  [3] ∩ サーボケース/ビス頭ダミー (クリア 1.5mm 込) worst = 0.002 cm3 (OK)
+  [4] ∩ PCA スタック包絡 = 0.000 cm3 (OK)
+  [4b] スタック包絡 → 頭内面 実距離 min = 3.10 mm (OK, 要 >=1.5)
+  [5] 外皮残存 (深さ1.25mm, z>20, 意図的撤去域除く): 98.9% (OK, 要 >=98.5%)
+      参考: 深さ2.2mm 残存 88.7%
+  [6] 目ソケット0 座材 (ボア周アニュラス) 1.36 cm3 (OK, 要 >=1.0)
+  [6] 目ソケット1 座材 (ボア周アニュラス) 1.40 cm3 (OK, 要 >=1.0)
+  [6] 目ソケット2 座材 (ボア周アニュラス) 1.36 cm3 (OK, 要 >=1.0)
+  [7] 参考: SW 想定ゾーン (48,28) ∩ 頭 = 0.11 cm3 (0 なら現配置のまま可)
+
+result: OK

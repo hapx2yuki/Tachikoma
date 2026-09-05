@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-09-05T08:00:34.464617+00:00",
+  "reason": "保存STLのchassisが非閉殻/複数成分と判明したため中断。キャッシュ準備exit130。87動的試験と18姿勢診断は未開始。最終根拠に流用しない。",
+  "files": [
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/cache-prewarm-final.log",
+      "sha256": "248ad1479608002f5bcb2e9a59a77b122bb3dd19245eb741f9833c77f681bc68",
+      "bytes": 1037
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/check-urdf-final.log",
+      "sha256": "685623d517830ad761466f29c7bab1bc2f3657ccd25736f27c504f964d2f61d5",
+      "bytes": 33736
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/current-render/render_ref_stand.png",
+      "sha256": "ee0a2b612528a5064db9cc0e2ff24b9a50d2552b27b45e4c71ed42c62422004e",
+      "bytes": 145811
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/current-render/render_urdf_stand.png",
+      "sha256": "7272e79ebd700eb74dabd22cab8ec8f9b7e20f84991f7310abb4539d9dd2fe83",
+      "bytes": 146236
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/current-render-final.log",
+      "sha256": "b1832e11092d260a74c13f3c33b2b5ab625c2072d529f5d75ea0351c70a608bc",
+      "bytes": 141
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/manifest-parts-servos.json",
+      "sha256": "8b1cb9bb8351f283fa7c5df5e27f7697b84eed02bdc5f8c3b43a886411e5f515",
+      "bytes": 148308
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/manifest-vhacd-servos.json",
+      "sha256": "7d7d9ba08dc49a38ff59b5c3d1f1da908325d78d46d759b301bb3153ed4191bc",
+      "bytes": 150172
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/old-distributions-final.log",
+      "sha256": "40f9dbf2256d7cb78ea759284ecf7bfe39e46df524d94544c77362b907197a37",
+      "bytes": 185
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/old-distributions.json",
+      "sha256": "b1606f9d3d1aaf54519cf8360dd58847db0da3f546f4bfce67838bfe8ff4217f",
+      "bytes": 78022
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/regression-final.log",
+      "sha256": "a2adc907ca37d7b3a803080a860f5bb686f31917a66f8952cc4b371eff699642",
+      "bytes": 2049
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-stl-repair/verification-final.json",
+      "sha256": "49753afae8571a0f320d407bc47e4dac8fb3f7812687ebea16af792835aa86f5",
+      "bytes": 25917
+    }
+  ]
+}

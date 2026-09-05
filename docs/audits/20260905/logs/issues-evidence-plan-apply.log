@@ -1,0 +1,7 @@
+== labels ==
+== milestones ==
+== issues ==
+  ~ body/meta PR-04 (#22): ['body']
+  ~ body/meta I-08 (#78): ['body', 'labels']
+== relations ==
+  wrote tools/issues/issue_map.json

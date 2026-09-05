@@ -1,0 +1,13 @@
+test_failed_scenario_has_nonzero_exit (__main__.SimulationRegression.test_failed_scenario_has_nonzero_exit) ... ok
+test_fallback_count_includes_recovered_ik (__main__.SimulationRegression.test_fallback_count_includes_recovered_ik) ... ok
+test_holding_really_removes_sway (__main__.SimulationRegression.test_holding_really_removes_sway) ... ok
+test_native_firmware_trace (__main__.SimulationRegression.test_native_firmware_trace) ... ok
+test_no_phantom_base_damping_or_inertia (__main__.SimulationRegression.test_no_phantom_base_damping_or_inertia) ... ok
+test_signed_forward_and_short_walk (__main__.SimulationRegression.test_signed_forward_and_short_walk) ... ok
+test_speed_torque_envelope (__main__.SimulationRegression.test_speed_torque_envelope) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.458s
+
+OK
+native firmware trace: 1077 frames, max angle error 0.000895 deg

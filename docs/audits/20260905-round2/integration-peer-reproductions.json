@@ -1,0 +1,19 @@
+{
+  "static_omits_nonbase_collision": {
+    "input_sha256": {
+      "tools/check_static_assembly.py": "4b22895b12d6e6aae9a6b245b54f0e0e636a00280e48fa95a1fdbb351cf252a2"
+    },
+    "parts": 0,
+    "all_pairs": 0,
+    "tested_aabb_pairs": 0,
+    "intersection_tolerance_mm3": 0.01,
+    "intersections": [],
+    "errors": [],
+    "pass": true,
+    "interpretation": "同じ剛体内部のため動的接触では検出できない。装飾と支持梁を含む。購入電装の仮位置箱は含めない。嵌合・数値近似・物理的に不可能な体積共有を個別解釈し、交差を自動的に除去しない。終了1は未解釈を含む交差あり。"
+  },
+  "runner_exception": "FileExistsError: /private/var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tmpl6f4hzzd/coxa-sweep.log",
+  "runner_subprocesses_launched_after_preexisting_log": 20,
+  "runner_results_saved": 1,
+  "runner_logs_written": 21
+}

@@ -1,0 +1,15 @@
+[leg parts]
+  coxa_bracket                   60.7 x   26.2 x   30.0 mm  watertight=True  vol=18.7cm3
+  femur_link                    103.0 x   34.0 x   30.0 mm  watertight=True  vol=21.9cm3
+Traceback (most recent call last):
+  File "/Users/uratayuuki/Documents/Tachikoma/hardware/src/build_all.py", line 19, in <module>
+    make_leg.build_all()
+  File "/Users/uratayuuki/Documents/Tachikoma/hardware/src/make_leg.py", line 396, in build_all
+    return {name: export(m, name) for name, m in parts.items()}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uratayuuki/Documents/Tachikoma/hardware/src/make_leg.py", line 396, in <dictcomp>
+    return {name: export(m, name) for name, m in parts.items()}
+                  ^^^^^^^^^^^^^^^
+  File "/Users/uratayuuki/Documents/Tachikoma/hardware/src/lib.py", line 148, in export
+    raise RuntimeError(f'{name}: STL保存後の閉形状/向き/有限体積検査に失敗。既存出力は上書きしない')
+RuntimeError: tibia_link: STL保存後の閉形状/向き/有限体積検査に失敗。既存出力は上書きしない

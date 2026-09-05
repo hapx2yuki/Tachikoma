@@ -1,0 +1,5 @@
+[head-vs-pod_neck] ARM_MOUNT_HUB_Y = 11.0
+  Head_Bottom_Armcut vs pod_neck: 0.00000 mm3
+  Head_Top_Eyecut vs pod_neck: 89.23001 mm3
+  NG: 実材料が重なっている。内部部品という理由で除外しない。
+RESULT: FAIL

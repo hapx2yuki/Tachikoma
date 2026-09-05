@@ -1,0 +1,12 @@
+== labels ==
+== milestones ==
+== issues ==
+  + issue RV-06: RV-06 [機構不具合] トゥと硬い足本体の先行接地を解消して足裏支持を成立させる
+  + issue RV-07: RV-07 [試験] 実際の壁数・充填率による脚とポッド支持の強度を確かめる
+  ~ body/meta I-02 (#69): ['body']
+== relations ==
+  blocked #69 (I-02) by #87 (RV-06)
+  blocked #69 (I-02) by #88 (RV-07)
+  parent  #87 (RV-06) <- #6 (E4)
+  parent  #88 (RV-07) <- #9 (E7)
+  wrote tools/issues/issue_map.json

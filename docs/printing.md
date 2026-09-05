@@ -1,10 +1,13 @@
 # 印刷ガイド (Bambu Lab X2D)
 
+**2026-09-05 第2次監査:** この手順の旧合格記録は製作許可を意味しない。現在は足の嵌合/支持、頭内収納と固定、ポッド梁に未解決項目がある。
+先に[最新監査](audits/20260905-round2/README.md)と[部品別の変更](audits/20260905-round2/manufacturing.md)を確認する。既存3MFは保存してあり、修正済みSTLとの不一致を含む。
+
 X2D のビルドボリュームはシングルノズル 256×256×260mm / デュアルノズル
-235.5×256×256mm (確認日 2026-07-27, 下記出典)。150% 最大パーツ
+235.5×256×256mm (メーカー資料確認日 2026-09-05, 下記出典)。150% 最大パーツ
 Cabin_Front ≈ 170×195×110mm はどちらのモードでも印刷可能。
 
-- 出典: [goodprints3d: X2D Build Plate Size and Build Volume](https://www.goodprints3d.com/blogs/3d/bambu-lab-x2d-build-plate-size-and-build-volume-what-you-actually-get), [MatterHackers: Bambu Lab X2D Combo](https://www.matterhackers.com/store/l/bambu-lab-x2d-3d-printer/sk/MZX8MQA2)
+- 出典: [Bambu Lab X2D公式取扱説明書](https://csm.bblcdn.com/hub/7c58718aaa2e40edab56efb87419a96a.pdf)、[メーカーの二重押出機構説明](https://blog.bambulab.com/two-extruders-one-purpose-what-is-x2d-direct-drive-extrusion-and-auxiliary-extrusion/)
 - デュアルノズル活用例: 骨格 (PETG) と意匠 (PLA) の同時プレート、
   Cabin の色分け (青+グレー) をパージ少なく印刷
 
@@ -23,7 +26,7 @@ v3 (2026-07-28): 脚は放射配置の 45° ペア干渉対策で **標準×2 (F
 | femur_link / femur_link_m | 各2 | PETG | 壁4, 40% | STL のまま。ビルドプレートのみサポート |
 | tibia_link / tibia_link_m | 各2 | PETG | 壁4, 40% | 立てて印刷 |
 | leg_foot_bored (元 Leg_Foot_Grey_x4_Repaired 加工) | 4 | **PLA グレー** | 壁3, 20% | プラグ側 (tibia 差込面) を下 (対称・共通) |
-| foot_pad (隠し接地パッド, 完全内蔵) | 4 | **TPU 95A** | 壁3, 30% | フランジ面を下 |
+| foot_pad (足内側のパッド。現形状の支持は不成立、RV-06参照) | 4 | **TPU 95A** | 壁3, 30% | フランジ面を下 |
 | shin_shell / shin_shell_m | 各2 | PLA (青) | 壁2, 6% | STL のまま (上端平面が下) |
 | thigh_cap | 4 | PLA (グレー) | 壁2, 6% | カット平面が下 (対称・共通) |
 | shoulder_bracket (+_L) | 各1 | PETG | 壁4, 40% | 上面 (ホーンポケット側) を下 |
@@ -322,13 +325,10 @@ INMP441 (I2S マイク) + φ20mm 8Ω1W 薄型スピーカーを Mouth_Cannon 内
     勝手に削らない) 違反。2026-07-29 に `_trim_unused_ankle_tab()` を
     廃止しキット原型の3スタブを完全復元した。3本とも見た目上の切除痕は
     無くなり、実機写真の丸い灰色カラー相当の外観に近づいた
-- **foot_pad**: leg_foot_bored の隠しポケットへ圧入接着する TPU 接地パッド。
-  甲コラム中心付近から突き出し、スタンス時に実際の耐荷重接地を担う設計
-  (パッド先端は甲全体の最下点=トゥスタブ先端より
-  `config.FOOT_PAD_PROTRUDE`(1.5mm) だけ下へ突き出す)。3本のトゥ (下記)
-  はスタブから外側へ長く伸びるため、パッドよりさらに深く (ローカル z で
-  6.5-7.1mm) 突き出す — 装飾側のトゥが先に着地点に見える姿勢もあるが、
-  接地力は主に foot_pad が受ける想定は変えていない (下記「接地の連鎖」参照)
+- **foot_pad**: leg_foot_boredの内側へ圧入するTPU部品。2026-09-05の全到達姿勢検査と
+  材料別の動的接触計算で、現形状はTPUより硬いトゥが先に接地し、TPUへの荷重が0となった。
+  ローカル軸方向の突出1.5mmだけでは、傾いた足の支持を保証できない。
+  RV-06で外観と既存部品を維持する取付・支持部の候補を比較中。印刷済みTPUは保存する。
 - **トゥの実測・配置 (kit forensics, 2026-07-28 発見・2026-07-29 精密化)**:
   `Leg_Toe_Black_x12` の 3MF source_offset は Leg_Foot ではなく
   Leg_AnkleJoint (旧キットの球関節) に最も近い (表面間距離 3.9mm) — 一方
@@ -346,12 +346,13 @@ INMP441 (I2S マイク) + φ20mm 8Ω1W 薄型スピーカーを Mouth_Cannon 内
   深いソケット穴は無い (y軸断面走査で根元〜y=6.0まで内部空洞なしを確認)
   ため平面的な接着継手とみなし、根元の真の縁をスタブ base 点へ 0mm
   standoff (押し出しなし) で直接登録 — トゥ-トゥ相互重なり 0.0cm³、
-  トゥ-足本体重なり 4.8-4.9% (5%未満は接着代として許容, 既存基準と同じ)。
+  トゥ-足本体重なり4.8-4.9%を旧検証は許容したが、**実体の重なりは接着では解消できない**。
+  2026-09-05再監査では取付座の加工と荷重伝達をRV-06で確認する対象とした。
   詳細な座標・導出過程は `tools/data/kit_assembly_front.json` の
   Leg_Toe_Black_x12 エントリの `method`/`instances_note`/`finding` を参照
   (このドキュメントの数値ではなく、そちらと `tools/check_leg_assembly.py`
   の実行結果が正)
-- **接地の連鎖 (2026-07-29)**: leg_foot_bored+foot_pad は tibia の物理
+- **旧接地補正の記録 (2026-07-29。TPU支持の証明には使わない)**: leg_foot_bored+foot_pad は tibia の物理
   取付点 (`TIBIA_LEN`=135mm, 無変更) よりさらに下に実体があり、
   firmware/sim の IK がそのまま `TIBIA_LEN`=135mm を「足先接地点」として
   扱うと、実運用スタンス全域 (体高105-130, SWAY 込み) で foot_pad 底が
@@ -380,9 +381,9 @@ INMP441 (I2S マイク) + φ20mm 8Ω1W 薄型スピーカーを Mouth_Cannon 内
 | 電装 (PCA9685×2) + 2S 2200mAh + 配線 + ネジ | ~350g |
 | **合計 (設計想定)** | **~3.0kg** |
 
-- 歩容・トルク検証は総重量 **3.0kg** 前提で全合格 (v3: 股ピッチ 8.9kg·cm vs
-  定格 20 = 45%、支持多角形マージン +8.8mm)。トルクの絶対余裕は大きいが、
-  シェルのインフィルを上げない・塗装は薄く。
+- 旧「股ピッチ8.9kgf·cm、余裕が大きい」は1姿勢だけの値だったため撤回。
+  全域静力学では約18.5kgf·cmの条件があり、DS3218の6V連続保持能力は未実測。
+  形状・質量・接触を更新した結果とL-02/L-11の実測で判断する。壁数・充填率は強度にも影響する。
 - v3 追加分の内訳: **PETG +37g** (pod_neck 20g + battery_cradle 17g,
   filament_calc 実測。2026-07-31 QA 再検証で pod_neck 22g、battery_cradle
   13g という旧記載を訂正 -- pod_neck は同日の頭部逃がしカット+増厚/

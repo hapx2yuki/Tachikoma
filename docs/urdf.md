@@ -1,316 +1,112 @@
-# URDF (フル見た目版) — hardware/urdf/
+# URDF と物理シミュレーション
 
-`tools/export_urdf.py` が `hardware/src/config.py` (寸法の唯一の正) と
-`tools/make_visuals.py` の `robot_meshes(dress=True)` (FK・パーツ→リンク
-対応の「正解データ」) から自動生成する。**手編集しないこと** — 変更は
-config.py / make_visuals.py 側を直し、`export_urdf.py` を再実行する。
+`hardware/urdf/` は、現在の形状と取付座標をシミュレータへ渡す生成物です。**組立可能性や実機歩行の証明ではありません。** 2026-09-05 の第2次監査では、実部品の交差、サーボ収納不足、硬いトゥの先行接地を検出しました。自己衝突を無効にした歩行結果だけで、製作可能と判断しないでください。監査の条件と結果は [第2次の物理監査](audits/20260905-round2/simulation.md) を参照してください。
 
-生成:
+`tools/export_urdf.py` が `hardware/src/config.py`、`tools/kit_assembly.py` の組立変換、STL、`tools/make_visuals.py` の関節式から生成します。URDF は直接編集せず、原因となる入力を修正して再生成します。
 
-```
-.venv/bin/python tools/export_urdf.py            # hardware/urdf/ 一式を生成
-.venv/bin/python tools/check_urdf.py             # 生成物の検証 (下記 [1]〜[8])
-.venv/bin/python tools/render_urdf_compare.py    # 比較レンダ2枚を再生成
-```
+個別入力が空、非有限値、非閉殻、面向き不整合、総体積が正でない場合は生成を中断します。複数の閉殻や空洞の負向き内壁を、全て正体積の部品へ変えてはいけません。出力一式は一時フォルダで完成してから交換し、生成失敗時は既存のURDF・メッシュ・履歴画像を保持します。CAD生成、URDF生成、検証の順に実行してください。
 
-出力:
-
-- `hardware/urdf/tachikoma.urdf` — SI 単位 (m, kg, rad)
-- `hardware/urdf/meshes/*.stl` — visual/collision メッシュ (メートル単位で
-  焼き込み export 済み。`<mesh>` に `scale` 属性は使わない — importer 側の
-  scale 解釈依存を避けるため)
-- `hardware/urdf/parts_manifest.json` — 取り込んだ全パーツの一覧
-  (link → パーツ名リスト)
-- `hardware/urdf/render_urdf_stand.png` / `render_ref_stand.png` —
-  同一視点の比較レンダ (URDF 実パース FK vs `robot_meshes(dress=True)`)
-
-## Isaac Sim への取込手順
-
-**バージョン注記 (2026-07-31 確認)**: 以下は Isaac Sim 5.x 系の URDF
-Importer UI を前提にしている。監査タスクが当初想定していた
-「Isaac Sim 2024.x/2025.x系」は、2026-07 時点で既に Isaac Sim 6.0
-(2026年6月 GA) へ更新されており一世代前の版を指す。挙動の意図
-(フローティングベースにする/固定ジョイントを維持する) 自体はバージョンに
-依らず正しいが、UI 上の項目名は版によって異なりうるため、実際に使う
-バージョンで一度は動作確認すること。
-
-1. `hardware/urdf/` ディレクトリ全体 (urdf ファイル + `meshes/`) をコピーする
-   (メッシュパスは `meshes/xxx.stl` の相対パスなので、フォルダ構成を保つ
-   こと)。
-2. Isaac Sim の **URDF Importer** で `tachikoma.urdf` を開く。
-   - Joint drive: 12 脚関節 + 6 腕関節 + 2 目関節が `revolute` として
-     インポートされる (`effort`/`velocity` は下記アクチュエータ節の値、
-     `<limit>` の rad 値も併せてインポートされる)。
-   - Base: 本ロボットはフローティングベース (脚で接地する四脚機) のため、
-     ベースを固定しない設定を選ぶこと。UI 上の項目名はバージョンにより
-     異なる — Isaac Sim 5.0/5.1 系では Links 設定に **"Moveable base"
-     (選ぶべき方) / "Static base"** の二択、より古い版では **"Fixed Base"**
-     チェックボックス (オフにする) として現れることを WebSearch で確認した
-     (2026-07-31 確認, NVIDIA Isaac Sim 公式ドキュメント)。狙いは常に同じ
-     — base_link を固定しない設定にすること。
-   - Self Collision: 既定 (オフ) を推奨。collision メッシュは簡略凸包
-     (下記) であり、密着する意匠パーツどうしの自己衝突誤検出が起きやすい。
-   - **Merge Fixed Joints**: 既定値は `true` (`mergeFixedJoints`, WebSearch で
-     2026-07-31 確認, NVIDIA Isaac Sim 公式 ImportConfig 定義)。本 URDF には
-     `eye_pod_camera_fixed` → `camera_optical_fixed` という 2 段の fixed
-     joint があり、既定のマージ挙動だと `camera_optical_frame` が
-     `base_link` 側へ吸収されて個別 prim として残らない可能性がある
-     (`eye_pod_camera`/`camera_optical_frame` はどちらも非ゼロの質量を
-     持つため、質量を持つ fixed joint 配下リンクをマージしない例外がある
-     バージョンでは実害が出ない可能性が高いが、バージョンによって挙動が
-     異なりうる)。カメラセンサを `camera_optical_frame` にアタッチする
-     予定がある場合は、インポート後にこの prim が個別に存在するか
-     Stage で目視確認し、無ければ Merge Fixed Joints をオフにして
-     再インポートすること。
-3. インポート後、Isaac のジョイントドライブの**能動的な位置制御ゲイン**
-   (stiffness/Kp, ArticulationController の PD ゲイン) は URDF 標準タグには
-   存在しないため URDF に含まれていない — Isaac 側の ArticulationController
-   や joint drive API で別途設定すること (**UNVERIFIED**: 具体的なゲイン値は
-   未検討、まず適当な初期値で位置制御ループを組んでから調整する想定)。
-   これとは別に、URDF 標準には**受動的な**関節減衰/摩擦を表す
-   `<joint><dynamics damping="" friction=""/></joint>` タグが存在するが、
-   `tachikoma.urdf` は全 22 関節でこのタグを使用していない (サーボの
-   ギアボックス摩擦等は未モデル化, **UNVERIFIED**)。
-
-## 座標規約
-
-- **base_link 原点**: 股ヨー/股ピッチ軸が乗る水平面 (make_visuals.py の
-  `robot_meshes()` でいう world z = `body_h` の高さ)。xy はシャーシ中心。
-  4 本の脚のヨー軸は全てこの平面上 (z=0, base_link ローカル) にある。
-- **地面との関係**: 標準立ち姿勢 (体高 `BODY_H_DEF=115mm`) では base_link
-  原点は地面から 115mm の高さになる (`check_urdf.py [4]` で検証)。
-- **各関節の zero 姿勢**は make_visuals.py の関節式 (`rot(角度,軸)`) が
-  そのまま 0 になる姿勢であり、**firmware の角度規約 (サーボ中立 = 0°)
-  と 1:1 対応する** — `URDF関節値[rad] = firmware指令角[deg] × π/180`。
-  例外: `leg_*_yaw` は台座の取付方位 (`LEG_ANGLES`) を `<joint><origin>`
-  の固定回転として吸収済みなので、URDF の関節値そのものが firmware の
-  yaw 指令角 (`yaw_d`, 中立=0) と一致する。
-- **左右ミラー (腕)**: `arm_l_*` は `arm_r_*` と**同じ符号の関節値**を
-  与えると鏡像動作になるよう、関節origin/axisを「矢状面 (X=0) ミラーの
-  2 重共役」で定義している (`tools/export_urdf.py` の `_mirror_frame`
-  参照)。firmware 側もヨーのみ物理サーボ出力を `ARM_SIGN` で反転して同じ
-  規約を実現している (`arms.h`)。**関節値そのものに追加の符号反転は
-  不要** — 数値検証は `check_urdf.py [3]` (`make_visuals.arm_meshes(side=-1,
-  ...)` との厳密一致) 済み。
-
-## 標準立ち姿勢の関節値ベクトル (体高 115mm, `check_urdf.py [4]` で使用)
-
-```
-leg_fr_yaw=+18.00°  leg_fr_pitch=-28.09°  leg_fr_knee=+12.51°
-leg_fl_yaw=-18.00°  leg_fl_pitch=-28.09°  leg_fl_knee=+12.51°
-leg_rl_yaw= -2.00°  leg_rl_pitch=-28.09°  leg_rl_knee=+12.51°
-leg_rr_yaw= +2.00°  leg_rr_pitch=-28.09°  leg_rr_knee=+12.51°
-arm_r_yaw=0  arm_r_pitch=0  arm_r_elbow=0   (arm_l_* も同様に 0)
-eye_r_roll=0  eye_l_roll=0
+```sh
+.venv/bin/python tools/export_urdf.py
+.venv/bin/python tools/check_urdf.py
+.venv/bin/python tools/render_urdf_compare.py --output-dir /tmp/tachikoma-urdf-preview
 ```
 
-(yaw は `STANCE_ANGLES - LEG_ANGLES` = 前脚±18° / 後脚∓2° に一致 — 取付
-方位からの追加ヨーであり、pitch/knee は 4 脚とも同一値になる。これは
-`leg_ik` への到達目標が全脚で同一半径 `STANCE_R=129mm`・同一高さ
-`-body_h` であるという幾何学的な対称性から自明に導かれる — `yaw` の
-回転 (Z軸) は脚の高さに寄与しないため)
+出力は次のとおりです。
 
-(STANCE 方位・`STANCE_R=129mm`・体高 115mm への直接到達点。歩容の重心
-シフト (SWAY) には依存しない静的な「気をつけ」姿勢 — `gait.h` の実際の
-歩容中はここから常時 SWAY ぶんだけ揺れる。SWAY を含む「立ち姿勢」を
-phase=0 で代表させようとすると、`SWAY_LEAD` の窓境界がちょうど位相
-0/1 に重なり前脚/後脚が非対称になる — `check_urdf.py [4]` 実装時に
-判明。docs/urdf.md はこの静的姿勢を「標準立ち姿勢」と定義する。)
+- `tachikoma.urdf`: m、kg、rad の SI 単位。20可動関節と2固定関節、23リンク。
+- `meshes/*.stl`: メートルへ変換済みの表示・衝突メッシュ。`mesh scale` で重ねて拡大しないでください。
+- `parts_manifest.json`: 取り込んだ表示パーツの一覧。サーボの箱近似質量など、表示しない質量項目は別です。
+- `render_urdf_stand.png` / `render_ref_stand.png`: 同一視点の FK 比較画像。上の例では `/tmp/tachikoma-urdf-preview/` に保存します。既存の履歴画像を残し、入力変更後の画像は別の保存先へ生成してください。
 
-## 関節名 ⇔ PWM チャンネル対応表 (firmware/src/config.h 準拠)
+## 座標と停止姿勢
 
-| URDF 関節名 | PCA9685 | ch (グローバル= board×16+ローカル) | 備考 |
-|---|---|---|---|
-| leg_fr_yaw / pitch / knee | board0 (0x40) | 0 / 1 / 2 | `PCA_CH[FR]` |
-| leg_fl_yaw / pitch / knee | board0 (0x40) | 3 / 4 / 5 | `PCA_CH[FL]` |
-| leg_rl_yaw / pitch / knee | board0 (0x40) | 6 / 7 / 8 | `PCA_CH[RL]` |
-| leg_rr_yaw / pitch / knee | board0 (0x40) | 9 / 10 / 11 | `PCA_CH[RR]` |
-| (頭部ヨー, URDF関節なし) | board0 (0x40) | 12 | `CH_HEAD`。駆動対象は
-  2026-07-30 実測で未確定 (docs/BOM.md #2 参照) — 本 URDF には頭部ヨー
-  自体を関節として含めない (プロジェクトの確定方針) |
-| arm_r_yaw / pitch / elbow | board1 (0x41) | 16 / 17 / 18 | `ARM_CH[0]`。
-  ch19 (旧グリップ) は未使用のまま予約 |
-| arm_l_yaw / pitch / elbow | board1 (0x41) | 20 / 21 / 22 | `ARM_CH[1]`。
-  ch23 (旧グリップ) は未使用のまま予約 |
-| eye_r_roll | board1 (0x41) | 24 | `EYE_CH[0]` |
-| (中央目, 固定カメラ・サーボなし) | board1 (0x41) | 25 | `EYE_CH[1]`
-  — 未使用 (eyes.h がスキップ)。URDF では `eye_pod_camera_fixed` (fixed
-  joint) として存在するが可動関節ではない |
-| eye_l_roll | board1 (0x41) | 26 | `EYE_CH[2]` |
+`base_link` の原点は股ヨー軸の水平面、XY原点はシャーシ中心です。+X は機体右、+Y は前、+Z は上です。シャーシ下面は原点より `HIP_DROP` 上にあります。
 
-## リンク構成表
+`BODY_H_DEF=115mm` は歩容の足先目標に使う高さであり、実形状の床面から股軸までが必ず115mmになるという意味ではありません。足・トゥ・TPUのうち最も低い部分が接地するため、実際の支持高さは姿勢と形状から調べます。`check_urdf.py` は4脚のTPU先行接地と同一平面性も検査し、不適合をNGとして返します。
 
-| リンク | 種別 | 内容 (visual) |
+2026-09-05 の `gait.h` 停止保持では `STANCE_OFF_XY` を含み、SWAYを止めます。高さ115mmの目標角は以下です。これはPWM量子化前の角度です。
+
+| 脚 | yaw | pitch | knee |
+|---|---:|---:|---:|
+| FR | +5.410929° | −32.826007° | +21.507285° |
+| FL | −5.410929° | −32.826007° | +21.507285° |
+| RL | +8.488133° | −25.741822° | +4.519793° |
+| RR | −8.488133° | −25.741822° | +4.519793° |
+
+腕のREADY目標は両側 yaw=10°、pitch=30°、elbow=40°です。脚の姿勢に応じて腕のガードが働きます。通常起動は脱力状態で、明示的な起動後に20軸を順番に通電します。通電直後の脚中立0°、腕0°/0°/45°と停止保持姿勢は異なります。保持姿勢から始めた物理計算は、この起動過程を検証したことにはなりません。
+
+URDF角度は、機構側の角度を度からradへ換算したものです。脚の取付方位は `joint origin` に含め、左右腕の鏡像は原点・軸で処理します。URDF関節値へ追加の符号反転をしないでください。実PWMには `JOINT_SIGN`、`ARM_SIGN`、トリム、4.88µs刻みの量子化が別途作用します。`sim_stress.py` の標準設定は、実C++の Gait/LegOutput/Arms/Servos をホスト実行し、量子化後の指令を使います。
+
+## 関節とPWMの対応
+
+| URDF関節 | PCA9685 | グローバルch |
 |---|---|---|
-| base_link | フローティングベース | chassis / pod_neck / battery_cradle
-  + 頭部・砲身・ポッド外装一式 (Cabin_*/Head_*/Mouth_* の全 45 キット
-  パーツ, kit_dress_static() 準拠) |
-| leg_{fr,fl,rl,rr}_coxa | revolute (yaw) 子 | coxa_bracket(_m) |
-| leg_{fr,fl,rl,rr}_femur | revolute (pitch) 子 | femur_link(_m) + thigh_cap
-  + Leg_Thigh_Guard_Blue_x4 |
-| leg_{fr,fl,rl,rr}_tibia | revolute (knee) 子 | tibia_link(_m) +
-  leg_foot_bored + shin_shell(_m) + Leg_Shin_Guard_Grey_x4 +
-  Leg_Toe_Black_x12 (×3) |
-| arm_{r,l}_shoulder | revolute (yaw) 子 | shoulder_bracket |
-| arm_{r,l}_upper | revolute (pitch) 子 | upper_arm + arm_pod_upper/lower +
-  Arm_*_Guard_Grey + elbow_shell |
-| arm_{r,l}_forearm | revolute (elbow) 子 | forearm + claw_mount +
-  Arm_Left_Claw_Grey (鏡映共用) + Finger_Black×3 + FingerTip_Grey×3 (爪は
-  固定, 可動 DOF なし) |
-| eye_r_pod / eye_l_pod | revolute (roll) 子 | eye_pod (キョロキョロ) |
-| eye_pod_camera | fixed 子 | eye_pod_camera + camera_carrier |
-| camera_optical_frame | fixed 子 (visual なし) | ROS optical 規約の
-  カメラ光学フレーム (+Z=光軸前方) |
+| leg_fr_yaw / pitch / knee | 0x40 | 0 / 1 / 2 |
+| leg_fl_yaw / pitch / knee | 0x40 | 3 / 4 / 5 |
+| leg_rl_yaw / pitch / knee | 0x40 | 6 / 7 / 8 |
+| leg_rr_yaw / pitch / knee | 0x40 | 9 / 10 / 11 |
+| arm_r_yaw / pitch / elbow | 0x41 | 16 / 17 / 18 |
+| arm_l_yaw / pitch / elbow | 0x41 | 20 / 21 / 22 |
+| eye_r_roll / eye_l_roll | 0x41 | 24 / 26 |
 
-## アクチュエータ effort/velocity (docs/urdf.md 出典表)
+ch12の `CH_HEAD` は駆動対象未確定のため使いません。URDFの関節にも質量調整用の9gにも含めません。ch19/23は予約、中央目ch25は固定カメラなので非駆動です。固定カメラは `eye_pod_camera_fixed` → `camera_optical_fixed` の2固定関節で表し、`camera_optical_frame` の+Zを光軸に合わせます。
 
-| サーボ | effort (N·m) | velocity (rad/s) | 出典 |
-|---|---|---|---|
-| DS3218 (脚 12軸) | 1.96 | 6.5 | 20 kgf·cm 級カタログ値を N·m 換算
-  (1 kgf·cm=0.0980665N·m → 20×0.098≈1.96)。速度は 0.16s/60°級の一般的な
-  20kg級デジタルサーボ値からの概算 [**UNVERIFIED**: 実個体のデータシート
-  未確認、config.py 冒頭の「個体差・クローン差が大きい」注記のとおり] |
-| MG90S (腕 6軸) | 0.22 | 13.0 | 2.2 kgf·cm 級カタログ値 (0.22N·m)。速度は
-  MG90S 一般カタログ値 (0.1s/60°級) からの概算 [**UNVERIFIED**] |
-| ES9251II 級 (目 2軸) | 0.03 | 8.0 | サブマイクロサーボの一般値からの概算
-  [**UNVERIFIED**: config.py SUBMICRO 自体が「[要実測]」注記付き] |
+## 形状と質量
 
-## 慣性・質量モデルの前提 (簡略化の内訳を正直に記載)
+脚の各リンクには骨格とその部位の外装を付けます。`tibia` には足本体・脛外装・3本のトゥ・**TPU foot_pad の表示と質量**を含めます。腕の指先は固定で、別の可動自由度はありません。組立手順で不採用の `Head_Plate_Grey` と `Head_Bottom_Cap_Grey` は現在の組立から除外します。元モデルは保存します。
 
-- **visual/collision メッシュ由来の質量**: パーツごとに `trimesh` の均質
-  密度 (density=1) 慣性/COM を求め、`tools/filament_calc.py` と同じ物理
-  モデル (表面積×壁厚+インフィル×体積、材料密度) による質量見積りへ
-  スケールする。**COM は均質密度のままの幾何重心**であり、実際の
-  中空+インフィル構造 (特に壁2/インフィル8%の意匠シェル) は表面寄りに
-  実 COM があるはず — 簡略化として残る誤差 [**UNVERIFIED**: 実測なし]。
-- **サーボ本体**: 質量は DS3218=60g / MG90S=14g (docs/printing.md 重量
-  バジェット表, filament_calc.py 実行値ベース) / ES9251II級=3.7g
-  (config.py SUBMICRO docstring [要実測]) を使用。**搭載リンク側**
-  (yaw サーボの本体はケースが回らないので base_link/coxa/shoulder のうち
-  ケースを保持する側のリンク) に box 近似で配置 — 位置は関節軸まわり
-  ±10-20mm 程度の**概算**であり、`hardware/src/make_leg.py`/`make_arm.py`
-  の実 CAD 位置とは厳密には一致しない [**UNVERIFIED**]。
-- **バッテリー/電装** (LiPo・ESP32・PCA9685×2・UBEC・DC-DC・DFPlayer・
-  マイク/スピーカー/アンプ等): `tools/make_visuals.py wiring_video()` の
-  配線イメージ用ボックス配置 (zb 基準) を base_link ローカルへ焼き直して
-  再利用。質量は多くが **datasheet 未参照の概算**
-  (バッテリー180g のみプロジェクトメモの参照値、他は形状からの類推)
-  [**UNVERIFIED 多数**] — docs/BOM.md に実際の型番が決まり次第、
-  `tools/export_urdf.py` の `base_link_electronics_items()` を実測値へ
-  差し替えること。
-- **頭部ヨーサーボ (SG90/MG90S, CH_HEAD)**: 駆動対象・搭載位置が
-  2026-07-30 時点で未確定 (docs/BOM.md #2) なので、URDF には関節を
-  設けず、質量のみ (9g, docs/printing.md 重量バジェットとの整合用) を
-  base_link に計上した [**UNVERIFIED, 位置は完全な仮置き**]。
-- **合計**: 上記全て込みで総質量 ≈ 2.78kg (2026-07-31 の ~2.86kg から
-  2026-08-22 の Head_Top_Eyecut 内殻ホロー化 [印刷 95→64g 相当] で微減。
-  `check_urdf.py [5]` が 2.5〜3.5kg の範囲内であることを検証。
-  docs/printing.md の設計想定 ~3.0kg とおおむね整合)。
+トゥの組立行列だけ100%だった不整合は、印刷指定と同じ150%へ修正しました。根元点を固定して拡大するため、従来の小さいトゥを使った接地・質量結果は現行版の根拠にできません。砲身・ボール・ネックは加工済み `_Bored` を元原型の基準座標で取り込みます。
 
-## collision (簡略凸包) の作り方
+印刷質量は表面積×壁厚と内部充填率からの見積りです。慣性と重心は均質メッシュの値を見積質量へ比例換算するため、実印刷の壁、充填、接着剤、ネジ、配線による重心差は未実測です。STLから算出できたことと実重量が確認済みであることを区別します。
 
-- 可動リンク (脚 3種・腕 3種・目・カメラ): そのリンクの visual メッシュ
-  全部を合成した凸包を、面数上限 (200) まで `fast_simplification`
-  (quadric decimation) で簡略化。脚の tibia リンクだけは非表示の
-  `foot_pad.stl` (TPU 接地パッド) も合成対象に加え、接地点を確実に
-  含める。
-- base_link: 「シャーシ (chassis+pod_neck+battery_cradle)」「頭部
-  (Head_*)」「ポッド (Cabin_*)」「砲身 (Mouth_*)」の 4 ブロックへ分け、
-  ブロックごとに凸包化 (task 指定の「主要ブロック数個の凸包合成」)。
-- 簡略化後の凸包は QEM 由来の数値誤差で厳密な数学的凸性を僅かに失う
-  ことがある (実測: 自身を再凸包した体積との差はいずれも < 0.1%) —
-  `check_urdf.py [8]` はこの体積差を「実質凸」の判定基準 (<1%) として
-  使う。
+サーボ質量は DS3218=60g、MG90S=14g、目の小型サーボ=3.7g の設計値です。主ケースの取付座標をCADと共有し、タブ下面を原点、ケース側を `−TAB_BELOW`、軸側を `+ABOVE_TAB` とする箱近似で重心と慣性の回転を計算します。軸が下向きならケースが上へ伸びます。目サーボはポッド背面からホーン積層6.1mmを引いたタブ位置に固定し、目と一緒には回転させません。接着時の固定ロールは未確定です。
 
-## 既知の限界 (UNVERIFIED 項目まとめ)
+バッテリー・制御基板・電源・音声系の質量と配置には概算が残ります。電装のシャーシ基準座標には `HIP_DROP` を加えてURDF基準へ変換します。収納候補を変更した場合は、この質量配置も同期する必要があります。`camera_optical_frame` の微小な質量も物理実測値ではなく取り込み上の仮定です。合計質量の現在値は生成ログと `check_urdf.py` の結果を参照し、過去の約2.78kgを固定値として使わないでください。
 
-1. 上記アクチュエータ effort/velocity・多くの電装質量は datasheet 未参照
-   の概算。
-2. 頭部ヨーサーボの搭載位置・駆動対象が未確定 (URDF は関節を持たない)。
-3. サーボ本体・電装の box 近似位置は概算 (関節軸/配線イメージ由来の
-   目安)。
-4. 慣性は均質密度仮定であり、実際の中空+インフィル構造の COM ズレは
-   未反映。`check_urdf.py [5b]` は leg_fr_coxa 1 リンクについてのみ、
-   RHO/壁厚/インフィルを `tools/filament_calc.py` 側の値から独立転記して
-   質量を再計算し drift を検出する — 他リンクの質量・COM・慣性テンソルの
-   数値そのものは独立突合の対象外のまま [**UNVERIFIED**]。
-5. Isaac 側の**能動的な**位置制御ゲイン (stiffness/Kp, ArticulationController
-   の PD ゲイン) は URDF 標準タグに存在しないため含めていない — Isaac 側で
-   別途設定が必要。これとは別に URDF 標準の**受動的な**
-   `<dynamics damping="" friction=""/>` タグ自体は存在するが、本 URDF では
-   未使用 (サーボのギアボックス摩擦等は未モデル化) [**UNVERIFIED**]。
-6. `foot_pad` (TPU接地パッド) は隠しパーツのため **visual には含めない**
-   (robot_meshes(dress=True) が描かないのに合わせた) が、**collision には
-   含める** (実際の接地点のため)。実機の見た目とは非表示分だけ差がある
-   ことに注意。
-7. `camera_carrier` (カメラ子基板の隠し保持パーツ) は robot_meshes 側に
-   対応する描画が無い独自追加 — `check_urdf.py [6]` はこれを既知の例外
-   として扱う。
-8. `kit_assembly.py` のキットパーツ配置 DB (`tools/data/kit_assembly_front.json`)
-   で `Head_Insert_Black_x4` のうち instance 3/4 (4個中2個) が
-   `unresolved` のまま現物合わせ計測が未完了 — `robot_meshes()` 側・本
-   URDF 側の両方からこの 2 個が欠落している。上流の `kit_assembly.py`
-   データ欠損であり `export_urdf.py` 固有のバグではないため、現物合わせ
-   計測が完了次第 `kit_assembly_front.json` 側を埋めて再エクスポートする
-   想定 [**UNVERIFIED**]。
-9. visual STL 46 枚中 2 枚 (`arm_l_upper__vis_shell_blue.stl` /
-   `arm_r_upper__vis_shell_blue.stl` = `arm_pod_upper`+`arm_pod_lower` の
-   色マージ結果) が非 watertight (元の 2 パーツはそれぞれ単体では
-   watertight — クラムシェル状に接する 2 つの閉じたソリッドを同色で
-   結合・STL 往復させる過程で継ぎ目が非多様体になると推定, 2026-07-31
-   確認)。レンダリング自体への実害はほぼ無い (法線/シェーディングが
-   向きによって破綻しうる程度) — collision 側は 25/25 全て watertight
-   (`check_urdf.py [8]`) なので物理シミュレーションには影響しない見込み
-   [**UNVERIFIED**: 開放シェルの具体的な悪影響は未検証]。
-10. **シミュレータ上での自己接触について (2026-07-31 リリーフカット
-    再評価タスクで追記)**: 実機の脚は firmware `gait.h` の Gait::update()
-    が `D_KNEE_MIN`/`D_KNEE_MAX` によるワークスペース射影を必ず適用する
-    ため、crouch(pitch45°,knee30°) 級の極端な深屈み姿勢は歩容コマンドと
-    しては構造的に出力され得ない (`tools/check_shin_arm_leg.py`
-    `pk_reachable()` 参照)。`hardware/src/shell_mod.py` の shin_shell
-    リリーフカット群も、この「firmware 到達可能集合」を基準に再評価し
-    (2026-07-31)、到達可能集合内で干渉が起きないカットは撤去してキット
-    形状へ復元した。**この保証は firmware のソフトウェアクランプに
-    依存しており、URDF/Isaac Sim 側で関節角を直接駆動する場合はこの
-    クランプを経由しない** — したがって Isaac Sim 等のシミュレータ上で
-    ArticulationController 等により crouch(45,30) 級の極端姿勢を直接
-    指令した場合、隣接脚同士の shin_shell が実際に接触し得る (実測:
-    無対策で最大 8.49cm³、実機ではこの姿勢自体が到達不能なため発生し
-    ない)。シミュレータでの学習・制御則設計時に極端姿勢が生成され得る
-    場合は、Isaac 側でも同等のワークスペース射影 (またはジョイントリミット)
-    をアプリケーション側で再現することを推奨する
-    [**UNVERIFIED**: Isaac Sim 上での実際の接触挙動そのものは未実機検証、
-    上記は shin_shell 実メッシュのブーリアン交差からの理論的帰結]。
+## トルク・速度の前提
 
-## キット由来メッシュの出自について
+メーカー端点は `config.py` の `POWER_COMPONENTS`、運用電圧は `POWER_AUDIT['servo_v']` に集約します。URDF既定は6Vの直線内挿です。
 
-`hardware/urdf/meshes/` に焼き込まれる visual メッシュの大部分は、
-タチコマ 3D プリントキットの元 STL (`model/*.stl`) を 150% スケール・
-現物合わせ変換で配置したもの。**元モデルはプロジェクトオーナー
-(浦田氏) 自身の著作物である** (2026-07-31 本人確認済み) ため、
-メッシュの取り扱いに第三者モデル提供元のライセンス上の制約はない。
-骨格パーツ (chassis/coxa_bracket/femur_link/tibia_link/shoulder_bracket/
-upper_arm/forearm/claw_mount/pod_neck/battery_cradle/eye_pod/
-eye_pod_camera/camera_carrier 等) は `hardware/src/*.py` の独自設計。
+- DS3218: 5Vで18kgf·cm / 0.16秒/60°、6.8Vで21.5kgf·cm / 0.14秒/60°。6V内挿は約1.956N·m、7.034rad/s。[メーカー資料](https://www.dsservo.com/down.asp?id=22)
+- MG90S: トルク4.8Vで1.8kgf·cm、6.6Vで2.2kgf·cm。速度4.8Vで0.10秒/60°、6Vで0.08秒/60°。6V内挿は約0.203N·m、13.090rad/s。ただし同じページのOperating Voltage欄は4.8Vであり、購入個体の6V適合をこの表だけで確定できません。[TowerPro仕様](https://towerpro.com.tw/product/mg90s-3/)
+- 目の小型サーボ: 0.03N·m、8rad/sは未実測の仮定です。
 
-**配布用 ZIP の再生成について (2026-07-31 QA 再検証で追記)**: リポジトリ
-直下の `tachikoma_urdf_20260822.zip` (Isaac Sim 等での利用者向け配布物,
-`hardware/urdf/` 一式 + 本ファイルを同梱) は `hardware/src/config.py` の
-寸法変更 (特に `ARM_MOUNT_HUB_Y` のようなジオメトリに直結する定数) が
-入るたびに手動で作り直す必要がある — 自動連動しない。配布・共有の
-直前には、必ず ZIP のタイムスタンプが `config.py` の最終更新より新しい
-ことを確認し、古ければ `build_all.py`→`tools/export_urdf.py`→
-`tools/render_urdf_compare.py` を再実行してから
-`zip -r -X tachikoma_urdf_20260822.zip hardware/urdf docs/urdf.md`
-(または現在の日付を反映した新しいファイル名) で作り直すこと
-(2026-07-31 QA 再検証で、`ARM_MOUNT_HUB_Y` 変更が反映されないまま
-配布直前状態になっていたドリフトを実際に検出・修正した実例あり)。
+これらは停止時最大トルクと無負荷速度の目安で、両方を同時に出せるという意味ではありません。MuJoCo側は速度に応じて駆動方向のトルク余裕を下げる直線近似を使います。実サーボの制御特性、摩擦、発熱、連続トルク、電源降下は未同定です。URDFの `<limit>` だけでは、このトルクと速度の関係や50Hz更新・スルーレート・ガードを再現できません。
 
-## 検証ログの読み方 (check_urdf.py)
+## 衝突の扱い
 
-`check_urdf.py` は 8 節 (+ 節内の一部をさらに細分化する `5b`/`6b`/`6c` の
-サブラベル) ・約 380 個の個別アサーションを出力する (2026-07-31 時点。
-件数は check_urdf.py 自体の改修で変動するので、正確な値は末尾のサマリ
-`合計 N 項目` を見ること)。各行頭が `OK`/`NG` で、末尾のサマリに
-`RESULT: PASS`/`FAIL` が出る。CI 等で使う場合は終了コード (0=PASS, 1=FAIL)
-を見ること。
+URDFの従来型衝突形状は、可動リンク単位の凸包と、ベースのシャーシ・頭・ポッド・砲身に分けた凸包です。面数を減らした凸包は穴や空隙を埋め、元形状を厳密に外包する保証もありません。外装どうしの偽接触と本当の部品交差の両方があり得ます。
+
+第2次監査では `sim_collision.py` が元部品ごとに材料を分け、単一凸包とVHACD凸分解を比較します。20個のサーボ主ケース、目の保持板も追加でき、TPUと硬い外装の床反力を別々に記録します。主ケース以外のタブ、ホーン、配線全体を含む完全な接触モデルではありません。TPUの設定は接触の柔らかさを近似するもので、ゴムの有限要素解析ではありません。
+
+自己衝突を有効にする際は、隣接リンクの接触フィルタも区別します。`sim_self_collision.py` は重なる全リンクのAABBとMuJoCo接触から候補を列挙し、元部品の実メッシュをBoolean交差して追試します。初期貫通を衝突除外で消して合格にしません。固定リンク内の部品どうしは別途機構監査が必要です。実際の停止保持でも交差が見つかっているため、「firmwareが到達できる姿勢なら干渉しない」という旧説明は成立しません。[MuJoCo接触計算](https://mujoco.readthedocs.io/en/stable/computation/index.html#contact)
+
+## 実行と判定
+
+```sh
+.venv/bin/python tools/tests/simulation_regression.py
+.venv/bin/python tools/sim_self_collision.py --include-servos --out /tmp/tachikoma-self.json
+.venv/bin/python tools/sim_stress.py --cases docs/audits/20260905-round2/simulation/stress-cases.json --out /tmp/tachikoma-stress
+```
+
+`check_urdf.py` は構造・可動軸・変換・部品対応・メッシュ書出し・慣性の正定値性・実支持などを検査し、NGなら終了コード1を返します。件数はコードと生成物により変わるため末尾を参照します。
+
+物理試験は各条件のJSONに入力SHA-256、エンジン版、指令列、転倒、数値警告、飽和、材料別荷重、軸出力を保存します。`NUMERICAL_FAILURE` は数値計算の破綻、`INVALID_INITIAL_CONTACT_MODEL` は初期貫通、`FALL` は姿勢条件での転倒です。条件付きの `PASS` でも実機準備完了を意味せず、`physical_readiness` は未確認です。正の機械仕事率だけから電源電流を決められません。静止保持電流や損失は別に測定します。
+
+## Isaac Sim で使う場合
+
+**今回、Isaac Simでは実行していません。** 特定の版のUI・既定値・取り込み挙動は確認していません。フォルダ構成を保って取り込み、以下を使用環境で確認してください。
+
+1. 脚で接地する自由ベースとして取り込み、20可動関節と2固定関節の対応を確認する。
+2. `camera_optical_frame` をカメラに使う場合、固定関節の統合で消えていないか確認する。
+3. 位置制御ゲイン、50Hz出力、角度符号、スルーレート、関節ガード、速度依存トルク限界を別途実装する。URDFには能動制御ゲインも受動摩擦の実測値も含まれない。
+4. 自己衝突有効時の初期接触を点検する。現在の実干渉を無効化して物理成立と判定しない。
+
+## 旧配布物と出自
+
+`tachikoma_urdf_20260731/` と `tachikoma_urdf_20260822.zip` は過去版として保存しています。第2次監査で全ファイルのハッシュ、STL、XML、同梱文書・比較画像を確認しました。現在の慣性、TPU、トゥ倍率、加工済み砲身、Cabin位置、非採用部品の修正は過去版へ自動反映されません。旧版を現在の製作根拠に使わないでください。
+
+新しい配布物を作る場合は新しい日付のファイル名と入力ハッシュ一覧を使い、生成・検証結果と組み合わせます。更新時刻だけでは内容一致を確認できません。今回、過去版を上書きしていません。
+
+元キットはプロジェクトオーナー自身の著作物です。骨格と保持部品は `hardware/src/*.py` の設計です。元STL、組立変換、派生形状、過去の証拠を区別して保存します。

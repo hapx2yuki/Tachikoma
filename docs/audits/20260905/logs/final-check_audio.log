@@ -1,0 +1,59 @@
+[1] Mouth_Cannon 実測ブレークポイントの再検証 (config.py と実メッシュの一致)
+  OK  後端 -20.93 = CANNON_Y_REAR -20.9
+  OK  砲口面 20.93 = CANNON_Y_TIP 20.88
+  OK  側面グリップスリット区間を検出
+  OK  スリット始端 -12.58 ≈ CANNON_Y_SLOT_LO -12.65
+  OK  スリット終端 0.32 ≈ CANNON_Y_SLOT_HI 0.41
+  OK  フレア段差 (外径急拡大) を検出
+  OK  フレア段差 13.72 ≈ CANNON_Y_COLLAR 13.68
+  OK  AUDIO_SPK_Y0=13.93 での外径 25.8 ≥ スピーカー径+2mm (22.0)
+
+[2] 外殻無傷確認 (加工は内部のみ、ポケット/ボア以外は元メッシュの表面と一致)
+  OK  Mouth_Cannon_Bored: 単一連結体 + watertight
+  OK  Mouth_Cannon_Bored: 加工域外の外殻ズレ 最大0.0000mm < 0.05mm (6345/15000点)
+  OK  Mouth_Neck_Bored: 単一連結体 + watertight
+  OK  Mouth_Neck_Bored: 加工域外の外殻ズレ 最大0.0000mm < 0.05mm (14196/15000点)
+  OK  Mouth_Ball_Bored: 単一連結体 + watertight
+  OK  Mouth_Ball_Bored: 加工域外の外殻ズレ 最大0.0000mm < 0.05mm (14350/15000点)
+
+[2b] 配線ボアの開口が極キャップ (半径<3.5mm) の外に漏れていないこと
+  OK  Mouth_Neck_Bored: 境界帯 (半径(3.5, 6.0)) に十分なサンプル点 (2678点)
+  OK  Mouth_Neck_Bored: 配線ボアの開口は半径3.5mm以内 (極キャップ) に収まる (境界帯 半径(3.5, 6.0) 最大ズレ 0.0000mm < 0.05mm, 2678点)
+  OK  Mouth_Ball_Bored: 境界帯 (半径(3.5, 6.0)) に十分なサンプル点 (1265点)
+  OK  Mouth_Ball_Bored: 配線ボアの開口は半径3.5mm以内 (極キャップ) に収まる (境界帯 半径(3.5, 6.0) 最大ズレ 0.0000mm < 0.05mm, 1265点)
+
+[3] スピーカー: 実機ダミー (φ20×5.0mm, 砲口側) + 抜け止めワッシャ (奥側)
+  OK  スピーカーダミー vs Cannon_Bored 残存殻 交差体積 -0.00mm3 < 1.0
+  OK  スピーカーダミー: 意匠シルエットに対する最小クリアランス 2.89mm ≥ 0.3mm
+  OK  スピーカーダミー vs audio_cradle_spk(ワッシャ) 交差体積 0.00mm3 < 1.0 (Y方向で分離)
+  OK  audio_cradle_spk vs Cannon_Bored 残存殻 交差体積 0.00mm3 < 5.0 (圧入クリアランス内)
+
+[4] マイク基板ダミー (14×11×3mm) の収容
+  OK  マイク基板ダミー vs Cannon_Bored 残存殻 交差体積 0.00mm3 < 1.0
+  OK  マイク基板ダミー(対角): 意匠シルエットに対する最小クリアランス 2.71mm ≥ 0.3mm
+  OK  マイク基板ダミー vs audio_cradle_mic 交差体積 0.00mm3 < 1.0 (トレイの溝内に収まる)
+  OK  audio_cradle_mic vs Cannon_Bored 残存殻 交差体積 0.00mm3 < 5.0 (圧入クリアランス内)
+
+[5] 最小肉厚 (元メッシュの外周半径プロファイル - ポケット半径)
+  OK  マイクポケット周り最小肉厚 1.37mm ≥ 1.2mm
+  OK  スピーカーポケット周り最小肉厚 2.89mm ≥ 1.2mm
+
+[5b] audio_cradle_mic/spk 自体の最小肉厚 (輸出済み STL への ray-casting, [5]とは独立の測定手段)
+  OK  audio_cradle_mic: リブ領域のレイヒット十分数を確保
+  OK  audio_cradle_mic: 基板トレイ両脇リブの実測最小肉厚(ray-cast) 0.804mm ≥ 0.7mm (9492点)
+  OK  audio_cradle_spk: 実測最小肉厚(ray-cast) 1.749mm ≥ 0.7mm (8000点)
+
+[5c] audio_cradle_mic 回転キーの実効性 (誤った向きでは挿入できないこと)
+  OK  audio_cradle_mic を180°回転させた場合の Cannon_Bored 残存殻との干渉体積 8.6mm3 > 5.0 (誤った向きは物理的に挿入不能)
+
+[6] 配線経路の連通
+  OK  Cannon 中心軸 (後端→マイクポケット) が全区間で空隙 (中実=0/20)
+  OK  Mouth_Neck_Bored: 中心軸ボアが全区間で空隙 (配線通過可, 中実=0/12)
+  OK  Mouth_Neck_Bored: 配線束ダミー(φ5) vs 実体 交差体積 0.00mm3 < 0.5
+  OK  Mouth_Ball_Bored: 中心軸ボアが全区間で空隙 (配線通過可, 中実=0/12)
+  OK  Mouth_Ball_Bored: 配線束ダミー(φ5) vs 実体 交差体積 0.00mm3 < 0.5
+
+[7] Mouth_Cap (無加工) の前面開口とスピーカーポートの整合 (簡易, 現物合わせ前提)
+  OK  Cap 前面内径 21.1mm ≥ スピーカーポート径 20.0mm (Cap が音の出口を塞がない, 前提: Cap前端≈Cannon砲口が同軸で揃う)
+
+result: OK

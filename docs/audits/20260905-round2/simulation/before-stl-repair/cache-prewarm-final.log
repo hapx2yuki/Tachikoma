@@ -1,0 +1,15 @@
+parts True None 152 152
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: divide by zero encountered in divide
+  center_mass = integrated[1:4] / volume
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+vhacd True None 152 3314
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "/Users/uratayuuki/Documents/Tachikoma/tools/sim_collision.py", line 103, in convex_parts
+    args=trimesh.decomposition.convex_decomposition(mesh,**VHACD_SETTINGS)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/decomposition.py", line 50, in convex_decomposition
+    for v, f in compute_vhacd(mesh.vertices, faces, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

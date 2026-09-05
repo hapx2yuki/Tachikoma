@@ -15,7 +15,7 @@
 | **誰が・何が要るか** | ラベル `area/*` `skill/*` `res/プリンタ` `res/本体` `並行作業OK` `prio/P0-2` `type/ゲート` `type/要判断` | Labels |
 | **見える化** | [Projects v2 ボード「Tachikoma 物理製作」](https://github.com/users/hapx2yuki/projects/2) (Status: Todo / Ready / In Progress / Blocked / Done、レーン = エピック) — Public なのでアカウント無しでも閲覧可 | Projects |
 
-キー体系 (タイトル先頭): `P`=準備 / `PR`=印刷 / `EL`=電装 / `L`=脚・歩行 / `A`=腕 / `H`=頭部 / `S`=意匠シェル / `I`=統合。
+キー体系 (タイトル先頭): `P`=準備 / `PR`=印刷 / `EL`=電装 / `L`=脚・歩行 / `A`=腕 / `H`=頭部 / `S`=意匠シェル / `I`=統合 / `RV`=独立監査。ソフトウェア監査はエピック `E9` にまとめる。
 口頭やチャットでは「L-02 どう?」のようにキーで呼ぶ。
 
 ## 2. 作業を取る (5 ステップ)
@@ -58,8 +58,20 @@
 
 `tools/issues/plan.py` を編集 → `.venv/bin/python tools/issues/sync_github_issues.py --dry-run` で差分を見て
 `--apply` (新規作成・関係追加) / `--apply --update-bodies` (本文も上書き) / `--plan-doc` (docs/build_plan.md 再生成)。
+変更するIssueだけ `--keys L-11 EL-09` のように限定する。管理内の不要依存を取り除くときは、
+対象を限定した `--reconcile-dependencies` を付け、先に `--dry-run` を確認する。
+既存Projectへの追加は `tools/issues/setup_project.sh`（差分表示）→ `--apply`。
+同じProjectを再利用し、既存のStatus・担当・コメント・フィールド選択肢を保持する。
+Ready/Blockedは完了済み前提の実状態で初期設定する。既存Statusは自動追従させず、作業担当が更新する。
 GitHub 上で直接本文を書き換えても次の `--update-bodies` で戻るので、恒久的な変更は plan.py へ。
 個別の追加イシュー (不具合・現物合わせ) は GitHub 上で直接切ってよい (plan.py の管理外)。
+
+### 2026-09-05 監査後の順序
+
+- 制御修正・印刷データ検査・物理シム・Issue管理は別ファイル担当で並行する（E9）。
+- `PR-04` はFL用tibia標準1本 → `L-02` 片脚合格 → `PR-11` 残り3本 → `L-03/04/05` 組立。
+- `L-11` トルク不足対策、`EL-09` 電源不足対策は、対象試験が不合格でも着手できる。ゲートのClose待ちにしない。
+- コードのローカル検証、GitHubへのコード反映、実機試験の完了を別々に記録する。監査だけで実機IssueをCloseしない。
 
 ## 7. 参考: なぜこの運用か
 

@@ -1,0 +1,24 @@
+{
+  "coverage-cabin-peer.json": {
+    "files": 12,
+    "stale": []
+  },
+  "coverage-firmware.json": {
+    "files": 35,
+    "stale": []
+  },
+  "coverage-integration-peer.json": {
+    "files": 9,
+    "stale": []
+  },
+  "coverage-guard-seat.json": {
+    "files": 4,
+    "stale": []
+  },
+  "coverage-stl-export-peer.json": {
+    "files": 3,
+    "stale": []
+  },
+  "candidate-inputs-stale": [],
+  "latch-inputs-stale": []
+}

@@ -1,0 +1,1086 @@
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: divide by zero encountered in divide
+  center_mass = integrated[1:4] / volume
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+{
+  "mode": "STL",
+  "watertight": true,
+  "components": 1,
+  "before_volume_mm3": 56007.84023759603,
+  "after_volume_mm3": 54609.820308797556,
+  "removed_mm3": 1398.0207973799133,
+  "removed_bounds_mm": [
+    -75.54998149518622,
+    -78.67269104938416,
+    0.0,
+    75.54998149518619,
+    86.0,
+    9.0
+  ],
+  "mouth_intersection_mm3": {
+    "Mouth_Ball_Bored": 0.0,
+    "Mouth_Neck_Bored": 0.0,
+    "Mouth_Cap_Grey": 0.0
+  },
+  "protected_support_material_loss_mm3": {
+    "pod_0": 6.745598083183185e-06,
+    "pod_1": 2.4680287631362247e-06,
+    "pod_2": 7.694155541034555e-06,
+    "pod_3": 3.381402219559965e-06,
+    "battery_0": 3.637507182033377e-06,
+    "battery_1": 2.9691697057218178e-06,
+    "battery_2": 8.607715230730909e-06,
+    "battery_3": 6.15790591215075e-06,
+    "FR_yaw_boss_0_0": 2.2673289032855816e-06,
+    "FR_yaw_boss_0_1": 4.319842196912136e-06,
+    "FR_yaw_boss_1_0": 6.686690664711725e-06,
+    "FR_yaw_boss_1_1": 6.221701497681815e-06,
+    "FL_yaw_boss_0_0": 3.7570375805067207e-06,
+    "FL_yaw_boss_0_1": 3.0188359688743606e-06,
+    "FL_yaw_boss_1_0": 4.7520460434002805e-06,
+    "FL_yaw_boss_1_1": 3.1854104581939918e-06,
+    "RL_yaw_boss_0_0": 5.728385640691499e-06,
+    "RL_yaw_boss_0_1": 4.633602548301982e-06,
+    "RL_yaw_boss_1_0": 7.409672011043524e-06,
+    "RL_yaw_boss_1_1": 7.981180494854589e-06,
+    "RR_yaw_boss_0_0": 4.2446609449193314e-06,
+    "RR_yaw_boss_0_1": 4.911528251685244e-06,
+    "RR_yaw_boss_1_0": 5.920164236741896e-06,
+    "RR_yaw_boss_1_1": 4.363952144262493e-06,
+    "arm_-1_0": 4.3123186873332955e-06,
+    "arm_-1_1": 1.2436890809554166e-05,
+    "arm_1_0": 5.159326322540769e-06,
+    "arm_1_1": 9.854763223619686e-06,
+    "PCA_-1_-1": 3.6837398640748847e-06,
+    "PCA_-1_1": 3.167102660266183e-06,
+    "PCA_1_-1": 4.618396970417501e-06,
+    "PCA_1_1": 2.8652237461922e-06,
+    "head_tab_90": 18.053720287502454,
+    "head_tab_30": 4.950359018515744e-06,
+    "head_tab_150": 4.254977266245319e-06,
+    "head_tab_210": 3.878796491279513e-06,
+    "head_tab_330": 4.242956197539308e-06,
+    "head_tab_245": 6.332806073924785e-06,
+    "head_tab_295": 8.825609822441245e-06
+  },
+  "distance_lower_bound_removed_to_protected_zone_mm": {
+    "pod_0": 0.0,
+    "pod_1": 0.0,
+    "pod_2": 0.0,
+    "pod_3": 0.0,
+    "battery_0": 0.0,
+    "battery_1": 0.0,
+    "battery_2": 0.0,
+    "battery_3": 0.0,
+    "arm_-1_0": 0.0,
+    "arm_-1_1": 0.0,
+    "arm_1_0": 0.0,
+    "arm_1_1": 0.0,
+    "head_tab_90": 0.0,
+    "head_tab_30": 0.0,
+    "head_tab_150": 0.0,
+    "head_tab_210": 0.0,
+    "head_tab_330": 0.0,
+    "head_tab_245": 0.0,
+    "head_tab_295": 0.0
+  },
+  "head_tab_protected_radius_mm": 5,
+  "head_tab_hole_radius_mm": 1.6,
+  "front_tab_reinforcement": {
+    "ring_z_mm": [
+      2,
+      7.0
+    ],
+    "ring_radial_wall_mm": 3.4,
+    "missing_ring_material_mm3": 3.8475424576703466e-05,
+    "new_collar_intersections_mm3": {
+      "Head_Top_Eyecut#single": 0.0,
+      "leg_fr_yaw_servo_case": 0.0,
+      "leg_fl_yaw_servo_case": 0.0,
+      "leg_rl_yaw_servo_case": 0.0,
+      "leg_rr_yaw_servo_case": 0.0,
+      "arm_r_yaw_servo_case": 0.0,
+      "arm_l_yaw_servo_case": 0.0,
+      "eye_r_servo_case": 0.0,
+      "eye_l_servo_case": 0.0
+    },
+    "fastener_note": "前タブの板厚4→7mm。既存ねじ長さに+3mmが必要。頭への固定構造そのものは別途設計する。"
+  },
+  "bottom_insertion": {
+    "samples": 121,
+    "maximum_intersection_mm3": 0.0,
+    "rows": [
+      {
+        "below_final_mm": 0.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 0.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 0.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 0.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 1.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 1.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 1.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 1.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 2.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 2.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 2.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 2.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 3.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 3.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 3.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 3.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 4.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 4.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 4.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 4.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 5.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 5.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 5.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 5.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 6.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 6.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 6.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 6.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 7.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 7.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 7.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 7.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 8.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 8.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 8.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 8.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 9.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 9.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 9.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 9.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 10.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 10.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 10.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 10.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 11.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 11.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 11.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 11.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 12.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 12.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 12.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 12.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 13.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 13.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 13.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 13.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 14.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 14.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 14.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 14.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 15.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 15.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 15.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 15.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 16.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 16.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 16.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 16.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 17.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 17.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 17.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 17.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 18.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 18.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 18.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 18.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 19.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 19.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 19.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 19.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 20.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 20.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 20.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 20.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 21.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 21.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 21.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 21.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 22.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 22.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 22.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 22.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 23.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 23.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 23.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 23.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 24.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 24.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 24.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 24.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 25.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 25.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 25.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 25.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 26.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 26.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 26.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 26.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 27.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 27.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 27.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 27.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 28.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 28.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 28.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 28.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 29.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 29.25,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 29.5,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 29.75,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      },
+      {
+        "below_final_mm": 30.0,
+        "intersections_mm3": {
+          "Mouth_Ball_Bored": 0.0,
+          "Mouth_Neck_Bored": 0.0,
+          "Mouth_Cap_Grey": 0.0
+        }
+      }
+    ]
+  },
+  "removed_outside_mouth_clearance_mm3": 0.001081182870236994,
+  "limitations": "保護円柱/箱の実材料不変と1閉体を確認。全板の曲げ/穴縁疲労/新頭支持柱は未検証。現在7タブは頭に届かない別の未解消問題がある。",
+  "pass": true
+}

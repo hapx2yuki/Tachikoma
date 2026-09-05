@@ -1,0 +1,6 @@
+test_head_height_has_one_config_source (tools.tests.test_render_contracts.RenderContracts.test_head_height_has_one_config_source) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.008s
+
+OK

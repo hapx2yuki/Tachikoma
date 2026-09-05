@@ -1,0 +1,53 @@
+== 意匠シェル (PLA 150%, 壁2/インフィル8%) ==
+  Cabin_Front_Blue                           x1  Blue    292.5cm3 ->    363g
+  Cabin_Back_Blue_Repaired                   x1  Blue    138.0cm3 ->    171g
+  Leg_Toe_Black_x12                          x12 Black    23.8cm3 ->     29g
+  Cabin_Peg_x2                               x2  Grey     15.6cm3 ->     19g
+  Head_TailJoint_Blue_Optional_Cross         x1  Blue     12.8cm3 ->     16g
+  Mouth_Cap_Grey                             x1  Grey      7.4cm3 ->      9g
+  Cabin_Turrent_Right_Grey                   x1  Grey      6.3cm3 ->      8g
+  Cabin_Turrent_Left_Grey                    x1  Grey      6.3cm3 ->      8g
+  Leg_Thigh_Guard_Blue_x4                    x4  Blue      6.0cm3 ->      7g
+  Leg_Shin_Guard_Grey_x4                     x4  Grey      5.9cm3 ->      7g
+  Cabin_Eye_White                            x1  White     4.5cm3 ->      6g
+  Head_TailJoint_Ball_Grey_Optional_Cross    x1  Grey      4.1cm3 ->      5g
+  ... (他省略)
+
+== 新規設計 (hardware/stl) ==
+  chassis              x1 PETG         54.6cm3 ->     69g
+  coxa_bracket         x4 PETG         74.9cm3 ->     95g
+  femur_link           x4 PETG         87.7cm3 ->    111g
+  tibia_link           x4 PETG        128.5cm3 ->    163g
+  shin_shell           x4 PLA-Blue    131.9cm3 ->    164g
+  thigh_cap            x4 PLA-Grey     19.6cm3 ->     24g
+  leg_foot_bored       x4 PLA-Grey      9.8cm3 ->     12g
+  foot_pad             x4 TPU           1.3cm3 ->      2g
+  pod_neck             x1 PETG         16.3cm3 ->     21g
+  battery_cradle       x1 PETG         13.7cm3 ->     17g
+  shoulder_bracket     x2 PETG         15.0cm3 ->     19g
+  arm_pod_upper        x2 PLA-Blue      8.7cm3 ->     11g
+  arm_pod_lower        x2 PLA-Blue      6.8cm3 ->      8g
+  elbow_shell          x2 PLA-Grey      3.0cm3 ->      4g
+  Head_Top_Eyecut      x1 PLA-Blue     51.5cm3 ->     64g
+  Head_Bottom_Armcut   x1 PLA-Blue     22.3cm3 ->     28g
+  Mouth_Cannon_Bored   x1 PLA-Grey      7.3cm3 ->      9g
+  Mouth_Neck_Bored     x1 PLA-Blue      1.5cm3 ->      2g
+  Mouth_Ball_Bored     x1 PLA-Grey      3.6cm3 ->      4g
+  audio_cradle_mic     x1 PETG          1.8cm3 ->      2g
+  audio_cradle_spk     x1 PETG          0.2cm3 ->      0g
+  eye_pod_camera       x1 PLA-White     7.5cm3 ->      9g
+  camera_carrier       x1 PETG          1.2cm3 ->      1g
+  upper_arm            x2 PETG         16.8cm3 ->     21g
+  forearm              x2 PETG          5.6cm3 ->      7g
+  claw_mount           x2 PETG          1.6cm3 ->      2g
+  eye_pod              x2 PLA-White    12.2cm3 ->     15g
+  eye_carrier          x2 PETG          5.4cm3 ->      7g
+
+== 色別合計 (印刷失敗・パージ・試作分は含まず) ==
+  PLA 青   :    833 g
+  PLA グレー :    130 g
+  PLA 黒   :     40 g
+  PLA 白   :     30 g
+  PLA 赤   :      4 g
+  PETG    :    538 g
+  TPU     :      2 g

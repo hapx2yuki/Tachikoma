@@ -1,0 +1,2932 @@
+{
+  "created_utc": "2026-09-05T07:39:08.906399+00:00",
+  "case_count": 71,
+  "all_planned_cases_executed": true,
+  "all_input_hashes_match_current": false,
+  "all_cases_match_plan": true,
+  "status_counts": {
+    "PASS": 58,
+    "FALL": 2,
+    "FAIL": 2,
+    "NUMERICAL_FAILURE": 1,
+    "INVALID_INITIAL_CONTACT_MODEL": 8
+  },
+  "timestep_comparison": {
+    "nominal_distance_m": 0.16804439079606254,
+    "half_step_distance_m": 0.16588406919320645,
+    "relative_difference": 0.012855660296795279,
+    "threshold": 0.05,
+    "status": "PASS"
+  },
+  "physical_readiness": "FAIL: known geometric intersections and unsupported TPU contact; remaining actuator/electrical properties unmeasured",
+  "cases": [
+    {
+      "name": "native_nominal",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.240923327166319,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.97420082404005
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.307797097318215,
+        "max": 35.62979920903849,
+        "p95": 4.426409312911933
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16804439079606254,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/native_nominal.json"
+    },
+    {
+      "name": "back",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.27278294750015,
+      "max_pitch_deg": 3.0216885816885286,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 268.0145181289936
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3745978269397157,
+        "max": 35.70383483372916,
+        "p95": 4.45422519991258
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.08297654547589083,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/back.json"
+    },
+    {
+      "name": "right",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.1762372461349155,
+      "max_pitch_deg": 2.1114416455214693,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.7211840972449
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0064,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.411806092161168,
+        "max": 35.51688469234735,
+        "p95": 4.534964861816465
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.15718993393903766,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/right.json"
+    },
+    {
+      "name": "left",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.280400673785367,
+      "max_pitch_deg": 1.779686080549656,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.38496147508727
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0078,
+      "max_arm_saturation": 0.0,
+      "positive_mechanical_power_W": {
+        "mean": 1.3921763894447492,
+        "max": 35.737333329841015,
+        "p95": 4.485174742942142
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.12352386130435052,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/left.json"
+    },
+    {
+      "name": "turn_ccw",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.3275479863204325,
+      "max_pitch_deg": 1.9636291434771496,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.81245581554475
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0066,
+      "max_arm_saturation": 0.0,
+      "positive_mechanical_power_W": {
+        "mean": 1.2028930341003607,
+        "max": 36.30512998768994,
+        "p95": 3.7245765437292135
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.0,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/turn_ccw.json"
+    },
+    {
+      "name": "turn_cw",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.442718473991818,
+      "max_pitch_deg": 1.9458147783153392,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.5179975439915
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.008,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.4134616391445123,
+        "max": 35.44726729888481,
+        "p95": 4.537086206470836
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.0,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/turn_cw.json"
+    },
+    {
+      "name": "compound",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.412392196906512,
+      "max_pitch_deg": 2.208666518724423,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.4567656017918
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0062,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2641137218781873,
+        "max": 35.85734556691489,
+        "p95": 3.9866871163070754
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1270309037916164,
+        "stop": 0.0
+      },
+      "before_cad_status": "FAIL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/compound.json"
+    },
+    {
+      "name": "height_110",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.083312714935397,
+      "max_pitch_deg": 2.3952724352543173,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.1207023766255
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0076,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.318251652537227,
+        "max": 36.55747166391154,
+        "p95": 4.494559673817073
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1659263100446606,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/height_110.json"
+    },
+    {
+      "name": "height_120",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.204045420506901,
+      "max_pitch_deg": 2.2090620739713995,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.9424975228695
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0072,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2948443519749988,
+        "max": 34.92265835043882,
+        "p95": 4.416633962266613
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.17521274632793996,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/height_120.json"
+    },
+    {
+      "name": "height_125",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.419844704083482,
+      "max_pitch_deg": 2.0694954380532278,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.88061943607954
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.007,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.29702786553544,
+        "max": 34.41030455978106,
+        "p95": 4.418892194442287
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.17945140979650692,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/height_125.json"
+    },
+    {
+      "name": "height_130",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.732146991782431,
+      "max_pitch_deg": 1.8430112304731983,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.77781251766544
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.007,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.314043359973512,
+        "max": 34.45881562132347,
+        "p95": 4.370810778104726
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.18038622936221038,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/height_130.json"
+    },
+    {
+      "name": "height_changes",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 16.0,
+      "integrated_time_s": 16.0,
+      "max_roll_deg": 4.131072736473847,
+      "max_pitch_deg": 2.570657580638624,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 425.70099321683807
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004,
+      "max_arm_saturation": 0.0275,
+      "positive_mechanical_power_W": {
+        "mean": 1.6079589980265312,
+        "max": 34.533033057446474,
+        "p95": 4.630309073563678
+      },
+      "commanded_paths_m": {
+        "height_115": 0.06945121207028897,
+        "height_130": 0.07802764929569816,
+        "height_110": 0.06618100367826933,
+        "height_125": 0.07658109149610166
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/height_changes.json"
+    },
+    {
+      "name": "abrupt_reverse",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 21.2,
+      "integrated_time_s": 21.2,
+      "max_roll_deg": 4.139249936961974,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 566.4407325773171
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0030188679245283017,
+      "max_arm_saturation": 0.012452830188679246,
+      "positive_mechanical_power_W": {
+        "mean": 1.5170519305166912,
+        "max": 23.594032011177536,
+        "p95": 4.508673147893359
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "forward": 0.09728027453307321,
+        "backward": 0.05201996896070668,
+        "ccw": 0.0,
+        "cw": 0.0,
+        "right": 0.09037975310946539,
+        "left": 0.04980568295077632
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/abrupt_reverse.json"
+    },
+    {
+      "name": "zero_direct",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.198809055112497,
+      "max_pitch_deg": 2.2971941471159796,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.11374043504526
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0106,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.4099162838747077,
+        "max": 35.62032490465733,
+        "p95": 4.620741334783666
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16766761034806169,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/zero_direct.json"
+    },
+    {
+      "name": "zero_sequential",
+      "status": "FALL",
+      "failed_checks": [
+        "no_fall",
+        "no_nonleg_contact"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 11.200000000000001,
+      "integrated_time_s": 11.200000000000001,
+      "max_roll_deg": 44.84897141693996,
+      "max_pitch_deg": 17.844465494768112,
+      "fell_time_s": 0.46,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 299.42562897022816
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.04982142857142857,
+      "max_arm_saturation": 0.020714285714285713,
+      "positive_mechanical_power_W": {
+        "mean": 1.557716011059476,
+        "max": 35.84969675819297,
+        "p95": 4.800341572634996
+      },
+      "commanded_paths_m": {
+        "startup": 0.0,
+        "walk": 0.28985751234318696,
+        "stop": 0.0
+      },
+      "before_cad_status": "FALL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/zero_sequential.json"
+    },
+    {
+      "name": "stop_phase_00",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 8.4,
+      "integrated_time_s": 8.4,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 224.31453859552207
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.009523809523809525,
+      "max_arm_saturation": 0.015476190476190477,
+      "positive_mechanical_power_W": {
+        "mean": 1.364537643804433,
+        "max": 32.8491652154676,
+        "p95": 4.711119010479372
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.061907246076851816,
+        "stop": 0.0,
+        "restart": 0.086653769360232,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_00.json"
+    },
+    {
+      "name": "stop_phase_01",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 8.5,
+      "integrated_time_s": 8.5,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 227.0187352237698
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0042352941176470585,
+      "max_arm_saturation": 0.02047058823529412,
+      "positive_mechanical_power_W": {
+        "mean": 1.2350366901959895,
+        "max": 22.87512124474607,
+        "p95": 4.260008098613322
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.059817614891307554,
+        "stop": 0.0,
+        "restart": 0.0683240367617044,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_01.json"
+    },
+    {
+      "name": "stop_phase_02",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 8.6,
+      "integrated_time_s": 8.6,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 229.67933895276573
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004186046511627907,
+      "max_arm_saturation": 0.020232558139534885,
+      "positive_mechanical_power_W": {
+        "mean": 1.234965894254718,
+        "max": 22.87512124474607,
+        "p95": 4.199818200907609
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.0559361104402,
+        "stop": 0.0,
+        "restart": 0.07174313466988942,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_02.json"
+    },
+    {
+      "name": "stop_phase_03",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 8.700000000000001,
+      "integrated_time_s": 8.700000000000001,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 232.4258842868313
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004137931034482759,
+      "max_arm_saturation": 0.018620689655172412,
+      "positive_mechanical_power_W": {
+        "mean": 1.2286419764973013,
+        "max": 22.87512124474607,
+        "p95": 4.221651438812046
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.05250112758715731,
+        "stop": 0.0,
+        "restart": 0.07649434711297522,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_03.json"
+    },
+    {
+      "name": "stop_phase_04",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 8.8,
+      "integrated_time_s": 8.8,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 234.9970014100296
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004318181818181818,
+      "max_arm_saturation": 0.015,
+      "positive_mechanical_power_W": {
+        "mean": 1.2256265440994705,
+        "max": 22.87512124474607,
+        "p95": 4.259575971569645
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.044659433746766605,
+        "stop": 0.0,
+        "restart": 0.07119359220763298,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_04.json"
+    },
+    {
+      "name": "stop_phase_05",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 8.9,
+      "integrated_time_s": 8.9,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 237.78417331884322
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004044943820224719,
+      "max_arm_saturation": 0.014831460674157304,
+      "positive_mechanical_power_W": {
+        "mean": 1.223637726752568,
+        "max": 22.87512124474607,
+        "p95": 4.211126024466457
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.036261418308262065,
+        "stop": 0.0,
+        "restart": 0.07037344317470516,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_05.json"
+    },
+    {
+      "name": "stop_phase_06",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 9.0,
+      "integrated_time_s": 9.0,
+      "max_roll_deg": 4.397560840458277,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 240.55166535698348
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004222222222222222,
+      "max_arm_saturation": 0.014666666666666666,
+      "positive_mechanical_power_W": {
+        "mean": 1.2103502475906807,
+        "max": 22.87512124474607,
+        "p95": 4.186465994605973
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.029927029665019023,
+        "stop": 0.0,
+        "restart": 0.07160138418238686,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_06.json"
+    },
+    {
+      "name": "stop_phase_07",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 9.100000000000001,
+      "integrated_time_s": 9.1,
+      "max_roll_deg": 4.510204863257925,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 243.2228391684722
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.005054945054945055,
+      "max_arm_saturation": 0.014505494505494506,
+      "positive_mechanical_power_W": {
+        "mean": 1.2159701534467244,
+        "max": 22.87512124474607,
+        "p95": 4.222156552880655
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.03140854586057629,
+        "stop": 0.0,
+        "restart": 0.07625791295261573,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_07.json"
+    },
+    {
+      "name": "stop_phase_08",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 9.200000000000001,
+      "integrated_time_s": 9.200000000000001,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 245.80601071362898
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004130434782608695,
+      "max_arm_saturation": 0.014347826086956521,
+      "positive_mechanical_power_W": {
+        "mean": 1.2383350501302532,
+        "max": 22.87512124474607,
+        "p95": 4.281915397292043
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.02746622928416079,
+        "stop": 0.0,
+        "restart": 0.07230941416749592,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_08.json"
+    },
+    {
+      "name": "stop_phase_09",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 9.3,
+      "integrated_time_s": 9.3,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 248.4728580573134
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003870967741935484,
+      "max_arm_saturation": 0.0189247311827957,
+      "positive_mechanical_power_W": {
+        "mean": 1.254829591087581,
+        "max": 22.87512124474607,
+        "p95": 4.272545514283719
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.028387682586110647,
+        "stop": 0.0,
+        "restart": 0.06753499357324948,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_09.json"
+    },
+    {
+      "name": "stop_phase_10",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 9.4,
+      "integrated_time_s": 9.4,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 251.17163832017263
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003829787234042553,
+      "max_arm_saturation": 0.01872340425531915,
+      "positive_mechanical_power_W": {
+        "mean": 1.255247510517849,
+        "max": 22.87512124474607,
+        "p95": 4.201561740092515
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.03894900796319485,
+        "stop": 0.0,
+        "restart": 0.06650764074381488,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_10.json"
+    },
+    {
+      "name": "stop_phase_11",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 9.5,
+      "integrated_time_s": 9.5,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 253.84095504337958
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003789473684210526,
+      "max_arm_saturation": 0.018526315789473686,
+      "positive_mechanical_power_W": {
+        "mean": 1.2576436986660733,
+        "max": 22.87512124474607,
+        "p95": 4.225982514997952
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.04839728891592457,
+        "stop": 0.0,
+        "restart": 0.07056721767361039,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_11.json"
+    },
+    {
+      "name": "stop_phase_12",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 9.600000000000001,
+      "integrated_time_s": 9.6,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 256.3103994251504
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003958333333333334,
+      "max_arm_saturation": 0.018333333333333333,
+      "positive_mechanical_power_W": {
+        "mean": 1.268907486957897,
+        "max": 22.87512124474607,
+        "p95": 4.290146569191187
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.05980099306108418,
+        "stop": 0.0,
+        "restart": 0.07168849851452158,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_12.json"
+    },
+    {
+      "name": "stop_phase_13",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 9.700000000000001,
+      "integrated_time_s": 9.700000000000001,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 258.9553718808562
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003711340206185567,
+      "max_arm_saturation": 0.018144329896907216,
+      "positive_mechanical_power_W": {
+        "mean": 1.2727626279337048,
+        "max": 22.87512124474607,
+        "p95": 4.300982783696354
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.06923884684855298,
+        "stop": 0.0,
+        "restart": 0.06642718397887891,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_13.json"
+    },
+    {
+      "name": "stop_phase_14",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 9.8,
+      "integrated_time_s": 9.8,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 261.7255090195094
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0038775510204081634,
+      "max_arm_saturation": 0.017959183673469388,
+      "positive_mechanical_power_W": {
+        "mean": 1.2528091286991507,
+        "max": 22.87512124474607,
+        "p95": 4.213858151111868
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.08313725573634087,
+        "stop": 0.0,
+        "restart": 0.06901906294173045,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_14.json"
+    },
+    {
+      "name": "stop_phase_15",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 9.9,
+      "integrated_time_s": 9.9,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.3736563172281
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0036363636363636364,
+      "max_arm_saturation": 0.017777777777777778,
+      "positive_mechanical_power_W": {
+        "mean": 1.2538378589896828,
+        "max": 22.87512124474607,
+        "p95": 4.24643851691487
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.09027496746633647,
+        "stop": 0.0,
+        "restart": 0.0735158741203586,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_15.json"
+    },
+    {
+      "name": "slope_-10",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 18.894962235538458,
+      "max_pitch_deg": 4.300024491675178,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 262.94806273886917
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.007,
+      "max_arm_saturation": 0.0168,
+      "positive_mechanical_power_W": {
+        "mean": 1.297211240003209,
+        "max": 34.48301793449344,
+        "p95": 4.153835193677812
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.247351184298102,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/slope_-10.json"
+    },
+    {
+      "name": "slope_-5",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 10.470865814298845,
+      "max_pitch_deg": 2.8319329713193886,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.9500513810928
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.29886336065574,
+        "max": 35.10374717454659,
+        "p95": 4.2700862023741575
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.2117277213647764,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/slope_-5.json"
+    },
+    {
+      "name": "slope_5",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 7.328681577409234,
+      "max_pitch_deg": 2.8896980142197064,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.8531075550856
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0072,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3513380446650292,
+        "max": 35.41672530928279,
+        "p95": 4.53958249467358
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.12376347355375904,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/slope_5.json"
+    },
+    {
+      "name": "slope_10",
+      "status": "FALL",
+      "failed_checks": [
+        "no_fall",
+        "no_nonleg_contact",
+        "translation_progress"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 56.79819069740088,
+      "max_pitch_deg": 8.501779569052662,
+      "fell_time_s": 0.376,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 262.3718591898688
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0388,
+      "max_arm_saturation": 0.0208,
+      "positive_mechanical_power_W": {
+        "mean": 1.6550843545375138,
+        "max": 34.031099533021404,
+        "p95": 5.310298349643524
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": -0.05613268157768671,
+        "stop": 0.0
+      },
+      "before_cad_status": "FALL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/slope_10.json"
+    },
+    {
+      "name": "step_2",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.86609609735484
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3071883873106016,
+        "max": 35.49752629055274,
+        "p95": 4.441274265432818
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16288084334385017,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/step_2.json"
+    },
+    {
+      "name": "step_5",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.3089116344170892,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 268.78972474785354
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0072,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.329513362970588,
+        "max": 35.24509742495275,
+        "p95": 4.428256867046786
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.15043048982319274,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/step_5.json"
+    },
+    {
+      "name": "step_10",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 6.722940906030717,
+      "max_pitch_deg": 2.6979685594095533,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 268.53126697425813
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0068,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3514387859370933,
+        "max": 33.89728793606111,
+        "p95": 4.488528312389085
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.14354768921884015,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/step_10.json"
+    },
+    {
+      "name": "push_2N",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.240923894797089,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.972949051786
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3090402043879177,
+        "max": 35.6298062223825,
+        "p95": 4.426496539576918
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1676727165967165,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/push_2N.json"
+    },
+    {
+      "name": "push_5N",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.240632146690949,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.953503236301
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3102438070169455,
+        "max": 35.62674898147917,
+        "p95": 4.423703339373106
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1680001476711237,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/push_5N.json"
+    },
+    {
+      "name": "push_10N",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.198711744284127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.91677544803275
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3076001887338944,
+        "max": 35.620258415877245,
+        "p95": 4.365150410057247
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16556084529818924,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/push_10N.json"
+    },
+    {
+      "name": "mass_scale_0.7",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 1.9232768022999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.856947301283322,
+      "max_pitch_deg": 2.189867737768286,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 186.47894420793466
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0046,
+      "max_arm_saturation": 0.0168,
+      "positive_mechanical_power_W": {
+        "mean": 1.05615603899886,
+        "max": 34.94010913699371,
+        "p95": 3.9651104626407574
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1696666290402342,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/mass_scale_0.7.json"
+    },
+    {
+      "name": "mass_scale_1.3",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 3.5717997756999997,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.695345877165484,
+      "max_pitch_deg": 2.2384259092976135,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 347.604465794372
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.009,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.5479963186705579,
+        "max": 35.00011053895783,
+        "p95": 4.950109103293179
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16882542935925138,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/mass_scale_1.3.json"
+    },
+    {
+      "name": "effort_scale_0.5",
+      "status": "FAIL",
+      "failed_checks": [
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.655243741310007,
+      "max_pitch_deg": 2.2295967533776517,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.4232409324305
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.193,
+      "max_arm_saturation": 0.0408,
+      "positive_mechanical_power_W": {
+        "mean": 1.2643705615089085,
+        "max": 17.201203610914877,
+        "p95": 4.120591006269965
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16330377863728338,
+        "stop": 0.0
+      },
+      "before_cad_status": "FAIL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/effort_scale_0.5.json"
+    },
+    {
+      "name": "effort_scale_0.7",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.359682769131475,
+      "max_pitch_deg": 2.3018501321503857,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.2993293809629
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0276,
+      "max_arm_saturation": 0.028,
+      "positive_mechanical_power_W": {
+        "mean": 1.2835945195066627,
+        "max": 24.335455417660015,
+        "p95": 4.347548217315879
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1690782468455359,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/effort_scale_0.7.json"
+    },
+    {
+      "name": "effort_scale_0.9",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.024187744473728,
+      "max_pitch_deg": 2.297635728879043,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.0130547644418
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0084,
+      "max_arm_saturation": 0.02,
+      "positive_mechanical_power_W": {
+        "mean": 1.3024231115774516,
+        "max": 32.19816169012391,
+        "p95": 4.405889722889594
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1672825732736292,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/effort_scale_0.9.json"
+    },
+    {
+      "name": "velocity_scale_0.5",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.445856590195229,
+      "max_pitch_deg": 2.3000737531466164,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.181560235809
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0422,
+      "max_arm_saturation": 0.028,
+      "positive_mechanical_power_W": {
+        "mean": 1.2613288893644283,
+        "max": 19.981643274187324,
+        "p95": 4.31648700418462
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16579007927527173,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/velocity_scale_0.5.json"
+    },
+    {
+      "name": "velocity_scale_0.75",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.091501228759042,
+      "max_pitch_deg": 2.298070929108425,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.05450495419353
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0102,
+      "max_arm_saturation": 0.0206,
+      "positive_mechanical_power_W": {
+        "mean": 1.2946489874461702,
+        "max": 31.33817601473013,
+        "p95": 4.410224344954652
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16781144372849385,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/velocity_scale_0.75.json"
+    },
+    {
+      "name": "friction_0",
+      "status": "NUMERICAL_FAILURE",
+      "failed_checks": [
+        "completed",
+        "numeric_stability",
+        "no_fall",
+        "no_nonleg_contact",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 2.102,
+      "max_roll_deg": 178.3269150643921,
+      "max_pitch_deg": 89.49518262311416,
+      "fell_time_s": 0.07200000000000001,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 17808495012.56857
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.8991436726926736,
+      "max_arm_saturation": 0.12464319695528069,
+      "positive_mechanical_power_W": {
+        "mean": 8058.439262443008,
+        "max": 8342825.199738428,
+        "p95": 13.683977565621962
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": -148.44422759103662,
+        "stop": 0.0
+      },
+      "before_cad_status": "NUMERICAL_FAILURE",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/friction_0.json"
+    },
+    {
+      "name": "friction_0.15",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 2.6582017859930342,
+      "max_pitch_deg": 1.6682751234901843,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.5750752254216
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0042,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2956433017338358,
+        "max": 34.58672348103929,
+        "p95": 3.9472703924744152
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.14137416685981063,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/friction_0.15.json"
+    },
+    {
+      "name": "friction_0.3",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.0938930434706524,
+      "max_pitch_deg": 1.7742183787536883,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.2172293246738
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0042,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.259828613674089,
+        "max": 35.53509792143238,
+        "p95": 4.017124514602636
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.15062231467959544,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/friction_0.3.json"
+    },
+    {
+      "name": "friction_0.6",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.7653442029697435,
+      "max_pitch_deg": 2.0390480055235973,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.11482632562934
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.005,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2477226835276345,
+        "max": 36.41019281819932,
+        "p95": 4.218736198560118
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16765262842062223,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/friction_0.6.json"
+    },
+    {
+      "name": "combined_stress",
+      "status": "FAIL",
+      "failed_checks": [
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 3.5717997756999997,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 2.4320059097974496,
+      "max_pitch_deg": 1.745446002558709,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 348.3778915090493
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.2394,
+      "max_arm_saturation": 0.032,
+      "positive_mechanical_power_W": {
+        "mean": 1.4877053711507433,
+        "max": 21.135235971942294,
+        "p95": 4.20747329434113
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.13997456171072836,
+        "stop": 0.0
+      },
+      "before_cad_status": "FAIL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/combined_stress.json"
+    },
+    {
+      "name": "long_60",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 64.0,
+      "integrated_time_s": 64.0,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 1704.817004982509
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0005625,
+      "max_arm_saturation": 0.0254375,
+      "positive_mechanical_power_W": {
+        "mean": 1.4545108161777056,
+        "max": 22.87512124474607,
+        "p95": 4.402268302407819
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 1.2977328809794149,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/long_60.json"
+    },
+    {
+      "name": "long_180",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 184.0,
+      "integrated_time_s": 184.0,
+      "max_roll_deg": 4.054775321449127,
+      "max_pitch_deg": 2.3045589660536487,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 4900.008720826457
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0001956521739130435,
+      "max_arm_saturation": 0.026782608695652174,
+      "positive_mechanical_power_W": {
+        "mean": 1.4671458537232298,
+        "max": 22.87512124474607,
+        "p95": 4.402792859709878
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 3.950798421660027,
+        "stop": 0.0
+      },
+      "before_cad_status": "FAIL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/long_180.json"
+    },
+    {
+      "name": "timestep_half",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.2735333526966555,
+      "max_pitch_deg": 2.2858186199945467,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 268.1916698762153
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0172,
+      "positive_mechanical_power_W": {
+        "mean": 1.2851314111102565,
+        "max": 32.80111423573382,
+        "p95": 4.283806229369216
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16588406919320645,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/timestep_half.json"
+    },
+    {
+      "name": "self_linked-hulls_nonparent",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 4.115332077450196,
+      "max_pitch_deg": 1.1436160991521296,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 5.448779987138185
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.88,
+      "max_arm_saturation": 0.0,
+      "positive_mechanical_power_W": {
+        "mean": 0.15946825528468941,
+        "max": 0.6557035145518634,
+        "p95": 0.5303505336812631
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_linked-hulls_nonparent.json"
+    },
+    {
+      "name": "self_linked-hulls_all",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 4.902068296506871,
+      "max_pitch_deg": 0.6333780772639283,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 5.420273806887661
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.92,
+      "max_arm_saturation": 0.91,
+      "positive_mechanical_power_W": {
+        "mean": 0.3820661978767952,
+        "max": 1.5318898478135223,
+        "p95": 0.8834388533383876
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_linked-hulls_all.json"
+    },
+    {
+      "name": "self_parts_nonparent",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 84.39502744200216,
+      "max_pitch_deg": 2.2339365201895176,
+      "fell_time_s": 0.076,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 8.087727501224633
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.38,
+      "positive_mechanical_power_W": {
+        "mean": 3.3118002670850353,
+        "max": 13.7782508958687,
+        "p95": 10.020202873157588
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_parts_nonparent.json"
+    },
+    {
+      "name": "self_parts_all",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 179.1986532144916,
+      "max_pitch_deg": 74.65813533641837,
+      "fell_time_s": 0.044000000000000004,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 13.56673445285244
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.99,
+      "positive_mechanical_power_W": {
+        "mean": 12.696114391294469,
+        "max": 99.25206801811085,
+        "p95": 63.77108728538091
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_parts_all.json"
+    },
+    {
+      "name": "self_vhacd_nonparent",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 76.485745518572,
+      "max_pitch_deg": 14.34800052182442,
+      "fell_time_s": 0.08600000000000001,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 5.287859960921795
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.0,
+      "positive_mechanical_power_W": {
+        "mean": 3.101976339963773,
+        "max": 12.848247954303373,
+        "p95": 9.005765577452824
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_vhacd_nonparent.json"
+    },
+    {
+      "name": "self_vhacd_all",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 44.68423715535147,
+      "max_pitch_deg": 8.10865873327556,
+      "fell_time_s": 0.138,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 3.7678979273658078
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.03,
+      "positive_mechanical_power_W": {
+        "mean": 1.2296775434984537,
+        "max": 6.453867538189391,
+        "p95": 4.636768029556113
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_vhacd_all.json"
+    },
+    {
+      "name": "contact_parts",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.047440805764212,
+      "max_pitch_deg": 1.8887105275633642,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 267.6117677689759
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.249121390916948,
+        "max": 35.42713388414324,
+        "p95": 4.2197493521187495
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16646037345934336,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/contact_parts.json"
+    },
+    {
+      "name": "contact_parts_uniform",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.521609607666811,
+      "max_pitch_deg": 2.401289804178005,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 268.02260017050673
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0072,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3119905796279439,
+        "max": 36.00007319938652,
+        "p95": 4.449645429072944
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16646673409411242,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/contact_parts_uniform.json"
+    },
+    {
+      "name": "contact_vhacd",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.090360136014181,
+      "max_pitch_deg": 1.893639102677808,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 267.8006125777489
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0042,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.249253178478788,
+        "max": 33.50770346283774,
+        "p95": 4.193205481072536
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16615285159072038,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/contact_vhacd.json"
+    },
+    {
+      "name": "contact_vhacd_uniform",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.488811651221513,
+      "max_pitch_deg": 2.418042311656718,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 267.9013106672077
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.007,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3098940025436165,
+        "max": 35.85625993786485,
+        "p95": 4.419653990053909
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16676300372076935,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/contact_vhacd_uniform.json"
+    },
+    {
+      "name": "voltage_5.0",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.998200637512429,
+      "max_pitch_deg": 2.2982010940215556,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 267.0333104048548
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0092,
+      "max_arm_saturation": 0.0224,
+      "positive_mechanical_power_W": {
+        "mean": 1.2997610437399667,
+        "max": 31.47218871555879,
+        "p95": 4.396719602339626
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16765270579196603,
+        "stop": 0.0
+      },
+      "before_cad_status": null,
+      "file": "docs/audits/20260905-round2/simulation/stress-final/voltage_5.0.json"
+    },
+    {
+      "name": "voltage_5.5",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.123154858903445,
+      "max_pitch_deg": 2.297307177658462,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.9971618081797
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0082,
+      "max_arm_saturation": 0.02,
+      "positive_mechanical_power_W": {
+        "mean": 1.3034094792143796,
+        "max": 33.72929558508756,
+        "p95": 4.3976824235829355
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16781494319280954,
+        "stop": 0.0
+      },
+      "before_cad_status": null,
+      "file": "docs/audits/20260905-round2/simulation/stress-final/voltage_5.5.json"
+    },
+    {
+      "name": "voltage_6.0",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.240923327166319,
+      "max_pitch_deg": 2.2982587686294527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.97420082404005
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.307797097318215,
+        "max": 35.62979920903849,
+        "p95": 4.426409312911933
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16804439079606254,
+        "stop": 0.0
+      },
+      "before_cad_status": null,
+      "file": "docs/audits/20260905-round2/simulation/stress-final/voltage_6.0.json"
+    },
+    {
+      "name": "servos_self_parts",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 86.00981002225124,
+      "max_pitch_deg": 15.060464117239652,
+      "fell_time_s": 0.060000000000000005,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 16.70341449382872
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.98,
+      "positive_mechanical_power_W": {
+        "mean": 12.0659605717578,
+        "max": 86.38681217385408,
+        "p95": 44.319702358308405
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": null,
+      "file": "docs/audits/20260905-round2/simulation/stress-final/servos_self_parts.json"
+    },
+    {
+      "name": "servos_self_vhacd",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": false,
+      "case_matches_plan": true,
+      "changed_input_files": [
+        "hardware/src/config.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_chassis.py"
+      ],
+      "mass_kg": 2.7475382889999995,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 40.60493162523992,
+      "max_pitch_deg": 10.581967539908007,
+      "fell_time_s": 0.152,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 3.8077660228729426
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.99,
+      "positive_mechanical_power_W": {
+        "mean": 1.5778814570254343,
+        "max": 9.034086919466857,
+        "p95": 6.426980857213277
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": null,
+      "file": "docs/audits/20260905-round2/simulation/stress-final/servos_self_vhacd.json"
+    }
+  ]
+}

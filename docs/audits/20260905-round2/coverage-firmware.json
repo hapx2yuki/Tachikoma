@@ -1,0 +1,428 @@
+{
+  "date": "2026-09-05",
+  "reviewer": "firmware_audit",
+  "file_count": 35,
+  "files": [
+    {
+      "path": "firmware/platformio.ini",
+      "sha256": "10ce5b2baa686fb06545bc34556915f8d0e7451d82371a97f007989ff89971c0",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/arms.h",
+      "sha256": "e948252993300995cf27358b5416ae63ca6b578567532189589e522895854af4",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/audio.h",
+      "sha256": "df25877876625d74c6e345f53fb18781eefbe6db6fe5b11bc6aac54216bd2964",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [
+        "F2-06",
+        "F2-07"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/config.h",
+      "sha256": "b5888d388d6f91f4faf3066e8028dacb98050d8293621225fbf5a45e25eee4b6",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/control.h",
+      "sha256": "2f575d7d35f79ad1389687a9c916217827d0bff8ed70f0d48034fc955de560cc",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [
+        "F2-03"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/eyes.h",
+      "sha256": "c184c72ccb514d816802792f16e456545c2900df484c84a6a201eaf83679934e",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/gait.h",
+      "sha256": "b03436f06287db562ec5f2b613d6cf80bcdc714a52caa1c7280f71b1a3b2f1e8",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/ik.h",
+      "sha256": "a06ab5dc57766a9349a6b8db47e826357fc019118cec619d1656acfbb5c0130b",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/leg_output.h",
+      "sha256": "63589c7187352c8d484055f43285649dcfc4cbbec4ce70ef0822b33d5e3bea53",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/main.cpp",
+      "sha256": "b81be5fdd779999621b961ac731a3ea279beee3853068cc1d8285408f741df89",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [
+        "F2-03",
+        "F2-04",
+        "F2-05"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/peripherals.h",
+      "sha256": "41ebbddbc0991cd9e90882976e5e717ae0d3a622f65a88da252eb21f7c5b6667",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [
+        "F2-01",
+        "F2-09"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/servos.h",
+      "sha256": "3b7d4f3697088d2ba2a06f5e83e42baa3fbb7af47f91763203d34ae1731299bd",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [
+        "F2-02",
+        "F2-04"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "firmware/src/web_ui.h",
+      "sha256": "26ee6231778f417745adcf76df980abb823913e2a98ff03c4ea031dbee72eb11",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [
+        "F2-03",
+        "F2-05"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-tests.log",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_audio_test.cpp",
+      "sha256": "a523ab634618845f37980b1962ad248c87a1ca78c0e4772b5a6484251428412d",
+      "review_method": "全文通読・試験対象が実コードであることと期待値/故障注入を確認・ホスト実行",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_calibration_main_test.cpp",
+      "sha256": "3fcf79ebc78b68deadd49652031126080c91961cb4cc5882ae9f4cae89038847",
+      "review_method": "全文通読・試験対象が実コードであることと期待値/故障注入を確認・ホスト実行",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_contract_test.cpp",
+      "sha256": "0d0172154c7b7f3576b579f945f8b959ad993b813c64ca823f0a4d3272fad1be",
+      "review_method": "全文通読・試験対象が実コードであることと期待値/故障注入を確認・ホスト実行",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_fault_test.cpp",
+      "sha256": "c98cb6d55a9ff17a086dcabeec00fa9ddaecb6dbd2f4025361e7e9a7929dec82",
+      "review_method": "全文通読・試験対象が実コードであることと期待値/故障注入を確認・ホスト実行",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_main_test.cpp",
+      "sha256": "a440f07550ad91849409eba39b70575fd6f49df2ed8a5f34db3fbaff7ddead33",
+      "review_method": "全文通読・試験対象が実コードであることと期待値/故障注入を確認・ホスト実行",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_run.py",
+      "sha256": "92f0c23770b09e0deb4c4f3a8a8f62b1ee23518f72e2e06d4b28fd61b87ed6c7",
+      "review_method": "全文通読・試験対象が実コードであることと期待値/故障注入を確認・ホスト実行",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/Adafruit_NeoPixel.h",
+      "sha256": "4f1dde5e626c82f7d879e68da3528409ef0d68c611d9a16ee13e6650ab5f74fe",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/Adafruit_PWMServoDriver.h",
+      "sha256": "8fd826de36167d46d7713a1037579143f5cec727d05af6167cfe00106e0d7bb5",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/Arduino.h",
+      "sha256": "c8c23f988e194540dff081435850423a6ee3d7c59961d322542ffd8be645ce3c",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/DFRobotDFPlayerMini.h",
+      "sha256": "58febb4349f6aa16817946b026fb1b02eff12d0bd101ca930da33e8ce2011c52",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/ESPAsyncWebServer.h",
+      "sha256": "64a6388aa7fd7997c85d0c218fef3ab8eec90c16a41137c25c77cf1f66e9636c",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/ESPmDNS.h",
+      "sha256": "8e895135c36ae8584ad1d029546fe40c61d0fc5e0c6f30f0690859274eb18682",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/HardwareSerial.h",
+      "sha256": "7102d373940d0a91639c2e0a584340173bf4baea98f65d92160d20bd37d48200",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/Preferences.h",
+      "sha256": "d1f8570aaa6cf88e4632e7f928ddcf120559579d40028a91bd2b1a24bfd893bc",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/WiFi.h",
+      "sha256": "8b1e14e93965a0275862e6d823355c37bb4f96725022cb39beb0ddaf9a2663c0",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/Wire.h",
+      "sha256": "07ac2825f63b0c180d315d5b7842b5d1a26456874391b6e8f9f3e0a524981e64",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/driver/i2s.h",
+      "sha256": "81a9d1c3f9655cb3713c5d83ac00a4dcc68d2cf819d50cc2a41050ee79006b09",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/esp_task_wdt.h",
+      "sha256": "dc653eeda366dd06f369899c1d71ded0e82bd9fc35192cbb6ed6b8db2fda7fed",
+      "review_method": "全文通読・実コード実行用の返値/部分書込/故障注入モデル確認",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_ui_test.cjs",
+      "sha256": "8a8107d8946c3e2d8daedf390bad84e99f6f71b1fad9375559aedaa7bdd502d5",
+      "review_method": "全文通読・試験対象が実コードであることと期待値/故障注入を確認・ホスト実行",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/tests/firmware_voice_test.py",
+      "sha256": "8e49ef4acb907b97e053d956722b2b177c358392e84daf600056636aae6221b1",
+      "review_method": "全文通読・試験対象が実コードであることと期待値/故障注入を確認・ホスト実行",
+      "findings": [],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/voice_bridge.py",
+      "sha256": "7b5f520897f9ac72afd4c4ee3c0433f2cac1b5613781da948ae476787ca3efb7",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [
+        "F2-08",
+        "F2-09"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md",
+        "tools/tests/firmware_voice_test.py",
+        "docs/audits/20260905-round2/firmware-host-final.log"
+      ],
+      "limitations": "ホストの疑似I/Oとビルド。実機・実API未確認。"
+    },
+    {
+      "path": "tools/voice_persona.md",
+      "sha256": "f36e3873e3ca079954cd5cd0b50a45943e9daa29ef5659c959d188c2300ff0e1",
+      "review_method": "全文通読・呼出し元/状態遷移/境界値/配線割当との照合",
+      "findings": [
+        "F2-09"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/firmware.md"
+      ],
+      "limitations": "会話へ渡される情報の静的確認。"
+    }
+  ]
+}

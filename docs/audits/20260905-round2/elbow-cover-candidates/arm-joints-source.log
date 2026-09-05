@@ -1,0 +1,83 @@
+{
+  "mode": "source",
+  "step_deg": 0.25,
+  "firmware_limits_match": {
+    "ARM_PITCH_MIN": true,
+    "ARM_PITCH_MAX": true,
+    "ARM_ELBOW_MIN": true,
+    "ARM_ELBOW_MAX": true
+  },
+  "pairs": {
+    "shoulder_upper": {
+      "worst_mm3": 0.0,
+      "samples": 521
+    },
+    "upper_forearm": {
+      "worst_mm3": 0.0,
+      "samples": 381
+    },
+    "elbow_shell_forearm": {
+      "worst_mm3": 0.0,
+      "samples": 381
+    },
+    "elbow_case_forearm": {
+      "worst_mm3": 0.0,
+      "samples": 381
+    }
+  },
+  "fixed_pairs": {
+    "upper_elbow_shell_mm3": 0.0,
+    "elbow_case_shell_mm3": 0.0,
+    "elbow_case_upper_mm3": 0.0,
+    "shell_outside_rotational_clearance_mm3": 0.0
+  },
+  "elbow_cover_center_y_mm": -13.8,
+  "forearm_horn_disc_lost_mm3": 5.389907812604344e-16,
+  "shoulder_servo_frame_lost_mm3": 0.0,
+  "forearm_sections": [
+    {
+      "x_mm": 10.0,
+      "area_mm2": 97.78531108351488
+    },
+    {
+      "x_mm": 12.0,
+      "area_mm2": 151.58741859928278
+    },
+    {
+      "x_mm": 14.0,
+      "area_mm2": 312.77636896513735
+    },
+    {
+      "x_mm": 15.0,
+      "area_mm2": 494.0921020212336
+    },
+    {
+      "x_mm": 15.9,
+      "area_mm2": 453.96273103582575
+    }
+  ],
+  "parts": {
+    "shoulder_bracket": {
+      "volume_mm3": 7513.883799595132,
+      "components": 1,
+      "watertight": true
+    },
+    "upper_arm": {
+      "volume_mm3": 8413.954863149298,
+      "components": 1,
+      "watertight": true
+    },
+    "forearm": {
+      "volume_mm3": 2802.386046732598,
+      "components": 1,
+      "watertight": true
+    },
+    "elbow_shell": {
+      "volume_mm3": 1490.6025975462492,
+      "components": 1,
+      "watertight": true
+    }
+  },
+  "strength_status": "UNVERIFIED: 断面積は幾何記録。接着・層間強度と疲労の実証ではない",
+  "pass": true
+}

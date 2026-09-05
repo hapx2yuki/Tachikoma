@@ -135,13 +135,13 @@ def main():
     new_hub_y = C.ARM_MOUNT_HUB_Y
     new_nk = to_tm(MC.pod_neck())
     draw_panel(axes[1], new_hub_y, zb, new_nk,
-               f"AFTER: ARM_MOUNT_HUB_Y = {new_hub_y:+.1f}mm (シャーシ中央)\n"
+               f"AFTER: ARM_MOUNT_HUB_Y = {new_hub_y:+.1f}mm (現在値)\n"
                f"pod_neck 頭部逃がしカット込み (HEAD_RELIEF_PROTECT_H="
                f"{MC.HEAD_RELIEF_PROTECT_H:.1f}mm)")
 
     axes[0].legend(loc="lower left", fontsize=7)
     axes[1].legend(loc="lower left", fontsize=7)
-    fig.suptitle("頭部中央寄せ (ARM_MOUNT_HUB_Y 12→0) 上面図 before/after", fontsize=13)
+    fig.suptitle(f"頭部位置比較 (ARM_MOUNT_HUB_Y {old_hub_y:g}→{new_hub_y:g}) 上面図", fontsize=13)
     fig.tight_layout()
     out = DOCS / "vis_head_center_before_after.png"
     fig.savefig(out, dpi=150)

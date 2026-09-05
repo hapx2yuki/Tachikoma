@@ -1,0 +1,437 @@
+{
+  "created_utc": "2026-09-05T07:40:11.866198+00:00",
+  "reason": "全75条件は同一世代入力で完走。シャーシと口部の新干渉修正に先立つ履歴として保持。現在の入力一致は主張しない。",
+  "files": [
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/abrupt_reverse.json",
+      "sha256": "650ebef35e30acdbbb95e468af8ea1108665a4f9cbff1b6b23cc474e19bbd516",
+      "bytes": 451071
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/back.json",
+      "sha256": "8597193a0165c1c81ad5851919094eb68f7d794d8e628e3255eaa43112a732d2",
+      "bytes": 232147
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/combined_stress.json",
+      "sha256": "96b968bfc27f5951ac7d57ac41e0e7cece76949a3315355340f80161ae72cdc0",
+      "bytes": 232461
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/compound.json",
+      "sha256": "0ea6103879aa013c5af10397350ded533c30f0a0401ddf684f475fc216cdb42c",
+      "bytes": 231980
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/contact_parts.json",
+      "sha256": "789a7f9f2936b54e337506fdcfcd06d1f63374ec253f352449dec110e8872c83",
+      "bytes": 230620
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/contact_parts_uniform.json",
+      "sha256": "20f35864674a790205f27a7dcce33b78894c0796e6e1d17fa52d99d98429fcae",
+      "bytes": 231647
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/contact_vhacd.json",
+      "sha256": "47c989e2420c6f4f07b0a5f8450906d0f94b6add42536ecca5980d3171c726d4",
+      "bytes": 230999
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/contact_vhacd_uniform.json",
+      "sha256": "8243b0c64a84ebd86fac00de55ce71c9e86b032f9e1f87aa47d9b712e977370d",
+      "bytes": 231611
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/effort_scale_0.5.json",
+      "sha256": "5149f926b0bfd7832288d3889e1a1b017fd8c3d10425a565c46d9800d7b13f14",
+      "bytes": 232372
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/effort_scale_0.7.json",
+      "sha256": "65346523ef1b7af166743eb85cd3a7aeebadd26266e6ca34bbda27a74639c5a9",
+      "bytes": 232066
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/effort_scale_0.9.json",
+      "sha256": "322dbe9405522b6c6f9a2ee8048635f7d3b7e18a95bc82d8c8dab4ad57da1ada",
+      "bytes": 231778
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/friction_0.15.json",
+      "sha256": "6e286fe4449dec144180a60f1477cb5f0e0d7c95a1fbcfe3c567df852d8af64b",
+      "bytes": 232345
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/friction_0.3.json",
+      "sha256": "cdaeed0cbddedfb26ca42b09e7cb7893dc6e4c4c86b7db800c3c9a56121cc575",
+      "bytes": 231987
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/friction_0.6.json",
+      "sha256": "9a037d531eb0b806e26b5b80f8d9c7a3855aeca0776717f5460eeaaa3bc90279",
+      "bytes": 232125
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/friction_0.json",
+      "sha256": "a970fcbfc905a501bb7423756a23da4c2c3aeb4feecab534574afa35687eb709",
+      "bytes": 77206
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/height_110.json",
+      "sha256": "6d6be8afa03c223b14da4179f8e58f92d7600ae25672c4abffb3eee940994f6d",
+      "bytes": 232313
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/height_120.json",
+      "sha256": "6c9bda9c15004a0d0d76ff46bc2f1f110e5d7be652ceaa713c2d81d07a66d434",
+      "bytes": 232048
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/height_125.json",
+      "sha256": "45e514db3123b2b9f68019f7f0844ca657584334140c80355aa7f603c786ad0a",
+      "bytes": 231981
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/height_130.json",
+      "sha256": "993858fe84a3c0076af6dced22506083075842f97faa3de53f13a18dabc6409a",
+      "bytes": 232002
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/height_changes.json",
+      "sha256": "c03ff132e4a0e6f2ef56478c6e1d1fbbc0978cf616c66884fc151db58540df58",
+      "bytes": 348967
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/left.json",
+      "sha256": "95f4a6b1c6f5d575dee0a0f2ac6417f1be70b850151c4d852c17e80e46ca8f4e",
+      "bytes": 232280
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/long_180.json",
+      "sha256": "12a4fa2faa3491738de7446c8abd8bd00e4285e9ffbe2be48e6a898f3a383444",
+      "bytes": 3554004
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/long_60.json",
+      "sha256": "c9f590d7430e815b1c113b22b15289882e2ba2b628c0f8cb3605ca649d941e51",
+      "bytes": 1263601
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/mass_scale_0.7.json",
+      "sha256": "00dddf728b1d2795ab136163b5e3f493025c84d7065b586baab815c504aecf60",
+      "bytes": 232307
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/mass_scale_1.3.json",
+      "sha256": "e867246ca7fe58b6970576a48d6339c461967f1559ae8b104ac99e914547e16a",
+      "bytes": 232009
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/native_nominal.json",
+      "sha256": "300c31ef1eb3f0dcd8f85378af9a6297b440a4688b7ea90affdf518f769240c5",
+      "bytes": 231851
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/push_10N.json",
+      "sha256": "f0f96c6fc07930b22dd46931724e063939db14358df9b74ca693a9202280c6c2",
+      "bytes": 232014
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/push_2N.json",
+      "sha256": "6fc568738ea07e8517303b2aa72e79eb44224e17252b152a82c8e12c3d586e2f",
+      "bytes": 232005
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/push_5N.json",
+      "sha256": "bd236cd6bc0a9a930f1c8e92c99e104301fb285b2200161ddfbf0ad4ed75473f",
+      "bytes": 231954
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/right.json",
+      "sha256": "5dd5844686a9bf3c2ffc5eea1ff4c972c379b473486419082f5a8625f4931d37",
+      "bytes": 231891
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/self_linked-hulls_all.json",
+      "sha256": "9da89a7095157d03359ce78e9ea5b541fb469906f3d6b103c98503603c3652ad",
+      "bytes": 43893
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/self_linked-hulls_nonparent.json",
+      "sha256": "909fb7cbec0ca3cc9b6d18cafbc9b87ec7f99d6941592730716f8682083fa551",
+      "bytes": 42003
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/self_parts_all.json",
+      "sha256": "78e3148a695fba98bf4ada6b409edd241e174ad75eb2cd2b9a78244e1b652217",
+      "bytes": 43479
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/self_parts_nonparent.json",
+      "sha256": "c46c9747b7787577542c9cfca633aa61f2b5971dad5aad4603119612171e826a",
+      "bytes": 41579
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/self_vhacd_all.json",
+      "sha256": "9bcb6c6eb65fe874b08f10b8d333fe8e5a542800d0b74787798e72f9db078466",
+      "bytes": 42577
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/self_vhacd_nonparent.json",
+      "sha256": "fbcd72d688ba40e3dfc5756968ee73d70c67e14381fd1e46fc8ebaac6f3b4c6d",
+      "bytes": 41373
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/servos_self_parts.json",
+      "sha256": "8f96d8eaa7e1aa6d725e14597ef099fca876b07d59e15107275f9202d41732a8",
+      "bytes": 43629
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/servos_self_vhacd.json",
+      "sha256": "d6052adc8edbb393867f3d5c609e31632e638bdff4006420575db5317b7e12a7",
+      "bytes": 42955
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/slope_-10.json",
+      "sha256": "ef30fb8cd38b5a842f8ec662506c6856cd0692b17c55fc46521a2ece1483ee88",
+      "bytes": 231063
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/slope_-5.json",
+      "sha256": "5b83ca37c4fc7f061ee8d0cab79af56469e1300c6e047e5b72a0e5ba50b42d33",
+      "bytes": 231586
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/slope_10.json",
+      "sha256": "d715ece9661973d3d0f61706f433a3bd451eab5f43cd2ec5b123ba61fe253208",
+      "bytes": 229944
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/slope_5.json",
+      "sha256": "8f1375fb29183f8cba452b50a51950ca90a61df4aac20279b00e4215da1cf719",
+      "bytes": 230980
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/step_10.json",
+      "sha256": "ad1ddcdc98ec5e586e66f7e55af51da167a0f5688ad0a0359fa9cf741e09a83b",
+      "bytes": 231639
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/step_2.json",
+      "sha256": "4543953cb3e6b07c8fe5f4fb786464a6da6d4c27b0ad4ac4325d6860c0bd4069",
+      "bytes": 231859
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/step_5.json",
+      "sha256": "4fc812f9eb2b6f540d367d9ae192aeba31934e65ab0891fece2facec6c602163",
+      "bytes": 231806
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_00.json",
+      "sha256": "0003abf50ffa5e1dcce850fc319c88efcf1d5295bb22fa234e6734fd26d4752f",
+      "bytes": 203757
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_01.json",
+      "sha256": "01fba3740c06dc0ced6aa679a3a8ef345d3e3d6c65a07162fc90db91b177edbc",
+      "bytes": 205752
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_02.json",
+      "sha256": "72c0e1bec4303d717d7ebb648fda62e6ca2b96b5410c7e3cac9462915582fc27",
+      "bytes": 207638
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_03.json",
+      "sha256": "57178d7217175115771096260e2f2c11ceb48885752cc34b7ede1ba5b8991fb6",
+      "bytes": 209709
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_04.json",
+      "sha256": "ec0d123b55327e3bd2bd61582b87531954de8d7227d5235b60694e1e57c7c156",
+      "bytes": 211523
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_05.json",
+      "sha256": "0bb2bfe44e5a82f15c239e25c85453ae02856d4a1578c20f0635fa296ef917d3",
+      "bytes": 213484
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_06.json",
+      "sha256": "ac923bccbcc72b4b7b672c8c520532b169c69f5dc1e35c61ff3cd072b6bbc9a4",
+      "bytes": 215379
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_07.json",
+      "sha256": "76a59c662bf6364836e33104f705e16fa253a9632aebbbccbf1c3f19c71f1a2d",
+      "bytes": 217362
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_08.json",
+      "sha256": "509efb27ceb7e7530f15637b20193c872fcbf6dc25631e95833944d22760c035",
+      "bytes": 219347
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_09.json",
+      "sha256": "b57302e810fc8d7a6f73f21e7cc7c9f9d71392e48d1cc6b696bf0b43f0d623d8",
+      "bytes": 221147
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_10.json",
+      "sha256": "4221ed60ae593b3bee92a9d265a0142b16ea6c2bcdcba609e770d8a1d3e2d9ae",
+      "bytes": 223051
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_11.json",
+      "sha256": "b8bc67ea3a6aa1b7ca30b5c669a82e461936ea0cf011ad1fac9a7a2b07de4dd3",
+      "bytes": 225008
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_12.json",
+      "sha256": "0251acca213fd52fe98695321cb8a0c808779a66459441ea1e4eebaed861acf7",
+      "bytes": 226889
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_13.json",
+      "sha256": "9cda028cc80f94d022d45a36b25f3bf17d0e48904fc4138f9f5fab53cab56733",
+      "bytes": 228872
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_14.json",
+      "sha256": "137769d4ff9beb4316b8fbbfdf7b9fd1896bd1e746a6c3de540fb4fe372ef88a",
+      "bytes": 230704
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/stop_phase_15.json",
+      "sha256": "9856deca52f4f47056fa007224172cb08de9f0be80d14a71456f28008b2330fc",
+      "bytes": 232646
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/timestep_half.json",
+      "sha256": "aa8cba5defeedf470c967b4b218d096e498f5270bff636624986e58bb2589034",
+      "bytes": 232028
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/turn_ccw.json",
+      "sha256": "2b6457cf073f6a3ea42e9e322f5e72e7158464903a7103a092bd2e81032b68d5",
+      "bytes": 232080
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/turn_cw.json",
+      "sha256": "26fc305e691bd2c7c25cfd3c715639a01b13198f8c913217b05233ebfce0d2b6",
+      "bytes": 232121
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/velocity_scale_0.5.json",
+      "sha256": "b31d2d84fc6c4f8615ddbec3d3eb163440b0af47a1660e28da903c42614a549a",
+      "bytes": 232082
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/velocity_scale_0.75.json",
+      "sha256": "da54ebf849ac0e6ab6b438248104283a6612d6e28d1940f2edee8430be04d14f",
+      "bytes": 231936
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/voltage_5.0.json",
+      "sha256": "1bede873c07ba45cb5ce7c593d9b2da5420107683585912c07521fe996fa7f4d",
+      "bytes": 232026
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/voltage_5.5.json",
+      "sha256": "6c4343c672f6949bc2ac4feffd3517e34b1681f98c19379596adae9baf7e7e10",
+      "bytes": 232027
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/voltage_6.0.json",
+      "sha256": "04e3b000f85290d842446743063d23a2724f7a619eef43cc78e9fdd79f6fe65f",
+      "bytes": 231962
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/zero_direct.json",
+      "sha256": "dd9b2bd863cbd79132dccbf7bd9d395fc315da0803aa038c9ab0bfff10864c69",
+      "bytes": 231785
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final/zero_sequential.json",
+      "sha256": "dcdecbc94430ee056e598d7e368c984074ac8e4205eb3281ab53c4591b35d8d6",
+      "bytes": 250153
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/foot-candidate-final/toe_shoe_forward_mu0.35.json",
+      "sha256": "1c31dacaeb3190ee2e4694921250f17ff9f160ddaa140448184074223dcf9070",
+      "bytes": 233919
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/foot-candidate-final/toe_shoe_forward_mu0.6.json",
+      "sha256": "c6528633b9bf446af6bcaab0752354f6365e8a3bf5bac3b3995947a7e38e6a40",
+      "bytes": 233830
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/foot-candidate-final/toe_shoe_forward_mu1.0.json",
+      "sha256": "b06ba850a680b7061742c37de829ad9be379af89077e31d9539576d340311a43",
+      "bytes": 233912
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/foot-candidate-final/toe_shoe_right_mu0.6.json",
+      "sha256": "ece2e964c75539f36463e5d4d6cb8ca13202c6e7bc8b61b0b0fe9182b0a60f80",
+      "bytes": 233801
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/stress-final.log",
+      "sha256": "11eb4a9a75744aadab70390c1b9972c635638db4ca284ff9fc19e45d1090f5a9",
+      "bytes": 10762
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/foot-candidate-final.log",
+      "sha256": "dd5b986f8cde0594ebc0e6d6952e39f70badd4dfdc0a8e6a3e97a5b1c4cc21e0",
+      "bytes": 644
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/all-pairs-native-20servos-final.json",
+      "sha256": "c3c41604b64f001433033a29521c584eebc6a002fde66071fcb7543bcdd4bae7",
+      "bytes": 415591
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/all-pairs-native-20servos-final.log",
+      "sha256": "4dc94ae9dc190fe2e412da3a9e198ea141d7abe36c86c8f2c0a486fca0cb8126",
+      "bytes": 1263
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/scenario_summary.json",
+      "sha256": "95b26f4cca2b9d6bd8f859117a00a119f076ae9ab14bae8f8e72609ce2ce14aa",
+      "bytes": 88851
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/foot-candidate-summary.json",
+      "sha256": "9dde2dfb9298d063b38a70838ca7864467084b0adac6dbb2509bba04752e0624",
+      "bytes": 6293
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/simulation-results.png",
+      "sha256": "af93c24276ff0fcd2b6f1ec738fa28b760fa06b84709e6d40884f4cc4f06fc30",
+      "bytes": 253400
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/check-urdf-final.log",
+      "sha256": "db10346d207b32a3b5d869f228f43180db3e77eba38c859ebfe69b9c447f80b5",
+      "bytes": 33735
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/regression-final.log",
+      "sha256": "06eb32583f03459aeab0c851c1d8263419bf2a9978ffc333a64ae06a705e0ed6",
+      "bytes": 1758
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/old-distributions.json",
+      "sha256": "ee4f85808f8138403080dc3f720f9b3360ea67f2b20d7f2a4eba937b4c7cf001",
+      "bytes": 77963
+    },
+    {
+      "path": "docs/audits/20260905-round2/simulation/before-mouth-clearance/mujoco-numerical-warnings.log",
+      "sha256": "75c0997c6e8c9a4662cd968a8f085c2081da579cf54ef2475c8e03e3b38206fd",
+      "bytes": 357
+    }
+  ],
+  "later_validity_finding": "SIM-12: 補正慣性と質量変更後の派生定数更新漏れを後から発見。75の動的結果は修正前モデルの履歴であり、最終物理根拠に流用しない。元部品Boolean交差の幾何測定は派生慣性定数と独立。"
+}

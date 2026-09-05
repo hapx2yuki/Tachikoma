@@ -1,0 +1,36 @@
+test_failed_scenario_has_nonzero_exit (__main__.SimulationRegression.test_failed_scenario_has_nonzero_exit) ... ok
+test_fallback_count_includes_recovered_ik (__main__.SimulationRegression.test_fallback_count_includes_recovered_ik) ... ok
+test_holding_really_removes_sway (__main__.SimulationRegression.test_holding_really_removes_sway) ... ok
+test_inertial_mount_origins_and_pad_mass (__main__.SimulationRegression.test_inertial_mount_origins_and_pad_mass) ... FAIL
+test_native_firmware_trace (__main__.SimulationRegression.test_native_firmware_trace) ... ok
+test_native_sequential_output_and_quantization (__main__.SimulationRegression.test_native_sequential_output_and_quantization) ... ok
+test_no_phantom_base_damping_or_inertia (__main__.SimulationRegression.test_no_phantom_base_damping_or_inertia) ... ok
+test_signed_forward_and_short_walk (__main__.SimulationRegression.test_signed_forward_and_short_walk) ... ok
+test_speed_torque_envelope (__main__.SimulationRegression.test_speed_torque_envelope) ... ok
+
+======================================================================
+FAIL: test_inertial_mount_origins_and_pad_mass (__main__.SimulationRegression.test_inertial_mount_origins_and_pad_mass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/uratayuuki/Documents/Tachikoma/tools/tests/simulation_regression.py", line 80, in test_inertial_mount_origins_and_pad_mass
+    np.testing.assert_allclose(E._eye_mount(0)[:3,3]-frame[:3,3],
+  File "/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 1768, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=0
+
+Mismatched elements: 1 / 3 (33.3%)
+Mismatch at index:
+ [1]: 0.0 (ACTUAL), 5.133876056849585e-16 (DESIRED)
+Max absolute difference among violations: 5.13387606e-16
+Max relative difference among violations: 1.
+ ACTUAL: array([-4.192128,  0.      ,  4.43126 ])
+ DESIRED: array([-4.192128e+00,  5.133876e-16,  4.431260e+00])
+
+----------------------------------------------------------------------
+Ran 9 tests in 3.814s
+
+FAILED (failures=1)
+native firmware trace: 1563 frames, max angle error 0.000895 deg

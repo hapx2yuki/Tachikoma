@@ -1,0 +1,8 @@
+[head-vs-pod_neck] ARM_MOUNT_HUB_Y = 11.0
+  (参考, 除外域込み全体) Head_Bottom vs pod_neck 全体: inter_vol = 0.0000 cm^3
+  (参考, 除外域込み全体) Head_Top    vs pod_neck 全体: inter_vol = 0.3108 cm^3
+  除外域 (内部実装扱い, 基部ブラケットパッド footprint, 厚み8.0mm) を除いた判定対象で再評価:
+  Head_Bottom vs pod_neck(除外域を除く): inter_vol = 0.0000 cm^3
+  Head_Top    vs pod_neck(除外域を除く): inter_vol = 0.0000 cm^3
+  clearance (除外域を除く): Head_Bottom=16.419mm  Head_Top=2.706mm  (OK, 基準 >=2mm)
+RESULT: PASS

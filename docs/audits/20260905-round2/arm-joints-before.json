@@ -1,0 +1,5207 @@
+{
+  "mode": "STL",
+  "step_deg": 0.25,
+  "firmware_limits_match": {
+    "ARM_PITCH_MIN": true,
+    "ARM_PITCH_MAX": true,
+    "ARM_ELBOW_MIN": true,
+    "ARM_ELBOW_MAX": true
+  },
+  "pairs": {
+    "shoulder_upper": {
+      "worst_mm3": 54.57596294504388,
+      "samples": [
+        {
+          "angle_deg": -45.0,
+          "intersection_mm3": 54.57596294504388
+        },
+        {
+          "angle_deg": -44.75,
+          "intersection_mm3": 54.32275009246883
+        },
+        {
+          "angle_deg": -44.5,
+          "intersection_mm3": 54.07188535331608
+        },
+        {
+          "angle_deg": -44.25,
+          "intersection_mm3": 53.82353013776516
+        },
+        {
+          "angle_deg": -44.0,
+          "intersection_mm3": 53.577632754158316
+        },
+        {
+          "angle_deg": -43.75,
+          "intersection_mm3": 53.33391128903876
+        },
+        {
+          "angle_deg": -43.5,
+          "intersection_mm3": 53.092546601832645
+        },
+        {
+          "angle_deg": -43.25,
+          "intersection_mm3": 52.853737568317754
+        },
+        {
+          "angle_deg": -43.0,
+          "intersection_mm3": 52.617690345795836
+        },
+        {
+          "angle_deg": -42.75,
+          "intersection_mm3": 52.384631939064846
+        },
+        {
+          "angle_deg": -42.5,
+          "intersection_mm3": 52.15483078291001
+        },
+        {
+          "angle_deg": -42.25,
+          "intersection_mm3": 51.928565846783826
+        },
+        {
+          "angle_deg": -42.0,
+          "intersection_mm3": 51.706117886706245
+        },
+        {
+          "angle_deg": -41.75,
+          "intersection_mm3": 51.48779061357997
+        },
+        {
+          "angle_deg": -41.5,
+          "intersection_mm3": 51.27394239392747
+        },
+        {
+          "angle_deg": -41.25,
+          "intersection_mm3": 51.06494267840568
+        },
+        {
+          "angle_deg": -41.0,
+          "intersection_mm3": 50.8611774420618
+        },
+        {
+          "angle_deg": -40.75,
+          "intersection_mm3": 50.66308542321844
+        },
+        {
+          "angle_deg": -40.5,
+          "intersection_mm3": 50.471039159523436
+        },
+        {
+          "angle_deg": -40.25,
+          "intersection_mm3": 50.285055907228006
+        },
+        {
+          "angle_deg": -40.0,
+          "intersection_mm3": 50.10505266344717
+        },
+        {
+          "angle_deg": -39.75,
+          "intersection_mm3": 49.93094895394392
+        },
+        {
+          "angle_deg": -39.5,
+          "intersection_mm3": 49.76266681336014
+        },
+        {
+          "angle_deg": -39.25,
+          "intersection_mm3": 49.60013075698967
+        },
+        {
+          "angle_deg": -39.0,
+          "intersection_mm3": 49.44326775488146
+        },
+        {
+          "angle_deg": -38.75,
+          "intersection_mm3": 49.292007254654
+        },
+        {
+          "angle_deg": -38.5,
+          "intersection_mm3": 49.146250233065096
+        },
+        {
+          "angle_deg": -38.25,
+          "intersection_mm3": 49.005438351584104
+        },
+        {
+          "angle_deg": -38.0,
+          "intersection_mm3": 48.86931780797376
+        },
+        {
+          "angle_deg": -37.75,
+          "intersection_mm3": 48.737807671902765
+        },
+        {
+          "angle_deg": -37.5,
+          "intersection_mm3": 48.61083068858969
+        },
+        {
+          "angle_deg": -37.25,
+          "intersection_mm3": 48.4883229280719
+        },
+        {
+          "angle_deg": -37.0,
+          "intersection_mm3": 48.3702289515673
+        },
+        {
+          "angle_deg": -36.75,
+          "intersection_mm3": 48.25649796918627
+        },
+        {
+          "angle_deg": -36.5,
+          "intersection_mm3": 48.147079182336036
+        },
+        {
+          "angle_deg": -36.25,
+          "intersection_mm3": 48.04191934372987
+        },
+        {
+          "angle_deg": -36.0,
+          "intersection_mm3": 47.94097104730144
+        },
+        {
+          "angle_deg": -35.75,
+          "intersection_mm3": 47.84419110911518
+        },
+        {
+          "angle_deg": -35.5,
+          "intersection_mm3": 47.75153996960726
+        },
+        {
+          "angle_deg": -35.25,
+          "intersection_mm3": 47.66298041072681
+        },
+        {
+          "angle_deg": -35.0,
+          "intersection_mm3": 47.57845199717904
+        },
+        {
+          "angle_deg": -34.75,
+          "intersection_mm3": 47.49788989039422
+        },
+        {
+          "angle_deg": -34.5,
+          "intersection_mm3": 47.421227099552155
+        },
+        {
+          "angle_deg": -34.25,
+          "intersection_mm3": 47.34839489781259
+        },
+        {
+          "angle_deg": -34.0,
+          "intersection_mm3": 47.27932638232464
+        },
+        {
+          "angle_deg": -33.75,
+          "intersection_mm3": 47.213956594516056
+        },
+        {
+          "angle_deg": -33.5,
+          "intersection_mm3": 47.15222250757694
+        },
+        {
+          "angle_deg": -33.25,
+          "intersection_mm3": 47.094063019975884
+        },
+        {
+          "angle_deg": -33.0,
+          "intersection_mm3": 47.03941914665406
+        },
+        {
+          "angle_deg": -32.75,
+          "intersection_mm3": 46.98801788389188
+        },
+        {
+          "angle_deg": -32.5,
+          "intersection_mm3": 46.9393345851097
+        },
+        {
+          "angle_deg": -32.25,
+          "intersection_mm3": 46.893281005926625
+        },
+        {
+          "angle_deg": -32.0,
+          "intersection_mm3": 46.84978550128063
+        },
+        {
+          "angle_deg": -31.75,
+          "intersection_mm3": 46.80878445530455
+        },
+        {
+          "angle_deg": -31.5,
+          "intersection_mm3": 46.77022649051238
+        },
+        {
+          "angle_deg": -31.25,
+          "intersection_mm3": 46.73406572943201
+        },
+        {
+          "angle_deg": -31.0,
+          "intersection_mm3": 46.70025708819664
+        },
+        {
+          "angle_deg": -30.75,
+          "intersection_mm3": 46.66875083363324
+        },
+        {
+          "angle_deg": -30.5,
+          "intersection_mm3": 46.639500670610666
+        },
+        {
+          "angle_deg": -30.25,
+          "intersection_mm3": 46.612466551603205
+        },
+        {
+          "angle_deg": -30.0,
+          "intersection_mm3": 46.58761070180384
+        },
+        {
+          "angle_deg": -29.75,
+          "intersection_mm3": 46.56490119737608
+        },
+        {
+          "angle_deg": -29.5,
+          "intersection_mm3": 46.54429302895987
+        },
+        {
+          "angle_deg": -29.25,
+          "intersection_mm3": 46.52571894801426
+        },
+        {
+          "angle_deg": -29.0,
+          "intersection_mm3": 46.50910669026788
+        },
+        {
+          "angle_deg": -28.75,
+          "intersection_mm3": 46.4943867188565
+        },
+        {
+          "angle_deg": -28.5,
+          "intersection_mm3": 46.481491932607845
+        },
+        {
+          "angle_deg": -28.25,
+          "intersection_mm3": 46.470356904668236
+        },
+        {
+          "angle_deg": -28.0,
+          "intersection_mm3": 46.46091778621487
+        },
+        {
+          "angle_deg": -27.75,
+          "intersection_mm3": 46.453107418607836
+        },
+        {
+          "angle_deg": -27.5,
+          "intersection_mm3": 46.446852066930006
+        },
+        {
+          "angle_deg": -27.25,
+          "intersection_mm3": 46.44205051582972
+        },
+        {
+          "angle_deg": -27.0,
+          "intersection_mm3": 46.4381479921483
+        },
+        {
+          "angle_deg": -26.75,
+          "intersection_mm3": 46.43489580278865
+        },
+        {
+          "angle_deg": -26.5,
+          "intersection_mm3": 46.432216535546225
+        },
+        {
+          "angle_deg": -26.25,
+          "intersection_mm3": 46.43002550997736
+        },
+        {
+          "angle_deg": -26.0,
+          "intersection_mm3": 46.4282450036447
+        },
+        {
+          "angle_deg": -25.75,
+          "intersection_mm3": 46.42680523906743
+        },
+        {
+          "angle_deg": -25.5,
+          "intersection_mm3": 46.425640828743944
+        },
+        {
+          "angle_deg": -25.25,
+          "intersection_mm3": 46.424688395377835
+        },
+        {
+          "angle_deg": -25.0,
+          "intersection_mm3": 46.42387459980868
+        },
+        {
+          "angle_deg": -24.75,
+          "intersection_mm3": 46.4231256587582
+        },
+        {
+          "angle_deg": -24.5,
+          "intersection_mm3": 46.42238495926411
+        },
+        {
+          "angle_deg": -24.25,
+          "intersection_mm3": 46.421673405200245
+        },
+        {
+          "angle_deg": -24.0,
+          "intersection_mm3": 46.42103898848701
+        },
+        {
+          "angle_deg": -23.75,
+          "intersection_mm3": 46.42050634529741
+        },
+        {
+          "angle_deg": -23.5,
+          "intersection_mm3": 46.42009524337613
+        },
+        {
+          "angle_deg": -23.25,
+          "intersection_mm3": 46.41982679565351
+        },
+        {
+          "angle_deg": -23.0,
+          "intersection_mm3": 46.41972403054836
+        },
+        {
+          "angle_deg": -22.75,
+          "intersection_mm3": 46.41981074793898
+        },
+        {
+          "angle_deg": -22.5,
+          "intersection_mm3": 46.42011196606374
+        },
+        {
+          "angle_deg": -22.25,
+          "intersection_mm3": 46.42065498787346
+        },
+        {
+          "angle_deg": -22.0,
+          "intersection_mm3": 46.421468011482325
+        },
+        {
+          "angle_deg": -21.75,
+          "intersection_mm3": 46.42258008657035
+        },
+        {
+          "angle_deg": -21.5,
+          "intersection_mm3": 46.42380756611901
+        },
+        {
+          "angle_deg": -21.25,
+          "intersection_mm3": 46.42472221203523
+        },
+        {
+          "angle_deg": -21.0,
+          "intersection_mm3": 46.42533445208904
+        },
+        {
+          "angle_deg": -20.75,
+          "intersection_mm3": 46.42567028660177
+        },
+        {
+          "angle_deg": -20.5,
+          "intersection_mm3": 46.42575604529174
+        },
+        {
+          "angle_deg": -20.25,
+          "intersection_mm3": 46.42561890458175
+        },
+        {
+          "angle_deg": -20.0,
+          "intersection_mm3": 46.42528947634264
+        },
+        {
+          "angle_deg": -19.75,
+          "intersection_mm3": 46.424800883453926
+        },
+        {
+          "angle_deg": -19.5,
+          "intersection_mm3": 46.42418852860351
+        },
+        {
+          "angle_deg": -19.25,
+          "intersection_mm3": 46.423491559295044
+        },
+        {
+          "angle_deg": -19.0,
+          "intersection_mm3": 46.42275417875725
+        },
+        {
+          "angle_deg": -18.75,
+          "intersection_mm3": 46.42202169953932
+        },
+        {
+          "angle_deg": -18.5,
+          "intersection_mm3": 46.421344156313985
+        },
+        {
+          "angle_deg": -18.25,
+          "intersection_mm3": 46.42075820075112
+        },
+        {
+          "angle_deg": -18.0,
+          "intersection_mm3": 46.420283824724024
+        },
+        {
+          "angle_deg": -17.75,
+          "intersection_mm3": 46.419941283584635
+        },
+        {
+          "angle_deg": -17.5,
+          "intersection_mm3": 46.419752762639
+        },
+        {
+          "angle_deg": -17.25,
+          "intersection_mm3": 46.419741760404804
+        },
+        {
+          "angle_deg": -17.0,
+          "intersection_mm3": 46.41993247426521
+        },
+        {
+          "angle_deg": -16.75,
+          "intersection_mm3": 46.42035115468632
+        },
+        {
+          "angle_deg": -16.5,
+          "intersection_mm3": 46.42102566350334
+        },
+        {
+          "angle_deg": -16.25,
+          "intersection_mm3": 46.42198457053561
+        },
+        {
+          "angle_deg": -16.0,
+          "intersection_mm3": 46.42322864720955
+        },
+        {
+          "angle_deg": -15.75,
+          "intersection_mm3": 46.42430418419238
+        },
+        {
+          "angle_deg": -15.5,
+          "intersection_mm3": 46.425064451352576
+        },
+        {
+          "angle_deg": -15.25,
+          "intersection_mm3": 46.425535269526655
+        },
+        {
+          "angle_deg": -15.0,
+          "intersection_mm3": 46.42574280181741
+        },
+        {
+          "angle_deg": -14.75,
+          "intersection_mm3": 46.42571358498558
+        },
+        {
+          "angle_deg": -14.5,
+          "intersection_mm3": 46.42547634276667
+        },
+        {
+          "angle_deg": -14.25,
+          "intersection_mm3": 46.42506305463553
+        },
+        {
+          "angle_deg": -14.0,
+          "intersection_mm3": 46.42450808636217
+        },
+        {
+          "angle_deg": -13.75,
+          "intersection_mm3": 46.42384812277509
+        },
+        {
+          "angle_deg": -13.5,
+          "intersection_mm3": 46.4231253594247
+        },
+        {
+          "angle_deg": -13.25,
+          "intersection_mm3": 46.42238470063816
+        },
+        {
+          "angle_deg": -13.0,
+          "intersection_mm3": 46.42167316297378
+        },
+        {
+          "angle_deg": -12.75,
+          "intersection_mm3": 46.42103876454921
+        },
+        {
+          "angle_deg": -12.5,
+          "intersection_mm3": 46.420506139774915
+        },
+        {
+          "angle_deg": -12.25,
+          "intersection_mm3": 46.42009505730836
+        },
+        {
+          "angle_deg": -12.0,
+          "intersection_mm3": 46.41982663061239
+        },
+        {
+          "angle_deg": -11.75,
+          "intersection_mm3": 46.41972388811925
+        },
+        {
+          "angle_deg": -11.5,
+          "intersection_mm3": 46.41981062972296
+        },
+        {
+          "angle_deg": -11.25,
+          "intersection_mm3": 46.42011187369504
+        },
+        {
+          "angle_deg": -11.0,
+          "intersection_mm3": 46.42065492301869
+        },
+        {
+          "angle_deg": -10.75,
+          "intersection_mm3": 46.4214679758331
+        },
+        {
+          "angle_deg": -10.5,
+          "intersection_mm3": 46.42258008184444
+        },
+        {
+          "angle_deg": -10.25,
+          "intersection_mm3": 46.42380759056971
+        },
+        {
+          "angle_deg": -10.0,
+          "intersection_mm3": 46.42472226347656
+        },
+        {
+          "angle_deg": -9.75,
+          "intersection_mm3": 46.42533452924955
+        },
+        {
+          "angle_deg": -9.5,
+          "intersection_mm3": 46.425670388189744
+        },
+        {
+          "angle_deg": -9.25,
+          "intersection_mm3": 46.42575616999434
+        },
+        {
+          "angle_deg": -9.0,
+          "intersection_mm3": 46.42561905060257
+        },
+        {
+          "angle_deg": -8.75,
+          "intersection_mm3": 46.42528964285774
+        },
+        {
+          "angle_deg": -8.5,
+          "intersection_mm3": 46.42480106916994
+        },
+        {
+          "angle_deg": -8.25,
+          "intersection_mm3": 46.42418873224899
+        },
+        {
+          "angle_deg": -8.0,
+          "intersection_mm3": 46.42349177972474
+        },
+        {
+          "angle_deg": -7.75,
+          "intersection_mm3": 46.42275441439829
+        },
+        {
+          "angle_deg": -7.5,
+          "intersection_mm3": 46.42202194920898
+        },
+        {
+          "angle_deg": -7.25,
+          "intersection_mm3": 46.42134441887068
+        },
+        {
+          "angle_deg": -7.0,
+          "intersection_mm3": 46.42075847475956
+        },
+        {
+          "angle_deg": -6.75,
+          "intersection_mm3": 46.42028410861294
+        },
+        {
+          "angle_deg": -6.5,
+          "intersection_mm3": 46.419941575683715
+        },
+        {
+          "angle_deg": -6.25,
+          "intersection_mm3": 46.41975306117682
+        },
+        {
+          "angle_deg": -6.0,
+          "intersection_mm3": 46.41974206351206
+        },
+        {
+          "angle_deg": -5.75,
+          "intersection_mm3": 46.41993277997154
+        },
+        {
+          "angle_deg": -5.5,
+          "intersection_mm3": 46.420351460906716
+        },
+        {
+          "angle_deg": -5.25,
+          "intersection_mm3": 46.42102596803712
+        },
+        {
+          "angle_deg": -5.0,
+          "intersection_mm3": 46.42198487106517
+        },
+        {
+          "angle_deg": -4.75,
+          "intersection_mm3": 46.423228940456276
+        },
+        {
+          "angle_deg": -4.5,
+          "intersection_mm3": 46.4243044670929
+        },
+        {
+          "angle_deg": -4.25,
+          "intersection_mm3": 46.4250647236694
+        },
+        {
+          "angle_deg": -4.0,
+          "intersection_mm3": 46.425535530963295
+        },
+        {
+          "angle_deg": -3.75,
+          "intersection_mm3": 46.42574305201967
+        },
+        {
+          "angle_deg": -3.5,
+          "intersection_mm3": 46.42571382354043
+        },
+        {
+          "angle_deg": -3.25,
+          "intersection_mm3": 46.42547656918285
+        },
+        {
+          "angle_deg": -3.0,
+          "intersection_mm3": 46.425063268336
+        },
+        {
+          "angle_deg": -2.75,
+          "intersection_mm3": 46.424508286680414
+        },
+        {
+          "angle_deg": -2.5,
+          "intersection_mm3": 46.423848308949914
+        },
+        {
+          "angle_deg": -2.25,
+          "intersection_mm3": 46.42312553057493
+        },
+        {
+          "angle_deg": -2.0,
+          "intersection_mm3": 46.42238485576983
+        },
+        {
+          "angle_deg": -1.75,
+          "intersection_mm3": 46.42167330095415
+        },
+        {
+          "angle_deg": -1.5,
+          "intersection_mm3": 46.42103888417821
+        },
+        {
+          "angle_deg": -1.25,
+          "intersection_mm3": 46.42050623991261
+        },
+        {
+          "angle_deg": -1.0,
+          "intersection_mm3": 46.42009513684123
+        },
+        {
+          "angle_deg": -0.75,
+          "intersection_mm3": 46.429559972749836
+        },
+        {
+          "angle_deg": -0.5,
+          "intersection_mm3": 46.50879390372845
+        },
+        {
+          "angle_deg": -0.25,
+          "intersection_mm3": 46.58771073937739
+        },
+        {
+          "angle_deg": 0.0,
+          "intersection_mm3": 46.66405698066729
+        },
+        {
+          "angle_deg": 0.25,
+          "intersection_mm3": 46.73786020093909
+        },
+        {
+          "angle_deg": 0.5,
+          "intersection_mm3": 46.809148180553564
+        },
+        {
+          "angle_deg": 0.75,
+          "intersection_mm3": 46.87794885009158
+        },
+        {
+          "angle_deg": 1.0,
+          "intersection_mm3": 46.94421936644514
+        },
+        {
+          "angle_deg": 1.25,
+          "intersection_mm3": 47.00783682518465
+        },
+        {
+          "angle_deg": 1.5,
+          "intersection_mm3": 47.068826217306636
+        },
+        {
+          "angle_deg": 1.75,
+          "intersection_mm3": 47.1272176917633
+        },
+        {
+          "angle_deg": 2.0,
+          "intersection_mm3": 47.183041258373784
+        },
+        {
+          "angle_deg": 2.25,
+          "intersection_mm3": 47.236327298832784
+        },
+        {
+          "angle_deg": 2.5,
+          "intersection_mm3": 47.287109151172004
+        },
+        {
+          "angle_deg": 2.75,
+          "intersection_mm3": 47.335422175870434
+        },
+        {
+          "angle_deg": 3.0,
+          "intersection_mm3": 47.38130351959597
+        },
+        {
+          "angle_deg": 3.25,
+          "intersection_mm3": 47.4247935723877
+        },
+        {
+          "angle_deg": 3.5,
+          "intersection_mm3": 47.4659372701177
+        },
+        {
+          "angle_deg": 3.75,
+          "intersection_mm3": 47.50478014118318
+        },
+        {
+          "angle_deg": 4.0,
+          "intersection_mm3": 47.54137190937825
+        },
+        {
+          "angle_deg": 4.25,
+          "intersection_mm3": 47.57574837980299
+        },
+        {
+          "angle_deg": 4.5,
+          "intersection_mm3": 47.60792815253103
+        },
+        {
+          "angle_deg": 4.75,
+          "intersection_mm3": 47.6379295355764
+        },
+        {
+          "angle_deg": 5.0,
+          "intersection_mm3": 47.66577220055239
+        },
+        {
+          "angle_deg": 5.25,
+          "intersection_mm3": 47.69147655456638
+        },
+        {
+          "angle_deg": 5.5,
+          "intersection_mm3": 47.71506311390955
+        },
+        {
+          "angle_deg": 5.75,
+          "intersection_mm3": 47.73655384569291
+        },
+        {
+          "angle_deg": 6.0,
+          "intersection_mm3": 47.75597171291651
+        },
+        {
+          "angle_deg": 6.25,
+          "intersection_mm3": 47.77333975717063
+        },
+        {
+          "angle_deg": 6.5,
+          "intersection_mm3": 47.7886717978021
+        },
+        {
+          "angle_deg": 6.75,
+          "intersection_mm3": 47.801830830928644
+        },
+        {
+          "angle_deg": 7.0,
+          "intersection_mm3": 47.81278428855758
+        },
+        {
+          "angle_deg": 7.25,
+          "intersection_mm3": 47.82155786182576
+        },
+        {
+          "angle_deg": 7.5,
+          "intersection_mm3": 47.82817717864308
+        },
+        {
+          "angle_deg": 7.75,
+          "intersection_mm3": 47.832667828491346
+        },
+        {
+          "angle_deg": 8.0,
+          "intersection_mm3": 47.83505716879446
+        },
+        {
+          "angle_deg": 8.25,
+          "intersection_mm3": 47.83538776656643
+        },
+        {
+          "angle_deg": 8.5,
+          "intersection_mm3": 47.834832796626735
+        },
+        {
+          "angle_deg": 8.75,
+          "intersection_mm3": 47.834172831861935
+        },
+        {
+          "angle_deg": 9.0,
+          "intersection_mm3": 47.83345006777782
+        },
+        {
+          "angle_deg": 9.25,
+          "intersection_mm3": 47.83270940867917
+        },
+        {
+          "angle_deg": 9.5,
+          "intersection_mm3": 47.83199787108339
+        },
+        {
+          "angle_deg": 9.75,
+          "intersection_mm3": 47.83136347314586
+        },
+        {
+          "angle_deg": 10.0,
+          "intersection_mm3": 47.83083084926141
+        },
+        {
+          "angle_deg": 10.25,
+          "intersection_mm3": 47.8304197679814
+        },
+        {
+          "angle_deg": 10.5,
+          "intersection_mm3": 47.830151342662965
+        },
+        {
+          "angle_deg": 10.75,
+          "intersection_mm3": 47.83004860163421
+        },
+        {
+          "angle_deg": 11.0,
+          "intersection_mm3": 47.830135344684045
+        },
+        {
+          "angle_deg": 11.25,
+          "intersection_mm3": 47.8304365899656
+        },
+        {
+          "angle_deg": 11.5,
+          "intersection_mm3": 47.83097964033322
+        },
+        {
+          "angle_deg": 11.75,
+          "intersection_mm3": 47.83179269379581
+        },
+        {
+          "angle_deg": 12.0,
+          "intersection_mm3": 47.8329047999237
+        },
+        {
+          "angle_deg": 12.25,
+          "intersection_mm3": 47.83413230233462
+        },
+        {
+          "angle_deg": 12.5,
+          "intersection_mm3": 47.83504696732327
+        },
+        {
+          "angle_deg": 12.75,
+          "intersection_mm3": 47.835659225123536
+        },
+        {
+          "angle_deg": 13.0,
+          "intersection_mm3": 47.8359950759836
+        },
+        {
+          "angle_deg": 13.25,
+          "intersection_mm3": 47.836080849547564
+        },
+        {
+          "angle_deg": 13.5,
+          "intersection_mm3": 47.83594372169137
+        },
+        {
+          "angle_deg": 13.75,
+          "intersection_mm3": 47.83561430517195
+        },
+        {
+          "angle_deg": 14.0,
+          "intersection_mm3": 47.835125722317976
+        },
+        {
+          "angle_deg": 14.25,
+          "intersection_mm3": 47.83451337576224
+        },
+        {
+          "angle_deg": 14.5,
+          "intersection_mm3": 47.83381641302541
+        },
+        {
+          "angle_deg": 14.75,
+          "intersection_mm3": 47.83307903678339
+        },
+        {
+          "angle_deg": 15.0,
+          "intersection_mm3": 47.83234655984979
+        },
+        {
+          "angle_deg": 15.25,
+          "intersection_mm3": 47.83166901677891
+        },
+        {
+          "angle_deg": 15.5,
+          "intersection_mm3": 47.831083059010574
+        },
+        {
+          "angle_deg": 15.75,
+          "intersection_mm3": 47.830608678362275
+        },
+        {
+          "angle_deg": 16.0,
+          "intersection_mm3": 47.830266130152545
+        },
+        {
+          "angle_deg": 16.25,
+          "intersection_mm3": 47.83007759964946
+        },
+        {
+          "angle_deg": 16.5,
+          "intersection_mm3": 47.830066585333405
+        },
+        {
+          "angle_deg": 16.75,
+          "intersection_mm3": 47.830257284546576
+        },
+        {
+          "angle_deg": 17.0,
+          "intersection_mm3": 47.83067594771029
+        },
+        {
+          "angle_deg": 17.25,
+          "intersection_mm3": 47.83135043662217
+        },
+        {
+          "angle_deg": 17.5,
+          "intersection_mm3": 47.832309321062546
+        },
+        {
+          "angle_deg": 17.75,
+          "intersection_mm3": 47.833553373715674
+        },
+        {
+          "angle_deg": 18.0,
+          "intersection_mm3": 47.83462888949918
+        },
+        {
+          "angle_deg": 18.25,
+          "intersection_mm3": 47.835389136446366
+        },
+        {
+          "angle_deg": 18.5,
+          "intersection_mm3": 47.83585993542342
+        },
+        {
+          "angle_deg": 18.75,
+          "intersection_mm3": 47.83606744956431
+        },
+        {
+          "angle_deg": 19.0,
+          "intersection_mm3": 47.83603821566012
+        },
+        {
+          "angle_deg": 19.25,
+          "intersection_mm3": 47.83580095746898
+        },
+        {
+          "angle_deg": 19.5,
+          "intersection_mm3": 47.83538765450211
+        },
+        {
+          "angle_deg": 19.75,
+          "intersection_mm3": 47.83483267256678
+        },
+        {
+          "angle_deg": 20.0,
+          "intersection_mm3": 47.83417269652278
+        },
+        {
+          "angle_deg": 20.25,
+          "intersection_mm3": 47.83344992195415
+        },
+        {
+          "angle_deg": 20.5,
+          "intersection_mm3": 47.83270925324643
+        },
+        {
+          "angle_deg": 20.75,
+          "intersection_mm3": 47.83199770700094
+        },
+        {
+          "angle_deg": 21.0,
+          "intersection_mm3": 47.83136330145855
+        },
+        {
+          "angle_deg": 21.25,
+          "intersection_mm3": 47.83083067110739
+        },
+        {
+          "angle_deg": 21.5,
+          "intersection_mm3": 47.8304195845969
+        },
+        {
+          "angle_deg": 21.75,
+          "intersection_mm3": 47.83015115538016
+        },
+        {
+          "angle_deg": 22.0,
+          "intersection_mm3": 47.83004841188347
+        },
+        {
+          "angle_deg": 22.25,
+          "intersection_mm3": 47.83013515399838
+        },
+        {
+          "angle_deg": 22.5,
+          "intersection_mm3": 47.83043639998925
+        },
+        {
+          "angle_deg": 22.75,
+          "intersection_mm3": 47.83097945283003
+        },
+        {
+          "angle_deg": 23.0,
+          "intersection_mm3": 47.83179251065285
+        },
+        {
+          "angle_deg": 23.25,
+          "intersection_mm3": 47.8329046231556
+        },
+        {
+          "angle_deg": 23.5,
+          "intersection_mm3": 47.834132135048414
+        },
+        {
+          "angle_deg": 23.75,
+          "intersection_mm3": 47.835046811028974
+        },
+        {
+          "angle_deg": 24.0,
+          "intersection_mm3": 47.835659080994475
+        },
+        {
+          "angle_deg": 24.25,
+          "intersection_mm3": 47.83599494522272
+        },
+        {
+          "angle_deg": 24.5,
+          "intersection_mm3": 47.83608073338794
+        },
+        {
+          "angle_deg": 24.75,
+          "intersection_mm3": 47.83594362140131
+        },
+        {
+          "angle_deg": 25.0,
+          "intersection_mm3": 47.83561422206696
+        },
+        {
+          "angle_deg": 25.25,
+          "intersection_mm3": 47.83512565775165
+        },
+        {
+          "angle_deg": 25.5,
+          "intersection_mm3": 47.83451333112498
+        },
+        {
+          "angle_deg": 25.75,
+          "intersection_mm3": 47.833816389763946
+        },
+        {
+          "angle_deg": 26.0,
+          "intersection_mm3": 47.83307903641474
+        },
+        {
+          "angle_deg": 26.25,
+          "intersection_mm3": 47.832346583962604
+        },
+        {
+          "angle_deg": 26.5,
+          "intersection_mm3": 47.83166906705113
+        },
+        {
+          "angle_deg": 26.75,
+          "intersection_mm3": 47.83108313710031
+        },
+        {
+          "angle_deg": 27.0,
+          "intersection_mm3": 47.83060878588337
+        },
+        {
+          "angle_deg": 27.25,
+          "intersection_mm3": 47.83026626868001
+        },
+        {
+          "angle_deg": 27.5,
+          "intersection_mm3": 47.830077770722035
+        },
+        {
+          "angle_deg": 27.75,
+          "intersection_mm3": 47.83006679046196
+        },
+        {
+          "angle_deg": 28.0,
+          "intersection_mm3": 47.83025752521322
+        },
+        {
+          "angle_deg": 28.25,
+          "intersection_mm3": 47.83067622535419
+        },
+        {
+          "angle_deg": 28.5,
+          "intersection_mm3": 47.83135075263931
+        },
+        {
+          "angle_deg": 28.75,
+          "intersection_mm3": 47.8323096768086
+        },
+        {
+          "angle_deg": 29.0,
+          "intersection_mm3": 47.83355376784327
+        },
+        {
+          "angle_deg": 29.25,
+          "intersection_mm3": 47.83462931454689
+        },
+        {
+          "angle_deg": 29.5,
+          "intersection_mm3": 47.83538959012877
+        },
+        {
+          "angle_deg": 29.75,
+          "intersection_mm3": 47.83586041534279
+        },
+        {
+          "angle_deg": 30.0,
+          "intersection_mm3": 47.836067953209664
+        },
+        {
+          "angle_deg": 30.25,
+          "intersection_mm3": 47.83603874040468
+        },
+        {
+          "angle_deg": 30.5,
+          "intersection_mm3": 47.835801500544505
+        },
+        {
+          "angle_deg": 30.75,
+          "intersection_mm3": 47.83538821298741
+        },
+        {
+          "angle_deg": 31.0,
+          "intersection_mm3": 47.83483324339217
+        },
+        {
+          "angle_deg": 31.25,
+          "intersection_mm3": 47.834173276456646
+        },
+        {
+          "angle_deg": 31.5,
+          "intersection_mm3": 47.83345050756403
+        },
+        {
+          "angle_deg": 31.75,
+          "intersection_mm3": 47.83270984089979
+        },
+        {
+          "angle_deg": 32.0,
+          "intersection_mm3": 47.83199829283276
+        },
+        {
+          "angle_deg": 32.25,
+          "intersection_mm3": 47.83136388144466
+        },
+        {
+          "angle_deg": 32.5,
+          "intersection_mm3": 47.83083122868894
+        },
+        {
+          "angle_deg": 32.75,
+          "intersection_mm3": 47.83041884080864
+        },
+        {
+          "angle_deg": 33.0,
+          "intersection_mm3": 47.83014425439012
+        },
+        {
+          "angle_deg": 33.25,
+          "intersection_mm3": 47.83002662913924
+        },
+        {
+          "angle_deg": 33.5,
+          "intersection_mm3": 47.83008584678638
+        },
+        {
+          "angle_deg": 33.75,
+          "intersection_mm3": 47.830342956531325
+        },
+        {
+          "angle_deg": 34.0,
+          "intersection_mm3": 47.830821239902484
+        },
+        {
+          "angle_deg": 34.25,
+          "intersection_mm3": 47.83154481541661
+        },
+        {
+          "angle_deg": 34.5,
+          "intersection_mm3": 47.83253838966881
+        },
+        {
+          "angle_deg": 34.75,
+          "intersection_mm3": 47.83361199868219
+        },
+        {
+          "angle_deg": 35.0,
+          "intersection_mm3": 47.834325745438214
+        },
+        {
+          "angle_deg": 35.25,
+          "intersection_mm3": 47.834677186725465
+        },
+        {
+          "angle_deg": 35.5,
+          "intersection_mm3": 47.83467928161053
+        },
+        {
+          "angle_deg": 35.75,
+          "intersection_mm3": 47.83434514420944
+        },
+        {
+          "angle_deg": 36.0,
+          "intersection_mm3": 47.83368855530721
+        },
+        {
+          "angle_deg": 36.25,
+          "intersection_mm3": 47.83272654675404
+        },
+        {
+          "angle_deg": 36.5,
+          "intersection_mm3": 47.83147818414429
+        },
+        {
+          "angle_deg": 36.75,
+          "intersection_mm3": 47.82996266826213
+        },
+        {
+          "angle_deg": 37.0,
+          "intersection_mm3": 47.828197036117025
+        },
+        {
+          "angle_deg": 37.25,
+          "intersection_mm3": 47.82620153040671
+        },
+        {
+          "angle_deg": 37.5,
+          "intersection_mm3": 47.823997171136945
+        },
+        {
+          "angle_deg": 37.75,
+          "intersection_mm3": 47.82160935721312
+        },
+        {
+          "angle_deg": 38.0,
+          "intersection_mm3": 47.81905214740395
+        },
+        {
+          "angle_deg": 38.25,
+          "intersection_mm3": 47.81633170825242
+        },
+        {
+          "angle_deg": 38.5,
+          "intersection_mm3": 47.81345597659673
+        },
+        {
+          "angle_deg": 38.75,
+          "intersection_mm3": 47.810432001241985
+        },
+        {
+          "angle_deg": 39.0,
+          "intersection_mm3": 47.80726146857537
+        },
+        {
+          "angle_deg": 39.25,
+          "intersection_mm3": 47.80394477794702
+        },
+        {
+          "angle_deg": 39.5,
+          "intersection_mm3": 47.800483773795634
+        },
+        {
+          "angle_deg": 39.75,
+          "intersection_mm3": 47.796881577142955
+        },
+        {
+          "angle_deg": 40.0,
+          "intersection_mm3": 47.79315264931203
+        },
+        {
+          "angle_deg": 40.25,
+          "intersection_mm3": 47.78929751608291
+        },
+        {
+          "angle_deg": 40.5,
+          "intersection_mm3": 47.78486201036192
+        },
+        {
+          "angle_deg": 40.75,
+          "intersection_mm3": 47.779693869801264
+        },
+        {
+          "angle_deg": 41.0,
+          "intersection_mm3": 47.77380660139463
+        },
+        {
+          "angle_deg": 41.25,
+          "intersection_mm3": 47.767212610441035
+        },
+        {
+          "angle_deg": 41.5,
+          "intersection_mm3": 47.75992376534878
+        },
+        {
+          "angle_deg": 41.75,
+          "intersection_mm3": 47.75195528384533
+        },
+        {
+          "angle_deg": 42.0,
+          "intersection_mm3": 47.74333933745416
+        },
+        {
+          "angle_deg": 42.25,
+          "intersection_mm3": 47.73411494810379
+        },
+        {
+          "angle_deg": 42.5,
+          "intersection_mm3": 47.7243202767634
+        },
+        {
+          "angle_deg": 42.75,
+          "intersection_mm3": 47.71399003739656
+        },
+        {
+          "angle_deg": 43.0,
+          "intersection_mm3": 47.70315805527025
+        },
+        {
+          "angle_deg": 43.25,
+          "intersection_mm3": 47.69185918847319
+        },
+        {
+          "angle_deg": 43.5,
+          "intersection_mm3": 47.68012874625604
+        },
+        {
+          "angle_deg": 43.75,
+          "intersection_mm3": 47.667990319836214
+        },
+        {
+          "angle_deg": 44.0,
+          "intersection_mm3": 47.65546937043062
+        },
+        {
+          "angle_deg": 44.25,
+          "intersection_mm3": 47.64258734850097
+        },
+        {
+          "angle_deg": 44.5,
+          "intersection_mm3": 47.62935690625387
+        },
+        {
+          "angle_deg": 44.75,
+          "intersection_mm3": 47.61578679165063
+        },
+        {
+          "angle_deg": 45.0,
+          "intersection_mm3": 47.601885790931426
+        },
+        {
+          "angle_deg": 45.25,
+          "intersection_mm3": 47.587663945725964
+        },
+        {
+          "angle_deg": 45.5,
+          "intersection_mm3": 47.573142090330606
+        },
+        {
+          "angle_deg": 45.75,
+          "intersection_mm3": 47.55835856958269
+        },
+        {
+          "angle_deg": 46.0,
+          "intersection_mm3": 47.54312862778033
+        },
+        {
+          "angle_deg": 46.25,
+          "intersection_mm3": 47.52700679488476
+        },
+        {
+          "angle_deg": 46.5,
+          "intersection_mm3": 47.50998295469345
+        },
+        {
+          "angle_deg": 46.75,
+          "intersection_mm3": 47.49206123138371
+        },
+        {
+          "angle_deg": 47.0,
+          "intersection_mm3": 47.473245145267136
+        },
+        {
+          "angle_deg": 47.25,
+          "intersection_mm3": 47.453552282097476
+        },
+        {
+          "angle_deg": 47.5,
+          "intersection_mm3": 47.433016775511206
+        },
+        {
+          "angle_deg": 47.75,
+          "intersection_mm3": 47.41166114615782
+        },
+        {
+          "angle_deg": 48.0,
+          "intersection_mm3": 47.389498329061
+        },
+        {
+          "angle_deg": 48.25,
+          "intersection_mm3": 47.36653920704568
+        },
+        {
+          "angle_deg": 48.5,
+          "intersection_mm3": 47.34279788709068
+        },
+        {
+          "angle_deg": 48.75,
+          "intersection_mm3": 47.31829161854827
+        },
+        {
+          "angle_deg": 49.0,
+          "intersection_mm3": 47.2930546961561
+        },
+        {
+          "angle_deg": 49.25,
+          "intersection_mm3": 47.26710354302095
+        },
+        {
+          "angle_deg": 49.5,
+          "intersection_mm3": 47.240434097864004
+        },
+        {
+          "angle_deg": 49.75,
+          "intersection_mm3": 47.21303819163483
+        },
+        {
+          "angle_deg": 50.0,
+          "intersection_mm3": 47.18489882910188
+        },
+        {
+          "angle_deg": 50.25,
+          "intersection_mm3": 47.15598345076829
+        },
+        {
+          "angle_deg": 50.5,
+          "intersection_mm3": 47.126269207633115
+        },
+        {
+          "angle_deg": 50.75,
+          "intersection_mm3": 47.09575417699111
+        },
+        {
+          "angle_deg": 51.0,
+          "intersection_mm3": 47.06452962963458
+        },
+        {
+          "angle_deg": 51.25,
+          "intersection_mm3": 47.03274950343795
+        },
+        {
+          "angle_deg": 51.5,
+          "intersection_mm3": 47.00054130815932
+        },
+        {
+          "angle_deg": 51.75,
+          "intersection_mm3": 46.967580520551564
+        },
+        {
+          "angle_deg": 52.0,
+          "intersection_mm3": 46.933879051391834
+        },
+        {
+          "angle_deg": 52.25,
+          "intersection_mm3": 46.899630261967644
+        },
+        {
+          "angle_deg": 52.5,
+          "intersection_mm3": 46.86503108044689
+        },
+        {
+          "angle_deg": 52.75,
+          "intersection_mm3": 46.83029181346574
+        },
+        {
+          "angle_deg": 53.0,
+          "intersection_mm3": 46.79563757770032
+        },
+        {
+          "angle_deg": 53.25,
+          "intersection_mm3": 46.76134064213151
+        },
+        {
+          "angle_deg": 53.5,
+          "intersection_mm3": 46.72768819953043
+        },
+        {
+          "angle_deg": 53.75,
+          "intersection_mm3": 46.69496658285377
+        },
+        {
+          "angle_deg": 54.0,
+          "intersection_mm3": 46.663470598465985
+        },
+        {
+          "angle_deg": 54.25,
+          "intersection_mm3": 46.633525771902505
+        },
+        {
+          "angle_deg": 54.5,
+          "intersection_mm3": 46.605518205225366
+        },
+        {
+          "angle_deg": 54.75,
+          "intersection_mm3": 46.57983267707119
+        },
+        {
+          "angle_deg": 55.0,
+          "intersection_mm3": 46.55659567493993
+        },
+        {
+          "angle_deg": 55.25,
+          "intersection_mm3": 46.535722191586224
+        },
+        {
+          "angle_deg": 55.5,
+          "intersection_mm3": 46.51712117185864
+        },
+        {
+          "angle_deg": 55.75,
+          "intersection_mm3": 46.500705113126116
+        },
+        {
+          "angle_deg": 56.0,
+          "intersection_mm3": 46.48638887664344
+        },
+        {
+          "angle_deg": 56.25,
+          "intersection_mm3": 46.4740894429502
+        },
+        {
+          "angle_deg": 56.5,
+          "intersection_mm3": 46.463724413237934
+        },
+        {
+          "angle_deg": 56.75,
+          "intersection_mm3": 46.45520280912906
+        },
+        {
+          "angle_deg": 57.0,
+          "intersection_mm3": 46.44843139216758
+        },
+        {
+          "angle_deg": 57.25,
+          "intersection_mm3": 46.44310579511999
+        },
+        {
+          "angle_deg": 57.5,
+          "intersection_mm3": 46.43867772054579
+        },
+        {
+          "angle_deg": 57.75,
+          "intersection_mm3": 46.435036833769445
+        },
+        {
+          "angle_deg": 58.0,
+          "intersection_mm3": 46.4320835701479
+        },
+        {
+          "angle_deg": 58.25,
+          "intersection_mm3": 46.4297139054579
+        },
+        {
+          "angle_deg": 58.5,
+          "intersection_mm3": 46.427834865637884
+        },
+        {
+          "angle_deg": 58.75,
+          "intersection_mm3": 46.42635943232563
+        },
+        {
+          "angle_deg": 59.0,
+          "intersection_mm3": 46.425204619107134
+        },
+        {
+          "angle_deg": 59.25,
+          "intersection_mm3": 46.42428318004327
+        },
+        {
+          "angle_deg": 59.5,
+          "intersection_mm3": 46.42349711477252
+        },
+        {
+          "angle_deg": 59.75,
+          "intersection_mm3": 46.42275466076847
+        },
+        {
+          "angle_deg": 60.0,
+          "intersection_mm3": 46.42202222470612
+        },
+        {
+          "angle_deg": 60.25,
+          "intersection_mm3": 46.42134469682493
+        },
+        {
+          "angle_deg": 60.5,
+          "intersection_mm3": 46.42075875356158
+        },
+        {
+          "angle_deg": 60.75,
+          "intersection_mm3": 46.4202843849956
+        },
+        {
+          "angle_deg": 61.0,
+          "intersection_mm3": 46.41994184915777
+        },
+        {
+          "angle_deg": 61.25,
+          "intersection_mm3": 46.41975333127133
+        },
+        {
+          "angle_deg": 61.5,
+          "intersection_mm3": 46.41974232977361
+        },
+        {
+          "angle_deg": 61.75,
+          "intersection_mm3": 46.41993304196804
+        },
+        {
+          "angle_deg": 62.0,
+          "intersection_mm3": 46.42035171824083
+        },
+        {
+          "angle_deg": 62.25,
+          "intersection_mm3": 46.421026220339684
+        },
+        {
+          "angle_deg": 62.5,
+          "intersection_mm3": 46.421985117995156
+        },
+        {
+          "angle_deg": 62.75,
+          "intersection_mm3": 46.42322917441008
+        },
+        {
+          "angle_deg": 63.0,
+          "intersection_mm3": 46.42430470277316
+        },
+        {
+          "angle_deg": 63.25,
+          "intersection_mm3": 46.42506495315834
+        },
+        {
+          "angle_deg": 63.5,
+          "intersection_mm3": 46.425535754145045
+        },
+        {
+          "angle_deg": 63.75,
+          "intersection_mm3": 46.425743268785496
+        },
+        {
+          "angle_deg": 64.0,
+          "intersection_mm3": 46.42571403379017
+        },
+        {
+          "angle_deg": 64.25,
+          "intersection_mm3": 46.42547677176857
+        },
+        {
+          "angle_deg": 64.5,
+          "intersection_mm3": 46.42506346432676
+        },
+        {
+          "angle_deg": 64.75,
+          "intersection_mm3": 46.42450847611605
+        },
+        {
+          "angle_deg": 65.0,
+          "intersection_mm3": 46.42384849259003
+        },
+        {
+          "angle_deg": 65.25,
+          "intersection_mm3": 46.42312570749056
+        },
+        {
+          "angle_deg": 65.5,
+          "intersection_mm3": 46.42238502629289
+        },
+        {
+          "angle_deg": 65.75,
+          "intersection_mm3": 46.42167346549836
+        },
+        {
+          "angle_deg": 66.0,
+          "intersection_mm3": 46.421039043141505
+        },
+        {
+          "angle_deg": 66.25,
+          "intersection_mm3": 46.42050639354845
+        },
+        {
+          "angle_deg": 66.5,
+          "intersection_mm3": 46.420095285329246
+        },
+        {
+          "angle_deg": 66.75,
+          "intersection_mm3": 46.419826831907336
+        },
+        {
+          "angle_deg": 67.0,
+          "intersection_mm3": 46.41972406167677
+        },
+        {
+          "angle_deg": 67.25,
+          "intersection_mm3": 46.419810774491125
+        },
+        {
+          "angle_deg": 67.5,
+          "intersection_mm3": 46.42011198856257
+        },
+        {
+          "angle_deg": 67.75,
+          "intersection_mm3": 46.42065500681189
+        },
+        {
+          "angle_deg": 68.0,
+          "intersection_mm3": 46.42146802732267
+        },
+        {
+          "angle_deg": 68.25,
+          "intersection_mm3": 46.42258009974423
+        },
+        {
+          "angle_deg": 68.5,
+          "intersection_mm3": 46.4238075766654
+        },
+        {
+          "angle_deg": 68.75,
+          "intersection_mm3": 46.424722220017784
+        },
+        {
+          "angle_deg": 69.0,
+          "intersection_mm3": 46.425334457957575
+        },
+        {
+          "angle_deg": 69.25,
+          "intersection_mm3": 46.425670290768004
+        },
+        {
+          "angle_deg": 69.5,
+          "intersection_mm3": 46.42575604812915
+        },
+        {
+          "angle_deg": 69.75,
+          "intersection_mm3": 46.42561890594499
+        },
+        {
+          "angle_deg": 70.0,
+          "intersection_mm3": 46.42528947699833
+        },
+        {
+          "angle_deg": 70.25,
+          "intersection_mm3": 46.42480088366764
+        },
+        {
+          "angle_deg": 70.5,
+          "intersection_mm3": 46.42418852862984
+        },
+        {
+          "angle_deg": 70.75,
+          "intersection_mm3": 46.423491559426665
+        },
+        {
+          "angle_deg": 71.0,
+          "intersection_mm3": 46.42275417877585
+        },
+        {
+          "angle_deg": 71.25,
+          "intersection_mm3": 46.42202169953933
+        },
+        {
+          "angle_deg": 71.5,
+          "intersection_mm3": 46.421344156313985
+        },
+        {
+          "angle_deg": 71.75,
+          "intersection_mm3": 46.420758200751116
+        },
+        {
+          "angle_deg": 72.0,
+          "intersection_mm3": 46.420283824724024
+        },
+        {
+          "angle_deg": 72.25,
+          "intersection_mm3": 46.41994128358465
+        },
+        {
+          "angle_deg": 72.5,
+          "intersection_mm3": 46.419752762639
+        },
+        {
+          "angle_deg": 72.75,
+          "intersection_mm3": 46.419741760404804
+        },
+        {
+          "angle_deg": 73.0,
+          "intersection_mm3": 46.41993247426521
+        },
+        {
+          "angle_deg": 73.25,
+          "intersection_mm3": 46.42035115468633
+        },
+        {
+          "angle_deg": 73.5,
+          "intersection_mm3": 46.42102566350335
+        },
+        {
+          "angle_deg": 73.75,
+          "intersection_mm3": 46.4219845705356
+        },
+        {
+          "angle_deg": 74.0,
+          "intersection_mm3": 46.423228647209534
+        },
+        {
+          "angle_deg": 74.25,
+          "intersection_mm3": 46.42430418419238
+        },
+        {
+          "angle_deg": 74.5,
+          "intersection_mm3": 46.425064451352576
+        },
+        {
+          "angle_deg": 74.75,
+          "intersection_mm3": 46.425535269526655
+        },
+        {
+          "angle_deg": 75.0,
+          "intersection_mm3": 46.4257428018174
+        },
+        {
+          "angle_deg": 75.25,
+          "intersection_mm3": 46.42571358498558
+        },
+        {
+          "angle_deg": 75.5,
+          "intersection_mm3": 46.42547634276667
+        },
+        {
+          "angle_deg": 75.75,
+          "intersection_mm3": 46.42506305463553
+        },
+        {
+          "angle_deg": 76.0,
+          "intersection_mm3": 46.42450808636216
+        },
+        {
+          "angle_deg": 76.25,
+          "intersection_mm3": 46.4238481227751
+        },
+        {
+          "angle_deg": 76.5,
+          "intersection_mm3": 46.42312535942471
+        },
+        {
+          "angle_deg": 76.75,
+          "intersection_mm3": 46.422384700638155
+        },
+        {
+          "angle_deg": 77.0,
+          "intersection_mm3": 46.421673162973775
+        },
+        {
+          "angle_deg": 77.25,
+          "intersection_mm3": 46.4210387645492
+        },
+        {
+          "angle_deg": 77.5,
+          "intersection_mm3": 46.420506139774915
+        },
+        {
+          "angle_deg": 77.75,
+          "intersection_mm3": 46.42009505730836
+        },
+        {
+          "angle_deg": 78.0,
+          "intersection_mm3": 46.4198266306124
+        },
+        {
+          "angle_deg": 78.25,
+          "intersection_mm3": 46.41972388811925
+        },
+        {
+          "angle_deg": 78.5,
+          "intersection_mm3": 46.419810629722974
+        },
+        {
+          "angle_deg": 78.75,
+          "intersection_mm3": 46.42011187369504
+        },
+        {
+          "angle_deg": 79.0,
+          "intersection_mm3": 46.420654923018695
+        },
+        {
+          "angle_deg": 79.25,
+          "intersection_mm3": 46.42146797583311
+        },
+        {
+          "angle_deg": 79.5,
+          "intersection_mm3": 46.422580081844444
+        },
+        {
+          "angle_deg": 79.75,
+          "intersection_mm3": 46.4238075905697
+        },
+        {
+          "angle_deg": 80.0,
+          "intersection_mm3": 46.42472226347657
+        },
+        {
+          "angle_deg": 80.25,
+          "intersection_mm3": 46.425334529249554
+        },
+        {
+          "angle_deg": 80.5,
+          "intersection_mm3": 46.42567038818975
+        },
+        {
+          "angle_deg": 80.75,
+          "intersection_mm3": 46.42575616999434
+        },
+        {
+          "angle_deg": 81.0,
+          "intersection_mm3": 46.42561905060257
+        },
+        {
+          "angle_deg": 81.25,
+          "intersection_mm3": 46.42528964285775
+        },
+        {
+          "angle_deg": 81.5,
+          "intersection_mm3": 46.42480106916994
+        },
+        {
+          "angle_deg": 81.75,
+          "intersection_mm3": 46.424188732248986
+        },
+        {
+          "angle_deg": 82.0,
+          "intersection_mm3": 46.42349177972475
+        },
+        {
+          "angle_deg": 82.25,
+          "intersection_mm3": 46.42275441439829
+        },
+        {
+          "angle_deg": 82.5,
+          "intersection_mm3": 46.42202194920898
+        },
+        {
+          "angle_deg": 82.75,
+          "intersection_mm3": 46.42134441887068
+        },
+        {
+          "angle_deg": 83.0,
+          "intersection_mm3": 46.42075847475956
+        },
+        {
+          "angle_deg": 83.25,
+          "intersection_mm3": 46.42028410861294
+        },
+        {
+          "angle_deg": 83.5,
+          "intersection_mm3": 46.419941575683715
+        },
+        {
+          "angle_deg": 83.75,
+          "intersection_mm3": 46.41975306117682
+        },
+        {
+          "angle_deg": 84.0,
+          "intersection_mm3": 46.41974206351206
+        },
+        {
+          "angle_deg": 84.25,
+          "intersection_mm3": 46.41993277997153
+        },
+        {
+          "angle_deg": 84.5,
+          "intersection_mm3": 46.420351460906716
+        },
+        {
+          "angle_deg": 84.75,
+          "intersection_mm3": 46.42102596803712
+        },
+        {
+          "angle_deg": 85.0,
+          "intersection_mm3": 46.42198487106517
+        }
+      ]
+    },
+    "upper_forearm": {
+      "worst_mm3": 598.5648560701421,
+      "samples": [
+        {
+          "angle_deg": 0.0,
+          "intersection_mm3": 598.5648560701421
+        },
+        {
+          "angle_deg": 0.25,
+          "intersection_mm3": 598.5467679403215
+        },
+        {
+          "angle_deg": 0.5,
+          "intersection_mm3": 598.4924964964121
+        },
+        {
+          "angle_deg": 0.75,
+          "intersection_mm3": 598.4020205634896
+        },
+        {
+          "angle_deg": 1.0,
+          "intersection_mm3": 598.2753048114245
+        },
+        {
+          "angle_deg": 1.25,
+          "intersection_mm3": 598.1105958207648
+        },
+        {
+          "angle_deg": 1.5,
+          "intersection_mm3": 597.9008199026719
+        },
+        {
+          "angle_deg": 1.75,
+          "intersection_mm3": 597.6459559928893
+        },
+        {
+          "angle_deg": 2.0,
+          "intersection_mm3": 597.3470720176861
+        },
+        {
+          "angle_deg": 2.25,
+          "intersection_mm3": 597.0044779318268
+        },
+        {
+          "angle_deg": 2.5,
+          "intersection_mm3": 596.6195253288482
+        },
+        {
+          "angle_deg": 2.75,
+          "intersection_mm3": 596.192566890529
+        },
+        {
+          "angle_deg": 3.0,
+          "intersection_mm3": 595.7247377010864
+        },
+        {
+          "angle_deg": 3.25,
+          "intersection_mm3": 595.216294129979
+        },
+        {
+          "angle_deg": 3.5,
+          "intersection_mm3": 594.6683833528537
+        },
+        {
+          "angle_deg": 3.75,
+          "intersection_mm3": 594.0811598105439
+        },
+        {
+          "angle_deg": 4.0,
+          "intersection_mm3": 593.4556036222381
+        },
+        {
+          "angle_deg": 4.25,
+          "intersection_mm3": 592.7918202816654
+        },
+        {
+          "angle_deg": 4.5,
+          "intersection_mm3": 592.0905536887656
+        },
+        {
+          "angle_deg": 4.75,
+          "intersection_mm3": 591.3520391848789
+        },
+        {
+          "angle_deg": 5.0,
+          "intersection_mm3": 590.576751079914
+        },
+        {
+          "angle_deg": 5.25,
+          "intersection_mm3": 589.7653271780799
+        },
+        {
+          "angle_deg": 5.5,
+          "intersection_mm3": 588.9177299579856
+        },
+        {
+          "angle_deg": 5.75,
+          "intersection_mm3": 588.0346222325226
+        },
+        {
+          "angle_deg": 6.0,
+          "intersection_mm3": 587.1158440118674
+        },
+        {
+          "angle_deg": 6.25,
+          "intersection_mm3": 586.1619303117457
+        },
+        {
+          "angle_deg": 6.5,
+          "intersection_mm3": 585.1730713869226
+        },
+        {
+          "angle_deg": 6.75,
+          "intersection_mm3": 584.1330108930259
+        },
+        {
+          "angle_deg": 7.0,
+          "intersection_mm3": 582.8240196675958
+        },
+        {
+          "angle_deg": 7.25,
+          "intersection_mm3": 581.2046740556932
+        },
+        {
+          "angle_deg": 7.5,
+          "intersection_mm3": 579.3062540821769
+        },
+        {
+          "angle_deg": 7.75,
+          "intersection_mm3": 577.1568764216024
+        },
+        {
+          "angle_deg": 8.0,
+          "intersection_mm3": 574.9322261663012
+        },
+        {
+          "angle_deg": 8.25,
+          "intersection_mm3": 572.7389934193917
+        },
+        {
+          "angle_deg": 8.5,
+          "intersection_mm3": 570.5773883909875
+        },
+        {
+          "angle_deg": 8.75,
+          "intersection_mm3": 568.4484045157865
+        },
+        {
+          "angle_deg": 9.0,
+          "intersection_mm3": 566.3520262568017
+        },
+        {
+          "angle_deg": 9.25,
+          "intersection_mm3": 564.2856547363966
+        },
+        {
+          "angle_deg": 9.5,
+          "intersection_mm3": 562.2421406898093
+        },
+        {
+          "angle_deg": 9.75,
+          "intersection_mm3": 560.220938845835
+        },
+        {
+          "angle_deg": 10.0,
+          "intersection_mm3": 558.2218582816956
+        },
+        {
+          "angle_deg": 10.25,
+          "intersection_mm3": 556.2446250183352
+        },
+        {
+          "angle_deg": 10.5,
+          "intersection_mm3": 554.2889612406427
+        },
+        {
+          "angle_deg": 10.75,
+          "intersection_mm3": 552.3548630113596
+        },
+        {
+          "angle_deg": 11.0,
+          "intersection_mm3": 550.4418622291496
+        },
+        {
+          "angle_deg": 11.25,
+          "intersection_mm3": 548.5496231412205
+        },
+        {
+          "angle_deg": 11.5,
+          "intersection_mm3": 546.677847340279
+        },
+        {
+          "angle_deg": 11.75,
+          "intersection_mm3": 544.8263564072408
+        },
+        {
+          "angle_deg": 12.0,
+          "intersection_mm3": 542.9950369585873
+        },
+        {
+          "angle_deg": 12.25,
+          "intersection_mm3": 541.1833896432084
+        },
+        {
+          "angle_deg": 12.5,
+          "intersection_mm3": 539.3909581559923
+        },
+        {
+          "angle_deg": 12.75,
+          "intersection_mm3": 537.61736849012
+        },
+        {
+          "angle_deg": 13.0,
+          "intersection_mm3": 535.8620298046003
+        },
+        {
+          "angle_deg": 13.25,
+          "intersection_mm3": 534.1246237615358
+        },
+        {
+          "angle_deg": 13.5,
+          "intersection_mm3": 532.4040140280177
+        },
+        {
+          "angle_deg": 13.75,
+          "intersection_mm3": 530.6985692257003
+        },
+        {
+          "angle_deg": 14.0,
+          "intersection_mm3": 529.0058647016684
+        },
+        {
+          "angle_deg": 14.25,
+          "intersection_mm3": 527.3175369089784
+        },
+        {
+          "angle_deg": 14.5,
+          "intersection_mm3": 525.608662280434
+        },
+        {
+          "angle_deg": 14.75,
+          "intersection_mm3": 523.8690275606597
+        },
+        {
+          "angle_deg": 15.0,
+          "intersection_mm3": 522.1002204757012
+        },
+        {
+          "angle_deg": 15.25,
+          "intersection_mm3": 520.3040949116954
+        },
+        {
+          "angle_deg": 15.5,
+          "intersection_mm3": 518.482176872803
+        },
+        {
+          "angle_deg": 15.75,
+          "intersection_mm3": 516.6358740470853
+        },
+        {
+          "angle_deg": 16.0,
+          "intersection_mm3": 514.7664502293743
+        },
+        {
+          "angle_deg": 16.25,
+          "intersection_mm3": 512.875335643169
+        },
+        {
+          "angle_deg": 16.5,
+          "intersection_mm3": 510.96384114405174
+        },
+        {
+          "angle_deg": 16.75,
+          "intersection_mm3": 509.0329264157817
+        },
+        {
+          "angle_deg": 17.0,
+          "intersection_mm3": 507.0834814337719
+        },
+        {
+          "angle_deg": 17.25,
+          "intersection_mm3": 505.11671832639985
+        },
+        {
+          "angle_deg": 17.5,
+          "intersection_mm3": 503.13397191964646
+        },
+        {
+          "angle_deg": 17.75,
+          "intersection_mm3": 501.13600473825016
+        },
+        {
+          "angle_deg": 18.0,
+          "intersection_mm3": 499.123515240254
+        },
+        {
+          "angle_deg": 18.25,
+          "intersection_mm3": 497.0975415059408
+        },
+        {
+          "angle_deg": 18.5,
+          "intersection_mm3": 495.0608643398388
+        },
+        {
+          "angle_deg": 18.75,
+          "intersection_mm3": 493.0473078301583
+        },
+        {
+          "angle_deg": 19.0,
+          "intersection_mm3": 491.06795474187146
+        },
+        {
+          "angle_deg": 19.25,
+          "intersection_mm3": 489.1213119518395
+        },
+        {
+          "angle_deg": 19.5,
+          "intersection_mm3": 487.22156747398486
+        },
+        {
+          "angle_deg": 19.75,
+          "intersection_mm3": 485.3897472518636
+        },
+        {
+          "angle_deg": 20.0,
+          "intersection_mm3": 483.6077381408881
+        },
+        {
+          "angle_deg": 20.25,
+          "intersection_mm3": 481.8702029497515
+        },
+        {
+          "angle_deg": 20.5,
+          "intersection_mm3": 480.1736208359517
+        },
+        {
+          "angle_deg": 20.75,
+          "intersection_mm3": 478.5147010739068
+        },
+        {
+          "angle_deg": 21.0,
+          "intersection_mm3": 476.89186899540863
+        },
+        {
+          "angle_deg": 21.25,
+          "intersection_mm3": 475.3032805284987
+        },
+        {
+          "angle_deg": 21.5,
+          "intersection_mm3": 473.7474378516419
+        },
+        {
+          "angle_deg": 21.75,
+          "intersection_mm3": 472.2231475142134
+        },
+        {
+          "angle_deg": 22.0,
+          "intersection_mm3": 470.7295409544601
+        },
+        {
+          "angle_deg": 22.25,
+          "intersection_mm3": 469.2651313618631
+        },
+        {
+          "angle_deg": 22.5,
+          "intersection_mm3": 467.82930603162174
+        },
+        {
+          "angle_deg": 22.75,
+          "intersection_mm3": 466.42155627613363
+        },
+        {
+          "angle_deg": 23.0,
+          "intersection_mm3": 465.0412572946902
+        },
+        {
+          "angle_deg": 23.25,
+          "intersection_mm3": 463.68759197572
+        },
+        {
+          "angle_deg": 23.5,
+          "intersection_mm3": 462.3602301390585
+        },
+        {
+          "angle_deg": 23.75,
+          "intersection_mm3": 461.0592673840089
+        },
+        {
+          "angle_deg": 24.0,
+          "intersection_mm3": 459.7840169760934
+        },
+        {
+          "angle_deg": 24.25,
+          "intersection_mm3": 458.53476459439054
+        },
+        {
+          "angle_deg": 24.5,
+          "intersection_mm3": 457.31115463826285
+        },
+        {
+          "angle_deg": 24.75,
+          "intersection_mm3": 456.1134794296098
+        },
+        {
+          "angle_deg": 25.0,
+          "intersection_mm3": 454.942449871857
+        },
+        {
+          "angle_deg": 25.25,
+          "intersection_mm3": 453.797421955981
+        },
+        {
+          "angle_deg": 25.5,
+          "intersection_mm3": 452.67986296499225
+        },
+        {
+          "angle_deg": 25.75,
+          "intersection_mm3": 451.5902705926798
+        },
+        {
+          "angle_deg": 26.0,
+          "intersection_mm3": 450.52911720822283
+        },
+        {
+          "angle_deg": 26.25,
+          "intersection_mm3": 449.4981389008156
+        },
+        {
+          "angle_deg": 26.5,
+          "intersection_mm3": 448.49830118643007
+        },
+        {
+          "angle_deg": 26.75,
+          "intersection_mm3": 447.531725509592
+        },
+        {
+          "angle_deg": 27.0,
+          "intersection_mm3": 446.5962400669899
+        },
+        {
+          "angle_deg": 27.25,
+          "intersection_mm3": 445.6335298369351
+        },
+        {
+          "angle_deg": 27.5,
+          "intersection_mm3": 444.64890436146715
+        },
+        {
+          "angle_deg": 27.75,
+          "intersection_mm3": 443.6592068609202
+        },
+        {
+          "angle_deg": 28.0,
+          "intersection_mm3": 442.6789997032493
+        },
+        {
+          "angle_deg": 28.25,
+          "intersection_mm3": 441.72754307824334
+        },
+        {
+          "angle_deg": 28.5,
+          "intersection_mm3": 440.85474752976
+        },
+        {
+          "angle_deg": 28.75,
+          "intersection_mm3": 440.05189301761897
+        },
+        {
+          "angle_deg": 29.0,
+          "intersection_mm3": 439.2222153093397
+        },
+        {
+          "angle_deg": 29.25,
+          "intersection_mm3": 438.3668886304549
+        },
+        {
+          "angle_deg": 29.5,
+          "intersection_mm3": 437.48720293252563
+        },
+        {
+          "angle_deg": 29.75,
+          "intersection_mm3": 436.5835328577574
+        },
+        {
+          "angle_deg": 30.0,
+          "intersection_mm3": 435.6566933152419
+        },
+        {
+          "angle_deg": 30.25,
+          "intersection_mm3": 434.70750061145145
+        },
+        {
+          "angle_deg": 30.5,
+          "intersection_mm3": 433.73606602962616
+        },
+        {
+          "angle_deg": 30.75,
+          "intersection_mm3": 432.74308246682307
+        },
+        {
+          "angle_deg": 31.0,
+          "intersection_mm3": 431.72878954436317
+        },
+        {
+          "angle_deg": 31.25,
+          "intersection_mm3": 430.6937152940035
+        },
+        {
+          "angle_deg": 31.5,
+          "intersection_mm3": 429.6378161180497
+        },
+        {
+          "angle_deg": 31.75,
+          "intersection_mm3": 428.5618037002326
+        },
+        {
+          "angle_deg": 32.0,
+          "intersection_mm3": 427.4656194233796
+        },
+        {
+          "angle_deg": 32.25,
+          "intersection_mm3": 426.3495544503177
+        },
+        {
+          "angle_deg": 32.5,
+          "intersection_mm3": 425.21413223884764
+        },
+        {
+          "angle_deg": 32.75,
+          "intersection_mm3": 424.0591176631538
+        },
+        {
+          "angle_deg": 33.0,
+          "intersection_mm3": 422.88526490097775
+        },
+        {
+          "angle_deg": 33.25,
+          "intersection_mm3": 421.69241866752327
+        },
+        {
+          "angle_deg": 33.5,
+          "intersection_mm3": 420.4810867828882
+        },
+        {
+          "angle_deg": 33.75,
+          "intersection_mm3": 419.25166356067456
+        },
+        {
+          "angle_deg": 34.0,
+          "intersection_mm3": 418.0074028838482
+        },
+        {
+          "angle_deg": 34.25,
+          "intersection_mm3": 416.78497613797515
+        },
+        {
+          "angle_deg": 34.5,
+          "intersection_mm3": 415.59875503781126
+        },
+        {
+          "angle_deg": 34.75,
+          "intersection_mm3": 414.4549231160865
+        },
+        {
+          "angle_deg": 35.0,
+          "intersection_mm3": 413.36248505411163
+        },
+        {
+          "angle_deg": 35.25,
+          "intersection_mm3": 412.3366020079595
+        },
+        {
+          "angle_deg": 35.5,
+          "intersection_mm3": 411.42027169553324
+        },
+        {
+          "angle_deg": 35.75,
+          "intersection_mm3": 410.6288235897816
+        },
+        {
+          "angle_deg": 36.0,
+          "intersection_mm3": 409.83493236923266
+        },
+        {
+          "angle_deg": 36.25,
+          "intersection_mm3": 409.0384342119287
+        },
+        {
+          "angle_deg": 36.5,
+          "intersection_mm3": 408.2391687927625
+        },
+        {
+          "angle_deg": 36.75,
+          "intersection_mm3": 407.43697913218557
+        },
+        {
+          "angle_deg": 37.0,
+          "intersection_mm3": 406.63171145052326
+        },
+        {
+          "angle_deg": 37.25,
+          "intersection_mm3": 405.8232150276067
+        },
+        {
+          "angle_deg": 37.5,
+          "intersection_mm3": 405.0113420674504
+        },
+        {
+          "angle_deg": 37.75,
+          "intersection_mm3": 404.195947567731
+        },
+        {
+          "angle_deg": 38.0,
+          "intersection_mm3": 403.376889193816
+        },
+        {
+          "angle_deg": 38.25,
+          "intersection_mm3": 402.5540271571086
+        },
+        {
+          "angle_deg": 38.5,
+          "intersection_mm3": 401.7259751148369
+        },
+        {
+          "angle_deg": 38.75,
+          "intersection_mm3": 400.81128771758466
+        },
+        {
+          "angle_deg": 39.0,
+          "intersection_mm3": 399.83338725738565
+        },
+        {
+          "angle_deg": 39.25,
+          "intersection_mm3": 398.8133484799553
+        },
+        {
+          "angle_deg": 39.5,
+          "intersection_mm3": 397.75942890626055
+        },
+        {
+          "angle_deg": 39.75,
+          "intersection_mm3": 396.8159943282611
+        },
+        {
+          "angle_deg": 40.0,
+          "intersection_mm3": 396.10367525706255
+        },
+        {
+          "angle_deg": 40.25,
+          "intersection_mm3": 395.50916692759347
+        },
+        {
+          "angle_deg": 40.5,
+          "intersection_mm3": 395.00592308824
+        },
+        {
+          "angle_deg": 40.75,
+          "intersection_mm3": 394.5748433257413
+        },
+        {
+          "angle_deg": 41.0,
+          "intersection_mm3": 394.20285416477816
+        },
+        {
+          "angle_deg": 41.25,
+          "intersection_mm3": 393.8804868344486
+        },
+        {
+          "angle_deg": 41.5,
+          "intersection_mm3": 393.59971811447633
+        },
+        {
+          "angle_deg": 41.75,
+          "intersection_mm3": 393.3547493879812
+        },
+        {
+          "angle_deg": 42.0,
+          "intersection_mm3": 393.1400369979322
+        },
+        {
+          "angle_deg": 42.25,
+          "intersection_mm3": 392.95046883510685
+        },
+        {
+          "angle_deg": 42.5,
+          "intersection_mm3": 392.7827658272745
+        },
+        {
+          "angle_deg": 42.75,
+          "intersection_mm3": 392.63223092401563
+        },
+        {
+          "angle_deg": 43.0,
+          "intersection_mm3": 392.49626173274953
+        },
+        {
+          "angle_deg": 43.25,
+          "intersection_mm3": 392.3711744942628
+        },
+        {
+          "angle_deg": 43.5,
+          "intersection_mm3": 392.2542286920697
+        },
+        {
+          "angle_deg": 43.75,
+          "intersection_mm3": 392.14267712450095
+        },
+        {
+          "angle_deg": 44.0,
+          "intersection_mm3": 392.03378032881227
+        },
+        {
+          "angle_deg": 44.25,
+          "intersection_mm3": 391.9251775788419
+        },
+        {
+          "angle_deg": 44.5,
+          "intersection_mm3": 391.8142581690535
+        },
+        {
+          "angle_deg": 44.75,
+          "intersection_mm3": 391.6990470405445
+        },
+        {
+          "angle_deg": 45.0,
+          "intersection_mm3": 391.57673467995517
+        },
+        {
+          "angle_deg": 45.25,
+          "intersection_mm3": 391.445883816828
+        },
+        {
+          "angle_deg": 45.5,
+          "intersection_mm3": 391.3032605064475
+        },
+        {
+          "angle_deg": 45.75,
+          "intersection_mm3": 391.1478296588604
+        },
+        {
+          "angle_deg": 46.0,
+          "intersection_mm3": 390.9762950016074
+        },
+        {
+          "angle_deg": 46.25,
+          "intersection_mm3": 390.78730832666895
+        },
+        {
+          "angle_deg": 46.5,
+          "intersection_mm3": 390.57814173928153
+        },
+        {
+          "angle_deg": 46.75,
+          "intersection_mm3": 390.3464396339029
+        },
+        {
+          "angle_deg": 47.0,
+          "intersection_mm3": 390.0902322640012
+        },
+        {
+          "angle_deg": 47.25,
+          "intersection_mm3": 389.8062965155833
+        },
+        {
+          "angle_deg": 47.5,
+          "intersection_mm3": 389.4926166105239
+        },
+        {
+          "angle_deg": 47.75,
+          "intersection_mm3": 389.1458844246261
+        },
+        {
+          "angle_deg": 48.0,
+          "intersection_mm3": 388.76260120591525
+        },
+        {
+          "angle_deg": 48.25,
+          "intersection_mm3": 388.3399859659946
+        },
+        {
+          "angle_deg": 48.5,
+          "intersection_mm3": 387.872645553567
+        },
+        {
+          "angle_deg": 48.75,
+          "intersection_mm3": 387.3564927109552
+        },
+        {
+          "angle_deg": 49.0,
+          "intersection_mm3": 386.7849981291615
+        },
+        {
+          "angle_deg": 49.25,
+          "intersection_mm3": 386.14957791363236
+        },
+        {
+          "angle_deg": 49.5,
+          "intersection_mm3": 385.43869585578057
+        },
+        {
+          "angle_deg": 49.75,
+          "intersection_mm3": 384.63200140414216
+        },
+        {
+          "angle_deg": 50.0,
+          "intersection_mm3": 383.67516499131636
+        },
+        {
+          "angle_deg": 50.25,
+          "intersection_mm3": 382.52930160952997
+        },
+        {
+          "angle_deg": 50.5,
+          "intersection_mm3": 381.3770042743278
+        },
+        {
+          "angle_deg": 50.75,
+          "intersection_mm3": 380.2152319378409
+        },
+        {
+          "angle_deg": 51.0,
+          "intersection_mm3": 379.0438668065503
+        },
+        {
+          "angle_deg": 51.25,
+          "intersection_mm3": 377.8627897867991
+        },
+        {
+          "angle_deg": 51.5,
+          "intersection_mm3": 376.6718804118203
+        },
+        {
+          "angle_deg": 51.75,
+          "intersection_mm3": 375.47101676717756
+        },
+        {
+          "angle_deg": 52.0,
+          "intersection_mm3": 374.26007541449883
+        },
+        {
+          "angle_deg": 52.25,
+          "intersection_mm3": 373.0389313133978
+        },
+        {
+          "angle_deg": 52.5,
+          "intersection_mm3": 371.8074577414445
+        },
+        {
+          "angle_deg": 52.75,
+          "intersection_mm3": 370.56552621206816
+        },
+        {
+          "angle_deg": 53.0,
+          "intersection_mm3": 369.3130063902543
+        },
+        {
+          "angle_deg": 53.25,
+          "intersection_mm3": 368.04976600589794
+        },
+        {
+          "angle_deg": 53.5,
+          "intersection_mm3": 366.7756707646626
+        },
+        {
+          "angle_deg": 53.75,
+          "intersection_mm3": 365.4905842562003
+        },
+        {
+          "angle_deg": 54.0,
+          "intersection_mm3": 364.19436785956805
+        },
+        {
+          "angle_deg": 54.25,
+          "intersection_mm3": 362.88688064567344
+        },
+        {
+          "angle_deg": 54.5,
+          "intersection_mm3": 361.56797927657504
+        },
+        {
+          "angle_deg": 54.75,
+          "intersection_mm3": 360.23751790145263
+        },
+        {
+          "angle_deg": 55.0,
+          "intersection_mm3": 358.8953480490566
+        },
+        {
+          "angle_deg": 55.25,
+          "intersection_mm3": 357.5413185164257
+        },
+        {
+          "angle_deg": 55.5,
+          "intersection_mm3": 356.1752752536654
+        },
+        {
+          "angle_deg": 55.75,
+          "intersection_mm3": 354.79706124455697
+        },
+        {
+          "angle_deg": 56.0,
+          "intersection_mm3": 353.4065163827651
+        },
+        {
+          "angle_deg": 56.25,
+          "intersection_mm3": 352.0034773433766
+        },
+        {
+          "angle_deg": 56.5,
+          "intersection_mm3": 350.58777744952636
+        },
+        {
+          "angle_deg": 56.75,
+          "intersection_mm3": 349.15924653381313
+        },
+        {
+          "angle_deg": 57.0,
+          "intersection_mm3": 347.7177107942151
+        },
+        {
+          "angle_deg": 57.25,
+          "intersection_mm3": 346.26299264418924
+        },
+        {
+          "angle_deg": 57.5,
+          "intersection_mm3": 344.79491055662555
+        },
+        {
+          "angle_deg": 57.75,
+          "intersection_mm3": 343.31327890129376
+        },
+        {
+          "angle_deg": 58.0,
+          "intersection_mm3": 341.8179077754224
+        },
+        {
+          "angle_deg": 58.25,
+          "intersection_mm3": 340.3086028270014
+        },
+        {
+          "angle_deg": 58.5,
+          "intersection_mm3": 338.7851650703966
+        },
+        {
+          "angle_deg": 58.75,
+          "intersection_mm3": 337.24739069381894
+        },
+        {
+          "angle_deg": 59.0,
+          "intersection_mm3": 335.69507085818253
+        },
+        {
+          "angle_deg": 59.25,
+          "intersection_mm3": 334.12799148684167
+        },
+        {
+          "angle_deg": 59.5,
+          "intersection_mm3": 332.5459330456658
+        },
+        {
+          "angle_deg": 59.75,
+          "intersection_mm3": 330.9486703128833
+        },
+        {
+          "angle_deg": 60.0,
+          "intersection_mm3": 329.3359721380817
+        },
+        {
+          "angle_deg": 60.25,
+          "intersection_mm3": 327.7076011897131
+        },
+        {
+          "angle_deg": 60.5,
+          "intersection_mm3": 326.06331369041067
+        },
+        {
+          "angle_deg": 60.75,
+          "intersection_mm3": 324.40285913937
+        },
+        {
+          "angle_deg": 61.0,
+          "intersection_mm3": 322.7259800210102
+        },
+        {
+          "angle_deg": 61.25,
+          "intersection_mm3": 321.0324114990642
+        },
+        {
+          "angle_deg": 61.5,
+          "intersection_mm3": 319.3457000160786
+        },
+        {
+          "angle_deg": 61.75,
+          "intersection_mm3": 317.7261513527083
+        },
+        {
+          "angle_deg": 62.0,
+          "intersection_mm3": 316.1346731727389
+        },
+        {
+          "angle_deg": 62.25,
+          "intersection_mm3": 314.55768178850826
+        },
+        {
+          "angle_deg": 62.5,
+          "intersection_mm3": 312.9879935165415
+        },
+        {
+          "angle_deg": 62.75,
+          "intersection_mm3": 311.4216916898788
+        },
+        {
+          "angle_deg": 63.0,
+          "intersection_mm3": 309.8545573029917
+        },
+        {
+          "angle_deg": 63.25,
+          "intersection_mm3": 308.28427897759474
+        },
+        {
+          "angle_deg": 63.5,
+          "intersection_mm3": 306.70831175589535
+        },
+        {
+          "angle_deg": 63.75,
+          "intersection_mm3": 305.1247501195385
+        },
+        {
+          "angle_deg": 64.0,
+          "intersection_mm3": 303.5314331003771
+        },
+        {
+          "angle_deg": 64.25,
+          "intersection_mm3": 301.9272571976497
+        },
+        {
+          "angle_deg": 64.5,
+          "intersection_mm3": 300.31058981197845
+        },
+        {
+          "angle_deg": 64.75,
+          "intersection_mm3": 298.6795321378703
+        },
+        {
+          "angle_deg": 65.0,
+          "intersection_mm3": 297.03336993818516
+        },
+        {
+          "angle_deg": 65.25,
+          "intersection_mm3": 295.3709702716216
+        },
+        {
+          "angle_deg": 65.5,
+          "intersection_mm3": 293.69051177284734
+        },
+        {
+          "angle_deg": 65.75,
+          "intersection_mm3": 291.9911892379485
+        },
+        {
+          "angle_deg": 66.0,
+          "intersection_mm3": 290.27209254393733
+        },
+        {
+          "angle_deg": 66.25,
+          "intersection_mm3": 288.531843542378
+        },
+        {
+          "angle_deg": 66.5,
+          "intersection_mm3": 286.7695809342502
+        },
+        {
+          "angle_deg": 66.75,
+          "intersection_mm3": 284.98428067050475
+        },
+        {
+          "angle_deg": 67.0,
+          "intersection_mm3": 283.174643160209
+        },
+        {
+          "angle_deg": 67.25,
+          "intersection_mm3": 281.3397164173361
+        },
+        {
+          "angle_deg": 67.5,
+          "intersection_mm3": 279.47875301454576
+        },
+        {
+          "angle_deg": 67.75,
+          "intersection_mm3": 277.5908539078786
+        },
+        {
+          "angle_deg": 68.0,
+          "intersection_mm3": 275.6744786521802
+        },
+        {
+          "angle_deg": 68.25,
+          "intersection_mm3": 273.72869238559184
+        },
+        {
+          "angle_deg": 68.5,
+          "intersection_mm3": 271.7526713256721
+        },
+        {
+          "angle_deg": 68.75,
+          "intersection_mm3": 269.7454537648932
+        },
+        {
+          "angle_deg": 69.0,
+          "intersection_mm3": 267.7056949571328
+        },
+        {
+          "angle_deg": 69.25,
+          "intersection_mm3": 265.63243151025756
+        },
+        {
+          "angle_deg": 69.5,
+          "intersection_mm3": 263.5218971739922
+        },
+        {
+          "angle_deg": 69.75,
+          "intersection_mm3": 261.36993598099656
+        },
+        {
+          "angle_deg": 70.0,
+          "intersection_mm3": 259.17522725624417
+        },
+        {
+          "angle_deg": 70.25,
+          "intersection_mm3": 256.9366938129149
+        },
+        {
+          "angle_deg": 70.5,
+          "intersection_mm3": 254.65332721000667
+        },
+        {
+          "angle_deg": 70.75,
+          "intersection_mm3": 252.32406592753935
+        },
+        {
+          "angle_deg": 71.0,
+          "intersection_mm3": 249.94762904519786
+        },
+        {
+          "angle_deg": 71.25,
+          "intersection_mm3": 247.52253359645928
+        },
+        {
+          "angle_deg": 71.5,
+          "intersection_mm3": 245.04754086517076
+        },
+        {
+          "angle_deg": 71.75,
+          "intersection_mm3": 242.5213511566893
+        },
+        {
+          "angle_deg": 72.0,
+          "intersection_mm3": 239.94259145519635
+        },
+        {
+          "angle_deg": 72.25,
+          "intersection_mm3": 237.30959448428285
+        },
+        {
+          "angle_deg": 72.5,
+          "intersection_mm3": 234.62062471833167
+        },
+        {
+          "angle_deg": 72.75,
+          "intersection_mm3": 231.87406845097607
+        },
+        {
+          "angle_deg": 73.0,
+          "intersection_mm3": 229.06821544024055
+        },
+        {
+          "angle_deg": 73.25,
+          "intersection_mm3": 226.20125180538184
+        },
+        {
+          "angle_deg": 73.5,
+          "intersection_mm3": 223.27110620304836
+        },
+        {
+          "angle_deg": 73.75,
+          "intersection_mm3": 220.27551549257208
+        },
+        {
+          "angle_deg": 74.0,
+          "intersection_mm3": 217.2123143836415
+        },
+        {
+          "angle_deg": 74.25,
+          "intersection_mm3": 214.07920069597512
+        },
+        {
+          "angle_deg": 74.5,
+          "intersection_mm3": 210.87372172162756
+        },
+        {
+          "angle_deg": 74.75,
+          "intersection_mm3": 207.59323350927454
+        },
+        {
+          "angle_deg": 75.0,
+          "intersection_mm3": 204.2347042981284
+        },
+        {
+          "angle_deg": 75.25,
+          "intersection_mm3": 200.8174201135902
+        },
+        {
+          "angle_deg": 75.5,
+          "intersection_mm3": 197.37027912605447
+        },
+        {
+          "angle_deg": 75.75,
+          "intersection_mm3": 193.89338276993286
+        },
+        {
+          "angle_deg": 76.0,
+          "intersection_mm3": 190.38666982056563
+        },
+        {
+          "angle_deg": 76.25,
+          "intersection_mm3": 186.8500325501601
+        },
+        {
+          "angle_deg": 76.5,
+          "intersection_mm3": 183.28319791950037
+        },
+        {
+          "angle_deg": 76.75,
+          "intersection_mm3": 179.686080867324
+        },
+        {
+          "angle_deg": 77.0,
+          "intersection_mm3": 176.0586218558036
+        },
+        {
+          "angle_deg": 77.25,
+          "intersection_mm3": 172.40075883193168
+        },
+        {
+          "angle_deg": 77.5,
+          "intersection_mm3": 168.71242722582963
+        },
+        {
+          "angle_deg": 77.75,
+          "intersection_mm3": 164.97982712648962
+        },
+        {
+          "angle_deg": 78.0,
+          "intersection_mm3": 161.14813156089468
+        },
+        {
+          "angle_deg": 78.25,
+          "intersection_mm3": 157.20619697669298
+        },
+        {
+          "angle_deg": 78.5,
+          "intersection_mm3": 153.14731597727564
+        },
+        {
+          "angle_deg": 78.75,
+          "intersection_mm3": 148.9641758285134
+        },
+        {
+          "angle_deg": 79.0,
+          "intersection_mm3": 144.6487898021059
+        },
+        {
+          "angle_deg": 79.25,
+          "intersection_mm3": 140.19241893555912
+        },
+        {
+          "angle_deg": 79.5,
+          "intersection_mm3": 135.5860740257437
+        },
+        {
+          "angle_deg": 79.75,
+          "intersection_mm3": 130.82712457423114
+        },
+        {
+          "angle_deg": 80.0,
+          "intersection_mm3": 125.91339947850463
+        },
+        {
+          "angle_deg": 80.25,
+          "intersection_mm3": 120.98551523745073
+        },
+        {
+          "angle_deg": 80.5,
+          "intersection_mm3": 116.10383710830064
+        },
+        {
+          "angle_deg": 80.75,
+          "intersection_mm3": 111.2684894045471
+        },
+        {
+          "angle_deg": 81.0,
+          "intersection_mm3": 106.47965575912201
+        },
+        {
+          "angle_deg": 81.25,
+          "intersection_mm3": 101.73758684295339
+        },
+        {
+          "angle_deg": 81.5,
+          "intersection_mm3": 97.04260945993718
+        },
+        {
+          "angle_deg": 81.75,
+          "intersection_mm3": 92.39513730996842
+        },
+        {
+          "angle_deg": 82.0,
+          "intersection_mm3": 87.79568378459955
+        },
+        {
+          "angle_deg": 82.25,
+          "intersection_mm3": 83.24487725398406
+        },
+        {
+          "angle_deg": 82.5,
+          "intersection_mm3": 78.74347942608061
+        },
+        {
+          "angle_deg": 82.75,
+          "intersection_mm3": 74.29240751936938
+        },
+        {
+          "angle_deg": 83.0,
+          "intersection_mm3": 69.89276120212496
+        },
+        {
+          "angle_deg": 83.25,
+          "intersection_mm3": 65.54585553368547
+        },
+        {
+          "angle_deg": 83.5,
+          "intersection_mm3": 61.253261523297866
+        },
+        {
+          "angle_deg": 83.75,
+          "intersection_mm3": 57.01685643911851
+        },
+        {
+          "angle_deg": 84.0,
+          "intersection_mm3": 52.83888671080621
+        },
+        {
+          "angle_deg": 84.25,
+          "intersection_mm3": 48.72204725818963
+        },
+        {
+          "angle_deg": 84.5,
+          "intersection_mm3": 44.66958247211686
+        },
+        {
+          "angle_deg": 84.75,
+          "intersection_mm3": 40.68541606450957
+        },
+        {
+          "angle_deg": 85.0,
+          "intersection_mm3": 36.774319891457964
+        },
+        {
+          "angle_deg": 85.25,
+          "intersection_mm3": 32.942136107454616
+        },
+        {
+          "angle_deg": 85.5,
+          "intersection_mm3": 29.196073390244244
+        },
+        {
+          "angle_deg": 85.75,
+          "intersection_mm3": 25.545107735538963
+        },
+        {
+          "angle_deg": 86.0,
+          "intersection_mm3": 22.00053357047703
+        },
+        {
+          "angle_deg": 86.25,
+          "intersection_mm3": 18.5767353341172
+        },
+        {
+          "angle_deg": 86.5,
+          "intersection_mm3": 15.292289758014384
+        },
+        {
+          "angle_deg": 86.75,
+          "intersection_mm3": 12.171576915647815
+        },
+        {
+          "angle_deg": 87.0,
+          "intersection_mm3": 9.247196822004613
+        },
+        {
+          "angle_deg": 87.25,
+          "intersection_mm3": 6.5637042055827735
+        },
+        {
+          "angle_deg": 87.5,
+          "intersection_mm3": 4.183584172897442
+        },
+        {
+          "angle_deg": 87.75,
+          "intersection_mm3": 2.1972116812253604
+        },
+        {
+          "angle_deg": 88.0,
+          "intersection_mm3": 0.7402806510739582
+        },
+        {
+          "angle_deg": 88.25,
+          "intersection_mm3": 0.026172357289114396
+        },
+        {
+          "angle_deg": 88.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 88.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 89.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 90.75,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.0,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.25,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.5,
+          "intersection_mm3": 0.0
+        },
+        {
+          "angle_deg": 91.75,
+          "intersection_mm3": 0.02617235728911287
+        },
+        {
+          "angle_deg": 92.0,
+          "intersection_mm3": 0.7402806510739661
+        },
+        {
+          "angle_deg": 92.25,
+          "intersection_mm3": 2.1972116812253617
+        },
+        {
+          "angle_deg": 92.5,
+          "intersection_mm3": 4.183584172897411
+        },
+        {
+          "angle_deg": 92.75,
+          "intersection_mm3": 6.563704205582811
+        },
+        {
+          "angle_deg": 93.0,
+          "intersection_mm3": 9.247196822004597
+        },
+        {
+          "angle_deg": 93.25,
+          "intersection_mm3": 12.171576915647844
+        },
+        {
+          "angle_deg": 93.5,
+          "intersection_mm3": 15.292289758014386
+        },
+        {
+          "angle_deg": 93.75,
+          "intersection_mm3": 18.57673533411728
+        },
+        {
+          "angle_deg": 94.0,
+          "intersection_mm3": 22.000533570477057
+        },
+        {
+          "angle_deg": 94.25,
+          "intersection_mm3": 25.545107735538956
+        },
+        {
+          "angle_deg": 94.5,
+          "intersection_mm3": 29.196073390244237
+        },
+        {
+          "angle_deg": 94.75,
+          "intersection_mm3": 32.942136107454544
+        },
+        {
+          "angle_deg": 95.0,
+          "intersection_mm3": 36.77431989145791
+        }
+      ]
+    },
+    "elbow_shell_forearm": {
+      "worst_mm3": 275.37892037763345,
+      "samples": [
+        {
+          "angle_deg": 0.0,
+          "intersection_mm3": 33.01178822347148
+        },
+        {
+          "angle_deg": 0.25,
+          "intersection_mm3": 33.02308654423934
+        },
+        {
+          "angle_deg": 0.5,
+          "intersection_mm3": 33.05697910350975
+        },
+        {
+          "angle_deg": 0.75,
+          "intersection_mm3": 33.11348488720983
+        },
+        {
+          "angle_deg": 1.0,
+          "intersection_mm3": 33.192575280984414
+        },
+        {
+          "angle_deg": 1.25,
+          "intersection_mm3": 33.29394441590963
+        },
+        {
+          "angle_deg": 1.5,
+          "intersection_mm3": 33.41737462154863
+        },
+        {
+          "angle_deg": 1.75,
+          "intersection_mm3": 33.56275422140708
+        },
+        {
+          "angle_deg": 2.0,
+          "intersection_mm3": 33.7299627756818
+        },
+        {
+          "angle_deg": 2.25,
+          "intersection_mm3": 33.91890238631857
+        },
+        {
+          "angle_deg": 2.5,
+          "intersection_mm3": 34.129530201242446
+        },
+        {
+          "angle_deg": 2.75,
+          "intersection_mm3": 34.36181464864173
+        },
+        {
+          "angle_deg": 3.0,
+          "intersection_mm3": 34.61574318625084
+        },
+        {
+          "angle_deg": 3.25,
+          "intersection_mm3": 34.89131393622859
+        },
+        {
+          "angle_deg": 3.5,
+          "intersection_mm3": 35.18849992949445
+        },
+        {
+          "angle_deg": 3.75,
+          "intersection_mm3": 35.50728884391689
+        },
+        {
+          "angle_deg": 4.0,
+          "intersection_mm3": 35.84770823312977
+        },
+        {
+          "angle_deg": 4.25,
+          "intersection_mm3": 36.209811534712536
+        },
+        {
+          "angle_deg": 4.5,
+          "intersection_mm3": 36.59363606101397
+        },
+        {
+          "angle_deg": 4.75,
+          "intersection_mm3": 36.999223110449314
+        },
+        {
+          "angle_deg": 5.0,
+          "intersection_mm3": 37.426784145265515
+        },
+        {
+          "angle_deg": 5.25,
+          "intersection_mm3": 37.876264408021065
+        },
+        {
+          "angle_deg": 5.5,
+          "intersection_mm3": 38.347362098446474
+        },
+        {
+          "angle_deg": 5.75,
+          "intersection_mm3": 38.83979449140277
+        },
+        {
+          "angle_deg": 6.0,
+          "intersection_mm3": 39.353287072475446
+        },
+        {
+          "angle_deg": 6.25,
+          "intersection_mm3": 39.887565652590624
+        },
+        {
+          "angle_deg": 6.5,
+          "intersection_mm3": 40.44235149725054
+        },
+        {
+          "angle_deg": 6.75,
+          "intersection_mm3": 41.01718057837551
+        },
+        {
+          "angle_deg": 7.0,
+          "intersection_mm3": 41.61145717978198
+        },
+        {
+          "angle_deg": 7.25,
+          "intersection_mm3": 42.224735059077425
+        },
+        {
+          "angle_deg": 7.5,
+          "intersection_mm3": 42.8565551563181
+        },
+        {
+          "angle_deg": 7.75,
+          "intersection_mm3": 43.505969208669654
+        },
+        {
+          "angle_deg": 8.0,
+          "intersection_mm3": 44.171738251476405
+        },
+        {
+          "angle_deg": 8.25,
+          "intersection_mm3": 44.8529344136398
+        },
+        {
+          "angle_deg": 8.5,
+          "intersection_mm3": 45.54870147718605
+        },
+        {
+          "angle_deg": 8.75,
+          "intersection_mm3": 46.2581912713964
+        },
+        {
+          "angle_deg": 9.0,
+          "intersection_mm3": 46.980648901763715
+        },
+        {
+          "angle_deg": 9.25,
+          "intersection_mm3": 47.71539318753631
+        },
+        {
+          "angle_deg": 9.5,
+          "intersection_mm3": 48.461536621942635
+        },
+        {
+          "angle_deg": 9.75,
+          "intersection_mm3": 49.2180973280238
+        },
+        {
+          "angle_deg": 10.0,
+          "intersection_mm3": 49.98407795216133
+        },
+        {
+          "angle_deg": 10.25,
+          "intersection_mm3": 50.75818481997113
+        },
+        {
+          "angle_deg": 10.5,
+          "intersection_mm3": 51.53812907039841
+        },
+        {
+          "angle_deg": 10.75,
+          "intersection_mm3": 52.322787889203255
+        },
+        {
+          "angle_deg": 11.0,
+          "intersection_mm3": 53.11204690724894
+        },
+        {
+          "angle_deg": 11.25,
+          "intersection_mm3": 53.90579358858694
+        },
+        {
+          "angle_deg": 11.5,
+          "intersection_mm3": 54.70390509262901
+        },
+        {
+          "angle_deg": 11.75,
+          "intersection_mm3": 55.506283007323205
+        },
+        {
+          "angle_deg": 12.0,
+          "intersection_mm3": 56.31287392879154
+        },
+        {
+          "angle_deg": 12.25,
+          "intersection_mm3": 57.12356733313971
+        },
+        {
+          "angle_deg": 12.5,
+          "intersection_mm3": 57.938002070713786
+        },
+        {
+          "angle_deg": 12.75,
+          "intersection_mm3": 58.75591851053825
+        },
+        {
+          "angle_deg": 13.0,
+          "intersection_mm3": 59.57709182399061
+        },
+        {
+          "angle_deg": 13.25,
+          "intersection_mm3": 60.40132570021909
+        },
+        {
+          "angle_deg": 13.5,
+          "intersection_mm3": 61.22847658107046
+        },
+        {
+          "angle_deg": 13.75,
+          "intersection_mm3": 62.05840524333556
+        },
+        {
+          "angle_deg": 14.0,
+          "intersection_mm3": 62.89097933533741
+        },
+        {
+          "angle_deg": 14.25,
+          "intersection_mm3": 63.72609291826599
+        },
+        {
+          "angle_deg": 14.5,
+          "intersection_mm3": 64.56366103385888
+        },
+        {
+          "angle_deg": 14.75,
+          "intersection_mm3": 65.40360135473946
+        },
+        {
+          "angle_deg": 15.0,
+          "intersection_mm3": 66.24583170746608
+        },
+        {
+          "angle_deg": 15.25,
+          "intersection_mm3": 67.09027020314193
+        },
+        {
+          "angle_deg": 15.5,
+          "intersection_mm3": 67.93683506861791
+        },
+        {
+          "angle_deg": 15.75,
+          "intersection_mm3": 68.78544686071162
+        },
+        {
+          "angle_deg": 16.0,
+          "intersection_mm3": 69.63604078884335
+        },
+        {
+          "angle_deg": 16.25,
+          "intersection_mm3": 70.4886594650049
+        },
+        {
+          "angle_deg": 16.5,
+          "intersection_mm3": 71.34335780134333
+        },
+        {
+          "angle_deg": 16.75,
+          "intersection_mm3": 72.20012675430097
+        },
+        {
+          "angle_deg": 17.0,
+          "intersection_mm3": 73.05895857573454
+        },
+        {
+          "angle_deg": 17.25,
+          "intersection_mm3": 73.9198392436746
+        },
+        {
+          "angle_deg": 17.5,
+          "intersection_mm3": 74.78274283802962
+        },
+        {
+          "angle_deg": 17.75,
+          "intersection_mm3": 75.64764357704648
+        },
+        {
+          "angle_deg": 18.0,
+          "intersection_mm3": 76.51434625280892
+        },
+        {
+          "angle_deg": 18.25,
+          "intersection_mm3": 77.38257558023908
+        },
+        {
+          "angle_deg": 18.5,
+          "intersection_mm3": 78.25215174406331
+        },
+        {
+          "angle_deg": 18.75,
+          "intersection_mm3": 79.12297739950527
+        },
+        {
+          "angle_deg": 19.0,
+          "intersection_mm3": 79.99500056520407
+        },
+        {
+          "angle_deg": 19.25,
+          "intersection_mm3": 80.8681344784017
+        },
+        {
+          "angle_deg": 19.5,
+          "intersection_mm3": 81.74230329964345
+        },
+        {
+          "angle_deg": 19.75,
+          "intersection_mm3": 82.61744025015224
+        },
+        {
+          "angle_deg": 20.0,
+          "intersection_mm3": 83.49347614282387
+        },
+        {
+          "angle_deg": 20.25,
+          "intersection_mm3": 84.37034048103159
+        },
+        {
+          "angle_deg": 20.5,
+          "intersection_mm3": 85.2479606345414
+        },
+        {
+          "angle_deg": 20.75,
+          "intersection_mm3": 86.12626895726513
+        },
+        {
+          "angle_deg": 21.0,
+          "intersection_mm3": 87.00535223216852
+        },
+        {
+          "angle_deg": 21.25,
+          "intersection_mm3": 87.8853662290807
+        },
+        {
+          "angle_deg": 21.5,
+          "intersection_mm3": 88.76641305922087
+        },
+        {
+          "angle_deg": 21.75,
+          "intersection_mm3": 89.64856024191107
+        },
+        {
+          "angle_deg": 22.0,
+          "intersection_mm3": 90.5318561761939
+        },
+        {
+          "angle_deg": 22.25,
+          "intersection_mm3": 91.41633679490802
+        },
+        {
+          "angle_deg": 22.5,
+          "intersection_mm3": 92.30203227408236
+        },
+        {
+          "angle_deg": 22.75,
+          "intersection_mm3": 93.18896932325197
+        },
+        {
+          "angle_deg": 23.0,
+          "intersection_mm3": 94.07716895565233
+        },
+        {
+          "angle_deg": 23.25,
+          "intersection_mm3": 94.96664853722763
+        },
+        {
+          "angle_deg": 23.5,
+          "intersection_mm3": 95.85734982045251
+        },
+        {
+          "angle_deg": 23.75,
+          "intersection_mm3": 96.74900496422565
+        },
+        {
+          "angle_deg": 24.0,
+          "intersection_mm3": 97.64142540208505
+        },
+        {
+          "angle_deg": 24.25,
+          "intersection_mm3": 98.53447937214302
+        },
+        {
+          "angle_deg": 24.5,
+          "intersection_mm3": 99.42806774394663
+        },
+        {
+          "angle_deg": 24.75,
+          "intersection_mm3": 100.32209547188593
+        },
+        {
+          "angle_deg": 25.0,
+          "intersection_mm3": 101.21648700015896
+        },
+        {
+          "angle_deg": 25.25,
+          "intersection_mm3": 102.1111718654254
+        },
+        {
+          "angle_deg": 25.5,
+          "intersection_mm3": 103.00616528950606
+        },
+        {
+          "angle_deg": 25.75,
+          "intersection_mm3": 103.90164557328471
+        },
+        {
+          "angle_deg": 26.0,
+          "intersection_mm3": 104.79765491025047
+        },
+        {
+          "angle_deg": 26.25,
+          "intersection_mm3": 105.69420489858055
+        },
+        {
+          "angle_deg": 26.5,
+          "intersection_mm3": 106.59130386309099
+        },
+        {
+          "angle_deg": 26.75,
+          "intersection_mm3": 107.48900314743543
+        },
+        {
+          "angle_deg": 27.0,
+          "intersection_mm3": 108.3873769402571
+        },
+        {
+          "angle_deg": 27.25,
+          "intersection_mm3": 109.28644229396978
+        },
+        {
+          "angle_deg": 27.5,
+          "intersection_mm3": 110.1861830039688
+        },
+        {
+          "angle_deg": 27.75,
+          "intersection_mm3": 111.0865721054184
+        },
+        {
+          "angle_deg": 28.0,
+          "intersection_mm3": 111.98758045437773
+        },
+        {
+          "angle_deg": 28.25,
+          "intersection_mm3": 112.8891870922828
+        },
+        {
+          "angle_deg": 28.5,
+          "intersection_mm3": 113.79137751329647
+        },
+        {
+          "angle_deg": 28.75,
+          "intersection_mm3": 114.69414115896384
+        },
+        {
+          "angle_deg": 29.0,
+          "intersection_mm3": 115.59746061792107
+        },
+        {
+          "angle_deg": 29.25,
+          "intersection_mm3": 116.50116249525982
+        },
+        {
+          "angle_deg": 29.5,
+          "intersection_mm3": 117.40502186350739
+        },
+        {
+          "angle_deg": 29.75,
+          "intersection_mm3": 118.30892084863554
+        },
+        {
+          "angle_deg": 30.0,
+          "intersection_mm3": 119.21298677927292
+        },
+        {
+          "angle_deg": 30.25,
+          "intersection_mm3": 120.11734637648523
+        },
+        {
+          "angle_deg": 30.5,
+          "intersection_mm3": 121.01886697989303
+        },
+        {
+          "angle_deg": 30.75,
+          "intersection_mm3": 121.90676418675721
+        },
+        {
+          "angle_deg": 31.0,
+          "intersection_mm3": 122.77780565356284
+        },
+        {
+          "angle_deg": 31.25,
+          "intersection_mm3": 123.63160372553578
+        },
+        {
+          "angle_deg": 31.5,
+          "intersection_mm3": 124.46813983155097
+        },
+        {
+          "angle_deg": 31.75,
+          "intersection_mm3": 125.2876401421515
+        },
+        {
+          "angle_deg": 32.0,
+          "intersection_mm3": 126.09044065766953
+        },
+        {
+          "angle_deg": 32.25,
+          "intersection_mm3": 126.87709582415869
+        },
+        {
+          "angle_deg": 32.5,
+          "intersection_mm3": 127.64821215461697
+        },
+        {
+          "angle_deg": 32.75,
+          "intersection_mm3": 128.4040148520277
+        },
+        {
+          "angle_deg": 33.0,
+          "intersection_mm3": 129.14520270822808
+        },
+        {
+          "angle_deg": 33.25,
+          "intersection_mm3": 129.87208375579576
+        },
+        {
+          "angle_deg": 33.5,
+          "intersection_mm3": 130.58526926175836
+        },
+        {
+          "angle_deg": 33.75,
+          "intersection_mm3": 131.28540754496
+        },
+        {
+          "angle_deg": 34.0,
+          "intersection_mm3": 131.973069011599
+        },
+        {
+          "angle_deg": 34.25,
+          "intersection_mm3": 132.64937440112513
+        },
+        {
+          "angle_deg": 34.5,
+          "intersection_mm3": 133.31490254879643
+        },
+        {
+          "angle_deg": 34.75,
+          "intersection_mm3": 133.97059265529265
+        },
+        {
+          "angle_deg": 35.0,
+          "intersection_mm3": 134.61667760014973
+        },
+        {
+          "angle_deg": 35.25,
+          "intersection_mm3": 135.2540842466405
+        },
+        {
+          "angle_deg": 35.5,
+          "intersection_mm3": 135.88315315436492
+        },
+        {
+          "angle_deg": 35.75,
+          "intersection_mm3": 136.504892644389
+        },
+        {
+          "angle_deg": 36.0,
+          "intersection_mm3": 137.11986028207502
+        },
+        {
+          "angle_deg": 36.25,
+          "intersection_mm3": 137.72969028040714
+        },
+        {
+          "angle_deg": 36.5,
+          "intersection_mm3": 138.33537289023647
+        },
+        {
+          "angle_deg": 36.75,
+          "intersection_mm3": 138.93812786409538
+        },
+        {
+          "angle_deg": 37.0,
+          "intersection_mm3": 139.53927133325868
+        },
+        {
+          "angle_deg": 37.25,
+          "intersection_mm3": 140.1399258026046
+        },
+        {
+          "angle_deg": 37.5,
+          "intersection_mm3": 140.74182616157663
+        },
+        {
+          "angle_deg": 37.75,
+          "intersection_mm3": 141.34872066474279
+        },
+        {
+          "angle_deg": 38.0,
+          "intersection_mm3": 141.9692943465747
+        },
+        {
+          "angle_deg": 38.25,
+          "intersection_mm3": 142.61226618223603
+        },
+        {
+          "angle_deg": 38.5,
+          "intersection_mm3": 143.28804695714499
+        },
+        {
+          "angle_deg": 38.75,
+          "intersection_mm3": 144.01259854793273
+        },
+        {
+          "angle_deg": 39.0,
+          "intersection_mm3": 144.83085498064148
+        },
+        {
+          "angle_deg": 39.25,
+          "intersection_mm3": 145.74394773242858
+        },
+        {
+          "angle_deg": 39.5,
+          "intersection_mm3": 146.65659690099773
+        },
+        {
+          "angle_deg": 39.75,
+          "intersection_mm3": 147.5688369490617
+        },
+        {
+          "angle_deg": 40.0,
+          "intersection_mm3": 148.48069974377887
+        },
+        {
+          "angle_deg": 40.25,
+          "intersection_mm3": 149.392226701734
+        },
+        {
+          "angle_deg": 40.5,
+          "intersection_mm3": 150.30338336718452
+        },
+        {
+          "angle_deg": 40.75,
+          "intersection_mm3": 151.21409248573585
+        },
+        {
+          "angle_deg": 41.0,
+          "intersection_mm3": 152.12432698127338
+        },
+        {
+          "angle_deg": 41.25,
+          "intersection_mm3": 153.03405143807268
+        },
+        {
+          "angle_deg": 41.5,
+          "intersection_mm3": 153.94311922331522
+        },
+        {
+          "angle_deg": 41.75,
+          "intersection_mm3": 154.85171917062564
+        },
+        {
+          "angle_deg": 42.0,
+          "intersection_mm3": 155.76046135431193
+        },
+        {
+          "angle_deg": 42.25,
+          "intersection_mm3": 156.6698094413097
+        },
+        {
+          "angle_deg": 42.5,
+          "intersection_mm3": 157.58000566430783
+        },
+        {
+          "angle_deg": 42.75,
+          "intersection_mm3": 158.49126916324917
+        },
+        {
+          "angle_deg": 43.0,
+          "intersection_mm3": 159.4037733849482
+        },
+        {
+          "angle_deg": 43.25,
+          "intersection_mm3": 160.31748955628768
+        },
+        {
+          "angle_deg": 43.5,
+          "intersection_mm3": 161.23201613170914
+        },
+        {
+          "angle_deg": 43.75,
+          "intersection_mm3": 162.14062237047665
+        },
+        {
+          "angle_deg": 44.0,
+          "intersection_mm3": 163.04145128185587
+        },
+        {
+          "angle_deg": 44.25,
+          "intersection_mm3": 163.9383869354387
+        },
+        {
+          "angle_deg": 44.5,
+          "intersection_mm3": 164.83258867393081
+        },
+        {
+          "angle_deg": 44.75,
+          "intersection_mm3": 165.72471405449625
+        },
+        {
+          "angle_deg": 45.0,
+          "intersection_mm3": 166.6150330449485
+        },
+        {
+          "angle_deg": 45.25,
+          "intersection_mm3": 167.50354843119143
+        },
+        {
+          "angle_deg": 45.5,
+          "intersection_mm3": 168.3905762921601
+        },
+        {
+          "angle_deg": 45.75,
+          "intersection_mm3": 169.27644581599586
+        },
+        {
+          "angle_deg": 46.0,
+          "intersection_mm3": 170.1617388862526
+        },
+        {
+          "angle_deg": 46.25,
+          "intersection_mm3": 171.0466866151333
+        },
+        {
+          "angle_deg": 46.5,
+          "intersection_mm3": 171.93150505351645
+        },
+        {
+          "angle_deg": 46.75,
+          "intersection_mm3": 172.8162958163025
+        },
+        {
+          "angle_deg": 47.0,
+          "intersection_mm3": 173.7012082728058
+        },
+        {
+          "angle_deg": 47.25,
+          "intersection_mm3": 174.5863260915547
+        },
+        {
+          "angle_deg": 47.5,
+          "intersection_mm3": 175.47223712901246
+        },
+        {
+          "angle_deg": 47.75,
+          "intersection_mm3": 176.35926715373583
+        },
+        {
+          "angle_deg": 48.0,
+          "intersection_mm3": 177.2476888142591
+        },
+        {
+          "angle_deg": 48.25,
+          "intersection_mm3": 178.13768991471116
+        },
+        {
+          "angle_deg": 48.5,
+          "intersection_mm3": 179.02937453438818
+        },
+        {
+          "angle_deg": 48.75,
+          "intersection_mm3": 179.92285286407173
+        },
+        {
+          "angle_deg": 49.0,
+          "intersection_mm3": 180.81779568539054
+        },
+        {
+          "angle_deg": 49.25,
+          "intersection_mm3": 181.71394870637434
+        },
+        {
+          "angle_deg": 49.5,
+          "intersection_mm3": 182.61117489996
+        },
+        {
+          "angle_deg": 49.75,
+          "intersection_mm3": 183.50947925721056
+        },
+        {
+          "angle_deg": 50.0,
+          "intersection_mm3": 184.40885720327034
+        },
+        {
+          "angle_deg": 50.25,
+          "intersection_mm3": 185.30920581705283
+        },
+        {
+          "angle_deg": 50.5,
+          "intersection_mm3": 186.21042483707603
+        },
+        {
+          "angle_deg": 50.75,
+          "intersection_mm3": 187.11243008549
+        },
+        {
+          "angle_deg": 51.0,
+          "intersection_mm3": 188.01503504968892
+        },
+        {
+          "angle_deg": 51.25,
+          "intersection_mm3": 188.91805109884163
+        },
+        {
+          "angle_deg": 51.5,
+          "intersection_mm3": 189.8212014780408
+        },
+        {
+          "angle_deg": 51.75,
+          "intersection_mm3": 190.72425206215811
+        },
+        {
+          "angle_deg": 52.0,
+          "intersection_mm3": 191.62723049167283
+        },
+        {
+          "angle_deg": 52.25,
+          "intersection_mm3": 192.53014155475833
+        },
+        {
+          "angle_deg": 52.5,
+          "intersection_mm3": 193.43295717063444
+        },
+        {
+          "angle_deg": 52.75,
+          "intersection_mm3": 194.3356888426248
+        },
+        {
+          "angle_deg": 53.0,
+          "intersection_mm3": 195.23860668711296
+        },
+        {
+          "angle_deg": 53.25,
+          "intersection_mm3": 196.1421213448189
+        },
+        {
+          "angle_deg": 53.5,
+          "intersection_mm3": 197.04665412475183
+        },
+        {
+          "angle_deg": 53.75,
+          "intersection_mm3": 197.95247810911627
+        },
+        {
+          "angle_deg": 54.0,
+          "intersection_mm3": 198.8597711957939
+        },
+        {
+          "angle_deg": 54.25,
+          "intersection_mm3": 199.7686535833935
+        },
+        {
+          "angle_deg": 54.5,
+          "intersection_mm3": 200.6790569855125
+        },
+        {
+          "angle_deg": 54.75,
+          "intersection_mm3": 201.5906632008283
+        },
+        {
+          "angle_deg": 55.0,
+          "intersection_mm3": 202.5032668767445
+        },
+        {
+          "angle_deg": 55.25,
+          "intersection_mm3": 203.41666994667048
+        },
+        {
+          "angle_deg": 55.5,
+          "intersection_mm3": 204.33071282869088
+        },
+        {
+          "angle_deg": 55.75,
+          "intersection_mm3": 205.2452187146441
+        },
+        {
+          "angle_deg": 56.0,
+          "intersection_mm3": 206.15998845138148
+        },
+        {
+          "angle_deg": 56.25,
+          "intersection_mm3": 207.07471278412518
+        },
+        {
+          "angle_deg": 56.5,
+          "intersection_mm3": 207.98922331632536
+        },
+        {
+          "angle_deg": 56.75,
+          "intersection_mm3": 208.90333221122506
+        },
+        {
+          "angle_deg": 57.0,
+          "intersection_mm3": 209.81686171501468
+        },
+        {
+          "angle_deg": 57.25,
+          "intersection_mm3": 210.72969063418913
+        },
+        {
+          "angle_deg": 57.5,
+          "intersection_mm3": 211.64173210681798
+        },
+        {
+          "angle_deg": 57.75,
+          "intersection_mm3": 212.55298477137723
+        },
+        {
+          "angle_deg": 58.0,
+          "intersection_mm3": 213.4634302802727
+        },
+        {
+          "angle_deg": 58.25,
+          "intersection_mm3": 214.3730464420224
+        },
+        {
+          "angle_deg": 58.5,
+          "intersection_mm3": 215.28199121107255
+        },
+        {
+          "angle_deg": 58.75,
+          "intersection_mm3": 216.19070840517244
+        },
+        {
+          "angle_deg": 59.0,
+          "intersection_mm3": 217.09949692899968
+        },
+        {
+          "angle_deg": 59.25,
+          "intersection_mm3": 218.00857078238323
+        },
+        {
+          "angle_deg": 59.5,
+          "intersection_mm3": 218.91810435802967
+        },
+        {
+          "angle_deg": 59.75,
+          "intersection_mm3": 219.82820966080197
+        },
+        {
+          "angle_deg": 60.0,
+          "intersection_mm3": 220.7389685415879
+        },
+        {
+          "angle_deg": 60.25,
+          "intersection_mm3": 221.6501630168744
+        },
+        {
+          "angle_deg": 60.5,
+          "intersection_mm3": 222.5615635299829
+        },
+        {
+          "angle_deg": 60.75,
+          "intersection_mm3": 223.47304624025423
+        },
+        {
+          "angle_deg": 61.0,
+          "intersection_mm3": 224.38465984660607
+        },
+        {
+          "angle_deg": 61.25,
+          "intersection_mm3": 225.2963913174407
+        },
+        {
+          "angle_deg": 61.5,
+          "intersection_mm3": 226.20819918685467
+        },
+        {
+          "angle_deg": 61.75,
+          "intersection_mm3": 227.1200124718369
+        },
+        {
+          "angle_deg": 62.0,
+          "intersection_mm3": 228.0317336404594
+        },
+        {
+          "angle_deg": 62.25,
+          "intersection_mm3": 228.94323609792946
+        },
+        {
+          "angle_deg": 62.5,
+          "intersection_mm3": 229.85436463196578
+        },
+        {
+          "angle_deg": 62.75,
+          "intersection_mm3": 230.76486572780578
+        },
+        {
+          "angle_deg": 63.0,
+          "intersection_mm3": 231.67441994593176
+        },
+        {
+          "angle_deg": 63.25,
+          "intersection_mm3": 232.58295940991988
+        },
+        {
+          "angle_deg": 63.5,
+          "intersection_mm3": 233.49045743917887
+        },
+        {
+          "angle_deg": 63.75,
+          "intersection_mm3": 234.39688318980538
+        },
+        {
+          "angle_deg": 64.0,
+          "intersection_mm3": 235.3022024570988
+        },
+        {
+          "angle_deg": 64.25,
+          "intersection_mm3": 236.20661219101936
+        },
+        {
+          "angle_deg": 64.5,
+          "intersection_mm3": 237.110394537553
+        },
+        {
+          "angle_deg": 64.75,
+          "intersection_mm3": 238.01384084304502
+        },
+        {
+          "angle_deg": 65.0,
+          "intersection_mm3": 238.91715182418636
+        },
+        {
+          "angle_deg": 65.25,
+          "intersection_mm3": 239.82039723589028
+        },
+        {
+          "angle_deg": 65.5,
+          "intersection_mm3": 240.7236611438356
+        },
+        {
+          "angle_deg": 65.75,
+          "intersection_mm3": 241.6268865311635
+        },
+        {
+          "angle_deg": 66.0,
+          "intersection_mm3": 242.52978279616457
+        },
+        {
+          "angle_deg": 66.25,
+          "intersection_mm3": 243.43217127107306
+        },
+        {
+          "angle_deg": 66.5,
+          "intersection_mm3": 244.33391441355332
+        },
+        {
+          "angle_deg": 66.75,
+          "intersection_mm3": 245.2348428619788
+        },
+        {
+          "angle_deg": 67.0,
+          "intersection_mm3": 246.1347965966072
+        },
+        {
+          "angle_deg": 67.25,
+          "intersection_mm3": 247.03361943879204
+        },
+        {
+          "angle_deg": 67.5,
+          "intersection_mm3": 247.93113735864236
+        },
+        {
+          "angle_deg": 67.75,
+          "intersection_mm3": 248.8271496914161
+        },
+        {
+          "angle_deg": 68.0,
+          "intersection_mm3": 249.72142055263976
+        },
+        {
+          "angle_deg": 68.25,
+          "intersection_mm3": 250.61363351562647
+        },
+        {
+          "angle_deg": 68.5,
+          "intersection_mm3": 251.50337315662645
+        },
+        {
+          "angle_deg": 68.75,
+          "intersection_mm3": 252.39041178518505
+        },
+        {
+          "angle_deg": 69.0,
+          "intersection_mm3": 253.2746540560712
+        },
+        {
+          "angle_deg": 69.25,
+          "intersection_mm3": 254.1559790010983
+        },
+        {
+          "angle_deg": 69.5,
+          "intersection_mm3": 255.03424368664847
+        },
+        {
+          "angle_deg": 69.75,
+          "intersection_mm3": 255.90935682831602
+        },
+        {
+          "angle_deg": 70.0,
+          "intersection_mm3": 256.7814347672871
+        },
+        {
+          "angle_deg": 70.25,
+          "intersection_mm3": 257.65049081387735
+        },
+        {
+          "angle_deg": 70.5,
+          "intersection_mm3": 258.51633993202137
+        },
+        {
+          "angle_deg": 70.75,
+          "intersection_mm3": 259.37856720262806
+        },
+        {
+          "angle_deg": 71.0,
+          "intersection_mm3": 260.23664054551654
+        },
+        {
+          "angle_deg": 71.25,
+          "intersection_mm3": 261.08991548597743
+        },
+        {
+          "angle_deg": 71.5,
+          "intersection_mm3": 261.93741335827195
+        },
+        {
+          "angle_deg": 71.75,
+          "intersection_mm3": 262.7780570515702
+        },
+        {
+          "angle_deg": 72.0,
+          "intersection_mm3": 263.61077652617683
+        },
+        {
+          "angle_deg": 72.25,
+          "intersection_mm3": 264.4343967671849
+        },
+        {
+          "angle_deg": 72.5,
+          "intersection_mm3": 265.2475368786224
+        },
+        {
+          "angle_deg": 72.75,
+          "intersection_mm3": 266.0486124906488
+        },
+        {
+          "angle_deg": 73.0,
+          "intersection_mm3": 266.83575403270106
+        },
+        {
+          "angle_deg": 73.25,
+          "intersection_mm3": 267.60654252976025
+        },
+        {
+          "angle_deg": 73.5,
+          "intersection_mm3": 268.3580642828181
+        },
+        {
+          "angle_deg": 73.75,
+          "intersection_mm3": 269.0863755248756
+        },
+        {
+          "angle_deg": 74.0,
+          "intersection_mm3": 269.7846279961079
+        },
+        {
+          "angle_deg": 74.25,
+          "intersection_mm3": 270.44778120385615
+        },
+        {
+          "angle_deg": 74.5,
+          "intersection_mm3": 271.0740728619872
+        },
+        {
+          "angle_deg": 74.75,
+          "intersection_mm3": 271.6618211024681
+        },
+        {
+          "angle_deg": 75.0,
+          "intersection_mm3": 272.20941023740426
+        },
+        {
+          "angle_deg": 75.25,
+          "intersection_mm3": 272.7154974071119
+        },
+        {
+          "angle_deg": 75.5,
+          "intersection_mm3": 273.1789874941006
+        },
+        {
+          "angle_deg": 75.75,
+          "intersection_mm3": 273.59886313189924
+        },
+        {
+          "angle_deg": 76.0,
+          "intersection_mm3": 273.9739697644065
+        },
+        {
+          "angle_deg": 76.25,
+          "intersection_mm3": 274.3031203644469
+        },
+        {
+          "angle_deg": 76.5,
+          "intersection_mm3": 274.5852530238851
+        },
+        {
+          "angle_deg": 76.75,
+          "intersection_mm3": 274.8194811293542
+        },
+        {
+          "angle_deg": 77.0,
+          "intersection_mm3": 275.00489091871754
+        },
+        {
+          "angle_deg": 77.25,
+          "intersection_mm3": 275.1419469710945
+        },
+        {
+          "angle_deg": 77.5,
+          "intersection_mm3": 275.2335369799502
+        },
+        {
+          "angle_deg": 77.75,
+          "intersection_mm3": 275.28429379761025
+        },
+        {
+          "angle_deg": 78.0,
+          "intersection_mm3": 275.30243220420687
+        },
+        {
+          "angle_deg": 78.25,
+          "intersection_mm3": 275.3057112583593
+        },
+        {
+          "angle_deg": 78.5,
+          "intersection_mm3": 275.30975856257606
+        },
+        {
+          "angle_deg": 78.75,
+          "intersection_mm3": 275.3148508002429
+        },
+        {
+          "angle_deg": 79.0,
+          "intersection_mm3": 275.3206378032929
+        },
+        {
+          "angle_deg": 79.25,
+          "intersection_mm3": 275.32674285899276
+        },
+        {
+          "angle_deg": 79.5,
+          "intersection_mm3": 275.3327149118751
+        },
+        {
+          "angle_deg": 79.75,
+          "intersection_mm3": 275.3379151379549
+        },
+        {
+          "angle_deg": 80.0,
+          "intersection_mm3": 275.3420866700137
+        },
+        {
+          "angle_deg": 80.25,
+          "intersection_mm3": 275.34530488758014
+        },
+        {
+          "angle_deg": 80.5,
+          "intersection_mm3": 275.34762454058796
+        },
+        {
+          "angle_deg": 80.75,
+          "intersection_mm3": 275.34909398922247
+        },
+        {
+          "angle_deg": 81.0,
+          "intersection_mm3": 275.3498042716199
+        },
+        {
+          "angle_deg": 81.25,
+          "intersection_mm3": 275.34990178852644
+        },
+        {
+          "angle_deg": 81.5,
+          "intersection_mm3": 275.34951510915266
+        },
+        {
+          "angle_deg": 81.75,
+          "intersection_mm3": 275.3487796914778
+        },
+        {
+          "angle_deg": 82.0,
+          "intersection_mm3": 275.3477971919311
+        },
+        {
+          "angle_deg": 82.25,
+          "intersection_mm3": 275.3466436190999
+        },
+        {
+          "angle_deg": 82.5,
+          "intersection_mm3": 275.3453773733405
+        },
+        {
+          "angle_deg": 82.75,
+          "intersection_mm3": 275.3438925867851
+        },
+        {
+          "angle_deg": 83.0,
+          "intersection_mm3": 275.3421207714241
+        },
+        {
+          "angle_deg": 83.25,
+          "intersection_mm3": 275.3401802450102
+        },
+        {
+          "angle_deg": 83.5,
+          "intersection_mm3": 275.3384716138052
+        },
+        {
+          "angle_deg": 83.75,
+          "intersection_mm3": 275.33783433107266
+        },
+        {
+          "angle_deg": 84.0,
+          "intersection_mm3": 275.3389286094349
+        },
+        {
+          "angle_deg": 84.25,
+          "intersection_mm3": 275.34163069659996
+        },
+        {
+          "angle_deg": 84.5,
+          "intersection_mm3": 275.34571657670807
+        },
+        {
+          "angle_deg": 84.75,
+          "intersection_mm3": 275.3509228562857
+        },
+        {
+          "angle_deg": 85.0,
+          "intersection_mm3": 275.356820766155
+        },
+        {
+          "angle_deg": 85.25,
+          "intersection_mm3": 275.36268291146587
+        },
+        {
+          "angle_deg": 85.5,
+          "intersection_mm3": 275.36762411282206
+        },
+        {
+          "angle_deg": 85.75,
+          "intersection_mm3": 275.37157051105515
+        },
+        {
+          "angle_deg": 86.0,
+          "intersection_mm3": 275.37455178470196
+        },
+        {
+          "angle_deg": 86.25,
+          "intersection_mm3": 275.37654413034284
+        },
+        {
+          "angle_deg": 86.5,
+          "intersection_mm3": 275.3775497674019
+        },
+        {
+          "angle_deg": 86.75,
+          "intersection_mm3": 275.3777201163681
+        },
+        {
+          "angle_deg": 87.0,
+          "intersection_mm3": 275.3771347924434
+        },
+        {
+          "angle_deg": 87.25,
+          "intersection_mm3": 275.37584825918645
+        },
+        {
+          "angle_deg": 87.5,
+          "intersection_mm3": 275.37388407280514
+        },
+        {
+          "angle_deg": 87.75,
+          "intersection_mm3": 275.37126472419527
+        },
+        {
+          "angle_deg": 88.0,
+          "intersection_mm3": 275.36803075125636
+        },
+        {
+          "angle_deg": 88.25,
+          "intersection_mm3": 275.3641649495006
+        },
+        {
+          "angle_deg": 88.5,
+          "intersection_mm3": 275.3595522800589
+        },
+        {
+          "angle_deg": 88.75,
+          "intersection_mm3": 275.3541938814616
+        },
+        {
+          "angle_deg": 89.0,
+          "intersection_mm3": 275.34818086142707
+        },
+        {
+          "angle_deg": 89.25,
+          "intersection_mm3": 275.34185153957526
+        },
+        {
+          "angle_deg": 89.5,
+          "intersection_mm3": 275.3369726365476
+        },
+        {
+          "angle_deg": 89.75,
+          "intersection_mm3": 275.3341379861001
+        },
+        {
+          "angle_deg": 90.0,
+          "intersection_mm3": 275.3332714983101
+        },
+        {
+          "angle_deg": 90.25,
+          "intersection_mm3": 275.3343619748543
+        },
+        {
+          "angle_deg": 90.5,
+          "intersection_mm3": 275.33741691974376
+        },
+        {
+          "angle_deg": 90.75,
+          "intersection_mm3": 275.3425107865919
+        },
+        {
+          "angle_deg": 91.0,
+          "intersection_mm3": 275.3490414847704
+        },
+        {
+          "angle_deg": 91.25,
+          "intersection_mm3": 275.3552260428232
+        },
+        {
+          "angle_deg": 91.5,
+          "intersection_mm3": 275.3607223931722
+        },
+        {
+          "angle_deg": 91.75,
+          "intersection_mm3": 275.3654183316834
+        },
+        {
+          "angle_deg": 92.0,
+          "intersection_mm3": 275.369300849608
+        },
+        {
+          "angle_deg": 92.25,
+          "intersection_mm3": 275.3725090204375
+        },
+        {
+          "angle_deg": 92.5,
+          "intersection_mm3": 275.3750975736992
+        },
+        {
+          "angle_deg": 92.75,
+          "intersection_mm3": 275.37704955342974
+        },
+        {
+          "angle_deg": 93.0,
+          "intersection_mm3": 275.3783384411559
+        },
+        {
+          "angle_deg": 93.25,
+          "intersection_mm3": 275.37892037763345
+        },
+        {
+          "angle_deg": 93.5,
+          "intersection_mm3": 275.37875244948077
+        },
+        {
+          "angle_deg": 93.75,
+          "intersection_mm3": 275.37779611510393
+        },
+        {
+          "angle_deg": 94.0,
+          "intersection_mm3": 275.3759123347603
+        },
+        {
+          "angle_deg": 94.25,
+          "intersection_mm3": 275.3730577662826
+        },
+        {
+          "angle_deg": 94.5,
+          "intersection_mm3": 275.36922019434115
+        },
+        {
+          "angle_deg": 94.75,
+          "intersection_mm3": 275.3643781443731
+        },
+        {
+          "angle_deg": 95.0,
+          "intersection_mm3": 275.3586187355493
+        }
+      ]
+    }
+  },
+  "forearm_horn_disc_lost_mm3": 1.1975130971468621e-06,
+  "shoulder_servo_frame_lost_mm3": 9.344823990577174e-05,
+  "forearm_sections": [
+    {
+      "x_mm": 10.0,
+      "area_mm2": 497.87108853242665
+    },
+    {
+      "x_mm": 12.0,
+      "area_mm2": 473.1165698912986
+    },
+    {
+      "x_mm": 14.0,
+      "area_mm2": 503.54495729044044
+    },
+    {
+      "x_mm": 15.0,
+      "area_mm2": 494.510843512635
+    },
+    {
+      "x_mm": 15.9,
+      "area_mm2": 453.9626995935893
+    }
+  ],
+  "parts": {
+    "shoulder_bracket": {
+      "volume_mm3": 7678.745442836448,
+      "components": 1,
+      "watertight": true
+    },
+    "upper_arm": {
+      "volume_mm3": 8413.953692313446,
+      "components": 1,
+      "watertight": true
+    },
+    "forearm": {
+      "volume_mm3": 4587.466030414676,
+      "components": 1,
+      "watertight": true
+    },
+    "elbow_shell": {
+      "volume_mm3": 1490.602582220973,
+      "components": 1,
+      "watertight": true
+    }
+  },
+  "strength_status": "UNVERIFIED: 断面積は幾何記録。接着・層間強度と疲労の実証ではない",
+  "pass": false
+}

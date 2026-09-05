@@ -1,5 +1,5 @@
 {
-  "total_parts": 126,
+  "total_parts": 130,
   "links": {
     "base_link": [
       "chassis",
@@ -10,9 +10,7 @@
       "Mouth_Cannon_Grey",
       "Head_Top_Eyecut#single",
       "Head_Bottom_Blue#single",
-      "Head_Bottom_Cap_Grey#single",
       "Head_Dome_Grey#single",
-      "Head_Plate_Grey#single",
       "Head_Plug_Grey#single",
       "Head_Screw_Grey_x2#1_measured",
       "Head_Screw_Grey_x2#2_estimated_mirror",
@@ -49,7 +47,9 @@
       "Cabin_Front_Insert_Bottom_Long_Black#right",
       "Cabin_Front_Insert_Bottom_Wide_Black#single",
       "Head_TailJoint_Blue_Optional_Cross#single",
-      "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      "Head_TailJoint_Ball_Grey_Optional_Cross#single",
+      "Cabin_Peg_x2#lower",
+      "Cabin_Peg_x2#upper"
     ],
     "eye_pod_camera": [
       "eye_pod_camera",
@@ -73,6 +73,7 @@
     "leg_fr_tibia": [
       "tibia_link_m",
       "leg_foot_bored",
+      "foot_pad",
       "shin_shell_m",
       "Leg_Shin_Guard_Grey_x4#FR",
       "Leg_Toe_Black_x12#FR_0",
@@ -90,6 +91,7 @@
     "leg_fl_tibia": [
       "tibia_link",
       "leg_foot_bored",
+      "foot_pad",
       "shin_shell",
       "Leg_Shin_Guard_Grey_x4#FL",
       "Leg_Toe_Black_x12#FL_0",
@@ -107,6 +109,7 @@
     "leg_rl_tibia": [
       "tibia_link_m",
       "leg_foot_bored",
+      "foot_pad",
       "shin_shell_m",
       "Leg_Shin_Guard_Grey_x4#RL",
       "Leg_Toe_Black_x12#RL_0",
@@ -124,6 +127,7 @@
     "leg_rr_tibia": [
       "tibia_link",
       "leg_foot_bored",
+      "foot_pad",
       "shin_shell",
       "Leg_Shin_Guard_Grey_x4#RR",
       "Leg_Toe_Black_x12#RR_0",

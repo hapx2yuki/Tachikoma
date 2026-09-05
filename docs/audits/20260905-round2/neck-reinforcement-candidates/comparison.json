@@ -1,0 +1,538 @@
+{
+  "status": "CANDIDATES_NOT_READY_FOR_PRINT_OR_BASELINE_ADOPTION",
+  "frame": "pod_neck local; chassis z=local z+CHASSIS_T",
+  "source_sha256": {
+    "tools/design_neck_reinforcement_candidate.py": "c8d6ace79edf3386939faa080edab685d519d56f838c2d59de5b184ab789cab9",
+    "hardware/src/config.py": "d0923643a68e6e4460d8493c8eacd0fa720a69a71173d76be6aafce5bcc6c069",
+    "hardware/src/make_chassis.py": "fc79a46f9e54a578e64920afea32f9a372bbc9454b5fffe199251437fe9eeea3",
+    "hardware/stl/Head_Top_Eyecut.stl": "31f8f83471e8af658dea4df2160cec5b223e8d3db963a347d5626fde10fe68d8",
+    "tools/export_urdf.py": "fecc795a6904ce9bc77b7512f59be9b8b15755a1132842112a15c3e3e49a5f2a",
+    "tools/kit_assembly.py": "ed432296a7da8d5d2dff818dcb43cc317415b5ef448c3bd41a91f1c84ef3cb76",
+    "tools/data/kit_assembly_rear.json": "30a96dbf0737a36298857681cce3ff565a77863d559fff678927699466db7ec5",
+    "tools/check_print_strength_sensitivity.py": "2ad4e213667910702d290531e3d928ab553b80a149031b8b2a05d7ba432858dc"
+  },
+  "baseline": {
+    "head_top_overlap_mm3": 89.22992599199033,
+    "strength_sensitivity": [
+      {
+        "wall_mm": 1.6,
+        "density": 1.0,
+        "worst": {
+          "y_mm": -43.28629999999909,
+          "section_modulus_mm3": 193.28026356763164,
+          "sf": 3.1053167074863435
+        }
+      },
+      {
+        "wall_mm": 1.6,
+        "density": 0.4,
+        "worst": {
+          "y_mm": -43.28629999999909,
+          "section_modulus_mm3": 169.47404133659356,
+          "sf": 2.7228365811059927
+        }
+      }
+    ],
+    "other_static_overlaps_mm3": {
+      "chassis": 0.0,
+      "Cabin_Front_Blue": 1199.552077114424,
+      "Head_Bottom_Blue#single": 0.0,
+      "Cabin_Eye_White#single": 878.3423662140168,
+      "Head_TailJoint_Blue_Optional_Cross#single": 3281.742174562901,
+      "Head_TailJoint_Ball_Grey_Optional_Cross#single": 2047.6051209438174
+    }
+  },
+  "candidates": [
+    {
+      "name": "neck_width32",
+      "width_mm": 32,
+      "extension_y_start_mm": -73.0,
+      "head_axis_gap_mm": 0.3,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_width32.stl",
+      "sha256": "394ed4b70c89105da63353245318b5fe8a9ad501dd49bc8b1aab149475a6ae5a",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 17558.648115913235,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -49.08629999999917,
+            "section_modulus_mm3": 34.262600095042934,
+            "sf": 0.5736100725485048
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -49.08629999999917,
+            "section_modulus_mm3": 33.31015573172293,
+            "sf": 0.5576646487094821
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858486,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436764,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3721.175262345024,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": false,
+      "full_assembly_pass": false
+    },
+    {
+      "name": "neck_width36",
+      "width_mm": 36,
+      "extension_y_start_mm": -73.0,
+      "head_axis_gap_mm": 0.3,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_width36.stl",
+      "sha256": "a03cb5d6e20908cef906a7de8bed67ea05d741bdf1b17e886420d61cc900b59d",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 18903.844842946237,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -48.48629999999916,
+            "section_modulus_mm3": 80.43253257982377,
+            "sf": 1.3407389857841474
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -48.48629999999916,
+            "section_modulus_mm3": 74.14558112037416,
+            "sf": 1.235941080595084
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858486,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436764,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3721.1752623450247,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": false,
+      "full_assembly_pass": false
+    },
+    {
+      "name": "neck_width40",
+      "width_mm": 40,
+      "extension_y_start_mm": -73.0,
+      "head_axis_gap_mm": 0.3,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_width40.stl",
+      "sha256": "687a3d5c57505381015db33dce46d05503251aadbfdb05cebdb500faf4ca26d8",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 20247.51299017412,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -48.48629999999916,
+            "section_modulus_mm3": 136.69771693874088,
+            "sf": 2.2786297097578907
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -48.48629999999916,
+            "section_modulus_mm3": 130.6400633829099,
+            "sf": 2.1776539972672224
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858486,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436764,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3721.1752623450243,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": false,
+      "full_assembly_pass": false
+    },
+    {
+      "name": "neck_width44",
+      "width_mm": 44,
+      "extension_y_start_mm": -73.0,
+      "head_axis_gap_mm": 0.3,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_width44.stl",
+      "sha256": "6543af359baf9f86c35aa82efe53dc6780ae55420ce4853ec88c5977c157c658",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 21590.3791889592,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -103.88629999999995,
+            "section_modulus_mm3": 139.01267949271437,
+            "sf": 3.8599193656866686
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -103.88629999999995,
+            "section_modulus_mm3": 139.01267949271437,
+            "sf": 3.8599193656866686
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858486,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436766,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3721.1752623450243,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": true,
+      "full_assembly_pass": false
+    },
+    {
+      "name": "neck_width48",
+      "width_mm": 48,
+      "extension_y_start_mm": -73.0,
+      "head_axis_gap_mm": 0.3,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_width48.stl",
+      "sha256": "7a16a07d290f056e3a02f5cb8cda91b86bfcebabf5d89c172d7e500305d0f9f8",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 22931.378865251274,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -103.88629999999995,
+            "section_modulus_mm3": 139.01267949271437,
+            "sf": 3.8599193656866686
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -103.88629999999995,
+            "section_modulus_mm3": 139.01267949271437,
+            "sf": 3.8599193656866686
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858484,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436766,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3721.1752623450243,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": true,
+      "full_assembly_pass": false
+    },
+    {
+      "name": "neck_frontwidth40",
+      "width_mm": 40,
+      "extension_y_start_mm": -59.0,
+      "head_axis_gap_mm": 0.3,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_frontwidth40.stl",
+      "sha256": "af03a3c4516dac3afa02d31e50a2bb190e8c99905e1e8ecdfac37aedbe8ccc67",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 17698.674641650487,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -48.48629999999916,
+            "section_modulus_mm3": 136.69985480568235,
+            "sf": 2.278665346103818
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -48.48629999999916,
+            "section_modulus_mm3": 130.64221893835975,
+            "sf": 2.177689928464898
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858486,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436764,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3064.1914316593975,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": false,
+      "full_assembly_pass": false
+    },
+    {
+      "name": "neck_frontwidth44",
+      "width_mm": 44,
+      "extension_y_start_mm": -59.0,
+      "head_axis_gap_mm": 0.3,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_frontwidth44.stl",
+      "sha256": "2a554b6c9cd772e03343b51f540aadffe624ee321e2ee12a1fc250a058ae851f",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 18369.540715813113,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -103.88629999999995,
+            "section_modulus_mm3": 139.01267949271437,
+            "sf": 3.8599193656866686
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -103.88629999999995,
+            "section_modulus_mm3": 139.01267949271437,
+            "sf": 3.8599193656866686
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858486,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436766,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3064.1914316593975,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": true,
+      "full_assembly_pass": false
+    },
+    {
+      "name": "neck_frontwidth48",
+      "width_mm": 48,
+      "extension_y_start_mm": -59.0,
+      "head_axis_gap_mm": 0.3,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_frontwidth48.stl",
+      "sha256": "b759e9cbe13eac74eb54b25404b6d6571d8dd5d3291e0fdd7215d4d2da562235",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 19038.540525770994,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -103.88629999999995,
+            "section_modulus_mm3": 139.01267949271437,
+            "sf": 3.8599193656866686
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -103.88629999999995,
+            "section_modulus_mm3": 139.01267949271437,
+            "sf": 3.8599193656866686
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858484,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436766,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3064.1914316593975,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": true,
+      "full_assembly_pass": false
+    },
+    {
+      "name": "neck_gap2_width44",
+      "width_mm": 44,
+      "extension_y_start_mm": -59.0,
+      "head_axis_gap_mm": 2.0,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_gap2_width44.stl",
+      "sha256": "cea5a541e565330469150b8a131501911bdf753b415ca457a6fc1fe7b6fcbd67",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 16828.235115270323,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -49.88629999999918,
+            "section_modulus_mm3": 17.20813723831579,
+            "sf": 0.28977107786396633
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -49.88629999999918,
+            "section_modulus_mm3": 17.19377022053418,
+            "sf": 0.2895291489340297
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858486,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436766,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3064.1914316593975,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": false,
+      "full_assembly_pass": false
+    },
+    {
+      "name": "neck_gap2_width48",
+      "width_mm": 48,
+      "extension_y_start_mm": -59.0,
+      "head_axis_gap_mm": 2.0,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_gap2_width48.stl",
+      "sha256": "f683f362845efa30380139fcc0283a7bdadcbb17e5bb9c4a2031abe5247533e8",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 17366.398095445285,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -49.08629999999917,
+            "section_modulus_mm3": 17.54733018196235,
+            "sf": 0.2937700381987131
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -49.08629999999917,
+            "section_modulus_mm3": 17.5289301281605,
+            "sf": 0.29346199221951424
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858484,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436766,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3064.1914316593975,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": false,
+      "full_assembly_pass": false
+    },
+    {
+      "name": "neck_gap2_width52",
+      "width_mm": 52,
+      "extension_y_start_mm": -59.0,
+      "head_axis_gap_mm": 2.0,
+      "wire_diameter_mm": 8,
+      "wire_exit_y_mm": -75,
+      "stl": "docs/audits/20260905-round2/neck-reinforcement-candidates/neck_gap2_width52.stl",
+      "sha256": "e9bdd5a31d89bf0209fcb1f1a2ddd83aefd5ff1d80797bc63e8c887085f372c8",
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 17929.76361630903,
+      "head_top_overlap_mm3": 0.0,
+      "strength_sensitivity": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -48.28629999999916,
+            "section_modulus_mm3": 21.43054332936427,
+            "sf": 0.3567134642595464
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -48.28629999999916,
+            "section_modulus_mm3": 21.40292967719961,
+            "sf": 0.3562538323513336
+          }
+        }
+      ],
+      "other_static_overlaps_mm3": {
+        "chassis": 0.0,
+        "Cabin_Front_Blue": 1033.9495689858484,
+        "Head_Bottom_Blue#single": 0.0,
+        "Cabin_Eye_White#single": 868.2994051436766,
+        "Head_TailJoint_Blue_Optional_Cross#single": 3064.1914316593975,
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single": 1773.1035215928316
+      },
+      "head_collision_and_strength_only_pass": false,
+      "full_assembly_pass": false
+    }
+  ],
+  "limitations": [
+    "full assembly still intersects TailJoint / Ball / Cabin Eye in existing KIT poses",
+    "base-width extension can become visible; appearance preservation not established",
+    "68MPa,600g,2g,Kt2.5 and homogeneous40% core are sensitivity assumptions, not physical proof",
+    "gap2mm candidates fail section strength; gap0.3mm is below existing2mm target",
+    "bolt/counterbore strength, cable bundle, print anisotropy and fatigue unverified"
+  ]
+}

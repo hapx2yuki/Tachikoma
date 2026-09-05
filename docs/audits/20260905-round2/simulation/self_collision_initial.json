@@ -1,0 +1,556 @@
+{
+  "holding_exclude_parent": [
+    {
+      "geom1": 7,
+      "geom2": 18,
+      "body1": "base_link",
+      "body2": "leg_fr_femur",
+      "penetration_mm": 7.5334695885983685
+    },
+    {
+      "geom1": 7,
+      "geom2": 27,
+      "body1": "base_link",
+      "body2": "leg_fl_femur",
+      "penetration_mm": 5.213688450545182
+    },
+    {
+      "geom1": 7,
+      "geom2": 36,
+      "body1": "base_link",
+      "body2": "leg_rl_femur",
+      "penetration_mm": 6.9950315620529135
+    },
+    {
+      "geom1": 7,
+      "geom2": 45,
+      "body1": "base_link",
+      "body2": "leg_rr_femur",
+      "penetration_mm": 8.885541060736223
+    },
+    {
+      "geom1": 7,
+      "geom2": 54,
+      "body1": "base_link",
+      "body2": "arm_r_upper",
+      "penetration_mm": 0.11343715676766844
+    },
+    {
+      "geom1": 7,
+      "geom2": 63,
+      "body1": "base_link",
+      "body2": "arm_l_upper",
+      "penetration_mm": 0.2858633639477403
+    },
+    {
+      "geom1": 15,
+      "geom2": 42,
+      "body1": "leg_fr_coxa",
+      "body2": "leg_rr_coxa",
+      "penetration_mm": 1.3600914831275104
+    },
+    {
+      "geom1": 24,
+      "geom2": 33,
+      "body1": "leg_fl_coxa",
+      "body2": "leg_rl_coxa",
+      "penetration_mm": 1.3600898186403727
+    },
+    {
+      "geom1": 24,
+      "geom2": 33,
+      "body1": "leg_fl_coxa",
+      "body2": "leg_rl_coxa",
+      "penetration_mm": 1.3600898186403727
+    }
+  ],
+  "zero_startup_exclude_parent": [
+    {
+      "geom1": 7,
+      "geom2": 45,
+      "body1": "base_link",
+      "body2": "leg_rr_femur",
+      "penetration_mm": 0.1096177848945032
+    },
+    {
+      "geom1": 7,
+      "geom2": 54,
+      "body1": "base_link",
+      "body2": "arm_r_upper",
+      "penetration_mm": 0.11343715676766844
+    },
+    {
+      "geom1": 7,
+      "geom2": 63,
+      "body1": "base_link",
+      "body2": "arm_l_upper",
+      "penetration_mm": 0.2858633639477403
+    }
+  ],
+  "holding_include_parent": [
+    {
+      "geom1": 7,
+      "geom2": 15,
+      "body1": "base_link",
+      "body2": "leg_fr_coxa",
+      "penetration_mm": 16.17502227829057
+    },
+    {
+      "geom1": 8,
+      "geom2": 15,
+      "body1": "base_link",
+      "body2": "leg_fr_coxa",
+      "penetration_mm": 12.764267174945925
+    },
+    {
+      "geom1": 7,
+      "geom2": 18,
+      "body1": "base_link",
+      "body2": "leg_fr_femur",
+      "penetration_mm": 7.5334695885983685
+    },
+    {
+      "geom1": 7,
+      "geom2": 24,
+      "body1": "base_link",
+      "body2": "leg_fl_coxa",
+      "penetration_mm": 14.38268238205764
+    },
+    {
+      "geom1": 8,
+      "geom2": 24,
+      "body1": "base_link",
+      "body2": "leg_fl_coxa",
+      "penetration_mm": 12.838640230192624
+    },
+    {
+      "geom1": 7,
+      "geom2": 27,
+      "body1": "base_link",
+      "body2": "leg_fl_femur",
+      "penetration_mm": 5.213688450545182
+    },
+    {
+      "geom1": 7,
+      "geom2": 33,
+      "body1": "base_link",
+      "body2": "leg_rl_coxa",
+      "penetration_mm": 18.339514901601067
+    },
+    {
+      "geom1": 8,
+      "geom2": 33,
+      "body1": "base_link",
+      "body2": "leg_rl_coxa",
+      "penetration_mm": 9.771798548668917
+    },
+    {
+      "geom1": 7,
+      "geom2": 36,
+      "body1": "base_link",
+      "body2": "leg_rl_femur",
+      "penetration_mm": 6.9950315620529135
+    },
+    {
+      "geom1": 7,
+      "geom2": 42,
+      "body1": "base_link",
+      "body2": "leg_rr_coxa",
+      "penetration_mm": 12.959177471777515
+    },
+    {
+      "geom1": 8,
+      "geom2": 42,
+      "body1": "base_link",
+      "body2": "leg_rr_coxa",
+      "penetration_mm": 9.72800644509164
+    },
+    {
+      "geom1": 7,
+      "geom2": 45,
+      "body1": "base_link",
+      "body2": "leg_rr_femur",
+      "penetration_mm": 8.885541060736223
+    },
+    {
+      "geom1": 7,
+      "geom2": 51,
+      "body1": "base_link",
+      "body2": "arm_r_shoulder",
+      "penetration_mm": 11.842907928211163
+    },
+    {
+      "geom1": 8,
+      "geom2": 51,
+      "body1": "base_link",
+      "body2": "arm_r_shoulder",
+      "penetration_mm": 11.872255972000232
+    },
+    {
+      "geom1": 7,
+      "geom2": 54,
+      "body1": "base_link",
+      "body2": "arm_r_upper",
+      "penetration_mm": 0.11343715676766844
+    },
+    {
+      "geom1": 7,
+      "geom2": 60,
+      "body1": "base_link",
+      "body2": "arm_l_shoulder",
+      "penetration_mm": 9.157300258505385
+    },
+    {
+      "geom1": 8,
+      "geom2": 60,
+      "body1": "base_link",
+      "body2": "arm_l_shoulder",
+      "penetration_mm": 10.099369079922317
+    },
+    {
+      "geom1": 8,
+      "geom2": 60,
+      "body1": "base_link",
+      "body2": "arm_l_shoulder",
+      "penetration_mm": 10.099369079922317
+    },
+    {
+      "geom1": 7,
+      "geom2": 63,
+      "body1": "base_link",
+      "body2": "arm_l_upper",
+      "penetration_mm": 0.2858633639477403
+    },
+    {
+      "geom1": 8,
+      "geom2": 69,
+      "body1": "base_link",
+      "body2": "eye_r_pod",
+      "penetration_mm": 16.891872203895854
+    },
+    {
+      "geom1": 8,
+      "geom2": 71,
+      "body1": "base_link",
+      "body2": "eye_l_pod",
+      "penetration_mm": 16.881267006221336
+    },
+    {
+      "geom1": 15,
+      "geom2": 18,
+      "body1": "leg_fr_coxa",
+      "body2": "leg_fr_femur",
+      "penetration_mm": 23.720239875719486
+    },
+    {
+      "geom1": 15,
+      "geom2": 42,
+      "body1": "leg_fr_coxa",
+      "body2": "leg_rr_coxa",
+      "penetration_mm": 1.3600914831275104
+    },
+    {
+      "geom1": 18,
+      "geom2": 22,
+      "body1": "leg_fr_femur",
+      "body2": "leg_fr_tibia",
+      "penetration_mm": 19.125909836881746
+    },
+    {
+      "geom1": 24,
+      "geom2": 27,
+      "body1": "leg_fl_coxa",
+      "body2": "leg_fl_femur",
+      "penetration_mm": 23.711512546757888
+    },
+    {
+      "geom1": 24,
+      "geom2": 33,
+      "body1": "leg_fl_coxa",
+      "body2": "leg_rl_coxa",
+      "penetration_mm": 1.3600898186403727
+    },
+    {
+      "geom1": 24,
+      "geom2": 33,
+      "body1": "leg_fl_coxa",
+      "body2": "leg_rl_coxa",
+      "penetration_mm": 1.3600898186403727
+    },
+    {
+      "geom1": 27,
+      "geom2": 31,
+      "body1": "leg_fl_femur",
+      "body2": "leg_fl_tibia",
+      "penetration_mm": 17.870282850160635
+    },
+    {
+      "geom1": 33,
+      "geom2": 36,
+      "body1": "leg_rl_coxa",
+      "body2": "leg_rl_femur",
+      "penetration_mm": 24.62645679891068
+    },
+    {
+      "geom1": 36,
+      "geom2": 40,
+      "body1": "leg_rl_femur",
+      "body2": "leg_rl_tibia",
+      "penetration_mm": 18.211164741582028
+    },
+    {
+      "geom1": 42,
+      "geom2": 45,
+      "body1": "leg_rr_coxa",
+      "body2": "leg_rr_femur",
+      "penetration_mm": 24.614571091484038
+    },
+    {
+      "geom1": 45,
+      "geom2": 49,
+      "body1": "leg_rr_femur",
+      "body2": "leg_rr_tibia",
+      "penetration_mm": 17.12019306061942
+    },
+    {
+      "geom1": 51,
+      "geom2": 54,
+      "body1": "arm_r_shoulder",
+      "body2": "arm_r_upper",
+      "penetration_mm": 19.8699035119636
+    },
+    {
+      "geom1": 54,
+      "geom2": 58,
+      "body1": "arm_r_upper",
+      "body2": "arm_r_forearm",
+      "penetration_mm": 18.171582507335984
+    },
+    {
+      "geom1": 60,
+      "geom2": 63,
+      "body1": "arm_l_shoulder",
+      "body2": "arm_l_upper",
+      "penetration_mm": 19.871634664945827
+    },
+    {
+      "geom1": 63,
+      "geom2": 67,
+      "body1": "arm_l_upper",
+      "body2": "arm_l_forearm",
+      "penetration_mm": 18.192694201331022
+    }
+  ],
+  "zero_startup_include_parent": [
+    {
+      "geom1": 7,
+      "geom2": 15,
+      "body1": "base_link",
+      "body2": "leg_fr_coxa",
+      "penetration_mm": 15.989064360290874
+    },
+    {
+      "geom1": 8,
+      "geom2": 15,
+      "body1": "base_link",
+      "body2": "leg_fr_coxa",
+      "penetration_mm": 12.359726290869256
+    },
+    {
+      "geom1": 7,
+      "geom2": 24,
+      "body1": "base_link",
+      "body2": "leg_fl_coxa",
+      "penetration_mm": 14.43548429789874
+    },
+    {
+      "geom1": 8,
+      "geom2": 24,
+      "body1": "base_link",
+      "body2": "leg_fl_coxa",
+      "penetration_mm": 12.61247564923583
+    },
+    {
+      "geom1": 7,
+      "geom2": 33,
+      "body1": "base_link",
+      "body2": "leg_rl_coxa",
+      "penetration_mm": 18.430535236108796
+    },
+    {
+      "geom1": 8,
+      "geom2": 33,
+      "body1": "base_link",
+      "body2": "leg_rl_coxa",
+      "penetration_mm": 9.327301365539164
+    },
+    {
+      "geom1": 7,
+      "geom2": 42,
+      "body1": "base_link",
+      "body2": "leg_rr_coxa",
+      "penetration_mm": 12.897820949467015
+    },
+    {
+      "geom1": 8,
+      "geom2": 42,
+      "body1": "base_link",
+      "body2": "leg_rr_coxa",
+      "penetration_mm": 9.313269041787667
+    },
+    {
+      "geom1": 7,
+      "geom2": 45,
+      "body1": "base_link",
+      "body2": "leg_rr_femur",
+      "penetration_mm": 0.1096177848945032
+    },
+    {
+      "geom1": 7,
+      "geom2": 51,
+      "body1": "base_link",
+      "body2": "arm_r_shoulder",
+      "penetration_mm": 11.842907928211163
+    },
+    {
+      "geom1": 8,
+      "geom2": 51,
+      "body1": "base_link",
+      "body2": "arm_r_shoulder",
+      "penetration_mm": 11.872255972000232
+    },
+    {
+      "geom1": 7,
+      "geom2": 54,
+      "body1": "base_link",
+      "body2": "arm_r_upper",
+      "penetration_mm": 0.11343715676766844
+    },
+    {
+      "geom1": 7,
+      "geom2": 60,
+      "body1": "base_link",
+      "body2": "arm_l_shoulder",
+      "penetration_mm": 9.157300258505385
+    },
+    {
+      "geom1": 8,
+      "geom2": 60,
+      "body1": "base_link",
+      "body2": "arm_l_shoulder",
+      "penetration_mm": 10.099369079922317
+    },
+    {
+      "geom1": 8,
+      "geom2": 60,
+      "body1": "base_link",
+      "body2": "arm_l_shoulder",
+      "penetration_mm": 10.099369079922317
+    },
+    {
+      "geom1": 7,
+      "geom2": 63,
+      "body1": "base_link",
+      "body2": "arm_l_upper",
+      "penetration_mm": 0.2858633639477403
+    },
+    {
+      "geom1": 8,
+      "geom2": 69,
+      "body1": "base_link",
+      "body2": "eye_r_pod",
+      "penetration_mm": 16.891872203895854
+    },
+    {
+      "geom1": 8,
+      "geom2": 71,
+      "body1": "base_link",
+      "body2": "eye_l_pod",
+      "penetration_mm": 16.881267006221336
+    },
+    {
+      "geom1": 15,
+      "geom2": 18,
+      "body1": "leg_fr_coxa",
+      "body2": "leg_fr_femur",
+      "penetration_mm": 24.64956924125036
+    },
+    {
+      "geom1": 18,
+      "geom2": 22,
+      "body1": "leg_fr_femur",
+      "body2": "leg_fr_tibia",
+      "penetration_mm": 17.98585276752694
+    },
+    {
+      "geom1": 24,
+      "geom2": 27,
+      "body1": "leg_fl_coxa",
+      "body2": "leg_fl_femur",
+      "penetration_mm": 24.821499705564452
+    },
+    {
+      "geom1": 27,
+      "geom2": 31,
+      "body1": "leg_fl_femur",
+      "body2": "leg_fl_tibia",
+      "penetration_mm": 17.056622871062682
+    },
+    {
+      "geom1": 33,
+      "geom2": 36,
+      "body1": "leg_rl_coxa",
+      "body2": "leg_rl_femur",
+      "penetration_mm": 24.64956924125036
+    },
+    {
+      "geom1": 36,
+      "geom2": 40,
+      "body1": "leg_rl_femur",
+      "body2": "leg_rl_tibia",
+      "penetration_mm": 17.985852767526936
+    },
+    {
+      "geom1": 42,
+      "geom2": 45,
+      "body1": "leg_rr_coxa",
+      "body2": "leg_rr_femur",
+      "penetration_mm": 24.82149970556444
+    },
+    {
+      "geom1": 45,
+      "geom2": 49,
+      "body1": "leg_rr_femur",
+      "body2": "leg_rr_tibia",
+      "penetration_mm": 17.056622871062686
+    },
+    {
+      "geom1": 51,
+      "geom2": 54,
+      "body1": "arm_r_shoulder",
+      "body2": "arm_r_upper",
+      "penetration_mm": 19.8699035119636
+    },
+    {
+      "geom1": 54,
+      "geom2": 58,
+      "body1": "arm_r_upper",
+      "body2": "arm_r_forearm",
+      "penetration_mm": 18.171582507335984
+    },
+    {
+      "geom1": 60,
+      "geom2": 63,
+      "body1": "arm_l_shoulder",
+      "body2": "arm_l_upper",
+      "penetration_mm": 19.871634664945827
+    },
+    {
+      "geom1": 63,
+      "geom2": 67,
+      "body1": "arm_l_upper",
+      "body2": "arm_l_forearm",
+      "penetration_mm": 18.192694201331022
+    }
+  ]
+}

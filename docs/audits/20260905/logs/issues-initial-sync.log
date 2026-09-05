@@ -1,0 +1,22 @@
+== labels ==
+== milestones ==
+== issues ==
+  + issue E9: E9 [監査] 実機製作前提を独立検証し、修正と実機確認を切り分ける
+  + issue RV-01: RV-01 [不具合] 操作画面・低電圧停止・腕脚ガードを修正して回帰検証する
+  + issue RV-02: RV-02 [検証] 現物3MFの形状・数量・材質と再生成時の保持を検査する
+  + issue RV-03: RV-03 [不具合] 幾何・歩容検査のNGと計算失敗を終了コードへ反映する
+  + issue RV-04: RV-04 [不具合] Issue同期で進捗を保持し、重複と依存関係を検証する
+  + issue RV-05: RV-05 [ゲート] 修正後の全検証と未確認の実機条件を記録する
+  ~ body/meta E9 (#80): ['body']
+== relations ==
+  parent  #81 (RV-01) <- #80 (E9)
+  parent  #82 (RV-02) <- #80 (E9)
+  parent  #83 (RV-03) <- #80 (E9)
+  parent  #84 (RV-04) <- #80 (E9)
+  parent  #85 (RV-05) <- #80 (E9)
+  blocked #85 (RV-05) by #81 (RV-01)
+  blocked #85 (RV-05) by #82 (RV-02)
+  blocked #85 (RV-05) by #83 (RV-03)
+  blocked #85 (RV-05) by #84 (RV-04)
+  blocked #85 (RV-05) by #78 (I-08)
+  wrote tools/issues/issue_map.json

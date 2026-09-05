@@ -12,13 +12,15 @@
   (スライサー実測に対する概算。±30% 程度の誤差を見込むこと)
 """
 import re
+import sys
 from pathlib import Path
 
 import trimesh
 
 ROOT = Path(__file__).resolve().parent.parent
 MODEL, STL = ROOT / "model", ROOT / "hardware" / "stl"
-SCALE = 1.5
+sys.path.insert(0, str(ROOT / "hardware" / "src"))
+from config import SCALE
 
 RHO = {"PLA": 1.24, "PETG": 1.27, "TPU": 1.21}  # g/cm3
 
@@ -30,6 +32,7 @@ SKIP = ["Leg_HipJoint_Grey_x4", "Leg_HipJoint_Socket_Grey_x4",
         "Leg_Foot_Grey_x4_Repaired",  # → leg_foot_bored (加工版, new_parts
         # で別途計上) に差し替え。生データは印刷しない
         "Stand_mount_Optional",
+        "Head_Plate_Grey", "Head_Bottom_Cap_Grey",  # 組立で使わない2枚 (assembly.md §3)
         "Head_Eye_White_x3",        # → eye_pod (左右2, 可動眼球) +
         # eye_pod_camera (中央1, 固定カメラ目。2026-07-28 設計変更) に取込
         "Head_Top_Blue",            # → Head_Top_Eyecut (ボア加工版)
@@ -69,7 +72,7 @@ DOUBLE_SIDED = {"Arm_Left_Claw_Grey", "Arm_Left_Finger_Black_x3",
 
 
 def count_of(name: str) -> int:
-    m = re.search(r"_x(\d+)$", name)
+    m = re.search(r"_x(\d+)(?:_Repaired)?$", name)
     n = int(m.group(1)) if m else 1
     return n * 2 if name in DOUBLE_SIDED else n
 
@@ -111,7 +114,7 @@ def main():
         # 足 (2026-07-28 Leg_Foot 化): leg_foot_bored は元キット Leg_Foot の
         # 意匠加工版 (壁厚は骨格寄りに壁3相当=2.0mm相当を意図し 20% infill、
         # tibia 差込プラグ/隠しパッドポケットの強度確保)。foot_pad は隠し
-        # TPU 接地パッド (完全内蔵)
+        # TPU パッド。全姿勢での先行接地は未成立 (RV-06)。
         "leg_foot_bored": ("PLA-Grey", 4, 1.4, 0.20),
         "foot_pad": ("TPU", 4, 1.8, 0.30),
         # v3 追加: ポッド接続梁 + バッテリークレードル

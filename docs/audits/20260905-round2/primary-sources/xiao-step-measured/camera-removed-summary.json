@@ -1,0 +1,129 @@
+{
+  "camera_removed_without_sd": {
+    "bounds_mm": [
+      [
+        -8.973341314413569,
+        -0.24999998509883903,
+        -15.00139995541252
+      ],
+      [
+        13.808639835740346,
+        7.7800001149011395,
+        2.7786000445875025
+      ]
+    ],
+    "dimensions_mm": [
+      22.781981150153914,
+      8.03000009999998,
+      17.780000000000022
+    ],
+    "source_to_centered_flat_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -2.4176492606633886
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -6.111399955412509
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -3.7650000649011504
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "centered_flat_dimensions_mm": [
+      22.781981150153914,
+      17.780000000000022,
+      8.03000009999998
+    ]
+  },
+  "camera_removed_with_sd": {
+    "bounds_mm": [
+      [
+        -8.973341314413569,
+        -0.24999998509883903,
+        -15.00139995541252
+      ],
+      [
+        15.389998977348931,
+        8.250000100000005,
+        2.7786000445875025
+      ]
+    ],
+    "dimensions_mm": [
+      24.363340291762498,
+      8.500000085098844,
+      17.780000000000022
+    ],
+    "source_to_centered_flat_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -3.208328831467681
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -6.111399955412509
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -4.000000057450583
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "centered_flat_dimensions_mm": [
+      24.363340291762498,
+      17.780000000000022,
+      8.500000085098844
+    ]
+  },
+  "fpc_connector": {
+    "bounds_mm": [
+      [
+        -8.843105571855661,
+        5.170000014901149,
+        -14.179721858304502
+      ],
+      [
+        -2.8431054718556568,
+        7.180000114901167,
+        2.0202781416955027
+      ]
+    ],
+    "center_mm": [
+      -5.843105521855659,
+      6.175000064901158,
+      -6.0797218583045
+    ],
+    "insertion_axis": "STEP X (sign must be checked on actual locking flap / cable; not asserted)",
+    "note": "2023 manufacturer assembly; opening-plane exact position and replacement OV3660 FPC free length UNVERIFIED"
+  },
+  "limitations": [
+    "STEP contains open surfaces: component STLs are for viewing, box envelopes are watertight",
+    "USB protrusion included; plugged-in cable envelope is separate",
+    "No camera, no antenna lead, no external header solder joints in these envelopes",
+    "Use actual purchased board revision and FPC dimensions before releasing a holder"
+  ]
+}

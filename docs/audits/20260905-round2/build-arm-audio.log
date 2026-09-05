@@ -1,0 +1,15 @@
+[arm parts] (右腕。*_L は build_all.py がミラー出力)
+  shoulder_bracket               44.7 x   24.0 x   22.3 mm  watertight=True  vol=7.5cm3
+  upper_arm                      77.7 x   21.7 x   22.0 mm  watertight=True  vol=8.4cm3
+  forearm                        27.0 x   26.0 x   22.0 mm  watertight=True  vol=3.0cm3
+  claw_mount                      2.5 x   20.0 x   20.0 mm  watertight=True  vol=0.8cm3
+  shoulder_bracket_L             44.7 x   24.0 x   22.3 mm  watertight=True  vol=7.5cm3
+  upper_arm_L                    77.7 x   21.7 x   22.0 mm  watertight=True  vol=8.4cm3
+  forearm_L                      27.0 x   26.0 x   22.0 mm  watertight=True  vol=3.0cm3
+  claw_mount_L                    2.5 x   20.0 x   20.0 mm  watertight=True  vol=0.8cm3
+[audio cradle] (Mouth 一式の内部ボーリング + 保持パーツ)
+  Mouth_Cannon_Bored             30.2 x   41.9 x   30.2 mm  watertight=True  vol=7.3cm3
+  Mouth_Neck_Bored               24.7 x   16.0 x   24.7 mm  watertight=True  vol=1.7cm3
+  Mouth_Ball_Bored               25.1 x   24.4 x   25.1 mm  watertight=True  vol=7.4cm3
+  audio_cradle_mic               16.4 x   11.2 x   17.0 mm  watertight=True  vol=1.8cm3
+  audio_cradle_spk               19.4 x    1.8 x   19.4 mm  watertight=True  vol=0.2cm3

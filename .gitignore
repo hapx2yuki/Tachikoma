@@ -17,3 +17,15 @@ credentials.json
 token.json
 *.pem
 *.key
+
+# ---- 監査の再生成可能キャッシュ (分割条件のJSONは保存) ----
+docs/audits/**/collision-cache/*.npz
+
+# ---- 内部参照用のメーカー原本・原形状コピー (出典/測定値は保存) ----
+docs/audits/20260905-round2/primary-sources/*.pdf
+docs/audits/20260905-round2/primary-sources/*.png
+docs/audits/20260905-round2/primary-sources/*.zip
+docs/audits/20260905-round2/primary-sources/xiao-step-measured/Seeed_Studio_XIAO-ESP32-S3_Sense.stl
+docs/audits/20260905-round2/primary-sources/xiao-step-measured/Sense_Expansion_Board.stl
+docs/audits/20260905-round2/primary-sources/xiao-step-measured/Camer_Module.stl
+docs/audits/20260905-round2/primary-sources/xiao-step-measured/JUSHUO_AFC01-S24FCA-00.stl

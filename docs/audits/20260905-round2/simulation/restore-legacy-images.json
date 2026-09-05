@@ -1,0 +1,14 @@
+[
+  {
+    "path": "hardware/urdf/render_urdf_stand.png",
+    "restored_sha256": "ccf0fe929bad117b967d8bc40cdca1962fa5bbc5dbe9b063825cc89d6817d2b2",
+    "matches_round2_initial_inventory": true,
+    "new_render_saved_as": "docs/audits/20260905-round2/simulation/current-render_urdf_stand.png"
+  },
+  {
+    "path": "hardware/urdf/render_ref_stand.png",
+    "restored_sha256": "a60417883f46d130e8e8e24cb87caa5f34dd3f5e1469104ae090687550d1b8e7",
+    "matches_round2_initial_inventory": true,
+    "new_render_saved_as": "docs/audits/20260905-round2/simulation/current-render_ref_stand.png"
+  }
+]

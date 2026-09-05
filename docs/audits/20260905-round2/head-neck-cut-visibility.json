@@ -1,0 +1,32 @@
+{
+  "intersection_mm3": 89.22992599199033,
+  "intersection_bounds_chassis_mm": [
+    [
+      -8.0,
+      -51.672996520996094,
+      9.686495780944824
+    ],
+    [
+      8.0,
+      -48.550002098083496,
+      12.0
+    ]
+  ],
+  "proposed_box_cut_removed_mm3": 230.61513887870106,
+  "sampled_surface_points_in_cut": 1711,
+  "rear_facing_count_ny_lt_minus0p5": 651,
+  "bottom_facing_count_nz_lt_minus0p5": 526,
+  "rear_facing_bounds": [
+    [
+      -10.159637501509211,
+      -51.656895447687326,
+      9.688891420751798
+    ],
+    [
+      10.097224388126202,
+      -50.24872153993754,
+      14.198310915574986
+    ]
+  ],
+  "conclusion": "外縁へ達する直方体切削は不可視のみとは確認できないため未適用"
+}

@@ -1,0 +1,23 @@
+test_bad_roundtrip_cannot_replace_existing_output (tools.tests.test_stl_export.STLExportTests.test_bad_roundtrip_cannot_replace_existing_output) ... ok
+test_roundtrip_valid_volume_is_written (tools.tests.test_stl_export.STLExportTests.test_roundtrip_valid_volume_is_written) ... ok
+test_closed_internal_void_remains_valid (tools.tests.test_export_stl.ExportBoundaryTests.test_closed_internal_void_remains_valid) ... FAIL
+test_closed_source_rejected_when_float32_stl_collapses (tools.tests.test_export_stl.ExportBoundaryTests.test_closed_source_rejected_when_float32_stl_collapses) ... ok
+test_disjoint_closed_solids_remain_allowed_by_generic_export (tools.tests.test_export_stl.ExportBoundaryTests.test_disjoint_closed_solids_remain_allowed_by_generic_export) ... ok
+test_empty_nonfinite_and_inward_meshes_preserve_previous_output (tools.tests.test_export_stl.ExportBoundaryTests.test_empty_nonfinite_and_inward_meshes_preserve_previous_output) ... ok
+test_mirrored_manifold_exports_outward_normals (tools.tests.test_export_stl.ExportBoundaryTests.test_mirrored_manifold_exports_outward_normals) ... ok
+test_partial_write_failure_preserves_previous_and_cleans_temporary_file (tools.tests.test_export_stl.ExportBoundaryTests.test_partial_write_failure_preserves_previous_and_cleans_temporary_file) ... ok
+test_replace_failure_preserves_previous_and_cleans_temporary_file (tools.tests.test_export_stl.ExportBoundaryTests.test_replace_failure_preserves_previous_and_cleans_temporary_file) ... ok
+
+======================================================================
+FAIL: test_closed_internal_void_remains_valid (tools.tests.test_export_stl.ExportBoundaryTests.test_closed_internal_void_remains_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/uratayuuki/Documents/Tachikoma/tools/tests/test_export_stl.py", line 87, in test_closed_internal_void_remains_valid
+    self.assertAlmostEqual(mesh.volume, 784)
+AssertionError: np.float64(1216.0) != 784 within 7 places (np.float64(432.0) difference)
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.014s
+
+FAILED (failures=1)
+  part                            2.0 x    3.0 x    4.0 mm  watertight=True  vol=0.0cm3

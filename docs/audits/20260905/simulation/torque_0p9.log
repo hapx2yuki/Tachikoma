@@ -1,0 +1,6 @@
+simulation_acceptance = PASS  physical_readiness = UNVERIFIED
+walk = {'available': True, 'axis_frame': 'initial world +X right, +Y forward', 'right_m': 0.022075609236091403, 'forward_m': 0.14597008945064724, 'xy_norm_m': 0.14762994119545858, 'commanded_direction_m': 0.14597008945064724, 'averaging_window_s': 1.6, 'effective_elapsed_s': 6.3999999999994595, 'commanded_direction_speed_m_s': 0.022807826476665558}
+turn_deg = 18.59347259880235  max_roll = 3.312  max_pitch = 1.717  fell = False
+max_leg_saturation_fraction = 0.00323  nonfoot_ground_contact_steps = 0
+failed_checks = 
+metrics saved -> docs/audits/20260905/simulation/torque_0p9.json

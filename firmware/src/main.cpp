@@ -14,8 +14,10 @@
 #include "arms.h"
 #include "audio.h"
 #include "config.h"
+#include "control.h"
 #include "eyes.h"
 #include "gait.h"
+#include "leg_output.h"
 #include "peripherals.h"
 #include "servos.h"
 #include "web_ui.h"
@@ -30,14 +32,14 @@ AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");      // 操作系 (移動/腕/目/PTT)
 AsyncWebSocket wsAudio("/audio");  // 音声系 (ブリッジがクライアントとして接続)
 
-// 操作状態 (WebSocket から更新)
-volatile float cmd_vx = 0, cmd_vy = 0, cmd_wz = 0;
-volatile float cmd_h = BODY_H_DEF;
-volatile bool cmd_stand = true, cmd_led = true, cmd_ptt = false;
+// AsyncTCP (core0) は指令だけ更新し、運動状態は loop (core1) だけが変更する。
+// volatile / 構造体代入だけでは複数フィールドの同時更新にはならない。
+ControlState pendingControl;
+uint32_t controlClientId = 0;
+portMUX_TYPE controlMux = portMUX_INITIALIZER_UNLOCKED;
 #ifdef CALIBRATION_MODE
-volatile int cal_us = 1500;   // /cal?us= で 500..2500 (全 ch 一括)。既定は中立
+volatile int cal_us = 1500;
 #endif
-uint32_t lastCmdMs = 0;
 
 // STA (iPhone テザリング) 資格情報は NVS 保存 (setupWiFi() と /wifi POST
 // ハンドラ参照)。ハードコード禁止 — SSID/パスワードは Web UI の設定タブから入力する
@@ -45,6 +47,16 @@ String staSsid;
 
 void onWsEvent(AsyncWebSocket*, AsyncWebSocketClient* client, AwsEventType type,
                void* arg, uint8_t* data, size_t len) {
+  if (type == WS_EVT_DISCONNECT) {
+    portENTER_CRITICAL(&controlMux);
+    if (client && client->id() == controlClientId) {
+      pendingControl.vx = pendingControl.vy = pendingControl.wz = 0;
+      pendingControl.ptt = false;
+      controlClientId = 0;
+    }
+    portEXIT_CRITICAL(&controlMux);
+    return;
+  }
   if (type != WS_EVT_DATA) return;
   // 分割フレームは扱わない (UI の送信サイズなら単一フレームで収まる)
   AwsFrameInfo* info = (AwsFrameInfo*)arg;
@@ -53,23 +65,11 @@ void onWsEvent(AsyncWebSocket*, AsyncWebSocketClient* client, AwsEventType type,
   if (len > 512) return;  // UI の指令は数十バイト。異常フレームは捨てる (F-09)
   JsonDocument doc;
   if (deserializeJson(doc, data, len)) return;
-  cmd_vx = constrain((float)(doc["vx"] | 0.0f), -1.0f, 1.0f);
-  cmd_vy = constrain((float)(doc["vy"] | 0.0f), -1.0f, 1.0f);
-  cmd_wz = constrain((float)(doc["wz"] | 0.0f), -1.0f, 1.0f);
-  cmd_h = constrain((float)(doc["h"] | BODY_H_DEF), BODY_H_MIN, BODY_H_MAX);
-  cmd_stand = (doc["stand"] | 1) != 0;
-  cmd_led = (doc["led"] | 1) != 0;
-  cmd_ptt = (doc["ptt"] | 0) != 0;  // PTT ボタン押下中 (loop 側で edge 検出)
-  // 腕 (存在するキーのみ反映。UI はスライダ操作時のみ送ってくる)
-  {  // 3 フィールドをまとめて 1 回で代入 (loop 側の読み出しと新旧混在させない, F-08)
-    ArmTarget nt = arms.target[0];
-    if (!doc["ay"].isNull()) nt.yaw = doc["ay"].as<float>();
-    if (!doc["ap"].isNull()) nt.pitch = doc["ap"].as<float>();
-    if (!doc["ae"].isNull()) nt.elbow = doc["ae"].as<float>();
-    arms.target[0] = nt;
-  }
-  if (!doc["amir"].isNull()) arms.mirror = doc["amir"].as<int>() != 0;
-  lastCmdMs = millis();
+  portENTER_CRITICAL(&controlMux);
+  if (updateControlFromJson(doc, pendingControl, millis()) && client &&
+      !doc["vx"].isNull() && !doc["vy"].isNull() && !doc["wz"].isNull())
+    controlClientId = client->id();
+  portEXIT_CRITICAL(&controlMux);
 }
 
 void onAudioWsEvent(AsyncWebSocket* s, AsyncWebSocketClient* c, AwsEventType type,
@@ -109,18 +109,25 @@ void setupWeb() {
   server.on("/eye", HTTP_GET, [](AsyncWebServerRequest* r) {
     // 視線モード: /eye?mode=kyoro|front|scan
     const String m = r->hasParam("mode") ? r->getParam("mode")->value() : "";
-    if (m == "kyoro") eyes.mode = Eyes::KYORO;
-    else if (m == "front") eyes.mode = Eyes::FRONT;
-    else if (m == "scan") eyes.mode = Eyes::SCAN;
+    portENTER_CRITICAL(&controlMux);
+    if (m == "kyoro") pendingControl.eyeMode = Eyes::KYORO;
+    else if (m == "front") pendingControl.eyeMode = Eyes::FRONT;
+    else if (m == "scan") pendingControl.eyeMode = Eyes::SCAN;
+    portEXIT_CRITICAL(&controlMux);
     r->send(200, "text/plain", "ok");
   });
   server.on("/arm", HTTP_GET, [](AsyncWebServerRequest* r) {
     // プリセット: /arm?pose=tuck|ready|reach|wave
     const String p = r->hasParam("pose") ? r->getParam("pose")->value() : "";
-    if (p == "tuck") arms.setPose(ARM_POSE_TUCK);
-    else if (p == "ready") arms.setPose(ARM_POSE_READY);
-    else if (p == "reach") arms.setPose(ARM_POSE_REACH);
-    else if (p == "wave") arms.startWave();
+    const float* pose = p == "tuck" ? ARM_POSE_TUCK :
+                        p == "ready" ? ARM_POSE_READY :
+                        p == "reach" ? ARM_POSE_REACH : nullptr;
+    portENTER_CRITICAL(&controlMux);
+    if (pose) {
+      pendingControl.arm.yaw = pose[0]; pendingControl.arm.pitch = pose[1];
+      pendingControl.arm.elbow = pose[2]; pendingControl.armAction = 1;
+    } else if (p == "wave") pendingControl.armAction = 2;
+    portEXIT_CRITICAL(&controlMux);
     r->send(200, "text/plain", "ok");
   });
 #ifdef CALIBRATION_MODE
@@ -128,9 +135,11 @@ void setupWeb() {
   // 1500→2500 で +90° 振れる (270° 品は ±135°)。応答は現在値
   server.on("/cal", HTTP_GET, [](AsyncWebServerRequest* r) {
     if (r->hasParam("us")) {
-      int us = r->getParam("us")->value().toInt();
-      if (us < US_MIN) us = US_MIN;
-      if (us > US_MAX) us = US_MAX;
+      int us;
+      if (!parseControlInteger(r->getParam("us")->value().c_str(), US_MIN, US_MAX, us)) {
+        r->send(400, "text/plain", "us must be an integer within servo pulse limits");
+        return;
+      }
       cal_us = us;
     }
     r->send(200, "text/plain", String(cal_us));
@@ -138,8 +147,13 @@ void setupWeb() {
 #endif
   server.on("/trim", HTTP_GET, [](AsyncWebServerRequest* r) {
     if (r->hasParam("ch") && r->hasParam("us")) {
-      servos.setTrim(r->getParam("ch")->value().toInt(),
-                     r->getParam("us")->value().toInt());
+      int channel, trim;
+      if (!parseControlInteger(r->getParam("ch")->value().c_str(), 0, N_CH - 1, channel) ||
+          !parseControlInteger(r->getParam("us")->value().c_str(), -200, 200, trim)) {
+        r->send(400, "text/plain", "invalid channel or trim");
+        return;
+      }
+      servos.setTrim(channel, trim);
       r->send(200, "text/plain", "ok");
       return;
     }
@@ -190,11 +204,13 @@ void setup() {
   setupWiFi();
   setupWeb();
   audio.begin(&wsAudio);
+  #ifdef CALIBRATION_MODE
   servos.enableAll();
+#endif
   if (!servos.i2cOk(0) || !servos.i2cOk(1))
     Serial.printf("!! PCA9685 not responding: board0=%d board1=%d (check wiring / A0 jumper)\n",
                   servos.i2cOk(0), servos.i2cOk(1));
-  // タスク WDT: loop が 3 秒止まったらリブート (最後のパルスで固まったままを防ぐ, F-06)
+  // タスク WDT: loop が 3 秒止まったら再起動。再起動完了までは PCA に旧 PWM が残る。
   esp_task_wdt_init(3, true);
   esp_task_wdt_add(NULL);
   peri.queueTrack(1);  // 起動音 (SD にあれば, loop 側で再生)
@@ -212,14 +228,31 @@ void loop() {
   // 1 周期が伸びても (NVS 書込・I2C 詰まり) 位相を一気に進めない (F-03)
   if (dt > 0.05f) dt = 0.05f;
 
-  servos.softStart();
+  portENTER_CRITICAL(&controlMux);
+  // 期限切れ値をメールボックスからも消す。millis の周回で古い速度を復活させない。
+  if (millis() - pendingControl.lastCmdMs > 1500) {
+    pendingControl.vx = pendingControl.vy = pendingControl.wz = 0;
+    pendingControl.ptt = false;
+  }
+  const ControlState control = pendingControl;
+  pendingControl.armAction = 0;
+  portEXIT_CRITICAL(&controlMux);
+  arms.target[0] = control.arm;
+  arms.mirror = control.mirror;
+  if (control.armAction == 1) {
+    const float pose[3] = {control.arm.yaw, control.arm.pitch, control.arm.elbow};
+    arms.setPose(pose);
+  } else if (control.armAction == 2) arms.startWave();
+  eyes.mode = control.eyeMode;
+
+  servos.serviceFault();
   servos.persistTrims();
 
   // 音声 PTT: 通信断 (UI 切断) で自動解除する (歩行指令と同じフェイルセーフ)。
   // 歩行制御 (CALIBRATION_MODE) と無関係に、通常運用外でも音声だけは動く
   {
     static bool pttPrev = false;
-    const bool pttNow = (millis() - lastCmdMs > 1500) ? false : cmd_ptt;
+    const bool pttNow = (millis() - control.lastCmdMs > 1500) ? false : control.ptt;
     if (pttNow != pttPrev) {
       audio.setPtt(pttNow);
       pttPrev = pttNow;
@@ -227,24 +260,26 @@ void loop() {
   }
 
 #ifdef CALIBRATION_MODE
-  servos.allUs(cal_us);
   peri.setLedMode(LED_IDLE);
-  peri.tick(false);  // 低電圧監視/テレメトリは校正中も生かす (F-02)
+  peri.tick(false);
+  servos.calibrateUs(cal_us, peri.cutout(), control.stand);  // 低電圧時は校正パルスも停止
 #else
-  const bool timeout = millis() - lastCmdMs > 1500;  // 通信断で停止
-  const float vx = timeout ? 0 : cmd_vx;
-  const float vy = timeout ? 0 : cmd_vy;
-  const float wz = timeout ? 0 : cmd_wz;
+  const bool timeout = millis() - control.lastCmdMs > 1500;  // 通信断で停止
+  const float vx = timeout ? 0 : control.vx;
+  const float vy = timeout ? 0 : control.vy;
+  const float wz = timeout ? 0 : control.wz;
 
   // 低電圧カット: VBAT_CUT 未満 3 秒で脱力ラッチ (peripherals.h)
-  const bool standAllowed = cmd_stand && !peri.cutout();
+  const bool standAllowed = control.stand && !peri.cutout();
 
   // 起動/脱力の状態遷移
-  static bool wasStanding = true;
+  static bool wasStanding = false;
+  static LegOutput legOutput;
   static bool legCurInit = false;   // 脚スルー段の初期化フラグ (F-01)
-  if (standAllowed && !wasStanding) { servos.enableAll(); legCurInit = false; }  // 再起動: ソフトスタート
+  if (standAllowed && !wasStanding) { servos.enableAll(); legCurInit = false; arms.resetOutput(); eyes.resetOutput(); }  // 再起動: ソフトスタート
   if (!standAllowed && wasStanding) servos.disableAll();  // 脱力: パルス停止
   wasStanding = standAllowed;
+  if (standAllowed) servos.softStart();
 
   // legs[] は下の arms.update() (脚×腕連成クランプ) でも参照するため if
   // ブロックの外側で宣言する。2つの if は同一条件 (standAllowed &&
@@ -252,37 +287,31 @@ void loop() {
   // 更新済み — 未初期化のまま読まれることはない
   LegCmd legs[4];
   if (standAllowed && servos.ready()) {
-    gait.bodyH = cmd_h;
+    gait.bodyH = control.h;
     gait.update(dt, vx, vy, wz, legs);
     // 出力スルー段 (arms.h の cur_ と同じ 2 段構え)。無信号→有信号の初回は
     // 「現在角は不明」なので中立 (0°) から LEG_SLEW_DPS で目標へ寄せる (F-01/F-03)
-    static JointAngles legCur[4];
-    if (!legCurInit) {
-      for (int leg = 0; leg < 4; leg++) legCur[leg] = JointAngles{0, 0, 0};
-      legCurInit = true;
-    }
-    const float step = LEG_SLEW_DPS * dt;
+    if (!legCurInit) { legOutput.reset(); legCurInit = true; }
+    legOutput.update(dt, legs);
     for (int leg = 0; leg < 4; leg++) {
-      legCur[leg].yaw   += constrain(legs[leg].ang.yaw   - legCur[leg].yaw,   -step, step);
-      legCur[leg].pitch += constrain(legs[leg].ang.pitch - legCur[leg].pitch, -step, step);
-      legCur[leg].knee  += constrain(legs[leg].ang.knee  - legCur[leg].knee,  -step, step);
-      servos.writeJoint(leg, 0, legCur[leg].yaw);  // ヨーは取付方位基準
-      servos.writeJoint(leg, 1, legCur[leg].pitch);
-      servos.writeJoint(leg, 2, legCur[leg].knee);
+      const JointAngles& angle = legOutput.angle(leg);
+      servos.writeJoint(leg, 0, angle.yaw);
+      servos.writeJoint(leg, 1, angle.pitch);
+      servos.writeJoint(leg, 2, angle.knee);
     }
-    // CH_HEAD: 旋回操作に連動して駆動 (物理対象は未確定 — docs/wiring.md「頭部ヨー (CH_HEAD) の物理対象」参照。頭部シェル自体は完全固定)
-    servos.writeDeg(CH_HEAD, wz * 25.0f);
+    // CH_HEAD の機構は未確定。割当が確定するまでは未使用・full-off を維持する。
   }
 
   const bool walking = standAllowed && servos.ready() && gait.moving();  // gait と同じ判定 (F-04)
   if (standAllowed && servos.ready()) {
     // 前脚(FR/FL)×腕 連成クランプ用 (arms.h ARM_LEG_YAW_GATE_DEG 参照)。
-    // 同じ standAllowed ブロックで直前に更新された legs[FR]/legs[FL] を使う
-    const JointAngles legAng[2] = {legs[FR].ang, legs[FL].ang};
-    arms.update(dt, servos, walking, gait.phase(), cmd_h, legAng);
+    // 目標とスルー後の出力を比べ、危険側の値で退出中の退避を維持する
+    const JointAngles legAng[2] = {legOutput.armGuard(0, legs),
+                                 legOutput.armGuard(1, legs)};
+    arms.update(dt, servos, walking, gait.phase(), control.h, legAng);
     eyes.update(dt, servos, vy, wz);  // vy=前後 (進行方向バイアス)
   }
-  peri.setLedMode(!cmd_led ? LED_OFF : (walking ? LED_ACTIVE : LED_IDLE));
+  peri.setLedMode(!control.led ? LED_OFF : (walking ? LED_ACTIVE : LED_IDLE));
   peri.tick(walking);
 #endif
 
@@ -290,8 +319,10 @@ void loop() {
     lastTelem = millis();
     JsonDocument doc;
     doc["vbat"] = peri.vbat();
+    doc["h"] = control.h;
     doc["low"] = peri.lowBattery();
     doc["cut"] = peri.cutout();
+    doc["stand"] = control.stand && !peri.cutout() && !servos.faulted();
     doc["i2c"] = servos.i2cOk(0) && servos.i2cOk(1);  // PCA9685 ×2 応答 (F-05)
     String out;
     serializeJson(doc, out);

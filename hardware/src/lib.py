@@ -114,20 +114,26 @@ def to_trimesh(m: Manifold) -> trimesh.Trimesh:
     v = np.asarray(mesh.vert_properties)[:, :3]
     f = np.asarray(mesh.tri_verts)
     tm = trimesh.Trimesh(vertices=v, faces=f)
-    tm.process(validate=True)
+    # Manifoldの内側空洞は負向きの閉曲面。validate=Trueのfix_normalsは
+    # その面まで外向きにし、空洞を加算体積へ変えてしまうため使わない。
+    # ただし重複/縮退面の除去は必要（tibiaにゼロ体積の2枚面が生じる）。
+    # cleanupだけを明示的に行い、内壁を含む残存面の順序は変えない。
+    tm.update_faces(tm.unique_faces() & tm.nondegenerate_faces())
+    tm.process(validate=False)
     if not tm.is_watertight:
-        # validate が細かい輸入メッシュ (元キット形状の流用など) の縮退面を
-        # 落として穴を開けることがある。Manifold の出力は常に閉じているので
-        # 無加工で再構築する
+        # 頂点統合で細かい輸入メッシュの接続が変わった場合は元の面順序を
+        # 保持する。保存後にも同じ問題が残ればexportで拒否する。
         tm = trimesh.Trimesh(vertices=v, faces=f, process=False)
     return tm
 
 
 def export(m: Manifold, name: str) -> trimesh.Trimesh:
+    import io
+    import os
+    import tempfile
     STL_DIR.mkdir(exist_ok=True)
     tm = to_trimesh(m)
     path = STL_DIR / f"{name}.stl"
-    tm.export(path)
     # watertight 表示は書き出し前の in-memory メッシュではなく、実際に
     # 書き出した STL を他の全ツール (check_*.py 等) と同じ既定の
     # trimesh.load() で再ロードして判定する (2026-07-28 レビュー finding,
@@ -137,7 +143,26 @@ def export(m: Manifold, name: str) -> trimesh.Trimesh:
     # 保証するのは Manifold 由来の面情報についてのみで、STL のテキスト/
     # バイナリ往復 (浮動小数点の再量子化) で縮退面や非多様体面が新たに
     # 生じる場合があるため、書き出し前チェックだけでは見逃す)
-    reloaded = trimesh.load(path)
+    data = tm.export(file_type='stl')
+    reloaded = trimesh.load(io.BytesIO(data), file_type='stl', force='mesh')
+    if (not reloaded.is_watertight or not reloaded.is_winding_consistent
+            or not np.isfinite(reloaded.vertices).all()
+            or not np.isfinite(reloaded.volume) or reloaded.volume <= 0):
+        raise RuntimeError(f'{name}: STL保存後の閉形状/向き/有限体積検査に失敗。既存出力は上書きしない')
+    expected_volume = float(m.volume())
+    if (not np.isfinite(expected_volume) or expected_volume <= 0
+            or not np.isclose(reloaded.volume, expected_volume,
+                              atol=C.STL_VOLUME_ATOL_MM3, rtol=C.STL_VOLUME_RTOL)):
+        raise RuntimeError(f'{name}: Manifold体積{expected_volume}とSTL体積{reloaded.volume}が不一致。空洞/面向きを確認')
+    # 書込中の容量不足/IOエラーでも、最後に検証した既存STLを残す。
+    fd, temporary_name = tempfile.mkstemp(dir=STL_DIR, prefix=f'.{name}.', suffix='.stl.tmp')
+    os.close(fd)
+    temporary = Path(temporary_name)
+    try:
+        temporary.write_bytes(data)
+        os.replace(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
     ext = tm.extents
     print(f"  {name:28s} {ext[0]:6.1f} x {ext[1]:6.1f} x {ext[2]:6.1f} mm  "
           f"watertight={reloaded.is_watertight}  vol={tm.volume/1000:.1f}cm3")

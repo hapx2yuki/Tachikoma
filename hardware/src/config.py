@@ -15,7 +15,10 @@
 
 # ---------------------------------------------------------------- 全体
 SCALE = 1.5            # 意匠シェルの印刷スケール (150%)
+HEAD_TOP_Z_OFFSET = 57.7  # 頭部上殻の局所原点→シャーシ下面のZ差 [mm]
 CLEAR = 0.20           # 印刷はめあい公差
+STL_VOLUME_ATOL_MM3 = 0.01  # STL float32往復の体積照合: 絶対誤差＋相対誤差
+STL_VOLUME_RTOL = 1e-6
 
 # ---------------------------------------------------------------- サーボプロファイル
 # [要実測] 全項目。HORN_* は付属シングルアームホーン
@@ -39,6 +42,7 @@ LEG_SERVO = STD        # 股ピッチ / 膝
 
 # ---------------------------------------------------------------- 脚リンク
 COXA_LEN = 26.0        # 股ヨー軸 → 股ピッチ軸
+COXA_REAR_MIN_X = -12.0  # ヨー天板のみの後端。箱枠・ホーン座は保持 (2026-09-05)
 FEMUR_LEN = 70.0       # 股ピッチ軸 → 膝軸 (STD 箱枠と回転掃引の成立条件から)
 TIBIA_LEN = 135.0      # 膝軸 → 足先。150% 脛シェル(139mm)との整合で決定
 LINK_W = 18.0          # tibia ビーム幅
@@ -100,6 +104,22 @@ POD_NECK_Y0 = -58.0    # ブラケット基部 (プレート上, M3×4 の中心
 POD_NECK_LEN = 46.0    # 基部 → ポッド前面フランジ面 (-Y 方向)
 POD_NECK_BEAM = (16.0, 12.0)   # 梁断面 (幅 W × 高 H)。スリーブ内に収まる
 POD_FLANGE = (36.0, 30.0)      # ポッド内側の当て板 (W × H), M3×4
+
+# Cabinの配置はプレート下面基準。2026-09-05: 2個の既存Pegと両殻の
+# ソケット交差0でBackの高さを修正。旧z=55ではPegが約2,749/550mm³干渉。
+# キットの外形・縮尺は維持。kit_assemblyの装飾も元記録座標から同じ差分だけ追従する。
+CABIN_POSES = {
+    "Cabin_Front_Blue": {"rotations": (("z", 180.0), ("x", 90.0)),
+                         "translation": (0.0, -156.0, 55.0)},
+    "Cabin_Back_Blue_Repaired": {"rotations": (("y", 180.0), ("x", 90.0)),
+                                 "translation": (0.0, -235.0, 48.692503)},
+}
+CABIN_PEG_POSES = {
+    "lower": {"rotations": (("x", 90.0),),
+              "translation": (0.0, -211.0932502746582, 9.95)},
+    "upper": {"rotations": (("x", 90.0), ("y", 90.0)),
+              "translation": (0.0, -211.0932502746582, 94.05)},
+}
 
 # ---- 梁先端の丸ポスト絞り (2026-07-30 追加, 手加工の焼き込みタスク) ----
 # 従来は「梁先端(被せ代~20mm)の4隅をそれぞれ~1.5mm面取り」を現物合わせで
@@ -379,6 +399,16 @@ ARM_MOUNT_XY = (ARM_MOUNT_R * _math.sin(_math.radians(ARM_MOUNT_YAW_DEG)),
                               # 脚ヨー最大姿勢での交差0を検証)
 ARM_BOSS_H = 2.0              # MICRO タブ台座ボスの高さ (プレート上面)
 UPPER_ARM_LEN = 55.0          # 肩ピッチ軸 → 肘軸 (元 Arm ポッド 71.4mm が覆う)
+ARM_PITCH_LIMIT_DEG = (-45.0, 85.0)
+ARM_ELBOW_LIMIT_DEG = (0.0, 95.0)
+# 可動隣接部の内部逃げ。0.5°刻みの包絡間の最大弦誤差(<0.12mm)も含む。
+ARM_JOINT_CLEAR = 0.3
+ARM_SWEEP_STEP_DEG = 0.5
+# 肘カバーのケース通し欠き底と、サーボのタブ下面を取り違えない。
+# カバー原球中心をケース底の外へ置き、ケースとの片側余裕を確保する。
+ARM_ELBOW_COVER_CUT_Y = -6.0
+ARM_ELBOW_COVER_CLEAR = 0.3
+ARM_ELBOW_COVER_Y = -ARM_SERVO['TAB_BELOW'] - ARM_ELBOW_COVER_CUT_Y - ARM_ELBOW_COVER_CLEAR
 
 # ---- 手 (2026-07-29, キット準拠固定爪化): 可動グリッパ (palm_base/
 # grip_slider/grip_finger + サブマイクロ) を廃止し、前腕終端に元キットの
@@ -893,6 +923,18 @@ AUDIO_WIRE_BORE_D = 6.0            # Mouth_Neck/Mouth_Ball 貫通配線ボア径
                                     # (スピーカー2芯+マイク6芯 AWG30, 東ねても余裕)
 AUDIO_CRADLE_CLR = 0.3             # audio_cradle 圧入クリアランス (片側)
 
+# 砲身座標の既存配置 (kit_assembly_front.json と恒久検査で突合)。
+# 2026-09-05: 2 部品の実体が約 1,863mm³ 重なっていたため、Neck の
+# 球に隠れる根元へ Ball を受ける球面座を追加。配置と可視面は維持する。
+MOUTH_NECK_LOCAL_Y = -28.97
+MOUTH_CAP_LOCAL_Y = -5.7
+MOUTH_CAP_SEAT_CLEAR = 0.2
+MOUTH_CHASSIS_CLEAR = 0.3
+MOUTH_CHASSIS_SIMPLIFY_MM = 0.001  # STL再量子化で重なる微小面を解消する精度
+MOUTH_FRONT_TAB_BOSS_H = 3.0  # 口逃げ後も前タブz2〜7に厚さ5mmのねじ支持を残す
+MOUTH_BALL_LOCAL_Y = -41.02
+MOUTH_BALL_SEAT_CLEAR = 0.2
+
 # ---- Head_Bottom 側の受け穴 (2026-07-30 焼き込み, 配線連通の悉皆確認タスク) ----
 # 音声ユニットの配線 (計8芯) は Mouth_Ball_Bored の中心ボア (AUDIO_WIRE_BORE_D)
 # を抜けた先、Ball 裏面 (Head_Bottom ソケット奥方向) から Head_Bottom シェル材
@@ -1054,3 +1096,38 @@ CAM2_BASE_POCKET_CLR = 0.6         # base ポケットの carrier に対する�
                                     # が根元 ~1.4mm の薄足になっていた (ユーザー
                                     # 指摘)。carrier 実形状+本クリアランスの最小
                                     # プリズムに縮小して肉を充填した
+
+# ---------------------------------------------------------------- 電源監査 (2026-09-05)
+# 機種の資料値と実測前の計算仮定を分離する。注文品の型番が確定するまでは
+# この辞書を「購入品がこの仕様を満たす」根拠に使わない。機構プロファイルも別途実測する。
+POWER_COMPONENTS = {
+    "DS3218": {
+        "source": "https://www.dsservo.com/down.asp?id=22",
+        "checked": "2026-09-05", "voltage_range_v": (4.8, 6.8),
+        "points": ((5.0, 18.0, 1.8, 0.16), (6.8, 21.5, 2.2, 0.14)),
+        # point: voltage V, stall torque kgf cm, stall current A, speed s/60deg
+        "purchased_identity": "UNVERIFIED",
+    },
+    "MG90S": {
+        "source": "https://towerpro.com.tw/product/mg90s-3/",
+        "checked": "2026-09-05",
+        "torque_points_v_kgfcm": ((4.8, 1.8), (6.6, 2.2)),
+        "speed_points_v_s_per_60deg": ((4.8, 0.10), (6.0, 0.08)),
+        "rated_voltage_note": "同ページのOperating Voltage欄は4.8V。6.6Vトルク表との不整合があり、内挿は計算仮定。購入個体の6V運用適合は未確認",
+        "purchased_identity": "UNVERIFIED", "stall_current_a": None,
+    },
+    "UBEC_10A_V2_30603003": {
+        "source": "https://www.hobbywing.com/products/ubec-10a-car79",
+        "checked": "2026-09-05", "continuous_a": 10.0, "peak_a": 15.0,
+        "purchased_identity": "UNVERIFIED", "loaded_dropout": "UNVERIFIED",
+    },
+}
+POWER_AUDIT = {
+    "servo_v": 6.0, "logic_v": 5.0, "standard_servo_count": 12,
+    "logic_supply_a": 3.0, "battery_v_cases": (8.4, 7.4, 6.4),
+    "servo_load_a_cases": (6.0, 10.0, 14.0),
+    "logic_load_a_cases": (1.5, 3.0),
+    "efficiency_cases": (0.80, 0.90, 0.95),
+    "existing_switch_a": 10.0, "proposed_fuse_a": 15.0,
+    "status": "仮定の感度計算。歩行電流、効率、端子温度、DC定格、溶断曲線は未実測",
+}

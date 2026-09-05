@@ -1,0 +1,4258 @@
+[
+  {
+    "link": "base_link",
+    "part": "chassis",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/50e49927c1665765d71a44463320cfe20b4719281940adc92d577e5972459b63.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "50e49927c1665765d71a44463320cfe20b4719281940adc92d577e5972459b63",
+    "hull_count": 1,
+    "source_volume_mm3": 54609.82030879756,
+    "single_hull_volume_ratio": 2.6892395584994913,
+    "hulls_sum_volume_mm3": 146858.8890569673,
+    "thin_piece_replacements": [],
+    "source_watertight": false
+  },
+  {
+    "link": "base_link",
+    "part": "pod_neck",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/e015202045824a4606bd32aa1830e4cc6d0a85d30b7a15c7f8282732b6a34578.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "e015202045824a4606bd32aa1830e4cc6d0a85d30b7a15c7f8282732b6a34578",
+    "hull_count": 1,
+    "source_volume_mm3": 16333.567609357095,
+    "single_hull_volume_ratio": 2.6648077318321515,
+    "hulls_sum_volume_mm3": 43525.81725381798,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "battery_cradle",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/6e84c7a0d718c3e9aa691c7b6871ec160dd675aa085cfe48aed83e0eb9b0d108.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "6e84c7a0d718c3e9aa691c7b6871ec160dd675aa085cfe48aed83e0eb9b0d108",
+    "hull_count": 1,
+    "source_volume_mm3": 13740.985725640152,
+    "single_hull_volume_ratio": 4.066514141431707,
+    "hulls_sum_volume_mm3": 55877.9127705269,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Front_Blue",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0ec612cf4bbd49e954c38b64c068c06ae1f342848f56a7729086382e16d27d40.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0ec612cf4bbd49e954c38b64c068c06ae1f342848f56a7729086382e16d27d40",
+    "hull_count": 1,
+    "source_volume_mm3": 1956201.2545399368,
+    "single_hull_volume_ratio": 1.118802056617992,
+    "hulls_sum_volume_mm3": 2188601.9867379772,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Back_Blue_Repaired",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/75082dd8e6cafb45231339aa8721c5abaa3af3ea447a85b1d701834ad00c9dd1.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "75082dd8e6cafb45231339aa8721c5abaa3af3ea447a85b1d701834ad00c9dd1",
+    "hull_count": 1,
+    "source_volume_mm3": 679935.3490855822,
+    "single_hull_volume_ratio": 1.19587081364364,
+    "hulls_sum_volume_mm3": 813114.8391360476,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Mouth_Cannon_Grey",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/a89ce528ffdb6442cfb21e2c9decccb3ac983bd69834a98d0302ecb005897c77.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "a89ce528ffdb6442cfb21e2c9decccb3ac983bd69834a98d0302ecb005897c77",
+    "hull_count": 1,
+    "source_volume_mm3": 7332.7029192127475,
+    "single_hull_volume_ratio": 2.821233900617619,
+    "hulls_sum_volume_mm3": 20687.270058840782,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Head_Top_Eyecut#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/6bdbb717116541bdf43898e5a71fcd9bb136cc00766370c5944d287d6d3e4f8a.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "6bdbb717116541bdf43898e5a71fcd9bb136cc00766370c5944d287d6d3e4f8a",
+    "hull_count": 1,
+    "source_volume_mm3": 51534.975414762914,
+    "single_hull_volume_ratio": 9.461133485249686,
+    "hulls_sum_volume_mm3": 487579.28155813273,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Head_Bottom_Blue#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0a0d64e063f0cb143b88bdec3ed69bb9a3c3cd01645ae4a50e073e25b4d42228.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0a0d64e063f0cb143b88bdec3ed69bb9a3c3cd01645ae4a50e073e25b4d42228",
+    "hull_count": 1,
+    "source_volume_mm3": 25962.115721284208,
+    "single_hull_volume_ratio": 3.1869970469392723,
+    "hulls_sum_volume_mm3": 82741.18613602842,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Head_Dome_Grey#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/b297d929a7ea8e76d4158d2a6471ba4f61f48bc0922b07677de90e93b50cce35.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "b297d929a7ea8e76d4158d2a6471ba4f61f48bc0922b07677de90e93b50cce35",
+    "hull_count": 1,
+    "source_volume_mm3": 185.8906168070212,
+    "single_hull_volume_ratio": 1.0005225160179083,
+    "hulls_sum_volume_mm3": 185.98774763188172,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Head_Plug_Grey#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/a9274f7fe77c70aea098521b3b2e0a040f4d9b03ff9f6ff14d12296739b2bba4.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "a9274f7fe77c70aea098521b3b2e0a040f4d9b03ff9f6ff14d12296739b2bba4",
+    "hull_count": 1,
+    "source_volume_mm3": 81.83890205738993,
+    "single_hull_volume_ratio": 1.0000300019849322,
+    "hulls_sum_volume_mm3": 81.84135738689632,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Head_Screw_Grey_x2#1_measured",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/bd2a77cc9030b72a746a1203cb8f127b3832e2336925865efb8c096e2d92f6db.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "bd2a77cc9030b72a746a1203cb8f127b3832e2336925865efb8c096e2d92f6db",
+    "hull_count": 1,
+    "source_volume_mm3": 121.08951022294832,
+    "single_hull_volume_ratio": 1.0332495518843812,
+    "hulls_sum_volume_mm3": 125.11568217576054,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Head_Screw_Grey_x2#2_estimated_mirror",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/9b9d8c0a192054fde6845b827ed8e0b55980dfd9117604ddeece257ee7184d24.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "9b9d8c0a192054fde6845b827ed8e0b55980dfd9117604ddeece257ee7184d24",
+    "hull_count": 1,
+    "source_volume_mm3": 121.08951022294839,
+    "single_hull_volume_ratio": 1.0332495518843796,
+    "hulls_sum_volume_mm3": 125.11568217576043,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Head_Insert_Black_x4#1_measured",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/4a1240f099210ad951afaf436dc83335a0181ac8711b0aed2dc2edea07db43ac.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "4a1240f099210ad951afaf436dc83335a0181ac8711b0aed2dc2edea07db43ac",
+    "hull_count": 1,
+    "source_volume_mm3": 199.82536262722564,
+    "single_hull_volume_ratio": 1.183817762848163,
+    "hulls_sum_volume_mm3": 236.55681374568516,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Head_Insert_Black_x4#2_estimated",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/9db23faac9c13b641101771f2952982180d00416911ab9907cb173bcba505402.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "9db23faac9c13b641101771f2952982180d00416911ab9907cb173bcba505402",
+    "hull_count": 1,
+    "source_volume_mm3": 199.8253626272258,
+    "single_hull_volume_ratio": 1.183817762848162,
+    "hulls_sum_volume_mm3": 236.55681374568516,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Mouth_Cap_Grey#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0fa98714ea88efc55e14e6e57bfdb854a8d5cb64910a2a2f369e168f3161af20.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0fa98714ea88efc55e14e6e57bfdb854a8d5cb64910a2a2f369e168f3161af20",
+    "hull_count": 1,
+    "source_volume_mm3": 7435.338675124964,
+    "single_hull_volume_ratio": 3.137831234382667,
+    "hulls_sum_volume_mm3": 23330.837933020546,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Mouth_Key_Grey#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/cbb4bd1c0f1e54362f7d100f96aa601bcec20110ca12ba23d21269d20efff5bd.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "cbb4bd1c0f1e54362f7d100f96aa601bcec20110ca12ba23d21269d20efff5bd",
+    "hull_count": 1,
+    "source_volume_mm3": 907.6990263601598,
+    "single_hull_volume_ratio": 1.2000708376853608,
+    "hulls_sum_volume_mm3": 1089.3031309302235,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Mouth_Peg_Grey#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/fca238e59f309a910d2370ae55aa43ba481e08b1aebbb9e9bff8d5221c764103.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "fca238e59f309a910d2370ae55aa43ba481e08b1aebbb9e9bff8d5221c764103",
+    "hull_count": 1,
+    "source_volume_mm3": 244.34478260081343,
+    "single_hull_volume_ratio": 1.0000002333223519,
+    "hulls_sum_volume_mm3": 244.3448396119128,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Mouth_Ball_Grey#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/bb8b04e3c3100e59f78d49c12a16712d9d3637001be0d5e3051fa1a24b565ac3.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "bb8b04e3c3100e59f78d49c12a16712d9d3637001be0d5e3051fa1a24b565ac3",
+    "hull_count": 1,
+    "source_volume_mm3": 7359.040838054086,
+    "single_hull_volume_ratio": 1.0896143227234447,
+    "hulls_sum_volume_mm3": 8018.516298650474,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Mouth_Neck_Blue#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/ab51f11714534cddde1307c645a878e961e527cba7a48a93557127dcaaaa06a7.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "ab51f11714534cddde1307c645a878e961e527cba7a48a93557127dcaaaa06a7",
+    "hull_count": 1,
+    "source_volume_mm3": 1492.9640198883235,
+    "single_hull_volume_ratio": 2.7700443939910633,
+    "hulls_sum_volume_mm3": 4135.576613722013,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Eye_White#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/de23ff5290c0d9ae400c25fa1d4e9e3076d53e3332ff98b864f4e8ca62e90013.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "de23ff5290c0d9ae400c25fa1d4e9e3076d53e3332ff98b864f4e8ca62e90013",
+    "hull_count": 1,
+    "source_volume_mm3": 9779.524024309962,
+    "single_hull_volume_ratio": 1.002411649316456,
+    "hulls_sum_volume_mm3": 9803.108806738455,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Turrent_Left_Grey#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0e85a07cff04d27b62aca54357474f6d3e0e68064efbc9e2d3fbd5ce4712027b.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0e85a07cff04d27b62aca54357474f6d3e0e68064efbc9e2d3fbd5ce4712027b",
+    "hull_count": 1,
+    "source_volume_mm3": 12278.37667113103,
+    "single_hull_volume_ratio": 1.4015715192335338,
+    "hulls_sum_volume_mm3": 17209.0230446787,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Turrent_Right_Grey#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/3bc90997fa8c003bb80751c4d9f431c5a65e0e10bba01e035fcce7e1fe92ea2f.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "3bc90997fa8c003bb80751c4d9f431c5a65e0e10bba01e035fcce7e1fe92ea2f",
+    "hull_count": 1,
+    "source_volume_mm3": 12183.687371235768,
+    "single_hull_volume_ratio": 1.4124463051498284,
+    "hulls_sum_volume_mm3": 17208.804210602586,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Turret_Peg#left",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/4965a6bf33fa495fc26f8ac56023f4fa0fd1457a131687cb40e182332948be59.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "4965a6bf33fa495fc26f8ac56023f4fa0fd1457a131687cb40e182332948be59",
+    "hull_count": 1,
+    "source_volume_mm3": 635.8399080718312,
+    "single_hull_volume_ratio": 1.0000000836163623,
+    "hulls_sum_volume_mm3": 635.8399612384513,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Turret_Peg#right",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/620c59978cc759ce2a5002a70563dc28d4fc762939202b024e8317767af9ae01.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "620c59978cc759ce2a5002a70563dc28d4fc762939202b024e8317767af9ae01",
+    "hull_count": 1,
+    "source_volume_mm3": 635.8399080718306,
+    "single_hull_volume_ratio": 1.0000000836163634,
+    "hulls_sum_volume_mm3": 635.8399612384513,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_RedLight_Large#front_left",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/337649c1f5354501d88ec4e5b90fc00f08eaa4c9ebbdb3adbbfea87500210008.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "337649c1f5354501d88ec4e5b90fc00f08eaa4c9ebbdb3adbbfea87500210008",
+    "hull_count": 1,
+    "source_volume_mm3": 634.5858595956535,
+    "single_hull_volume_ratio": 1.0000002959632812,
+    "hulls_sum_volume_mm3": 634.5860474097667,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_RedLight_Large#front_right",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0902d4a19a01490117605f5b072b82444061d46e6b854849c9c62f04e3837b84.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0902d4a19a01490117605f5b072b82444061d46e6b854849c9c62f04e3837b84",
+    "hull_count": 1,
+    "source_volume_mm3": 634.5858595956533,
+    "single_hull_volume_ratio": 1.0000002959632817,
+    "hulls_sum_volume_mm3": 634.5860474097668,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_RedLight_Large#back_left",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/d4dd8ed0a52e2507429a5e82aa31d89f2890a584ae94475b737482be3620ff9e.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "d4dd8ed0a52e2507429a5e82aa31d89f2890a584ae94475b737482be3620ff9e",
+    "hull_count": 1,
+    "source_volume_mm3": 634.5858595956511,
+    "single_hull_volume_ratio": 1.0000002959632852,
+    "hulls_sum_volume_mm3": 634.5860474097668,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_RedLight_Large#back_right",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/736fda813f035401df62448cf15ee35d31af048140533471068069e680ba9a22.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "736fda813f035401df62448cf15ee35d31af048140533471068069e680ba9a22",
+    "hull_count": 1,
+    "source_volume_mm3": 634.5858595956505,
+    "single_hull_volume_ratio": 1.0000002959632845,
+    "hulls_sum_volume_mm3": 634.5860474097658,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_RedLight_Small#front_left",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/5b5d1e423f8b9d413e05811a1cf7021fa0978a8d63021976f70938b05eb3d767.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "5b5d1e423f8b9d413e05811a1cf7021fa0978a8d63021976f70938b05eb3d767",
+    "hull_count": 1,
+    "source_volume_mm3": 116.36608794018032,
+    "single_hull_volume_ratio": 1.0000004175286386,
+    "hulls_sum_volume_mm3": 116.36613652635458,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_RedLight_Small#front_right",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/82fee8d975c7db94fe2a08eac64f21ed23e9c116681f76a57590441670cd2289.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "82fee8d975c7db94fe2a08eac64f21ed23e9c116681f76a57590441670cd2289",
+    "hull_count": 1,
+    "source_volume_mm3": 116.36608794017987,
+    "single_hull_volume_ratio": 1.0000004175286392,
+    "hulls_sum_volume_mm3": 116.36613652635423,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_RedLight_Small#back_left",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/02abf249e6c3f8b5cc0dcc2abd214f34a2baa4b7b5ed1fafff9d0040f9b3bcc6.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "02abf249e6c3f8b5cc0dcc2abd214f34a2baa4b7b5ed1fafff9d0040f9b3bcc6",
+    "hull_count": 1,
+    "source_volume_mm3": 116.3660879401806,
+    "single_hull_volume_ratio": 1.0000004175286414,
+    "hulls_sum_volume_mm3": 116.36613652635522,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_RedLight_Small#back_right",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/b2478aa69f24aba527997180391dbd907e6776b56bfae077768a5b3bbe7f2ccd.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "b2478aa69f24aba527997180391dbd907e6776b56bfae077768a5b3bbe7f2ccd",
+    "hull_count": 1,
+    "source_volume_mm3": 116.36608794017964,
+    "single_hull_volume_ratio": 1.0000004175286417,
+    "hulls_sum_volume_mm3": 116.36613652635428,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Spinnarette_Grey#front_left",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/e045972881a913374ccee8b8260f3ece08cdd8b8f759fc9454a67010bcc6c24e.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "e045972881a913374ccee8b8260f3ece08cdd8b8f759fc9454a67010bcc6c24e",
+    "hull_count": 1,
+    "source_volume_mm3": 344.85934515824107,
+    "single_hull_volume_ratio": 1.2219066858599918,
+    "hulls_sum_volume_mm3": 421.3859395301534,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Spinnarette_Grey#front_right",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/2d68ef63516a6d610b9df5f1b20ba3000df35f8981cca2626a3f93a9c8f7d1d6.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "2d68ef63516a6d610b9df5f1b20ba3000df35f8981cca2626a3f93a9c8f7d1d6",
+    "hull_count": 1,
+    "source_volume_mm3": 344.8593451582408,
+    "single_hull_volume_ratio": 1.221906685859991,
+    "hulls_sum_volume_mm3": 421.3859395301527,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Spinnarette_Grey#back_left",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/e9f1eb3f9f67e53a941ffb0faac79d33cb84ce1b7463115c64d0e004ca042323.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "e9f1eb3f9f67e53a941ffb0faac79d33cb84ce1b7463115c64d0e004ca042323",
+    "hull_count": 1,
+    "source_volume_mm3": 344.859345158241,
+    "single_hull_volume_ratio": 1.2219066858599925,
+    "hulls_sum_volume_mm3": 421.3859395301535,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Spinnarette_Grey#back_right",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/5278c866bb4daad3d1def2e7344be898eb6584a8bf16d28cecfb3a03d009863d.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "5278c866bb4daad3d1def2e7344be898eb6584a8bf16d28cecfb3a03d009863d",
+    "hull_count": 1,
+    "source_volume_mm3": 344.8593451582407,
+    "single_hull_volume_ratio": 1.221906685859992,
+    "hulls_sum_volume_mm3": 421.38593953015305,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Front_Insert_Front_Black#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0923aab3c8821ce2532f0ec4a980bd8a7f78c727a92e98132d3aab1e9c242f9f.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0923aab3c8821ce2532f0ec4a980bd8a7f78c727a92e98132d3aab1e9c242f9f",
+    "hull_count": 1,
+    "source_volume_mm3": 562.004606517116,
+    "single_hull_volume_ratio": 1.0000024600873936,
+    "hulls_sum_volume_mm3": 562.0059890975637,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Front_Insert_Left_Black#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/fb6cf5b95bff41dca15d883c47b1cea2a750d61d421627f3e68effdee6b9b809.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "fb6cf5b95bff41dca15d883c47b1cea2a750d61d421627f3e68effdee6b9b809",
+    "hull_count": 1,
+    "source_volume_mm3": 659.5588611922249,
+    "single_hull_volume_ratio": 1.325575268911973,
+    "hulls_sum_volume_mm3": 874.2949147881582,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Front_Insert_Right_Black#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/e78cb2fbee3f72c76d70714665e556e7d71d9bb55fce420ca8b67f95fe11b660.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "e78cb2fbee3f72c76d70714665e556e7d71d9bb55fce420ca8b67f95fe11b660",
+    "hull_count": 1,
+    "source_volume_mm3": 659.558836072459,
+    "single_hull_volume_ratio": 1.325575114719126,
+    "hulls_sum_volume_mm3": 874.2947797907631,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Front_Insert_Back_Black#left",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/36bf4b1cde03d8dd9e4a0428c0a17498dc02524dfee90f94d845d570b4f19924.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "36bf4b1cde03d8dd9e4a0428c0a17498dc02524dfee90f94d845d570b4f19924",
+    "hull_count": 1,
+    "source_volume_mm3": 890.9002727191149,
+    "single_hull_volume_ratio": 1.183346837035352,
+    "hulls_sum_volume_mm3": 1054.244019836097,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Front_Insert_Back_Black#right",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/5085d196ae204fe928174333d5ef20078ba3fe74797dc06e0ee25af1e2d6ecd2.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "5085d196ae204fe928174333d5ef20078ba3fe74797dc06e0ee25af1e2d6ecd2",
+    "hull_count": 1,
+    "source_volume_mm3": 890.9002727191152,
+    "single_hull_volume_ratio": 1.1833468370353515,
+    "hulls_sum_volume_mm3": 1054.2440198360969,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Front_Insert_Bottom_Long_Black#left",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/70eed53dc26e261e6d5f24067b415894bcd5f646ee69efa5d6b81d01ddf36853.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "70eed53dc26e261e6d5f24067b415894bcd5f646ee69efa5d6b81d01ddf36853",
+    "hull_count": 1,
+    "source_volume_mm3": 356.8680287895357,
+    "single_hull_volume_ratio": 1.0000003864696885,
+    "hulls_sum_volume_mm3": 356.8681667082116,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Front_Insert_Bottom_Long_Black#right",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/dd61237b05ff5c9871245be9eedba63d03113c0262dbea741eb85baf18645e81.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "dd61237b05ff5c9871245be9eedba63d03113c0262dbea741eb85baf18645e81",
+    "hull_count": 1,
+    "source_volume_mm3": 356.8680287895357,
+    "single_hull_volume_ratio": 1.00000038646969,
+    "hulls_sum_volume_mm3": 356.8681667082122,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Front_Insert_Bottom_Wide_Black#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/e448921d0c1d21eeccce9714726731eaeec193d52f2eb799acd49a8ce902a905.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "e448921d0c1d21eeccce9714726731eaeec193d52f2eb799acd49a8ce902a905",
+    "hull_count": 1,
+    "source_volume_mm3": 626.8054748908235,
+    "single_hull_volume_ratio": 1.0000286017322972,
+    "hulls_sum_volume_mm3": 626.8234026132187,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Head_TailJoint_Blue_Optional_Cross#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/2f77ceb4d782d02eccb836241aad86191a9758edf441865ae276f6079ac3941d.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "2f77ceb4d782d02eccb836241aad86191a9758edf441865ae276f6079ac3941d",
+    "hull_count": 1,
+    "source_volume_mm3": 25061.045999648806,
+    "single_hull_volume_ratio": 1.3917309870357393,
+    "hulls_sum_volume_mm3": 34878.2342852393,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Head_TailJoint_Ball_Grey_Optional_Cross#single",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/29cdafb4e2c320cef6b8fde3cd5ccfc08574dc0801df68f88ce6d1e10f2f77da.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "29cdafb4e2c320cef6b8fde3cd5ccfc08574dc0801df68f88ce6d1e10f2f77da",
+    "hull_count": 1,
+    "source_volume_mm3": 6384.228889676348,
+    "single_hull_volume_ratio": 1.240495066783374,
+    "hulls_sum_volume_mm3": 7919.604442859408,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Peg_x2#lower",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/2875dd26a41c38a12d0407310c4d1811aa747f599ecc27723d2a55c765d8b528.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "2875dd26a41c38a12d0407310c4d1811aa747f599ecc27723d2a55c765d8b528",
+    "hull_count": 1,
+    "source_volume_mm3": 19039.281464769923,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 19039.281464769923,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "Cabin_Peg_x2#upper",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/ddd43613e167027a07b7d109825c88cc6f327155d58e47e45675b075c3f26447.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "ddd43613e167027a07b7d109825c88cc6f327155d58e47e45675b075c3f26447",
+    "hull_count": 1,
+    "source_volume_mm3": 19039.28146476993,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 19039.28146476993,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "eye_carrier#r",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/f108301922f52ff3e0285aea34f1134698eb3d1b093918c56dda74a72bcf42fc.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "f108301922f52ff3e0285aea34f1134698eb3d1b093918c56dda74a72bcf42fc",
+    "hull_count": 1,
+    "source_volume_mm3": 2683.1886098549953,
+    "single_hull_volume_ratio": 1.5126565797387377,
+    "hulls_sum_volume_mm3": 4058.7429053771953,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "eye_carrier#l",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/588e354ecbeaa9d8bce3c70a1bd098992d5fe75cb83feb29d9283070eb0536b6.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "588e354ecbeaa9d8bce3c70a1bd098992d5fe75cb83feb29d9283070eb0536b6",
+    "hull_count": 1,
+    "source_volume_mm3": 2683.188609854995,
+    "single_hull_volume_ratio": 1.5126565797387341,
+    "hulls_sum_volume_mm3": 4058.7429053771853,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "leg_fr_yaw_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/c19c16630c473e5660fcb59afcc1fe45a8552e50295cfeb1d34186828dae4e73.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "c19c16630c473e5660fcb59afcc1fe45a8552e50295cfeb1d34186828dae4e73",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.34800000001,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 23184.34800000001,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "leg_fl_yaw_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/c361031213227aa317b76421e79e66b75a09b712c93fa4fbc168ef540b9bf4b0.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "c361031213227aa317b76421e79e66b75a09b712c93fa4fbc168ef540b9bf4b0",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.348,
+    "single_hull_volume_ratio": 1.0000000000000002,
+    "hulls_sum_volume_mm3": 23184.34800000001,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "leg_rl_yaw_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/23c091554368d1318d94134d638f59a76e0a1019a160c72603f56137b99fdae0.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "23c091554368d1318d94134d638f59a76e0a1019a160c72603f56137b99fdae0",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.34800000001,
+    "single_hull_volume_ratio": 1.0000000000000002,
+    "hulls_sum_volume_mm3": 23184.348000000013,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "leg_rr_yaw_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/16cac7e1ff2a135239d51dbaea3f7497673b5d040f5be4a031ea837770188d4a.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "16cac7e1ff2a135239d51dbaea3f7497673b5d040f5be4a031ea837770188d4a",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.348,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 23184.348,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "arm_r_yaw_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/afc317c3eccc896edb830ae13c15302133e55cea34fa14ff2c58b9827bc1b3d0.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "afc317c3eccc896edb830ae13c15302133e55cea34fa14ff2c58b9827bc1b3d0",
+    "hull_count": 1,
+    "source_volume_mm3": 5561.4000000000015,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 5561.4000000000015,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "arm_l_yaw_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/1c9d8f569efab765a60c4b6ad0f64c739a3fff27ab8647df44951951fc94207b.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "1c9d8f569efab765a60c4b6ad0f64c739a3fff27ab8647df44951951fc94207b",
+    "hull_count": 1,
+    "source_volume_mm3": 5561.4000000000015,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 5561.4000000000015,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "eye_r_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0f556a4ee5a0dc6176a15365525c1af6c37235d30171df7006ba47900780a5c5.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0f556a4ee5a0dc6176a15365525c1af6c37235d30171df7006ba47900780a5c5",
+    "hull_count": 1,
+    "source_volume_mm3": 2580.0000000000005,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 2580.0000000000005,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "base_link",
+    "part": "eye_l_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/f0a387779b155dd00f9d741b63456ace6dd10fe27d10146e7bd2b8c453a3393e.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "f0a387779b155dd00f9d741b63456ace6dd10fe27d10146e7bd2b8c453a3393e",
+    "hull_count": 1,
+    "source_volume_mm3": 2579.9999999999986,
+    "single_hull_volume_ratio": 1.0000000000000004,
+    "hulls_sum_volume_mm3": 2579.9999999999995,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "eye_pod_camera",
+    "part": "eye_pod_camera",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/524059eefae4a789cc08be1e04008d448fc8cccff0ef598b5880730748389cfd.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "524059eefae4a789cc08be1e04008d448fc8cccff0ef598b5880730748389cfd",
+    "hull_count": 1,
+    "source_volume_mm3": 10718.134674164618,
+    "single_hull_volume_ratio": 1.637686617823235,
+    "hulls_sum_volume_mm3": 17552.945723906592,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "eye_pod_camera",
+    "part": "camera_carrier",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/58f47d59efa1ae7774260e269ee7b58717d404d11e2510d14d05de50bcf56cbd.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "58f47d59efa1ae7774260e269ee7b58717d404d11e2510d14d05de50bcf56cbd",
+    "hull_count": 1,
+    "source_volume_mm3": 1157.3122585782178,
+    "single_hull_volume_ratio": 2.5793135021504807,
+    "hulls_sum_volume_mm3": 2985.0711347550655,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "eye_r_pod",
+    "part": "eye_pod",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/bbe1400dc7f34cf6caed34b133d90cb9652cb2dc7b36ba33130ae6a0df3120c7.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "bbe1400dc7f34cf6caed34b133d90cb9652cb2dc7b36ba33130ae6a0df3120c7",
+    "hull_count": 1,
+    "source_volume_mm3": 14091.142746304475,
+    "single_hull_volume_ratio": 1.1955841044406215,
+    "hulls_sum_volume_mm3": 16847.146280885394,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "eye_l_pod",
+    "part": "eye_pod",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/bbe1400dc7f34cf6caed34b133d90cb9652cb2dc7b36ba33130ae6a0df3120c7.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "bbe1400dc7f34cf6caed34b133d90cb9652cb2dc7b36ba33130ae6a0df3120c7",
+    "hull_count": 1,
+    "source_volume_mm3": 14091.142746304475,
+    "single_hull_volume_ratio": 1.1955841044406215,
+    "hulls_sum_volume_mm3": 16847.146280885394,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_coxa",
+    "part": "coxa_bracket_m",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0da0b4f0a418c7de9d72214899553236cdf9b4e43d2c9ae6cb8b38657052b102.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0da0b4f0a418c7de9d72214899553236cdf9b4e43d2c9ae6cb8b38657052b102",
+    "hull_count": 1,
+    "source_volume_mm3": 18729.996383637677,
+    "single_hull_volume_ratio": 2.492809073477354,
+    "hulls_sum_volume_mm3": 46690.30493133003,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_coxa",
+    "part": "leg_fr_pitch_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/017113e08fd968fa794fb498c63aa221729cf4347e7ff18456de8ec704f618e9.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "017113e08fd968fa794fb498c63aa221729cf4347e7ff18456de8ec704f618e9",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.347999999998,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 23184.347999999998,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_femur",
+    "part": "femur_link_m",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/4b95c94d920e5e90d4369c0c57604d55d4819d0af7d2ac3582f692825989530c.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "4b95c94d920e5e90d4369c0c57604d55d4819d0af7d2ac3582f692825989530c",
+    "hull_count": 1,
+    "source_volume_mm3": 21928.19179481834,
+    "single_hull_volume_ratio": 3.3745872945197233,
+    "hulls_sum_volume_mm3": 73998.59742258562,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_femur",
+    "part": "thigh_cap",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/6f689ae5b3a93c1d233c6a8ea84a95f10d5f10cea9b6323671e28c51c3e4e3fe.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "6f689ae5b3a93c1d233c6a8ea84a95f10d5f10cea9b6323671e28c51c3e4e3fe",
+    "hull_count": 1,
+    "source_volume_mm3": 9209.240368531762,
+    "single_hull_volume_ratio": 1.2733196806062712,
+    "hulls_sum_volume_mm3": 11726.307004685243,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_femur",
+    "part": "Leg_Thigh_Guard_Blue_x4#FR",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/b0e44bf898c78e956dbc1a9add693afeaebfcc3894d2a58821dd781de940d607.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "b0e44bf898c78e956dbc1a9add693afeaebfcc3894d2a58821dd781de940d607",
+    "hull_count": 1,
+    "source_volume_mm3": 1493.883226524946,
+    "single_hull_volume_ratio": 5.744683874162111,
+    "hulls_sum_volume_mm3": 8581.88688129912,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_femur",
+    "part": "leg_fr_knee_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/6b2813352e8757c48f51a205cdc24102f9eb72023834e882c83fba41559ebd2d.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "6b2813352e8757c48f51a205cdc24102f9eb72023834e882c83fba41559ebd2d",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.348,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 23184.348,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_tibia",
+    "part": "tibia_link_m",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/d6e567186f200ba63a72d098f0dd38f7650b25bc6b4877a67289f2330f562c2d.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "d6e567186f200ba63a72d098f0dd38f7650b25bc6b4877a67289f2330f562c2d",
+    "hull_count": 1,
+    "source_volume_mm3": 34268.206252967815,
+    "single_hull_volume_ratio": 2.327885461127436,
+    "hulls_sum_volume_mm3": 79772.45911520006,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_tibia",
+    "part": "leg_foot_bored",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/f09c50541cf8d568b5014aed145141c9a82e73b6b32ba12c6f2d645cbf392ded.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "f09c50541cf8d568b5014aed145141c9a82e73b6b32ba12c6f2d645cbf392ded",
+    "hull_count": 1,
+    "source_volume_mm3": 2613.4094194305762,
+    "single_hull_volume_ratio": 2.4987366363268135,
+    "hulls_sum_volume_mm3": 6530.221862052768,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_tibia",
+    "part": "foot_pad",
+    "material": "TPU",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/7de40e285d0fb07ba2dc60186e4ed4080dc6b67300261f8d4c9b1ac18d6c4a8c.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "7de40e285d0fb07ba2dc60186e4ed4080dc6b67300261f8d4c9b1ac18d6c4a8c",
+    "hull_count": 1,
+    "source_volume_mm3": 332.4953880954153,
+    "single_hull_volume_ratio": 1.1521454172162051,
+    "hulls_sum_volume_mm3": 383.0830376396563,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_tibia",
+    "part": "shin_shell_m",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/18fc53f21f0407da89ad2eb19fec6ea7493a450b8baa30f3832d0613c3099931.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "18fc53f21f0407da89ad2eb19fec6ea7493a450b8baa30f3832d0613c3099931",
+    "hull_count": 1,
+    "source_volume_mm3": 81950.77486998825,
+    "single_hull_volume_ratio": 1.5698350371100074,
+    "hulls_sum_volume_mm3": 128649.19770922186,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_tibia",
+    "part": "Leg_Shin_Guard_Grey_x4#FR",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/45104bbac921200a13450b5d4077a3f41bf4896d5f48376c1f583f6f3b788a69.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "45104bbac921200a13450b5d4077a3f41bf4896d5f48376c1f583f6f3b788a69",
+    "hull_count": 1,
+    "source_volume_mm3": 1471.3268572555519,
+    "single_hull_volume_ratio": 3.761855496201572,
+    "hulls_sum_volume_mm3": 5534.9190246757835,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_tibia",
+    "part": "Leg_Toe_Black_x12#FR_0",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0a8bf9ce79bd9e61751c3b29090daacc0e34aaeee6c48979705908fde1a56e17.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0a8bf9ce79bd9e61751c3b29090daacc0e34aaeee6c48979705908fde1a56e17",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.278210267183,
+    "single_hull_volume_ratio": 1.357977656471622,
+    "hulls_sum_volume_mm3": 3347.7927265291837,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_tibia",
+    "part": "Leg_Toe_Black_x12#FR_1",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/2abb2fd5b084bfd8bd670b1d72036e1b2194199fc865fbfc2da28498f2b2fa1f.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "2abb2fd5b084bfd8bd670b1d72036e1b2194199fc865fbfc2da28498f2b2fa1f",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.2782102673195,
+    "single_hull_volume_ratio": 1.357977656471621,
+    "hulls_sum_volume_mm3": 3347.792726529367,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fr_tibia",
+    "part": "Leg_Toe_Black_x12#FR_2",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/5d7fd20c33a248244a8b392d6b5a1c589331ee9895571b92a040847d24c57262.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "5d7fd20c33a248244a8b392d6b5a1c589331ee9895571b92a040847d24c57262",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.2782102675715,
+    "single_hull_volume_ratio": 1.3579776564716215,
+    "hulls_sum_volume_mm3": 3347.79272652971,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_coxa",
+    "part": "coxa_bracket",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/4177c2304dfcc7cba29f8b45fc4cf787778985e7485931d4b3c04a24f181e37c.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "4177c2304dfcc7cba29f8b45fc4cf787778985e7485931d4b3c04a24f181e37c",
+    "hull_count": 1,
+    "source_volume_mm3": 18729.996383637677,
+    "single_hull_volume_ratio": 2.492809073477354,
+    "hulls_sum_volume_mm3": 46690.30493133003,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_coxa",
+    "part": "leg_fl_pitch_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/71c4db9b35032a17b24cb8294e383115f620045f901b8bb9b57c08a44f695b0d.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "71c4db9b35032a17b24cb8294e383115f620045f901b8bb9b57c08a44f695b0d",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.347999999998,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 23184.347999999998,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_femur",
+    "part": "femur_link",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/a06ab6619916449641076a63e9f3a2d9d61ac555f1bd1cc789a3448f12754c36.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "a06ab6619916449641076a63e9f3a2d9d61ac555f1bd1cc789a3448f12754c36",
+    "hull_count": 1,
+    "source_volume_mm3": 21928.19179481834,
+    "single_hull_volume_ratio": 3.3745872945197233,
+    "hulls_sum_volume_mm3": 73998.59742258562,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_femur",
+    "part": "thigh_cap",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/6f689ae5b3a93c1d233c6a8ea84a95f10d5f10cea9b6323671e28c51c3e4e3fe.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "6f689ae5b3a93c1d233c6a8ea84a95f10d5f10cea9b6323671e28c51c3e4e3fe",
+    "hull_count": 1,
+    "source_volume_mm3": 9209.240368531762,
+    "single_hull_volume_ratio": 1.2733196806062712,
+    "hulls_sum_volume_mm3": 11726.307004685243,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_femur",
+    "part": "Leg_Thigh_Guard_Blue_x4#FL",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/b0e44bf898c78e956dbc1a9add693afeaebfcc3894d2a58821dd781de940d607.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "b0e44bf898c78e956dbc1a9add693afeaebfcc3894d2a58821dd781de940d607",
+    "hull_count": 1,
+    "source_volume_mm3": 1493.883226524946,
+    "single_hull_volume_ratio": 5.744683874162111,
+    "hulls_sum_volume_mm3": 8581.88688129912,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_femur",
+    "part": "leg_fl_knee_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/5dfa9c70d23583ab469ebcf8ec55ad31511d18a7ff36738b88211974ab59e214.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "5dfa9c70d23583ab469ebcf8ec55ad31511d18a7ff36738b88211974ab59e214",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.348,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 23184.348,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_tibia",
+    "part": "tibia_link",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/878606945e5241cafe2118290cc02108490744e89e692404606b09a79cb2f551.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "878606945e5241cafe2118290cc02108490744e89e692404606b09a79cb2f551",
+    "hull_count": 1,
+    "source_volume_mm3": 34268.206252967815,
+    "single_hull_volume_ratio": 2.327885461127436,
+    "hulls_sum_volume_mm3": 79772.45911520006,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_tibia",
+    "part": "leg_foot_bored",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/f09c50541cf8d568b5014aed145141c9a82e73b6b32ba12c6f2d645cbf392ded.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "f09c50541cf8d568b5014aed145141c9a82e73b6b32ba12c6f2d645cbf392ded",
+    "hull_count": 1,
+    "source_volume_mm3": 2613.4094194305762,
+    "single_hull_volume_ratio": 2.4987366363268135,
+    "hulls_sum_volume_mm3": 6530.221862052768,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_tibia",
+    "part": "foot_pad",
+    "material": "TPU",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/7de40e285d0fb07ba2dc60186e4ed4080dc6b67300261f8d4c9b1ac18d6c4a8c.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "7de40e285d0fb07ba2dc60186e4ed4080dc6b67300261f8d4c9b1ac18d6c4a8c",
+    "hull_count": 1,
+    "source_volume_mm3": 332.4953880954153,
+    "single_hull_volume_ratio": 1.1521454172162051,
+    "hulls_sum_volume_mm3": 383.0830376396563,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_tibia",
+    "part": "shin_shell",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/d9c671aa3495f6d7ea68743a7a7e870d6ef50617dc1abcf4caf506cfe9c9b484.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "d9c671aa3495f6d7ea68743a7a7e870d6ef50617dc1abcf4caf506cfe9c9b484",
+    "hull_count": 1,
+    "source_volume_mm3": 81950.77486998825,
+    "single_hull_volume_ratio": 1.5698350371100074,
+    "hulls_sum_volume_mm3": 128649.19770922186,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_tibia",
+    "part": "Leg_Shin_Guard_Grey_x4#FL",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/4130bc32f8a77af8a3b8d2430a2b2a250b10231dbb740d6d6f30a5f975b39697.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "4130bc32f8a77af8a3b8d2430a2b2a250b10231dbb740d6d6f30a5f975b39697",
+    "hull_count": 1,
+    "source_volume_mm3": 1471.3268572555517,
+    "single_hull_volume_ratio": 3.761855496201572,
+    "hulls_sum_volume_mm3": 5534.919024675783,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_tibia",
+    "part": "Leg_Toe_Black_x12#FL_0",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0a8bf9ce79bd9e61751c3b29090daacc0e34aaeee6c48979705908fde1a56e17.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0a8bf9ce79bd9e61751c3b29090daacc0e34aaeee6c48979705908fde1a56e17",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.278210267183,
+    "single_hull_volume_ratio": 1.357977656471622,
+    "hulls_sum_volume_mm3": 3347.7927265291837,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_tibia",
+    "part": "Leg_Toe_Black_x12#FL_1",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/2abb2fd5b084bfd8bd670b1d72036e1b2194199fc865fbfc2da28498f2b2fa1f.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "2abb2fd5b084bfd8bd670b1d72036e1b2194199fc865fbfc2da28498f2b2fa1f",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.2782102673195,
+    "single_hull_volume_ratio": 1.357977656471621,
+    "hulls_sum_volume_mm3": 3347.792726529367,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_fl_tibia",
+    "part": "Leg_Toe_Black_x12#FL_2",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/5d7fd20c33a248244a8b392d6b5a1c589331ee9895571b92a040847d24c57262.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "5d7fd20c33a248244a8b392d6b5a1c589331ee9895571b92a040847d24c57262",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.2782102675715,
+    "single_hull_volume_ratio": 1.3579776564716215,
+    "hulls_sum_volume_mm3": 3347.79272652971,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_coxa",
+    "part": "coxa_bracket_m",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0da0b4f0a418c7de9d72214899553236cdf9b4e43d2c9ae6cb8b38657052b102.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0da0b4f0a418c7de9d72214899553236cdf9b4e43d2c9ae6cb8b38657052b102",
+    "hull_count": 1,
+    "source_volume_mm3": 18729.996383637677,
+    "single_hull_volume_ratio": 2.492809073477354,
+    "hulls_sum_volume_mm3": 46690.30493133003,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_coxa",
+    "part": "leg_rl_pitch_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/017113e08fd968fa794fb498c63aa221729cf4347e7ff18456de8ec704f618e9.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "017113e08fd968fa794fb498c63aa221729cf4347e7ff18456de8ec704f618e9",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.347999999998,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 23184.347999999998,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_femur",
+    "part": "femur_link_m",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/4b95c94d920e5e90d4369c0c57604d55d4819d0af7d2ac3582f692825989530c.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "4b95c94d920e5e90d4369c0c57604d55d4819d0af7d2ac3582f692825989530c",
+    "hull_count": 1,
+    "source_volume_mm3": 21928.19179481834,
+    "single_hull_volume_ratio": 3.3745872945197233,
+    "hulls_sum_volume_mm3": 73998.59742258562,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_femur",
+    "part": "thigh_cap",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/6f689ae5b3a93c1d233c6a8ea84a95f10d5f10cea9b6323671e28c51c3e4e3fe.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "6f689ae5b3a93c1d233c6a8ea84a95f10d5f10cea9b6323671e28c51c3e4e3fe",
+    "hull_count": 1,
+    "source_volume_mm3": 9209.240368531762,
+    "single_hull_volume_ratio": 1.2733196806062712,
+    "hulls_sum_volume_mm3": 11726.307004685243,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_femur",
+    "part": "Leg_Thigh_Guard_Blue_x4#RL",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/b0e44bf898c78e956dbc1a9add693afeaebfcc3894d2a58821dd781de940d607.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "b0e44bf898c78e956dbc1a9add693afeaebfcc3894d2a58821dd781de940d607",
+    "hull_count": 1,
+    "source_volume_mm3": 1493.883226524946,
+    "single_hull_volume_ratio": 5.744683874162111,
+    "hulls_sum_volume_mm3": 8581.88688129912,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_femur",
+    "part": "leg_rl_knee_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/6b2813352e8757c48f51a205cdc24102f9eb72023834e882c83fba41559ebd2d.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "6b2813352e8757c48f51a205cdc24102f9eb72023834e882c83fba41559ebd2d",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.348,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 23184.348,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_tibia",
+    "part": "tibia_link_m",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/d6e567186f200ba63a72d098f0dd38f7650b25bc6b4877a67289f2330f562c2d.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "d6e567186f200ba63a72d098f0dd38f7650b25bc6b4877a67289f2330f562c2d",
+    "hull_count": 1,
+    "source_volume_mm3": 34268.206252967815,
+    "single_hull_volume_ratio": 2.327885461127436,
+    "hulls_sum_volume_mm3": 79772.45911520006,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_tibia",
+    "part": "leg_foot_bored",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/f09c50541cf8d568b5014aed145141c9a82e73b6b32ba12c6f2d645cbf392ded.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "f09c50541cf8d568b5014aed145141c9a82e73b6b32ba12c6f2d645cbf392ded",
+    "hull_count": 1,
+    "source_volume_mm3": 2613.4094194305762,
+    "single_hull_volume_ratio": 2.4987366363268135,
+    "hulls_sum_volume_mm3": 6530.221862052768,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_tibia",
+    "part": "foot_pad",
+    "material": "TPU",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/7de40e285d0fb07ba2dc60186e4ed4080dc6b67300261f8d4c9b1ac18d6c4a8c.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "7de40e285d0fb07ba2dc60186e4ed4080dc6b67300261f8d4c9b1ac18d6c4a8c",
+    "hull_count": 1,
+    "source_volume_mm3": 332.4953880954153,
+    "single_hull_volume_ratio": 1.1521454172162051,
+    "hulls_sum_volume_mm3": 383.0830376396563,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_tibia",
+    "part": "shin_shell_m",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/18fc53f21f0407da89ad2eb19fec6ea7493a450b8baa30f3832d0613c3099931.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "18fc53f21f0407da89ad2eb19fec6ea7493a450b8baa30f3832d0613c3099931",
+    "hull_count": 1,
+    "source_volume_mm3": 81950.77486998825,
+    "single_hull_volume_ratio": 1.5698350371100074,
+    "hulls_sum_volume_mm3": 128649.19770922186,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_tibia",
+    "part": "Leg_Shin_Guard_Grey_x4#RL",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/45104bbac921200a13450b5d4077a3f41bf4896d5f48376c1f583f6f3b788a69.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "45104bbac921200a13450b5d4077a3f41bf4896d5f48376c1f583f6f3b788a69",
+    "hull_count": 1,
+    "source_volume_mm3": 1471.3268572555519,
+    "single_hull_volume_ratio": 3.761855496201572,
+    "hulls_sum_volume_mm3": 5534.9190246757835,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_tibia",
+    "part": "Leg_Toe_Black_x12#RL_0",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0a8bf9ce79bd9e61751c3b29090daacc0e34aaeee6c48979705908fde1a56e17.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0a8bf9ce79bd9e61751c3b29090daacc0e34aaeee6c48979705908fde1a56e17",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.278210267183,
+    "single_hull_volume_ratio": 1.357977656471622,
+    "hulls_sum_volume_mm3": 3347.7927265291837,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_tibia",
+    "part": "Leg_Toe_Black_x12#RL_1",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/2abb2fd5b084bfd8bd670b1d72036e1b2194199fc865fbfc2da28498f2b2fa1f.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "2abb2fd5b084bfd8bd670b1d72036e1b2194199fc865fbfc2da28498f2b2fa1f",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.2782102673195,
+    "single_hull_volume_ratio": 1.357977656471621,
+    "hulls_sum_volume_mm3": 3347.792726529367,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rl_tibia",
+    "part": "Leg_Toe_Black_x12#RL_2",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/5d7fd20c33a248244a8b392d6b5a1c589331ee9895571b92a040847d24c57262.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "5d7fd20c33a248244a8b392d6b5a1c589331ee9895571b92a040847d24c57262",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.2782102675715,
+    "single_hull_volume_ratio": 1.3579776564716215,
+    "hulls_sum_volume_mm3": 3347.79272652971,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_coxa",
+    "part": "coxa_bracket",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/4177c2304dfcc7cba29f8b45fc4cf787778985e7485931d4b3c04a24f181e37c.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "4177c2304dfcc7cba29f8b45fc4cf787778985e7485931d4b3c04a24f181e37c",
+    "hull_count": 1,
+    "source_volume_mm3": 18729.996383637677,
+    "single_hull_volume_ratio": 2.492809073477354,
+    "hulls_sum_volume_mm3": 46690.30493133003,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_coxa",
+    "part": "leg_rr_pitch_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/71c4db9b35032a17b24cb8294e383115f620045f901b8bb9b57c08a44f695b0d.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "71c4db9b35032a17b24cb8294e383115f620045f901b8bb9b57c08a44f695b0d",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.347999999998,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 23184.347999999998,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_femur",
+    "part": "femur_link",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/a06ab6619916449641076a63e9f3a2d9d61ac555f1bd1cc789a3448f12754c36.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "a06ab6619916449641076a63e9f3a2d9d61ac555f1bd1cc789a3448f12754c36",
+    "hull_count": 1,
+    "source_volume_mm3": 21928.19179481834,
+    "single_hull_volume_ratio": 3.3745872945197233,
+    "hulls_sum_volume_mm3": 73998.59742258562,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_femur",
+    "part": "thigh_cap",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/6f689ae5b3a93c1d233c6a8ea84a95f10d5f10cea9b6323671e28c51c3e4e3fe.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "6f689ae5b3a93c1d233c6a8ea84a95f10d5f10cea9b6323671e28c51c3e4e3fe",
+    "hull_count": 1,
+    "source_volume_mm3": 9209.240368531762,
+    "single_hull_volume_ratio": 1.2733196806062712,
+    "hulls_sum_volume_mm3": 11726.307004685243,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_femur",
+    "part": "Leg_Thigh_Guard_Blue_x4#RR",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/b0e44bf898c78e956dbc1a9add693afeaebfcc3894d2a58821dd781de940d607.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "b0e44bf898c78e956dbc1a9add693afeaebfcc3894d2a58821dd781de940d607",
+    "hull_count": 1,
+    "source_volume_mm3": 1493.883226524946,
+    "single_hull_volume_ratio": 5.744683874162111,
+    "hulls_sum_volume_mm3": 8581.88688129912,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_femur",
+    "part": "leg_rr_knee_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/5dfa9c70d23583ab469ebcf8ec55ad31511d18a7ff36738b88211974ab59e214.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "5dfa9c70d23583ab469ebcf8ec55ad31511d18a7ff36738b88211974ab59e214",
+    "hull_count": 1,
+    "source_volume_mm3": 23184.348,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 23184.348,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_tibia",
+    "part": "tibia_link",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/878606945e5241cafe2118290cc02108490744e89e692404606b09a79cb2f551.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "878606945e5241cafe2118290cc02108490744e89e692404606b09a79cb2f551",
+    "hull_count": 1,
+    "source_volume_mm3": 34268.206252967815,
+    "single_hull_volume_ratio": 2.327885461127436,
+    "hulls_sum_volume_mm3": 79772.45911520006,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_tibia",
+    "part": "leg_foot_bored",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/f09c50541cf8d568b5014aed145141c9a82e73b6b32ba12c6f2d645cbf392ded.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "f09c50541cf8d568b5014aed145141c9a82e73b6b32ba12c6f2d645cbf392ded",
+    "hull_count": 1,
+    "source_volume_mm3": 2613.4094194305762,
+    "single_hull_volume_ratio": 2.4987366363268135,
+    "hulls_sum_volume_mm3": 6530.221862052768,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_tibia",
+    "part": "foot_pad",
+    "material": "TPU",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/7de40e285d0fb07ba2dc60186e4ed4080dc6b67300261f8d4c9b1ac18d6c4a8c.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "7de40e285d0fb07ba2dc60186e4ed4080dc6b67300261f8d4c9b1ac18d6c4a8c",
+    "hull_count": 1,
+    "source_volume_mm3": 332.4953880954153,
+    "single_hull_volume_ratio": 1.1521454172162051,
+    "hulls_sum_volume_mm3": 383.0830376396563,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_tibia",
+    "part": "shin_shell",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/d9c671aa3495f6d7ea68743a7a7e870d6ef50617dc1abcf4caf506cfe9c9b484.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "d9c671aa3495f6d7ea68743a7a7e870d6ef50617dc1abcf4caf506cfe9c9b484",
+    "hull_count": 1,
+    "source_volume_mm3": 81950.77486998825,
+    "single_hull_volume_ratio": 1.5698350371100074,
+    "hulls_sum_volume_mm3": 128649.19770922186,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_tibia",
+    "part": "Leg_Shin_Guard_Grey_x4#RR",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/4130bc32f8a77af8a3b8d2430a2b2a250b10231dbb740d6d6f30a5f975b39697.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "4130bc32f8a77af8a3b8d2430a2b2a250b10231dbb740d6d6f30a5f975b39697",
+    "hull_count": 1,
+    "source_volume_mm3": 1471.3268572555517,
+    "single_hull_volume_ratio": 3.761855496201572,
+    "hulls_sum_volume_mm3": 5534.919024675783,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_tibia",
+    "part": "Leg_Toe_Black_x12#RR_0",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0a8bf9ce79bd9e61751c3b29090daacc0e34aaeee6c48979705908fde1a56e17.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0a8bf9ce79bd9e61751c3b29090daacc0e34aaeee6c48979705908fde1a56e17",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.278210267183,
+    "single_hull_volume_ratio": 1.357977656471622,
+    "hulls_sum_volume_mm3": 3347.7927265291837,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_tibia",
+    "part": "Leg_Toe_Black_x12#RR_1",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/2abb2fd5b084bfd8bd670b1d72036e1b2194199fc865fbfc2da28498f2b2fa1f.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "2abb2fd5b084bfd8bd670b1d72036e1b2194199fc865fbfc2da28498f2b2fa1f",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.2782102673195,
+    "single_hull_volume_ratio": 1.357977656471621,
+    "hulls_sum_volume_mm3": 3347.792726529367,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "leg_rr_tibia",
+    "part": "Leg_Toe_Black_x12#RR_2",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/5d7fd20c33a248244a8b392d6b5a1c589331ee9895571b92a040847d24c57262.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "5d7fd20c33a248244a8b392d6b5a1c589331ee9895571b92a040847d24c57262",
+    "hull_count": 1,
+    "source_volume_mm3": 2465.2782102675715,
+    "single_hull_volume_ratio": 1.3579776564716215,
+    "hulls_sum_volume_mm3": 3347.79272652971,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_shoulder",
+    "part": "shoulder_bracket",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/48f70b0a035259bb289bbe0dbca7da6c57407918df3ba94eeb3d50dad44b4ad9.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "48f70b0a035259bb289bbe0dbca7da6c57407918df3ba94eeb3d50dad44b4ad9",
+    "hull_count": 1,
+    "source_volume_mm3": 7513.884647105989,
+    "single_hull_volume_ratio": 2.488736903289973,
+    "hulls_sum_volume_mm3": 18700.08200831663,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_shoulder",
+    "part": "arm_r_pitch_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/a700177c3466371537379d39205a19ae3c4494e25523d48b0f0022f89d777d64.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "a700177c3466371537379d39205a19ae3c4494e25523d48b0f0022f89d777d64",
+    "hull_count": 1,
+    "source_volume_mm3": 5561.399999999999,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 5561.399999999999,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_upper",
+    "part": "upper_arm",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/6d591bdb1aaf80d7d421146e71749bb3d20de35d1c17c4e969bea89f7587bcd1.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "6d591bdb1aaf80d7d421146e71749bb3d20de35d1c17c4e969bea89f7587bcd1",
+    "hull_count": 1,
+    "source_volume_mm3": 8413.953692313446,
+    "single_hull_volume_ratio": 2.9264570619551047,
+    "hulls_sum_volume_mm3": 24623.07420183391,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_upper",
+    "part": "arm_pod_upper",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/33c9fce6fef3a05fc2c4b925ebd2ca15f4abf0ee35d4ddbf744ff50c4eae73bc.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "33c9fce6fef3a05fc2c4b925ebd2ca15f4abf0ee35d4ddbf744ff50c4eae73bc",
+    "hull_count": 1,
+    "source_volume_mm3": 5936.617228267682,
+    "single_hull_volume_ratio": 1.7775781066978413,
+    "hulls_sum_volume_mm3": 10552.800812813852,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_upper",
+    "part": "arm_pod_lower",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/0f454e133e7c4ec2367d1df77c93d2a264321a6766dcced7921dcd9222b11dbb.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "0f454e133e7c4ec2367d1df77c93d2a264321a6766dcced7921dcd9222b11dbb",
+    "hull_count": 1,
+    "source_volume_mm3": 4347.666102853673,
+    "single_hull_volume_ratio": 2.1244218226248655,
+    "hulls_sum_volume_mm3": 9236.276746388745,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_upper",
+    "part": "Arm_Right_Guard_Grey",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/be3116793cca9d0ccb74674200a2d05c6db0cafacdff2dbbd8975ee79be2d3ee.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "be3116793cca9d0ccb74674200a2d05c6db0cafacdff2dbbd8975ee79be2d3ee",
+    "hull_count": 1,
+    "source_volume_mm3": 291.0447803889633,
+    "single_hull_volume_ratio": 4.030885647668778,
+    "hulls_sum_volume_mm3": 1173.1682280987836,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_upper",
+    "part": "elbow_shell",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/797db063dd80f0ea249670b9c35e33ec94bb9054bd1c83e066ed28aa607797ec.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "797db063dd80f0ea249670b9c35e33ec94bb9054bd1c83e066ed28aa607797ec",
+    "hull_count": 1,
+    "source_volume_mm3": 1490.6022811901992,
+    "single_hull_volume_ratio": 3.8518372399279497,
+    "hulls_sum_volume_mm3": 5741.557376609962,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_upper",
+    "part": "arm_r_elbow_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/d8954f14bc9f35aac22fe928eadce3533d9c91e1ed55e3a92ab51f5b969085d5.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "d8954f14bc9f35aac22fe928eadce3533d9c91e1ed55e3a92ab51f5b969085d5",
+    "hull_count": 1,
+    "source_volume_mm3": 5561.400000000001,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 5561.400000000001,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_forearm",
+    "part": "forearm",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/d7e377f34e9cec2e740daee71a472af8223831a242c9fb8b0f81fb4a1a93c499.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "d7e377f34e9cec2e740daee71a472af8223831a242c9fb8b0f81fb4a1a93c499",
+    "hull_count": 1,
+    "source_volume_mm3": 2802.386047392842,
+    "single_hull_volume_ratio": 3.2983943111655822,
+    "hulls_sum_volume_mm3": 9243.374196410352,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_forearm",
+    "part": "claw_mount",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/12447f9a412784a44169d04a3993bce2b4ee8c9e9a2914ca8479db03b89852d6.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "12447f9a412784a44169d04a3993bce2b4ee8c9e9a2914ca8479db03b89852d6",
+    "hull_count": 1,
+    "source_volume_mm3": 784.1371253647907,
+    "single_hull_volume_ratio": 1.0000000000000007,
+    "hulls_sum_volume_mm3": 784.1371253647911,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_forearm",
+    "part": "Arm_Left_Claw_Grey",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/698e23a9757ef2de58a9a2693b2470ac68a5e4087e161f7351a0426ec2203ff9.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "698e23a9757ef2de58a9a2693b2470ac68a5e4087e161f7351a0426ec2203ff9",
+    "hull_count": 1,
+    "source_volume_mm3": 2200.1977969041377,
+    "single_hull_volume_ratio": 1.4300747870839756,
+    "hulls_sum_volume_mm3": 3146.447395950317,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_forearm",
+    "part": "Arm_Left_Finger_Black_x3#0",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/ad7f07898f285e883611c04f5460dc655da05c5f6fe4e3a69e31967427e6cdd6.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "ad7f07898f285e883611c04f5460dc655da05c5f6fe4e3a69e31967427e6cdd6",
+    "hull_count": 1,
+    "source_volume_mm3": 424.8252987585193,
+    "single_hull_volume_ratio": 1.3154137974130375,
+    "hulls_sum_volume_mm3": 558.821059477072,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_forearm",
+    "part": "Arm_Left_FingerTip_Grey_x3#0",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/9d6a571869d396b0f0e8777ed6b87559a4ceb216889167e6bdd3e469c90ba0bf.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "9d6a571869d396b0f0e8777ed6b87559a4ceb216889167e6bdd3e469c90ba0bf",
+    "hull_count": 1,
+    "source_volume_mm3": 41.9147179920206,
+    "single_hull_volume_ratio": 1.0000131253084639,
+    "hulls_sum_volume_mm3": 41.91526813562342,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_forearm",
+    "part": "Arm_Left_Finger_Black_x3#1",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/cd846fddb246e2e45f12c6114d21955029e741d3d19fde8a8e1b70d277a59b07.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "cd846fddb246e2e45f12c6114d21955029e741d3d19fde8a8e1b70d277a59b07",
+    "hull_count": 1,
+    "source_volume_mm3": 424.82561932575055,
+    "single_hull_volume_ratio": 1.315413797413038,
+    "hulls_sum_volume_mm3": 558.8214811556312,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_forearm",
+    "part": "Arm_Left_FingerTip_Grey_x3#1",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/00fa281d533088914575043bf3f088bc365b452614510093dacee4f13cebaa4d.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "00fa281d533088914575043bf3f088bc365b452614510093dacee4f13cebaa4d",
+    "hull_count": 1,
+    "source_volume_mm3": 41.914749620280794,
+    "single_hull_volume_ratio": 1.0000131253084648,
+    "hulls_sum_volume_mm3": 41.91529976429879,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_forearm",
+    "part": "Arm_Left_Finger_Black_x3#2",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/7b7861d3071b97868269b2d663bc9f178d8e5c22f5252ea1f907e60481394989.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "7b7861d3071b97868269b2d663bc9f178d8e5c22f5252ea1f907e60481394989",
+    "hull_count": 1,
+    "source_volume_mm3": 424.8254062146577,
+    "single_hull_volume_ratio": 1.3154137974130395,
+    "hulls_sum_volume_mm3": 558.8212008263599,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_r_forearm",
+    "part": "Arm_Left_FingerTip_Grey_x3#2",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/104f58f0ff23c2a80e792ce1a922ac0d8907b29fd95bc88daf1ab545f0227736.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "104f58f0ff23c2a80e792ce1a922ac0d8907b29fd95bc88daf1ab545f0227736",
+    "hull_count": 1,
+    "source_volume_mm3": 41.914728594010974,
+    "single_hull_volume_ratio": 1.000013125308464,
+    "hulls_sum_volume_mm3": 41.915278737752956,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_shoulder",
+    "part": "shoulder_bracket",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/eeec6d2f653efaba31cc519d0ef19c285591f95894e96b4390e4bba4e529db30.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "eeec6d2f653efaba31cc519d0ef19c285591f95894e96b4390e4bba4e529db30",
+    "hull_count": 1,
+    "source_volume_mm3": 7513.884647105989,
+    "single_hull_volume_ratio": 2.4887369032899733,
+    "hulls_sum_volume_mm3": 18700.082008316633,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_shoulder",
+    "part": "arm_l_pitch_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/8603f4376274caea0cf5526dc1e9c7f019fb6a7a0eb430438ef10ea84cfba1a6.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "8603f4376274caea0cf5526dc1e9c7f019fb6a7a0eb430438ef10ea84cfba1a6",
+    "hull_count": 1,
+    "source_volume_mm3": 5561.399999999999,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 5561.399999999999,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_upper",
+    "part": "upper_arm",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/12b0f8cfe2dd0771f6bbafed79a33825e8d6c262d898772f3dcc170b0cca2fd7.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "12b0f8cfe2dd0771f6bbafed79a33825e8d6c262d898772f3dcc170b0cca2fd7",
+    "hull_count": 1,
+    "source_volume_mm3": 8413.953692313446,
+    "single_hull_volume_ratio": 2.9264570619551042,
+    "hulls_sum_volume_mm3": 24623.074201833908,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_upper",
+    "part": "arm_pod_upper",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/bf7d25d3d26608c0336495120bb97e32a3e036f5159d682594109b04f0c748b1.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "bf7d25d3d26608c0336495120bb97e32a3e036f5159d682594109b04f0c748b1",
+    "hull_count": 1,
+    "source_volume_mm3": 5936.617228267682,
+    "single_hull_volume_ratio": 1.7775781066978407,
+    "hulls_sum_volume_mm3": 10552.800812813848,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_upper",
+    "part": "arm_pod_lower",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/77b571c7510c29013058002512939dae3aae46fa7da6cd3694fde626e6c34686.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "77b571c7510c29013058002512939dae3aae46fa7da6cd3694fde626e6c34686",
+    "hull_count": 1,
+    "source_volume_mm3": 4347.666102853673,
+    "single_hull_volume_ratio": 2.124421822624865,
+    "hulls_sum_volume_mm3": 9236.276746388743,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_upper",
+    "part": "Arm_Right_Guard_Grey",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/92bd7b86f438acea01ce85ffa7f07ffb2183fd31388892ffc1b35276e03632a7.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "92bd7b86f438acea01ce85ffa7f07ffb2183fd31388892ffc1b35276e03632a7",
+    "hull_count": 1,
+    "source_volume_mm3": 291.0447803889633,
+    "single_hull_volume_ratio": 4.030885647668778,
+    "hulls_sum_volume_mm3": 1173.1682280987836,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_upper",
+    "part": "elbow_shell",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/9f665b740e63d9141bafefd31a1b3f678c6076bc53f1ffc75fdeea8c1857bd06.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "9f665b740e63d9141bafefd31a1b3f678c6076bc53f1ffc75fdeea8c1857bd06",
+    "hull_count": 1,
+    "source_volume_mm3": 1490.6022811901992,
+    "single_hull_volume_ratio": 3.85183723992795,
+    "hulls_sum_volume_mm3": 5741.557376609963,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_upper",
+    "part": "arm_l_elbow_servo_case",
+    "material": "SERVO_CASE",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/c9dd1e29acfabdf807eb2fcab05a8f2f972c461ca1e7ac816b8ee7e4c9e468cf.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "c9dd1e29acfabdf807eb2fcab05a8f2f972c461ca1e7ac816b8ee7e4c9e468cf",
+    "hull_count": 1,
+    "source_volume_mm3": 5561.400000000001,
+    "single_hull_volume_ratio": 1.0,
+    "hulls_sum_volume_mm3": 5561.400000000001,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_forearm",
+    "part": "forearm",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/78a9ef96a9babce5f71431617717d1f9849c2d25622f8e3e785826cd4871f049.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "78a9ef96a9babce5f71431617717d1f9849c2d25622f8e3e785826cd4871f049",
+    "hull_count": 1,
+    "source_volume_mm3": 2802.386047392842,
+    "single_hull_volume_ratio": 3.2983943111655822,
+    "hulls_sum_volume_mm3": 9243.374196410352,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_forearm",
+    "part": "claw_mount",
+    "material": "PETG",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/bf7e8090bb2ac06cd06ae4eb31e6cebd8498ae313ac4ee298ab780a5cbc853a7.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "bf7e8090bb2ac06cd06ae4eb31e6cebd8498ae313ac4ee298ab780a5cbc853a7",
+    "hull_count": 1,
+    "source_volume_mm3": 784.1371253647907,
+    "single_hull_volume_ratio": 1.0000000000000007,
+    "hulls_sum_volume_mm3": 784.1371253647911,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_forearm",
+    "part": "Arm_Left_Claw_Grey",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/dc6b174319923cfbeff6803a36d3582b18dfe1fcae95d7b5908ea313c601d506.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "dc6b174319923cfbeff6803a36d3582b18dfe1fcae95d7b5908ea313c601d506",
+    "hull_count": 1,
+    "source_volume_mm3": 2200.1977969041377,
+    "single_hull_volume_ratio": 1.4300747870839752,
+    "hulls_sum_volume_mm3": 3146.447395950316,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_forearm",
+    "part": "Arm_Left_Finger_Black_x3#0",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/5d01a21b3467d8e800f3d27cb3d332d77237d612f3e34be210de426de1859b39.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "5d01a21b3467d8e800f3d27cb3d332d77237d612f3e34be210de426de1859b39",
+    "hull_count": 1,
+    "source_volume_mm3": 424.8252987585193,
+    "single_hull_volume_ratio": 1.3154137974130387,
+    "hulls_sum_volume_mm3": 558.8210594770725,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_forearm",
+    "part": "Arm_Left_FingerTip_Grey_x3#0",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/95b2d65568cff3d725b5c6b47fcc22a3bf3580a33073b56f31abcdbfdbad606e.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "95b2d65568cff3d725b5c6b47fcc22a3bf3580a33073b56f31abcdbfdbad606e",
+    "hull_count": 1,
+    "source_volume_mm3": 41.914717992020634,
+    "single_hull_volume_ratio": 1.0000131253084636,
+    "hulls_sum_volume_mm3": 41.91526813562345,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_forearm",
+    "part": "Arm_Left_Finger_Black_x3#1",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/6b68965c0f8e82844bc1240a6811ca39f36e9f05361d29e912d1001f15bb4d92.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "6b68965c0f8e82844bc1240a6811ca39f36e9f05361d29e912d1001f15bb4d92",
+    "hull_count": 1,
+    "source_volume_mm3": 424.8256193257505,
+    "single_hull_volume_ratio": 1.3154137974130387,
+    "hulls_sum_volume_mm3": 558.8214811556314,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_forearm",
+    "part": "Arm_Left_FingerTip_Grey_x3#1",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/fd23a0a744e603133e5efe4b60668ef8b58d5d2e5a29956d46c2dac151623aef.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "fd23a0a744e603133e5efe4b60668ef8b58d5d2e5a29956d46c2dac151623aef",
+    "hull_count": 1,
+    "source_volume_mm3": 41.91474962028078,
+    "single_hull_volume_ratio": 1.0000131253084656,
+    "hulls_sum_volume_mm3": 41.91529976429881,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_forearm",
+    "part": "Arm_Left_Finger_Black_x3#2",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/84f7009c29660313a2d0532268c326b47ca8abe0a78ed5028e6595494f7bf447.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "84f7009c29660313a2d0532268c326b47ca8abe0a78ed5028e6595494f7bf447",
+    "hull_count": 1,
+    "source_volume_mm3": 424.8254062146577,
+    "single_hull_volume_ratio": 1.3154137974130382,
+    "hulls_sum_volume_mm3": 558.8212008263594,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  },
+  {
+    "link": "arm_l_forearm",
+    "part": "Arm_Left_FingerTip_Grey_x3#2",
+    "material": "PLA",
+    "cache": "docs/audits/20260905-round2/simulation/collision-cache/bd3ff95b861d5a80b6b1ef3a20afdc111f19e1cc3970c2d19b7ab44d30ed605b.npz",
+    "cache_definition": {
+      "format": 2,
+      "mode": "parts",
+      "single_hull_ratio_threshold": 1.05,
+      "trimesh_version": "4.12.2",
+      "vhacdx_version": "0.0.10",
+      "vhacd_settings": {
+        "maxConvexHulls": 32,
+        "resolution": 200000,
+        "minimumVolumePercentErrorAllowed": 0.5,
+        "maxNumVerticesPerCH": 64,
+        "asyncACD": false,
+        "shrinkWrap": true
+      }
+    },
+    "input_mesh_sha256": "bd3ff95b861d5a80b6b1ef3a20afdc111f19e1cc3970c2d19b7ab44d30ed605b",
+    "hull_count": 1,
+    "source_volume_mm3": 41.91472859401099,
+    "single_hull_volume_ratio": 1.000013125308464,
+    "hulls_sum_volume_mm3": 41.91527873775298,
+    "thin_piece_replacements": [],
+    "source_watertight": true
+  }
+]

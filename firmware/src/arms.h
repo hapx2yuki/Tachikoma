@@ -22,6 +22,7 @@ struct ArmTarget {
 
 class Arms {
  public:
+  Arms() { resetOutput(); }
   ArmTarget target[2];   // [0]=右, [1]=左 (ミラーモード時は [0] を複製)
   bool mirror = true;    // 左右ミラー操作
   bool waving = false;   // wave アニメーション中
@@ -35,6 +36,12 @@ class Arms {
     }
   }
 
+
+  // 順次通電の 1500us 中立に対応するソフト状態へ戻す。
+  // 実測角度ではないため、脱力中に動かした実機角はベンチで確認する。
+  void resetOutput() {
+    for (auto& angle : cur_) { angle.yaw = 0; angle.pitch = 0; angle.elbow = 45; }
+  }
 
   void startWave() { waving = true; waveStart_ = millis(); }
 

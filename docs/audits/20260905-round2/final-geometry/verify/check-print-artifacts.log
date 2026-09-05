@@ -1,0 +1,62 @@
+TACHIKOMA_Phase0_PETG.3mf: NG / warnings=1
+  SHAPE_REVIEW: tibia_link.stl distance=infmm volume=6.848%
+  SHAPE_REVIEW: femur_link.stl distance=7.596mm volume=2.097%
+  UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない
+PETG_1_Chassis.3mf: NG / warnings=0
+  SHAPE_REVIEW: chassis.stl distance=20.04mm volume=2.173%
+PETG_2_Tibia.3mf: OK / warnings=0
+PETG_3_Femur.3mf: OK / warnings=0
+PETG_4_CoxaArm.3mf: NG / warnings=0
+  SHAPE_REVIEW: shoulder_bracket.stl distance=7.376mm volume=2.194%
+  SHAPE_REVIEW: shoulder_bracket_L.stl distance=7.376mm volume=2.194%
+  SHAPE_REVIEW: forearm.stl distance=5.051mm volume=63.699%
+  SHAPE_REVIEW: forearm_L.stl distance=5.051mm volume=63.699%
+  SHAPE_REVIEW: coxa_bracket.stl distance=infmm volume=30.524%
+  SHAPE_REVIEW: coxa_bracket_m.stl distance=infmm volume=30.524%
+PETG_5_Mic.3mf: OK / warnings=0
+PETG_Walk_1_Chassis.3mf: NG / warnings=0
+  SHAPE_REVIEW: chassis.stl distance=20.04mm volume=2.173%
+PETG_Walk_2_CoxaFemur.3mf: NG / warnings=0
+  SHAPE_REVIEW: coxa_bracket.stl distance=infmm volume=30.524%
+  SHAPE_REVIEW: coxa_bracket_m.stl distance=infmm volume=30.524%
+PETG_Walk_3_Tibia.3mf: OK / warnings=0
+PETG_Walk_4_Rest.3mf: NG / warnings=1
+  SHAPE_REVIEW: forearm_L.stl distance=5.051mm volume=63.699%
+  SHAPE_REVIEW: forearm.stl distance=5.051mm volume=63.699%
+  QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認
+PLA_Black_1.3mf: OK / warnings=0
+PLA_Matte_Blue_1.3mf: OK / warnings=1
+  QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認
+PLA_Matte_Blue_2.3mf: NG / warnings=1
+  SHAPE_REVIEW: Head_Bottom_Armcut.stl distance=infmm volume=8.837%
+  QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認
+PLA_Matte_Blue_3.3mf: OK / warnings=0
+PLA_Matte_Blue_4.3mf: OK / warnings=0
+PLA_Matte_Blue_5_HeadTop.3mf: OK / warnings=0
+PLA_Matte_Gray.3mf: NG / warnings=0
+  SHAPE_REVIEW: Mouth_Cannon_Bored.stl distance=3.423mm volume=1.366%
+PLA_Matte_Gray_2.3mf: OK / warnings=0
+PLA_Matte_White.3mf: OK / warnings=0
+PLA_Matte_White_2.3mf: OK / warnings=0
+PLA_Matte_White_3_CamBase.3mf: OK / warnings=0
+PLA_Red_1.3mf: OK / warnings=0
+claw_mount_L.3mf: NG / warnings=8
+  SHAPE_REVIEW: forearm_L.stl distance=5.051mm volume=63.699%
+  SHAPE_REVIEW: forearm.stl distance=5.051mm volume=63.699%
+  SHAPE_REVIEW: shoulder_bracket_L.stl distance=7.376mm volume=2.194%
+  SHAPE_REVIEW: shoulder_bracket.stl distance=7.376mm volume=2.194%
+  PRINT_SETTINGS_REVIEW: forearm_L.stl 壁/充填が生成定義未満
+  PRINT_SETTINGS_REVIEW: forearm.stl 壁/充填が生成定義未満
+  PRINT_SETTINGS_REVIEW: claw_mount_L.stl 壁/充填が生成定義未満
+  PRINT_SETTINGS_REVIEW: upper_arm_L.stl 壁/充填が生成定義未満
+  PRINT_SETTINGS_REVIEW: upper_arm.stl 壁/充填が生成定義未満
+  PRINT_SETTINGS_REVIEW: shoulder_bracket_L.stl 壁/充填が生成定義未満
+  PRINT_SETTINGS_REVIEW: shoulder_bracket.stl 壁/充填が生成定義未満
+  UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない
+elbow_shells_PLA_Matte.3mf: OK / warnings=0
+eye_pod_camera_base_x2.3mf: OK / warnings=1
+  UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない
+foot_pad.3mf: OK / warnings=1
+  QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認
+leg_foot_bored.3mf: OK / warnings=1
+  UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない

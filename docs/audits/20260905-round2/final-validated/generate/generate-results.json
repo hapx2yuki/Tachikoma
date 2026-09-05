@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-05T17:05:46.311217+09:00",
+  "phase": "generate",
+  "results": [
+    {
+      "name": "build-all",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/hardware/src/build_all.py"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 0.696,
+      "log": "docs/audits/20260905-round2/final-validated/generate/build-all.log",
+      "log_sha256": "f04d6c0ad3a71deea3538fc39ba62d7f7bcd1b7b7ac7e95e43776faa7bf31516"
+    }
+  ]
+}

@@ -137,11 +137,8 @@ def _roty(deg):
 
 
 def _vol(a, b):
-    try:
-        inter = trimesh.boolean.intersection([a, b], engine="manifold")
-        return float(inter.volume) if inter is not None and len(inter.faces) else 0.0
-    except Exception:
-        return 0.0
+    from mesh_checks import intersection_volume_mm3
+    return intersection_volume_mm3(a, b) / 1.0
 
 
 MOUNT_YAW = C.ARM_MOUNT_YAW_DEG  # 肩ポッド中立向き (正面から外向き, 実測40°)
@@ -240,8 +237,8 @@ def _load_mouth_150(name):
 # 検出される “false positive” を実際に再現・特定した — 正しい -41.02 を
 # 使うと Ball は独立に MOUTH_SOCKET_LOCAL 実測点と往復整合し、Neck の逃がし
 # カットに頼らずとも生シェル比で 0.0000cm^3 になることを確認済み)。
-NECK_LOCAL_Y = -28.97
-BALL_LOCAL_Y = -41.02
+NECK_LOCAL_Y = C.MOUTH_NECK_LOCAL_Y
+BALL_LOCAL_Y = C.MOUTH_BALL_LOCAL_Y
 
 
 def _mouth_pose(local_y_offset, name):
@@ -311,10 +308,8 @@ print("[3] claw_mount ↔ 爪ハブ (Arm_Left_Claw_Grey) 接着継手の成立�
 # 両腕鏡映使用) の平坦近位面を突き合わせ接着する。config.py CLAW_TO_MOUNT/
 # FINGER_TO_MOUNT/FINGERTIP_TO_MOUNT は 3MF source_offset フォレンジクスに
 # よる決定的変換 (make_arm.py claw_mount() 参照)。ここでは実メッシュで
-# (a) 爪ハブの近位面が claw_mount 前面とほぼ面一 (レイキャストで残差
-# <0.5mm) か、(b) 爪ハブの指ペグ3本の位置が claw_mount 本体の外にあり
-# 指を差し込めるか、(c) 爪ハブ+指+指先チップの一体が claw_mount/forearm
-# と過大に交差しないかを検証する
+# (a) 接合面レイ残差を記録し、(b) 指ペグ位置と、(c) 全個別部品の実体交差を
+# 検査する。接着/圧入公差が不明な食い込みを「軽微」として通過させない。
 mount_tm = trimesh.load(STL / "claw_mount.stl")
 claw_raw = trimesh.load(ROOT / "model" / "Arm_Left_Claw_Grey.stl")
 claw_tm = claw_raw.copy(); claw_tm.apply_transform(C.CLAW_TO_MOUNT)
@@ -323,9 +318,8 @@ fingertip_raw = trimesh.load(ROOT / "model" / "Arm_Left_FingerTip_Grey_x3.stl")
 
 # (a) 爪ハブ近位面のレイキャスト実測 (r=0/2/4mm オフセット, claw_mount の
 # 円盤半径 10mm 以内) が claw_mount 前面 (x=CLAW_MOUNT_THICKNESS) と面一に
-# 近いこと。現物合わせ接着継手なので数mmの残差は許容するが、大きくズレて
-# いたら (a) 接着面が浮く (ギャップ) か (b) claw_mount に食い込みすぎて
-# 印刷/接着不能、のどちらかで設計破綻
+# 近いかを記録する。残差だけでは接合の成立を証明できず、1mmを根拠なく
+# 現物合わせ許容として扱わない。
 mount_face_x = C.CLAW_MOUNT_THICKNESS
 gaps = []
 for r in (0.0, 2.0, 4.0):
@@ -336,10 +330,11 @@ for r in (0.0, 2.0, 4.0):
         if len(locs):
             gaps.append(locs[:, 0].min() - mount_face_x)
 gaps = np.array(gaps)
-print(f"  爪ハブ近位面 vs claw_mount 前面の残差 (n={len(gaps)}): "
-      f"mean={gaps.mean():+.2f}mm max|.|={np.abs(gaps).max():.2f}mm")
-check(len(gaps) > 0 and np.abs(gaps).max() < 1.0,
-      "爪ハブ近位面が claw_mount 前面と面一 (残差<1.0mm, 現物合わせ許容内)")
+if len(gaps):
+    print(f"  爪ハブ近位面の残差 (n={len(gaps)}): mean={gaps.mean():+.2f}mm max|.|={np.abs(gaps).max():.2f}mm")
+else:
+    print('  爪ハブ近位面のレイが全て外れた')
+check(False, "接合面の圧入/接着公差はUNVERIFIED（旧1mm許容は根拠なし）")
 
 # (b) 3本の指ペグ (config.FINGER_TO_MOUNT の各原点 = 指根元穴の狙い位置)
 # が claw_mount 本体の外側にあること (claw_mount と衝突していたら指が
@@ -358,14 +353,11 @@ for T in C.FINGER_TO_MOUNT:
 for T in C.FINGERTIP_TO_MOUNT:
     t = fingertip_raw.copy(); t.apply_transform(T); assembly.append(t)
 hand_tm = trimesh.util.concatenate(assembly)
-try:
-    inter = trimesh.boolean.intersection([hand_tm, mount_tm], engine="manifold")
-    iv = float(inter.volume) if inter is not None and len(inter.faces) else 0.0
-except Exception:
-    iv = 0.0
-print(f"  爪ハブ+指一体 vs claw_mount 交差体積: {iv:.1f} mm3 "
-      f"(接着面での軽微な重なりは想定内)")
-check(iv < 50.0, "爪ハブ+指一体が claw_mount と過大に交差しない")
+from check_hand_assembly import run as check_hand
+_hand = check_hand()
+for pair in _hand['pairs']:
+    check(pair['intersection_mm3'] <= _hand['numerical_volume_tolerance_mm3'],
+          f"手の個別交差 {pair['a']} / {pair['b']} = {pair['intersection_mm3']:.6f}mm3")
 
 print("[3b] ARM_HAND_REACH_MM-FOREARM_LEN (定数, config.py) が実メッシュの"
       " worst-case reach を上回るか (QA minor 指摘: 旧 [4] は firmware "
@@ -713,6 +705,13 @@ overlap = min(cz1, pz1) - max(cz0, pz0)
 check(overlap > 0,
       f"Mouth_Cannon z=[{cz0:.1f},{cz1:.1f}] と 腕ポッド z=[{pz0:.1f},{pz1:.1f}] "
       f"が重なる (overlap={overlap:.1f}mm)")
+
+print("\n[9] 隣接する腕関節の実体干渉 (0.25°刻み・URDF非依存)")
+from check_arm_joints import run as check_joints
+_joints = check_joints()
+for _pair, _r in _joints['pairs'].items():
+    check(_r['worst_mm3'] < .01, f"{_pair}: 最大交差 {_r['worst_mm3']:.4f}mm3")
+check(_joints['pass'], "関節全域・ホーン円板・肩サーボ枠の保持・形状連結性")
 
 print(f"\nresult: {'OK' if OK else 'NG'}")
 sys.exit(0 if OK else 1)

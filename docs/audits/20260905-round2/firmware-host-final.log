@@ -1,0 +1,80 @@
+
+$ c++ -std=c++17 -include tools/tests/firmware_stubs/Arduino.h -I tools/tests/firmware_stubs -I firmware/src -I firmware/.pio/libdeps/esp32dev/ArduinoJson/src tools/tests/firmware_contract_test.cpp -o /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-vj5_e0pt/contract
+
+$ /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-vj5_e0pt/contract
+PASS: IK rejects non-finite inputs without mutating output
+PASS: calibration query validation cannot turn malformed text into a servo endpoint
+PASS: malformed command rejection, atomic frame validation, partial updates do not re-enable
+PASS: boot full-off, actual sequential neutral pulses, unused camera channel, disabled latch
+PASS: real low-voltage latch stops calibration PWM and cannot restart itself
+PASS: calibration also obeys rest and re-enable uses sequential start
+PASS: front leg slew exit keeps both arms in retreat (actual PWM output)
+PASS: 10000 changing-command frames keep finite angles and leg yaw constraints
+PASS: trim update during NVS write remains pending and is saved next time
+
+$ c++ -std=c++17 -include tools/tests/firmware_stubs/Arduino.h -I tools/tests/firmware_stubs -I firmware/src -I firmware/.pio/libdeps/esp32dev/ArduinoJson/src tools/tests/firmware_audio_test.cpp -o /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-vj5_e0pt/audio
+
+$ /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-vj5_e0pt/audio
+PASS: I2S uses DMA32 to avoid mono16 FIFO reordering; 64 BCLK per WS frame
+PASS: rejected second connection cannot reset the active playback
+PASS: overflow/wrap/read sizes retain PCM16 sample boundaries; odd frames rejected
+PASS: partial I2S writes preserve remaining PCM; drain waits until DMA tail is played
+PASS: signed DMA32 samples become PCM16 in the original time order
+PASS: old playback completion/error cannot reset or consume a newly begun session
+PASS: stalled I2S output aborts playback instead of permanently blocking PTT
+PASS: owner disconnect clears playback; I2S reset is deferred to audio task
+
+$ c++ -std=c++17 -include tools/tests/firmware_stubs/Arduino.h -I tools/tests/firmware_stubs -I firmware/src -I firmware/.pio/libdeps/esp32dev/ArduinoJson/src tools/tests/firmware_fault_test.cpp -o /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-vj5_e0pt/fault
+
+$ /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-vj5_e0pt/fault
+PASS: normal boot requires an explicit start command
+PASS: detected battery loss latches after 3s, recovery cannot re-arm, USB-only calibration remains available
+PASS: absent PCA at boot blocks both boards and cannot auto-restart on reconnection
+PASS: one failed PWM write immediately full-offs both boards and latches fault
+PASS: healthy PCA stops during bus loss, failed full-off is retried when other PCA reconnects
+PASS: unexpected PCA configuration reset is detected and stops output
+
+$ c++ -std=c++17 -include tools/tests/firmware_stubs/Arduino.h -I tools/tests/firmware_stubs -I firmware/src -I firmware/.pio/libdeps/esp32dev/ArduinoJson/src tools/tests/firmware_main_test.cpp -o /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-vj5_e0pt/main
+
+$ /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-vj5_e0pt/main
+PASS: all ten assigned ESP32 peripheral pins are distinct; camera has no main-board pin assignment
+PASS: actual setup/loop and first UI heartbeat keep all servos off until explicit start
+PASS: only controlling socket disconnect zeros motion/PTT immediately; gait settles to stand
+PASS: lost heartbeat clears stale mailbox commands, preventing millis-wrap resurrection
+PASS: actual main rest/restart works, bus fault stays de-energized across start button presses
+
+$ c++ -std=c++17 -include tools/tests/firmware_stubs/Arduino.h -I tools/tests/firmware_stubs -I firmware/src -I firmware/.pio/libdeps/esp32dev/ArduinoJson/src tools/tests/firmware_calibration_main_test.cpp -o /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-vj5_e0pt/calibration_main
+
+$ /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-vj5_e0pt/calibration_main
+PASS: actual calibration setup/loop permits USB neutral test, obeys rest/restart, and stops on sensed battery loss
+
+$ node tools/tests/firmware_ui_test.cjs
+PASS: UI initialization, rest, reconnect, background stop
+
+$ /Users/uratayuuki/Documents/Tachikoma/.venv/bin/python tools/tests/firmware_voice_test.py
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.243s
+
+OK
+
+$ /Users/uratayuuki/Documents/Tachikoma/.venv/bin/python tools/voice_bridge.py --mock --self-test
+2026-09-05 15:47:01,376 [INFO] server listening on 127.0.0.1:8765
+2026-09-05 15:47:01,381 [INFO] connection open
+2026-09-05 15:47:01,381 [INFO] ptt_start: 録音開始
+2026-09-05 15:47:01,418 [INFO] ptt_end: 録音終了 (9600 bytes)
+2026-09-05 15:47:01,418 [INFO] [mock STT] transcript = 'こんにちは、調子はどう?'
+2026-09-05 15:47:01,418 [INFO] [mock LLM] おー、元気なのだ! 今日もマスターと話せて嬉しいな。
+2026-09-05 15:47:02,647 [INFO] TTS送信完了 (38400 bytes)
+2026-09-05 15:47:02,648 [INFO] server closing
+2026-09-05 15:47:02,648 [INFO] server closed
+[self-test] ダミー ESP32 サーバを起動し、ブリッジのクライアント動作 (--mock) を検証します
+  OK  ダミーサーバ側の検証が完了した
+  OK  tts_begin を受信した
+  OK  PCM 音声フレームを受信した (38400 bytes)
+  OK  PCM フレームは tts_begin より後に届いた (順序が正しい)
+  OK  tts_end を受信した
+  OK  エラー無し (error=None)
+[self-test] PASS
+
+PASS: all firmware host checks

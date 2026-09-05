@@ -1,0 +1,22 @@
+{
+  "backup": "/Users/uratayuuki/Documents/Tachikoma-audit-backups/20260905-153305-round2/round2-start.tar.gz",
+  "stl_changes": 12,
+  "geometry_changes": 10,
+  "placement_only": 2,
+  "serialization_only": 0,
+  "all_changed_stls_closed": true,
+  "protected_files": 124,
+  "all_protected_unchanged": true
+}
+hardware/stl/forearm.stl geometry_changed -1785.08
+hardware/stl/Mouth_Cannon_Bored.stl geometry_changed -100.164
+hardware/stl/coxa_bracket_m.stl geometry_changed -5717.22
+hardware/stl/forearm_L.stl geometry_changed -1785.08
+hardware/stl/shoulder_bracket.stl geometry_changed -164.861
+hardware/stl/Head_Bottom_Armcut.stl geometry_changed 2294.376
+hardware/stl/Mouth_Neck_Bored.stl geometry_changed -2178.7
+hardware/stl/elbow_shell_L.stl placement_only -0.0
+hardware/stl/coxa_bracket.stl geometry_changed -5717.22
+hardware/stl/chassis.stl geometry_changed -1186.864
+hardware/stl/elbow_shell.stl placement_only -0.0
+hardware/stl/shoulder_bracket_L.stl geometry_changed -164.861

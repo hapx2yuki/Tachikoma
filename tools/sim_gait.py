@@ -10,6 +10,7 @@
 """
 import re
 import sys
+import argparse
 
 import numpy as np
 import matplotlib
@@ -177,7 +178,7 @@ def sway_of(phase):
     return sx, sy
 
 
-def foot_target(leg, phase, vx, vy, wz, body_h=BODY_H):
+def foot_target(leg, phase, vx, vy, wz, body_h=BODY_H, *, holding=False):
     """gait.h update() と同一 (重心シフト込み, 脚ローカル座標を返す)。"""
     nx, ny = neutral_xy(leg)
     turn = wz * MAX_TURN
@@ -194,7 +195,7 @@ def foot_target(leg, phase, vx, vy, wz, body_h=BODY_H):
     else:
         t = (p - DUTY) / (1 - DUTY)
         dx, dy, dz = sx * (t - 0.5), sy * (t - 0.5), STEP_H * np.sin(np.pi * t)
-    swx, swy = sway_of(phase)
+    swx, swy = (0.0, 0.0) if holding else sway_of(phase)
     fx = nx + dx - swx - ORIGIN[leg, 0]
     fy = ny + dy - swy - ORIGIN[leg, 1]
     c, s = np.cos(-MOUNT[leg]), np.sin(-MOUNT[leg])
@@ -264,12 +265,13 @@ def polygon_margin(phase, vx, vy, wz):
 EVAL_CMDS = [(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0),
              (0.7, 0.7, 0), (0.7, -0.7, 0), (-0.7, 0.7, 0), (-0.7, -0.7, 0),
              (0, 0, 1), (0, 0, -1), (0.5, 0.5, 0.5), (0, 0, 0)]
-# DS3218 系 20kg 級の実力目安: 6.8V カタログ 20kgf·cm、UBEC 6.0V 運用では
-# ~18kgf·cm (出典間で 18-21.5 とばらつく, UNVERIFIED — L-02 ベンチで実測)
+# 既存の静止点支持設計用閾値。連続定格ではない。メーカー端点は
+# config.POWER_COMPONENTSに保存、6V最大トルク内挿は約19.94kgf·cm。
+# 足トゥの実接点・動的荷重・実サーボ発熱はこの計算では評価できない。
 T_HIP_WARN, T_HIP_NG = 18.0, 20.0
 
 
-def main():
+def main(output=None):
     # ---- 1. IK/FK 往復
     n, worst, ok = 0, 0.0, 0
     for x in np.linspace(40, 180, 25):
@@ -346,7 +348,7 @@ def main():
                                           round(F[i] / 9.81, 2), round(foot_r, 1))
     verdict = ("NG — サーボ定格超過 (歩幅/STANCE_R/重量の見直し or 高トルク品)"
                if w_hip > T_HIP_NG else
-               ("要注意 — 6V 実力 (~18) と同水準。L-02 で実測" if w_hip > T_HIP_WARN
+               ("要注意 — 連続トルク未確認。L-02 で実測" if w_hip > T_HIP_WARN
                 else "OK"))
     print(f"[3] 静的トルク最悪 (総重量{TOTAL_KG}kg, 重心 y={CG_XY[1]:+.0f}mm, 3/4点支持静力学): "
           f"股ピッチ {w_hip:.2f} kgf·cm at {w_at[0]} cmd={w_at[1]} phase={w_at[2]} "
@@ -390,10 +392,25 @@ def main():
     ax2.set_title("stability margin (mm) vs phase"); ax2.legend(fontsize=8)
     ax2.grid(alpha=0.3)
     fig.tight_layout()
-    out = ROOT / "docs" / "preview_gait.png"
+    out = Path(output) if output else ROOT / "docs" / "preview_gait.png"
+    out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=110)
+    plt.close(fig)
     print(f"saved {out}")
+    checks = {
+        "IK/FK": ok > 0 and np.isfinite(worst) and worst < 1e-3,
+        "IK到達": total > 0 and fails == 0,
+        "ヨー余裕": ok2b,
+        "静的トルク上限": np.isfinite(w_hip) and w_hip <= T_HIP_NG,
+        "静的安定": np.isfinite(worst_m) and worst_m >= 8,
+    }
+    failed = [name for name, passed in checks.items() if not passed]
+    print("RESULT:", "FAIL: " + ", ".join(failed) if failed else "PASS")
+    print("注: PASSは計算上の既存閾値への適合。6V実機の連続トルク・発熱・接地は未検証。")
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, help="検証画像の保存先")
+    sys.exit(main(parser.parse_args().output))

@@ -1,0 +1,36 @@
+{
+  "status": "ADDITIONAL_FULL_ASSEMBLY_RELATIONS_FAIL",
+  "method": "independent Boolean against current KIT static poses; these pairs are outside compartment checks",
+  "source_sha256": {
+    "tools/check_cabin_external_interfaces.py": "bbad0940a1bc0412929e84524355e15538bd73727b5618fa7b5d7c6eabf3b17f",
+    "docs/audits/20260905-round2/cabin-electronics/candidate_cabin_front_with_wire_route.stl": "b570118720880cde6c612220fdea8c08db389f6f5eebec3c9e54bf62685cf9a6",
+    "tools/export_urdf.py": "f16d9aedcd12d219f6c6fc6ffecd7ec206e1649b4991c00178d1b1c1a72cbd17",
+    "tools/kit_assembly.py": "f3810e68432190f91437c02cd982b2cee88bb99473d813ab87187b21158a8b9e",
+    "hardware/src/config.py": "23c9c32156265855d26e93f65392649d11161207061a1bba0122214e9a78b169",
+    "tools/data/kit_assembly_rear.json": "30a96dbf0737a36298857681cce3ff565a77863d559fff678927699466db7ec5"
+  },
+  "candidate_front_sha256": "b570118720880cde6c612220fdea8c08db389f6f5eebec3c9e54bf62685cf9a6",
+  "pairs": [
+    {
+      "part": "pod_neck",
+      "original_front_overlap_mm3": 1199.55207971494,
+      "candidate_front_overlap_mm3": 1034.5666999118173
+    },
+    {
+      "part": "Cabin_Eye_White#single",
+      "original_front_overlap_mm3": 7784.86876982886,
+      "candidate_front_overlap_mm3": 7548.03031664324
+    },
+    {
+      "part": "Head_TailJoint_Blue_Optional_Cross#single",
+      "original_front_overlap_mm3": 0.4043066445605571,
+      "candidate_front_overlap_mm3": 0.40379523136083695
+    },
+    {
+      "part": "Head_TailJoint_Ball_Grey_Optional_Cross#single",
+      "original_front_overlap_mm3": 1152.8017593994396,
+      "candidate_front_overlap_mm3": 829.9060202551935
+    }
+  ],
+  "passed": false
+}

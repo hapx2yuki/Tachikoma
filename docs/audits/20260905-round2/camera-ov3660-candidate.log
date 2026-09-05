@@ -1,0 +1,108 @@
+{
+  "status": "CANDIDATE: センサー現物/メイン基板取付/曲げFPC/全身FOVは別途検証",
+  "source_url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/new-res/OV3660_Camera_Module_Specification.pdf",
+  "confirmed_on": "2026-09-05",
+  "manufacturer_dimensions_mm": {
+    "sensor": [
+      8,
+      8,
+      5.3
+    ],
+    "total_length_with_FPC": 21.2,
+    "contact_width": 12.5,
+    "flex_width": 6.5
+  },
+  "optics": {
+    "diagonal_fov_deg": 102,
+    "horizontal_fov_deg": 85,
+    "efl_mm": 1.63,
+    "unchanged_pupil_diameter_mm": 10.0,
+    "candidate_setback_mm": 3.2,
+    "required_pupil_diameter_mm": 7.903341801824327,
+    "mechanical_rays": 648,
+    "occluded_rays": 0,
+    "visible_surface_max_change_mm": 0.008797707681286357
+  },
+  "baseline_config": {
+    "CAM2_MODULE_L": 20.5,
+    "CAM2_MODULE_W": 12.5,
+    "CAM2_MODULE_T": 5.54,
+    "CAM2_LENS_STANDOFF": 6.57,
+    "CAM2_WIRE_NOTCH": [
+      5.0,
+      4.0
+    ]
+  },
+  "candidate_config": {
+    "CAM2_MODULE_L": 8.0,
+    "CAM2_MODULE_W": 8.0,
+    "CAM2_MODULE_T": 5.3,
+    "CAM2_LENS_STANDOFF": 3.2,
+    "CAM2_WIRE_NOTCH": [
+      7.5,
+      4.0
+    ]
+  },
+  "camera_frame_chassis": [
+    [
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -0.726436032120812,
+      0.6872340876561426,
+      49.5944
+    ],
+    [
+      0.0,
+      0.6872340876561426,
+      0.726436032120812,
+      29.6528
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "removed_internal_ring_fragment_mm3": 2.8594191817425,
+  "parts": {
+    "eye_pod_camera_shell_ov3660_candidate": {
+      "components": 1,
+      "watertight": true,
+      "volume_mm3": 8522.969066103577
+    },
+    "eye_pod_camera_base_ov3660_candidate": {
+      "components": 1,
+      "watertight": true,
+      "volume_mm3": 4153.415452229731
+    },
+    "camera_carrier_ov3660_candidate": {
+      "components": 1,
+      "watertight": true,
+      "volume_mm3": 1038.4499228413108
+    },
+    "OV3660_sensor_envelope": {
+      "components": 1,
+      "watertight": true,
+      "volume_mm3": 339.20003900014126
+    },
+    "OV3660_FPC_straight_envelope": {
+      "components": 1,
+      "watertight": true,
+      "volume_mm3": 32.93997171338509
+    }
+  },
+  "intersections_mm3": {
+    "eye_pod_camera_shell_ov3660_candidate__eye_pod_camera_base_ov3660_candidate": 0.0,
+    "eye_pod_camera_shell_ov3660_candidate__camera_carrier_ov3660_candidate": 0.0,
+    "eye_pod_camera_base_ov3660_candidate__camera_carrier_ov3660_candidate": 0.0
+  },
+  "sensor_material_intersection_mm3": 0.0,
+  "straight_FPC_material_intersection_mm3": 0.0,
+  "geometry_pass": true
+}

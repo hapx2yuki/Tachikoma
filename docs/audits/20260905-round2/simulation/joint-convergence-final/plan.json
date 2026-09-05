@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-09-05T08:12:27.033859+00:00",
+  "script_sha256": "60969900aeb75386000ca7b18a815056d71fc9d79d8d8ab8e062acb04499abc0",
+  "cases": [
+    {
+      "name": "armature_0.0001_dt0.00025",
+      "controller": "native",
+      "model": {
+        "timestep": 0.00025
+      },
+      "joint_dynamics_override": {
+        "armature_kg_m2": 0.0001,
+        "damping_Nm_s_per_rad": 0.02
+      },
+      "gains": {
+        "kp": {
+          "leg": 24.0,
+          "arm": 0.8,
+          "eye": 0.05
+        },
+        "kv": {
+          "leg": 0.4,
+          "arm": 0.03,
+          "eye": 0.005
+        }
+      },
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "armature_0_dt0.00025",
+      "controller": "native",
+      "model": {
+        "timestep": 0.00025
+      },
+      "joint_dynamics_override": {
+        "armature_kg_m2": 0.0,
+        "damping_Nm_s_per_rad": 0.02
+      },
+      "gains": {
+        "kp": {
+          "leg": 24.0,
+          "arm": 0.8,
+          "eye": 0.05
+        },
+        "kv": {
+          "leg": 0.4,
+          "arm": 0.03,
+          "eye": 0.005
+        }
+      },
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    }
+  ],
+  "criterion": "0.5msから0.25msへの歩行区間移動距離差/0.5msの距離が5%以内。個々の物理条件も満たすこと。"
+}

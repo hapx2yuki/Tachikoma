@@ -1,0 +1,20 @@
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+holding 28 hull pairs 20 real intersecting pairs
+zero 23 hull pairs 15 real intersecting pairs
+walk_00 26 hull pairs 15 real intersecting pairs
+walk_01 26 hull pairs 15 real intersecting pairs
+walk_02 26 hull pairs 15 real intersecting pairs
+walk_03 27 hull pairs 15 real intersecting pairs
+walk_04 27 hull pairs 16 real intersecting pairs
+walk_05 27 hull pairs 17 real intersecting pairs
+walk_06 27 hull pairs 18 real intersecting pairs
+walk_07 27 hull pairs 19 real intersecting pairs
+walk_08 28 hull pairs 20 real intersecting pairs
+walk_09 27 hull pairs 20 real intersecting pairs
+walk_10 26 hull pairs 19 real intersecting pairs
+walk_11 27 hull pairs 19 real intersecting pairs
+walk_12 28 hull pairs 17 real intersecting pairs
+walk_13 27 hull pairs 16 real intersecting pairs
+walk_14 26 hull pairs 14 real intersecting pairs
+walk_15 26 hull pairs 15 real intersecting pairs

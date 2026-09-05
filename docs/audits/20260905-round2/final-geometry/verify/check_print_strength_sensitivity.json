@@ -1,0 +1,59 @@
+{
+  "status": "SENSITIVITY_ONLY_UNVERIFIED_PRINT_PATH",
+  "results": [
+    {
+      "part": "tibia_link",
+      "wall_mm": 1.6,
+      "core_density": 1.0,
+      "assumed_strength_mpa": 55,
+      "safety_factor": 2.1098853002047075,
+      "position_mm": -24.786299999998604,
+      "required": 2
+    },
+    {
+      "part": "tibia_link",
+      "wall_mm": 1.6,
+      "core_density": 0.4,
+      "assumed_strength_mpa": 55,
+      "safety_factor": 2.0096235344317113,
+      "position_mm": -24.786299999998604,
+      "required": 2
+    },
+    {
+      "part": "tibia_link",
+      "wall_mm": 1.8,
+      "core_density": 0.4,
+      "assumed_strength_mpa": 55,
+      "safety_factor": 2.0565232746133337,
+      "position_mm": -24.786299999998604,
+      "required": 2
+    },
+    {
+      "part": "pod_neck",
+      "wall_mm": 1.6,
+      "core_density": 1.0,
+      "assumed_strength_mpa": 68,
+      "safety_factor": 3.0880966376238264,
+      "position_mm": -43.18629999999908,
+      "required": 3
+    },
+    {
+      "part": "pod_neck",
+      "wall_mm": 1.6,
+      "core_density": 0.4,
+      "assumed_strength_mpa": 68,
+      "safety_factor": 2.7095789847682314,
+      "position_mm": -43.18629999999908,
+      "required": 3
+    },
+    {
+      "part": "pod_neck",
+      "wall_mm": 1.8,
+      "core_density": 0.4,
+      "assumed_strength_mpa": 68,
+      "safety_factor": 2.7906103727308444,
+      "position_mm": -43.18629999999908,
+      "required": 3
+    }
+  ]
+}

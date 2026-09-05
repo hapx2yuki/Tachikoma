@@ -1,0 +1,21 @@
+test_candidate_mass_update_keeps_ground_collision_valid (__main__.SimulationRegression.test_candidate_mass_update_keeps_ground_collision_valid) ... candidate_regression PASS roll 2.03 pitch 0.48 power {'mean': 0.04478908205952948, 'max': 0.39672019829353034, 'p95': 0.15519470150513817} self initial mm 0
+ok
+test_catalog_limits_use_operating_voltage (__main__.SimulationRegression.test_catalog_limits_use_operating_voltage) ... ok
+test_collision_cache_never_publishes_partial_archive (__main__.SimulationRegression.test_collision_cache_never_publishes_partial_archive) ... ok
+test_compiled_mass_and_joint_constants_are_consistent (__main__.SimulationRegression.test_compiled_mass_and_joint_constants_are_consistent) ... ok
+test_failed_scenario_has_nonzero_exit (__main__.SimulationRegression.test_failed_scenario_has_nonzero_exit) ... ok
+test_fallback_count_includes_recovered_ik (__main__.SimulationRegression.test_fallback_count_includes_recovered_ik) ... ok
+test_holding_really_removes_sway (__main__.SimulationRegression.test_holding_really_removes_sway) ... ok
+test_inertial_mount_origins_and_pad_mass (__main__.SimulationRegression.test_inertial_mount_origins_and_pad_mass) ... ok
+test_native_firmware_trace (__main__.SimulationRegression.test_native_firmware_trace) ... ok
+test_native_height_change_starts_from_real_ready_angles (__main__.SimulationRegression.test_native_height_change_starts_from_real_ready_angles) ... ok
+test_native_sequential_output_and_quantization (__main__.SimulationRegression.test_native_sequential_output_and_quantization) ... ok
+test_no_phantom_base_damping_or_inertia (__main__.SimulationRegression.test_no_phantom_base_damping_or_inertia) ... ok
+test_signed_forward_and_short_walk (__main__.SimulationRegression.test_signed_forward_and_short_walk) ... ok
+test_speed_torque_envelope (__main__.SimulationRegression.test_speed_torque_envelope) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 8.331s
+
+OK
+native firmware trace: 1563 frames, max angle error 0.000895 deg

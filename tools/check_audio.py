@@ -136,8 +136,30 @@ _shell_unchanged(
     "Mouth_Cannon_Bored")
 
 neck0 = _scaled("Mouth_Neck_Blue")
+# 元 Ball の実頂点から隠れる座の範囲を独立に復元する。
+_ball_vertices = _scaled("Mouth_Ball_Grey").vertices
+_seat_center = np.linalg.lstsq(
+    np.column_stack((2 * _ball_vertices, np.ones(len(_ball_vertices)))),
+    np.square(_ball_vertices).sum(axis=1), rcond=None)[0][:3]
+_seat_radius = np.linalg.norm(_ball_vertices - _seat_center, axis=1).max() + C.MOUTH_BALL_SEAT_CLEAR
+_seat_center[1] += C.MOUTH_BALL_LOCAL_Y - C.MOUTH_NECK_LOCAL_Y
+_cap_for_seat = _scaled("Mouth_Cap_Grey")
+_cap_for_seat.apply_translation([0, C.MOUTH_CAP_LOCAL_Y - C.MOUTH_NECK_LOCAL_Y, 0])
+_cap_outer_envelope = _cap_for_seat.convex_hull
+
+
+def _hidden_neck_seat(p):
+    # STL 簡略化の公差 0.01mm に対し 0.02mm の境界帯を持たせる。
+    ball_hidden = np.linalg.norm(p - _seat_center, axis=1) <= _seat_radius + .02
+    # 挿入掃引で削る先端は元Capの外周包絡の内側に限定する。生成した負形状
+    # 自体を正解にせず、別の距離計算でCapの外形を超えないことを確認する。
+    cap_hidden = trimesh.proximity.signed_distance(_cap_outer_envelope, p) >= -C.MOUTH_CAP_SEAT_CLEAR-.02
+    return ball_hidden | cap_hidden
+
+
 _shell_unchanged(neck0, "Mouth_Neck_Bored",
-                 lambda p: np.hypot(p[:, 0], p[:, 2]) < 3.5, "Mouth_Neck_Bored")
+                 lambda p: (np.hypot(p[:, 0], p[:, 2]) < 3.5) | _hidden_neck_seat(p),
+                 "Mouth_Neck_Bored")
 
 ball0 = _scaled("Mouth_Ball_Grey")
 _shell_unchanged(ball0, "Mouth_Ball_Bored",
@@ -154,11 +176,13 @@ print("\n[2b] 配線ボアの開口が極キャップ (半径<3.5mm) の外に�
 
 
 def _pole_breach_confined(orig: trimesh.Trimesh, bored_name: str, label: str,
-                           band=(3.5, 6.0), n=15000, tol=0.05):
+                           band=(3.5, 6.0), n=15000, tol=0.05, exclude_fn=None):
     bored = trimesh.load(STL / f"{bored_name}.stl")
     pts, _ = trimesh.sample.sample_surface(orig, n)
     r = np.hypot(pts[:, 0], pts[:, 2])
     keep = (r >= band[0]) & (r <= band[1])
+    if exclude_fn is not None:
+        keep &= ~exclude_fn(pts)
     check(keep.sum() > 50, f"{label}: 境界帯 (半径{band}) に十分なサンプル点"
           f" ({keep.sum()}点)")
     if keep.sum() == 0:
@@ -170,16 +194,13 @@ def _pole_breach_confined(orig: trimesh.Trimesh, bored_name: str, label: str,
           f"{keep.sum()}点)")
 
 
-_pole_breach_confined(neck0, "Mouth_Neck_Bored", "Mouth_Neck_Bored")
+_pole_breach_confined(neck0, "Mouth_Neck_Bored", "Mouth_Neck_Bored", exclude_fn=_hidden_neck_seat)
 _pole_breach_confined(ball0, "Mouth_Ball_Bored", "Mouth_Ball_Bored")
 
 
 def _vol(a, b):
-    try:
-        r = trimesh.boolean.intersection([a, b], engine="manifold")
-        return 0.0 if r is None or r.is_empty else float(r.volume)
-    except Exception:
-        return 0.0
+    from mesh_checks import intersection_volume_mm3
+    return intersection_volume_mm3(a, b) / 1.0
 
 
 def _max_outer_radius(mesh: trimesh.Trimesh, y: float) -> float:
@@ -368,6 +389,14 @@ if cap_inner_r:
           "(Cap が音の出口を塞がない, 前提: Cap前端≈Cannon砲口が同軸で揃う)")
 else:
     print("  SKIP Cap 前端の内径を検出できず (現物合わせで確認すること)")
+
+print("\n[8] マイク挿入経路・Neck/Ball 球面座の実体検査")
+from check_audio_assembly import run as check_assembly
+_assembly = check_assembly()
+check(_assembly['pass'],
+      f"マイク挿入 {_assembly['mic_front_insertion']['worst_mm3']:.3f}mm3 / "
+      f"Neck-Ball {_assembly['ball_neck_intersection_mm3']:.3f}mm3 / "
+      f"球面挿入 {_assembly['ball_neck_insertion']['worst_mm3']:.3f}mm3")
 
 print(f"\nresult: {'OK' if OK else 'NG'}")
 sys.exit(0 if OK else 1)
