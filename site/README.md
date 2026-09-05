@@ -23,3 +23,10 @@ env -u CLOUDFLARE_API_TOKEN npx wrangler pages deploy docs/.vitepress/dist --pro
 - `docs/steps/*.md` … 各作業ページ (図 4 : 文章 6、用語解説、完了チェック、印刷ボタン)
 - `docs/.vitepress/data/glossary.js` … 用語集
 - `docs/public/img/` … 図版 (SVG は手描き、PNG は `../docs/*.png` から切り出し)
+
+## パーツリスト (`docs/parts.md`)
+
+- データ: `docs/.vitepress/data/parts.js` (カテゴリ・数量・材料・説明・使う作業)
+- STL サムネイル: `docs/public/img/parts/*.png`。再生成は`site/tools/render_parts.py` (trimesh + matplotlib, uv venv) で行った。
+  形状を変えたときは該当 PNG を削除して再実行すれば差分だけ描き直す
+- 電装アイコン: `docs/public/img/parts/elec-*.svg`, `mech-*.svg` (手描き SVG)

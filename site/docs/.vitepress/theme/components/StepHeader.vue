@@ -13,6 +13,7 @@ const print = () => window.print()
     <div class="top">
       <span class="lane">{{ lane.icon }} レーン {{ (me.lane || '').toUpperCase() }} · {{ lane.name }}</span>
       <span class="status" :class="me.status">{{ st[me.status] || '' }}</span>
+      <a class="tk-noprint parts" :href="'/parts?step=' + step">📦 使うパーツ一覧</a>
       <button class="tk-noprint print" @click="print">🖨 このページを印刷</button>
     </div>
     <h1><span class="id">{{ (me.id || '').toUpperCase() }}</span> {{ me.title }}</h1>
@@ -36,7 +37,9 @@ const print = () => window.print()
 .status.doing { background: #fff1c2; color: #7a5a00; }
 .status.done { background: #d9f5e2; color: #146b34; }
 .status.blocked { background: #ffd9d9; color: #8a1a1a; }
-.print { margin-left: auto; border: 2px solid #333; background: #fff; border-radius: 10px; padding: 4px 12px; font-weight: 700; cursor: pointer; }
+.parts { margin-left: auto; border: 2px solid #1f2430; background: #fff; border-radius: 10px; padding: 4px 12px; font-weight: 700; text-decoration: none; color: #1f2430; }
+.parts:hover { background: #eef4ff; }
+.print { border: 2px solid #333; background: #fff; border-radius: 10px; padding: 4px 12px; font-weight: 700; cursor: pointer; }
 .print:hover { background: #333; color: #fff; }
 h1 { margin: 10px 0 6px; font-size: 2em; line-height: 1.25; }
 .id { display: inline-block; background: var(--c); color: #fff; padding: 0 12px; border-radius: 10px; font-family: var(--tk-display); margin-right: 8px; }
