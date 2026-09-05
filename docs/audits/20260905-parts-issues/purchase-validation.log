@@ -1,0 +1,7 @@
+PASS 134 unique items / 81 unique Amazon lots and ASINs / 41 BOM IDs / 159 unique anchors
+PASS package arithmetic; MG90S 11; M2.6 screws 40; spiral 4m; purchased filament 5000g
+PASS no duplicate stock aggregation: shared nuts=100, speakers=4; gray requirement shared
+PASS phi2.2 and phi1.1: minimum1 + optional spare1; historical shortage2 remains historical
+PASS 134 issue-reference rows checked against current 96 titles; 6 prior wrong mappings rejected
+PASS local/anchor links, fixed historical sources; PCA received remains unknown; all physical usable/shortage remain unknown
+Manual review: every row was reassigned by task meaning, not by key existence alone. TSV preserves the 134 title mappings.

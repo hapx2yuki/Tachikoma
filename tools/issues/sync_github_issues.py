@@ -145,7 +145,7 @@ def render_body(spec, numbers):
         head.append(" / ".join(meta))
     if spec["blocked_by"]:
         head.append("")
-        head.append("## 前提 (blocked by — これらが Close するまで着手しない)")
+        head.append("## 完了待ちの条件（採用・組立・試験の前に満たす。独立した準備は本文参照）")
         for b in spec["blocked_by"]:
             title = next((i["title"] for i in plan.ISSUES if i["key"] == b), b)
             head.append(f"- {ref(b)} {title}")

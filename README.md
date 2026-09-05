@@ -10,6 +10,8 @@
 最新は[第2次監査](docs/audits/20260905-round2/README.md)と
 [監査Issue #80](https://github.com/hapx2yuki/Tachikoma/issues/80)を参照。
 
+**追加で揃えるもの:** [追加購入の全一覧](docs/additional-purchases.md) / [追加印刷・再使用の全一覧](docs/additional-printing.md)。必要総数と手持ちの確認済み数量を区別し、設計未確定の部品を発注・一括印刷する指示にはしていない。[全Issuesの更新内容と着手条件](docs/issues-audit-20260905.md)も参照。
+
 > **Disclaimer / 免責**: 本プロジェクトは『攻殻機動隊』に登場するタチコマを
 > モチーフにした**非公式・非営利の個人ファン制作**であり、士郎正宗氏・
 > 講談社・Production I.G ほか原作の権利者とは一切関係ありません。

@@ -1,0 +1,51 @@
+{
+  "checked_on": "2026-09-05",
+  "status": "PASS",
+  "purchase_items": 134,
+  "amazon_products": 81,
+  "amazon_delivered_products": 80,
+  "ordered_delivery_unconfirmed_products": 1,
+  "current_physical_inventory_verified": false,
+  "stl_parts": 99,
+  "plates": 27,
+  "hashed_manufacturing_files": 196,
+  "assembly_quantity": 139,
+  "geometry_changed_files": 10,
+  "geometry_changed_physical_quantity": 12,
+  "issues": 96,
+  "dependencies": 156,
+  "closed_keys": [
+    "RV-01",
+    "RV-02",
+    "RV-03",
+    "RV-04",
+    "RV-12"
+  ],
+  "mechanical_or_firmware_change_this_update": false,
+  "physics_rerun_this_update": false,
+  "prior_physics_evidence": "../20260905-round2/simulation/final_refresh_evidence.json",
+  "issue_sync_regression": "9 PASS",
+  "checks": [
+    "購入ロットの数量積",
+    "134行のIssue番号対応",
+    "不足未確認を数値にしない",
+    "全STLの収録漏れなし",
+    "製造ファイル全SHA一致",
+    "部品数量と変更数量",
+    "96キー一致・旧mainリンクなし",
+    "注文番号/住所項目/決済項目の公開防止"
+  ],
+  "inputs": {
+    "docs/additional-purchases.md": "33c1ae4e0ee07b682ca7592aef8d9e9b6b21ee95dab781601eef7b87a1577ba4",
+    "docs/additional-purchases.json": "38b74cb56b12efdbda231083636d68d235daa506bdf4d4d6bc9b10d819ab2aad",
+    "docs/additional-printing.md": "76fe19dd87a063755e3ef90613a76f30a2bc9c130a38a1724872a106b5d6023a",
+    "docs/additional-printing.json": "ae68ffe86e7f5fb180ebdb24ef2379caf08830719ac9a4457b523c6198d4c033",
+    "tools/issues/plan.py": "a85b6c426b4c9f4aff283be56e5c2f6d2f186c5712af970a38e63dbc1fad0ff0",
+    "tools/issues/audit_plan_data.py": "a1a292a78739a7659fe5cce6422bc54fdc8d1f39c3b7d9e6f6abc7122af61072",
+    "tools/issues/sync_github_issues.py": "72ecf7b4cf1e2bb9abdb9befc7f55742bdb4031971f86176601593fe9f2b3665",
+    "docs/issues-audit-20260905.md": "4478e5002251e59415e2591dc545ff237cda10c7f02c204c17107f31d991b37e",
+    "docs/assembly.md": "00428f90f6188e5bab9a26768156cc81ccb69c87d9f1fe292a384ab0ffc03359",
+    "docs/wiring.md": "c50be13cfc2064eba1079f70cb0620169651ba835fa80bdea128ff4034f37ee3",
+    "docs/build_plan.md": "cbfb018c6e836c89a42f355a0b9fae58f39c49edb85452e838b9d0f939e872aa"
+  }
+}

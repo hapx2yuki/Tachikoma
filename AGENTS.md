@@ -78,6 +78,9 @@
 | 完全な引き継ぎ (必読) | `docs/HANDOFF.md` |
 | 設計全体像 | `README.md` |
 | 部品・工具の購入 (Amazon 一括カート) | `docs/shopping.md` |
+| 監査後の追加購入・在庫確認 | `docs/additional-purchases.md` / `.json` |
+| 監査後の追加印刷・既印刷品の再使用 | `docs/additional-printing.md` / `.json` |
+| 全課題の更新理由・現在の着手条件 | `docs/issues-audit-20260905.md` |
 | 印刷順序 (Go/No-Go ゲート) | `docs/print_manifest.md` / `docs/printing.md` / `docs/filament.md` |
 | 組立手順 | `docs/assembly.md` |
 | 配線 | `docs/wiring.md` |

@@ -56,13 +56,14 @@
 
 ## 6. 計画そのものを直したいとき
 
-`tools/issues/plan.py` を編集 → `.venv/bin/python tools/issues/sync_github_issues.py --dry-run` で差分を見て
+`tools/issues/audit_plan_data.py` の個別本文・依存（共通の組立ては `plan.py`）を編集 → `.venv/bin/python tools/issues/sync_github_issues.py --dry-run` で差分を見て
 `--apply` (新規作成・関係追加) / `--apply --update-bodies` (本文も上書き) / `--plan-doc` (docs/build_plan.md 再生成)。
 変更するIssueだけ `--keys L-11 EL-09` のように限定する。管理内の不要依存を取り除くときは、
 対象を限定した `--reconcile-dependencies` を付け、先に `--dry-run` を確認する。
 既存Projectへの追加は `tools/issues/setup_project.sh`（差分表示）→ `--apply`。
 同じProjectを再利用し、既存のStatus・担当・コメント・フィールド選択肢を保持する。
 Ready/Blockedは完了済み前提の実状態で初期設定する。既存Statusは自動追従させず、作業担当が更新する。
+2026-09-05 は全件更新の依頼に基づき、[96課題の見直し](docs/issues-audit-20260905.md) と実際の未完了依存を照合して Status を更新する。機構の候補検討中と実機完了を区別し、完了済み5件以外は閉じない。
 GitHub 上で直接本文を書き換えても次の `--update-bodies` で戻るので、恒久的な変更は plan.py へ。
 個別の追加イシュー (不具合・現物合わせ) は GitHub 上で直接切ってよい (plan.py の管理外)。
 
