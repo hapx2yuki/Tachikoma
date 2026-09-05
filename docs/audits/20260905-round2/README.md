@@ -19,7 +19,7 @@
 - [対象一覧](inventory-initial.json) / [担当別記録と現在ハッシュの集計](coverage-complete.json)
 - 元モデル58個・既存3MF27個・従来画像/動画39個は開始時とハッシュ一致。[保存照合](manufacturing-preservation.json)
 - 変更前のバックアップはリポジトリ外の`Tachikoma-audit-backups/20260905-150317/`と`20260905-153305-round2/`。
-- 実機書込み、新規購入、実印刷はしていない。コード・STL変更はローカル、課題と依存はGitHubへ同期した。
+- 実機書込み、新規購入、実印刷はしていない。コード・STL・監査記録は [監査コミット `0de7154`](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b) として `codex/audit-20260905` に公開した。課題と依存もGitHubへ同期している。
 
 公開する検証結果・候補STL・動画には、失敗や修正前の履歴も含める。メーカー原本のコピーは [出典台帳](primary-sources/README.md) を参照し、ローカルに保持する。衝突分解のNPZキャッシュは再生成対象とし、分割条件と体積のJSONを保存する。
 記録内の絶対パスは監査を実施した環境の履歴。リポジトリ外のバックアップ、旧配布物、元DownloadsファイルはGitに含まれず、過去ファイル全件の照合には別途その入力が必要。`build_manufacturing_diff.py` の変更前比較も外部バックアップを使う。一度限りの調査用 `arm-pitch-case-rotation-source.py` を別環境で再実行する際は、先頭の `ROOT` を実際の配置に合わせる。
@@ -95,6 +95,8 @@ I2C断線やCPU停止中は、PCAの既存PWM出力をソフトだけで停止�
 [GitHub Project](https://github.com/users/hapx2yuki/projects/2)に96課題、173本の依存を同期。
 [全件の親子/依存照合](github-relations-final.json)と[既存Statusの保持](project-status-preservation.json)を保存した。
 既存の手動進捗をリセットせず、新規/未設定項目だけを初期化した。課題の完了待ちグラフに循環はない。
+
+監査コミット公開後、11課題に固定リンクと実施済み/未解決の範囲を追記した。修正・検査を完了したRV-01/02/03/04/12（#81/#82/#83/#84/#93）だけを根拠付きでCloseし、ProjectをDoneへ更新。I-08は購入個体との照合が残り、E9/RV-05と機構・実機の課題もOPENを維持する。公開後の状態は [照合記録](publication.json) を参照。
 
 - 先行: P-01/P-03/P-07で購入サーボ/電源/カメラの実型番・寸法を確定。設計型番と互換とは仮定しない。
 - 直列: RV-09の軸/収納 → RV-13の頭固定・RV-14の脚カバー → 全生成 → 全体検証。

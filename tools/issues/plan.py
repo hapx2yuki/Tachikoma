@@ -1615,13 +1615,21 @@ MuJoCoコンパイル後に慣性補正/質量/粘性を変更して派生定数
 
 - [ ] 修正後の同じSTL/URDF/制御ハッシュで方向、体高、停止再開、電圧/荷重/摩擦/トルク、坂/段差/外乱、長時間を比較
 - [ ] 関節反力・速度・トルク飽和・材料別床反力・数値警告・転倒を保存
-- [ ] 実購入ケースを含む18姿勢の自己干渉と、{{RV-12}}の固定リンク内全組合せを分けて記録
+- [ ] 設計基準ケースを含む18姿勢の自己干渉と、{{RV-12}}の固定リンク内全組合せを分けて記録
 - [ ] 刻み幅・未同定の慣性補正/粘性/制御ゲインへの感度を確認
 - [ ] 実積分後のqposから動画を作り、演出用の運動学動画と区別する
 
 現在の6V名目トルクはメーカー端点の内挿による1.956N·m。資料と異なる購入個体/連続トルク/電流/印刷摩擦は未同定。初期干渉で成立しないモデルを、有効な歩行合格に数えない。
 {{RV-06}}足裏支持、{{RV-07}}印刷強度、{{RV-09}}頭部収納は、条件付きの歩容合格では解決しない。
 根拠: docs/audits/20260905-round2/simulation.md。旧結果と中断した入力版は履歴として保存し、最終根拠へ流用しない。コードのGitHub反映と実機試験は別に記録する。
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。設計基準ケースを用いた89条件の動的計算、実C++出力に基づく18姿勢の実体干渉、物理用回帰16試験を完了し、入力ハッシュ一致を確認した。基本71条件は58合格・2不合格・3転倒・8初期接触モデル不成立。未採用TPU靴4条件と追加の初期配置/関節条件/刻み比較14条件は別記録として残す。
+
+[物理監査報告](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/simulation.md) / [全89条件・18姿勢の確認記録](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/simulation/final_refresh_evidence.json) / [16回帰と実C++照合](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/simulation-regression.log)。
+
+DS3218等の設計基準ケースと、注文記録のLD20MG/LD220MG等の購入個体との一致は {{P-03}} で未確認。実購入ケース確認済みとは扱わず、照合後の寸法・トルク等は {{RV-09}} と連携して再検証する。本課題は今回Closeしない。
 """)
 
 issue("I-07", "I-07 [運営] 完成お披露目 — 写真・動画・README 更新",
@@ -1665,6 +1673,16 @@ issue("E9", "E9 [監査] 実機製作前提を独立検証し、修正と実機�
 
 完了条件: 子作業の根拠・修正結果を記録し、残る実測を既存の P-03/L-02/L-10/I-01/I-02 等へ結ぶ。
 ローカル合格・GitHubへのコード反映・実機合格は別々に記録する。
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。STL/頭加工/URDFの生成3工程を完了。最終23検査は14合格・8不合格・1未検証、回帰53試験と物理用回帰16試験は合格。監査の実施・修正・記録が完了した範囲と、機体の組立・歩行が未成立の範囲を分ける。
+
+[監査総括](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/README.md) / [23検査の実行結果](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/verify-results.json) / [製作への影響](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/manufacturing.md)。
+
+未解決: {{RV-06}} 足裏支持、{{RV-07}} 印刷強度、{{RV-08}} 口のキー公差、{{RV-09}} 頭内のケース収納、{{RV-10}} 肩と前脚のケース干渉、{{RV-11}} 電装の現物条件、{{RV-13}} 頭支持、{{RV-14}} 脚カバー、{{RV-15}} 首/Cabin、{{RV-16}} 脚ガード、{{RV-17}} 固定手、{{H-06}} 電装室。購入個体は {{P-03}}、印刷済み品は {{P-02}}/{{P-05}} で照合する。
+
+実機書込・追加購入・印刷は未実施。残る子作業と全体ゲートがあるため本課題はOPENを維持する。
 """)
 issue("RV-01", "RV-01 [不具合] 操作画面・低電圧停止・腕脚ガードを修正して回帰検証する",
       parent="E9", labels=["type/不具合", "area/ファーム", "prio/P0", "並行作業OK"], body="""
@@ -1673,51 +1691,83 @@ issue("RV-01", "RV-01 [不具合] 操作画面・低電圧停止・腕脚ガー�
 再現された問題: Web UI が変数初期化前の参照で停止、校正モードが低電圧停止を無視、
 腕退避がスルーレート前の脚目標を参照して早く解除される。起動時の順次通電も確認する。
 
-- [ ] 修正前の再現と原因を記録
-- [ ] 操作画面、校正、本番の保護経路を最小修正
-- [ ] 実コードを用いたホスト回帰試験と通常/校正ビルド
-- [ ] {{I-08}} とサーボ出力段のモデルを照合
+- [x] 修正前の再現と原因を記録
+- [x] 操作画面、校正、本番の保護経路を最小修正
+- [x] 実コードを用いたホスト回帰試験と通常/校正ビルド
+- [x] {{I-08}} とサーボ出力段のモデルを照合
 
 第2次ではVBAT0V見逃し、PCA書込失敗、UI再読込での再通電、未使用ch12、I2S形式/部分書込、MJPEG無限応答とTTS取消も修正。
 ログ: docs/audits/20260905-round2/firmware.md。実機動作は {{EL-03}}/{{EL-07}}/{{L-09}} で別途確認。
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。この課題の修正・ソフト検証は完了。実main/UIの故障注入、通常/校正ビルド、実C++出力1563フレームの照合を実施し、最大角度差は0.000895度。
+
+[制御・音声の再現と修正](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/firmware.md) / [ホスト実行と通常・校正ビルド](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/firmware-host-and-build.log) / [出力照合を含む物理用回帰](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/simulation-regression.log)。
+
+実機書込・サーボ位相/符号・音響は未確認で、{{EL-03}}/{{EL-07}}/{{L-09}}/{{H-04}}へ引き継ぐ。I2C断線・CPU停止中の既存PCAのPWMはソフトだけでは停止保証できず、独立OE/電源遮断は {{RV-11}} の実機条件として残す。
 """)
 issue("RV-02", "RV-02 [検証] 現物3MFの形状・数量・材質と再生成時の保持を検査する",
       parent="E9", labels=["type/不具合", "area/印刷", "area/CAD", "prio/P0", "並行作業OK"], body="""
 担当: Codex 機構監査。既存3MFには印刷進行に合わせた手動変更があるため一括上書きしない。
 現行検査の体積・高さだけではXY形状や材質の相違を見逃す。foot_pad生成時のTPU割当も調べる。
 
-- [ ] 現物3MFと元STLの独立比較、数量・配置・材料・未検査項目を報告
-- [ ] 生成コードの確定不具合を修正、現物ファイルは保存
-- [ ] 再印刷が必要な部品と現物確認だけでよい部品を区別
+- [x] 現物3MFと元STLの独立比較、数量・配置・材料・未検査項目を報告
+- [x] 生成コードの確定不具合を修正、現物ファイルは保存
+- [x] 再印刷が必要な部品と現物確認だけでよい部品を区別
 
 リポジトリ直下のPhase0を含む既存27個すべてを検査し、元3MFは保存。
 ログ: docs/audits/20260905-round2/manufacturing.md。実際の印刷済み品の版は {{P-02}}、再印刷判断は {{P-05}}。
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。この課題の3MF検査と生成コード修正は完了。既存27個のうち9個が現行STLと不一致。印刷用STLの変更12個は形状変更10個・配置変更2個に分け、元モデル58個・3MF27個・旧画像動画39個の保持を確認した。
+
+[製作への影響と再使用判断](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/manufacturing.md) / [原型・3MF・旧媒体の保持記録](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/manufacturing-preservation.json) / [生成・比較処理の回帰ログ](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/regression.log)。
+
+既印刷品の現物検品や再印刷判断まで完了した意味ではない。{{P-02}}/{{P-05}}で使用版・材質・壁数・必要な加工を確定する。既存3MFは上書きせず、追加印刷も行っていない。
 """)
 issue("RV-03", "RV-03 [不具合] 幾何・歩容検査のNGと計算失敗を終了コードへ反映する",
       parent="E9", labels=["type/不具合", "area/CAD", "area/試験", "prio/P0"], body="""
 担当: Codex 検証基盤。check_leg_assembly.py と sim_gait.py は NG を印字しても終了コード0。
 脚のブーリアン失敗もNaNへ変換され、max比較により見逃し得る。
 
-- [ ] NG条件と計算失敗の再現試験
-- [ ] 判定閾値を緩めず、失敗を非0終了にする
-- [ ] 保存先指定で既存の検証画像を保持できる
-- [ ] 正常な実形状の再検証結果を保存
+- [x] NG条件と計算失敗の再現試験
+- [x] 判定閾値を緩めず、失敗を非0終了にする
+- [x] 保存先指定で既存の検証画像を保持できる
+- [x] 正常な実形状の再検証結果を保存
 
 トルク余裕・接地・実測未完了は、数値チェッカーの合格とは別に報告する。
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。検査器の不正な合格判定を修正し、負例と実形状の再実行を記録した。回帰53試験は合格。実形状の最終検査では8不合格・1未検証を非0終了として保存し、既知の不具合を免除していない。
+
+[検査基盤の独立レビューと再現](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/integration-peer-review.md) / [負例を含む回帰ログ](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/regression.log) / [最終23検査と終了判定](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/verify-results.json)。
+
+この課題の完了は検査器の修正完了を示す。足裏支持、実体干渉、印刷強度、電源・実機条件の不合格/未検証は対応課題へ残す。
 """)
 issue("RV-04", "RV-04 [不具合] Issue同期で進捗を保持し、重複と依存関係を検証する",
       parent="E9", labels=["type/不具合", "area/運営", "prio/P1", "並行作業OK"], body="""
 担当: Codex Issue管理。現行 setup_project.sh は再実行時に全件の Status をTodo/Readyへ戻し、
 既存ステータスの選択肢を再生成する。完了・着手中の作業を壊さず同期する。
 
-- [ ] 既存Projectを再利用し、既存Status/担当/コメントを保持
-- [ ] 同期対象を限定し、無関係なIssue本文を上書きしない
-- [ ] 同じ文書生成を2回実行しても節が増えない
-- [ ] dry-runでも既存本文・ラベルの変更を表示し、POST/PATCHしない
-- [ ] 管理ラベルの旧分類を置換し、利用者が付けた独自ラベルは保持
-- [ ] 依存循環・重複キーを検出、変更不要の再実行を確認
+- [x] 既存Projectを再利用し、既存Status/担当/コメントを保持
+- [x] 同期対象を限定し、無関係なIssue本文を上書きしない
+- [x] 同じ文書生成を2回実行しても節が増えない
+- [x] dry-runでも既存本文・ラベルの変更を表示し、POST/PATCHしない
+- [x] 管理ラベルの旧分類を置換し、利用者が付けた独自ラベルは保持
+- [x] 依存循環・重複キーを検出、変更不要の再実行を確認
 
 運用根拠: https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-issue-dependencies
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。同期処理の修正と監査時点の照合は完了。96課題・173依存の親子/依存が一致し、既存の設定済みStatus変更は0件。対象限定、再実行、dry-run、管理ラベルと独自ラベルの扱いを回帰検証した。
+
+[親子・依存の全件照合](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/github-relations-final.json) / [既存Statusの保持](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/project-status-preservation.json) / [Issue・記録処理の回帰ログ](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/issue-and-coverage-final-regression.log)。
+
+上記件数は監査コミット時点の記録。課題のCloseや担当者の今後の進捗更新を自動的な検証合格と混同しない。実機の製作・測定を完了扱いにする同期は行わない。
 """)
 issue("RV-05", "RV-05 [ゲート] 修正後の全検証と未確認の実機条件を記録する",
       parent="E9", labels=["type/ゲート", "area/試験", "prio/P0"],
@@ -1733,6 +1783,16 @@ issue("RV-05", "RV-05 [ゲート] 修正後の全検証と未確認の実機条�
 
 実機未確認のまま「組立可能」「歩行実証済み」と結論しない。
 ローカル成果物: docs/audits/20260905-round2/README.md。実機ゲート自体を閉じる作業ではない。
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。STL/頭加工/URDFの生成3工程を完了。最終23検査は14合格・8不合格・1未検証、回帰53試験と物理用回帰16試験は合格。監査の実施・修正・記録が完了した範囲と、機体の組立・歩行が未成立の範囲を分ける。
+
+[監査総括](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/README.md) / [最終検査結果](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/verify-results.json) / [物理計算の最終確認](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/simulation/final_refresh_evidence.json)。
+
+未解決: {{RV-06}} 足裏支持、{{RV-07}} 印刷強度、{{RV-08}} 口のキー公差、{{RV-09}} 頭内のケース収納、{{RV-10}} 肩と前脚のケース干渉、{{RV-11}} 電装の現物条件、{{RV-13}} 頭支持、{{RV-14}} 脚カバー、{{RV-15}} 首/Cabin、{{RV-16}} 脚ガード、{{RV-17}} 固定手、{{H-06}} 電装室。購入個体は {{P-03}}、印刷済み品は {{P-02}}/{{P-05}} で照合する。
+
+記録の公開を全体合格に読み替えず、本課題と依存する機構・実機ゲートはOPENを維持する。
 """)
 issue("RV-06", "RV-06 [機構不具合] トゥと硬い足本体の先行接地を解消して足裏支持を成立させる",
       parent="E4", labels=["type/不具合", "area/CAD", "area/試験", "prio/P0"], body="""
@@ -1781,6 +1841,14 @@ Ball–Neckは1,862.7mm³重なり、接着で成立する組合せではない�
 - [ ] STL再生成後の検査を保存して音声組立へ引き渡す
 
 根拠と修正: docs/audits/20260905-round2/。音響・接着・印刷公差の実機確認はH-03/H-04で行う。
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。砲口の挿入ボア/キー溝、Neck内のBall/Cap座、シャーシ逃げと前タブ補強は実装済み。口とシャーシの挿入363姿勢、支持材/リング保持を検査した。
+
+[口・シャーシの検査](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/check_mouth_chassis.json) / [製作への変更](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/manufacturing.md) / [残る固定部品の分類](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/static-intersection-final-triage.json)。
+
+小さいMouth_Keyとの体積共有がCannon側0.27493mm³、Cap側0.07012mm³残り、公差・保持が未確認。音響/接着/印刷公差は {{H-03}}/{{H-04}}、前タブ増厚に対応する締結長は {{RV-13}} で確認する。全体の交差0や実機組立は未達のためOPENを維持する。
 """)
 issue("RV-09", "RV-09 [機構不具合] 頭部内の実サーボケースとポッド梁の干渉を解消する",
       parent="E7", labels=["type/不具合", "area/CAD", "prio/P0", "並行作業OK"], body="""
@@ -1809,6 +1877,14 @@ URDFを使わない生STLでも肩–上腕約48mm³、上腕–前腕は肘40°
 - [ ] 脚の交差が到達可能な制御姿勢か確認し、実害のある干渉を修正する
 - [ ] 自己衝突を有効にした物理計算で再確認
 - [ ] 既印刷品の加工/再印刷を部品単位で提示
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。腕の内部逃げと肘殻配置、coxa後端と埋戻されたサーボポケットの再切削は実装済み。腕1664姿勢と固定4項目の交差0、coxa約199万角度組合せの連続隙間下界0.963mm、ホーン溝床3.6mmを検査した。
+
+[機構の修正と残件](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/mechanical.md) / [coxaポケットの独立評価](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/coxa-pocket-peer.md) / [変更した印刷部品](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/manufacturing.md)。
+
+肩pitchと前脚pitchのケース交差は未解決で、{{RV-09}}の軸配置と連携が必要。固定手 {{RV-17}}、脚ガード {{RV-16}}、脚カバー {{RV-14}}、印刷強度 {{RV-07}}も別途残る。局所修正を全体の自己干渉解消に拡張せずOPENを維持する。
 """)
 issue("RV-11", "RV-11 [電装] 部品の実型番・電源収支・停止回路・測定手順を整合させる",
       parent="E3", labels=["type/不具合", "area/電装", "area/ドキュメント", "prio/P0", "並行作業OK"], body="""
@@ -1822,6 +1898,14 @@ issue("RV-11", "RV-11 [電装] 部品の実型番・電源収支・停止回路�
 - [ ] MAX98357Aの基板別SD回路、I2S形式、1Wスピーカーの出力制限を確認
 
 電源実測はEL-09、サーボ実測はP-03/L-02。実機試験を文書修正の完了に混ぜない。
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。UBEC型番別の定格、PM7aの電流測定不可、USB/外部5V排他、LED12個の番号、PCAロジック3.3V、電力換算と測定手順を訂正した。I2S形式/部分書込とPCA異常検知はソフト修正・故障注入を実施済み。
+
+[配線と基板別条件](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/wiring.md) / [購入品・測定器の訂正](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/shopping.md) / [電源計算の未検証項目](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/power-budget.json) / [制御・音声の検証](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/firmware.md)。
+
+購入個体/電流/温度、独立OE・電源遮断の実効性、手元MAX98357A基板のSD回路と1Wスピーカーの出力制限は未確認。電源計算は終了2=UNVERIFIED。{{P-03}}/{{L-02}}/{{EL-09}}/{{H-04}}の実測へ引き継ぎ、文書訂正だけで本課題をCloseしない。
 """)
 issue("RV-12", "RV-12 [検証] 表示用モデルと全ファイルの検査記録を実設計に合わせる",
       parent="E9", labels=["type/不具合", "area/CAD", "area/ドキュメント", "prio/P1", "並行作業OK"], body="""
@@ -1830,11 +1914,19 @@ extract_meshes.pyもXML属性順/単位/同名異形状/原型上書きを検査
 生成時のメモリ形状が正常でもSTL往復でシャーシが非閉体になる不具合を再現。0.001mm簡約で形状差0.004mm³未満に直し、lib.exportとURDF入力で実保存形状の不良を拒否する。さらに旧to_trimeshが密閉空洞の内壁を反転し、784mm³を1216mm³とすることを再現。退化/重複面だけを除き、面向きを保持、元Manifoldと保存STLの体積を照合。書込途中失敗も旧版を保護する。生成成功の終了コードだけで旧/不良メッシュを物理試験へ渡さない。
 左右反転後の二重面反転、体高の射影前後の食違い、古いSTLキャッシュ、仮姿勢表示、配線図のSW迂回を修正する。HeadTop/BottomのJSON y12とconfig y11の不一致も修正し、主要外殻と子部品の座標を回帰検査する。固定部検査はbaseに限定せず全link内へ拡張し、検査器自身の空入力/例外/証拠保護も負例で確認する。
 
-- [ ] 旧データ/非表示ファイルも一覧化し、読解・構造解析・幾何検査・画像確認を方法別に記録
-- [ ] 静止姿勢と運動学表示を実firmware契約へ合わせる
-- [ ] 現行STL/URDF/表示の位置一致を検査し、旧動画を歩行証拠に使わない
-- [ ] 旧画像/動画を保存したまま改訂版を別パスへ出力し、物理計算と運動学デモを明記
-- [ ] 数値・出典・未検証項目を横断照合する
+- [x] 旧データ/非表示ファイルも一覧化し、読解・構造解析・幾何検査・画像確認を方法別に記録
+- [x] 静止姿勢と運動学表示を実firmware契約へ合わせる
+- [x] 現行STL/URDF/表示の位置一致を検査し、旧動画を歩行証拠に使わない
+- [x] 旧画像/動画を保存したまま改訂版を別パスへ出力し、物理計算と運動学デモを明記
+- [x] 数値・出典・未検証項目を横断照合する
+
+## 2026-09-05 監査結果の公開参照
+
+[監査コミット 0de7154](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b)。表示・変換・STL入出力・検査記録の修正と検証は完了。開始時515ファイルを方法別に確認し、現在の個別STL99件の閉形状を検査。空洞の内壁保持・鏡映・退化面・異常入力・保存失敗を含むSTL出力12試験も合格した。
+
+[検査対象と確認方法の全件台帳](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/coverage-complete.json) / [STL出力の独立検証](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/stl-export-peer.md) / [出力・変換・検査器の回帰ログ](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/final-geometry/verify/regression.log) / [固定組立の未解決分類](https://github.com/hapx2yuki/Tachikoma/blob/0de71547c1af59abc6bcc3484b03b12e9430df2b/docs/audits/20260905-round2/static-assembly.md)。
+
+全リンク内152部品・1898組から99組の体積共有を検出して残した。これは検査記録の完了であり、全組立の合格ではない。位置不明のHead_Insert、原Downloads3MF不在、候補部品の未採用、実機未確認も記録した。
 """)
 
 issue("RV-13", "RV-13 [機構不具合] 頭の7固定穴から外殻へ届く支持柱・受け座を設計する",

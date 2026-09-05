@@ -171,7 +171,7 @@
     },
     {
       "path": "tools/issues/plan.py",
-      "sha256": "7e7d18dadbcad20170c8687df1e50b151b18c9b16d91f402d4c3c5e8e0c0c7e8",
+      "sha256": "a8bb1c58fac11a42b04e29164ef1e175b255e36487b821044ddcc137b543379c",
       "review_method": "全文読解・参照元と出力/試験の照合",
       "findings": [
         "全Issue本文と依存を読み、片脚先行・不合格時の対策・CAD担当範囲・最新機構/電装不具合を修正。"
@@ -227,7 +227,7 @@
     },
     {
       "path": "docs/audits/20260905-round2/README.md",
-      "sha256": "8b476ee205661f042b64aab3a30acac79bc87ade933ac7e1322b1ffbbf8068b6",
+      "sha256": "a4f752b96e823c97d13648950feecef02685172f09e164d2361e6317fce31187",
       "review_method": "全文読解・現行ソース/一次資料/検査結果と横断照合",
       "findings": [
         "設計完了の旧断定・部品仕様/印刷条件/現物未確認を点検。最終生成・検査・製作差分・Issue実状態と照合。"
