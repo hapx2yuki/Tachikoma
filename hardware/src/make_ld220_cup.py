@@ -4,6 +4,8 @@
 背景
   - 届いた脚サーボは Hiwonder LD-220MG。DS3218 と違い側面タブが無く、上下面の
     ねじ穴と底面の補助軸ボスで固定する構造。ケース外形 40.0×20.0 は実測済み。
+    配線は出力軸側 (+x) の端面の、底面寄りから出る (写真 IMG_1903/1909)。
+    → 出口は箱枠の外 (カップの端壁の位置) なので、箱枠は無加工でよい。
   - 既存の servo_frame() は 41.1×20.6 の貫通ポケットなので、タブ無しケースは
     そのまま通る。よって「ケース底面側から被せるカップ」で
       (a) ケースの Y 位置 (= ホーンの高さ) を底板で決め、
@@ -22,10 +24,10 @@
   脚用は箱枠ローカル (make_leg 規約: 軸=Y) へ回転して検証する。
 
 出力 (hardware/stl/)
-  ld220_cup_leg.stl   ×8 (股ピッチ 4 + 膝 4。ミラー脚も同一部品、裏返して使う)
-  ld220_cup_yaw.stl   ×4 (シャーシのヨーサーボ。上から被せて 4 ボスへ固定)
-  coxa_bracket_ld220(_m).stl / femur_link_ld220(_m).stl
-                      配線ノッチ + 溝を焼き込んだ箱枠 (再印刷する場合のみ)
+  ld220_cup_leg.stl   ×8 (股ピッチ 4 + 膝 4。ミラー脚も同一部品、裏返して使う。
+                      両端のスカートが箱枠の端面にはまり、被せた時点で位置が決まる)
+  ld220_cup_yaw.stl   ×4 (シャーシのヨーサーボ。上から被せて外側 2 ボスへ固定)
+  既存の印刷物 (coxa_bracket / femur_link / chassis) は無加工で使う。
 """
 from pathlib import Path
 
@@ -84,12 +86,26 @@ def _cup(zb: float, flange_x=FLANGE_X, flange_w=FLANGE_W) -> Manifold:
             x, y = sx * HOLE_X, sy * HOLE_Y
             m -= cyl(fl + 2, K["SCREW_D"]).translate([x, y, fl / 2])
             m -= cyl(6.0, K["HEAD_D"]).translate([x, y, fl + 3.0])
+    # 配線穴 (+x 端壁, 底面寄り)。コネクタごと通せる大きさ
+    m -= _cable_hole(zb)
+    # 箱枠の両端面にはまるスカート (取付面より箱枠側 z<0)。幅方向は ±SKIRT_HALF_W
+    # に限定して裏返し (ミラー脚) でも同じ部品が使え、coxa 天板 (箱枠 z>7.1) を避ける
+    for sx, xe in ((-1, flange_x[0]), (1, flange_x[1])):
+        m += box(K["SKIRT_T"], 2 * K["SKIRT_HALF_W"], K["SKIRT_H"] + fl).translate(
+            [xe + sx * (K["CLEAR"] + K["SKIRT_T"] / 2), 0, (fl - K["SKIRT_H"]) / 2])
     # 出力軸から遠い側 (-x) の底板×端壁の角を面取り (底板側 6mm × 端壁側 3mm)。
     # 後脚の股ピッチカップがポッド側ヨー (LIM_YAW_POD) でバッテリーパック側面に
     # 2.4mm 食い込むのを避ける (tools/check_ld220_cup.py / check_leg_assembly.py
     # クレードル検査)。面取りは空洞 (ケース角) を露出させない範囲に収める
     m -= _corner_chamfer(-OUT_L / 2, h, run_x=K["CHAMFER_X"], run_z=K["CHAMFER_Z"])
     return m
+
+
+def _cable_hole(zb: float) -> Manifold:
+    """+x 端壁の配線穴 (負形状)。中心は底面から WIRE_ABOVE_BOT、幅 WIRE_HOLE_W、高さ WIRE_HOLE_H。"""
+    zc = zb - LD["WIRE_ABOVE_BOT"]
+    return box(K["END_WALL"] + 6, K["WIRE_HOLE_W"], K["WIRE_HOLE_H"]).translate(
+        [CAV_L / 2 + K["END_WALL"] / 2, 0, zc])
 
 
 def _corner_chamfer(x_edge: float, z_top: float, run_x: float, run_z: float) -> Manifold:
@@ -144,6 +160,7 @@ def cup_yaw() -> Manifold:
         x, y = HOLE_X, sy * HOLE_Y
         m -= cyl(fl + 2, K["SCREW_D"]).translate([x, y, fl / 2])
         m -= cyl(6.0, K["HEAD_D"]).translate([x, y, fl + 3.0])
+    m -= _cable_hole(zb)
     return m
 
 
@@ -163,40 +180,10 @@ def ld220_case_in_frame(clear: float = 0.0) -> Manifold:
     return m
 
 
-def wire_relief() -> Manifold:
-    """配線ノッチ + 溝 (箱枠ローカルの負形状)。
-
-    LD-220MG の配線は出力軸側端面の上面直下から出るため、既存の -X 端
-    配線逃がしは使えない。+X 端のポケット端 (x=10.55) から箱枠 +Y 面へ
-    5mm 幅 × 7mm 深のノッチを切り、そこから箱枠端 (x=FRAME_X1) まで
-    2mm 深の溝で +Y 面に沿わせる (関節相手の円板内面まで 1.8mm しか無い
-    ので、溝に沈めないと配線が挟まれる)。手加工でも同寸で切れる。
-    """
-    w = LD["WIRE_W"]
-    x0 = -_cx + LD["L"] / 2 + K["CLEAR"] - 0.5      # ポケット端の少し内側
-    notch_x1 = x0 + 3.5
-    notch = box(notch_x1 - x0, 7.5, w).translate([(x0 + notch_x1) / 2, FRAME_Y - 7.5 / 2 + 0.5, 0])
-    groove = box(ML.FRAME_X1 - x0 + 1, 2.5, w).translate(
-        [(x0 + ML.FRAME_X1 + 1) / 2, FRAME_Y - 2.5 / 2 + 0.5, 0])
-    return notch + groove
-
-
-def coxa_bracket_ld220() -> Manifold:
-    return ML.coxa_bracket() - wire_relief().translate([C.COXA_LEN, 0, 0])
-
-
-def femur_link_ld220() -> Manifold:
-    return ML.femur_link() - wire_relief().translate([C.FEMUR_LEN, 0, 0])
-
-
 def build_all() -> dict:
     out = {
         "ld220_cup_leg": export(cup_leg(), "ld220_cup_leg"),
         "ld220_cup_yaw": export(cup_yaw(), "ld220_cup_yaw"),
-        "coxa_bracket_ld220": export(coxa_bracket_ld220(), "coxa_bracket_ld220"),
-        "femur_link_ld220": export(femur_link_ld220(), "femur_link_ld220"),
-        "coxa_bracket_ld220_m": export(coxa_bracket_ld220().mirror([0, 1, 0]), "coxa_bracket_ld220_m"),
-        "femur_link_ld220_m": export(femur_link_ld220().mirror([0, 1, 0]), "femur_link_ld220_m"),
     }
     return out
 

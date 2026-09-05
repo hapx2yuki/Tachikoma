@@ -73,6 +73,14 @@ print(f"  cup∩frame = {v1:.4f} cm3{flag(v1)}   cup∩case = {v2:.4f}{flag(v2)}
 holes = to_tm(ML.servo_tab_holes(ML.P).rotate([-90, 0, 0]))
 v5 = vol(cup, holes)
 print(f"  タブ穴柱(φ2.8)∩cup = {v5:.4f} cm3{flag(v5)}  (0 なら 4 穴が同軸)")
+# 実際の coxa_bracket / femur_link (天板・ウェブ・ブリッジ込み) に対する干渉 (スカート・フランジ)
+for part, off in (("coxa_bracket", C.COXA_LEN), ("femur_link", C.FEMUR_LEN)):
+    for sfx in ("", "_m"):
+        host = trimesh.load(STL / f"{part}{sfx}.stl")
+        cm = MC.cup_leg_in_frame().mirror([0, 1, 0]) if sfx else MC.cup_leg_in_frame()
+        c2 = to_tm(cm.translate([off, 0, 0]))
+        v = vol(c2, host)
+        print(f"  cup∩{part}{sfx} = {v:.4f} cm3{flag(v)}")
 # 寸法サマリ
 cb = cup.bounds
 print(f"  cup bounds (箱枠ローカル) y: {cb[0][1]:.1f}..{cb[1][1]:.1f}  (箱枠 -Y 面 -13.1, ケース底 {MC.CASE_BOT_Y:.1f})")
