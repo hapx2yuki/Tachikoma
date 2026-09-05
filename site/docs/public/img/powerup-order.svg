@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="'Zen Kaku Gothic New',sans-serif" font-size="14">
+<rect width="900" height="300" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1f2430"/></marker></defs>
+<g stroke="#1f2430" stroke-width="3" fill="#fff">
+<rect x="30" y="60" width="240" height="180" rx="14" fill="#eef4ff"/><rect x="330" y="60" width="240" height="180" rx="14" fill="#fffbe6"/><rect x="630" y="60" width="240" height="180" rx="14" fill="#eaf8ee"/>
+</g>
+<g stroke="#1f2430" stroke-width="3" fill="none" marker-end="url(#a)"><path d="M270,150 H325"/><path d="M570,150 H625"/></g>
+<g text-anchor="middle" font-weight="900" font-size="17"><text x="150" y="95">① サーボ 0 本</text><text x="450" y="95">② サーボ 1 本</text><text x="750" y="95">③ 全部</text></g>
+<g font-size="13">
+<text x="50" y="125">・全サーボのプラグを抜く</text><text x="50" y="147">・電源 ON → テスターで測る</text><text x="50" y="169" font-weight="700" fill="#1d6fd8">　サーボバス 6.0V / 5V 系 5.0V</text><text x="50" y="191">・ESP32 が起動 (LED 点灯)</text><text x="50" y="213">・煙・熱・異臭なし</text>
+<text x="350" y="125">・サーボ 1 本だけ挿す</text><text x="350" y="147">・中立 (真ん中) で止まる</text><text x="350" y="169">・触ると「保持」の抵抗がある</text><text x="350" y="191">・電流が異常に大きくない</text><text x="350" y="213">　(無負荷 0.1〜0.3A 程度)</text>
+<text x="650" y="125">・残りを 1 本ずつ追加</text><text x="650" y="147">・その都度、動きと発熱を確認</text><text x="650" y="169">・全数で電圧が落ちすぎない</text><text x="650" y="191">　(6V 系 5.8V 以上が目安)</text><text x="650" y="213" fill="#b3202a">・おかしければ即 OFF</text>
+</g>
+<text x="20" y="275" font-size="12" fill="#555">配線を触るときは必ずスイッチ OFF。バッテリーの XT60 を抜けばさらに安全</text>
+</svg>

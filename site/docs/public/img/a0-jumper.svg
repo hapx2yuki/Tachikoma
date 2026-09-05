@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15">
+<rect width="860" height="400" fill="#fff"/>
+<g stroke="#1f2430" stroke-width="3">
+<rect x="40" y="60" width="360" height="280" rx="12" fill="#2a6fb0"/>
+<rect x="460" y="60" width="360" height="280" rx="12" fill="#2a6fb0"/>
+</g>
+<g fill="#fff" font-weight="900" font-size="18" text-anchor="middle"><text x="220" y="45">board0 (脚+頭) = 0x40</text><text x="640" y="45">board1 (腕+目) = 0x41</text></g>
+<g fill="#e9e9e9" font-size="12">
+<text x="60" y="90">PCA9685 基板の角 (拡大)</text><text x="480" y="90">PCA9685 基板の角 (拡大)</text>
+</g>
+<!-- pads left -->
+<g>
+<g v="0"><rect x="80" y="130" width="34" height="46" rx="4" fill="#d4a017"/><rect x="80" y="182" width="34" height="46" rx="4" fill="#d4a017"/><text x="97" y="250" text-anchor="middle" fill="#fff" font-size="13">A0</text></g>
+<g><rect x="130" y="130" width="34" height="46" rx="4" fill="#d4a017"/><rect x="130" y="182" width="34" height="46" rx="4" fill="#d4a017"/><text x="147" y="250" text-anchor="middle" fill="#fff" font-size="13">A1</text></g>
+<g><rect x="180" y="130" width="34" height="46" rx="4" fill="#d4a017"/><rect x="180" y="182" width="34" height="46" rx="4" fill="#d4a017"/><text x="197" y="250" text-anchor="middle" fill="#fff" font-size="13">A2</text></g>
+<g><rect x="230" y="130" width="34" height="46" rx="4" fill="#d4a017"/><rect x="230" y="182" width="34" height="46" rx="4" fill="#d4a017"/><text x="247" y="250" text-anchor="middle" fill="#fff" font-size="13">A3</text></g>
+<g><rect x="280" y="130" width="34" height="46" rx="4" fill="#d4a017"/><rect x="280" y="182" width="34" height="46" rx="4" fill="#d4a017"/><text x="297" y="250" text-anchor="middle" fill="#fff" font-size="13">A4</text></g>
+</g>
+<text x="220" y="300" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">全部そのまま (何もしない)</text>
+<!-- pads right -->
+<g>
+<g><rect x="500" y="130" width="34" height="46" rx="4" fill="#d4a017"/><rect x="500" y="182" width="34" height="46" rx="4" fill="#d4a017"/><ellipse cx="517" cy="179" rx="24" ry="16" fill="#c0c0c0" stroke="#888" stroke-width="2"/><text x="517" y="250" text-anchor="middle" fill="#ffd23f" font-size="14" font-weight="900">A0</text></g>
+<g><rect x="550" y="130" width="34" height="46" rx="4" fill="#d4a017"/><rect x="550" y="182" width="34" height="46" rx="4" fill="#d4a017"/><text x="567" y="250" text-anchor="middle" fill="#fff" font-size="13">A1</text></g>
+<g><rect x="600" y="130" width="34" height="46" rx="4" fill="#d4a017"/><rect x="600" y="182" width="34" height="46" rx="4" fill="#d4a017"/><text x="617" y="250" text-anchor="middle" fill="#fff" font-size="13">A2</text></g>
+<g><rect x="650" y="130" width="34" height="46" rx="4" fill="#d4a017"/><rect x="650" y="182" width="34" height="46" rx="4" fill="#d4a017"/><text x="667" y="250" text-anchor="middle" fill="#fff" font-size="13">A3</text></g>
+<g><rect x="700" y="130" width="34" height="46" rx="4" fill="#d4a017"/><rect x="700" y="182" width="34" height="46" rx="4" fill="#d4a017"/><text x="717" y="250" text-anchor="middle" fill="#fff" font-size="13">A4</text></g>
+</g>
+<text x="640" y="300" text-anchor="middle" fill="#ffd23f" font-size="15" font-weight="900">A0 の上下パッドだけをハンダで橋渡し</text>
+<text x="640" y="322" text-anchor="middle" fill="#fff" font-size="13">0x40 + 1 = 0x41 になる</text>
+<text x="430" y="375" text-anchor="middle" font-size="14" fill="#7a2020">8/22 の実機は 0x41 しか見えなかった → 「A0 を閉じた基板が 1 枚だけつながっている」状態。もう 1 枚 (A0 開放) を追加する</text>
+</svg>

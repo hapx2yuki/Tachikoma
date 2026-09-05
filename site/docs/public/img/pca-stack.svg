@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="'Zen Kaku Gothic New',sans-serif" font-size="14">
+<rect width="900" height="480" fill="#fff"/>
+<text x="20" y="30" font-weight="900" font-size="17">横から見た図 (2 段重ね)</text>
+<rect x="30" y="360" width="380" height="24" fill="#bfc6d1" stroke="#1f2430" stroke-width="2"/><text x="220" y="405" text-anchor="middle">シャーシプレート</text>
+<g fill="#8b95a5" stroke="#1f2430" stroke-width="2"><rect x="120" y="340" width="20" height="20"/><rect x="300" y="340" width="20" height="20"/></g>
+<text x="345" y="352" font-size="12">ボス (h5, 下穴 φ2.2)</text>
+<g fill="#d9d9d9" stroke="#1f2430" stroke-width="2"><rect x="124" y="300" width="12" height="40"/><rect x="304" y="300" width="12" height="40"/></g>
+<rect x="80" y="288" width="280" height="12" fill="#2a6fb0" stroke="#1f2430" stroke-width="2"/><text x="370" y="298" font-size="13" font-weight="700">board0 (0x40) 下段</text>
+<g fill="#c9a227" stroke="#1f2430" stroke-width="2"><rect x="123" y="212" width="14" height="76"/><rect x="303" y="212" width="14" height="76"/></g>
+<text x="20" y="250" font-size="12">M2.5×16</text><text x="20" y="266" font-size="12">スタンドオフ</text><text x="20" y="282" font-size="12">(M-F) ×4</text>
+<rect x="80" y="200" width="280" height="12" fill="#2a6fb0" stroke="#1f2430" stroke-width="2"/><text x="370" y="210" font-size="13" font-weight="700">board1 (0x41) 上段</text>
+<g fill="#666"><rect x="126" y="186" width="8" height="14"/><rect x="306" y="186" width="8" height="14"/></g>
+<text x="370" y="188" font-size="12">M2.5×6 なべ ×4 で上段を固定</text>
+<g font-size="12" fill="#444"><text x="60" y="230">z=26.6</text><text x="60" y="318">z=9</text></g>
+<text x="20" y="440" font-size="13" fill="#7a2020">スタンドオフのオスねじがボスへ直接ねじ込まれ、六角の肩が下段基板を押さえる (下段用のねじは別途不要)</text>
+<!-- top view -->
+<text x="500" y="30" font-weight="900" font-size="17">上から見た図 (向きの決まり)</text>
+<rect x="540" y="60" width="200" height="340" rx="6" fill="#2a6fb0" stroke="#1f2430" stroke-width="2"/>
+<g fill="#1f2430"><rect x="700" y="80" width="30" height="230" rx="3"/></g>
+<g fill="#ffd23f" font-size="11"><text x="704" y="98">ch0</text><text x="704" y="120">ch1</text><text x="704" y="142">ch2</text><text x="704" y="164">…</text><text x="704" y="230">ch10</text><text x="704" y="262">ch11</text><text x="704" y="284">…</text><text x="704" y="304">ch15</text></g>
+<rect x="555" y="66" width="60" height="14" fill="#1f2430"/><text x="560" y="94" fill="#fff" font-size="11">I2C ヘッダ (北端のみ)</text>
+<rect x="695" y="240" width="40" height="72" fill="none" stroke="#e5484d" stroke-width="3" stroke-dasharray="6 4"/>
+<text x="748" y="262" font-size="12" fill="#b3202a">上段はここ</text><text x="748" y="278" font-size="12" fill="#b3202a">(南端 4ch)</text><text x="748" y="294" font-size="12" fill="#b3202a">を空ける</text>
+<g font-weight="900" fill="#1f2430"><text x="640" y="52" text-anchor="middle">北 = 前 (+y) ▲ ch0 側</text><text x="640" y="425" text-anchor="middle">南 = 後ろ</text><text x="800" y="200" font-size="13">→ +x (右)</text><text x="790" y="218" font-size="12" font-weight="400">プラグ列は右向き</text></g>
+<text x="500" y="455" font-size="12" fill="#444">2 枚とも同じ向き。この向きで頭のシェルの内側に収まることを設計で確認済み</text>
+</svg>

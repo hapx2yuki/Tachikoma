@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="'Zen Kaku Gothic New',sans-serif" font-size="14">
+<rect width="900" height="400" fill="#fff"/>
+<text x="20" y="32" font-weight="900" font-size="17">砲身 (Mouth_Cannon) の断面 — 中に何がどの順で入るか</text>
+<!-- cannon outline -->
+<path d="M60,120 H520 L540,130 V230 L520,240 H60 Z" fill="#e8e8e8" stroke="#1f2430" stroke-width="3"/>
+<rect x="60" y="150" width="480" height="60" fill="#fff"/>
+<text x="70" y="110" font-size="12">砲口 (前) ←</text><text x="470" y="110" font-size="12">→ 後端 (頭側)</text>
+<!-- speaker -->
+<rect x="80" y="152" width="22" height="56" fill="#444"/><text x="91" y="265" text-anchor="middle" font-size="12">① スピーカー</text><text x="91" y="281" text-anchor="middle" font-size="11">φ20 · 振動板を前へ</text>
+<!-- washer -->
+<rect x="110" y="150" width="14" height="60" fill="#c9a227" stroke="#1f2430" stroke-width="1"/><text x="140" y="300" text-anchor="middle" font-size="12">② audio_cradle_spk</text><text x="140" y="316" text-anchor="middle" font-size="11">(抜け止めワッシャ)</text>
+<!-- mic cradle -->
+<rect x="300" y="150" width="90" height="60" rx="6" fill="#bfe3c8" stroke="#1f2430" stroke-width="2"/><rect x="330" y="165" width="30" height="20" fill="#27a86c"/><text x="345" y="180" text-anchor="middle" fill="#fff" font-size="9">INMP441</text>
+<rect x="386" y="170" width="10" height="20" fill="#1f2430"/><text x="345" y="265" text-anchor="middle" font-size="12">③ audio_cradle_mic + マイク</text><text x="345" y="281" text-anchor="middle" font-size="11">キー突起 (黒) を溝へ合わせて圧入</text>
+<circle cx="345" cy="240" r="3" fill="#1f2430"/><text x="352" y="244" font-size="10">φ1.8 音孔 (下面)</text>
+<!-- wires -->
+<path d="M102,180 H300 M390,180 H560" stroke="#e5484d" stroke-width="3"/><path d="M102,186 H300 M390,186 H560" stroke="#1f2430" stroke-width="3"/>
+<text x="470" y="170" font-size="11">計 8 芯 (マイク 6 + SPK 2)</text>
+<!-- neck, ball -->
+<rect x="560" y="160" width="60" height="40" rx="6" fill="#5b8dd6" stroke="#1f2430" stroke-width="2"/><text x="590" y="225" text-anchor="middle" font-size="12">Mouth_Neck</text><text x="590" y="240" text-anchor="middle" font-size="11">(_Bored: 中に穴)</text>
+<circle cx="670" cy="180" r="34" fill="#cfd6e0" stroke="#1f2430" stroke-width="2"/><text x="670" y="235" text-anchor="middle" font-size="12">Mouth_Ball</text><text x="670" y="250" text-anchor="middle" font-size="11">(_Bored)</text>
+<path d="M620,180 H740" stroke="#e5484d" stroke-width="3"/><path d="M620,186 H740" stroke="#1f2430" stroke-width="3"/>
+<path d="M720,120 Q760,180 720,240" fill="none" stroke="#5b8dd6" stroke-width="10" opacity=".6"/><text x="760" y="150" font-size="12">Head_Bottom</text><text x="760" y="166" font-size="12">φ7 配線受け穴</text><text x="760" y="186" font-size="12">→ 頭の中へ</text><text x="760" y="206" font-size="12">→ MAX98357A</text>
+<rect x="40" y="335" width="820" height="50" rx="10" fill="#fffbe6" stroke="#f2b233" stroke-width="2"/>
+<text x="60" y="356" font-size="13">砲身の外観は元キットと同じ (加工は内側だけ)。組んだ後は Mouth_Cap / Key / Peg でキット通りに被せる。砲身は水平から 18° 下向きで接着。</text>
+<text x="60" y="376" font-size="13" fill="#b3202a">配線が Ball の中でたるんで噛まないように、通しながら軽く引いておく。</text>
+</svg>

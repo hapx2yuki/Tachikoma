@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" font-family="'Zen Kaku Gothic New',sans-serif" font-size="14">
+<rect width="900" height="440" fill="#fff"/>
+<text x="20" y="32" font-weight="900" font-size="17">中央目 = 固定カメラ目 (eye_pod_camera) の組み方</text>
+<!-- shell -->
+<g transform="translate(200,150)"><path d="M-80,0 A80,80 0 0 1 80,0 Z" fill="#fff" stroke="#1f2430" stroke-width="3"/><circle cx="35" cy="-40" r="10" fill="#1f2430"/><text x="0" y="-95" text-anchor="middle" font-weight="900">① shell (上半分)</text><text x="60" y="-52" font-size="12">瞳の穴 φ10 (軸から 38° 偏心)</text></g>
+<!-- carrier -->
+<g transform="translate(200,240)"><rect x="-40" y="-18" width="80" height="36" rx="5" fill="#bfe3c8" stroke="#1f2430" stroke-width="2" transform="rotate(-20)"/><rect x="-25" y="-8" width="50" height="16" fill="#27a86c" transform="rotate(-20)"/><text x="60" y="-5" font-size="13" font-weight="700">② camera_carrier + レンズ子基板</text><text x="60" y="14" font-size="12">斜めポケットへ落とし込む (向きは 1 通りしか入らない)</text></g>
+<!-- base -->
+<g transform="translate(200,330)"><path d="M-80,0 A80,80 0 0 0 80,0 Z" fill="#fff" stroke="#1f2430" stroke-width="3"/><rect x="-14" y="58" width="28" height="30" fill="#ddd" stroke="#1f2430" stroke-width="2"/><rect x="-30" y="-6" width="60" height="6" fill="#999"/><text x="60" y="10" font-size="13" font-weight="700">③ base (下半分) — 上面のリングを shell の溝へ嵌めて接着</text><text x="60" y="30" font-size="12">底のスロットから FPC を出す</text><text x="60" y="80" font-size="12">ネック φ28 (回らない固定パーツ)</text></g>
+<!-- right side: install -->
+<rect x="520" y="70" width="350" height="330" rx="12" fill="#eef4ff" stroke="#8fb4ff" stroke-width="2"/>
+<text x="540" y="100" font-weight="900" font-size="15">取り付けの向き (ここが肝心)</text>
+<text x="540" y="128" font-size="13">・ソケットの法線は上向き約 47°。瞳を 38° ずらす</text>
+<text x="540" y="148" font-size="13">　ことで、光軸がほぼ水平前方 (残差 8.6°) になる</text>
+<text x="540" y="176" font-size="13" font-weight="700" fill="#b3202a">・瞳が「まっすぐ前・水平」を向く回転位相で</text>
+<text x="540" y="196" font-size="13" font-weight="700" fill="#b3202a">　ネックを穴へ挿し、内側から接着する</text>
+<text x="540" y="224" font-size="13">・本体基板 (XIAO ESP32S3) は頭の中の空きへ</text>
+<text x="540" y="244" font-size="13">　両面テープ。FPC を折り曲げすぎない</text>
+<text x="540" y="272" font-size="13">・電源 2 芯 (5V/GND) だけ胴へ下ろす</text>
+<text x="540" y="292" font-size="13">・本体の ESP32 とは無接続 (Wi-Fi で独立動作)</text>
+<text x="540" y="330" font-size="12" fill="#555">確認: カメラを Wi-Fi につなぎ、ブラウザで</text>
+<text x="540" y="348" font-size="12" fill="#555">静止画 (/capture) が取れれば OK</text>
+</svg>

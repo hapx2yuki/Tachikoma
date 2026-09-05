@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" font-family="'Zen Kaku Gothic New',sans-serif" font-size="14">
+<rect width="860" height="420" fill="#fff"/>
+<text x="20" y="32" font-weight="900" font-size="17">サーボの 3 本線</text>
+<rect x="40" y="60" width="150" height="110" rx="10" fill="#2b2f3a" stroke="#1f2430" stroke-width="3"/><text x="115" y="120" text-anchor="middle" fill="#fff" font-weight="700">サーボ</text>
+<g stroke-width="7" fill="none"><path d="M190,90 H330" stroke="#c46a2a"/><path d="M190,115 H330" stroke="#e5484d"/><path d="M190,140 H330" stroke="#f2b233"/></g>
+<rect x="330" y="72" width="40" height="86" rx="4" fill="#1f2430"/>
+<g font-size="13"><text x="200" y="84">茶 / 黒 = GND (−)</text><text x="200" y="109" fill="#b3202a">赤 = 電源 (+6V)</text><text x="200" y="134" fill="#8a6000">橙 / 黄 / 白 = 信号</text></g>
+<text x="20" y="215" font-weight="900" font-size="17">PCA9685 側の 3 ピン列</text>
+<rect x="40" y="235" width="300" height="90" rx="8" fill="#2a6fb0" stroke="#1f2430" stroke-width="2"/>
+<g fill="#1f2430"><rect x="60" y="250" width="14" height="14"/><rect x="60" y="273" width="14" height="14"/><rect x="60" y="296" width="14" height="14"/></g>
+<g fill="#fff" font-size="12"><text x="82" y="262">GND (黒い列)</text><text x="82" y="285">V+ (赤い列) — サーボ電源</text><text x="82" y="308">PWM (黄色い列) — 信号</text></g>
+<text x="40" y="355" font-size="13">基板の縁に GND / V+ / PWM の印字がある。プラグの GND (茶/黒) を基板の GND 側へ合わせる</text>
+<text x="40" y="378" font-size="13" fill="#b3202a">逆向きに刺すとサーボが動かない (壊れはしないが、全部逆だと気づきにくい)</text>
+<!-- power split -->
+<rect x="470" y="60" width="370" height="300" rx="12" fill="#fff7dc" stroke="#f2b233" stroke-width="2"/>
+<text x="490" y="90" font-weight="900" font-size="16">このロボット特有の配線 (重要)</text>
+<text x="490" y="115" font-size="13">12 個の大サーボが同時に動くと 4〜8A 流れる。</text>
+<text x="490" y="135" font-size="13">PCA9685 の V+ 端子はそこまで耐えないので…</text>
+<g stroke="#1f2430" stroke-width="2" fill="#fff"><rect x="490" y="160" width="110" height="50" rx="8"/><rect x="700" y="160" width="120" height="50" rx="8" fill="#ffd0b8"/><rect x="700" y="250" width="120" height="50" rx="8" fill="#dff0ff"/></g>
+<g font-size="13" text-anchor="middle"><text x="545" y="190">サーボ</text><text x="760" y="180">電源バスバー</text><text x="760" y="198" font-size="11">(UBEC 6V から)</text><text x="760" y="270">PCA9685</text><text x="760" y="288" font-size="11">信号 + GND だけ</text></g>
+<g stroke-width="5" fill="none"><path d="M600,175 H700" stroke="#e5484d"/><path d="M600,185 H650 V265 H700" stroke="#c46a2a"/><path d="M600,195 H640 V285 H700" stroke="#f2b233"/></g>
+<text x="490" y="335" font-size="12">サーボ延長線の赤 (+) はサーボの近くで切り分けてバスバーへ。GND は両方へ</text>
+</svg>

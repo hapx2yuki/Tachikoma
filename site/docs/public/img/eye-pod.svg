@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="'Zen Kaku Gothic New',sans-serif" font-size="14">
+<rect width="900" height="480" fill="#fff"/>
+<text x="20" y="32" font-weight="900" font-size="17">目ポッド (左右 ×2) の分解図 — 外側から順に</text>
+<!-- head shell -->
+<path d="M40,300 Q450,60 860,300" fill="none" stroke="#5b8dd6" stroke-width="14" opacity=".5"/><text x="60" y="330" fill="#3b6fb0" font-size="13">Head_Top (頭シェル) — 内側から組む</text>
+<!-- socket bore -->
+<rect x="410" y="135" width="80" height="40" fill="#fff" stroke="#3b6fb0" stroke-width="2" stroke-dasharray="5 4"/><text x="500" y="160" font-size="12" fill="#3b6fb0">目ソケットの貫通穴 φ30</text>
+<!-- eye pod cap -->
+<g transform="translate(450,90)"><ellipse rx="70" ry="38" fill="#fff" stroke="#1f2430" stroke-width="3"/><circle cx="18" cy="14" r="5" fill="#1f2430"/><circle cx="30" cy="4" r="5" fill="#1f2430"/><circle cx="34" cy="18" r="5" fill="#1f2430"/><text x="0" y="-50" text-anchor="middle" font-weight="900">eye_pod (眼球キャップ φ37.7)</text><text x="90" y="20" font-size="12">ドット 3 個 = 視線マーク (黒く塗る)</text><rect x="-12" y="34" width="24" height="24" fill="#ddd" stroke="#1f2430" stroke-width="2"/><text x="20" y="52" font-size="12">ネック (穴を通る)</text></g>
+<!-- horn -->
+<g transform="translate(450,205)"><rect x="-40" y="-7" width="80" height="14" rx="7" fill="#ffd23f" stroke="#1f2430" stroke-width="2"/><circle r="8" fill="#fff" stroke="#1f2430" stroke-width="2"/><text x="60" y="5" font-size="13">ホーン: キャップ背面のポケットへ、アーム穴 2 個を極小ねじで共締め (中心ビスは使わない)</text></g>
+<!-- servo in carrier -->
+<g transform="translate(450,265)"><rect x="-55" y="-5" width="110" height="60" rx="6" fill="#e9eef7" stroke="#1f2430" stroke-width="2"/><rect x="-38" y="5" width="76" height="40" rx="4" fill="#2b2f3a"/><text x="0" y="30" text-anchor="middle" fill="#fff" font-size="12">サブマイクロサーボ</text><text x="70" y="15" font-size="13">eye_carrier (サーボ受け)</text><text x="70" y="35" font-size="12">シェル内側へ接着</text><text x="70" y="52" font-size="12" fill="#b3202a">ケース長辺は水平の接線方向 (前後向き)</text></g>
+<!-- neutral note -->
+<rect x="40" y="360" width="820" height="100" rx="12" fill="#eef4ff" stroke="#8fb4ff" stroke-width="2"/>
+<text x="60" y="388" font-weight="900" font-size="15">向き合わせのコツ</text>
+<text x="60" y="412" font-size="13">1. サーボを中立 (1500µs) にする。 2. ドット 3 個が「ほぼ真下」を向く角度でホーン付きの眼球を軸へ押し込む (スプラインの溝を選ぶ)。</text>
+<text x="60" y="434" font-size="13">3. 多少ずれても Web UI の目トリム (±18°) で直せる。抜けが心配なら軸に瞬間接着剤をほんの少し。</text>
+<text x="60" y="454" font-size="12" fill="#555">ドットは軸から約 45° 偏心しているので、サーボが回ると「視線が泳ぐ」ように見える仕組み</text>
+</svg>

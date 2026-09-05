@@ -1,0 +1,14 @@
+{
+  "name": "tachikoma-build-guide",
+  "private": true,
+  "version": "1.0.0",
+  "description": "タチコマ歩行ロボット 組立ガイド (作業会向け)",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
