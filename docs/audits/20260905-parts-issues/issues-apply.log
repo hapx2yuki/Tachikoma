@@ -1,0 +1,170 @@
+== labels ==
+== milestones ==
+  ~ milestone M0 準備完了
+  ~ milestone M1 片脚 Go/No-Go
+  ~ milestone M2 頭無し歩行
+  ~ milestone M3 サブアセンブリ
+  ~ milestone M4 フルドレス
+  ~ milestone M5 統合・完成
+== issues ==
+  ~ body/meta E1 (#3): ['body']
+  ~ body/meta E2 (#4): ['body']
+  ~ body/meta E3 (#5): ['body']
+  ~ body/meta E4 (#6): ['body']
+  ~ body/meta E5 (#7): ['body']
+  ~ body/meta E6 (#8): ['body']
+  ~ body/meta E7 (#9): ['body']
+  ~ body/meta E8 (#10): ['body']
+  ~ body/meta P-01 (#11): ['body']
+  ~ body/meta P-02 (#12): ['body']
+  ~ body/meta P-03 (#13): ['body']
+  ~ body/meta P-04 (#14): ['body', 'title']
+  ~ body/meta P-05 (#15): ['body', 'title']
+  ~ body/meta P-06 (#16): ['body']
+  ~ body/meta P-07 (#17): ['body']
+  ~ body/meta P-08 (#18): ['body']
+  ~ body/meta PR-01 (#19): ['body', 'title']
+  ~ body/meta PR-02 (#20): ['body', 'title']
+  ~ body/meta PR-03 (#21): ['body', 'title']
+  ~ body/meta PR-04 (#22): ['body']
+  ~ body/meta PR-05 (#23): ['body', 'title']
+  ~ body/meta PR-06 (#24): ['body', 'title']
+  ~ body/meta PR-07 (#25): ['body']
+  ~ body/meta PR-08 (#26): ['body', 'title']
+  ~ body/meta PR-09 (#27): ['body']
+  ~ body/meta PR-10 (#79): ['body', 'title']
+  ~ body/meta EL-01 (#28): ['body']
+  ~ body/meta EL-02 (#29): ['body']
+  ~ body/meta EL-03 (#30): ['body']
+  ~ body/meta EL-04 (#31): ['body', 'title']
+  ~ body/meta EL-05 (#32): ['body']
+  ~ body/meta EL-06 (#33): ['body']
+  ~ body/meta EL-07 (#34): ['body', 'title']
+  ~ body/meta EL-08 (#35): ['body']
+  ~ body/meta L-01 (#36): ['body']
+  ~ body/meta L-02 (#37): ['body']
+  ~ body/meta L-03 (#38): ['body']
+  ~ body/meta L-04 (#39): ['body']
+  ~ body/meta L-05 (#40): ['body']
+  ~ body/meta L-06 (#41): ['body', 'title']
+  ~ body/meta L-07 (#42): ['body']
+  ~ body/meta L-08 (#43): ['body']
+  ~ body/meta L-09 (#44): ['body']
+  ~ body/meta L-10 (#45): ['body']
+  ~ body/meta EL-09 (#75): ['body', 'title']
+  ~ body/meta EL-10 (#76): ['body']
+  ~ body/meta L-11 (#77): ['body']
+  ~ body/meta A-01 (#46): ['body']
+  ~ body/meta A-02 (#47): ['body']
+  ~ body/meta A-03 (#48): ['body']
+  ~ body/meta A-04 (#49): ['body', 'labels', 'title']
+  ~ body/meta H-01 (#50): ['body']
+  ~ body/meta H-02 (#51): ['body']
+  ~ body/meta H-03 (#52): ['body']
+  ~ body/meta H-04 (#53): ['body', 'title']
+  ~ body/meta H-05 (#54): ['body', 'title']
+  ~ body/meta H-06 (#55): ['body']
+  ~ body/meta H-07 (#56): ['body', 'title']
+  ~ body/meta S-01 (#57): ['body']
+  ~ body/meta S-02a (#58): ['body', 'labels']
+  ~ body/meta S-02b (#59): ['body', 'labels']
+  ~ body/meta S-02c (#60): ['body', 'labels']
+  ~ body/meta S-02d (#61): ['body', 'labels']
+  ~ body/meta S-03 (#62): ['body']
+  ~ body/meta S-04 (#63): ['body']
+  ~ body/meta S-05 (#64): ['body', 'title']
+  ~ body/meta S-06 (#65): ['body', 'title']
+  ~ body/meta S-07 (#66): ['body']
+  ~ body/meta S-08 (#67): ['body', 'title']
+  ~ body/meta I-01 (#68): ['body', 'title']
+  ~ body/meta I-02 (#69): ['body']
+  ~ body/meta I-03 (#70): ['body']
+  ~ body/meta I-04 (#71): ['body']
+  ~ body/meta I-05 (#72): ['body', 'labels']
+  ~ body/meta I-06 (#73): ['body']
+  ~ body/meta I-08 (#78): ['body', 'title']
+  ~ body/meta I-07 (#74): ['body']
+  ~ body/meta PR-11 (#86): ['body']
+  ~ body/meta E9 (#80): ['body']
+  ~ body/meta RV-01 (#81): ['body']
+  ~ body/meta RV-02 (#82): ['body']
+  ~ body/meta RV-03 (#83): ['body']
+  ~ body/meta RV-04 (#84): ['body']
+  ~ body/meta RV-05 (#85): ['body']
+  ~ body/meta RV-06 (#87): ['body']
+  ~ body/meta RV-07 (#88): ['body']
+  ~ body/meta RV-08 (#89): ['body', 'title']
+  ~ body/meta RV-09 (#90): ['body']
+  ~ body/meta RV-10 (#91): ['body', 'title']
+  ~ body/meta RV-11 (#92): ['body']
+  ~ body/meta RV-12 (#93): ['body']
+  ~ body/meta RV-13 (#94): ['body']
+  ~ body/meta RV-14 (#95): ['body']
+  ~ body/meta RV-15 (#96): ['body']
+  ~ body/meta RV-16 (#97): ['body']
+  ~ body/meta RV-17 (#98): ['body']
+== relations ==
+  blocked #15 (P-05) by #12 (P-02)
+  blocked #19 (PR-01) by #12 (P-02)
+  blocked #20 (PR-02) by #12 (P-02)
+  blocked #21 (PR-03) by #12 (P-02)
+  remove blocked #24 (PR-06) by #17
+  remove blocked #24 (PR-06) by #90
+  remove blocked #24 (PR-06) by #91
+  remove blocked #24 (PR-06) by #96
+  blocked #26 (PR-08) by #94 (RV-13)
+  blocked #79 (PR-10) by #17 (P-07)
+  blocked #79 (PR-10) by #12 (P-02)
+  blocked #31 (EL-04) by #13 (P-03)
+  remove blocked #34 (EL-07) by #14
+  remove blocked #36 (L-01) by #23
+  blocked #46 (A-01) by #14 (P-04)
+  remove blocked #46 (A-01) by #19
+  remove blocked #46 (A-01) by #20
+  remove blocked #46 (A-01) by #24
+  remove blocked #46 (A-01) by #91
+  blocked #47 (A-02) by #14 (P-04)
+  remove blocked #47 (A-02) by #19
+  remove blocked #47 (A-02) by #20
+  remove blocked #47 (A-02) by #24
+  remove blocked #47 (A-02) by #91
+  blocked #48 (A-03) by #42 (L-07)
+  blocked #48 (A-03) by #90 (RV-09)
+  blocked #48 (A-03) by #91 (RV-10)
+  remove blocked #48 (A-03) by #41
+  blocked #50 (H-01) by #14 (P-04)
+  remove blocked #50 (H-01) by #24
+  remove blocked #51 (H-02) by #24
+  remove blocked #52 (H-03) by #24
+  remove blocked #53 (H-04) by #52
+  remove blocked #54 (H-05) by #19
+  remove blocked #57 (S-01) by #19
+  remove blocked #57 (S-01) by #24
+  remove blocked #58 (S-02a) by #19
+  remove blocked #58 (S-02a) by #20
+  remove blocked #58 (S-02a) by #23
+  remove blocked #59 (S-02b) by #19
+  remove blocked #59 (S-02b) by #20
+  remove blocked #59 (S-02b) by #23
+  remove blocked #60 (S-02c) by #19
+  remove blocked #60 (S-02c) by #20
+  remove blocked #60 (S-02c) by #23
+  remove blocked #61 (S-02d) by #19
+  remove blocked #61 (S-02d) by #20
+  remove blocked #61 (S-02d) by #23
+  blocked #62 (S-03) by #67 (S-08)
+  remove blocked #62 (S-03) by #19
+  remove blocked #62 (S-03) by #20
+  remove blocked #64 (S-05) by #19
+  remove blocked #64 (S-05) by #20
+  remove blocked #64 (S-05) by #21
+  blocked #68 (I-01) by #63 (S-04)
+  blocked #68 (I-01) by #66 (S-07)
+  blocked #69 (I-02) by #45 (L-10)
+  blocked #69 (I-02) by #78 (I-08)
+  remove blocked #70 (I-03) by #63
+  blocked #74 (I-07) by #71 (I-04)
+  blocked #74 (I-07) by #73 (I-06)
+  blocked #85 (RV-05) by #87 (RV-06)
+  blocked #85 (RV-05) by #88 (RV-07)
+  wrote tools/issues/issue_map.json

@@ -43,9 +43,10 @@
     "tools/issues/plan.py": "a85b6c426b4c9f4aff283be56e5c2f6d2f186c5712af970a38e63dbc1fad0ff0",
     "tools/issues/audit_plan_data.py": "a1a292a78739a7659fe5cce6422bc54fdc8d1f39c3b7d9e6f6abc7122af61072",
     "tools/issues/sync_github_issues.py": "72ecf7b4cf1e2bb9abdb9befc7f55742bdb4031971f86176601593fe9f2b3665",
-    "docs/issues-audit-20260905.md": "4478e5002251e59415e2591dc545ff237cda10c7f02c204c17107f31d991b37e",
+    "docs/issues-audit-20260905.md": "2a2e70f2d446503d6bee86b3504daa5691bdb2555c7791216d26aa87d1059c16",
     "docs/assembly.md": "00428f90f6188e5bab9a26768156cc81ccb69c87d9f1fe292a384ab0ffc03359",
     "docs/wiring.md": "c50be13cfc2064eba1079f70cb0620169651ba835fa80bdea128ff4034f37ee3",
     "docs/build_plan.md": "cbfb018c6e836c89a42f355a0b9fae58f39c49edb85452e838b9d0f939e872aa"
-  }
+  },
+  "publication_verified": true
 }
