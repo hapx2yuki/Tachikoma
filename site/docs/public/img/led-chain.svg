@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="'Zen Kaku Gothic New',sans-serif" font-size="13">
+<rect width="900" height="300" fill="#fff"/>
+<rect x="20" y="90" width="90" height="60" rx="8" fill="#2b2f3a"/><text x="65" y="115" text-anchor="middle" fill="#fff" font-weight="700">ESP32</text><text x="65" y="135" text-anchor="middle" fill="#ffd23f" font-size="12">GPIO4</text>
+<rect x="135" y="90" width="90" height="60" rx="8" fill="#e8e8e8" stroke="#1f2430" stroke-width="2"/><text x="180" y="112" text-anchor="middle" font-weight="700">74AHCT125</text><text x="180" y="130" text-anchor="middle" font-size="11">3.3V→5V</text><text x="180" y="144" text-anchor="middle" font-size="11">+330Ω</text>
+<path d="M110,120 H135 M225,120 H260" stroke="#1f2430" stroke-width="3"/>
+<g>
+<g transform="translate(260,100)"><rect width="40" height="40" rx="6" fill="#fff" stroke="#1f2430" stroke-width="2"/><text x="20" y="26" text-anchor="middle" font-weight="700">0</text></g>
+<g transform="translate(320,100)"><rect width="40" height="40" rx="6" fill="#fff" stroke="#1f2430" stroke-width="2"/><text x="20" y="26" text-anchor="middle" font-weight="700">1</text></g>
+<g transform="translate(380,100)"><rect width="40" height="40" rx="6" fill="#eee" stroke="#999" stroke-width="2" stroke-dasharray="4 3"/><text x="20" y="26" text-anchor="middle" fill="#999">2</text></g>
+<g transform="translate(440,100)"><rect width="40" height="40" rx="6" fill="#fff" stroke="#1f2430" stroke-width="2"/><text x="20" y="26" text-anchor="middle" font-weight="700">3</text></g>
+<g transform="translate(500,100)"><rect width="40" height="40" rx="6" fill="#ffd9d9" stroke="#1f2430" stroke-width="2"/><text x="20" y="26" text-anchor="middle" font-weight="700">4</text></g>
+<g transform="translate(560,100)"><rect width="40" height="40" rx="6" fill="#ffd9d9" stroke="#1f2430" stroke-width="2"/><text x="20" y="26" text-anchor="middle" font-weight="700">5</text></g>
+<g transform="translate(620,100)"><rect width="40" height="40" rx="6" fill="#ffd9d9" stroke="#1f2430" stroke-width="2"/><text x="20" y="26" text-anchor="middle" font-weight="700">6</text></g>
+<g transform="translate(680,100)"><rect width="40" height="40" rx="6" fill="#ffd9d9" stroke="#1f2430" stroke-width="2"/><text x="20" y="26" text-anchor="middle" font-weight="700">7</text></g>
+<g transform="translate(740,100)"><rect width="40" height="40" rx="6" fill="#ffecec" stroke="#1f2430" stroke-width="2"/><text x="20" y="26" text-anchor="middle" font-weight="700">8-11</text></g>
+</g>
+<path d="M300,120 H320 M360,120 H380 M420,120 H440 M480,120 H500 M540,120 H560 M600,120 H620 M660,120 H680 M720,120 H740" stroke="#1f2430" stroke-width="3"/>
+<g font-size="12" text-anchor="middle"><text x="280" y="165">メインアイ</text><text x="280" y="180">(ポッド前面)</text><text x="340" y="165">右目</text><text x="400" y="165" fill="#999">中央目</text><text x="400" y="180" fill="#999">(カメラ化で不要)</text><text x="460" y="165">左目</text><text x="590" y="165">赤ランプ 大 ×4</text><text x="760" y="165">赤ランプ 小 ×4</text></g>
+<text x="20" y="230" font-size="13">・LED には DIN (入力) と DOUT (出力) がある。前の DOUT → 次の DIN と数珠つなぎ。矢印の向きを揃える</text>
+<text x="20" y="252" font-size="13">・5V と GND は各 LED へ並列に配る。12 灯全点灯で最大約 0.7A</text>
+<text x="20" y="274" font-size="13" fill="#b3202a">・GPIO4 を LED に直結しない。必ず 74AHCT125 を通す (3.3V 信号では LED が反応しないことがある)</text>
+</svg>

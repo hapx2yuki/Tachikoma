@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15">
+<rect width="860" height="520" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1f2430"/></marker></defs>
+<g stroke="#1f2430" stroke-width="3" fill="none" marker-end="url(#a)">
+<path d="M150,120 H205"/><path d="M285,120 H340"/><path d="M420,120 H470"/>
+<path d="M470,120 V200 H520"/><path d="M470,120 V330 H520"/>
+<path d="M660,200 H710"/><path d="M660,330 H710"/>
+</g>
+<g stroke="#1f2430" stroke-width="3" fill="#fff">
+<rect x="30" y="85" width="120" height="70" rx="10" fill="#ffe9a8"/>
+<rect x="205" y="95" width="80" height="50" rx="8" fill="#ffd9d9"/>
+<rect x="340" y="95" width="80" height="50" rx="8" fill="#e8e8e8"/>
+<rect x="520" y="165" width="140" height="70" rx="10" fill="#ffd0b8"/>
+<rect x="520" y="295" width="140" height="70" rx="10" fill="#cfe6ff"/>
+<rect x="710" y="160" width="130" height="80" rx="10" fill="#fff3c4"/>
+<rect x="710" y="270" width="130" height="200" rx="10" fill="#e6f0ff"/>
+</g>
+<g text-anchor="middle" fill="#1f2430" font-weight="700">
+<text x="90" y="112">2S LiPo 7.4V</text><text x="90" y="134" font-size="12" font-weight="400">2200mAh · XT60</text>
+<text x="245" y="116">ヒューズ</text><text x="245" y="134" font-size="12" font-weight="400">15A</text>
+<text x="380" y="116">スイッチ</text><text x="380" y="134" font-size="12" font-weight="400">ロッカー 10A</text>
+<text x="590" y="192">UBEC 6V/10A</text><text x="590" y="214" font-size="12" font-weight="400">サーボ用の大電流電源</text>
+<text x="590" y="322">DC-DC 5V/3A</text><text x="590" y="344" font-size="12" font-weight="400">ロジック (頭脳) 用</text>
+<text x="775" y="190">サーボ電源バス</text><text x="775" y="210" font-size="12" font-weight="400">AWG16 の太い線</text><text x="775" y="228" font-size="12" font-weight="400">+1000µF ×2</text>
+<text x="775" y="298">5V 系</text>
+</g>
+<g font-size="13" fill="#1f2430">
+<text x="722" y="325">・ESP32 (VIN)</text><text x="722" y="347">・DFPlayer</text><text x="722" y="369">・74AHCT125</text><text x="722" y="391">・WS2812B LED</text><text x="722" y="413">・MAX98357A アンプ</text><text x="722" y="435">・カメラ (XIAO)</text><text x="722" y="457">+470µF</text>
+</g>
+<g font-size="13" fill="#7a2020"><text x="470" y="105" text-anchor="middle">ここで 2 系統に分かれる</text></g>
+<rect x="30" y="405" width="640" height="90" rx="12" fill="#fff1f1" stroke="#e5484d" stroke-width="2"/>
+<text x="50" y="432" font-weight="900" fill="#b3202a" font-size="16">⚠ 3 つの鉄則</text>
+<text x="50" y="456" font-size="14">① サーボの電源は PCA9685 基板の V+ 端子を通さない (基板が焼ける)。バスバーから直接サーボへ。</text>
+<text x="50" y="478" font-size="14">② GND (−) は全系統を必ずつなぐ。 ③ サーボ電源は 6V、ESP32 側は 5V。混ぜない。</text>
+</svg>

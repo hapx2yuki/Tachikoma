@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" font-family="'Zen Kaku Gothic New',sans-serif"><rect width="240" height="200" fill="#fff"/><rect x="60" y="30" width="120" height="150" rx="8" fill="#2b2f3a"/><rect x="85" y="45" width="70" height="45" fill="#4a4f5c"/><rect x="100" y="16" width="40" height="16" fill="#8b95a5"/><g fill="#ffd23f"><rect x="52" y="40" width="8" height="5"/><rect x="180" y="40" width="8" height="5"/>
+<rect x="52" y="50" width="8" height="5"/><rect x="180" y="50" width="8" height="5"/>
+<rect x="52" y="60" width="8" height="5"/><rect x="180" y="60" width="8" height="5"/>
+<rect x="52" y="70" width="8" height="5"/><rect x="180" y="70" width="8" height="5"/>
+<rect x="52" y="80" width="8" height="5"/><rect x="180" y="80" width="8" height="5"/>
+<rect x="52" y="90" width="8" height="5"/><rect x="180" y="90" width="8" height="5"/>
+<rect x="52" y="100" width="8" height="5"/><rect x="180" y="100" width="8" height="5"/>
+<rect x="52" y="110" width="8" height="5"/><rect x="180" y="110" width="8" height="5"/>
+<rect x="52" y="120" width="8" height="5"/><rect x="180" y="120" width="8" height="5"/>
+<rect x="52" y="130" width="8" height="5"/><rect x="180" y="130" width="8" height="5"/>
+<rect x="52" y="140" width="8" height="5"/><rect x="180" y="140" width="8" height="5"/>
+<rect x="52" y="150" width="8" height="5"/><rect x="180" y="150" width="8" height="5"/>
+<rect x="52" y="160" width="8" height="5"/><rect x="180" y="160" width="8" height="5"/></g><text x="120" y="130" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">ESP32</text><text x="120" y="145" text-anchor="middle" fill="#fff" font-size="10">DevKitC</text></svg>

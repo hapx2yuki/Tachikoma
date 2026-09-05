@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" font-family="'Zen Kaku Gothic New',sans-serif" font-size="14">
+<rect width="900" height="440" fill="#fff"/>
+<text x="20" y="30" font-weight="900" font-size="17">信号の「パルス幅」で角度が決まる</text>
+<g stroke="#1f2430" stroke-width="3" fill="none">
+<path d="M30,120 H60 V70 H80 V120 H330 V70 H350 V120 H420"/>
+<path d="M30,190 H60 V140 H120 V190 H330 V140 H390 V190 H420"/>
+<path d="M30,260 H60 V210 H160 V260 H330 V210 H430 V260 H440"/>
+</g>
+<g font-size="13"><text x="70" y="62">500µs</text><text x="440" y="118">→ 片端 (0°)</text><text x="70" y="132">1500µs</text><text x="440" y="188" font-weight="900" fill="#1d6fd8">→ 真ん中 (90°) = 中立</text><text x="70" y="202">2500µs</text><text x="440" y="258">→ 反対の端 (180°)</text></g>
+<text x="30" y="295" font-size="12" fill="#555">20ms ごとに繰り返し送られる (50Hz)。CALIBRATION_MODE のファームは全チャンネルに 1500µs を出し続ける</text>
+<!-- horn drawing -->
+<g transform="translate(640,80)">
+<circle r="50" fill="#2b2f3a" stroke="#1f2430" stroke-width="3"/><circle r="10" fill="#8b95a5"/>
+<path d="M0,0 L0,-80" stroke="#ffd23f" stroke-width="12" stroke-linecap="round"/>
+<path d="M0,0 L-60,50" stroke="#ccc" stroke-width="6" stroke-linecap="round" stroke-dasharray="6 5"/>
+<path d="M0,0 L60,50" stroke="#ccc" stroke-width="6" stroke-linecap="round" stroke-dasharray="6 5"/>
+<text x="0" y="-95" text-anchor="middle" font-weight="900" fill="#1d6fd8">中立 = 真ん中</text>
+<text x="-95" y="70" font-size="12">0°</text><text x="75" y="70" font-size="12">180°</text>
+</g>
+<text x="640" y="210" text-anchor="middle" font-size="12">ホーンは中立で「基準の向き」になるように刺す</text>
+<!-- leg neutral -->
+<g transform="translate(80,320)">
+<rect x="0" y="0" width="110" height="50" rx="6" fill="#ef6c2f" stroke="#1f2430" stroke-width="2"/><text x="55" y="30" text-anchor="middle" fill="#fff" font-weight="700">femur (太もも)</text>
+<rect x="100" y="0" width="30" height="110" rx="6" fill="#27a86c" stroke="#1f2430" stroke-width="2"/><text x="150" y="70" font-weight="700">tibia (脛)</text>
+<text x="0" y="-12" font-weight="900" fill="#1d6fd8">脚の中立: femur 水平 · tibia 真下</text>
+</g>
+<g transform="translate(480,320)">
+<text x="0" y="-12" font-weight="900" fill="#1d6fd8">腕の中立: 上腕 真下 (ピッチ85°) · 肘 まっすぐ (0°)</text>
+<rect x="0" y="0" width="30" height="70" rx="6" fill="#ef6c2f" stroke="#1f2430" stroke-width="2"/><rect x="0" y="70" width="30" height="40" rx="6" fill="#27a86c" stroke="#1f2430" stroke-width="2"/>
+<text x="45" y="40" font-size="13">upper_arm</text><text x="45" y="95" font-size="13">forearm (肘 0° = 一直線)</text>
+<text x="200" y="40" font-size="13">肩ヨー: 正面から 40° 外向き</text><text x="200" y="60" font-size="12" fill="#555">(前ではなく斜め外を向くのが中立)</text>
+</g>
+</svg>

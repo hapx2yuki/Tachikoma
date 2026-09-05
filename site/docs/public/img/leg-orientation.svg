@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Zen Kaku Gothic New',sans-serif" font-size="14">
+<rect width="900" height="520" fill="#fff"/>
+<g transform="translate(300,260)">
+<circle r="150" fill="#dfe5ee" stroke="#1f2430" stroke-width="3"/>
+<text y="-170" text-anchor="middle" font-weight="900" font-size="16">前 (+Y) ▲ 頭・砲身の向き</text>
+<text y="185" text-anchor="middle" font-size="13">後ろ (ポッドネック側)</text>
+<!-- legs: angle from +X CCW; screen y is inverted -->
+<g stroke="#1f2430" stroke-width="3">
+<g transform="rotate(-15)"><rect x="140" y="-22" width="120" height="44" rx="8" fill="#ef6c2f"/><text x="200" y="6" text-anchor="middle" fill="#fff" font-weight="900" transform="rotate(15,200,0)">FR 15°</text></g>
+<g transform="rotate(-165)"><rect x="140" y="-22" width="120" height="44" rx="8" fill="#27a86c"/><text x="200" y="6" text-anchor="middle" fill="#fff" font-weight="900" transform="rotate(165,200,0)">FL 165°</text></g>
+<g transform="rotate(-210)"><rect x="140" y="-22" width="120" height="44" rx="8" fill="#ef6c2f"/><text x="200" y="6" text-anchor="middle" fill="#fff" font-weight="900" transform="rotate(210,200,0)">RL 210°</text></g>
+<g transform="rotate(-330)"><rect x="140" y="-22" width="120" height="44" rx="8" fill="#27a86c"/><text x="200" y="6" text-anchor="middle" fill="#fff" font-weight="900" transform="rotate(330,200,0)">RR 330°</text></g>
+</g>
+<g fill="#1f2430"><circle cx="0" cy="-5" r="6"/><text x="12" y="0" font-size="12">中心</text></g>
+<text x="0" y="60" text-anchor="middle" font-size="12" fill="#555">右 = +X →</text>
+</g>
+<rect x="540" y="60" width="330" height="400" rx="14" fill="#fffbe6" stroke="#f2b233" stroke-width="2"/>
+<text x="560" y="92" font-weight="900" font-size="16">パーツの割り当て (取り違え厳禁)</text>
+<g font-size="14">
+<rect x="560" y="110" width="22" height="22" rx="4" fill="#ef6c2f"/><text x="592" y="127" font-weight="900">FR (右前) · RL (左後)</text>
+<text x="592" y="148">→ ミラー版 <tspan font-weight="900">_m</tspan> パーツを使う</text>
+<text x="592" y="168" font-size="13">coxa_bracket_m / femur_link_m / tibia_link_m / shin_shell_m</text>
+<rect x="560" y="195" width="22" height="22" rx="4" fill="#27a86c"/><text x="592" y="212" font-weight="900">FL (左前) · RR (右後)</text>
+<text x="592" y="233">→ 標準パーツ (末尾なし)</text>
+<text x="592" y="253" font-size="13">coxa_bracket / femur_link / tibia_link / shin_shell</text>
+</g>
+<text x="560" y="295" font-size="13">前脚は正面から ±75°、後脚は ±120°。</text>
+<text x="560" y="315" font-size="13">均等な 90° 間隔ではないので注意。</text>
+<text x="560" y="350" font-size="13" fill="#b3202a" font-weight="700">取り違えると 45° で隣り合う脚の</text>
+<text x="560" y="370" font-size="13" fill="#b3202a" font-weight="700">股ピッチサーボ同士がぶつかって組めない。</text>
+<text x="560" y="405" font-size="13">ヨーサーボのケースは 4 個とも</text>
+<text x="560" y="425" font-size="13">「X 軸に平行・中央向き」で挿す (脚の向きとは独立)。</text>
+<text x="20" y="500" font-size="12" fill="#555">FR = Front Right (右前), FL = 左前, RL = 左後, RR = 右後。「右」はロボット自身から見た右 (+X)</text>
+</svg>

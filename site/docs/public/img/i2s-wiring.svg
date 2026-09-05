@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" font-family="'Zen Kaku Gothic New',sans-serif" font-size="14">
+<rect width="860" height="420" fill="#fff"/>
+<rect x="40" y="80" width="170" height="260" rx="12" fill="#2b2f3a" stroke="#1f2430" stroke-width="3"/><text x="125" y="112" text-anchor="middle" fill="#fff" font-weight="900" font-size="16">ESP32</text>
+<g fill="#ffd23f" font-size="13" font-weight="700"><text x="55" y="150">GPIO26</text><text x="55" y="185">GPIO25</text><text x="55" y="220">GPIO27</text><text x="55" y="255">GPIO33</text><text x="55" y="290">3V3</text><text x="55" y="325">5V / GND</text></g>
+<rect x="420" y="50" width="200" height="150" rx="12" fill="#e9f5ec" stroke="#27a86c" stroke-width="3"/><text x="520" y="78" text-anchor="middle" font-weight="900" font-size="16">INMP441 (マイク)</text>
+<g font-size="13"><text x="435" y="105">SCK ← GPIO26</text><text x="435" y="125">WS ← GPIO25</text><text x="435" y="145">SD → GPIO33</text><text x="435" y="165">VDD ← 3.3V · GND</text><text x="435" y="185" fill="#b3202a" font-weight="700">L/R → GND につなぐ</text></g>
+<rect x="420" y="230" width="200" height="140" rx="12" fill="#fde9f1" stroke="#e0508f" stroke-width="3"/><text x="520" y="258" text-anchor="middle" font-weight="900" font-size="16">MAX98357A (アンプ)</text>
+<g font-size="13"><text x="435" y="285">BCLK ← GPIO26</text><text x="435" y="305">LRC ← GPIO25</text><text x="435" y="325">DIN ← GPIO27</text><text x="435" y="345">VIN ← 5V · GND</text><text x="435" y="365" font-size="12" fill="#555">GAIN / SD ピンは未結線で OK</text></g>
+<g stroke-width="4" fill="none">
+<path d="M210,145 H330 V100 H420 M330,145 V280 H420" stroke="#1d6fd8"/>
+<path d="M210,180 H350 V120 H420 M350,180 V300 H420" stroke="#27a86c"/>
+<path d="M210,215 H370 V320 H420" stroke="#e0508f"/>
+<path d="M210,250 H390 V140 H420" stroke="#f2b233"/>
+</g>
+<rect x="660" y="230" width="170" height="140" rx="12" fill="#f4f4f4" stroke="#1f2430" stroke-width="2"/><text x="745" y="258" text-anchor="middle" font-weight="900">スピーカー φ20</text><text x="745" y="280" text-anchor="middle" font-size="12">(砲身の中)</text>
+<path d="M620,340 H660" stroke="#1f2430" stroke-width="4"/><text x="640" y="330" text-anchor="middle" font-size="11">SPK 2 線</text>
+<text x="40" y="395" font-size="13" fill="#444">GPIO26 と GPIO25 は 2 つの基板で共有 (分岐) する。GPIO27 と GPIO33 は 1 対 1。マイクは 3.3V、アンプは 5V</text>
+</svg>

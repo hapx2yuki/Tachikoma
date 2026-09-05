@@ -36,6 +36,7 @@
 .venv/bin/python tools/check_head_pod_clearance.py
 .venv/bin/python tools/check_pod_neck_strength.py
 .venv/bin/python tools/check_urdf.py              # 380 項目
+.venv/bin/python tools/check_ld220_cup.py         # LD-220MG 固定カップ (2026-09-05 追加, check_leg_assembly を内包)
 .venv/bin/pio run -d firmware
 ```
 
