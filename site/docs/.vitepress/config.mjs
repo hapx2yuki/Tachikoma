@@ -9,6 +9,7 @@ const sidebar = [
     collapsed: false,
     items: steps.filter(s => s.lane === l.id).map(s => ({ text: `${s.id.toUpperCase()} ${s.title}`, link: `/steps/${s.id}` }))
   })),
+  { text: 'パーツリスト (画像付き)', link: '/parts' },
   { text: '用語集', link: '/glossary' },
 ]
 
@@ -29,6 +30,7 @@ export default defineConfig({
     nav: [
       { text: 'ダッシュボード', link: '/' },
       { text: 'はじめに', link: '/guide/start' },
+      { text: 'パーツリスト', link: '/parts' },
       { text: '用語集', link: '/glossary' },
       { text: 'GitHub', link: 'https://github.com/hapx2yuki/Tachikoma' },
     ],

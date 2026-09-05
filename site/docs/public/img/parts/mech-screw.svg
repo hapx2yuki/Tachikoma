@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" font-family="'Zen Kaku Gothic New',sans-serif"><rect width="240" height="200" fill="#fff"/><rect x="110" y="40" width="20" height="16" rx="3" fill="#8b95a5"/><path d="M114,56 v100 l6,10 l6,-10 v-100 z" fill="#9aa3ad" stroke="#1f2430" stroke-width="1.5"/><g stroke="#1f2430" stroke-width="1.5"><path d="M114,64 h12"/>
+<path d="M114,74 h12"/>
+<path d="M114,84 h12"/>
+<path d="M114,94 h12"/>
+<path d="M114,104 h12"/>
+<path d="M114,114 h12"/>
+<path d="M114,124 h12"/>
+<path d="M114,134 h12"/>
+<path d="M114,144 h12"/></g><text x="120" y="190" text-anchor="middle" font-size="12">タッピングねじ</text></svg>

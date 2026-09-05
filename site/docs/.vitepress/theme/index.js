@@ -9,6 +9,7 @@ import Glossary from './components/Glossary.vue'
 import Checklist from './components/Checklist.vue'
 import Panel from './components/Panel.vue'
 import NextSteps from './components/NextSteps.vue'
+import PartsList from './components/PartsList.vue'
 
 export default {
   extends: DefaultTheme,
@@ -22,5 +23,6 @@ export default {
     app.component('Checklist', Checklist)
     app.component('Panel', Panel)
     app.component('NextSteps', NextSteps)
+    app.component('PartsList', PartsList)
   },
 }
