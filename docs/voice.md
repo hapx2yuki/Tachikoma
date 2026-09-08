@@ -36,11 +36,18 @@ LLM (対話) → TTS (音声合成) を経由して会話する。**運用は PT
 
 ## 1. iPhone インターネット共有への接続 (STA 設定)
 
-ESP32 は `WIFI_AP_STA` で動作し、**AP は常時維持**される (操作 UI の
-フォールバック。SSID `Tachikoma` / パスワードは config.h の `AP_PASS` (各自設定)、`http://192.168.4.1/`)。
-ブリッジがインターネット (OpenAI/Anthropic/ElevenLabs) に届く経路として、
-ESP32 を iPhone のインターネット共有 (テザリング) へ **STA として追加接続**
-させる。
+ESP32 は `WIFI_AP_STA` で起動する。操作 UI の AP は、書き込み前に
+`firmware/src/config.h` の `AP_PASS` を自分だけが知る 8〜63 文字の値へ変更した
+場合にだけ有効になる。リポジトリに置かれた値はプレースホルダー
+`change-me-8chars` なので、そのままでは AP を起動せず、`ap_ready=false`・状態
+`AP_UNCONFIGURED` となる。実運用値をリポジトリへコミットしないこと。
+
+最初の書き込みでは、まずローカルの `config.h` だけを編集して再ビルド・書き込み
+を行い、その後に AP `Tachikoma` (`http://192.168.4.1/`) へ接続する。AP を有効に
+できない状態ではこのアドレスは使えないため、設定済みの STA またはシリアル等の
+別経路を先に用意する。ブリッジがインターネット (OpenAI/Anthropic/ElevenLabs)
+へ届く経路として、ESP32 を iPhone のインターネット共有 (テザリング) へ
+**STA として追加接続**させる。
 
 1. iPhone の「設定」→「インターネット共有」を ON にする (Wi-Fi パスワードを
    確認しておく)。**iPhone 12 以降は「互換性を最大にする (Maximize
@@ -49,8 +56,9 @@ ESP32 を iPhone のインターネット共有 (テザリング) へ **STA と�
    (Web UI 上は「未接続」のままで原因表示は出ない)。ON にすると 2.4GHz 化
    され接続できる (確認日 2026-07-28, Apple 公式のインターネット共有設定
    項目)
-2. スマホ/PC で ESP32 の AP `Tachikoma` (パスワード = config.h の `AP_PASS`) に接続し、
-   `http://192.168.4.1/` を開く
+2. `AP_PASS` を変更して書き込んだ場合だけ、スマホ/PC で ESP32 の AP `Tachikoma`
+   (パスワード = 自分で設定した `AP_PASS`) に接続し、`http://192.168.4.1/` を開く。
+   プレースホルダーのまま書き込んだ場合、この AP 手順は利用できない
 3. Web UI の Wi-Fi 設定欄 (SSID / パスワード入力欄) に iPhone のテザリング
    SSID とパスワードを入力して保存する (`POST /wifi`, フォームパラメータ
    `ssid` / `pass`。ESP32 側で NVS に保存し即座に `WiFi.begin()` する)

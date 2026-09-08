@@ -97,6 +97,13 @@
       "sha256": "312173c78f14dce3eb0e735cbde6cb07fcc711abe7096ca5ab2936661786eb30"
     },
     {
+      "path": "docs/voice.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 16103,
+      "sha256": "e22b0dc51320d82000ae37c3e02ca28f7acf0172060b1b8cc1642997d5d84d38"
+    },
+    {
       "path": "docs/additional-printing.json",
       "role": "existing_public_document",
       "exists": true,
@@ -2555,7 +2562,7 @@
     "head_tracked_dependencies_available_in_composite_tree": true,
     "selected_paths_present_in_composite_tree": true,
     "composite_tree_missing_required_output_count": 1,
-    "source_test_pairs_self_contained_reason": "3組の直接列挙だけではsource closure全体を自己完結しないが、HEAD＋338選択pathのcomposite treeでbattery4/native3/generator49=49件を再現し、全てPASS。canonical motion-quality入力1件は意図的に除外。",
+    "source_test_pairs_self_contained_reason": "3組の直接列挙だけではsource closure全体を自己完結しないが、HEAD＋339選択pathのcomposite treeでbattery4/native3/generator49=49件を再現し、全てPASS。canonical motion-quality入力1件は意図的に除外。",
     "urdf_candidate_generated_stl_referenced_only": true,
     "print_first_output_stl_count": 37,
     "print_first_output_assembly_count": 3,
@@ -2567,7 +2574,7 @@
     "print_first_output_support_count": 3
   },
   "content_scan": {
-    "text_path_count": 202,
+    "text_path_count": 203,
     "text_status": "PASS_NO_VALUE_LEAK_FINDINGS",
     "text_findings": {},
     "binary_stl_path_count": 133,
@@ -2580,7 +2587,7 @@
       "order id",
       "postal code"
     ],
-    "text_scanned_path_count": 202,
+    "text_scanned_path_count": 203,
     "binary_status": "PASS_NO_VALUE_LEAK_FINDINGS"
   },
   "public_link_checks": {
@@ -3892,17 +3899,17 @@
     ]
   },
   "counts": {
-    "selected_path_count": 338,
-    "selected_total_bytes": 39577238,
-    "selected_total_mib": 37.74379539489746,
+    "selected_path_count": 339,
+    "selected_total_bytes": 39593341,
+    "selected_total_mib": 37.75915241241455,
     "source_dependency_path_count": 169,
-    "audit_and_document_path_count": 27,
+    "audit_and_document_path_count": 28,
     "battery_source_mesh_count": 1,
     "generated_candidate_path_count": 137,
     "generated_candidate_mesh_count": 129,
     "generated_candidate_total_bytes": 32775321,
     "role_counts": {
-      "existing_public_document": 21,
+      "existing_public_document": 22,
       "generated_candidate_assembly:print_first_output": 3,
       "generated_candidate_manifest": 1,
       "generated_candidate_mesh:generator49_missing_output": 13,
@@ -3955,8 +3962,8 @@
     "checked_on": "2026-09-09",
     "status": "COMPOSITE_TREE_GENERATOR49_PASS",
     "method": "一時GIT_INDEX_FILEへHEADをread-treeし、selected_filesのworktree内容だけを追加してwrite-tree、そのtreeをarchiveして検査。実indexは変更なし。",
-    "tree_hash": "8d5bdb99f1987f1174b543a2df9c75b08d18f647",
-    "selected_path_count": 338,
+    "tree_hash": "0a03a0cf3727fa6f80f328a32d866709d9d6fd2b",
+    "selected_path_count": 339,
     "selected_missing_from_composite_tree": [],
     "canonical_required_path_count": 53,
     "canonical_missing_from_composite_tree": [
@@ -3993,7 +4000,7 @@
       }
     ],
     "real_git_index_touched": false,
-    "reproduction_status": "HEAD tree plus 338 explicitly selected current paths; feet stage support outputs included; generator49 contract suite 49/49 PASS; canonical motion-quality input remains intentionally excluded."
+    "reproduction_status": "HEAD tree plus 339 explicitly selected current paths; feet stage support outputs included; generator49 contract suite 49/49 PASS; canonical motion-quality input remains intentionally excluded."
   },
   "updated_on": "2026-09-09",
   "selected_output_artifacts": {
