@@ -2,15 +2,15 @@
   "schema_version": 2,
   "record_type": "curated-publication-allowlist",
   "created_on": "2026-09-09",
-  "status": "WIP_REVIEW_ONLY_NO_EXTERNAL_WRITE",
+  "status": "WIP_PUBLISHED",
   "selection_rule": "公開対象は相対パスを個別列挙する。既存allowlistのsource/docs選択を保持し、現行print-first URDF（86 parts、80 mesh=visual56/collision24）と参照STL、body/legs/feetの印刷候補STL37枚＋assembly.json各1件、generator49不足出力（足部1枚は印刷候補と共有、XIAO候補12枚）、LD220治具STL3枚＋candidate.jsonを追加する。outputs/cache/private/raw購入データは再帰追加しない。",
   "selected_files": [
     {
       "path": "docs/audits/20260909-resume/README.md",
       "role": "new_audit_record",
       "exists": true,
-      "bytes": 20132,
-      "sha256": "7f9d9821690cd96738732ece8eaea20fa5d7aee8d5dd734bcd3c0e37d9e7fc86"
+      "bytes": 22086,
+      "sha256": "c288365eaedc591d902eca0314bfeae66cc7062c47fbd05b0ef3ded804345bd0"
     },
     {
       "path": "docs/audits/20260909-resume/github-issues-wip-comment-plan.md",
@@ -760,6 +760,20 @@
       "exists": true,
       "bytes": 6639,
       "sha256": "01b2b5b0988a925ab92e40529a95aa3eb1cc15ec020a6892494f3be0a6aac615"
+    },
+    {
+      "path": "tools/tests/test_print_first_cabin_storage.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 4821,
+      "sha256": "51c000ba3483a3d073be38766cfe4772793b8968a1f05d927071a7d4855be951"
+    },
+    {
+      "path": "tools/tests/test_print_first_gate_hardening.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 8396,
+      "sha256": "0a72aca072777a03b4c5434938709a428a9867449d767f33b3c4c78a2ed5c637"
     },
     {
       "path": "tools/tests/simulation_firmware_trace.cpp",
@@ -2457,6 +2471,13 @@
       "exists": true,
       "bytes": 4294,
       "sha256": "dfa494afdc6cdd5b137c053f24342a5ad38471460881215c34b1c27cf3f6f35b"
+    },
+    {
+      "path": "docs/audits/20260909-resume/github-publication-result.json",
+      "role": "new_audit_record",
+      "exists": true,
+      "bytes": 2522,
+      "sha256": "c2d7d773e58a79e6d4300845bb36dca02d057546bafc889495af181fc6ce2d85"
     }
   ],
   "selected_source_test_candidates": [
@@ -2489,8 +2510,11 @@
     }
   ],
   "existing_document_edits": {
-    "paths": [],
-    "reason": "今回の本文編集は新規WIP監査READMEとこのallowlistに限定。physics担当が更新するdocs/print-first.md、hardware/src/config.py、docs/assembly.mdは編集していない。"
+    "paths": [
+      "docs/audits/20260909-resume/README.md",
+      "docs/voice.md"
+    ],
+    "reason": "公開後追補としてREADMEへ外部反映の実結果を追記し、docs/voice.mdのAP_PASS未設定時の現行挙動を明示した。physics担当のdocs/print-first.md、hardware/src/config.py、docs/assembly.mdは編集していない。"
   },
   "explicit_exclusions": {
     "paths": [
@@ -2545,8 +2569,8 @@
     "candidate_generated_stl_count": 80,
     "candidate_generated_stl_referenced_only": false,
     "all_untracked_files_included": false,
-    "github_write_performed": false,
-    "git_stage_commit_push_performed": false,
+    "github_write_performed": true,
+    "git_stage_commit_push_performed": true,
     "latest_battery_evidence_selected": false,
     "latest_firmware_reverification_selected": false,
     "audit_evidence_summary_selected": true,
@@ -2562,7 +2586,7 @@
     "head_tracked_dependencies_available_in_composite_tree": true,
     "selected_paths_present_in_composite_tree": true,
     "composite_tree_missing_required_output_count": 1,
-    "source_test_pairs_self_contained_reason": "3組の直接列挙だけではsource closure全体を自己完結しないが、HEAD＋339選択pathのcomposite treeでbattery4/native3/generator49=49件を再現し、全てPASS。canonical motion-quality入力1件は意図的に除外。",
+    "source_test_pairs_self_contained_reason": "3組の直接列挙だけではsource closure全体を自己完結しないが、HEAD＋342選択pathのcomposite treeでbattery4/native3/generator49=49件を再現し、全てPASS。canonical motion-quality入力1件は意図的に除外。",
     "urdf_candidate_generated_stl_referenced_only": true,
     "print_first_output_stl_count": 37,
     "print_first_output_assembly_count": 3,
@@ -2571,10 +2595,19 @@
     "ld220_fixture_manifest_selected": true,
     "generator49_missing_output_required_count": 13,
     "generator49_missing_output_unique_selected_count": 12,
-    "print_first_output_support_count": 3
+    "print_first_output_support_count": 3,
+    "publication_readback_status": "PASS",
+    "publication_result_path": "docs/audits/20260909-resume/github-publication-result.json",
+    "publication_result_verified_at": "2026-09-08T19:12:30Z",
+    "source_closure_missing_count_observed_at": "2026-09-09T04:02:00+09:00",
+    "source_closure_missing_count_scope": "historical_allowlist_generation_snapshot_not_current_worktree",
+    "source_closure_missing_untracked_count_observed_at": "2026-09-09T04:02:00+09:00",
+    "source_closure_missing_untracked_count_scope": "historical_allowlist_generation_snapshot_not_current_worktree",
+    "source_closure_missing_untracked_count_note": "18は公開前allowlist生成時点の履歴値であり、現在の未追跡件数ではない。",
+    "source_closure_missing_count_note": "50は公開前allowlist生成時点の閉包差分であり、現在の未追跡件数ではない。"
   },
   "content_scan": {
-    "text_path_count": 203,
+    "text_path_count": 206,
     "text_status": "PASS_NO_VALUE_LEAK_FINDINGS",
     "text_findings": {},
     "binary_stl_path_count": 133,
@@ -2587,8 +2620,14 @@
       "order id",
       "postal code"
     ],
-    "text_scanned_path_count": 203,
-    "binary_status": "PASS_NO_VALUE_LEAK_FINDINGS"
+    "text_scanned_path_count": 206,
+    "binary_status": "PASS_NO_VALUE_LEAK_FINDINGS",
+    "intentional_fixture_findings": {
+      "tools/tests/test_print_first_gate_hardening.py": [
+        "absolute_workspace_path"
+      ]
+    },
+    "intentional_fixture_note": "tools/tests/test_print_first_gate_hardening.pyの/tmp出力先は危険な絶対パス拒否を検証する固定試験値で、公開環境値ではない。"
   },
   "public_link_checks": {
     "markdown_path_count": 20,
@@ -3176,7 +3215,7 @@
     "canonical_non_output_required_count": 52,
     "canonical_non_output_not_selected": [],
     "self_contained": false,
-    "required_action": "6件の直接列挙との差分50（未追跡18を含む）は閉包差分として記録済み。HEAD追跡のdata/model/hardware/stlは合成treeで利用可能と確認した。公開束単体の完全自己完結性は、意図的に除外した生成出力手渡しのためfalse。親の再生成後に現行候補・ソースSHAを再固定する。",
+    "required_action": "公開前allowlist生成時点（2026-09-09T04:02:00+09:00）の閉包差分50（未追跡18を含む）を履歴として記録済み。これは現在の未追跡件数ではない。HEAD追跡のdata/model/hardware/stlは合成treeで利用可能と確認した。公開束単体の完全自己完結性は、意図的に除外した生成出力手渡しのためfalse。",
     "source_closure": [
       {
         "path": "hardware/src/config.py",
@@ -3896,48 +3935,61 @@
     "head_tracked_publication_exclusions_note": "上記は個別allowlistからは除外するが、HEAD追跡物として仮合成treeに含まれ、依存欠落ではない。",
     "canonical_missing_from_composite_tree": [
       "outputs/print-first-20260905/final-simulation/cases/motion-quality-cases.json"
-    ]
+    ],
+    "missing_counts_history": [
+      {
+        "observed_at": "2026-09-09T04:02:00+09:00",
+        "scope": "allowlist_generation_before_external_publication",
+        "missing_count": 50,
+        "missing_untracked_count": 18,
+        "note": "公開前allowlist生成時点の観測値。現在の未追跡件数を表さない。"
+      }
+    ],
+    "missing_count_scope": "historical_allowlist_generation_snapshot_not_current_worktree",
+    "missing_untracked_count_scope": "historical_allowlist_generation_snapshot_not_current_worktree",
+    "missing_counts_observed_at": "2026-09-09T04:02:00+09:00",
+    "missing_counts_note": "missing_count=50、missing_untracked_count=18、missing_untracked_pathsは公開前allowlist生成時点の履歴値であり、現在の未追跡件数ではない。"
   },
   "counts": {
-    "selected_path_count": 339,
-    "selected_total_bytes": 39593341,
-    "selected_total_mib": 37.75915241241455,
-    "source_dependency_path_count": 169,
-    "audit_and_document_path_count": 28,
+    "selected_path_count": 342,
+    "selected_total_bytes": 39611034,
+    "selected_total_mib": 37.77602577209473,
+    "source_dependency_path_count": 165,
+    "audit_and_document_path_count": 29,
     "battery_source_mesh_count": 1,
     "generated_candidate_path_count": 137,
     "generated_candidate_mesh_count": 129,
     "generated_candidate_total_bytes": 32775321,
     "role_counts": {
+      "new_audit_record": 7,
       "existing_public_document": 22,
-      "generated_candidate_assembly:print_first_output": 3,
-      "generated_candidate_manifest": 1,
-      "generated_candidate_mesh:generator49_missing_output": 13,
-      "generated_candidate_mesh:print_first_output": 36,
-      "generated_candidate_mesh:urdf_reference": 80,
-      "generated_candidate_support:print_first_feet": 3,
-      "generated_candidate_urdf": 1,
-      "generated_fixture_manifest:ld220": 1,
-      "generated_fixture_mesh:ld220": 3,
-      "new_audit_record": 6,
+      "source_dependency:repository_context": 5,
+      "source_dependency:publication_allowlist": 2,
+      "source_dependency:print_first_generation": 27,
+      "source_dependency:mechanism_and_diagnostics": 40,
       "source_dependency:audit_orchestration": 3,
+      "source_dependency:print_first_contract_tests": 11,
       "source_dependency:audit_regression_tests": 10,
-      "source_dependency:firmware_contract_tests": 11,
       "source_dependency:firmware_host_tests": 10,
       "source_dependency:firmware_print_first": 12,
+      "source_dependency:issue_publication_plan": 11,
+      "source_dependency:publication_contract_tests": 8,
+      "source_dependency:focused_pair_regression": 1,
+      "source_dependency:firmware_contract_tests": 11,
+      "source_dependency:generator_static_python": 2,
       "source_dependency:firmware_runtime_headers": 3,
       "source_dependency:firmware_stub_closure": 9,
-      "source_dependency:focused_pair_regression": 1,
-      "source_dependency:generator_static_python": 2,
-      "source_dependency:issue_publication_plan": 11,
-      "source_dependency:mechanism_and_diagnostics": 40,
-      "source_dependency:print_first_contract_tests": 9,
-      "source_dependency:print_first_generation": 27,
-      "source_dependency:publication_allowlist": 2,
-      "source_dependency:publication_contract_tests": 8,
-      "source_dependency:repository_context": 5,
       "source_input_audit_record": 6,
-      "source_mesh_required_by_battery_test": 1
+      "source_mesh_required_by_battery_test": 1,
+      "generated_candidate_urdf": 1,
+      "generated_candidate_manifest": 1,
+      "generated_candidate_mesh:urdf_reference": 80,
+      "generated_candidate_mesh:print_first_output": 36,
+      "generated_candidate_mesh:generator49_missing_output": 13,
+      "generated_candidate_assembly:print_first_output": 3,
+      "generated_fixture_mesh:ld220": 3,
+      "generated_fixture_manifest:ld220": 1,
+      "generated_candidate_support:print_first_feet": 3
     },
     "source_input_audit_record_count": 6,
     "generated_candidate_urdf_path_count": 82,
@@ -3962,8 +4014,8 @@
     "checked_on": "2026-09-09",
     "status": "COMPOSITE_TREE_GENERATOR49_PASS",
     "method": "一時GIT_INDEX_FILEへHEADをread-treeし、selected_filesのworktree内容だけを追加してwrite-tree、そのtreeをarchiveして検査。実indexは変更なし。",
-    "tree_hash": "0a03a0cf3727fa6f80f328a32d866709d9d6fd2b",
-    "selected_path_count": 339,
+    "tree_hash": "0211823915129f6192dcdc150860f0681c1d18e1",
+    "selected_path_count": 342,
     "selected_missing_from_composite_tree": [],
     "canonical_required_path_count": 53,
     "canonical_missing_from_composite_tree": [
@@ -4000,7 +4052,7 @@
       }
     ],
     "real_git_index_touched": false,
-    "reproduction_status": "HEAD tree plus 339 explicitly selected current paths; feet stage support outputs included; generator49 contract suite 49/49 PASS; canonical motion-quality input remains intentionally excluded."
+    "reproduction_status": "HEAD tree plus 342 explicitly selected current paths; feet stage support outputs included; generator49 contract suite 49/49 PASS; canonical motion-quality input remains intentionally excluded."
   },
   "updated_on": "2026-09-09",
   "selected_output_artifacts": {
@@ -4123,6 +4175,32 @@
       "copied_from": "outputs/audits/20260909-resume/mouth-cannon-coacd-study-20260908T182529Z/public-summary.json",
       "status": "DIAGNOSTIC_ONLY",
       "formal_gate_changed": false
+    },
+    "github_publication_result": {
+      "path": "docs/audits/20260909-resume/github-publication-result.json",
+      "role": "new_audit_record",
+      "status": "PASS",
+      "verified_at": "2026-09-08T19:12:30Z",
+      "includes": "Issue107件の追記、旧コメント16件保持、Project11件追加、依存18件追加、親87件保持、循環0の読み戻し"
     }
+  },
+  "publication_history": {
+    "status": "WIP_PUBLISHED",
+    "verified_at": "2026-09-08T19:12:30Z",
+    "result_path": "docs/audits/20260909-resume/github-publication-result.json",
+    "draft_pr_url": "https://github.com/hapx2yuki/Tachikoma/pull/111",
+    "public_commit_history": [
+      {
+        "sha": "14c372880507462f7eb181a1b75a0ad7b217ccb5",
+        "role": "公開候補の証拠commit A",
+        "self_reference": false
+      },
+      {
+        "sha": "a8156fbfc7539f35f0fbaad25808c44f98247540",
+        "role": "AP設定説明の公開追補commit",
+        "self_reference": false
+      }
+    ],
+    "self_reference_policy": "このallowlistを含む今回の追補commit SHAは自己参照を避けるため記録しない。上記の到達履歴を公開入力として用いる。"
   }
 }

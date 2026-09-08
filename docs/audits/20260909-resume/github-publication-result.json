@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "record_type": "github-publication-readback-summary",
+  "status": "PASS",
+  "verified_at": "2026-09-08T19:12:30Z",
+  "repository": "hapx2yuki/Tachikoma",
+  "pull_request": "https://github.com/hapx2yuki/Tachikoma/pull/111",
+  "public_commit": "14c372880507462f7eb181a1b75a0ad7b217ccb5",
+  "public_readme": {
+    "path": "docs/audits/20260909-resume/README.md",
+    "blob_sha": "87cb5fa2a97acb150d18c9c34b2796b8e3934144"
+  },
+  "inputs": {
+    "wip_plan": {
+      "path": "docs/audits/20260909-resume/github-issues-wip-comment-plan.json",
+      "sha256": "5b4b8cf7c160e70a83f4f8733cc8da0c53db7ac5122f577a074a5fc0086ebdaa"
+    },
+    "safe_snapshot": {
+      "path": "outputs/audits/20260909-resume/publication-refresh-20260908T175907Z/github-safe-snapshot.json",
+      "sha256": "10b921584b3256071a771ee98124114251610b1dae5d66e16f72b28f829f152f"
+    },
+    "relations_snapshot": {
+      "path": "outputs/audits/20260909-resume/publication-refresh-20260908T175907Z/github-relations.json",
+      "sha256": "4e023266516bdeeeacd3dec9113c96a7cf191d723641dde4056aaa5b9b0d6745"
+    }
+  },
+  "issues": {
+    "issue_count": 107,
+    "number_range": [
+      3,
+      109
+    ],
+    "wip_comments_appended": 107,
+    "wip_markers_read_back": 107,
+    "total_comments_after": 123,
+    "existing_comments_before": 16,
+    "existing_comments_preserved": true,
+    "issue_metadata_preserved": true,
+    "comment_mode": "append_only"
+  },
+  "project_2": {
+    "item_count_after": 107,
+    "existing_item_count_before": 96,
+    "existing_items_preserved": true,
+    "new_items_added": 11,
+    "new_issue_numbers": [
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109
+    ],
+    "status_lane_source": "tools/issues/issue_publication_data.py"
+  },
+  "relations": {
+    "live_blocked_by_before": 156,
+    "blocked_by_added": 18,
+    "blocked_by_after": 174,
+    "live_parent_before": 87,
+    "live_parent_after": 87,
+    "existing_blocked_by_preserved": true,
+    "cycle_count": 0
+  },
+  "external_write": {
+    "issue_comments_posted": true,
+    "project_updated": true,
+    "dependencies_updated": true,
+    "issue_bodies_changed": false,
+    "issue_titles_states_labels_changed": false,
+    "git_index_changed": false
+  },
+  "limits": [
+    "WIP追記とProject/依存の読み戻し結果であり、機構認定・量産許可・実機完成を示さない。",
+    "厳密な動的物理・実機確認は別の受入条件である。"
+  ]
+}
