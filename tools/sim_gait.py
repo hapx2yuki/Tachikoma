@@ -3,14 +3,15 @@
 
 検証項目:
  1. IK→FK 往復誤差 (作業空間グリッド)
- 2. 歩容の全脚軌道が IK 可到達か (速度指令 × 体高 105-130 の全域スイープ)
- 3. 静的トルク概算 (総重量 3.0kg 想定 (腕込み), DS3218 20kg·cm 級)
+ 2. 歩容の全脚軌道が IK 可到達か (速度指令 × 体高 110-130 の全域スイープ)
+ 3. 静的トルク概算 (総重量 3.0kg の設計想定。旧DS3218由来の数値は履歴比較)
  4. 静的安定マージン (重心シフト込みの支持多角形と CG の距離)
-出力: docs/preview_gait.png (足先軌道の可視化)
+出力: ``--output`` で指定した画像（省略時は一意な一時ファイル）
 """
-import re
 import sys
 import argparse
+import os
+import tempfile
 
 import numpy as np
 import matplotlib
@@ -22,98 +23,54 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "hardware" / "src"))
 import config as _C  # noqa: E402
+from config_contract import (  # noqa: E402
+    assert_firmware_matches_config,
+    canonical_values,
+)
 
-# ---- firmware/src/config.h と一致させる定数
-# 寸法系は config.py を単一の正とし、firmware 側は下の突合チェックで検証する
-# (複製定数の drift 事故防止 — ARM_REACH 73/79 の再発防止と同じ方式)
+# ---- config.py を正本にした firmware 契約
+# firmware/src/config.h から値を読んで Python 側の既定値にすることはしない。
+# 先に config.py の正本と一方向に突合し、差分があればシミュレーションを
+# 開始しない。これにより、firmware と Python の同じ誤値を自己比較する穴を塞ぐ。
+_FW_TEXT = (ROOT / "firmware" / "src" / "config.h").read_text(encoding="utf-8")
+assert_firmware_matches_config(_FW_TEXT)
+_CANONICAL = canonical_values()
+_CS = _CANONICAL["scalars"]
+_CA = _CANONICAL["arrays"]
+
 # TIBIA は IK/歩容専用の実効長 (TIBIA_LEN_GAIT = 物理 TIBIA_LEN 135 +
-# FOOT_GROUND_OFFSET 18.6 = 153.6 — foot_pad 底を SWAY込みスタンス全域で
-# world z=0 を下回らないよう校正した 2026-07-29 の接地連鎖修正。config.py
-# 側のコメント参照。物理ジオメトリ生成 (make_leg.py 等) は引き続き
-# C.TIBIA_LEN=135 を使う、別物)
+# FOOT_GROUND_OFFSET 20.98)。物理ジオメトリ生成 (make_leg.py 等) は引き続き
+# C.TIBIA_LEN=135 を使うため、実体寸法と接地点の等価長を混同しない。
 COXA, FEMUR, TIBIA = _C.COXA_LEN, _C.FEMUR_LEN, _C.TIBIA_LEN_GAIT
 _LEGS = ["FR", "FL", "RL", "RR"]
 MOUNT = np.radians([_C.LEG_ANGLES[k] for k in _LEGS])
 STANCE = np.radians([_C.STANCE_ANGLES[k] for k in _LEGS])
 ORIGIN = np.array([_C.HIPS[k] for k in _LEGS])
-LIM_YAW, LIM_PITCH, LIM_KNEE = 40.0, (-45.0, 55.0), 44.0  # LIM_YAW は下で突合
-LIM_YAW_IN = 17.5      # 45°ペア内側ヨー 単側 (firmware LIM_YAW_IN と突合)
-LIM_YAW_IN_SUM = 26.0  # 同 ペア同時内側の和 (firmware LIM_YAW_IN_SUM と突合)
-LIM_YAW_POD = 30.0     # 後脚ポッド側ヨー (firmware LIM_YAW_POD と突合)。2026-09-04 22→30
-                       # (check_leg_assembly.py の実メッシュ掃引で接触開始 34°)
-YAW_POD_SIGN = np.array([0, 0, +1, -1])
-YAW_IN_SIGN = np.array([-1, +1, -1, +1])
-BODY_H, STANCE_R, STEP_H = 115.0, _C.STANCE_R, 18.0
-_fw = (ROOT / "firmware" / "src" / "config.h").read_text()
-for _name, _py in (("HIP_R", _C.HIP_R), ("STANCE_R", STANCE_R),
-                   ("LIM_YAW_IN", LIM_YAW_IN), ("LIM_YAW_IN_SUM", LIM_YAW_IN_SUM),
-                   ("LIM_YAW_POD", LIM_YAW_POD), ("LIM_YAW", LIM_YAW)):
-    _v = float(re.search(rf"{_name}\s*=\s*([\d.]+)f", _fw).group(1))
-    assert abs(_v - _py) < 0.05, \
-        f"firmware {_name}={_v} が config.py/sim の {_py} と不一致 (要同期)"
-for _arr, _py in (("LEG_MOUNT_DEG", np.degrees(MOUNT)),
-                  ("STANCE_DEG", np.degrees(STANCE))):
-    _m = re.search(rf"{_arr}\[4\]\s*=\s*\{{([^}}]+)\}}", _fw).group(1)
-    _v = [float(s) for s in re.findall(r"([\d.]+)f", _m)]
-    assert np.allclose(_v, _py, atol=0.05), \
-        f"firmware {_arr}={_v} が config.py の {list(_py)} と不一致 (要同期)"
-_m = re.findall(r"\{([+-][\d.]+)f,\s*([+-][\d.]+)f\}", _fw)
-_fw_origin = np.array([[float(a), float(b)] for a, b in _m[:4]])
-assert np.allclose(_fw_origin, ORIGIN, atol=0.05), \
-    f"firmware LEG_ORIGIN={_fw_origin.tolist()} が config.py の {ORIGIN.tolist()} と不一致"
-BODY_H_RANGE = (110.0, 130.0)   # firmware BODY_H_MIN/MAX と突合 (2026-09-04 105→110)
-MAX_STEP, MAX_TURN = 30.0, np.radians(12.0)
-PHASE_OFF, DUTY = [0.25, 0.50, 0.75, 0.0], 0.75  # 遊脚順 RL→FL→FR→RR (回転順)
-_fwtxt = (Path(__file__).resolve().parent.parent /
-          "firmware" / "src" / "config.h").read_text()
-_m = re.search(r"SWAY_MM\[4\]\s*=\s*\{([^}]+)\}", _fwtxt).group(1)
-SWAY_MM = np.array([float(s) for s in re.findall(r"([\d.]+)f", _m)])   # 脚ごと {FR,FL,RL,RR}
-assert SWAY_MM.shape == (4,), f"firmware SWAY_MM[4] が読めない: {_m}"
-# 中立足先パターンのオフセットと全機体重心 (config.py が正、firmware と突合)
+LIM_YAW = _CS["LIM_YAW"]
+LIM_PITCH = (_CS["LIM_PITCH_UP"], _CS["LIM_PITCH_DN"])
+LIM_KNEE = _CS["LIM_KNEE"]
+LIM_YAW_IN = _CS["LIM_YAW_IN"]
+LIM_YAW_IN_SUM = _CS["LIM_YAW_IN_SUM"]
+LIM_YAW_POD = _CS["LIM_YAW_POD"]
+YAW_POD_SIGN = np.array(_CA["YAW_POD_SIGN"], dtype=int)
+YAW_IN_SIGN = np.array(_CA["YAW_IN_SIGN"], dtype=int)
+BODY_H = _CS["BODY_H_DEF"]
+STANCE_R = _CS["STANCE_R"]
+STEP_H = _CS["STEP_H"]
+BODY_H_RANGE = (_CS["BODY_H_MIN"], _CS["BODY_H_MAX"])
+MAX_STEP = _CS["MAX_STEP"]
+MAX_TURN = np.radians(_CS["MAX_TURN_DEG"])
+PHASE_OFF = list(_CA["PHASE_OFF"])
+DUTY = _CS["DUTY"]  # 遊脚順 RL→FL→FR→RR (回転順)
+SWAY_MM = np.array(_CA["SWAY_MM"], dtype=float)  # 脚ごと {FR,FL,RL,RR}
+SWAY_LEAD = _CS["SWAY_LEAD"]
+D_KNEE_MAX = _CS["D_KNEE_MAX"]
+D_KNEE_MIN = _CS["D_KNEE_MIN"]
+# 中立足先パターンのオフセットと全機体重心 (config.py が正)
 STANCE_OFF = np.array(_C.STANCE_OFF_XY, float)
 CG_XY = np.array(_C.CG_XY, float)
-for _name, _py in (("STANCE_OFF_X", STANCE_OFF[0]), ("STANCE_OFF_Y", STANCE_OFF[1])):
-    _v = float(re.search(rf"{_name}\s*=\s*(-?[\d.]+)f", _fwtxt).group(1))
-    assert abs(_v - _py) < 0.05, f"firmware {_name}={_v} が config.py の {_py} と不一致 (要同期)"
-SWAY_LEAD = float(re.search(r"SWAY_LEAD\s*=\s*([\d.]+)f", _fwtxt).group(1))
-D_KNEE_MAX = float(re.search(r"D_KNEE_MAX\s*=\s*([\d.]+)f", _fwtxt).group(1))
-D_KNEE_MIN = float(re.search(r"D_KNEE_MIN\s*=\s*([\d.]+)f", _fwtxt).group(1))
-# 突合: D_KNEE_MAX/MIN はリンク長と膝リミットから決まる導出値
-_d_expect = np.sqrt(FEMUR**2 + TIBIA**2
-                    + 2 * FEMUR * TIBIA * np.cos(np.radians(46.0))) - 0.5
-assert abs(D_KNEE_MAX - _d_expect) < 0.1, \
-    f"firmware D_KNEE_MAX={D_KNEE_MAX} が導出値 {_d_expect:.1f} と不一致"
-_d_expect2 = np.sqrt(FEMUR**2 + TIBIA**2
-                     + 2 * FEMUR * TIBIA * np.cos(np.radians(134.0))) + 0.5
-assert abs(D_KNEE_MIN - _d_expect2) < 0.1, \
-    f"firmware D_KNEE_MIN={D_KNEE_MIN} が導出値 {_d_expect2:.1f} と不一致"
-# 突合: 複製している幾何/歩容定数一式 (レビュー指摘: COXA 等が bare literal
-# だと firmware 側変更を検出できない — ARM_REACH 73/79 と同型の drift 穴)。
-# TIBIA_LEN は 2026-07-29 以降 config.py の TIBIA_LEN_GAIT (=物理135+接地
-# オフセット) と一致させる規約 — foot_pad 底の実測値が変わったら config.py
-# 側 (FOOT_GROUND_OFFSET) を更新し、ここは自動的に追従する
-# (tools/check_leg_assembly.py が実ビルド STL から実測して drift を検査)
-for _name, _py in (("COXA_LEN", COXA), ("FEMUR_LEN", FEMUR), ("TIBIA_LEN", TIBIA),
-                   ("LIM_PITCH_UP", -45.0), ("LIM_PITCH_DN", 55.0),
-                   ("LIM_KNEE", 44.0), ("BODY_H_MIN", BODY_H_RANGE[0]),
-                   ("BODY_H_MAX", BODY_H_RANGE[1]), ("STEP_H", 18.0),
-                   ("MAX_STEP", 30.0), ("MAX_TURN_DEG", 12.0), ("DUTY", 0.75)):
-    _v = float(re.search(rf"{_name}\s*=\s*(-?[\d.]+)f", _fwtxt).group(1))
-    assert abs(_v - _py) < 0.05, \
-        f"firmware {_name}={_v} が sim の {_py} と不一致 (要同期)"
-# 突合: 腕マウント定数 (2026-07-28 Head_Bottom 実ソケット移設)。ARM_MOUNT_X_MM/
-# ARM_MOUNT_YAW_DEG が config.py の ARM_MOUNT_XY[0]/ARM_MOUNT_YAW_DEG と
-# drift していないか (ARM_REACH 73/79 事故と同型の穴を塞ぐ)
-for _name, _py in (("ARM_MOUNT_X_MM", _C.ARM_MOUNT_XY[0]),
-                   ("ARM_MOUNT_YAW_DEG", _C.ARM_MOUNT_YAW_DEG)):
-    _v = float(re.search(rf"{_name}\s*=\s*(-?[\d.]+)f", _fwtxt).group(1))
-    assert abs(_v - _py) < 0.05, \
-        f"firmware {_name}={_v} が config.py の {_py:.1f} と不一致 (要同期)"
-_m = re.search(r"PHASE_OFF\[4\]\s*=\s*\{([^}]+)\}", _fwtxt).group(1)
-_v = [float(s) for s in re.findall(r"([\d.]+)f", _m)]
-assert _v == [0.25, 0.50, 0.75, 0.0], f"firmware PHASE_OFF={_v} が sim と不一致"
 LIFT_EPS = 1.0   # 足上げ高さがこれ未満なら接地扱い (TPU の潰れ相当)
-TOTAL_KG = 3.0   # 実測前の設計想定 (STD サーボ+腕込み, filament_calc 実行値ベース・切上げ)
+TOTAL_KG = 3.0   # 実測前の設計想定。旧DS3218由来の定格比較は履歴であり採用値ではない。
 
 
 def leg_ik(x, y, z):
@@ -325,8 +282,8 @@ def main(output=None):
     #      膝 = F·|foot_r-knee_r| の最悪値を取る。2026-09-04 (S-02): 旧実装は
     #      1 点 (FR, phase 0.3, vx=1)・「最悪脚 40%」仮定で 8.92 kgf·cm と報告して
     #      いたが、全域では 18 kgf·cm 級 (重心が支持三角形の辺に寄る瞬間は 1 脚に
-    #      1.6kgf 以上が乗る)。DS3218 の 6V 実力とほぼ同水準 — L-02 ベンチ試験の
-    #      荷重条件はこの値で決める
+    #      1.6kgf 以上が乗る)。旧DS3218の6V比較値とほぼ同水準だが、現行候補へ
+    #      定格を流用しない — L-02ベンチ試験の荷重条件はこのホスト計算値で決める
     w_hip, w_knee, w_load, w_at = 0.0, 0.0, 0.0, None
     for cmd in EVAL_CMDS:
         for phase in np.linspace(0, 1, 200, endpoint=False):
@@ -392,7 +349,12 @@ def main(output=None):
     ax2.set_title("stability margin (mm) vs phase"); ax2.legend(fontsize=8)
     ax2.grid(alpha=0.3)
     fig.tight_layout()
-    out = Path(output) if output else ROOT / "docs" / "preview_gait.png"
+    if output is None:
+        fd, temp_name = tempfile.mkstemp(prefix="tachikoma-sim-gait-", suffix=".png")
+        os.close(fd)
+        out = Path(temp_name)
+    else:
+        out = Path(output)
     out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=110)
     plt.close(fig)

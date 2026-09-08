@@ -16,7 +16,7 @@ int main() {
   while (std::getline(std::cin,line)) {
     std::istringstream input(line);
     if (!(input >> dt >> vx >> vy >> wz)) return 2;
-    float height=BODY_H_DEF; input >> height; gait.bodyH=height;
+    float height=TK_BODY_H_DEF; input >> height; gait.bodyH=height;
     LegCmd target[4] = {};
     gait.update(dt, vx, vy, wz, target);
     output.update(dt, target);

@@ -18,6 +18,7 @@ robot_meshes(dress=True) が実装する FK・パーツ→リンク対応を「�
 from __future__ import annotations
 
 import json
+import hashlib
 import shutil
 import sys
 import tempfile
@@ -42,6 +43,10 @@ from make_visuals import (rot, trans, load, STL, MODEL, KIT_PLACEMENTS,  # noqa:
 OUT = ROOT / "hardware" / "urdf"
 MESH_DIR = OUT / "meshes"
 MM = 0.001  # mm -> m
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 # ============================================================ firmware 定数の直接読取
@@ -111,9 +116,23 @@ def _arm_pitch_dn():
     return pz + 2.5 + (PA["W"] / 2 + 2.5) - 0.1
 
 
+def arm_mount_xy() -> tuple[float, float]:
+    """腕ヨー軸の印刷優先移設を含む取付中心を返す。
+
+    既存構成では ``ARM_MOUNT_XY`` をそのまま使う。print-first では
+    腕サーボケースと前脚coxaの接触を避けるため、同じワールドY移設を
+    URDF/FK・サーボケース・シャーシ生成で共有する。値は候補であり、
+    実機の腕可動範囲と頭下殻の適合は未確認。
+    """
+    mx, my = C.ARM_MOUNT_XY
+    if getattr(C, "PRINT_FIRST_ACTIVE", False):
+        my += float(C.PRINT_FIRST.get("arm_mount_y_offset", 0.0))
+    return float(mx), float(my)
+
+
 def arm_yaw_frame_r(q: dict) -> np.ndarray:
     ay = q.get("arm_r_yaw", 0.0)
-    mx, my = C.ARM_MOUNT_XY
+    mx, my = arm_mount_xy()
     T0 = trans(mx, my, ZB - 2.0)
     return T0 @ rot(90 - C.ARM_MOUNT_YAW_DEG - ay, "z")
 
@@ -561,7 +580,7 @@ def validate_input_parts(parts: dict):
 # とは僅かにズレる — 意匠シェルのように壁が薄く infill が低いパーツほど
 # 実際は表面寄りに COM があるはずで、ここは簡略化の一つ。docs/urdf.md に
 # 明記する)。
-RHO = {"PLA": 1.24, "PETG": 1.27, "TPU": 1.21}   # g/cm3 (tools/filament_calc.py と同一)
+RHO = dict(C.MATERIAL_DENSITY_G_CM3)   # g/cm3; hardware/src/config.py が単一情報源
 
 # 自作パーツ (hardware/stl) の (材料, 壁厚mm, インフィル) — tools/filament_calc.py
 # の new_parts 辞書からの転記 (出典: 同ファイル)。ここに無い名前は KIT 由来
@@ -710,7 +729,7 @@ def leg_servo_items(leg: str):
 
 def arm_servo_frames(tag: str):
     sx = -1.0 if tag == "l" else 1.0
-    mx, my = C.ARM_MOUNT_XY
+    mx, my = arm_mount_xy()
     yaw_frame = trans(sx * mx, my, ZB + C.CHASSIS_T + C.ARM_BOSS_H) @ rot(90, "z") @ rot(180, "x")
     mirror = np.diag([sx, 1., 1., 1.])
     pitch_frame = mirror @ trans(20., 0, -_arm_pitch_dn()) @ rot(-90, "x")
@@ -844,12 +863,22 @@ def build_collisions(parts: dict) -> dict:
     (Head_/Cabin_/Mouth_/それ以外=シャーシ) でブロック分けする。
     """
     out: dict[str, list[trimesh.Trimesh]] = {}
-    for link, items in parts.items():
+    # URDF の質量項へは重複して加えず、collision だけへ同じ占有候補を
+    # 一度追加する。print-first の exact checker/sim_collision と同じ
+    # ``A.component_meshes`` / XIAO occupancy を使用する。
+    collision_parts = {link:list(items) for link,items in parts.items()}
+    if getattr(C, "PRINT_FIRST_ACTIVE", False):
+        from print_first_assembly import component_meshes, xiao_occupancy_meshes
+        collision_parts["base_link"].extend(component_meshes())
+        collision_parts["eye_pod_camera"].extend(xiao_occupancy_meshes())
+    for link, items in collision_parts.items():
         if not items:
             continue
         if link != "base_link":
             meshes = [m for (m, c, n) in items]
-            if link.endswith("_tibia") and not any(n == 'foot_pad' for _, _, n in items):
+            if (link.endswith("_tibia")
+                    and not getattr(C, "PRINT_FIRST_ACTIVE", False)
+                    and not any(n == 'foot_pad' for _, _, n in items)):
                 fp = load("foot_pad")
                 fp.apply_transform(trans(0, 0, -C.TIBIA_LEN))
                 meshes = meshes + [fp]
@@ -1009,7 +1038,7 @@ def build_urdf(parts: dict, mass_items: dict, vis_files: dict, col_files: dict) 
 
 
 # アクチュエータ effort/velocity 上限 (docs/urdf.md に出典・UNVERIFIED区分を記載)。
-# メーカー端点と運用電圧はconfigへ集約。内挿は計算仮定で、購入個体の
+# メーカー端点と運用電圧はconfigへ集約。内挿は計算仮定で、対象個体の
 # 同定・連続トルク・電圧適合を保証しない。目の数値は従来の未実測仮定。
 def servo_limits_at_voltage(voltage):
     def interp(points):
@@ -1036,11 +1065,91 @@ for _side in ("r", "l"):
         ACTUATOR_LIMITS[f"arm_{_side}_{_j}"] = _operating_limits['arm']
 
 
-def write_manifest(parts: dict, out: Path | None = None):
+_ACTIVE_PRINT_FIRST_CABIN_STORAGE_RECORDER = None
+
+
+def _print_first_cabin_storage_policy_record():
+    """Return the recorder bound by the active print-first context.
+
+    Running ``tools/print_first_assembly.py`` directly causes
+    ``make_print_first_leg`` to import a second copy of that file under its
+    normal module name.  Looking through ``sys.modules`` can therefore select
+    an empty recorder before the ``__main__`` context has populated its
+    accounting.  ``print_first_assembly.context`` binds the active callback
+    for the duration of collection and restores it on exit.
+    """
+    recorder = _ACTIVE_PRINT_FIRST_CABIN_STORAGE_RECORDER
+    if not callable(recorder):
+        if getattr(C, "PRINT_FIRST_ACTIVE", False):
+            raise RuntimeError(
+                "print-first manifest serialization requires the active "
+                "cabin storage recorder bound by print_first_assembly.context"
+            )
+        raise RuntimeError(
+            "print-first cabin storage recorder is unavailable outside its context"
+        )
+    record = recorder()
+    runtime = record.get("runtime") if isinstance(record, dict) else None
+    if (not isinstance(runtime, dict)
+            or runtime.get("status") == "NOT_COLLECTED"
+            or "collection_mode" not in runtime
+            or "source_part_count" not in runtime
+            or "mass_rows" not in runtime):
+        raise RuntimeError(
+            "active print-first cabin storage recorder has no collected runtime accounting"
+        )
+    return record
+
+
+def write_manifest(parts: dict, out: Path | None = None, *,
+                   mesh_reference_count: int | None = None,
+                   visual_mesh_count: int | None = None,
+                   collision_mesh_count: int | None = None,
+                   mesh_files: list[dict] | None = None):
     manifest = {link: [n for (m, c, n) in items] for link, items in parts.items()}
     total = sum(len(v) for v in manifest.values())
+    record = {
+        "schema_version": 1,
+        "status": "SERIALIZED_PARTS_MANIFEST",
+        "total_parts": total,
+        "links": manifest,
+    }
+    if getattr(C, "PRINT_FIRST_ACTIVE", False):
+        # Keep the assembly policy beside the actual link list.  The helper
+        # is imported only after collection has populated its runtime mass
+        # accounting, avoiding a circular import during module start-up.
+        record["print_first_cabin_storage"] = _print_first_cabin_storage_policy_record()
+    if mesh_reference_count is not None:
+        record["mesh_reference_count"] = int(mesh_reference_count)
+    if visual_mesh_count is not None:
+        record["visual_mesh_count"] = int(visual_mesh_count)
+    if collision_mesh_count is not None:
+        record["collision_mesh_count"] = int(collision_mesh_count)
+    if mesh_files is not None:
+        record["mesh_files"] = mesh_files
+    source_paths = [Path(__file__).resolve(), ROOT / "hardware/src/config.py"]
+    if getattr(C, "PRINT_FIRST_ACTIVE", False):
+        source_paths.extend([
+            ROOT / "tools/print_first_assembly.py",
+            ROOT / "hardware/src/make_print_first_body.py",
+            ROOT / "hardware/src/make_print_first_leg.py",
+            ROOT / "hardware/src/make_print_first_feet.py",
+            ROOT / "docs/audits/20260905-round2/xiao-retention-plan.json",
+        ])
+    source_rows = [
+        {
+            "path": path.relative_to(ROOT).as_posix(),
+            "exists": path.is_file(),
+            "sha256": sha256(path) if path.is_file() else None,
+        }
+        for path in source_paths
+    ]
+    record["source_files"] = source_rows
+    record["source_sha256"] = {
+        row["path"]: row["sha256"] for row in source_rows
+    }
     ((OUT if out is None else out) / "parts_manifest.json").write_text(
-        json.dumps({"total_parts": total, "links": manifest}, ensure_ascii=False, indent=2))
+        json.dumps(record, ensure_ascii=False, indent=2) + "\n")
     return total
 
 
@@ -1067,7 +1176,28 @@ def save_output_bundle(parts: dict, mass_items: dict, visuals: dict, collisions:
         pretty=minidom.parseString(xml_str).toprettyxml(indent='  ')
         pretty='\n'.join(line for line in pretty.split('\n') if line.strip())
         (stage/'tachikoma.urdf').write_text(pretty+'\n')
-        count=write_manifest(parts,stage)
+        visual_mesh_count = sum(len(items) for items in vis_files.values())
+        collision_mesh_count = sum(len(items) for items in col_files.values())
+        mesh_records = []
+        for kind, files in (
+            ("visual", [f for items in vis_files.values() for f, _ in items]),
+            ("collision", [f for items in col_files.values() for f in items]),
+        ):
+            for name in files:
+                path = stage / "meshes" / name
+                mesh_records.append({
+                    "path": (Path("hardware/urdf-print-first") / "meshes" / name).as_posix(),
+                    "exists": path.is_file(),
+                    "sha256": sha256(path) if path.is_file() else None,
+                    "kind": kind,
+                })
+        count=write_manifest(
+            parts, stage,
+            mesh_reference_count=visual_mesh_count + collision_mesh_count,
+            visual_mesh_count=visual_mesh_count,
+            collision_mesh_count=collision_mesh_count,
+            mesh_files=mesh_records,
+        )
         previous=Path(temp)/'previous'
         if OUT.exists():OUT.rename(previous)
         try:

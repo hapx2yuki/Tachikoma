@@ -1,4 +1,7 @@
-"""96課題の作業計画。sync_github_issues.py が本文・ラベル・依存を同期する。
+"""#3--#109（107課題）の作業計画。
+
+sync_github_issues.py が本文・ラベル・依存を同期し、追加11件は
+``issue_publication_data.py`` の番号付き定義から復元する。
 
 個別の現在地/次作業/完了条件は audit_plan_data.py が正。
 blocked_by は課題全体の完了が必要な条件だけを表す。混載プレートの一部引渡しや
@@ -8,10 +11,16 @@ blocked_by は課題全体の完了が必要な条件だけを表す。混載プ
 from copy import deepcopy
 from audit_plan_data import (BODY_RESOURCE_KEYS, CLOSED_KEYS, DEPENDENCY_UPDATES, LABELS, ORIGINAL_METADATA,
                              PUBLISHED_EVIDENCE, PURCHASE_LABELS, REVIEW, TITLE_UPDATES)
+from issue_publication_data import (
+    EXTRA_ISSUES,
+    PROJECT_LANES,
+    PROJECT_STATUSES,
+    validate_reference_cycles,
+)
 
 REPO = 'hapx2yuki/Tachikoma'
 MARKER = 'tachikoma-key'
-BRANCH = 'codex/audit-20260905'
+BRANCH = 'codex/print-first-20260905'
 BASE = f'https://github.com/{REPO}/blob/{BRANCH}'
 D = f'{BASE}/docs'
 MILESTONES = [
@@ -24,7 +33,7 @@ MILESTONES = [
 ]
 FOOTER = (
     f'\n---\n運用ルール: [CONTRIBUTING.md]({BASE}/CONTRIBUTING.md) / '
-    f'[全体計画]({D}/build_plan.md) / [96課題の見直し記録]({D}/issues-audit-20260905.md)。'
+    f'[全体計画]({D}/build_plan.md) / [107課題の見直し記録]({D}/issues-audit-20260905.md)。'
     '着手時に対象部品・使用版・担当と占有する本体/プリンタを記録する。'
     '完了時はこの課題の確認範囲に合う証拠を添付する。実物の試験は写真・測定値・動画、'
     'ソフト修正は再現・回帰・ビルドを区別し、既存担当/コメントを保持する。'
@@ -88,10 +97,43 @@ for _spec in ISSUES:
     _spec['body'] = _body(_spec)
 
 
+def _extra_body(spec: dict) -> str:
+    """Build a body for a newly-created extra Issue without private history."""
+    deps = ""
+    if spec["blocked_by"]:
+        deps = "\n\n正式な依存方針: " + ", ".join(f"`{key}`" for key in spec["blocked_by"]) + "。"
+    return (
+        "## 現在地（2026-09-06 追加11件）\n\n"
+        f"{spec['progress']}。\n\n"
+        "## 完了条件と根拠\n\n"
+        f"- [ ] {spec['acceptance_condition']}。\n\n"
+        "## 次の具体作業\n\n"
+        f"{spec['next_step']}。\n\n"
+        f"Project初期方針: Status={spec['project_status']} / レーン={spec['project_lane']}。"
+        f"{spec['project_status_reason']}{deps}\n\n"
+        "既存のIssue本文・コメント・状態・題名・ラベルは更新せず、未掲載Issueの新規作成時だけこの本文を使う。"
+    )
+
+
+for _extra in EXTRA_ISSUES:
+    _spec = deepcopy(_extra)
+    _spec["audit_progress"] = _spec["progress"]
+    _spec["audit_state_proposal"] = "open"
+    _spec["audit_project_status_proposal"] = _spec["project_status"]
+    _spec["body"] = _extra_body(_spec)
+    # #99--#109 already exist on the remote repository.  Their public
+    # definitions are Project metadata only; the sync tool must never replace
+    # an existing body with this generated convenience text.
+    _spec["issue_body_managed"] = False
+    ISSUES.append(_spec)
+
+
 def _validate():
     keys = [i['key'] for i in ISSUES]
-    assert len(keys)==96 and len(keys)==len(set(keys)), '96キーの重複/欠落'
-    assert set(keys)==set(REVIEW), '個別見直しの過不足'
+    assert len(keys)==107 and len(keys)==len(set(keys)), '107キーの重複/欠落'
+    canonical_keys = set(REVIEW)
+    extra_keys = {row["key"] for row in EXTRA_ISSUES}
+    assert set(keys) == canonical_keys | extra_keys, '107キーの定義過不足'
     assert CLOSED_KEYS=={'RV-01','RV-02','RV-03','RV-04','RV-12'}, '既存Closedの変更'
     kset=set(keys);mset={m[0] for m in MILESTONES}
     lset={l[0] for l in LABELS}|{'good first issue','help wanted'}
@@ -102,6 +144,11 @@ def _validate():
         assert len(i['blocked_by'])==len(set(i['blocked_by']))
         assert set(i['blocked_by'])<=kset and i['key'] not in i['blocked_by']
         assert '/blob/main/' not in i['body']
+        if i['key'] in extra_keys:
+            assert i['issue_number'] in range(99, 110)
+            assert i['project_status'] in PROJECT_STATUSES
+            assert i['project_lane'] in PROJECT_LANES
+            assert i['acceptance_condition'] and i['next_step']
     graph={i['key']:i['blocked_by'] for i in ISSUES};state={}
     def dfs(k,path):
         state[k]=1
@@ -111,6 +158,7 @@ def _validate():
         state[k]=2
     for k in graph:
         if state.get(k) is None:dfs(k,[k])
+    validate_reference_cycles()
 
 
 _validate()

@@ -1,6 +1,37 @@
 #pragma once
 #include <math.h>
+#include "profile_config.h"
 #include "config.h"
+#if TACHIKOMA_PRINT_FIRST_PROFILE
+#include "print_first_gait.h"
+#define TK_BODY_H_DEF PRINT_FIRST_BODY_H
+#define TK_STANCE_R PRINT_FIRST_STANCE_R
+#define TK_STANCE_OFF_X PRINT_FIRST_STANCE_OFF_X
+#define TK_STANCE_OFF_Y PRINT_FIRST_STANCE_OFF_Y
+#define TK_STEP_H PRINT_FIRST_STEP_H
+#define TK_MAX_STEP PRINT_FIRST_MAX_STEP
+#define TK_MAX_TURN_DEG PRINT_FIRST_MAX_TURN_DEG
+#define TK_CYCLE_T PRINT_FIRST_CYCLE_T
+#define TK_DUTY PRINT_FIRST_DUTY
+#define TK_SWAY_MM PRINT_FIRST_SWAY_MM
+#define TK_SWAY_LEAD PRINT_FIRST_SWAY_LEAD
+#define TK_PHASE_OFF PRINT_FIRST_PHASE_OFF
+#define TK_LEG_ORIGIN PRINT_FIRST_LEG_ORIGIN
+#else
+#define TK_BODY_H_DEF BODY_H_DEF
+#define TK_STANCE_R STANCE_R
+#define TK_STANCE_OFF_X STANCE_OFF_X
+#define TK_STANCE_OFF_Y STANCE_OFF_Y
+#define TK_STEP_H STEP_H
+#define TK_MAX_STEP MAX_STEP
+#define TK_MAX_TURN_DEG MAX_TURN_DEG
+#define TK_CYCLE_T CYCLE_T
+#define TK_DUTY DUTY
+#define TK_SWAY_MM SWAY_MM
+#define TK_SWAY_LEAD SWAY_LEAD
+#define TK_PHASE_OFF PHASE_OFF
+#define TK_LEG_ORIGIN LEG_ORIGIN
+#endif
 #include "ik.h"
 
 // クロール歩容エンジン (重心シフト付き)。
@@ -37,17 +68,22 @@ inline void clampLegYaw(JointAngles angles[4]) {
 
 class Gait {
  public:
-  float bodyH = BODY_H_DEF;
+  float bodyH = TK_BODY_H_DEF;
 
   void update(float dt, float vx, float vy, float wz, LegCmd out[4]) {
     const float mag = fminf(1.0f, sqrtf(vx * vx + vy * vy) + fabsf(wz));
     if (mag > 0.05f) {
-      phase_ = fmodf(phase_ + dt / CYCLE_T, 1.0f);
+      phase_ = fmodf(phase_ + dt / TK_CYCLE_T, 1.0f);
       holding_ = false;
     } else if (!holding_) {
       // 停止指令: 次の四半境界 (遊脚が接地し全脚接地になる瞬間) で止める
-      const float q = ceilf(phase_ / 0.25f + 1e-4f) * 0.25f;
-      const float next = phase_ + dt / CYCLE_T;
+      // `phase_` is kept in [0, 1) while walking.  Rounding before ceilf
+      // can skip the boundary at 1.0 (e.g. 0.99999 -> 1.25), leaving
+      // holding_ false forever.  The exact boundary is already the next
+      // all-stance point, so ceilf without an offset is the required
+      // monotonic boundary selection.
+      const float q = ceilf(phase_ / 0.25f) * 0.25f;
+      const float next = phase_ + dt / TK_CYCLE_T;
       if (next >= q) { phase_ = fmodf(q, 1.0f); holding_ = true; }
       else { phase_ = next; }
     }
@@ -56,19 +92,19 @@ class Gait {
     // 離地の瞬間に既にシフトが乗るよう、窓は遊脚区間に先行して立ち上がる
     float swayX = 0, swayY = 0;
     if (!holding_) {
-      const float swingLen = 1.0f - DUTY;
-      const float winLen = swingLen + 2.0f * SWAY_LEAD;
+      const float swingLen = 1.0f - TK_DUTY;
+      const float winLen = swingLen + 2.0f * TK_SWAY_LEAD;
       for (int leg = 0; leg < 4; leg++) {
-        const float p = fmodf(phase_ + PHASE_OFF[leg], 1.0f);
+        const float p = fmodf(phase_ + TK_PHASE_OFF[leg], 1.0f);
         // 遊脚窓開始 = DUTY - SWAY_LEAD。wrap を考慮した窓内位置
-        float u = p - (DUTY - SWAY_LEAD);
+        float u = p - (TK_DUTY - TK_SWAY_LEAD);
         if (u < -0.5f) u += 1.0f;
         if (u < 0 || u > winLen) continue;
         const float m = STANCE_DEG[leg] / 57.29578f;
-        const float nx = LEG_ORIGIN[leg][0] + STANCE_R * cosf(m) + STANCE_OFF_X;
-        const float ny = LEG_ORIGIN[leg][1] + STANCE_R * sinf(m) + STANCE_OFF_Y;
+        const float nx = TK_LEG_ORIGIN[leg][0] + TK_STANCE_R * cosf(m) + TK_STANCE_OFF_X;
+        const float ny = TK_LEG_ORIGIN[leg][1] + TK_STANCE_R * sinf(m) + TK_STANCE_OFF_Y;
         const float nn = sqrtf(nx * nx + ny * ny);
-        const float k = SWAY_MM[leg] * sinf(3.14159265f * u / winLen);
+        const float k = TK_SWAY_MM[leg] * sinf(3.14159265f * u / winLen);
         swayX += -nx / nn * k;
         swayY += -ny / nn * k;
       }
@@ -79,36 +115,36 @@ class Gait {
       // 中立足先は STANCE_DEG 方位 (取付方位 + 中立ヨー ±12°, v3 実物ポーズ)
       const float stanceRad = STANCE_DEG[leg] / 57.29578f;
       // STANCE_OFF: パターン全体を重心側へ寄せる (config.h 参照)
-      const float nx = LEG_ORIGIN[leg][0] + STANCE_R * cosf(stanceRad) + STANCE_OFF_X;
-      const float ny = LEG_ORIGIN[leg][1] + STANCE_R * sinf(stanceRad) + STANCE_OFF_Y;
+      const float nx = TK_LEG_ORIGIN[leg][0] + TK_STANCE_R * cosf(stanceRad) + TK_STANCE_OFF_X;
+      const float ny = TK_LEG_ORIGIN[leg][1] + TK_STANCE_R * sinf(stanceRad) + TK_STANCE_OFF_Y;
 
       // 併進 + 旋回を合成した 1 周期分の変位 (ボディ座標)
-      const float turn = wz * MAX_TURN_DEG / 57.29578f;
+      const float turn = wz * TK_MAX_TURN_DEG / 57.29578f;
       const float tx = nx * cosf(turn) - ny * sinf(turn) - nx;
       const float ty = nx * sinf(turn) + ny * cosf(turn) - ny;
-      float sx = vx * MAX_STEP + tx;
-      float sy = vy * MAX_STEP + ty;
+      float sx = vx * TK_MAX_STEP + tx;
+      float sy = vy * TK_MAX_STEP + ty;
       // 合成歩幅をワークスペース内に収める
       const float sn = sqrtf(sx * sx + sy * sy);
-      if (sn > MAX_STEP) { sx *= MAX_STEP / sn; sy *= MAX_STEP / sn; }
+      if (sn > TK_MAX_STEP) { sx *= TK_MAX_STEP / sn; sy *= TK_MAX_STEP / sn; }
 
-      const float p = fmodf(phase_ + PHASE_OFF[leg], 1.0f);
+      const float p = fmodf(phase_ + TK_PHASE_OFF[leg], 1.0f);
       float dx, dy, dz;
-      if (p < DUTY) {  // 接地: +s/2 → -s/2 (ボディを前へ送る)
-        const float t = p / DUTY;
+      if (p < TK_DUTY) {  // 接地: +s/2 → -s/2 (ボディを前へ送る)
+        const float t = p / TK_DUTY;
         dx = sx * (0.5f - t);
         dy = sy * (0.5f - t);
         dz = 0;
       } else {         // 遊脚: -s/2 → +s/2, サイン持ち上げ
-        const float t = (p - DUTY) / (1.0f - DUTY);
+        const float t = (p - TK_DUTY) / (1.0f - TK_DUTY);
         dx = sx * (t - 0.5f);
         dy = sy * (t - 0.5f);
-        dz = STEP_H * sinf(3.14159265f * t);
+        dz = TK_STEP_H * sinf(3.14159265f * t);
       }
 
       // 重心シフト: ボディが +sway へ動く = ボディ座標の足先は -sway
-      const float fx = nx + dx - swayX - LEG_ORIGIN[leg][0];
-      const float fy = ny + dy - swayY - LEG_ORIGIN[leg][1];
+      const float fx = nx + dx - swayX - TK_LEG_ORIGIN[leg][0];
+      const float fy = ny + dy - swayY - TK_LEG_ORIGIN[leg][1];
       float lx = fx * cosf(-mountRad) - fy * sinf(-mountRad);
       float ly = fx * sinf(-mountRad) + fy * cosf(-mountRad);
       const float lz = -bodyH + dz;
@@ -132,7 +168,7 @@ class Gait {
       out[leg].ang = {0, 0, 0};  // IK の距離判定失敗時も未初期化値を出さない
       out[leg].ok = legIK(lx, ly, lz, out[leg].ang);
       if (!out[leg].ok) {  // 到達不能時は中立へフォールバック (成否も反映)
-        const float gx = nx - LEG_ORIGIN[leg][0], gy = ny - LEG_ORIGIN[leg][1];
+        const float gx = nx - TK_LEG_ORIGIN[leg][0], gy = ny - TK_LEG_ORIGIN[leg][1];
         out[leg].ok = legIK(gx * cosf(-mountRad) - gy * sinf(-mountRad),
                             gx * sinf(-mountRad) + gy * cosf(-mountRad), -bodyH,
                             out[leg].ang);
@@ -181,6 +217,9 @@ class Gait {
   }
 
   float phase() const { return phase_; }  // 腕スイング同期用
+  // 通信リース切れ・切断・電源異常時は、サーボを脱力するだけでなく
+  // 歩容状態も静止へ戻す。次の明示的な起動指令で現在位相から再開する。
+  void stop() { holding_ = true; }
 
  private:
   float phase_ = 0;

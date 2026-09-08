@@ -20,7 +20,89 @@ import trimesh
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "hardware/src"))
 import config as C
-from check_leg_link_strength import _ring_props
+from check_leg_link_strength import (_ring_props, _print_first_rule,
+                                     print_first_scan)
+
+
+# 55 MPa is a candidate material allowance, not a PLA print guarantee.  These
+# factors intentionally include substantially lower values so the report
+# exposes how much the model depends on that single literature assumption.
+PRINT_FIRST_ALLOWABLE_FACTORS = (0.25, 0.50, 0.75, 1.00)
+PRINT_FIRST_LAYER_FACTORS = (1.00, 0.75, 0.50)
+
+
+def print_first_sensitivity(*, output_json=None, allowable_mpa=None):
+    """印刷優先6リンクの許容応力/積層方向の感度を走査する。
+
+    形状断面の beam model を使うため、スライサ経路、層間接着、疲労、
+    実PLA試験を代替しない。``allowable_mpa`` は主に回帰試験用の明示値で、
+    未指定なら config の候補値から低い倍率を展開する。
+    """
+    rule = _print_first_rule()
+    base = float(rule["allowable_bending_mpa"])
+    print("print-first strength rule: "
+          f"base_load={rule['base_load_kgf']:.2f}kgf × dynamic_factor={rule['dynamic_factor']:.2f} "
+          f"= dynamic_load={rule['load_kgf']:.2f}kgf; wall={rule['wall_mm']:.1f}mm "
+          f"infill={rule['infill_fraction']:.0%}; physical strength UNVERIFIED")
+    values = ([float(value) for value in allowable_mpa]
+              if allowable_mpa else [base * factor for factor in PRINT_FIRST_ALLOWABLE_FACTORS])
+    if not values or any(not np.isfinite(value) or value <= 0.0 for value in values):
+        raise ValueError("print-first allowable stress sensitivity must be finite and positive")
+    rows = []
+    # First dimension: direct allowable stress sensitivity.  Second dimension:
+    # a conservative orientation factor representing unmeasured layer quality.
+    # The output keeps both dimensions explicit instead of silently selecting
+    # one orientation as a pass condition.
+    for stress in values:
+        for orientation_factor in PRINT_FIRST_LAYER_FACTORS:
+            effective = stress * orientation_factor
+            details = print_first_scan(
+                Path(__file__).resolve().parents[1] / "outputs/print-first-20260905/legs",
+                sigma_allow=effective,
+                sf_req=rule["required_safety_factor"],
+                load_kgf=rule["load_kgf"], emit=False, return_details=True)
+            minimum = min(float(row["safety_factor"]) for row in details)
+            rows.append({
+                "allowable_stress_mpa": float(stress),
+                "layer_orientation_factor": float(orientation_factor),
+                "effective_allowable_stress_mpa": float(effective),
+                "minimum_safety_factor": minimum,
+                "required_safety_factor": float(rule["required_safety_factor"]),
+                "model_meets_requirement": bool(minimum >= rule["required_safety_factor"]),
+                "link_results": details,
+            })
+    result = {
+        "status": "SENSITIVITY_ONLY_UNVERIFIED_PRINT_PATH",
+        "rule_source": "hardware/src/config.py:PRINT_FIRST_STRENGTH_RULE",
+        "material": rule["material"],
+        "wall_mm": rule["wall_mm"],
+        "infill_fraction": rule["infill_fraction"],
+        "base_load_kgf": rule["base_load_kgf"],
+        "load_kgf": rule["load_kgf"],
+        "dynamic_factor": rule["dynamic_factor"],
+        "load_interpretation": "base 1.9kgf × dynamic factor 2.0 = 3.8kgf; load_kgf is already the dynamic envelope and is not multiplied again",
+        "layer_orientation_status": rule["layer_orientation_status"],
+        "physical_status": rule["physical_status"],
+        "allowable_factors": list(PRINT_FIRST_ALLOWABLE_FACTORS) if not allowable_mpa else None,
+        "rows": rows,
+        "all_model_cases_meet_requirement": all(row["model_meets_requirement"] for row in rows),
+        "interpretation": "最終判定は低許容応力・積層方向の全感度を確認してから行う。単一の55MPaモデル合格は実PLA強度保証にしない。",
+    }
+    if output_json:
+        output_json.parent.mkdir(parents=True, exist_ok=True)
+        output_json.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
+    for row in rows:
+        print("print-first sensitivity: "
+              f"allowable={row['allowable_stress_mpa']:.2f}MPa "
+              f"layer_factor={row['layer_orientation_factor']:.2f} "
+              f"effective={row['effective_allowable_stress_mpa']:.2f}MPa "
+              f"min_SF={row['minimum_safety_factor']:.3f} "
+              f"{'OK' if row['model_meets_requirement'] else 'NG'}")
+    print("print-first sensitivity completed: model-only / physical printed strength UNVERIFIED")
+    # Low-sensitivity rows are expected to fail for a candidate geometry.  A
+    # nonzero exit is deliberate: callers must not collapse this analysis
+    # into an unconditional PASS.
+    return 0 if result["all_model_cases_meet_requirement"] else 1
 
 
 def properties(polygons):
@@ -58,7 +140,14 @@ def section_moduli(mesh, position, axis, wall, density):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json", type=Path)
+    parser.add_argument("--print-first", action="store_true",
+                        help="print-first PLA脚の標準/鏡像6 STLを感度走査する")
+    parser.add_argument("--allowable-mpa", type=float, nargs="*",
+                        help="感度用の許容応力を明示（省略時はconfig値の25/50/75/100%%）")
     args = parser.parse_args()
+    if args.print_first:
+        return print_first_sensitivity(output_json=args.json,
+                                       allowable_mpa=args.allowable_mpa)
     results = []
     for name, axis, lo, hi, strength, requirement in (
         ("tibia_link", 2, -C.TIBIA_LEN + 12, -8, 55, 2),

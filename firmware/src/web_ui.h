@@ -28,6 +28,8 @@ button{background:#2a3550;color:var(--txt);border:0;border-radius:10px;padding:9
 font-size:.85rem;flex:1}
 button.on{background:var(--acc)}
 button.rec.on{background:var(--red)}
+button:disabled{opacity:.45}
+#hardwareStat{font-size:.72rem;line-height:1.3;opacity:.85}
 #trimPanel{display:none;max-height:38dvh;overflow-y:auto;touch-action:pan-y}
 #trimPanel .row label{width:5em}
 #voicePanel .row label{width:5em}
@@ -40,6 +42,7 @@ border:1px solid #2a3550;border-radius:8px;padding:7px 8px;font-size:.85rem}
  <div id="turnWrap"><canvas id="turn"></canvas></div>
 </main>
 <footer>
+ <div id="hardwareStat">搭載構成を確認中…</div>
  <div class="row"><label>体高</label>
   <input type="range" id="h" min="110" max="130" value="115"></div>
  <div class="row">
@@ -80,26 +83,58 @@ border:1px solid #2a3550;border-radius:8px;padding:7px 8px;font-size:.85rem}
 <script>
 "use strict";
 const b=id=>document.getElementById(id);
-let ws, wsOK=false, vx=0, vy=0, wz=0, standing=false, led=true, ptt=0;
+let ws, wsOK=false, wsSession='', vx=0, vy=0, wz=0, standing=false, led=true, ptt=0;
 const stat=document.getElementById('stat');
 function connect(){
   ws=new WebSocket('ws://'+location.host+'/ws');
   ws.onopen=()=>{wsOK=true;stat.textContent='online'};
-  ws.onclose=()=>{wsOK=false;releaseControls();stat.textContent='reconnecting…';setTimeout(connect,800)};
+  ws.onclose=()=>{wsOK=false;wsSession='';releaseControls();stat.textContent='reconnecting…';setTimeout(connect,800)};
   ws.onmessage=e=>{
     const d=JSON.parse(e.data);
+    if(d.type==='control_session'){wsSession=String(d.session||'');return;}
+    if(d.features) applyHardwareFeatures(d.features);
     if(typeof d.h==='number' && !heightDirty) b('h').value=d.h;
     if(typeof d.stand==='boolean'){
       standing=d.stand;b('stand').classList.toggle('on',standing);
       b('rest').classList.toggle('on',!standing);
     }
-    stat.innerHTML=(d.vbat>0?d.vbat.toFixed(2)+'V ':'')+
-      (d.cut?'<span class="warn">低電圧遮断</span>':
-       d.i2c===false?'<span class="warn">サーボ通信異常・配線確認後に再起動</span>':
-       d.low?'<span class="warn">LOW BATT</span>':'online');
+    const warning=d.cut?'<span class="warn">低電圧遮断</span>':
+      d.i2c===false?'<span class="warn">サーボ通信異常・配線確認後に再起動</span>':
+      d.vbat_verified===false?'<span class="warn">VBAT未検証・PWM停止</span>':
+      d.servo_rail_verified===false?'<span class="warn">サーボV+未検証・実機電源を確認</span>':
+      d.lease_valid===false?'<span class="warn">通信リース切れ・再起動操作待ち</span>':
+      (d.i2s_state && d.i2s_state!=='READY')?'<span class="warn">I2S '+d.i2s_state+'・ボイス停止</span>':
+      d.wifi_ap_ready===false?'<span class="warn">WiFi AP未設定/起動失敗</span>':
+      d.low?'<span class="warn">LOW BATT</span>':'online';
+    stat.innerHTML=(d.vbat>0?d.vbat.toFixed(2)+'V ':'')+warning;
   };
 }
 connect();
+function mutationQuery(){return 'confirm=1'+(wsSession?'&session='+encodeURIComponent(wsSession):'');}
+function applyHardwareFeatures(f){
+  if(typeof f.status_leds==='boolean') b('led').disabled=!f.status_leds;
+  if(typeof f.dfplayer==='boolean'){
+    b('snd1').disabled=b('snd2').disabled=!f.dfplayer;
+  }
+  const i2sState=typeof f.i2s_state==='string'?f.i2s_state:(f.i2s_audio?'READY':'UNAVAILABLE');
+  b('hardwareStat').textContent=
+    (f.status_leds?'LED搭載':'LED未搭載')+' / '+
+    (f.dfplayer?'SD効果音対応':'SD効果音未搭載')+' / '+
+    (f.i2s_audio&&i2sState==='READY'?'I2S会話対応':'I2S会話未対応（'+i2sState+'）')+
+    (typeof f.audio_volume_percent==='number'?'（音声出力 '+f.audio_volume_percent+'%）':'');
+  // 印刷優先profileは候補歩容を比較した狭い体高だけを操作画面へ公開する。
+  // 実機で検証済みとは表示せず、通常profileの110..130mmは挙動を保つ。
+  if(typeof f.body_h_min_mm==='number' && typeof f.body_h_max_mm==='number'){
+    b('h').min=f.body_h_min_mm; b('h').max=f.body_h_max_mm;
+    if(!heightDirty && typeof f.body_h_default_mm==='number') b('h').value=f.body_h_default_mm;
+  }
+  if(f.print_first_profile===true){
+    const status=typeof f.print_first_profile_status==='string'?
+      f.print_first_profile_status:'状態不明';
+    const adopted=f.print_first_profile_adopted===true?'採用':'未採用';
+    b('hardwareStat').textContent+=' / 試作設定（'+adopted+'・'+status+'）';
+  }
+}
 // 腕キーは「ユーザーがスライダを操作した時だけ」送る。毎ティック送ると
 // /arm プリセットで書いた target を 100ms で上書きしてしまう
 let armDirty=false, heightDirty=false;
@@ -132,7 +167,7 @@ window.addEventListener('pagehide',releaseControls);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)releaseControls();});
 
 function armPose(p){
-  fetch('/arm?pose='+p);
+  fetch('/arm?pose='+p+'&'+mutationQuery());
   // スライダ表示をプリセット実値 (config.h の ARM_POSE_*) に同期する。
   // armDirty は立てない (target はファーム側が既に設定済み)
   const v={tuck:[0,55,95],ready:[10,30,40],reach:[0,10,10]}[p];
@@ -145,7 +180,7 @@ let eyeIdx=0;
 b('eyeBtn').onclick=()=>{
   eyeIdx=(eyeIdx+1)%eyeModes.length;
   const m=eyeModes[eyeIdx];
-  fetch('/eye?mode='+m);
+  fetch('/eye?mode='+m+'&'+mutationQuery());
   b('eyeBtn').textContent=eyeNames[m];
   b('eyeBtn').classList.toggle('on',m!=='front');
 };
@@ -181,8 +216,14 @@ b('stand').onclick=()=>{standing=true;b('stand').classList.add('on');
 b('rest').onclick=()=>{standing=false;b('rest').classList.add('on');
   b('stand').classList.remove('on');releaseControls();sendState(false);};
 b('led').onclick=()=>{led=!led;b('led').classList.toggle('on',led);};
-b('snd1').onclick=()=>fetch('/play?n=1');
-b('snd2').onclick=()=>fetch('/play?n=2');
+async function playTrack(n){
+  try{
+    const r=await fetch('/play?n='+n+'&'+mutationQuery());
+    if(!r.ok) b('hardwareStat').textContent='SD効果音を再生できません。搭載構成・接続を確認してください。';
+  }catch(e){b('hardwareStat').textContent='効果音要求を送信できません。';}
+}
+b('snd1').onclick=()=>playTrack(1);
+b('snd2').onclick=()=>playTrack(2);
 b('armBtn').onclick=()=>{const p=b('armPanel');
   const show=p.style.display!=='flex';
   p.style.display=show?'flex':'none';
@@ -192,8 +233,10 @@ b('armBtn').onclick=()=>{const p=b('armPanel');
 async function refreshWifi(){
   try{
     const r=await fetch('/wifi'); const d=await r.json();
-    b('voiceStat').textContent=d.connected?('接続中 '+d.ip):
-      (d.ssid?('未接続: '+d.ssid):'STA未設定');
+    const ap=d.ap_ready===false?' / AP未設定/起動失敗':'';
+    const state=d.state?(' ['+d.state+']'):'';
+    b('voiceStat').textContent=d.connected?('接続中 '+d.ip+state+ap):
+      (d.ssid?('未接続: '+d.ssid+state+ap):'STA未設定'+state+ap);
     if(d.ssid) b('staSsid').value=d.ssid;
   }catch(e){ b('voiceStat').textContent='?'; }
 }
@@ -215,7 +258,7 @@ b('staSave').onclick=async()=>{
   const ssid=b('staSsid').value, pass=b('staPass').value;
   await fetch('/wifi',{method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:'ssid='+encodeURIComponent(ssid)+'&pass='+encodeURIComponent(pass)});
+    body:'ssid='+encodeURIComponent(ssid)+'&pass='+encodeURIComponent(pass)+'&'+mutationQuery()});
   b('staPass').value='';
   b('voiceStat').textContent='接続試行中…';
   setTimeout(refreshWifi,2000);
@@ -248,7 +291,7 @@ function trimSend(ch,us){
   trimPend[ch]=us;
   if(trimTimer)return;
   trimTimer=setTimeout(()=>{trimTimer=null;
-    for(const c in trimPend){fetch('/trim?ch='+c+'&us='+trimPend[c]);delete trimPend[c];}
+    for(const c in trimPend){fetch('/trim?ch='+c+'&us='+trimPend[c]+'&'+mutationQuery());delete trimPend[c];}
   },150);
 }
 </script></body></html>)HTML";

@@ -1,6 +1,13 @@
 #pragma once
 #include <math.h>
+#include "profile_config.h"
 #include "config.h"
+#if TACHIKOMA_PRINT_FIRST_PROFILE
+#include "print_first_gait.h"
+#define TK_ARM_SWING_DEG PRINT_FIRST_ARM_SWING_DEG
+#else
+#define TK_ARM_SWING_DEG ARM_SWING_DEG
+#endif
 #include "ik.h"
 #include "servos.h"
 
@@ -72,7 +79,7 @@ class Arms {
       }
       // 歩行スイング (前後脚と逆位相で自然に)
       if (walking && !waving) {
-        t.pitch += ARM_SWING_DEG * sinf(6.28318f * gaitPhase + (a ? 3.1416f : 0));
+        t.pitch += TK_ARM_SWING_DEG * sinf(6.28318f * gaitPhase + (a ? 3.1416f : 0));
       }
 
       // ---- ここから下のクランプは wave/スイング重畳後に必ず通す ----

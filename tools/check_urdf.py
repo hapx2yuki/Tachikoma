@@ -39,6 +39,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "hardware" / "src"))
 sys.path.insert(0, str(ROOT / "tools"))
 import config as C  # noqa: E402
+import filament_calc as FC  # noqa: E402
 import kit_assembly as KIT  # noqa: E402
 from make_visuals import robot_meshes, rot, trans, load  # noqa: E402
 from sim_gait import leg_ik, foot_target, BODY_H, STANCE, MOUNT, STANCE_R, ORIGIN  # noqa: E402
@@ -552,8 +553,9 @@ check(2.5 <= grand_total <= 3.5, f"総質量 {grand_total:.4f} kg (目標 2.5〜
 # 再計算し、URDF <inertial> の記載値と突合する。
 print("\n[5b] 質量の独立再計算 (leg_fr_coxa: RHO/壁厚/インフィルの drift・"
       "サーボ質量の重複計上/欠落を検出)")
-RHO_INDEP = {"PLA": 1.24, "PETG": 1.27, "TPU": 1.21}  # tools/filament_calc.py RHO と同一のはず
-check(E.RHO == RHO_INDEP, f"export_urdf.RHO が独立転記値と一致: {E.RHO}", "5b")
+RHO_INDEP = dict(C.MATERIAL_DENSITY_G_CM3)
+check(E.RHO == RHO_INDEP, f"export_urdf.RHO がconfig密度規則と一致: {E.RHO}", "5b")
+check(FC.RHO == RHO_INDEP, f"filament_calc.RHO がconfig密度規則と一致: {FC.RHO}", "5b")
 
 
 def _indep_estimate_mass_g(mesh_mm, wall_mm, infill, density):
@@ -789,5 +791,4 @@ for sec in sorted(by_section):
     print(f"  section[{sec}]: {sum(vals)}/{len(vals)} OK")
 print("RESULT:", "PASS" if OK else "FAIL")
 sys.exit(0 if OK else 1)
-
 

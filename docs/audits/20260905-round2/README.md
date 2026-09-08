@@ -13,13 +13,13 @@
 
 開始時515ファイルを一覧化し、用途別に確認した。77のソース、21の文書、27の印刷プロジェクト、241のメッシュ、39の画像/動画、110の構造化データ・設定・履歴。
 ソース読解、全頂点/面・ZIP/XML解析、画像目視、動画の全編デコードと代表フレーム確認を区別して記録した。
-`.venv/.git/.pio`などの実行環境内部と、不在の`~/Downloads/TACHIKOMA.3mf`は対象外。
+`.venv/.git/.pio`などの実行環境内部と、不在の`Downloads/TACHIKOMA.3mf`は対象外。
 動画の全フレームを人手で見たという意味でも、全欠陥の不存在の証明でもない。
 
 - [対象一覧](inventory-initial.json) / [担当別記録と現在ハッシュの集計](coverage-complete.json)
 - 元モデル58個・既存3MF27個・従来画像/動画39個は開始時とハッシュ一致。[保存照合](manufacturing-preservation.json)
 - 変更前のバックアップはリポジトリ外の`Tachikoma-audit-backups/20260905-150317/`と`20260905-153305-round2/`。
-- 実機書込み、新規購入、実印刷はしていない。コード・STL・監査記録は [監査コミット `0de7154`](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b) として `codex/audit-20260905` に公開した。課題と依存もGitHubへ同期している。
+- 実機書込み、新規購入、実印刷はしていない。コード・STL・監査記録を公開した時点の履歴は [監査コミット `0de7154`](https://github.com/hapx2yuki/Tachikoma/commit/0de71547c1af59abc6bcc3484b03b12e9430df2b) として保持する。以下のGitHub件数・状態は保存済みスナップショットであり、現在の外部状態を再確認した結果ではない。
 
 公開する検証結果・候補STL・動画には、失敗や修正前の履歴も含める。メーカー原本のコピーは [出典台帳](primary-sources/README.md) を参照し、ローカルに保持する。衝突分解のNPZキャッシュは再生成対象とし、分割条件と体積のJSONを保存する。
 記録内の絶対パスは監査を実施した環境の履歴。リポジトリ外のバックアップ、旧配布物、元DownloadsファイルはGitに含まれず、過去ファイル全件の照合には別途その入力が必要。`build_manufacturing_diff.py` の変更前比較も外部バックアップを使う。一度限りの調査用 `arm-pitch-case-rotation-source.py` を別環境で再実行する際は、先頭の `ROOT` を実際の配置に合わせる。
@@ -92,11 +92,21 @@ I2C断線やCPU停止中は、PCAの既存PWM出力をソフトだけで停止�
 
 ## Issue駆動の継続手順
 
-[GitHub Project](https://github.com/users/hapx2yuki/projects/2)に96課題、173本の依存を同期。
-[全件の親子/依存照合](github-relations-final.json)と[既存Statusの保持](project-status-preservation.json)を保存した。
-既存の手動進捗をリセットせず、新規/未設定項目だけを初期化した。課題の完了待ちグラフに循環はない。
+### 外部状態の保存境界（2026-09-06読み取り専用スナップショット）
 
-監査コミット公開後、11課題に固定リンクと実施済み/未解決の範囲を追記した。修正・検査を完了したRV-01/02/03/04/12（#81/#82/#83/#84/#93）だけを根拠付きでCloseし、ProjectをDoneへ更新。I-08は購入個体との照合が残り、E9/RV-05と機構・実機の課題もOPENを維持する。公開後の状態は [照合記録](publication.json) を参照。
+[GitHub Project](https://github.com/users/hapx2yuki/projects/2) と課題の保存記録は、
+[最新保存スナップショット](github-issues-refresh-20260906.json) で再確認できる。この記録では
+**Issue #107 を含む #3〜#109 の107課題、Projectの項目数96、#99〜#109の11件未掲載、依存173本**
+だった。ここでいう「Project 96」はProject番号ではなく保存時点の項目数である。
+[関係照合](github-relations-final.json) と[既存Statusの保持](project-status-preservation.json)も保存している。
+
+この件数は2026-09-06時点のローカル保存値で、外部更新後の現在値や同期完了を意味しない。外部側で
+Issue/Projectを更新した後は、`tools/issues/fetch_public_snapshot.py` を実行してこの節と保存JSONを
+再生成し、#99〜#109の掲載状態と依存数を改めて照合する。この作業ではGitHubへの再取得・更新を行っていない。
+
+保存時点では既存の手動進捗をリセットせず、新規/未設定項目だけを初期化した。課題の完了待ちグラフに循環はない。
+監査コミット公開後に11課題へ固定リンクと実施済み/未解決の範囲を追記した履歴は[照合記録](publication.json)に残すが、
+修正・検査を完了したRV-01/02/03/04/12（#81/#82/#83/#84/#93）のCloseも保存時点の記録として扱う。
 
 - 先行: P-01/P-03/P-07で購入サーボ/電源/カメラの実型番・寸法を確定。設計型番と互換とは仮定しない。
 - 直列: RV-09の軸/収納 → RV-13の頭固定・RV-14の脚カバー → 全生成 → 全体検証。

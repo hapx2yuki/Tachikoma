@@ -1,12 +1,12 @@
 """タチコマ歩行化 — 共通寸法定義 (単位: mm)
 
 ⚠ [要実測] サーボプロファイルの値は、購入した実物をノギスで実測して
-   合わせてから build_all.py で再生成すること。個体差・クローン差が大きい。
+  合わせてから build_all.py で再生成すること。個体差・クローン差が大きい。
 
-サーボ構成 (2026-07 批判的レビュー後の確定構成):
-  股ヨー/股ピッチ/膝 ×12 : 20kg 級標準サーボ (DS3218/MG996R フットプリント)
-                            ※デュアルボールベアリング出力軸のものを指定
-  頭部 ×1-2               : SG90/MG90S (MICRO。マウントは Phase 5 で現物合わせ)
+サーボ構成 (2026-07 批判的レビュー後の設計基準):
+ 股ヨー/股ピッチ/膝 ×12 : 20kg 級標準サーボ (旧DS3218/MG996R フットプリント)
+              ※寸法・軸・許容電圧は現物実測前。現行print-firstのLD-220MG候補を適合済みとしない。
+ 頭部 ×1-2        : SG90/MG90S (MICRO。マウントは Phase 5 で現物合わせ)
 
 関節はホーン片持ち結合 (SpotMicro 等の同クラス実績に準拠)。
 アイドラー軸は廃止 — サーボケース自体が反対側空間を貫通するため
@@ -14,41 +14,344 @@
 """
 
 # ---------------------------------------------------------------- 全体
-SCALE = 1.5            # 意匠シェルの印刷スケール (150%)
-HEAD_TOP_Z_OFFSET = 57.7  # 頭部上殻の局所原点→シャーシ下面のZ差 [mm]
-CLEAR = 0.20           # 印刷はめあい公差
-STL_VOLUME_ATOL_MM3 = 0.01  # STL float32往復の体積照合: 絶対誤差＋相対誤差
+SCALE = 1.5      # 意匠シェルの印刷スケール (150%)
+HEAD_TOP_Z_OFFSET = 57.7 # 頭部上殻の局所原点→シャーシ下面のZ差 [mm]
+CLEAR = 0.20      # 印刷はめあい公差
+STL_VOLUME_ATOL_MM3 = 0.01 # STL float32往復の体積照合: 絶対誤差＋相対誤差
 STL_VOLUME_RTOL = 1e-6
+# Manifold Booleanの符号付き数値誤差だけを許容する上限。これはSTLの
+# 体積照合公差や実体交差の閾値ではなく、NoErrorかつ閉じた薄い数値片を
+# 明示的に0へ扱うための値。負値をabs()/max()で隠す用途には使わない。
+BOOLEAN_NEGATIVE_TOLERANCE_MM3 = 1e-6
+# Exact source-mesh intersections larger than this volume are physical
+# collision evidence. Keep this separate from the signed Boolean remainder
+# tolerance above and let all print-first audits read one value.
+BOOLEAN_INTERSECTION_THRESHOLD_MM3 = 0.01
+
+# 材料密度は質量候補を計算する全生成/検査器の単一情報源。TPU95A は
+# 購入フィラメント表記の別名で、密度規則上は TPU へ正規化する。
+MATERIAL_DENSITY_G_CM3 = {"PLA": 1.24, "PETG": 1.27, "TPU": 1.21}
+MATERIAL_DENSITY_ALIASES = {"TPU95A": "TPU"}
+
+
+def material_density_g_cm3(material):
+  key = str(material).upper()
+  key = MATERIAL_DENSITY_ALIASES.get(key, key)
+  try:
+    return float(MATERIAL_DENSITY_G_CM3[key])
+  except KeyError as exc:
+    raise ValueError(f"unknown material density rule: {material!r}") from exc
+
+# 2026-09-05: 既存候補と追加印刷で作る構成。旧構成は再現用に保持する。
+# tools/print_first_assembly.py の明示的なコンテキスト内でだけ適用する。
+# 寸法は購入サーボの実測前の設計値。生成合格を現物適合と取り違えない。
+PRINT_FIRST_ACTIVE = False
+PRINT_FIRST = dict(
+  # The former 27 mm baseline lift is combined with a 6 mm yaw-case lift;
+  # the final candidate uses a newly printed clearanced head shell at the
+  # resulting 33 mm total, rather than relying on the old shell as-is.
+  hip_r=85.0,
+  # ヨー軸の鉛直位置を上げる候補。yaw_face_z_lift=0 は旧候補と
+  # 同じ位置で、実C++姿勢掃引後に最小値を選ぶ。頭殻の支持柱は
+  # head_top_lift を同じ量だけ増やして相対クリアランスを維持する。
+  # profile=1 C++ sweepで4 mmには残存食込み、6 mmで562姿勢中0だった。
+  # 最小成立候補を採用し、head shell/supportも同じ6 mmだけ上げる。
+  yaw_face_z=17.1, yaw_face_z_lift=6.0, head_top_lift=33.0,
+  # LDのpitch/knee主面。脚リンクの旧軸面を基準にした設計候補値。
+  # 現物のケース端・軸端は未測定なので、1個適合試作で照合する。
+  pitch_face_y=17.5,
+  # yaw主ホーン変換板を旧coxa天板へつなぐ印刷環状立上がり。
+  # 外観より荷重経路を優先した暫定値で、PLA層間強度は未確認。
+  yaw_riser_outer_d=34.0, yaw_riser_inner_d=26.6,
+  yaw_riser_base_overlap=0.5, yaw_riser_adapter_overlap=0.5,
+  yaw_case_angles={"FR":180.0,"FL":0.0,"RL":0.0,"RR":180.0},
+  # 腕ケースと前脚coxaの外壁を避ける最小の印刷側移設。997姿勢の
+  # profile=1 traceで0.0 mm3となった候補値。既存腕/サーボはそのまま。
+  arm_mount_y_offset=3.0,
+  central_radius=62.0, frame_thickness=4.0,
+  head_seat_gap=0.25,
+  # 頭殻の実支点座標を生成器へ直接渡す。以前の radius/seat_z の名目値は
+  # 実形状へ反映されていなかったため削除した。
+  head_support_xy_mm=((-56.0, -10.0), (-56.0, 35.0),
+            (56.0, -10.0), (56.0, 35.0)),
+  head_support_width=8.0,
+  # Existing 20 mm Velcro is routed through two open ears. The opening is
+  # intentionally wider than the tape so print tolerance does not turn it
+  # into a forced slot; the ears are shifted toward -Y to clear the yaw
+  # servo envelope. Actual tape thickness/strength remains unverified.
+  head_strap_y=-4.0, head_strap_tab_depth=28.0,
+  head_strap_slot_width=22.0, head_strap_slot_x=4.0,
+  # Case/cable fit allowance used when cutting the old link/plate around the
+  # measured LD envelope. The cradle's nominal internal gap remains 0.3 mm;
+  # this larger value absorbs STL quantization and is still a candidate until
+  # one physical servo is fitted.
+  ld_case_fit_clear=0.5,
+  # 膝蓋の可動包絡が脛背面 web の内側縁 (y=14.9 mm) と約0.5 mm
+  # 重なるため、蓋・LDケース・締結座を削らず脛の外側だけを局所的に抜く。
+  # x/z は LIM_KNEE=44 deg の実メッシュ掃引を包含し、y は蓋外面
+  # 15.4 mm から0.2 mm離す候補値。PLAの層間強度は未確認。
+  tibia_cap_escape_x=(-9.5, -4.3),
+  tibia_cap_escape_y=(14.7, 15.6),
+  tibia_cap_escape_z=(-24.75, -17.25),
+  tibia_cap_escape_knee_limit_deg=44.0,
+  tibia_cap_escape_sweep_step_deg=0.5,
+  deck_y=-80.0, deck_z=48.0, deck_width=138.0, deck_depth=38.0,
+  deck_t=3.0, deck_slot_width=21.0, deck_slot_height=3.0,
+  cabin_rail_x=35.0, cabin_rail_width=8.0,
+  # M3x10 を rail 側から差し、chassis 4 mm + rail 側 pad 6 mmを
+  # ちょうど通す。既存のM3x8在庫を必須にせず、頭形は手持ちの
+  # M3皿タッピング φ6.4候補として、実物の頭高/軸長を適合確認する。
+  cabin_rail_pad_t=6.0, cabin_rail_pad_overlap=0.5,
+  cabin_rail_screw_length=10.0,
+  cabin_rail_screw_head_d=6.4, cabin_rail_screw_head_depth=1.4,
+  cabin_rail_screw_tool_clear_d=8.0, cabin_rail_clearance_d=3.2,
+  cabin_rail_z=-48.0, cabin_rail_y0=-258.0, cabin_rail_y1=-94.0,
+  cabin_bolt_y=(-61.0,-87.0), cabin_fit_gap=0.3,
+  cabin_load_kg=0.7, design_acceleration_g=2.0,
+  # M2.6x8 pan tapping screws: nominal length is measured from head underside
+  # to tip. A candidate 0.8 mm seat leaves 2.2 mm shelf material plus a 4 mm
+  # lower-post tap, so the nominal tip extends 1.8 mm below that post. The
+  # actual pan-head height and whether it seats 0.8 mm remain unverified.
+  shelf_screw_clear_d=3.0, shelf_screw_tap_d=2.2,
+  shelf_screw_head_d=5.2, shelf_screw_head_depth=0.8,
+  # 棚の四隅ねじは下段の候補箱の角を避けるため、棚外周から2.8 mm
+  # 内側へ置く。頭径5.2 mmの外周内包絡と各候補箱の静的交差を検査する。
+  shelf_bolt_y=(-96.2,-63.8),
+  # 電装箱の下面を面ファスナーだけに頼らず支える、四隅の印刷台座。
+  # 台座は棚上面へ0.2 mm食い込ませて一体化し、部品下面へは候補上で
+  # 接する。端子/はんだ面と実基板下面は現物未測定なので塞がりを保証しない。
+  electronics_support_pad_width_mm=4.0,
+  electronics_support_pad_depth_mm=4.0,
+  electronics_support_edge_inset_mm=5.0,
+  electronics_support_shelf_edge_clearance_mm=0.5,
+  electronics_support_overlap_into_component_mm=0.5,
+  electronics_support_central_cut_width_mm=116.0,
+  electronics_support_central_cut_depth_mm=20.0,
+  electronics_support_base_overlap_mm=0.2,
+)
+
+# 初期歩行用の実組立方針。生成済みの print-first 部品集合では Cabin の
+# 源部品を全て保管し、電装支柱と一体化したレール・棚・電池受け・シャーシ
+# は残す。質量は固定値を複製せず、収集した実メッシュから実行時に求める。
+# ``generated=False`` はレール下受けの生成入力を読む経路なので、旧装飾
+# フィルターを保ったまま、そこで使う Front/Back Cabin 源メッシュを残す。
+PRINT_FIRST_CABIN_STORAGE = {
+  "status": "INITIAL_WALKING_STORE_ALL_CABIN_KIT_PARTS",
+  "stored_source_prefixes": ("Cabin_",),
+  "retained_source_parts": (
+    "battery_cradle",
+  ),
+  "retained_generated_parts": (
+    "pf_chassis", "pf_cabin_rail_l", "pf_cabin_rail_r",
+    "pf_electronics_shelf_0", "pf_electronics_shelf_1",
+    "pf_electronics_shelf_2",
+  ),
+  "rail_includes_electronics_posts": True,
+  "source_mesh_required_for_generated_false": True,
+  "additional_prints_required": False,
+  "original_and_printed_parts_preserved": True,
+  "mass_basis": (
+    "runtime E.part_mass_item on collected Cabin_ rows; subtract the rows "
+    "already selected by the legacy stored prefixes once"
+  ),
+  "physical_status": (
+    "UNVERIFIED_EXPOSED_FASTENERS_WIRING_AND_PRINTED_STRENGTH"
+  ),
+}
+
+# 棚上電装箱の底面は、棚上面からこの距離だけ浮かせる。箱の実寸・
+# はんだ面・面ファスナー圧縮は未測定なので、占有候補と実機確認の基準
+# だけを一元化する。
+ELECTRONICS_SHELF_COMPONENT_CLEARANCE_MM = 3.0
+
+# 印刷優先構成の電装候補。座標は base_link の z=0 を基準とした
+# ``center_zb_mm`` (シャーシ下面から HIP_DROP を足した値ではない) で統一する。
+# 寸法・質量は対象個体の実測値ではないため、占有と慣性へ使う場合も
+# ``UNVERIFIED`` の設計候補として台帳に残す。
+PRINT_FIRST_COMPONENTS = (
+  dict(name="pca9685_0", size_mm=(64.0, 26.0, 24.0),
+     center_zb_mm=(-35.0, -80.0,
+           PRINT_FIRST['deck_z'] + PRINT_FIRST['deck_t']
+           + ELECTRONICS_SHELF_COMPONENT_CLEARANCE_MM + 12.0), mass_g=15.0,
+     status="UNVERIFIED_DESIGN_ENVELOPE"),
+  dict(name="pca9685_1", size_mm=(64.0, 26.0, 24.0),
+     center_zb_mm=(35.0, -80.0,
+           PRINT_FIRST['deck_z'] + PRINT_FIRST['deck_t']
+           + ELECTRONICS_SHELF_COMPONENT_CLEARANCE_MM + 12.0), mass_g=15.0,
+     status="UNVERIFIED_DESIGN_ENVELOPE"),
+  dict(name="esp32_devkit", size_mm=(58.0, 30.0, 16.0),
+     center_zb_mm=(-35.0, -80.0,
+           PRINT_FIRST['deck_z'] + 34.0 + PRINT_FIRST['deck_t']
+           + ELECTRONICS_SHELF_COMPONENT_CLEARANCE_MM + 8.0), mass_g=10.0,
+     status="UNVERIFIED_DESIGN_ENVELOPE"),
+  dict(name="henge_ubec", size_mm=(60.0, 30.0, 22.0),
+     center_zb_mm=(35.0, -80.0,
+           PRINT_FIRST['deck_z'] + 34.0 + PRINT_FIRST['deck_t']
+           + ELECTRONICS_SHELF_COMPONENT_CLEARANCE_MM + 11.0), mass_g=30.0,
+     status="UNVERIFIED_DESIGN_ENVELOPE"),
+  dict(name="mini560_logic", size_mm=(40.0, 20.0, 15.0),
+     center_zb_mm=(-42.0, -80.0,
+           PRINT_FIRST['deck_z'] + 66.0 + PRINT_FIRST['deck_t']
+           + ELECTRONICS_SHELF_COMPONENT_CLEARANCE_MM + 7.5), mass_g=8.0,
+     status="UNVERIFIED_DESIGN_ENVELOPE"),
+  dict(name="mini560_servos", size_mm=(40.0, 20.0, 15.0),
+     center_zb_mm=(7.0, -80.0,
+           PRINT_FIRST['deck_z'] + 66.0 + PRINT_FIRST['deck_t']
+           + ELECTRONICS_SHELF_COMPONENT_CLEARANCE_MM + 7.5), mass_g=8.0,
+     status="UNVERIFIED_DESIGN_ENVELOPE"),
+  dict(name="max98357a", size_mm=(24.0, 20.0, 14.0),
+     center_zb_mm=(46.0, -80.0,
+           PRINT_FIRST['deck_z'] + 66.0 + PRINT_FIRST['deck_t']
+           + ELECTRONICS_SHELF_COMPONENT_CLEARANCE_MM + 7.0), mass_g=2.0,
+     status="UNVERIFIED_DESIGN_ENVELOPE"),
+)
+
+# 既存 battery_cradle の中へ置く再利用候補。購入電池の外形・質量・
+# 内部の実際の保持面は未測定だが、従来URDFの候補中心を明示的に引き継ぐ。
+PRINT_FIRST_BATTERY = dict(
+  id="battery_2s_2200mah_candidate",
+  size_mm=(34.0, 105.0, 24.0),
+  mass_g=180.0,
+  center_base_mm=(0.0, -6.0, 11.6),
+  status="UNVERIFIED_LEGACY_CRADLE_CANDIDATE",
+)
+
+# マイク/スピーカーは砲身ローカルの実メッシュ候補を唯一の占有源とし、
+# 質量は既存URDFの未実測概算を同じ中心へ適用する。
+PRINT_FIRST_AUDIO = dict(
+  mic_mass_g=1.0,
+  speaker_mass_g=3.0,
+  status="UNVERIFIED_PURCHASE_DIMENSIONS_AND_MASS",
+)
+
+# XIAO保持台は保存済み計測の with-SD 包絡を採用候補にする。SDを使わない
+# 実機は後で without-SD と比較できるが、候補を二重に数えない。
+PRINT_FIRST_XIAO = dict(
+  variant="xiao_assembly_with_sd",
+  board_design_mass_g=10.0,
+  camera_design_mass_g=5.0,
+  clearance_each_side_mm=0.30,
+  wall_mm=1.20,
+  short_rib_height_mm=3.0,
+  # 保存済みの基板姿勢を carrier 側へ 4 mm 持ち上げる。現 head shell
+  # の閉じたSTL包絡を横切らず、床/リブは梁へ重ねたままにする候補値。
+  holder_z_offset_mm=4.0,
+  connection_beam_width_mm=4.0,
+  connection_beam_depth_mm=4.0,
+  # carrier下側 (z≈2) と、基板姿勢で傾いたトレイ床 (y=-7付近で
+  # z≈-10) を同時に捕捉するため、梁は縦方向へ延ばす。
+  connection_beam_bottom_z_mm=-16.0,
+  connection_beam_top_z_mm=4.0,
+  # x=±10 mm passed through the lifted board envelope. Move the two
+  # carrier-to-tray beams outward by 1 mm; the retained tray/rib overlap
+  # remains volumetric while the final carrier has a direct board
+  # non-intersection check.
+  connection_beam_x_mm=(-11.0, 11.0),
+  connection_beam_y_mm=-7.0,
+  # 既存の非導電結束バンドを1本、床を貫通する2スロットへ通す候補。
+  # ポート側と帯の厚みは実物で確認する。
+  strap_count=1, strap_slot_count=2, strap_slot_width_mm=3.0,
+  strap_slot_length_mm=1.0, strap_slot_y_mm=(-5.5,5.5),
+  strap_width_candidate_mm=2.6,
+  status="CANDIDATE_ONLY_UNVERIFIED_HARDWARE",
+)
+
+# 印刷済み/再利用の候補部品ごとの材料条件。未指定の pf_* は従来候補の
+# PLA 条件へ戻すが、構造・頭部・カメラを一括で重くしないよう個別に残す。
+PRINT_FIRST_MATERIALS = {
+  # 手持ち材料として確認できている PLA 四色と TPU95A に合わせる。
+  # 実フィラメントの銘柄・温度・層間強度は未確認で強度を保証しない。
+  "pf_chassis": ("PLA", 2.4, 0.25),
+  "pf_cabin_rail": ("PLA", 2.4, 0.40),
+  "pf_electronics_shelf": ("PLA", 2.4, 0.40),
+  "pf_electronics_post": ("PLA", 2.4, 0.40),
+  "pf_camera_carrier": ("PLA", 2.4, 0.40),
+  "pf_head_top_clearanced": ("PLA", 2.4, 0.08),
+  "pf_eye_pod_camera_clearanced": ("PLA", 2.4, 0.08),
+  "pf_ld220_yaw_cap": ("PLA", 2.4, 0.50),
+  "pf_ld220_coxa_cap": ("PLA", 2.4, 0.50),
+  "pf_ld220_femur_cap": ("PLA", 2.4, 0.50),
+  "pf_mouth_key": ("PLA", 2.4, 0.50),
+  "pf_fixed_claw": ("PLA", 2.4, 0.50),
+  # 脚構造体は汎用 pf_* fallback に依存させず、部品接頭辞を明示する。
+  "pf_coxa_bracket": ("PLA", 2.4, 0.50),
+  "pf_femur_link": ("PLA", 2.4, 0.50),
+  "pf_tibia_link": ("PLA", 2.4, 0.50),
+}
+
+# 印刷優先脚の強度計算が参照する材料・荷重規則。密度/充填率は質量候補、
+# 許容曲げ応力と要求安全率は ``check_leg_link_strength.py`` の検査条件で、
+# PLAの実フィラメント・積層方向・試験値を確定するものではない。
+PRINT_FIRST_STRENGTH_RULE = {
+  "material": "PLA",
+  "density_g_cm3": MATERIAL_DENSITY_G_CM3["PLA"],
+  "infill_fraction": 0.50,
+  "allowable_bending_mpa": 55.0,
+  "required_safety_factor": 2.0,
+  "base_load_kgf": 1.9,
+  "load_kgf": 3.8,
+  "dynamic_factor": 2.0,
+  "load_includes_dynamic_factor": True,
+  "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+  "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+  "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+  "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+  "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH",
+}
+
+# 印刷優先構成の歩容候補。通常構成の歩容定数を上書きせず、
+# tools/sim_print_first.py がこの辞書を読み取って試験用 C++ ヘッダーを作る。
+# ここに置く値は設計候補であり、実機の転倒・電流・材料強度を保証しない。
+# いずれも現時点では未採用 (simulation の比較入力) と明示する。
+PRINT_FIRST_GAIT = dict(
+  adopted=False,
+  body_h=115.0,
+  stance_r=105.0,
+  stance_off_xy=(0.0, -30.0),
+  step_h=8.0,
+  max_step=18.0,
+  max_turn_deg=12.0,
+  cycle_t=2.4,
+  duty=0.90,
+  sway_mm=(28.9, 28.9, 34.0, 34.0),
+  sway_lead=0.11,
+  phase_off=(0.25, 0.5, 0.75, 0.0),
+  arm_swing_deg=0.0,
+  # 股半径は PRINT_FIRST を唯一の定数源とし、ここで複製しない。
+  hip_r=PRINT_FIRST["hip_r"],
+  path_shape="linear",
+  status="CANDIDATE_NOT_ADOPTED",
+)
 
 # ---------------------------------------------------------------- サーボプロファイル
 # [要実測] 全項目。HORN_* は付属シングルアームホーン
 MICRO = dict(
-    L=23.0, W=12.4, TAB_BELOW=19.5, TAB_T=2.6, TAB_SPAN=32.6,
-    HOLE_PITCH=27.8, HOLE_SPREAD=0.0, TAB_HOLE_D=1.9, SHAFT_OFF=5.9,
-    ABOVE_TAB=6.0, WIRE_W=7.0,
-    HORN_ARM_L=20.0, HORN_ARM_W=7.4, HORN_T=2.0, HORN_HUB_D=7.8,
-    HORN_HUB_H=4.8, HORN_SCREW_D=2.8, HORN_PILOT_D=1.6,
+  L=23.0, W=12.4, TAB_BELOW=19.5, TAB_T=2.6, TAB_SPAN=32.6,
+  HOLE_PITCH=27.8, HOLE_SPREAD=0.0, TAB_HOLE_D=1.9, SHAFT_OFF=5.9,
+  ABOVE_TAB=6.0, WIRE_W=7.0,
+  HORN_ARM_L=20.0, HORN_ARM_W=7.4, HORN_T=2.0, HORN_HUB_D=7.8,
+  HORN_HUB_H=4.8, HORN_SCREW_D=2.8, HORN_PILOT_D=1.6,
 )
 STD = dict(
-    L=40.7, W=20.2, TAB_BELOW=28.2, TAB_T=3.0, TAB_SPAN=54.5,
-    HOLE_PITCH=49.5, HOLE_SPREAD=10.0, TAB_HOLE_D=2.8, SHAFT_OFF=10.0,
-    ABOVE_TAB=11.0, WIRE_W=7.0,
-    HORN_ARM_L=32.0, HORN_ARM_W=9.5, HORN_T=2.8, HORN_HUB_D=11.5,
-    HORN_HUB_H=6.5, HORN_SCREW_D=3.2, HORN_PILOT_D=2.2,   # 共締め M2.6 タッピング下穴。旧 2.0 (径比 0.77) は
-                                                        # 締付トルク過大でネック割れの恐れ → 0.85 へ (2026-09-04 M-02)
+  L=40.7, W=20.2, TAB_BELOW=28.2, TAB_T=3.0, TAB_SPAN=54.5,
+  HOLE_PITCH=49.5, HOLE_SPREAD=10.0, TAB_HOLE_D=2.8, SHAFT_OFF=10.0,
+  ABOVE_TAB=11.0, WIRE_W=7.0,
+  HORN_ARM_L=32.0, HORN_ARM_W=9.5, HORN_T=2.8, HORN_HUB_D=11.5,
+  HORN_HUB_H=6.5, HORN_SCREW_D=3.2, HORN_PILOT_D=2.2,  # 共締め M2.6 タッピング下穴。旧 2.0 (径比 0.77) は
+                            # 締付トルク過大でネック割れの恐れ → 0.85 へ (2026-09-04 M-02)
 )
-YAW_SERVO = STD        # 股ヨー (シャーシ搭載)
-LEG_SERVO = STD        # 股ピッチ / 膝
+YAW_SERVO = STD    # 股ヨー (シャーシ搭載)
+LEG_SERVO = STD    # 股ピッチ / 膝
 
 # ---------------------------------------------------------------- 脚リンク
-COXA_LEN = 26.0        # 股ヨー軸 → 股ピッチ軸
-COXA_REAR_MIN_X = -12.0  # ヨー天板のみの後端。箱枠・ホーン座は保持 (2026-09-05)
-FEMUR_LEN = 70.0       # 股ピッチ軸 → 膝軸 (STD 箱枠と回転掃引の成立条件から)
-TIBIA_LEN = 135.0      # 膝軸 → 足先。150% 脛シェル(139mm)との整合で決定
-LINK_W = 18.0          # tibia ビーム幅
-LINK_T = 10.0          # tibia ビーム厚
-WALL = 3.0             # ブラケット肉厚
-PLATE_T = 6.0          # ホーン結合プレート厚 (片持ちのため厚め)
+COXA_LEN = 26.0    # 股ヨー軸 → 股ピッチ軸
+COXA_REAR_MIN_X = -12.0 # ヨー天板のみの後端。箱枠・ホーン座は保持 (2026-09-05)
+FEMUR_LEN = 70.0    # 股ピッチ軸 → 膝軸 (STD 箱枠と回転掃引の成立条件から)
+TIBIA_LEN = 135.0   # 膝軸 → 足先。150% 脛シェル(139mm)との整合で決定
+LINK_W = 18.0     # tibia ビーム幅
+LINK_T = 10.0     # tibia ビーム厚
+WALL = 3.0       # ブラケット肉厚
+PLATE_T = 6.0     # ホーン結合プレート厚 (片持ちのため厚め)
 
 # ---------------------------------------------------------------- シャーシ
 # v3 (2026-07-28): 完成フィギュア (元キット作者ご本人の作例) 下面写真の実測配置へ修正。
@@ -57,15 +360,15 @@ PLATE_T = 6.0          # ホーン結合プレート厚 (片持ちのため厚�
 # 股ヨー軸は同一円 r=HIP_R 上。STD ケースは軸まわり回転が自由 (結合はホーン
 # のみ) なので 4 個とも長手を X 軸平行に寝かせ、45° ペア (FR-RR/FL-RL) の
 # ケース間クリア 17.9mm を確保する (v2 ピンホイールは 90° 対称専用で廃止)
-CHASSIS_D = 144.0      # 円形プレート本体の直径 (キット基板 φ129 +余裕)。
-                       # シェル取付タブ 7 個は意図的にプレート外周から張り出す
-                       # 耳 (中心 r78, 最外 ~r86 → 全幅 ~172)。外装クリアランス
-                       # はタブ込み寸法で見ること
+CHASSIS_D = 144.0   # 円形プレート本体の直径 (キット基板 φ129 +余裕)。
+            # シェル取付タブ 7 個は意図的にプレート外周から張り出す
+            # 耳 (中心 r78, 最外 ~r86 → 全幅 ~172)。外装クリアランス
+            # はタブ込み寸法で見ること
 CHASSIS_T = 4.0
-HIP_R = 50.9           # ヨー軸の配置半径 (v2 の (±36,±36) と同径)
-HIP_DROP = 27.6        # プレート下面 → 股ヨー軸原点/股ピッチ面 (サーボ突出
-                       # +ホーン+coxa 天板の積み上げ実測値。可視化/検査の
-                       # 5 ファイルが共有 — ここが唯一の正)
+HIP_R = 50.9      # ヨー軸の配置半径 (v2 の (±36,±36) と同径)
+HIP_DROP = 27.6    # プレート下面 → 股ヨー軸原点/股ピッチ面 (サーボ突出
+            # +ホーン+coxa 天板の積み上げ実測値。可視化/検査の
+            # 5 ファイルが共有 — ここが唯一の正)
 LEG_ANGLES = {"FR": 15.0, "FL": 165.0, "RL": 210.0, "RR": 330.0}
 # 中立スタンスの足先方位 (取付方位と別)。公式フィギュアのポーズ準拠で
 # 前脚は前寄り (中立ヨー +18°, 正面から 57°)・後脚はやや外拡げ (中立ヨー
@@ -74,8 +377,8 @@ LEG_ANGLES = {"FR": 15.0, "FL": 165.0, "RL": 210.0, "RR": 330.0}
 # 外へ振りすぎると内側ヨー使用量が LIM_YAW_IN を超える。この組合せ +
 # SWAY 34/LEAD 0.11 で IK フェイル 0・内側 16.6°・マージン +8.8mm
 STANCE_ANGLES = {"FR": 33.0, "FL": 147.0, "RL": 208.0, "RR": 332.0}
-STANCE_R = 129.0       # 中立時のヨー軸→足先 水平距離 (足先位置は旧設計と同等:
-                       # 旧 hip r92.2+88 ≈ 新 r50.9+129。firmware STANCE_R と一致)
+STANCE_R = 129.0    # 中立時のヨー軸→足先 水平距離 (足先位置は旧設計と同等:
+            # 旧 hip r92.2+88 ≈ 新 r50.9+129。firmware STANCE_R と一致)
 # ---- 重心と足先パターンのオフセット (2026-09-04 システム監査 S-01)
 # 全機体重心はボディ原点 (股ヨー軸円の中心) ではなく、Cabin (534g, y≈-167/-230)
 # のため y=-39mm にある (tools/export_urdf.py の質量モデル = URDF から算出:
@@ -87,38 +390,129 @@ STANCE_R = 129.0       # 中立時のヨー軸→足先 水平距離 (足先位�
 # 実接触 (34°) に近づき IK 失敗も出るため -30 で妥協 (体高 110-130, 後脚 SWAY
 # 40mm と組合せて最悪マージン +10.9mm, IK 失敗 0, ポッド側ヨー 28.9°/30°)。
 # 実重量・重心を I-01 で実測したら CG_XY を更新し sim_gait.py を再実行すること
-CG_XY = (0.0, -39.0)          # 全機体重心のボディ座標 (mm, +Y 前)。URDF 質量モデル値
-STANCE_OFF_XY = (0.0, -30.0)  # 中立足先パターンのボディ座標オフセット (mm)。firmware
-                              # STANCE_OFF_X/Y と一致 (sim_gait.py が突合)
+CG_XY = (0.0, -39.0)     # 全機体重心のボディ座標 (mm, +Y 前)。URDF 質量モデル値
+STANCE_OFF_XY = (0.0, -30.0) # 中立足先パターンのボディ座標オフセット (mm)。firmware
+               # STANCE_OFF_X/Y と一致 (sim_gait.py が突合)
+
+# ---------------------------------------------------------------- 歩容・関節制限の正本
+# firmware/src/config.h は組込み用の投影であり、このファイルの値を手で
+# 複製して決めない。tools/config_contract.py が firmware の数値をこの辞書と
+# 一方向に突合するため、片側だけを変更したままシミュレーションを通せない。
+# print-first の候補は PRINT_FIRST_GAIT に隔離し、下記の通常歩容へ自動採用しない。
+BODY_H_DEFAULT = 115.0
+BODY_H_MIN = 110.0
+BODY_H_MAX = 130.0
+STEP_H = 18.0
+CYCLE_T = 1.6
+MAX_STEP = 30.0
+MAX_TURN_DEG = 12.0
+PHASE_OFF = (0.25, 0.50, 0.75, 0.0)  # FR, FL, RL, RR
+DUTY = 0.75
+SWAY_MM = (34.0, 34.0, 40.0, 40.0)  # FR, FL, RL, RR
+SWAY_LEAD = 0.11
+KNEE_DISTANCE_MARGIN_MM = 0.5
+
+JOINT_LIMITS_DEG = {
+    "yaw": 40.0,
+    "yaw_inner": 17.5,
+    "yaw_inner_sum": 26.0,
+    "yaw_pod": 30.0,
+    "pitch": (-45.0, 55.0),
+    "knee": 44.0,
+}
+YAW_IN_SIGN = (-1, +1, -1, +1)
+YAW_POD_SIGN = (0, 0, +1, -1)
+JOINT_SIGN = (
+    (+1, -1, -1), (+1, +1, +1), (+1, -1, -1), (+1, +1, +1),
+)
+
+# 腕・目の制限も firmware の裸の数値にしない。実測未確認のサーボ定格を
+# 採用するものではなく、現行機構のソフト制限とスルーレートの入力である。
+ARM_YAW_LIMIT_DEG = 15.0
+ARM_SLEW_DPS = 150.0
+LEG_SLEW_DPS = 240.0
+ARM_LEG_YAW_GATE_DEG = 20.0
+ARM_LEG_YAW_SIGN = (+1, -1)
+ARM_SWING_DEG = 8.0
+EYE_LIMIT_DEG = 80.0
+EYE_SLEW_DPS = 500.0
+ARM_SHOULDER_OVER_HIP_MM = 9.2
+ARM_REACH_MM = 47.70
+ARM_GROUND_MARGIN_MM = 8.0
+ARM_UPPER_MM = 55.0
+ARM_HAND_HALF_MM = 14.5
+ARM_POSE_TUCK = (0.0, 55.0, 95.0)
+ARM_POSE_READY = (10.0, 30.0, 40.0)
+ARM_POSE_REACH = (0.0, 10.0, 10.0)
+
+# Firmware の電装値もこのファイルを正本とする。config_contract.py はこの
+# 辞書を読み、firmware/src/config.h に一方向で写された値だけを検査する。
+# ピン配線・PCA チャンネル・電池分圧を検査側へ再リテラル化しないため、
+# 配線を変更するときはここを変更してから firmware を生成・検査する。
+FIRMWARE_ELECTRICAL = {
+    "SERVO_FREQ": 50,
+    "PCA_ADDR": (0x40, 0x41),
+    "N_CH": 32,
+    "PCA_CH": (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+    "CH_HEAD": 12,
+    "ARM_CH": (16, 17, 18, 20, 21, 22),
+    "EYE_CH": (24, 25, 26),
+    "EYE_LIM": 80.0,
+    "EYE_SLEW_DPS": 500.0,
+    "ARM_SIGN": (1, -1),
+    "US_MIN": 500,
+    "US_MAX": 2500,
+    "DEG_RANGE": 180.0,
+    "DFPLAYER_TRACK_MAX": 9999,
+    "CONTROL_LEASE_MS": 1500,
+    "CAL_ENDPOINT_MARGIN_US": 100,
+    "PIN_SDA": 21,
+    "PIN_SCL": 22,
+    "PIN_LED": 4,
+    "PIN_DF_RX": 16,
+    "PIN_DF_TX": 17,
+    "PIN_VBAT": 34,
+    "VBAT_DIV_NUMERATOR": (100.0, 33.0),
+    "VBAT_DIV_DENOMINATOR": 33.0,
+    "VBAT_WARN": 6.8,
+    "VBAT_CUT": 6.4,
+    "VBAT_MAX_VALID": 8.8,
+    "N_LED": 12,
+    "PIN_I2S_BCLK": 26,
+    "PIN_I2S_WS": 25,
+    "PIN_I2S_DOUT": 27,
+    "PIN_I2S_DIN": 33,
+    "AUDIO_SAMPLE_RATE": 16000,
+}
 
 import math as _math
 import numpy as _np
 HIPS = {k: (HIP_R * _math.cos(_math.radians(a)), HIP_R * _math.sin(_math.radians(a)))
-        for k, a in LEG_ANGLES.items()}
+    for k, a in LEG_ANGLES.items()}
 
 # ---- ポッド (Cabin) 接続ネック: シャーシ後端 (シェル後方へ露出) から -Y へ
 # 張り出す隠し梁 + キット Head_TailJoint_Blue コーン (150% で 41.7mm) を
 # 化粧スリーブとして被せる。公式フィギュアの「青コーン+球リングのネック」
 # を再現する (下面写真参照)。ブラケット穴は吊りスタンドと共用パターン
-POD_NECK_Y0 = -58.0    # ブラケット基部 (プレート上, M3×4 の中心)
-POD_NECK_LEN = 46.0    # 基部 → ポッド前面フランジ面 (-Y 方向)
-POD_NECK_BEAM = (16.0, 12.0)   # 梁断面 (幅 W × 高 H)。スリーブ内に収まる
-POD_FLANGE = (36.0, 30.0)      # ポッド内側の当て板 (W × H), M3×4
+POD_NECK_Y0 = -58.0  # ブラケット基部 (プレート上, M3×4 の中心)
+POD_NECK_LEN = 46.0  # 基部 → ポッド前面フランジ面 (-Y 方向)
+POD_NECK_BEAM = (16.0, 12.0)  # 梁断面 (幅 W × 高 H)。スリーブ内に収まる
+POD_FLANGE = (36.0, 30.0)   # ポッド内側の当て板 (W × H), M3×4
 
 # Cabinの配置はプレート下面基準。2026-09-05: 2個の既存Pegと両殻の
 # ソケット交差0でBackの高さを修正。旧z=55ではPegが約2,749/550mm³干渉。
 # キットの外形・縮尺は維持。kit_assemblyの装飾も元記録座標から同じ差分だけ追従する。
 CABIN_POSES = {
-    "Cabin_Front_Blue": {"rotations": (("z", 180.0), ("x", 90.0)),
-                         "translation": (0.0, -156.0, 55.0)},
-    "Cabin_Back_Blue_Repaired": {"rotations": (("y", 180.0), ("x", 90.0)),
-                                 "translation": (0.0, -235.0, 48.692503)},
+  "Cabin_Front_Blue": {"rotations": (("z", 180.0), ("x", 90.0)),
+             "translation": (0.0, -156.0, 55.0)},
+  "Cabin_Back_Blue_Repaired": {"rotations": (("y", 180.0), ("x", 90.0)),
+                 "translation": (0.0, -235.0, 48.692503)},
 }
 CABIN_PEG_POSES = {
-    "lower": {"rotations": (("x", 90.0),),
-              "translation": (0.0, -211.0932502746582, 9.95)},
-    "upper": {"rotations": (("x", 90.0), ("y", 90.0)),
-              "translation": (0.0, -211.0932502746582, 94.05)},
+  "lower": {"rotations": (("x", 90.0),),
+       "translation": (0.0, -211.0932502746582, 9.95)},
+  "upper": {"rotations": (("x", 90.0), ("y", 90.0)),
+       "translation": (0.0, -211.0932502746582, 94.05)},
 }
 
 # ---- 梁先端の丸ポスト絞り (2026-07-30 追加, 手加工の焼き込みタスク) ----
@@ -141,12 +535,12 @@ CABIN_PEG_POSES = {
 # 絞り込む**方式にした (対角逃げの一種を、キット側ではなく完全に自制御下の
 # pod_neck 側だけで完結させる)。pod_neck は化粧キャップ (TailJoint) に
 # 完全に隠れる非可視の構造材のため鉄則1 (可視ジオメトリ保護) の対象外。
-NECK_POST_D = 12.0      # 梁先端の絞り込み後の丸ポスト径。TailJoint 内部の
-                        # 十字ボアの実測ワースト最小半径 7.0mm に対し
-                        # 片側1.0mmの安全代 (現物合わせでの接着代を兼ねる,
-                        # 回転位相を問わず必ず収まる)
-NECK_TAPER_LEN = 20.0   # 絞り込み区間の長さ (Y 方向, 先端から)。旧「被せ代
-                        # ~20mm」の記述と同じ値を踏襲
+NECK_POST_D = 12.0   # 梁先端の絞り込み後の丸ポスト径。TailJoint 内部の
+            # 十字ボアの実測ワースト最小半径 7.0mm に対し
+            # 片側1.0mmの安全代 (現物合わせでの接着代を兼ねる,
+            # 回転位相を問わず必ず収まる)
+NECK_TAPER_LEN = 20.0  # 絞り込み区間の長さ (Y 方向, 先端から)。旧「被せ代
+            # ~20mm」の記述と同じ値を踏襲
 
 PCA9685_HOLES = (55.9, 19.05)
 
@@ -157,28 +551,28 @@ PCA9685_HOLES = (55.9, 19.05)
 # ブーリアン確定, 落とし穴 #55 の Head_Top 版)。tools/make_head_eyecut.py の
 # 内部機構逃がし (外皮 ≥2.5mm 残しの内殻ホロー + ケースノッチ) とセットで、
 # 以下のスタック構成がボクセル場検査 (外皮+クリア 1.5mm) で成立する:
-#   - board1 下面 = ボス上面 (z=9.0)。全 16ch 使用可
-#   - board2 は M2.5×PCA_SPACER の M-F スタンドオフで上段へ (下面 z=26.6)。
-#     プラグ包絡 (ヘッダ 2.5 + サーボプラグ 14) の上端 z≈45 が頭殻クラウンの
-#     絞りに接近するため、**南端 (−y 側) の約 4ch は空けて北詰めで使う**
-#     (PCA_B2_USED_Y)。board2 (0x41) の使用は腕 8 + 目 2 = 10ch なので
-#     北詰め 11ch に収まる。プラグの挿抜は頭 (Head_Top) を外した状態で行う
-#     — 頭を被せた状態で必要なのはこの「恒久包絡」だけ
-#   - プラグ列は両ボードとも +x 側 (PCA_PLUG_X)。I2C ヘッダは北端のみ実装
-#     (南端に立てると上下段間 16mm を超える)
-PCA_BOARD = (25.4, 62.5, 1.6)   # W(X) × L(Y) × 板厚 [要実測]
-PCA_STACK_Y0 = 1.0              # スタック中心 y (make_chassis のボス配置と共有)
-PCA_BOSS_H = 5.0                # chassis ボス高 (プレート上面基準)
-PCA_B1_Z = CHASSIS_T + PCA_BOSS_H                  # board1 下面 z = 9.0
-PCA_SPACER = 16.0               # board1 上面 → board2 下面 (M2.5×16 M-F)
-PCA_B2_Z = PCA_B1_Z + PCA_BOARD[2] + PCA_SPACER    # board2 下面 z = 26.6
-PCA_PLUG_ENV_H = 17.0           # 基板上面からのサーボプラグ+配線恒久包絡
-                                 # (ヘッダ 2.5 + プラグ 14 + 配線 0.5)
-PCA_PLUG_X = (7.5, 15.5)        # プラグ列の x 帯 (+x 側, 両ボード共通)
-PCA_B2_USED_Y = (-8.0, 29.0)    # board2 の使用チャネル y 帯 (北詰め ~11ch)
-PCA_LOW_COMP_H = 3.5            # プラグ列以外の低背部品高 (基板上面から)
+#  - board1 下面 = ボス上面 (z=9.0)。全 16ch 使用可
+#  - board2 は M2.5×PCA_SPACER の M-F スタンドオフで上段へ (下面 z=26.6)。
+#   プラグ包絡 (ヘッダ 2.5 + サーボプラグ 14) の上端 z≈45 が頭殻クラウンの
+#   絞りに接近するため、**南端 (−y 側) の約 4ch は空けて北詰めで使う**
+#   (PCA_B2_USED_Y)。board2 (0x41) の使用は腕 8 + 目 2 = 10ch なので
+#   北詰め 11ch に収まる。プラグの挿抜は頭 (Head_Top) を外した状態で行う
+#   — 頭を被せた状態で必要なのはこの「恒久包絡」だけ
+#  - プラグ列は両ボードとも +x 側 (PCA_PLUG_X)。I2C ヘッダは北端のみ実装
+#   (南端に立てると上下段間 16mm を超える)
+PCA_BOARD = (25.4, 62.5, 1.6)  # W(X) × L(Y) × 板厚 [要実測]
+PCA_STACK_Y0 = 1.0       # スタック中心 y (make_chassis のボス配置と共有)
+PCA_BOSS_H = 5.0        # chassis ボス高 (プレート上面基準)
+PCA_B1_Z = CHASSIS_T + PCA_BOSS_H         # board1 下面 z = 9.0
+PCA_SPACER = 16.0        # board1 上面 → board2 下面 (M2.5×16 M-F)
+PCA_B2_Z = PCA_B1_Z + PCA_BOARD[2] + PCA_SPACER  # board2 下面 z = 26.6
+PCA_PLUG_ENV_H = 17.0      # 基板上面からのサーボプラグ+配線恒久包絡
+                 # (ヘッダ 2.5 + プラグ 14 + 配線 0.5)
+PCA_PLUG_X = (7.5, 15.5)    # プラグ列の x 帯 (+x 側, 両ボード共通)
+PCA_B2_USED_Y = (-8.0, 29.0)  # board2 の使用チャネル y 帯 (北詰め ~11ch)
+PCA_LOW_COMP_H = 3.5      # プラグ列以外の低背部品高 (基板上面から)
 
-ESP32_SLOT = (51.0, 24.0)  # 基板穴スパン (実寸参照値として保持)
+ESP32_SLOT = (51.0, 24.0) # 基板穴スパン (実寸参照値として保持)
 # ESP32 のネジ止めマウントは 2026-08-21 に chassis から撤去 (旧 ESP32_Y0 の
 # 再配置は後脚ケース開口とスタンドオフ/基板本体が干渉し不成立だった — 経緯と
 # 再発防止は make_chassis.py の撤去コメント参照)。
@@ -205,9 +599,9 @@ M3_FREE = 3.4
 # レビュー finding, critical: 旧版はここに抜け止めリップも追加していたが
 # ソケットボアと 21.68mm^3 食い込み挿入不能だったため廃止済み。
 # hardware/src/make_leg.py leg_foot_bored()/tibia_link() のコメント参照)
-FOOT_TIP_D = 14.0      # tibia 先端のフランジ通過クリアランス径 (無変更)
-FOOT_SOCKET_D = 10.0    # tibia 側ソケット径 (無変更)
-FOOT_SOCKET_H = 6.0     # 同ソケット深さ (無変更)
+FOOT_TIP_D = 14.0   # tibia 先端のフランジ通過クリアランス径 (無変更)
+FOOT_SOCKET_D = 10.0  # tibia 側ソケット径 (無変更)
+FOOT_SOCKET_H = 6.0   # 同ソケット深さ (無変更)
 
 # 隠しパッド (TPU, foot_pad): leg_foot_bored() 甲コラム中央の底面へ隠し
 # ポケットを掘り、実際の接地はこのゴムパッドが担う (外観はキット Leg_Foot
@@ -217,11 +611,11 @@ FOOT_SOCKET_H = 6.0     # 同ソケット深さ (無変更)
 # の根元 (甲本体へ merge する高さ) の重心 raw≈(0.05,2.56) → (0,2.5) に丸め。
 # 甲コラムの肉厚がもっとも残り、かつ3スタブのどれとも干渉しない位置)
 FOOT_PAD_XY = (0.0, 2.5)
-FOOT_PAD_D = 8.0            # ポケット/パッド軸径
-FOOT_PAD_POCKET_H = 3.0     # ポケット深さ (甲コラム自然底面から上へ掘る量)
-FOOT_PAD_PROTRUDE = 1.5     # パッドが甲全体の最下点 (トゥ取付スタブ先端,
-                            # leg_foot_bored ローカル z の最小値) からさらに
-                            # 下へ突き出す量 — ここが実際の接地点になる
+FOOT_PAD_D = 8.0      # ポケット/パッド軸径
+FOOT_PAD_POCKET_H = 3.0   # ポケット深さ (甲コラム自然底面から上へ掘る量)
+FOOT_PAD_PROTRUDE = 1.5   # パッドが甲全体の最下点 (トゥ取付スタブ先端,
+              # leg_foot_bored ローカル z の最小値) からさらに
+              # 下へ突き出す量 — ここが実際の接地点になる
 
 # ---- 接地の連鎖 (2026-07-29, 足トゥ嵌合精密化タスク): firmware/sim の IK は
 # T_foot = T_knee@trans(0,0,-TIBIA_LEN) を「足先接地点そのもの」として扱い、
@@ -246,68 +640,68 @@ FOOT_PAD_PROTRUDE = 1.5     # パッドが甲全体の最下点 (トゥ取付ス
 # (このコメントの数値ではなく、check_leg_assembly.py の実行結果が正)。
 #
 # FOOT_GROUND_OFFSET の決定手順 (2026-07-29, 2段階):
-#  (1) 素朴な近似 (脚が鉛直の場合のみ厳密): make_leg._load_kit_foot() で
-#      得た甲メッシュの bbox 最下点 (leg_foot_bored ローカル z, tibia 差込
-#      面=0 基準) から FOOT_PAD_PROTRUDE を差し引いた foot_pad() の
-#      dome_bottom_z の絶対値 = 11.358mm。TIBIA_LEN を単純にこれだけ伸ばす
-#      と、T_foot (IK 到達点, 伸長後の TIBIA 使用) は world z=0 に一致する
-#      が、そこから物理取付点 (TIBIA_LEN=135 側) を求めるには tibia 軸に
-#      沿って戻す必要があり、tibia 軸は脚姿勢 (pitch+knee) によって鉛直から
-#      9〜21° 傾く (スタンス全域で実測) ため、この一次近似だけでは
-#      world z の残差が体高105で最大4mm 程度残ることを実機チェーン
-#      (check_leg_assembly.py と同じ T_foot=T_knee@trans(0,0,-TIBIA_LEN) の
-#      物理配置 + IK 側だけ TIBIA_LEN_GAIT を使うチェーン) で数値検証して
-#      発見した (単純な「一次元押し出し」は脚が傾くほど過小評価になる)。
-#  (2) 実運用範囲での校正 (採用): tools/sim_gait.py の foot_target() が
-#      実際に生成する足先軌道 (SWAY 重心シフト込み, 歩容位相全域) ×
-#      体高 105-130mm の全域で、上記の物理配置チェーンにより実際に
-#      leg_foot_bored+foot_pad メッシュ全体を配置し、スタンス相 (遊脚で
-#      ない位相) だけを対象にその最下点の world z を数値評価 (0.02mm 刻み
-#      探索, 位相240分割)。SWAY を含めない単純な「中立スタンスのみ」の
-#      一次評価では最悪ケースが FR/体高105 (worst=+0.01mm) と出たが、
-#      実際に SWAY を含めると重心シフトで RL の脚がより深く傾く位相
-#      (体高105, phase=0.25 近辺) が最悪ケースに入れ替わり、そのままでは
-#      -3.5mm 程度の残差が残ることが判明した (SWAY を無視した一次評価は
-#      不十分だった)。SWAY 込みの最悪ケースがちょうど world z=0 に接する
-#      よう FOOT_GROUND_OFFSET を選ぶと 18.6mm (worst world z = +0.05mm,
-#      0.1mm精度の目標を満たす) — このとき体高を上げる/他の脚・位相では
-#      逆に足はわずかに浮く方向になる (埋まる方向ではなく浮く方向に残差が
-#      出るよう最悪ケース側で校正するのが安全 — TPU foot_pad の圧縮代で
-#      吸収できる方向)。tools/check_leg_assembly.py が実ビルド後の
-#      hardware/stl/leg_foot_bored.stl+foot_pad.stl と tools/sim_gait.py の
-#      実際の foot_target()/leg_ik() を使ってこの校正を毎回再現・報告する
-#      (このコメントの数値ではなく実行結果が正)。
-FOOT_GROUND_OFFSET = 20.98  # [実測+校正, 0.1mm精度] SWAY込み歩容スタンス
-                            # 2026-09-04: 18.6→20.98 — 重心対応の後方スタンス (STANCE_OFF_Y -30,
-                            # 後脚 SWAY 40, 体高 110-130) で最悪位相の脛傾きが増え、旧値では
-                            # foot_pad 底が -2.05mm 埋まる (check_leg_assembly 再校正値 155.98)
-                            # 全域 (体高105-130, 全位相) で foot_pad 底が
-                            # world z を下回らない最小の押し下げ量
+# (1) 素朴な近似 (脚が鉛直の場合のみ厳密): make_leg._load_kit_foot() で
+#   得た甲メッシュの bbox 最下点 (leg_foot_bored ローカル z, tibia 差込
+#   面=0 基準) から FOOT_PAD_PROTRUDE を差し引いた foot_pad() の
+#   dome_bottom_z の絶対値 = 11.358mm（旧・鉛直時の近似値）。TIBIA_LEN を単純にこれだけ伸ばす
+#   と、T_foot (IK 到達点, 伸長後の TIBIA 使用) は world z=0 に一致する
+#   が、そこから物理取付点 (TIBIA_LEN=135 側) を求めるには tibia 軸に
+#   沿って戻す必要があり、tibia 軸は脚姿勢 (pitch+knee) によって鉛直から
+#   9〜21° 傾く (スタンス全域で実測) ため、この一次近似だけでは
+#   world z の残差が体高105で最大4mm 程度残ることを実機チェーン
+#   (check_leg_assembly.py と同じ T_foot=T_knee@trans(0,0,-TIBIA_LEN) の
+#   物理配置 + IK 側だけ TIBIA_LEN_GAIT を使うチェーン) で数値検証して
+#   発見した (単純な「一次元押し出し」は脚が傾くほど過小評価になる)。
+# (2) 実運用範囲での校正 (採用): tools/sim_gait.py の foot_target() が
+#   実際に生成する足先軌道 (SWAY 重心シフト込み, 歩容位相全域) ×
+#   体高 105-130mm の全域で、上記の物理配置チェーンにより実際に
+#   leg_foot_bored+foot_pad メッシュ全体を配置し、スタンス相 (遊脚で
+#   ない位相) だけを対象にその最下点の world z を数値評価 (0.02mm 刻み
+#   探索, 位相240分割)。SWAY を含めない単純な「中立スタンスのみ」の
+#   一次評価では最悪ケースが FR/体高105 (worst=+0.01mm) と出たが、
+#   実際に SWAY を含めると重心シフトで RL の脚がより深く傾く位相
+#   (体高105, phase=0.25 近辺) が最悪ケースに入れ替わり、そのままでは
+#   -3.5mm 程度の残差が残ることが判明した (SWAY を無視した一次評価は
+#   不十分だった)。SWAY 込みの最悪ケースがちょうど world z=0 に接する
+#   よう FOOT_GROUND_OFFSET を選ぶと 20.98mm (worst world z = +0.05mm,
+#   0.1mm精度の目標を満たす) — このとき体高を上げる/他の脚・位相では
+#   逆に足はわずかに浮く方向になる (埋まる方向ではなく浮く方向に残差が
+#   出るよう最悪ケース側で校正するのが安全 — TPU foot_pad の圧縮代で
+#   吸収できる方向)。tools/check_leg_assembly.py が実ビルド後の
+#   hardware/stl/leg_foot_bored.stl+foot_pad.stl と tools/sim_gait.py の
+#   実際の foot_target()/leg_ik() を使ってこの校正を毎回再現・報告する
+#   (このコメントの数値ではなく実行結果が正)。
+FOOT_GROUND_OFFSET = 20.98 # [ホスト数値校正・実機未確認, 0.1mm目標] SWAY込み歩容スタンス
+              # 2026-09-04: 旧近似18.6→現行候補20.98 — 重心対応の後方スタンス (STANCE_OFF_Y -30,
+              # 後脚 SWAY 40, 体高 110-130) で最悪位相の脛傾きが増え、旧値では
+              # foot_pad 底が -2.05mm 埋まる (check_leg_assembly 再校正値 155.98)
+              # 全域 (体高105-130, 全位相) で foot_pad 底が
+              # world z を下回らない最小の押し下げ量
 TIBIA_LEN_GAIT = TIBIA_LEN + FOOT_GROUND_OFFSET
-                            # firmware ik.h / tools/sim_gait.py の TIBIA が
-                            # 使う実効長 (153.6mm)。物理ジオメトリの
-                            # TIBIA_LEN (135mm, make_leg.py 用) とは別物 —
-                            # 「TIBIA_LEN を伸ばす」のではなく「IK が想定する
-                            # 足先到達点を foot_pad 底まで押し下げる」ための
-                            # 専用定数。firmware/src/config.h の TIBIA_LEN は
-                            # この値と一致させる (IK 専用シンボルとして
-                            # 運用— ik.h は他に TIBIA_LEN を物理形状目的で
-                            # 使っていない。firmware/src/ik.h 参照)
+              # firmware ik.h / tools/sim_gait.py の TIBIA が
+              # 使う実効長 (155.98mm)。物理ジオメトリの
+              # TIBIA_LEN (135mm, make_leg.py 用) とは別物 —
+              # 「TIBIA_LEN を伸ばす」のではなく「IK が想定する
+              # 足先到達点を foot_pad 底まで押し下げる」ための
+              # 専用定数。firmware/src/config.h の TIBIA_LEN は
+              # この値と一致させる (IK 専用シンボルとして
+              # 運用— ik.h は他に TIBIA_LEN を物理形状目的で
+              # 使っていない。firmware/src/ik.h 参照)
 
 # ---------------------------------------------------------------- 腕 (2026-07 追加)
 # 肩ヨー/肩ピッチ/肘 = MICRO (MG90S)。指先開閉 = SUBMICRO (ES9251 II 級)
 # 肩ヨーの 2 個は出力軸ボールベアリング品を指定 (吊り下げ片持ちで腕全体の
 # 曲げモーメントが常時かかる。check_arm.py [2b] 参照)。他はブッシュ品で可
-SUBMICRO = dict(   # [要実測] 3.7g 級デジタルサブマイクロ (6V 対応品を選定)
-    L=20.0, W=8.6, TAB_BELOW=15.0, TAB_T=1.6, TAB_SPAN=26.6,
-    HOLE_PITCH=23.5, HOLE_SPREAD=0.0, TAB_HOLE_D=1.5, SHAFT_OFF=4.6,
-    ABOVE_TAB=4.5, WIRE_W=5.0,
-    HORN_ARM_L=13.0, HORN_ARM_W=4.6, HORN_T=1.4, HORN_HUB_D=5.2,
-    HORN_HUB_H=3.2, HORN_SCREW_D=2.0, HORN_PILOT_D=1.1,
+SUBMICRO = dict(  # [要実測] 3.7g 級デジタルサブマイクロ (6V 対応品を選定)
+  L=20.0, W=8.6, TAB_BELOW=15.0, TAB_T=1.6, TAB_SPAN=26.6,
+  HOLE_PITCH=23.5, HOLE_SPREAD=0.0, TAB_HOLE_D=1.5, SHAFT_OFF=4.6,
+  ABOVE_TAB=4.5, WIRE_W=5.0,
+  HORN_ARM_L=13.0, HORN_ARM_W=4.6, HORN_T=1.4, HORN_HUB_D=5.2,
+  HORN_HUB_H=3.2, HORN_SCREW_D=2.0, HORN_PILOT_D=1.1,
 )
-ARM_SERVO = MICRO          # 肩・肘
-EYE_SERVO = SUBMICRO       # 目 (キョロキョロ) 駆動。旧 GRIP_SERVO からリネーム
-                           # (2026-07-29 固定爪化でグリッパ機構自体を廃止)
+ARM_SERVO = MICRO     # 肩・肘
+EYE_SERVO = SUBMICRO    # 目 (キョロキョロ) 駆動。旧 GRIP_SERVO からリネーム
+              # (2026-07-29 固定爪化でグリッパ機構自体を廃止)
 
 # 腕マウント (2026-07-28 実機ソケット準拠へ移設): タワー式は既に廃止済み。
 # マウント機構自体 (脚ヨーと同じ「シャーシへ上から挿入・軸下向き」の MICRO
@@ -318,9 +712,9 @@ EYE_SERVO = SUBMICRO       # 目 (キョロキョロ) 駆動。旧 GRIP_SERVO �
 # 実測根拠 [STL実測, 鋭角エッジ(>20°)連結成分からのリング検出法 — pitfalls #24]:
 # Head_Bottom_Blue.stl (bbox中心化→×1.5, make_visuals.shell_ghosts と同じ前処理)
 # の鋭角エッジ連結成分から円形リングを 3 つ検出 (頂点247/299/289, 半径std<0.71):
-#   中央 (0.13,-48.93) r13.4  ※マウス砲/ネック取付ソケット (前方基準, 前方軸から0.15°)
-#   左   (-31.82,-38.01) r13.0  法線 XY 投影 -39.9°
-#   右   (31.60,-37.53) r13.4  法線 XY 投影 +40.1°
+#  中央 (0.13,-48.93) r13.4 ※マウス砲/ネック取付ソケット (前方基準, 前方軸から0.15°)
+#  左  (-31.82,-38.01) r13.0 法線 XY 投影 -39.9°
+#  右  (31.60,-37.53) r13.4 法線 XY 投影 +40.1°
 # 左右ソケットは前方軸から ±39.9°/+40.1° (平均 40.0°, pitfalls #38 の公式フィギュア
 # 実測 ±40° と一致) に位置し、頭部中心軸からの半径は 49.57/49.07mm (平均 49.3)。
 # ソケット法線の XY 投影角も位置角とほぼ同じ (=放射方向) — 肩ポッドの中立向きは
@@ -331,74 +725,74 @@ EYE_SERVO = SUBMICRO       # 目 (キョロキョロ) 駆動。旧 GRIP_SERVO �
 # ARM_MOUNT_R/ARM_MOUNT_YAW_DEG の実測根拠を示すもので hub_y の値自体には
 # 依存しない)。肩ヨー軸 (鉛直) はそのままこのソケット直下 XY を通す —
 # Z 方向の突合せ (シェル内側の座グリ深さ) は現物合わせ
-ARM_MOUNT_HUB_Y = 11.0          # 頭部中心軸のシャーシ座標 y (shell_ghosts と一致)。
-                                # 【2026-07-31 境界スイープタスク】完全中央 (0.0,
-                                # 直前タスクの実装値) は check_screw_bosses.py の
-                                # chassis arm tab 充填率 47.2% (<70%要求)・
-                                # check_arm.py [1] MICRO後側ボスとSTD開口の分離
-                                # 破綻・[1b] 肩ブラケット×coxa クリアランス -2.7mm
-                                # (交差188mm3)・[4] 腕作業域が前脚へ-8mm 侵入、の
-                                # 4 点で静的に NG と判明 (「完全中央は物理的に
-                                # 不可能」)。実メッシュで hub_y=0..12 を 0.5mm
-                                # (境界付近0.01mm) 刻みでスイープし直接測定した
-                                # 結果 (scratchpad sweep_hub_y.py, docs/assembly.md
-                                # §境界スイープ参照):
-                                #   - fill(chassis arm tab)≥70%: hub_y≥8.2 で達成
-                                #   - [4] 腕作業域 min_d>0: hub_y≥9.3 で達成
-                                #   - [1b] クリアランス≥1.5mm(checker)/≥2mm(選定
-                                #     基準): hub_y≥9.0/9.8 で達成
-                                #   - [1] MICRO後側ボスとSTD開口の分離 (単一点
-                                #     containment): 数学的交点は hub_y=10.305 だが
-                                #     これは実肉厚ゼロの刃先境界 (10.35 でも
-                                #     実肉厚0.021mm — FDM印刷では成立しない)。
-                                #     実肉厚を実測すると hub_y に対しほぼ線形に
-                                #     増加 (10.7→0.196mm, 11.0→0.346mm) するため、
-                                #     本プロジェクト既存の他クリアランス判定
-                                #     (check_screw_bosses.py の ESP32 ボス
-                                #     クリアランス閾値 0.3mm) と揃え、実肉厚
-                                #     ≥0.3mm を満たす最小値として hub_y=11.0 を
-                                #     採用 (4項目の中で唯一の binding 制約 -- 他は
-                                #     全て hub_y=11.0 でも大きな余裕を残す)。
-                                #     一点containmentの数学的ゼロ交点そのもの
-                                #     (10.31) を採用しなかったのは、それが
-                                #     「印刷可能な最小肉厚」を一切保証しない
-                                #     knife-edge 値だったため。
-                                #   - 腕(未クランプ,yaw/pitch/elbow全域)×
-                                #     shin_shell の干渉 onset (leg yaw 走査) も
-                                #     hub_y=0 の 11.0°(実測, config.h旧コメントの
-                                #     10-12.5°と整合)から hub_y=11.0 では 20.0°
-                                #     まで改善 (旧 hub_y=12 の 20.0°とほぼ同値)。
-                                #     立位中立ヨー9.12°(hub_y非依存)との差は
-                                #     10.88°で 3°マージン要求を大きく上回る --
-                                #     hub_y=0時代に問題だった「クランプ発火率
-                                #     70-74%」(ゲート10°が中立9.12°に接近し
-                                #     すぎていたことが原因) は、hub_y=11.0への
-                                #     変更で解消される見込み (firmware
-                                #     ARM_LEG_YAW_GATE_DEG も本タスクで再導出,
-                                #     同ファイル・docs/assembly.md 参照)。
-                                # 旧 12.0 (根拠なしの前寄り) →直前タスクで 0.0
-                                # (完全中央, 但し上記の理由で不可能と判明) →
-                                # 本タスクで 11.0 (実現可能な最中央値, 旧12.0比
-                                # で1mmだけ中央寄せ) へ。make_chassis.pod_neck()
-                                # の頭部逃がしカット (_head_relief_cutter) は
-                                # hub_y に追従して自動再計算される (hub_y=0前提
-                                # で設計したカット量より必要量が減るため、
-                                # 結果的に余剰カット=安全率向上側になる。
-                                # docs/assembly.md 強度計算節で再計算値を報告)
-ARM_MOUNT_R = 49.3             # 頭部中心軸→ソケット中心の半径 [STL実測平均]
-ARM_MOUNT_YAW_DEG = 40.0       # 正面からの方位 = 肩ポッドの中立(ヨー0)向き
-                                # [STL実測平均, 位置角・ソケット法線角ともほぼ一致]
+ARM_MOUNT_HUB_Y = 11.0     # 頭部中心軸のシャーシ座標 y (shell_ghosts と一致)。
+                # 【2026-07-31 境界スイープタスク】完全中央 (0.0,
+                # 直前タスクの実装値) は check_screw_bosses.py の
+                # chassis arm tab 充填率 47.2% (<70%要求)・
+                # check_arm.py [1] MICRO後側ボスとSTD開口の分離
+                # 破綻・[1b] 肩ブラケット×coxa クリアランス -2.7mm
+                # (交差188mm3)・[4] 腕作業域が前脚へ-8mm 侵入、の
+                # 4 点で静的に NG と判明 (「完全中央は物理的に
+                # 不可能」)。実メッシュで hub_y=0..12 を 0.5mm
+                # (境界付近0.01mm) 刻みでスイープし直接測定した
+                # 結果 (scratchpad sweep_hub_y.py, docs/assembly.md
+                # §境界スイープ参照):
+                #  - fill(chassis arm tab)≥70%: hub_y≥8.2 で達成
+                #  - [4] 腕作業域 min_d>0: hub_y≥9.3 で達成
+                #  - [1b] クリアランス≥1.5mm(checker)/≥2mm(選定
+                #   基準): hub_y≥9.0/9.8 で達成
+                #  - [1] MICRO後側ボスとSTD開口の分離 (単一点
+                #   containment): 数学的交点は hub_y=10.305 だが
+                #   これは実肉厚ゼロの刃先境界 (10.35 でも
+                #   実肉厚0.021mm — FDM印刷では成立しない)。
+                #   実肉厚を実測すると hub_y に対しほぼ線形に
+                #   増加 (10.7→0.196mm, 11.0→0.346mm) するため、
+                #   本プロジェクト既存の他クリアランス判定
+                #   (check_screw_bosses.py の ESP32 ボス
+                #   クリアランス閾値 0.3mm) と揃え、実肉厚
+                #   ≥0.3mm を満たす最小値として hub_y=11.0 を
+                #   採用 (4項目の中で唯一の binding 制約 -- 他は
+                #   全て hub_y=11.0 でも大きな余裕を残す)。
+                #   一点containmentの数学的ゼロ交点そのもの
+                #   (10.31) を採用しなかったのは、それが
+                #   「印刷可能な最小肉厚」を一切保証しない
+                #   knife-edge 値だったため。
+                #  - 腕(未クランプ,yaw/pitch/elbow全域)×
+                #   shin_shell の干渉 onset (leg yaw 走査) も
+                #   hub_y=0 の 11.0°(実測, config.h旧コメントの
+                #   10-12.5°と整合)から hub_y=11.0 では 20.0°
+                #   まで改善 (旧 hub_y=12 の 20.0°とほぼ同値)。
+                #   立位中立ヨー9.12°(hub_y非依存)との差は
+                #   10.88°で 3°マージン要求を大きく上回る --
+                #   hub_y=0時代に問題だった「クランプ発火率
+                #   70-74%」(ゲート10°が中立9.12°に接近し
+                #   すぎていたことが原因) は、hub_y=11.0への
+                #   変更で解消される見込み (firmware
+                #   ARM_LEG_YAW_GATE_DEG も本タスクで再導出,
+                #   同ファイル・docs/assembly.md 参照)。
+                # 旧 12.0 (根拠なしの前寄り) →直前タスクで 0.0
+                # (完全中央, 但し上記の理由で不可能と判明) →
+                # 本タスクで 11.0 (実現可能な最中央値, 旧12.0比
+                # で1mmだけ中央寄せ) へ。make_chassis.pod_neck()
+                # の頭部逃がしカット (_head_relief_cutter) は
+                # hub_y に追従して自動再計算される (hub_y=0前提
+                # で設計したカット量より必要量が減るため、
+                # 結果的に余剰カット=安全率向上側になる。
+                # docs/assembly.md 強度計算節で再計算値を報告)
+ARM_MOUNT_R = 49.3       # 頭部中心軸→ソケット中心の半径 [STL実測平均]
+ARM_MOUNT_YAW_DEG = 40.0    # 正面からの方位 = 肩ポッドの中立(ヨー0)向き
+                # [STL実測平均, 位置角・ソケット法線角ともほぼ一致]
 ARM_MOUNT_XY = (ARM_MOUNT_R * _math.sin(_math.radians(ARM_MOUNT_YAW_DEG)),
-                ARM_MOUNT_HUB_Y + ARM_MOUNT_R * _math.cos(_math.radians(ARM_MOUNT_YAW_DEG)))
-                              # 肩ヨー軸の位置 (シャーシ座標, 右腕。左は x 反転)
-                              # ≈ (31.7, 48.8) (ARM_MOUNT_HUB_Y=11.0 時点の値。
-                              # ARM_MOUNT_HUB_Y に連動するため hub_y を変えたら
-                              # この近似値コメントも要更新)。実メッシュ掃引に
-                              # よるクリアランス確認は check_arm.py 参照
-                              # (前脚 75° との角度差 35° が新たな最接近 —
-                              # 脚ヨー最大姿勢での交差0を検証)
-ARM_BOSS_H = 2.0              # MICRO タブ台座ボスの高さ (プレート上面)
-UPPER_ARM_LEN = 55.0          # 肩ピッチ軸 → 肘軸 (元 Arm ポッド 71.4mm が覆う)
+        ARM_MOUNT_HUB_Y + ARM_MOUNT_R * _math.cos(_math.radians(ARM_MOUNT_YAW_DEG)))
+               # 肩ヨー軸の位置 (シャーシ座標, 右腕。左は x 反転)
+               # ≈ (31.7, 48.8) (ARM_MOUNT_HUB_Y=11.0 時点の値。
+               # ARM_MOUNT_HUB_Y に連動するため hub_y を変えたら
+               # この近似値コメントも要更新)。実メッシュ掃引に
+               # よるクリアランス確認は check_arm.py 参照
+               # (前脚 75° との角度差 35° が新たな最接近 —
+               # 脚ヨー最大姿勢での交差0を検証)
+ARM_BOSS_H = 2.0       # MICRO タブ台座ボスの高さ (プレート上面)
+UPPER_ARM_LEN = 55.0     # 肩ピッチ軸 → 肘軸 (元 Arm ポッド 71.4mm が覆う)
 ARM_PITCH_LIMIT_DEG = (-45.0, 85.0)
 ARM_ELBOW_LIMIT_DEG = (0.0, 95.0)
 # 可動隣接部の内部逃げ。0.5°刻みの包絡間の最大弦誤差(<0.12mm)も含む。
@@ -420,41 +814,41 @@ ARM_ELBOW_COVER_Y = -ARM_SERVO['TAB_BELOW'] - ARM_ELBOW_COVER_CUT_Y - ARM_ELBOW_
 # 同じ手法 — object_id=0 クラスタ内の kit_position=raw_vertex+source_offset。
 # 2026-07-29 実施, 詳細根拠は hardware/src/make_arm.py claw_mount() 冒頭
 # コメント参照]:
-#   Arm_Right_Claw_Grey.stl は爪ハブと無関係の別形状 (開放骨組, 体積/凸包比
-#   0.205 — 概略値なので比率は目安)。**Arm_Left_Claw_Grey.stl のみが実際の
-#   爪ハブ** (小球ハブ + 指ペグ×3, 体積/凸包比 0.70) — Finger の根元穴
-#   (raw r=1.14mm) とハブのペグ先端 (raw r=1.14mm) が実測で厳密に一致 (kit
-#   frame gap 0.0012mm) しており、ここが正しい嵌合ペアと確定。Finger/
-#   FingerTip 同様、**両腕とも Arm_Left_Claw_Grey.stl を鏡映使用**する
-#   (Right 版は不使用)。
-#   爪ハブは中実 (containment probe で確認, 内部ボア無し) — Claw_Bored 式の
-#   内部加工先入観は棄却 (containment probe: raw x=2.5〜12mm の中心軸全域が
-#   中実)。爪ハブ近位面は「実測ソケット」と見えた r=6.04mm の浅いリブの
-#   内側で**平坦** (レイキャスト実測: r=0-4mm オフセットいずれも claw_mount
-#   ローカル x=一定値, 誤差<0.01mm — ドーム状ではなく平面)。よって
-#   claw_mount は「深い差込ペグ」ではなく、**平坦な円盤面を爪ハブの平坦
-#   近位面へ突き合わせ接着**する方式とした (キット自体の他の小物 joint —
-#   TailJoint スリーブや Insert 類 — と同じ「現物合わせ + 接着」の流儀。
-#   可視ジオメトリ保護の鉄則により Claw_Grey 自体への穴あけ加工はしない —
-#   Bored 系は Mouth/Neck/Ball のみ許可されている)。
-#   肘ボール中心 → 爪ハブ近位面: raw 55.4mm (キットの Arm_*.stl ポッド
-#   全長 raw47.6mm=71.4mm@150% にほぼ収まる — 肘ボールはポッド近位/肩寄り
-#   端にあり、ポッドの残り長 (71.4-UPPER_ARM_LEN=16.4mm@150%) が「肘軸→
-#   ハブ接着面」の kit 実寸に相当。本設計の FOREARM_LEN+CLAW_MOUNT_THICKNESS
-#   =18.5mm はこれに claw_mount 自体の肉厚を足した現実的な下限)
-#   ハブ内部 (近位面→指ペグ平面, "spine"): raw 5.605mm = 8.407mm@150%
-#   指 (ペグ位置→タロン先端): raw 11.598mm = 17.397mm@150%
-CLAW_MOUNT_THICKNESS = 2.5    # claw_mount 自体の物理厚み (forearm 手首面
-                              # → 爪ハブ接着面)。印刷可能な最小構造肉厚
-CLAW_MOUNT_LEN = 6.455        # 変換シフト定数 (claw_mount ローカル座標の
-                              # 原点位置導出用)。爪ハブの実測平坦近位面が
-                              # ちょうど claw_mount 前面 (x=CLAW_MOUNT_THICKNESS)
-                              # に一致するよう選定 — 現物合わせでの追加調整
-                              # 代はほぼ不要 (レイキャスト実測で残差<0.01mm)
-CLAW_HUB_SPINE_150 = 8.407    # 実測 (raw 5.605mm)×1.5. 爪ハブ自体は無加工の
-                              # キット部品なので印刷寸法ではなく reach 計算
-                              # (ARM_HAND_REACH_MM) にのみ使う
-FINGER_REACH_150 = 17.397     # 実測 (raw 11.598mm)×1.5. 同上
+#  Arm_Right_Claw_Grey.stl は爪ハブと無関係の別形状 (開放骨組, 体積/凸包比
+#  0.205 — 概略値なので比率は目安)。**Arm_Left_Claw_Grey.stl のみが実際の
+#  爪ハブ** (小球ハブ + 指ペグ×3, 体積/凸包比 0.70) — Finger の根元穴
+#  (raw r=1.14mm) とハブのペグ先端 (raw r=1.14mm) が実測で厳密に一致 (kit
+#  frame gap 0.0012mm) しており、ここが正しい嵌合ペアと確定。Finger/
+#  FingerTip 同様、**両腕とも Arm_Left_Claw_Grey.stl を鏡映使用**する
+#  (Right 版は不使用)。
+#  爪ハブは中実 (containment probe で確認, 内部ボア無し) — Claw_Bored 式の
+#  内部加工先入観は棄却 (containment probe: raw x=2.5〜12mm の中心軸全域が
+#  中実)。爪ハブ近位面は「実測ソケット」と見えた r=6.04mm の浅いリブの
+#  内側で**平坦** (レイキャスト実測: r=0-4mm オフセットいずれも claw_mount
+#  ローカル x=一定値, 誤差<0.01mm — ドーム状ではなく平面)。よって
+#  claw_mount は「深い差込ペグ」ではなく、**平坦な円盤面を爪ハブの平坦
+#  近位面へ突き合わせ接着**する方式とした (キット自体の他の小物 joint —
+#  TailJoint スリーブや Insert 類 — と同じ「現物合わせ + 接着」の流儀。
+#  可視ジオメトリ保護の鉄則により Claw_Grey 自体への穴あけ加工はしない —
+#  Bored 系は Mouth/Neck/Ball のみ許可されている)。
+#  肘ボール中心 → 爪ハブ近位面: raw 55.4mm (キットの Arm_*.stl ポッド
+#  全長 raw47.6mm=71.4mm@150% にほぼ収まる — 肘ボールはポッド近位/肩寄り
+#  端にあり、ポッドの残り長 (71.4-UPPER_ARM_LEN=16.4mm@150%) が「肘軸→
+#  ハブ接着面」の kit 実寸に相当。本設計の FOREARM_LEN+CLAW_MOUNT_THICKNESS
+#  =18.5mm はこれに claw_mount 自体の肉厚を足した現実的な下限)
+#  ハブ内部 (近位面→指ペグ平面, "spine"): raw 5.605mm = 8.407mm@150%
+#  指 (ペグ位置→タロン先端): raw 11.598mm = 17.397mm@150%
+CLAW_MOUNT_THICKNESS = 2.5  # claw_mount 自体の物理厚み (forearm 手首面
+               # → 爪ハブ接着面)。印刷可能な最小構造肉厚
+CLAW_MOUNT_LEN = 6.455    # 変換シフト定数 (claw_mount ローカル座標の
+               # 原点位置導出用)。爪ハブの実測平坦近位面が
+               # ちょうど claw_mount 前面 (x=CLAW_MOUNT_THICKNESS)
+               # に一致するよう選定 — 現物合わせでの追加調整
+               # 代はほぼ不要 (レイキャスト実測で残差<0.01mm)
+CLAW_HUB_SPINE_150 = 8.407  # 実測 (raw 5.605mm)×1.5. 爪ハブ自体は無加工の
+               # キット部品なので印刷寸法ではなく reach 計算
+               # (ARM_HAND_REACH_MM) にのみ使う
+FINGER_REACH_150 = 17.397   # 実測 (raw 11.598mm)×1.5. 同上
 # 前腕→手首→claw_mount→(爪ハブ+指) の合計リーチ (肘軸基準)。3本の指のうち
 # 最も遠いタロン先端の claw_mount ローカル x 実測値 (FINGER_TO_MOUNT 変換済み,
 # 下記参照) を使う (3指の平均でなく worst-case — 地面ガード/相互クランプは
@@ -465,15 +859,15 @@ FINGER_REACH_150 = 17.397     # 実測 (raw 11.598mm)×1.5. 同上
 # config.h と config.py 定数同士の突合のみで、どちらも複写値のため
 # tautological — このクラスの drift を検出できなかった)。31.70 は実測値に
 # +0.01mm の安全マージンを載せた値
-FOREARM_LEN = 16.0            # 肘軸 → 手首面。肘ホーン円板+ネックの機構
-                              # 下限 (~13-14mm) と上のキット実寸 (~16.4mm)
-                              # がほぼ一致 — 「手が長い」の定量回答: 旧 24mm
-                              # (キット比率の粗い旧推定) → 実測ベースで 16mm
-ARM_HAND_REACH_MM = FOREARM_LEN + 31.70   # ≈47.7mm (肘軸→指先, firmware
-                              # ARM_REACH_MM と一致必須。旧可動グリッパ版
-                              # 79mm から 31.3mm 短縮 (-40%)。
-                              # tools/check_arm.py [4] が config.h 実ファイル
-                              # 読取で突合、[3b] が実メッシュで裏取りする)
+FOREARM_LEN = 16.0      # 肘軸 → 手首面。肘ホーン円板+ネックの機構
+               # 下限 (~13-14mm) と上のキット実寸 (~16.4mm)
+               # がほぼ一致 — 「手が長い」の定量回答: 旧 24mm
+               # (キット比率の粗い旧推定) → 実測ベースで 16mm
+ARM_HAND_REACH_MM = FOREARM_LEN + 31.70  # ≈47.7mm (肘軸→指先, firmware
+               # ARM_REACH_MM と一致必須。旧可動グリッパ版
+               # 79mm から 31.3mm 短縮 (-40%)。
+               # tools/check_arm.py [4] が config.h 実ファイル
+               # 読取で突合、[3b] が実メッシュで裏取りする)
 
 # ---- 手の実配置変換 (claw_mount ローカル座標系 = raw model/*.stl 頂点 →
 # claw_mount 原点 (x=0 手首面, +X 指方向) への 4x4, mm, SCALE 込み)。
@@ -481,61 +875,61 @@ ARM_HAND_REACH_MM = FOREARM_LEN + 31.70   # ≈47.7mm (肘軸→指先, firmware
 # claw_mount() の詳細コメント参照)。tools/check_arm.py [3] のメッシュ嵌合
 # 検証と tools/make_visuals.py の dress=True 描画が共有する唯一の正
 CLAW_TO_MOUNT = _np.array([
-    [-0.008282, -1.499925, -0.012549, 9.172010],
-    [1.499977, -0.008283, 0.000000, -0.032847],
-    [-0.000069, -0.012549, 1.499948, 0.193933],
-    [0.000000, 0.000000, 0.000000, 1.000000],
+  [-0.008282, -1.499925, -0.012549, 9.172010],
+  [1.499977, -0.008283, 0.000000, -0.032847],
+  [-0.000069, -0.012549, 1.499948, 0.193933],
+  [0.000000, 0.000000, 0.000000, 1.000000],
 ])
 # 指×3 (Arm_Left_Finger_Black_x3, 根元穴を対応する爪ペグへ整合させた個別解)
 FINGER_TO_MOUNT = [
-    _np.array([
-        [-0.386219, -1.409414, 0.338210, 22.756545],
-        [-0.088126, -0.326530, -1.461373, 10.293885],
-        [1.446744, -0.396144, 0.001271, -3.844624],
-        [0.000000, 0.000000, 0.000000, 1.000000],
-    ]),
-    _np.array([
-        [0.089648, -1.428341, -0.449228, 22.888550],
-        [1.336410, 0.279282, -0.621297, -10.167024],
-        [0.675256, -0.363103, 1.289258, -3.943722],
-        [0.000000, 0.000000, 0.000000, 1.000000],
-    ]),
-    _np.array([
-        [-0.116017, -1.081661, -1.032738, 21.457906],
-        [0.943444, -0.856648, 0.791244, 3.071932],
-        [-1.160368, -0.588356, 0.746582, 12.725352],
-        [0.000000, 0.000000, 0.000000, 1.000000],
-    ]),
+  _np.array([
+    [-0.386219, -1.409414, 0.338210, 22.756545],
+    [-0.088126, -0.326530, -1.461373, 10.293885],
+    [1.446744, -0.396144, 0.001271, -3.844624],
+    [0.000000, 0.000000, 0.000000, 1.000000],
+  ]),
+  _np.array([
+    [0.089648, -1.428341, -0.449228, 22.888550],
+    [1.336410, 0.279282, -0.621297, -10.167024],
+    [0.675256, -0.363103, 1.289258, -3.943722],
+    [0.000000, 0.000000, 0.000000, 1.000000],
+  ]),
+  _np.array([
+    [-0.116017, -1.081661, -1.032738, 21.457906],
+    [0.943444, -0.856648, 0.791244, 3.071932],
+    [-1.160368, -0.588356, 0.746582, 12.725352],
+    [0.000000, 0.000000, 0.000000, 1.000000],
+  ]),
 ]
 # 指先チップ×3 (Arm_Left_FingerTip_Grey_x3, 対応する指の根元/ナックル端へ
 # 接着 — pitfalls #44「名前に反し根元の丸ボタン」の実測どおり)
 FINGERTIP_TO_MOUNT = [
-    _np.array([
-        [-0.386219, -1.409414, 0.338210, 14.796879],
-        [-0.088126, -0.326530, -1.461373, 7.541486],
-        [1.446744, -0.396144, 0.001271, -4.414740],
-        [0.000000, 0.000000, 0.000000, 1.000000],
-    ]),
-    _np.array([
-        [0.089648, -1.428341, -0.449228, 14.886796],
-        [1.336410, 0.279282, -0.621297, -7.521955],
-        [0.675256, -0.363103, 1.289258, -4.425953],
-        [0.000000, 0.000000, 0.000000, 1.000000],
-    ]),
-    _np.array([
-        [-0.116017, -1.081661, -1.032738, 14.785395],
-        [0.943444, -0.856648, 0.791244, -0.115042],
-        [-1.160368, -0.588356, 0.746582, 8.653769],
-        [0.000000, 0.000000, 0.000000, 1.000000],
-    ]),
+  _np.array([
+    [-0.386219, -1.409414, 0.338210, 14.796879],
+    [-0.088126, -0.326530, -1.461373, 7.541486],
+    [1.446744, -0.396144, 0.001271, -4.414740],
+    [0.000000, 0.000000, 0.000000, 1.000000],
+  ]),
+  _np.array([
+    [0.089648, -1.428341, -0.449228, 14.886796],
+    [1.336410, 0.279282, -0.621297, -7.521955],
+    [0.675256, -0.363103, 1.289258, -4.425953],
+    [0.000000, 0.000000, 0.000000, 1.000000],
+  ]),
+  _np.array([
+    [-0.116017, -1.081661, -1.032738, 14.785395],
+    [0.943444, -0.856648, 0.791244, -0.115042],
+    [-1.160368, -0.588356, 0.746582, 8.653769],
+    [0.000000, 0.000000, 0.000000, 1.000000],
+  ]),
 ]
 
 # ---- 腕シェル (元 Arm_Right ポッドのクラムシェル被せ。arm_shell.py)
 # 左右ポッドは元キットでは非対称 (右のみ肩シールド膨らみ)。実機写真は両腕
 # とも膨らみがあるため、右ポッドのミラーを左腕にも使う (元パーツ由来を維持)
-ARM_POD_X0 = 11.5             # ポッド前端カット (肩ピッチ軸基準 x, 肩円板を逃がす)
-ARM_POD_X1 = 59.0             # ポッド後端カット (肘側開口)
-ARM_POD_WALL = 1.8            # 中抜き後の目標壁厚
+ARM_POD_X0 = 11.5       # ポッド前端カット (肩ピッチ軸基準 x, 肩円板を逃がす)
+ARM_POD_X1 = 59.0       # ポッド後端カット (肘側開口)
+ARM_POD_WALL = 1.8      # 中抜き後の目標壁厚
 
 # ---------------------------------------------------------------- 目 (2026-07 追加)
 # 頭部の 3 つの目を SUBMICRO ×3 で回転駆動 (キョロキョロ)。
@@ -546,27 +940,27 @@ ARM_POD_WALL = 1.8            # 中抜き後の目標壁厚
 # → 底へ φEYE_BORE_D の貫通ボアを開け (tools/make_head_eyecut.py が加工済み
 # STL を生成)、キャップをシェル内側から嵌める。ネック φ24 がボアを通り、
 # キャップ底 (φ37.7) は座グリ床の上に浮く
-EYE_CAP_D = 37.7     # キャップ底面径 @150% (実測 25.15×1.5)。座グリとの回転
-                     # ギャップ (42.3-37.7)/2 ≈ 2.3mm
-EYE_CAP_H = 15.7     # キャップ高さ @150% (実測 10.45×1.5)
-EYE_NECK_H = 8.0     # 背面ネックボス高さ (ホーンポケット/共締め下穴を収める)
-EYE_HOVER = 1.5      # キャップ底と座グリ床の回転クリアランス (組付け目標)
+EYE_CAP_D = 37.7   # キャップ底面径 @150% (実測 25.15×1.5)。座グリとの回転
+           # ギャップ (42.3-37.7)/2 ≈ 2.3mm
+EYE_CAP_H = 15.7   # キャップ高さ @150% (実測 10.45×1.5)
+EYE_NECK_H = 8.0   # 背面ネックボス高さ (ホーンポケット/共締め下穴を収める)
+EYE_HOVER = 1.5   # キャップ底と座グリ床の回転クリアランス (組付け目標)
 # ドット穴 3 つの中心 (ポッド座標 @150%, ネック込み)。黒く塗る=視線マーク。
 # 掃引径 = 2 × ドット群の軸からの横距離 ≈ 25mm
 EYE_DOTS_150 = [
-    (0.0, -11.10, 19.55),
-    (-2.88, -14.84, 16.24),
-    (2.88, -14.84, 16.24),
+  (0.0, -11.10, 19.55),
+  (-2.88, -14.84, 16.24),
+  (2.88, -14.84, 16.24),
 ]
-EYE_SOCKET_D = 42.3  # 元ソケット座グリ径 @150% (STL 実測 28.18×1.5)
-EYE_BORE_D = 30.0    # ソケット底へ貫通させるボア径 (加工指定)
-EYE_SOCKET_FLOOR = 4.0  # 座グリ底の深さ目安 @150% [現物合わせ]
+EYE_SOCKET_D = 42.3 # 元ソケット座グリ径 @150% (STL 実測 28.18×1.5)
+EYE_BORE_D = 30.0  # ソケット底へ貫通させるボア径 (加工指定)
+EYE_SOCKET_FLOOR = 4.0 # 座グリ底の深さ目安 @150% [現物合わせ]
 # ソケット中心と外向き法線 @150% (STL 実測, model/Head_Top_Blue.stl の
 # リム円 128 頂点)。順に右/中央/左。中央目が -Y = 頭部前方。仰角 ~46.6°
 EYE_SOCKETS_150 = [
-    ((45.81, 0.0, -20.42), (0.6872, 0.0, 0.7264)),
-    ((0.0, -45.81, -20.42), (0.0, -0.6872, 0.7264)),
-    ((-45.81, 0.0, -20.42), (-0.6872, 0.0, 0.7264)),
+  ((45.81, 0.0, -20.42), (0.6872, 0.0, 0.7264)),
+  ((0.0, -45.81, -20.42), (0.0, -0.6872, 0.7264)),
+  ((-45.81, 0.0, -20.42), (-0.6872, 0.0, 0.7264)),
 ]
 
 # ---------------------------------------------------------------- マウス砲 音声クレードル (2026-07 追加)
@@ -586,11 +980,11 @@ EYE_SOCKETS_150 = [
 # 無変更で正しいが、「+Y=ロボット前方と一致」という旧コメントの前提は誤りに
 # なったため削除。audio 系ポケット (AUDIO_MIC_*/AUDIO_SPK_*) は全てこの
 # ローカル Y を使っており配置変更の影響を受けない。
-CANNON_Y_REAR = -20.90     # 後端 (Mouth_Neck 接続面)
-CANNON_Y_SLOT_LO = -12.65  # 側面グリップスリット始端 (意匠。内部を拡げない)
-CANNON_Y_SLOT_HI = 0.41    # 側面グリップスリット終端
-CANNON_Y_COLLAR = 13.68    # フレア段差 (外径 19.7→25.8mm に急拡大)。ここから先が砲口
-CANNON_Y_TIP = 20.88       # 砲口面 (メッシュ前端)
+CANNON_Y_REAR = -20.90   # 後端 (Mouth_Neck 接続面)
+CANNON_Y_SLOT_LO = -12.65 # 側面グリップスリット始端 (意匠。内部を拡げない)
+CANNON_Y_SLOT_HI = 0.41  # 側面グリップスリット終端
+CANNON_Y_COLLAR = 13.68  # フレア段差 (外径 19.7→25.8mm に急拡大)。ここから先が砲口
+CANNON_Y_TIP = 20.88    # 砲口面 (メッシュ前端)
 
 # ---- Mouth_Cannon 実ソケット準拠配置 (2026-07-29 組立チェーン再構成) ----
 # 旧値 (0,55,zb-12, 無回転) はフォレンジクス裏付けのない旧セッションの目視
@@ -602,18 +996,18 @@ CANNON_Y_TIP = 20.88       # 砲口面 (メッシュ前端)
 # Head_Bottom_Blue.stl (bbox中心化→×1.5) の中央リング (頂点数299, 半径std=0.68,
 # 平面度 s2/s0=0.0073) — ARM_MOUNT_* のコメントで「中央 (0.13,-48.93) r13.4
 # ※マウス砲/ネック取付ソケット」と特定済みだったもの (今回 z も再実測):
-MOUTH_SOCKET_LOCAL = (0.13, -48.93, -3.10)      # ソケット中心 (Head_Bottom
-                                                  # 自身のローカル座標, raw*1.5,
-                                                  # 回転前フレーム)
-MOUTH_SOCKET_R = 13.42       # ソケット半径 (Mouth_Ball_Grey 実測半径 (下記
-                              # R_BALL_150=12.557mm, 2026-07-30 最小二乗球
-                              # フィット再実測) とほぼ一致 — 診断: 球が嵌る
-                              # 開口である裏付け)
+MOUTH_SOCKET_LOCAL = (0.13, -48.93, -3.10)   # ソケット中心 (Head_Bottom
+                         # 自身のローカル座標, raw*1.5,
+                         # 回転前フレーム)
+MOUTH_SOCKET_R = 13.42    # ソケット半径 (Mouth_Ball_Grey 実測半径 (下記
+               # R_BALL_150=12.557mm, 2026-07-30 最小二乗球
+               # フィット再実測) とほぼ一致 — 診断: 球が嵌る
+               # 開口である裏付け)
 # 外向き法線: レイキャスト実測 (ソケット中心から法線候補の両方向にレイを
 # 飛ばし、頭部メッシュに再突入しない側を外向きと判定 — 単純な符号推定では
 # なく実メッシュで確認済み)。前方(-Y)成分よりも下方(-Z)成分が大きく、
 # 砲身は水平よりかなり下向き (前方基準 60.4° 下) に傾く。
-MOUTH_SOCKET_OUTWARD_LOCAL = (-0.0004, -0.4943, -0.8693)  # 同フレームでの単位法線
+MOUTH_SOCKET_OUTWARD_LOCAL = (-0.0004, -0.4943, -0.8693) # 同フレームでの単位法線
 # ロボット座標 (z0-relative, shell_ghosts の Head_Bottom_Blue 配置
 # rot(180,"z")@(0,12,zb-3) を通した後の値):
 #
@@ -643,28 +1037,28 @@ MOUTH_SOCKET_OUTWARD_LOCAL = (-0.0004, -0.4943, -0.8693)  # 同フレームで�
 # standoffで開口面のごく近傍にBallが位置するため近似として妥当、既存
 # scratchpad/mouth_chain/render_sweep2.py も同じ簡略化を採用済み)。
 # 導出 (.venv/bin/python 再現可能, scratchpad/mouth_pose_sweep.py):
-#   dir_new = (0, cos(18°), -sin(18°)) = (0, 0.9511, -0.3090)  [ロボット座標,
-#     +Y=前方 +Z=上]
-#   rear = socket_center_robot + MOUTH_CANNON_REAR_STANDOFF_MM * dir_new
-#   origin_cannon = rear + (-CANNON_Y_REAR) * dir_new
+#  dir_new = (0, cos(18°), -sin(18°)) = (0, 0.9511, -0.3090) [ロボット座標,
+#   +Y=前方 +Z=上]
+#  rear = socket_center_robot + MOUTH_CANNON_REAR_STANDOFF_MM * dir_new
+#  origin_cannon = rear + (-CANNON_Y_REAR) * dir_new
 # 回転は dir_new が x=0 (Y-Z平面内) のため純粋な X軸回転に一致し、
 # ROT_X_DEG = -18.0 (水平からの下向き角をそのまま符号反転) となる。
 #
 # 制約検証 (実メッシュ, scratchpad/mouth_pose_sweep.py):
-#  (a) Head_Bottom_Blue シェルとの boolean 交差: Mouth_Ball は全角度域
-#      (60.4°→0°) で常に0.0000cm3 (2026-07-30 standoff補正で Ball が開口面
-#      から十分離れているため)。Mouth_Neck は 60.4°→約38°までは0、そこから
-#      緩やかに増加し PHI=18°で0.0562cm3、PHI=0°でも0.2026cm3 (急激な壁では
-#      なく穏やかな増加 — ソケット開口 φ26.8 に対し Neck が現物合わせで
-#      直接嵌る設計ではなく [MOUTH_SOCKET_R=13.42 vs Neck flange r=12.35]、
-#      ポーズを変えると Neck 外縁が開口リムに接触し始めるため)。Mouth_Cannon
-#      本体は全角度域で0 (standoff=20.0mmで頭部から十分離れているため)。
-#  (b) PHI=18°での Neck-vs-socket干渉 0.0562cm3 は Head_Bottom_Armcut の
-#      ソケット開口内縁に不可視の逃がし面取りを追加して解消する方針
-#      (make_head.py 参照。外から見える開口径は変えない/内側のみ)。
-#  (c)(d) tools/check_arm.py [8]/[8b] (腕×砲身スイープ, レイアウト意図) と
-#      地面クリアランスは本ファイル変更後に再実行して確認 (docs/assembly.md
-#      および report 参照)。
+# (a) Head_Bottom_Blue シェルとの boolean 交差: Mouth_Ball は全角度域
+#   (60.4°→0°) で常に0.0000cm3 (2026-07-30 standoff補正で Ball が開口面
+#   から十分離れているため)。Mouth_Neck は 60.4°→約38°までは0、そこから
+#   緩やかに増加し PHI=18°で0.0562cm3、PHI=0°でも0.2026cm3 (急激な壁では
+#   なく穏やかな増加 — ソケット開口 φ26.8 に対し Neck が現物合わせで
+#   直接嵌る設計ではなく [MOUTH_SOCKET_R=13.42 vs Neck flange r=12.35]、
+#   ポーズを変えると Neck 外縁が開口リムに接触し始めるため)。Mouth_Cannon
+#   本体は全角度域で0 (standoff=20.0mmで頭部から十分離れているため)。
+# (b) PHI=18°での Neck-vs-socket干渉 0.0562cm3 は Head_Bottom_Armcut の
+#   ソケット開口内縁に不可視の逃がし面取りを追加して解消する方針
+#   (make_head.py 参照。外から見える開口径は変えない/内側のみ)。
+# (c)(d) tools/check_arm.py [8]/[8b] (腕×砲身スイープ, レイアウト意図) と
+#   地面クリアランスは本ファイル変更後に再実行して確認 (docs/assembly.md
+#   および report 参照)。
 #
 # 2026-07-31 QA follow-up (major指摘への対応): 上記 (a) の「Ball は全角度域
 # で常に0.0000cm3」という記述自体は tools/check_arm.py [1d] (2026-07-31 新設
@@ -681,10 +1075,10 @@ MOUTH_SOCKET_OUTWARD_LOCAL = (-0.0004, -0.4943, -0.8693)  # 同フレームで�
 # 救われている」のではなく、standoff 補正で Ball 自身の位置を十分後退させた
 # ことによる独立した結果である。tools/check_arm.py [1d] が Ball/Neck/Cannon
 # 個別の交差体積を回帰検証する。
-MOUTH_CANNON_ROT_X_DEG = -18.0     # 2026-07-31 任務2: -60.38→-18.0 (上記参照)。
-                                   # 砲身ローカル+Y (後端→砲口) の世界座標
-                                   # 方向 = (0, cos18°, -sin18°) ≈
-                                   # 「ほぼ前方・水平から18°下向き」
+MOUTH_CANNON_ROT_X_DEG = -18.0   # 2026-07-31 任務2: -60.38→-18.0 (上記参照)。
+                  # 砲身ローカル+Y (後端→砲口) の世界座標
+                  # 方向 = (0, cos18°, -sin18°) ≈
+                  # 「ほぼ前方・水平から18°下向き」
 # 2026-07-29 当初案は「後端 (CANNON_Y_REAR) がソケット面にちょうど一致する」
 # 規約 (standoff=0, 目玉のソケット嵌めと同じ規約) で MOUTH_CANNON_T=
 # (-0.12,71.26,-24.27) としていたが、これは全長41.78mm (REAR..TIP) が丸ごと
@@ -706,42 +1100,42 @@ MOUTH_CANNON_ROT_X_DEG = -18.0     # 2026-07-31 任務2: -60.38→-18.0 (上記�
 #
 # チェーン実測 (model/Mouth_*.stl, bbox中心化×1.5 ローカル座標, 全て
 # tools/check_arm.py 起動可能な .venv/bin/python で再現可能):
-#  (1) Mouth_Ball_Grey: 全2011頂点への最小二乗球フィット (scipy.optimize.
-#      least_squares) → 半径 R_BALL=12.557mm (fit残差 std=0.0043mm, 最大
-#      0.026mm — 0.1mm精度の目標を満たす真球)、フィット中心はメッシュ自身の
-#      bbox中心から (-0.00002,-0.1227,0.0009) だけずれる (無視できない値では
-#      ないため後段の t_ball 算出に反映)。MOUTH_SOCKET_R=13.42 との片側
-#      クリアランス (13.42-12.557)=0.863mm — 既存の「スナップ嵌合」判定を
-#      再確認。
-#  (2) Mouth_Neck_Blue: 鋭角エッジ(>20°)リング抽出+断面スキャン
-#      (trimesh.section) の両方で調べた結果、対称な「球受けカップ」や
-#      「Cannon後端穴に嵌る精密ペグ」は見つからなかった (convex hullとの
-#      体積比0.949で明確な凹みは flange 側の浅い盲穴のみ、断面プロファイルは
-#      非軸対称 — make_audio.py の「元は無垢〜浅い盲穴のみ」というコメントと
-#      整合)。よって Neck は「両端がそれぞれ Ball / Cannon 後端面へ現物合わせ
-#      で突き合わされる (然る後に接着) コネクタ」という、このキットの他の
-#      非精密ジョイント (Claw_Grey 平面突合せ、TailJoint スリーブ等) と同じ
-#      流儀で扱う。Neck 自身の bbox Y 全長 NECK_AXIAL_LEN_150=16.092mm (実測,
-#      唯一曖昧さのない長さ量) を Ball↔Cannon 間のスタンドオフ長として使う。
-#      広い側 (flange, r=12.35mm — Ball直径25.1mmに近い) が Ball 側、先細り側
-#      (tip, r→2.2mm — Cannon後端穴 r=5.351mm に対し先端だけが挿さる程度) が
-#      Cannon 側 (向きは Cannon 後端穴の実測半径 5.351mm と Neck tip 側の
-#      先細り形状の径クラスが近いことから採用。逆向き [flange が Cannon 側]
-#      だと Neck が Cannon 自身の胴 [CANNON_Y_REAR..-4.8] と丸ごと重なって
-#      しまい物理的に成立しない — 2026-07-30 タスク中に実際にこの逆向きで
-#      組んでみて発見した矛盾)。
-#  (3) Mouth_Cannon_Grey 後端ソケット: 鋭角エッジリング抽出で REAR面
-#      (CANNON_Y_REAR=-20.926) に同心円2本を検出 — 外径7.673mm/内径5.351mm
-#      (=φ10.70mm, 旧メモの「φ10.8」実測とほぼ一致、この値で上書き)。
-#      これが「Cannon 後端ソケット」そのもの (Neck tip が浅く差し込まれる側)。
+# (1) Mouth_Ball_Grey: 全2011頂点への最小二乗球フィット (scipy.optimize.
+#   least_squares) → 半径 R_BALL=12.557mm (fit残差 std=0.0043mm, 最大
+#   0.026mm — 0.1mm精度の目標を満たす真球)、フィット中心はメッシュ自身の
+#   bbox中心から (-0.00002,-0.1227,0.0009) だけずれる (無視できない値では
+#   ないため後段の t_ball 算出に反映)。MOUTH_SOCKET_R=13.42 との片側
+#   クリアランス (13.42-12.557)=0.863mm — 既存の「スナップ嵌合」判定を
+#   再確認。
+# (2) Mouth_Neck_Blue: 鋭角エッジ(>20°)リング抽出+断面スキャン
+#   (trimesh.section) の両方で調べた結果、対称な「球受けカップ」や
+#   「Cannon後端穴に嵌る精密ペグ」は見つからなかった (convex hullとの
+#   体積比0.949で明確な凹みは flange 側の浅い盲穴のみ、断面プロファイルは
+#   非軸対称 — make_audio.py の「元は無垢〜浅い盲穴のみ」というコメントと
+#   整合)。よって Neck は「両端がそれぞれ Ball / Cannon 後端面へ現物合わせ
+#   で突き合わされる (然る後に接着) コネクタ」という、このキットの他の
+#   非精密ジョイント (Claw_Grey 平面突合せ、TailJoint スリーブ等) と同じ
+#   流儀で扱う。Neck 自身の bbox Y 全長 NECK_AXIAL_LEN_150=16.092mm (実測,
+#   唯一曖昧さのない長さ量) を Ball↔Cannon 間のスタンドオフ長として使う。
+#   広い側 (flange, r=12.35mm — Ball直径25.1mmに近い) が Ball 側、先細り側
+#   (tip, r→2.2mm — Cannon後端穴 r=5.351mm に対し先端だけが挿さる程度) が
+#   Cannon 側 (向きは Cannon 後端穴の実測半径 5.351mm と Neck tip 側の
+#   先細り形状の径クラスが近いことから採用。逆向き [flange が Cannon 側]
+#   だと Neck が Cannon 自身の胴 [CANNON_Y_REAR..-4.8] と丸ごと重なって
+#   しまい物理的に成立しない — 2026-07-30 タスク中に実際にこの逆向きで
+#   組んでみて発見した矛盾)。
+# (3) Mouth_Cannon_Grey 後端ソケット: 鋭角エッジリング抽出で REAR面
+#   (CANNON_Y_REAR=-20.926) に同心円2本を検出 — 外径7.673mm/内径5.351mm
+#   (=φ10.70mm, 旧メモの「φ10.8」実測とほぼ一致、この値で上書き)。
+#   これが「Cannon 後端ソケット」そのもの (Neck tip が浅く差し込まれる側)。
 #
 # チェーン積み上げ (Cannon 自身のローカル Y 軸上、後端→砲口が +Y):
-#   s_neck_tip    = CANNON_Y_REAR                     (Neck tip が後端面に当接)
-#   t_neck_y      = s_neck_tip − NECK_TIP_Y_150        (= -28.972, Neck原点の
-#                                                        Cannon-local オフセット)
-#   s_neck_flange = t_neck_y + NECK_FLANGE_Y_150       (= -37.018)
-#   s_ball_center = s_neck_flange                      (= -37.018, Ball球心が
-#                                                        Neck flange 面と一致)
+#  s_neck_tip  = CANNON_Y_REAR           (Neck tip が後端面に当接)
+#  t_neck_y   = s_neck_tip − NECK_TIP_Y_150    (= -28.972, Neck原点の
+#                            Cannon-local オフセット)
+#  s_neck_flange = t_neck_y + NECK_FLANGE_Y_150    (= -37.018)
+#  s_ball_center = s_neck_flange           (= -37.018, Ball球心が
+#                            Neck flange 面と一致)
 # 最後の等号 (Ball 表面が flange に接する「tangent」ではなく、Ball 球心その
 # ものが flange 面と一致する「coincident」) は、flange 自身の半径 (12.35mm)
 # が Ball 直径 (25.1mm) にほぼ等しい (Ball 半径ではなく直径に近い) という
@@ -822,20 +1216,20 @@ MOUTH_CANNON_ROT_X_DEG = -18.0     # 2026-07-31 任務2: -60.38→-18.0 (上記�
 # は「浅い位置決めナブ」程度であり、上記の「flush当接」近似 (挿入量0扱い) との
 # 差は0.9mm未満 — 0.1mm精度の目標に対しては [Neck挿入深さ精密化, UNVERIFIED,
 # 影響<1mm] として残る。
-R_BALL_150 = 12.557                # Mouth_Ball_Grey 最小二乗球フィット半径
-                                     # [実測, resid std 0.0043mm]
-NECK_AXIAL_LEN_150 = 16.092         # Mouth_Neck_Blue 自身の bbox Y 全長 [実測]
-                                     # (flange面→tip面。唯一曖昧さのない長さ)
-MOUTH_CANNON_REAR_STANDOFF_MM = 20.0  # 2026-07-30 QA修正 (二回目): 上記コメント
-                                     # 参照。coincident (=NECK_AXIAL_LEN_150=
-                                     # 16.092, Ball∩Neck=Neck体積の84.6%) と
-                                     # tangent (=R_BALL_150+NECK_AXIAL_LEN_150=
-                                     # 28.649, [8b]を-6.0mmで破る) の間で、
-                                     # [8b] マージン+1.5mmを保てる範囲で
-                                     # tangent側へ最大限寄せた妥協値 (数値探索,
-                                     # scratchpad/mouth_fix/sweep_standoff.py)。
-                                     # Ball∩Neckは49.4%まで低減 (完全解消では
-                                     # ない、既知の残差として上記コメントに明記)
+R_BALL_150 = 12.557        # Mouth_Ball_Grey 最小二乗球フィット半径
+                   # [実測, resid std 0.0043mm]
+NECK_AXIAL_LEN_150 = 16.092     # Mouth_Neck_Blue 自身の bbox Y 全長 [実測]
+                   # (flange面→tip面。唯一曖昧さのない長さ)
+MOUTH_CANNON_REAR_STANDOFF_MM = 20.0 # 2026-07-30 QA修正 (二回目): 上記コメント
+                   # 参照。coincident (=NECK_AXIAL_LEN_150=
+                   # 16.092, Ball∩Neck=Neck体積の84.6%) と
+                   # tangent (=R_BALL_150+NECK_AXIAL_LEN_150=
+                   # 28.649, [8b]を-6.0mmで破る) の間で、
+                   # [8b] マージン+1.5mmを保てる範囲で
+                   # tangent側へ最大限寄せた妥協値 (数値探索,
+                   # scratchpad/mouth_fix/sweep_standoff.py)。
+                   # Ball∩Neckは49.4%まで低減 (完全解消では
+                   # ない、既知の残差として上記コメントに明記)
 # MOUTH_CANNON_T/TIP_T の Y 成分は Head_Bottom の配置 (rot180z 後、+Y へ
 # ARM_MOUNT_HUB_Y 平行移動) を経由した socket_center_robot 由来であり、
 # ARM_MOUNT_HUB_Y が変わればマウス砲一式 (Head_Bottom に固定, 一緒に動く)
@@ -852,28 +1246,28 @@ MOUTH_CANNON_REAR_STANDOFF_MM = 20.0  # 2026-07-30 QA修正 (二回目): 上記�
 # を直接参照する一元化パターン」をここにも適用し、hub_y=0 基準の値
 # (99.82-12=87.82 / 119.68-12=107.68) + ARM_MOUNT_HUB_Y という式に変更した
 # (ARM_MOUNT_HUB_Y=12.0 に戻せば旧値と厳密に一致する。X/Z は無変更)
-MOUTH_CANNON_T = (-0.13, 87.82 + ARM_MOUNT_HUB_Y, -18.74)   # 2026-07-31 任務2:
-                                            # Ball中心近似ピボット
-                                            # (socket_center_robot) 固定のまま
-                                            # ROT_X_DEG=-18.0 へポーズ変更した
-                                            # 結果 (旧 (-0.13,81.16,-41.68) から
-                                            # 更新, 上記 MOUTH_CANNON_ROT_X_DEG
-                                            # コメントの導出式で再現可能)。
-                                            # standoff=20.0mm は不変。
-                                            # tools/make_visuals.py
-                                            # shell_ghosts()/kit_dress_static()、
-                                            # tools/check_arm.py [8] が共通で
-                                            # この値を使う (ドリフト防止)
-MOUTH_CANNON_TIP_T = (-0.13, 107.68 + ARM_MOUNT_HUB_Y, -25.20)  # 参考値: 砲口
-                                               # (muzzle, CANNON_Y_TIP)
-                                               # のロボット座標 (z0-relative).
-                                               # 2026-07-31 任務2でポーズ変更に
-                                               # 伴い更新 (旧 (-0.13,91.48,-59.83))。
-                                               # ソケット面から軸方向61.8mm露出
-                                               # (露出量自体は不変、方向のみ変更)
+MOUTH_CANNON_T = (-0.13, 87.82 + ARM_MOUNT_HUB_Y, -18.74)  # 2026-07-31 任務2:
+                      # Ball中心近似ピボット
+                      # (socket_center_robot) 固定のまま
+                      # ROT_X_DEG=-18.0 へポーズ変更した
+                      # 結果 (旧 (-0.13,81.16,-41.68) から
+                      # 更新, 上記 MOUTH_CANNON_ROT_X_DEG
+                      # コメントの導出式で再現可能)。
+                      # standoff=20.0mm は不変。
+                      # tools/make_visuals.py
+                      # shell_ghosts()/kit_dress_static()、
+                      # tools/check_arm.py [8] が共通で
+                      # この値を使う (ドリフト防止)
+MOUTH_CANNON_TIP_T = (-0.13, 107.68 + ARM_MOUNT_HUB_Y, -25.20) # 参考値: 砲口
+                        # (muzzle, CANNON_Y_TIP)
+                        # のロボット座標 (z0-relative).
+                        # 2026-07-31 任務2でポーズ変更に
+                        # 伴い更新 (旧 (-0.13,91.48,-59.83))。
+                        # ソケット面から軸方向61.8mm露出
+                        # (露出量自体は不変、方向のみ変更)
 
-AUDIO_MIC_L, AUDIO_MIC_W, AUDIO_MIC_T = 14.0, 11.0, 3.0  # INMP441 基板 [要実測]
-AUDIO_MIC_CLR = 0.4               # 基板挿入クリアランス (片側)
+AUDIO_MIC_L, AUDIO_MIC_W, AUDIO_MIC_T = 14.0, 11.0, 3.0 # INMP441 基板 [要実測]
+AUDIO_MIC_CLR = 0.4        # 基板挿入クリアランス (片側)
 # AUDIO_MIC_D: 検証で発覚した不具合の修正 (2026-07-28) — 当初 16.0mm (基板長辺14+
 # クリアが直径方向に収まる, ちょうど) だったが、audio_cradle_mic の基板トレイが
 # 円筒を軸方向全長にわたって横断するため、円筒外周との間に残る肉が両脇の細い
@@ -882,46 +1276,46 @@ AUDIO_MIC_CLR = 0.4               # 基板挿入クリアランス (片側)
 # Mouth_Cannon 側の肉厚 (実測 min outer radius ≈9.87mm, 旧 D=16 で肉厚1.87mm) を
 # 侵食しすぎない範囲 (閾値1.2mm に対し余裕を残す) で 17.0mm に拡径し、
 # AUDIO_MIC_TRAY_PAD_* も併せて詰めてリブ肉厚を確保した (要件: [5b] ≥0.8mm)
-AUDIO_MIC_D = 17.0                # マイクポケット径
-AUDIO_MIC_TRAY_PAD_W = 0.4        # 基板トレイ 長辺(X)方向の合計クリアランス (0.2/側)
-AUDIO_MIC_TRAY_PAD_T = 0.3        # 基板トレイ 厚み(Z)方向の合計クリアランス (0.15/側,
-                                   # Z 方向は FDM の積層精度が XY より高いため XY より
-                                   # 詰めても実用上問題ない)
-AUDIO_MIC_Y0 = CANNON_Y_SLOT_HI + 1.0   # マイクポケット始端 (スリット直後に余裕)
-AUDIO_MIC_LEN = AUDIO_MIC_W + 2 * AUDIO_MIC_CLR         # 軸方向長さ (基板短辺+クリア)
-AUDIO_MIC_Y1 = AUDIO_MIC_Y0 + AUDIO_MIC_LEN             # マイクポケット終端 (<COLLAR)
-AUDIO_MIC_PORT_D = 1.8            # マイクポート径 (基板ポート→砲身下面)
+AUDIO_MIC_D = 17.0        # マイクポケット径
+AUDIO_MIC_TRAY_PAD_W = 0.4    # 基板トレイ 長辺(X)方向の合計クリアランス (0.2/側)
+AUDIO_MIC_TRAY_PAD_T = 0.3    # 基板トレイ 厚み(Z)方向の合計クリアランス (0.15/側,
+                  # Z 方向は FDM の積層精度が XY より高いため XY より
+                  # 詰めても実用上問題ない)
+AUDIO_MIC_Y0 = CANNON_Y_SLOT_HI + 1.0  # マイクポケット始端 (スリット直後に余裕)
+AUDIO_MIC_LEN = AUDIO_MIC_W + 2 * AUDIO_MIC_CLR     # 軸方向長さ (基板短辺+クリア)
+AUDIO_MIC_Y1 = AUDIO_MIC_Y0 + AUDIO_MIC_LEN       # マイクポケット終端 (<COLLAR)
+AUDIO_MIC_PORT_D = 1.8      # マイクポート径 (基板ポート→砲身下面)
 
 # 回転キー (2026-07-28 追加): audio_cradle_mic のマイクポート (局所 -Z) は
 # Cannon 側の砲身下面ポートと同軸で挿入する必要があるが、円形ポケットには
 # それを保証する機構が無く手作業の回転合わせに頼っていた不具合があった。
 # ポートの反対側 (局所 +Z, 180°) に細いキー突起/溝を設け、正しい向きでしか
 # 挿入できないようにする
-AUDIO_MIC_KEY_W = 2.5              # キー幅 (角度方向, X)
-AUDIO_MIC_KEY_H = 0.6              # キー突出量 (クレードル側) / 溝深さ (Cannon側)
+AUDIO_MIC_KEY_W = 2.5       # キー幅 (角度方向, X)
+AUDIO_MIC_KEY_H = 0.6       # キー突出量 (クレードル側) / 溝深さ (Cannon側)
 
-AUDIO_SPK_D = 20.0                 # スピーカー径 (確定 HW: φ20mm)
-AUDIO_SPK_MARGIN = 0.25            # フレア段差の実測誤差に対する安全代 (段差直後は
-                                    # 外径がまだ細い側に寄っている可能性があるため
-                                    # 内側へ少し余裕を持たせる。境界ぴったりに切ると
-                                    # 段差手前の細い区間まで削って外壁を突き破る —
-                                    # 実際に発生した不具合 [tools/check_audio.py [2]])
-AUDIO_SPK_Y0 = CANNON_Y_COLLAR + AUDIO_SPK_MARGIN  # スピーカーポケット始端
-AUDIO_SPK_Y1 = CANNON_Y_TIP        # スピーカーポケット終端 = 砲口面 (開放, 音の出口)
-AUDIO_SPK_H = AUDIO_SPK_Y1 - AUDIO_SPK_Y0  # ポケット全深さ (~7mm)
+AUDIO_SPK_D = 20.0         # スピーカー径 (確定 HW: φ20mm)
+AUDIO_SPK_MARGIN = 0.25      # フレア段差の実測誤差に対する安全代 (段差直後は
+                  # 外径がまだ細い側に寄っている可能性があるため
+                  # 内側へ少し余裕を持たせる。境界ぴったりに切ると
+                  # 段差手前の細い区間まで削って外壁を突き破る —
+                  # 実際に発生した不具合 [tools/check_audio.py [2]])
+AUDIO_SPK_Y0 = CANNON_Y_COLLAR + AUDIO_SPK_MARGIN # スピーカーポケット始端
+AUDIO_SPK_Y1 = CANNON_Y_TIP    # スピーカーポケット終端 = 砲口面 (開放, 音の出口)
+AUDIO_SPK_H = AUDIO_SPK_Y1 - AUDIO_SPK_Y0 # ポケット全深さ (~7mm)
 # ポケット径がスピーカー径ちょうど (=20mm) のため、スピーカーを囲う別体スリーブは
 # 物理的に作れない (壁厚がゼロになる)。よって圧入相手はポケット壁そのものとし、
 # audio_cradle_spk は「奥に挟むストップワッシャ」だけにする — 実機の薄型φ20
 # スピーカーは概ね 4-6mm 厚なので、砲口側に AUDIO_SPK_REAL_H だけ確保して寄せ、
 # 残りの奥側 (AUDIO_SPK_BAFFLE_H) にワッシャを入れて抜け止めにする
-AUDIO_SPK_REAL_H = 5.0             # 検証用: 実機厚の想定値 [要データシート確認]
-AUDIO_SPK_BAFFLE_H = AUDIO_SPK_H - AUDIO_SPK_REAL_H  # ストップワッシャ厚 (残り)
-AUDIO_SPK_STOP_ID = 14.0           # ワッシャ内径 (スピーカー外径20より小さくして
-                                    # 縁を受ける。音/配線の抜けは中心穴で確保)
+AUDIO_SPK_REAL_H = 5.0       # 検証用: 実機厚の想定値 [要データシート確認]
+AUDIO_SPK_BAFFLE_H = AUDIO_SPK_H - AUDIO_SPK_REAL_H # ストップワッシャ厚 (残り)
+AUDIO_SPK_STOP_ID = 14.0      # ワッシャ内径 (スピーカー外径20より小さくして
+                  # 縁を受ける。音/配線の抜けは中心穴で確保)
 
-AUDIO_WIRE_BORE_D = 6.0            # Mouth_Neck/Mouth_Ball 貫通配線ボア径
-                                    # (スピーカー2芯+マイク6芯 AWG30, 東ねても余裕)
-AUDIO_CRADLE_CLR = 0.3             # audio_cradle 圧入クリアランス (片側)
+AUDIO_WIRE_BORE_D = 6.0      # Mouth_Neck/Mouth_Ball 貫通配線ボア径
+                  # (スピーカー2芯+マイク6芯 AWG30, 東ねても余裕)
+AUDIO_CRADLE_CLR = 0.3       # audio_cradle 圧入クリアランス (片側)
 
 # 砲身座標の既存配置 (kit_assembly_front.json と恒久検査で突合)。
 # 2026-09-05: 2 部品の実体が約 1,863mm³ 重なっていたため、Neck の
@@ -930,8 +1324,8 @@ MOUTH_NECK_LOCAL_Y = -28.97
 MOUTH_CAP_LOCAL_Y = -5.7
 MOUTH_CAP_SEAT_CLEAR = 0.2
 MOUTH_CHASSIS_CLEAR = 0.3
-MOUTH_CHASSIS_SIMPLIFY_MM = 0.001  # STL再量子化で重なる微小面を解消する精度
-MOUTH_FRONT_TAB_BOSS_H = 3.0  # 口逃げ後も前タブz2〜7に厚さ5mmのねじ支持を残す
+MOUTH_CHASSIS_SIMPLIFY_MM = 0.001 # STL再量子化で重なる微小面を解消する精度
+MOUTH_FRONT_TAB_BOSS_H = 3.0 # 口逃げ後も前タブz2〜7に厚さ5mmのねじ支持を残す
 MOUTH_BALL_LOCAL_Y = -41.02
 MOUTH_BALL_SEAT_CLEAR = 0.2
 
@@ -949,20 +1343,20 @@ MOUTH_BALL_SEAT_CLEAR = 0.2
 # よって現物合わせ不要と判断し、Head_Bottom_Armcut に単純な一次カッター
 # (円柱, 既存の ARMCUT 直方体カッターと同じ「実測+マージン」流儀) として
 # 焼き込む。
-MOUTH_HEAD_BORE_D = 7.0             # ワイヤボア径 (AUDIO_WIRE_BORE_D=6.0 に
-                                     # 位置合わせ余裕+1.0mm。Ball 側ボアとの
-                                     # 精密な同軸合わせは不要 [配線は柔軟] な
-                                     # ので気持ち太めにして現物合わせを不要化)
-MOUTH_HEAD_BORE_START = -2.0        # ソケット中心 MOUTH_SOCKET_LOCAL からの
-                                     # 深さ (mm, inward=正)。負 = ソケット開口
-                                     # 側 (ボールが収まる空隙, 実測で深さ0でも
-                                     # 中実ではない) へ少し戻り、殻材の断面を
-                                     # 確実に全周貫通させる (空隙側を切っても
-                                     # 無害)
-MOUTH_HEAD_BORE_END = 25.0          # 同、深さ終端。実測の殻材貫通位置
-                                     # (深さ18.25mm) から+6.75mmの安全マージン
-                                     # を確保しつつ、確認済みの頭部内部
-                                     # キャビティ内 (Head_Top非干渉域) で留める
+MOUTH_HEAD_BORE_D = 7.0       # ワイヤボア径 (AUDIO_WIRE_BORE_D=6.0 に
+                   # 位置合わせ余裕+1.0mm。Ball 側ボアとの
+                   # 精密な同軸合わせは不要 [配線は柔軟] な
+                   # ので気持ち太めにして現物合わせを不要化)
+MOUTH_HEAD_BORE_START = -2.0    # ソケット中心 MOUTH_SOCKET_LOCAL からの
+                   # 深さ (mm, inward=正)。負 = ソケット開口
+                   # 側 (ボールが収まる空隙, 実測で深さ0でも
+                   # 中実ではない) へ少し戻り、殻材の断面を
+                   # 確実に全周貫通させる (空隙側を切っても
+                   # 無害)
+MOUTH_HEAD_BORE_END = 25.0     # 同、深さ終端。実測の殻材貫通位置
+                   # (深さ18.25mm) から+6.75mmの安全マージン
+                   # を確保しつつ、確認済みの頭部内部
+                   # キャビティ内 (Head_Top非干渉域) で留める
 
 # ---------------------------------------------------------------- 頭部中央目カメラ化 (2026-07-28 設計変更)
 # ユーザー決定: カメラはポッド (Cabin) のメインアイではなく、**頭部の中央
@@ -975,10 +1369,10 @@ MOUTH_HEAD_BORE_END = 25.0          # 同、深さ終端。実測の殻材貫通
 #
 # モジュール実寸/出典は変更なし (Seeed XIAO ESP32S3 Sense のレンズ側子基板。
 # OV2640/OV3660 センサー切替の在庫注意も同様に有効。docs/BOM.md #34 参照)。
-CAM2_LENS_FOV_DEG = 68.7           # 光学 FOV [データシート実測値]
-CAM2_LENS_EFL = 3.29               # 参考: EFL [同上]
-CAM2_MODULE_L, CAM2_MODULE_W, CAM2_MODULE_T = 20.5, 12.5, 5.54  # モジュール実寸
-CAM2_MODULE_CLR = 0.4              # モジュール収容クリアランス (片側)
+CAM2_LENS_FOV_DEG = 68.7      # 光学 FOV [データシート実測値]
+CAM2_LENS_EFL = 3.29        # 参考: EFL [同上]
+CAM2_MODULE_L, CAM2_MODULE_W, CAM2_MODULE_T = 20.5, 12.5, 5.54 # モジュール実寸
+CAM2_MODULE_CLR = 0.4       # モジュール収容クリアランス (片側)
 
 # ---- 光軸の設計 (実測 + 幾何計算, 2026-07-28):
 # 中央目ソケットの外向き法線 (EYE_SOCKETS_150[1], model/Head_Top_Blue.stl
@@ -1001,13 +1395,13 @@ CAM2_MODULE_CLR = 0.4              # モジュール収容クリアランス (�
 # キャストして「モジュール全体 (クリアランス+肉厚+安全代込みの半径方向
 # footprint) が外殻を突き破らずに収まる最大偏心角」を探索した結果
 # (2026-07-28 実測・探索, 0.5°刻みでθ=30..42°を走査):
-#   θ=46.6° (完全相殺): モジュールが収まる深さがどこにも無い (NOFIT) —
-#     瞳ボア入口付近の肉厚が要求径に対し不足 (安全代込みで破綻)
-#   θ=38.0° (採用): 深さ s≈6.6mm の位置でモジュール footprint が
-#     壁厚安全代 (クリア0.4+肉厚1.0+追加安全代0.8mm/辺) 込みで収まる
-#     (探索範囲内で成立する最大偏心角。38.5°以上ではどの深さでも
-#     NOFIT) — 残差仰角 (46.6−38.0)=CAM2_RESIDUAL_DEG ≈ 8.6°
-#     (ユーザー要求「水平前方 ±10° 以内」を満たす)
+#  θ=46.6° (完全相殺): モジュールが収まる深さがどこにも無い (NOFIT) —
+#   瞳ボア入口付近の肉厚が要求径に対し不足 (安全代込みで破綻)
+#  θ=38.0° (採用): 深さ s≈6.6mm の位置でモジュール footprint が
+#   壁厚安全代 (クリア0.4+肉厚1.0+追加安全代0.8mm/辺) 込みで収まる
+#   (探索範囲内で成立する最大偏心角。38.5°以上ではどの深さでも
+#   NOFIT) — 残差仰角 (46.6−38.0)=CAM2_RESIDUAL_DEG ≈ 8.6°
+#   (ユーザー要求「水平前方 ±10° 以内」を満たす)
 # 光軸のケラレ計算 (半画角 34.35°, tan=0.6833): 採用の後退距離
 # CAM2_LENS_STANDOFF=6.57mm でのケラレ無し最小瞳径は 2×6.57×0.6833≈8.98mm
 # → 採用 CAM2_PUPIL_D=10.0mm (半径マージン 0.51mm)。この瞳チャンネル区間
@@ -1015,24 +1409,24 @@ CAM2_MODULE_CLR = 0.4              # モジュール収容クリアランス (�
 # の余裕がある (探索データ)。tools/check_camera.py [1][2] が実メッシュに
 # 対しこの角度/標準的距離/肉厚を再検算・照合する (本コメントの数値が正では
 # なく、check_camera.py の実行結果が正)。
-CAM2_ALPHA_DEG = 46.5884           # 中央目ソケット法線の仰角 [STL実測,
-                                    # EYE_SOCKETS_150[1] と自己整合]
-CAM2_THETA_DEG = 38.0              # 採用する瞳の偏心角 (キャップ軸から)。
-                                    # 45.9°/46.6°ではモジュールが収まらない
-                                    # ことを実メッシュ探索で確認済み (上記)
-CAM2_RESIDUAL_DEG = CAM2_ALPHA_DEG - CAM2_THETA_DEG  # ≈8.59°: 完全水平からの
-                                    # 残差仰角 (取付位相を正しく選んだ場合の
-                                    # 設計値)
-CAM2_PUPIL_D = 10.0                # 瞳 (外から見える開口) 径
-CAM2_LENS_STANDOFF = 6.57          # レンズ前面 (camera_carrier 側) から瞳の
-                                    # 最外開口までの実効距離 L [探索で確定]。
-                                    # 瞳チャンネル区間 (0..L) は実測壁肉厚に
-                                    # 余裕が大きいため段付きボアは不要 — 定径
-                                    # CAM2_PUPIL_D のまま L の深さまで貫通させ、
-                                    # そこから camera_carrier のモジュール
-                                    # キャビティ (広い断面) へ接続する
-CAM2_PUPIL_PAD = 2.0               # 瞳ボアの外側張り出し (開放境界を確実に
-                                    # 貫通させる。make_camera.py 既存流儀)
+CAM2_ALPHA_DEG = 46.5884      # 中央目ソケット法線の仰角 [STL実測,
+                  # EYE_SOCKETS_150[1] と自己整合]
+CAM2_THETA_DEG = 38.0       # 採用する瞳の偏心角 (キャップ軸から)。
+                  # 45.9°/46.6°ではモジュールが収まらない
+                  # ことを実メッシュ探索で確認済み (上記)
+CAM2_RESIDUAL_DEG = CAM2_ALPHA_DEG - CAM2_THETA_DEG # ≈8.59°: 完全水平からの
+                  # 残差仰角 (取付位相を正しく選んだ場合の
+                  # 設計値)
+CAM2_PUPIL_D = 10.0        # 瞳 (外から見える開口) 径
+CAM2_LENS_STANDOFF = 6.57     # レンズ前面 (camera_carrier 側) から瞳の
+                  # 最外開口までの実効距離 L [探索で確定]。
+                  # 瞳チャンネル区間 (0..L) は実測壁肉厚に
+                  # 余裕が大きいため段付きボアは不要 — 定径
+                  # CAM2_PUPIL_D のまま L の深さまで貫通させ、
+                  # そこから camera_carrier のモジュール
+                  # キャビティ (広い断面) へ接続する
+CAM2_PUPIL_PAD = 2.0        # 瞳ボアの外側張り出し (開放境界を確実に
+                  # 貫通させる。make_camera.py 既存流儀)
 
 # ---- モジュール収容 (camera_carrier): 瞳の奥、深さ CAM2_LENS_STANDOFF の
 # 位置からモジュール footprint (長辺=キャップ軸に垂直な水平方向, 短辺=瞳
@@ -1042,21 +1436,21 @@ CAM2_PUPIL_PAD = 2.0               # 瞳ボアの外側張り出し (開放境�
 # 済む (make_camera.py 参照)。キャビティは深さ方向に大きく張り出して掘る
 # (CAM2_POCKET_PAD) ことで、eye_pod_camera 自身のネックボス側面まで確実に
 # 貫通させ、camera_carrier をシェル内側から差し込める開口を作る。
-CAM2_WALL = 1.0                    # モジュール収容キャビティ周囲の目標肉厚
-CAM2_SAFETY = 0.8                  # 上記に加える追加安全代 (探索時に使用した
-                                    # 値。この安全代込みで θ=38.0° が成立)
-CAM2_POCKET_PAD = 20.0             # モジュールキャビティの深さ方向の張り出し
-                                    # (ネックボス側面まで確実に貫通させる)
-CAM2_NECK_D = 28.0                 # eye_pod_camera のネックボス径。回転しない
-                                    # 固定パーツのためキョロキョロ目のネック
-                                    # (φ24, 座グリ回転クリアランス込み) より
-                                    # 太くでき、Head_Top のボア (EYE_BORE_D=30)
-                                    # に対し片側1mmクリアランスまで肉厚を稼ぎ、
-                                    # 接着代とモジュールキャビティの余裕を増やす
-CAM2_WIRE_NOTCH = (5.0, 4.0)       # camera_carrier の配線逃がし切り欠き (幅, 深さ)
-CAM2_CARRIER_WING = (30.0, 8.0, 2.0)  # camera_carrier のシェル接着ウィング
-                                    # (幅, 奥行, 厚み。eye_carrier の接着
-                                    # ウィングと同じ考え方)
+CAM2_WALL = 1.0          # モジュール収容キャビティ周囲の目標肉厚
+CAM2_SAFETY = 0.8         # 上記に加える追加安全代 (探索時に使用した
+                  # 値。この安全代込みで θ=38.0° が成立)
+CAM2_POCKET_PAD = 20.0       # モジュールキャビティの深さ方向の張り出し
+                  # (ネックボス側面まで確実に貫通させる)
+CAM2_NECK_D = 28.0         # eye_pod_camera のネックボス径。回転しない
+                  # 固定パーツのためキョロキョロ目のネック
+                  # (φ24, 座グリ回転クリアランス込み) より
+                  # 太くでき、Head_Top のボア (EYE_BORE_D=30)
+                  # に対し片側1mmクリアランスまで肉厚を稼ぎ、
+                  # 接着代とモジュールキャビティの余裕を増やす
+CAM2_WIRE_NOTCH = (5.0, 4.0)    # camera_carrier の配線逃がし切り欠き (幅, 深さ)
+CAM2_CARRIER_WING = (30.0, 8.0, 2.0) # camera_carrier のシェル接着ウィング
+                  # (幅, 奥行, 厚み。eye_carrier の接着
+                  # ウィングと同じ考え方)
 
 # ---- eye_pod_camera の印刷用 2 分割 (2026-08-19 印刷性再設計) ----
 # 一体版は背面下の印刷姿勢で「キャビティにえぐられたネックボス (残断面
@@ -1066,68 +1460,70 @@ CAM2_CARRIER_WING = (30.0, 8.0, 2.0)  # camera_carrier のシェル接着ウィ�
 # 印刷して接着する (経緯と印刷姿勢は make_camera.py 冒頭コメント参照)。
 # 一体版 eye_pod_camera.stl は検証 (check_camera.py) と可視化の参照形状と
 # して引き続き出力する — 印刷はしない。
-CAM2_SPLIT_PLUG_OD = 27.0          # 位置決めリングプラグの呼び外径 (溝側寸法。
-                                    # ネックボス φ28 の上面に収まる)
-CAM2_SPLIT_PLUG_ID = 23.0          # 同呼び内径
-CAM2_SPLIT_PLUG_H = 1.8            # プラグ高さ (shell 側の溝深さは +0.2)
-CAM2_SPLIT_CLR = 0.2               # プラグ/溝の片側径方向クリアランス
-                                    # (プラグ実寸は OD-0.4 / ID+0.4)
-CAM2_BASE_POCKET_FLOOR_T = 1.5     # base 側モジュールポケットの底肉厚。分割後は
-                                    # carrier を接着前に先入れできるため、キャビティ
-                                    # を base で貫通させる必要がなくなった — 底を
-                                    # 残す止まり穴にすることで base が単一連結体に
-                                    # なる (貫通版はキャビティがボスを 4 本の柱に
-                                    # 分断し、分割単体では非連結だった)
+CAM2_SPLIT_PLUG_OD = 27.0     # 位置決めリングプラグの呼び外径 (溝側寸法。
+                  # ネックボス φ28 の上面に収まる)
+CAM2_SPLIT_PLUG_ID = 23.0     # 同呼び内径
+CAM2_SPLIT_PLUG_H = 1.8      # プラグ高さ (shell 側の溝深さは +0.2)
+CAM2_SPLIT_CLR = 0.2        # プラグ/溝の片側径方向クリアランス
+                  # (プラグ実寸は OD-0.4 / ID+0.4)
+CAM2_BASE_POCKET_FLOOR_T = 1.5   # base 側モジュールポケットの底肉厚。分割後は
+                  # carrier を接着前に先入れできるため、キャビティ
+                  # を base で貫通させる必要がなくなった — 底を
+                  # 残す止まり穴にすることで base が単一連結体に
+                  # なる (貫通版はキャビティがボスを 4 本の柱に
+                  # 分断し、分割単体では非連結だった)
 CAM2_FPC_SLOT = (10.0, 8.0, -12.3) # base の FPC 引き出し縦溝 (幅x, 奥行y, 中心y)。
-                                    # carrier 配線切り欠きの出口 (実測 y≈-11.8,
-                                    # z≈7.3) の直下を base 底面まで貫く。
-                                    # v3 (2026-08-19): 前側リム壁を貫通する開放
-                                    # 溝に変更 — v2 の閉じた縦穴は前壁を厚さ
-                                    # ~1.3mm×幅10mmの孤立した刃として残し、実印刷
-                                    # でちぎれた (ユーザー報告)。前壁は構造部材
-                                    # ではなく接着周長のためだけの材で、ソケット
-                                    # 装着後は Head_Top のボア壁 (φ30) が溝の
-                                    # 外側を閉じるため機能は失われない
-CAM2_BASE_POCKET_CLR = 0.6         # base ポケットの carrier に対する片側掘り
-                                    # 込みクリアランス。2026-08-19 v2: 旧実装は
-                                    # 汎用キャビティ負形状 (軸方向 POCKET_PAD=20mm
-                                    # 張り出し込み) を流用しており、carrier が
-                                    # 存在しない領域まで斜めに掘れて +Y 側リム壁
-                                    # が根元 ~1.4mm の薄足になっていた (ユーザー
-                                    # 指摘)。carrier 実形状+本クリアランスの最小
-                                    # プリズムに縮小して肉を充填した
+                  # carrier 配線切り欠きの出口 (実測 y≈-11.8,
+                  # z≈7.3) の直下を base 底面まで貫く。
+                  # v3 (2026-08-19): 前側リム壁を貫通する開放
+                  # 溝に変更 — v2 の閉じた縦穴は前壁を厚さ
+                  # ~1.3mm×幅10mmの孤立した刃として残し、実印刷
+                  # でちぎれた (ユーザー報告)。前壁は構造部材
+                  # ではなく接着周長のためだけの材で、ソケット
+                  # 装着後は Head_Top のボア壁 (φ30) が溝の
+                  # 外側を閉じるため機能は失われない
+CAM2_BASE_POCKET_CLR = 0.6     # base ポケットの carrier に対する片側掘り
+                  # 込みクリアランス。2026-08-19 v2: 旧実装は
+                  # 汎用キャビティ負形状 (軸方向 POCKET_PAD=20mm
+                  # 張り出し込み) を流用しており、carrier が
+                  # 存在しない領域まで斜めに掘れて +Y 側リム壁
+                  # が根元 ~1.4mm の薄足になっていた (ユーザー
+                  # 指摘)。carrier 実形状+本クリアランスの最小
+                  # プリズムに縮小して肉を充填した
 
 # ---------------------------------------------------------------- 電源監査 (2026-09-05)
-# 機種の資料値と実測前の計算仮定を分離する。注文品の型番が確定するまでは
+# 機種の資料値と実測前の計算仮定を分離する。対象部品の型番が確定するまでは
 # この辞書を「購入品がこの仕様を満たす」根拠に使わない。機構プロファイルも別途実測する。
 POWER_COMPONENTS = {
-    "DS3218": {
-        "source": "https://www.dsservo.com/down.asp?id=22",
-        "checked": "2026-09-05", "voltage_range_v": (4.8, 6.8),
-        "points": ((5.0, 18.0, 1.8, 0.16), (6.8, 21.5, 2.2, 0.14)),
-        # point: voltage V, stall torque kgf cm, stall current A, speed s/60deg
-        "purchased_identity": "UNVERIFIED",
-    },
-    "MG90S": {
-        "source": "https://towerpro.com.tw/product/mg90s-3/",
-        "checked": "2026-09-05",
-        "torque_points_v_kgfcm": ((4.8, 1.8), (6.6, 2.2)),
-        "speed_points_v_s_per_60deg": ((4.8, 0.10), (6.0, 0.08)),
-        "rated_voltage_note": "同ページのOperating Voltage欄は4.8V。6.6Vトルク表との不整合があり、内挿は計算仮定。購入個体の6V運用適合は未確認",
-        "purchased_identity": "UNVERIFIED", "stall_current_a": None,
-    },
-    "UBEC_10A_V2_30603003": {
-        "source": "https://www.hobbywing.com/products/ubec-10a-car79",
-        "checked": "2026-09-05", "continuous_a": 10.0, "peak_a": 15.0,
-        "purchased_identity": "UNVERIFIED", "loaded_dropout": "UNVERIFIED",
-    },
+  "DS3218": {
+    "source": "https://www.dsservo.com/down.asp?id=22",
+    "checked": "2026-09-05", "voltage_range_v": (4.8, 6.8),
+    "points": ((5.0, 18.0, 1.8, 0.16), (6.8, 21.5, 2.2, 0.14)),
+    # point: voltage V, stall torque kgf cm, stall current A, speed s/60deg
+    "purchased_identity": "UNVERIFIED",
+  },
+  "MG90S": {
+    "source": "https://towerpro.com.tw/product/mg90s-3/",
+    "checked": "2026-09-05",
+    "torque_points_v_kgfcm": ((4.8, 1.8), (6.6, 2.2)),
+    "speed_points_v_s_per_60deg": ((4.8, 0.10), (6.0, 0.08)),
+    "rated_voltage_note": "同ページのOperating Voltage欄は4.8V。6.6Vトルク表との不整合があり、内挿は計算仮定。対象個体の6V運用適合は未確認",
+    "purchased_identity": "UNVERIFIED", "stall_current_a": None,
+  },
+  "UBEC_10A_V2_30603003": {
+    "source": "https://www.hobbywing.com/products/ubec-10a-car79",
+    "checked": "2026-09-05", "continuous_a": 10.0, "peak_a": 15.0,
+    "purchased_identity": "UNVERIFIED", "loaded_dropout": "UNVERIFIED",
+  },
 }
 POWER_AUDIT = {
-    "servo_v": 6.0, "logic_v": 5.0, "standard_servo_count": 12,
-    "logic_supply_a": 3.0, "battery_v_cases": (8.4, 7.4, 6.4),
-    "servo_load_a_cases": (6.0, 10.0, 14.0),
-    "logic_load_a_cases": (1.5, 3.0),
-    "efficiency_cases": (0.80, 0.90, 0.95),
-    "existing_switch_a": 10.0, "proposed_fuse_a": 15.0,
-    "status": "仮定の感度計算。歩行電流、効率、端子温度、DC定格、溶断曲線は未実測",
+  # servo_v は6Vベンチ比較用の計算条件。battery_v_cases は電池端子の入力条件
+  # (7.4Vは2S公称)であり、サーボレールへ直接加える採用電圧ではない。
+  "servo_v": 6.0, "logic_v": 5.0, "standard_servo_count": 12,
+  "logic_supply_a": 3.0, "battery_v_cases": (8.4, 7.4, 6.4),
+  "servo_load_a_cases": (6.0, 10.0, 14.0),
+  "logic_load_a_cases": (1.5, 3.0),
+  "efficiency_cases": (0.80, 0.90, 0.95),
+  "existing_switch_a": 10.0, "proposed_fuse_a": 15.0,
+  "status": "仮定の感度計算。歩行電流、効率、端子温度、DC定格、溶断曲線は未実測",
 }

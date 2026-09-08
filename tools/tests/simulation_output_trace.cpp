@@ -7,7 +7,11 @@
 float angle(int ch) {auto& p=fakePCA[ch/16];return (p.ticks[ch%16]*double(p.prescale+1)/25-1500)*DEG_RANGE/(US_MAX-US_MIN);}
 bool enabled(int ch){return fakePCA[ch/16].ticks[ch%16]!=4096;}
 int main(int argc,char** argv){
- Gait gait;LegOutput legs;Arms arms;Servos servos;servos.begin();servos.enableAll();arms.setPose(ARM_POSE_READY);
+ Gait gait;LegOutput legs;Arms arms;Servos servos;servos.begin();
+ // The host fixture has no ADC/power monitor.  Mark its simulated supply
+ // explicitly so the trace exercises the same enabled-servo C++ path as the
+ // firmware instead of silently emitting 20 zero/holding axes.
+ servos.setPowerReady(true);servos.enableAll();arms.setPose(ARM_POSE_READY);
  bool sequential=argc>1 && std::string(argv[1])=="sequential";
  float dt,vx,vy,wz,h;
  auto update=[&](float step,float x,float y,float z,float height){
@@ -16,7 +20,7 @@ int main(int argc,char** argv){
    JointAngles guard[2]={legs.armGuard(0,target),legs.armGuard(1,target)};
    arms.update(step,servos,gait.moving(),gait.phase(),height,guard);
  };
- if(!sequential){for(int i=0;i<33;++i){fakeMillis()+=100;servos.softStart();}if(argc<2 || std::string(argv[1])=="ready")for(int i=0;i<100;++i)update(.02,0,0,0,BODY_H_DEF);}
+ if(!sequential){for(int i=0;i<33;++i){fakeMillis()+=100;servos.softStart();}if(argc<2 || std::string(argv[1])=="ready")for(int i=0;i<100;++i)update(.02,0,0,0,TK_BODY_H_DEF);}
  std::cout<<std::setprecision(10);
  while(std::cin>>dt>>vx>>vy>>wz>>h){
   fakeMillis()+=uint32_t(dt*1000+.5);servos.softStart();if(servos.ready())update(dt,vx,vy,wz,h);

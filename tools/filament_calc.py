@@ -20,9 +20,10 @@ import trimesh
 ROOT = Path(__file__).resolve().parent.parent
 MODEL, STL = ROOT / "model", ROOT / "hardware" / "stl"
 sys.path.insert(0, str(ROOT / "hardware" / "src"))
-from config import SCALE
+import config as C  # noqa: E402
 
-RHO = {"PLA": 1.24, "PETG": 1.27, "TPU": 1.21}  # g/cm3
+SCALE = C.SCALE
+RHO = dict(C.MATERIAL_DENSITY_G_CM3)  # g/cm3; config.py が単一情報源
 
 # 印刷しない (骨格/加工版で置換 / ロボットに不要) パーツ。stem 完全一致
 SKIP = ["Leg_HipJoint_Grey_x4", "Leg_HipJoint_Socket_Grey_x4",
@@ -157,7 +158,9 @@ def main():
     print("\n== 新規設計 (hardware/stl) ==")
     for stem, (mat, n, wall, fill) in new_parts.items():
         mesh = trimesh.load(STL / f"{stem}.stl")
-        rho = RHO["TPU" if mat == "TPU" else ("PETG" if mat == "PETG" else "PLA")]
+        material_key = "TPU" if str(mat).upper().startswith("TPU") else (
+            "PETG" if str(mat).upper() == "PETG" else "PLA")
+        rho = C.material_density_g_cm3(material_key)
         vol = printed_cm3(mesh, 1.0, wall, fill) * n
         g = vol * rho
         print(f"  {stem:20s} x{n} {mat:9s} {vol:7.1f}cm3 -> {g:6.0f}g")

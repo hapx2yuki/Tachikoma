@@ -362,7 +362,7 @@ def foot_pad() -> Manifold:
     座標系 (原点 = tibia 差込面)。
 
     2026-07-29 追記: このドーム底の局所 z 深さ (=config.FOOT_GROUND_OFFSET,
-    実測18.6mm) が firmware/tools の IK が使う TIBIA_LEN_GAIT の校正元
+    再校正20.98mm) が firmware/tools の IK が使う TIBIA_LEN_GAIT の校正元
     (config.py 参照)。トゥ (Leg_Toe_Black_x12) は取付スタブ軸に沿って
     このドームよりさらに 6.5-7.1mm 深く突き出すが (tibia 軸から20mm前後
     横に離れるため 1 次元オフセットで一緒には拾えない)、装飾扱いのまま

@@ -1,0 +1,914 @@
+{
+  "schema_version": 1,
+  "status": "SERIALIZED_PARTS_MANIFEST",
+  "total_parts": 86,
+  "links": {
+    "base_link": [
+      "battery_cradle",
+      "Mouth_Cannon_Grey",
+      "Head_Bottom_Blue#single",
+      "Head_Dome_Grey#single",
+      "Head_Plug_Grey#single",
+      "Mouth_Cap_Grey#single",
+      "Mouth_Ball_Grey#single",
+      "Mouth_Neck_Blue#single",
+      "pf_chassis",
+      "pf_head_top_clearanced",
+      "pf_ld220_yaw_cap_fr",
+      "pf_ld220_yaw_cap_fl",
+      "pf_ld220_yaw_cap_rl",
+      "pf_ld220_yaw_cap_rr",
+      "pf_cabin_rail_l",
+      "pf_cabin_rail_r",
+      "pf_electronics_shelf_0",
+      "pf_electronics_shelf_1",
+      "pf_electronics_shelf_2",
+      "pf_mouth_key"
+    ],
+    "eye_pod_camera": [
+      "pf_camera_carrier",
+      "pf_eye_pod_camera_clearanced"
+    ],
+    "camera_optical_frame": [],
+    "eye_r_pod": [
+      "eye_pod"
+    ],
+    "eye_l_pod": [
+      "eye_pod"
+    ],
+    "leg_fr_coxa": [
+      "pf_coxa_bracket_m",
+      "pf_ld220_coxa_cap_m"
+    ],
+    "leg_fr_femur": [
+      "pf_femur_link_m",
+      "pf_ld220_femur_cap_m"
+    ],
+    "leg_fr_tibia": [
+      "leg_foot_bored",
+      "pf_tibia_link_m",
+      "tpu_shoe",
+      "pla_spacer_positive_y",
+      "pla_spacer_negative_y",
+      "pla_spacer_upper_positive_y",
+      "pla_spacer_upper_negative_y",
+      "shin_shell_retained_m"
+    ],
+    "leg_fl_coxa": [
+      "pf_coxa_bracket",
+      "pf_ld220_coxa_cap"
+    ],
+    "leg_fl_femur": [
+      "pf_femur_link",
+      "pf_ld220_femur_cap"
+    ],
+    "leg_fl_tibia": [
+      "leg_foot_bored",
+      "pf_tibia_link",
+      "tpu_shoe",
+      "pla_spacer_positive_y",
+      "pla_spacer_negative_y",
+      "pla_spacer_upper_positive_y",
+      "pla_spacer_upper_negative_y",
+      "shin_shell_retained"
+    ],
+    "leg_rl_coxa": [
+      "pf_coxa_bracket_m",
+      "pf_ld220_coxa_cap_m"
+    ],
+    "leg_rl_femur": [
+      "pf_femur_link_m",
+      "pf_ld220_femur_cap_m"
+    ],
+    "leg_rl_tibia": [
+      "leg_foot_bored",
+      "pf_tibia_link_m",
+      "tpu_shoe",
+      "pla_spacer_positive_y",
+      "pla_spacer_negative_y",
+      "pla_spacer_upper_positive_y",
+      "pla_spacer_upper_negative_y",
+      "shin_shell_retained_m"
+    ],
+    "leg_rr_coxa": [
+      "pf_coxa_bracket",
+      "pf_ld220_coxa_cap"
+    ],
+    "leg_rr_femur": [
+      "pf_femur_link",
+      "pf_ld220_femur_cap"
+    ],
+    "leg_rr_tibia": [
+      "leg_foot_bored",
+      "pf_tibia_link",
+      "tpu_shoe",
+      "pla_spacer_positive_y",
+      "pla_spacer_negative_y",
+      "pla_spacer_upper_positive_y",
+      "pla_spacer_upper_negative_y",
+      "shin_shell_retained"
+    ],
+    "arm_r_shoulder": [
+      "shoulder_bracket"
+    ],
+    "arm_r_upper": [
+      "upper_arm",
+      "arm_pod_upper",
+      "arm_pod_lower",
+      "elbow_shell"
+    ],
+    "arm_r_forearm": [
+      "forearm",
+      "pf_fixed_claw_r"
+    ],
+    "arm_l_shoulder": [
+      "shoulder_bracket"
+    ],
+    "arm_l_upper": [
+      "upper_arm",
+      "arm_pod_upper",
+      "arm_pod_lower",
+      "elbow_shell"
+    ],
+    "arm_l_forearm": [
+      "forearm",
+      "pf_fixed_claw_l"
+    ]
+  },
+  "print_first_cabin_storage": {
+    "status": "INITIAL_WALKING_STORE_ALL_CABIN_KIT_PARTS",
+    "stored_source_prefixes": [
+      "Cabin_"
+    ],
+    "retained_source_parts": [
+      "battery_cradle"
+    ],
+    "retained_generated_parts": [
+      "pf_chassis",
+      "pf_cabin_rail_l",
+      "pf_cabin_rail_r",
+      "pf_electronics_shelf_0",
+      "pf_electronics_shelf_1",
+      "pf_electronics_shelf_2"
+    ],
+    "rail_includes_electronics_posts": true,
+    "source_mesh_required_for_generated_false": true,
+    "additional_prints_required": false,
+    "original_and_printed_parts_preserved": true,
+    "mass_basis": "runtime E.part_mass_item on collected Cabin_ rows; subtract the rows already selected by the legacy stored prefixes once",
+    "physical_status": "UNVERIFIED_EXPOSED_FASTENERS_WIRING_AND_PRINTED_STRENGTH",
+    "runtime": {
+      "collection_mode": "generated_true_assembly",
+      "storage_filter_applied": true,
+      "source_mesh_retained_for_body_generation": false,
+      "source_part_count": 29,
+      "source_part_names": [
+        "Cabin_Front_Blue",
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Eye_White#single",
+        "Cabin_Turrent_Left_Grey#single",
+        "Cabin_Turrent_Right_Grey#single",
+        "Cabin_Turret_Peg#left",
+        "Cabin_Turret_Peg#right",
+        "Cabin_RedLight_Large#front_left",
+        "Cabin_RedLight_Large#front_right",
+        "Cabin_RedLight_Large#back_left",
+        "Cabin_RedLight_Large#back_right",
+        "Cabin_RedLight_Small#front_left",
+        "Cabin_RedLight_Small#front_right",
+        "Cabin_RedLight_Small#back_left",
+        "Cabin_RedLight_Small#back_right",
+        "Cabin_Spinnarette_Grey#front_left",
+        "Cabin_Spinnarette_Grey#front_right",
+        "Cabin_Spinnarette_Grey#back_left",
+        "Cabin_Spinnarette_Grey#back_right",
+        "Cabin_Front_Insert_Front_Black#single",
+        "Cabin_Front_Insert_Left_Black#single",
+        "Cabin_Front_Insert_Right_Black#single",
+        "Cabin_Front_Insert_Back_Black#left",
+        "Cabin_Front_Insert_Back_Black#right",
+        "Cabin_Front_Insert_Bottom_Long_Black#left",
+        "Cabin_Front_Insert_Bottom_Long_Black#right",
+        "Cabin_Front_Insert_Bottom_Wide_Black#single",
+        "Cabin_Peg_x2#lower",
+        "Cabin_Peg_x2#upper"
+      ],
+      "already_stored_source_part_names": [
+        "Cabin_Eye_White#single",
+        "Cabin_Turret_Peg#left",
+        "Cabin_Turret_Peg#right",
+        "Cabin_RedLight_Large#front_left",
+        "Cabin_RedLight_Large#front_right",
+        "Cabin_RedLight_Large#back_left",
+        "Cabin_RedLight_Large#back_right",
+        "Cabin_RedLight_Small#front_left",
+        "Cabin_RedLight_Small#front_right",
+        "Cabin_RedLight_Small#back_left",
+        "Cabin_RedLight_Small#back_right",
+        "Cabin_Spinnarette_Grey#front_left",
+        "Cabin_Spinnarette_Grey#front_right",
+        "Cabin_Spinnarette_Grey#back_left",
+        "Cabin_Spinnarette_Grey#back_right",
+        "Cabin_Front_Insert_Front_Black#single",
+        "Cabin_Front_Insert_Left_Black#single",
+        "Cabin_Front_Insert_Right_Black#single",
+        "Cabin_Front_Insert_Back_Black#left",
+        "Cabin_Front_Insert_Back_Black#right",
+        "Cabin_Front_Insert_Bottom_Long_Black#left",
+        "Cabin_Front_Insert_Bottom_Long_Black#right",
+        "Cabin_Front_Insert_Bottom_Wide_Black#single"
+      ],
+      "newly_stored_source_part_names": [
+        "Cabin_Front_Blue",
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Turrent_Left_Grey#single",
+        "Cabin_Turrent_Right_Grey#single",
+        "Cabin_Peg_x2#lower",
+        "Cabin_Peg_x2#upper"
+      ],
+      "source_total_mass_g": 587.3919603718443,
+      "already_stored_mass_g": 18.655951386932827,
+      "additional_stored_mass_g": 568.7360089849115,
+      "additional_mass_accounted_once": true,
+      "mass_rows": [
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Blue",
+          "mass_g": 362.75715886227414
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Back_Blue_Repaired",
+          "mass_g": 171.09697485579557
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Eye_White#single",
+          "mass_g": 5.625831147252939
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Turrent_Left_Grey#single",
+          "mass_g": 7.765074369415429
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Turrent_Right_Grey#single",
+          "mass_g": 7.808781671088659
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Turret_Peg#left",
+          "mass_g": 0.7609724617268024
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Turret_Peg#right",
+          "mass_g": 0.7609724617268024
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Large#front_left",
+          "mass_g": 0.7540503336906528
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Large#front_right",
+          "mass_g": 0.7540503336906532
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Large#back_left",
+          "mass_g": 0.754050333690652
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Large#back_right",
+          "mass_g": 0.7540503336906516
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Small#front_left",
+          "mass_g": 0.1442939490458236
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Small#front_right",
+          "mass_g": 0.14429394904582304
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Small#back_left",
+          "mass_g": 0.14429394904582396
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Small#back_right",
+          "mass_g": 0.14429394904582274
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Spinnarette_Grey#front_left",
+          "mass_g": 0.4276255879962189
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Spinnarette_Grey#front_right",
+          "mass_g": 0.4276255879962186
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Spinnarette_Grey#back_left",
+          "mass_g": 0.42762558799621886
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Spinnarette_Grey#back_right",
+          "mass_g": 0.4276255879962185
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Front_Black#single",
+          "mass_g": 0.6968857120812239
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Left_Black#single",
+          "mass_g": 0.8178529878783588
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Right_Black#single",
+          "mass_g": 0.8178529567298491
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Back_Black#left",
+          "mass_g": 1.1047163381717024
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Back_Black#right",
+          "mass_g": 1.104716338171703
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Bottom_Long_Black#left",
+          "mass_g": 0.4425163556990242
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Bottom_Long_Black#right",
+          "mass_g": 0.4425163556990242
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Bottom_Wide_Black#single",
+          "mass_g": 0.7772387888646212
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Peg_x2#lower",
+          "mass_g": 9.654009613168817
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Peg_x2#upper",
+          "mass_g": 9.654009613168821
+        }
+      ],
+      "retained_after_filter_source_part_names": []
+    }
+  },
+  "mesh_reference_count": 80,
+  "visual_mesh_count": 56,
+  "collision_mesh_count": 24,
+  "mesh_files": [
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_chassis_grey.stl",
+      "exists": true,
+      "sha256": "9b372acdd8ca25628603230304842d7ed4bab85f054056da5ab7a0d01acd53e1",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_grey.stl",
+      "exists": true,
+      "sha256": "6176c785c953e81cc6e00edbff9062e21ddaac0e058d4908955bae5d98ff0735",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_kit_blue.stl",
+      "exists": true,
+      "sha256": "999acb2e5f7ed8e6830a665997d97acc466e3119ed378a8cf65ce9219194ed7d",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "213e0848069ad2f5cd547ecc7f9a17419e5c1523a83b0dbc0ea82d74870d4c8f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_607d8b.stl",
+      "exists": true,
+      "sha256": "fab3eb4f7cfe85b88bfc091c776dc9616b94ba0acc7d2263e140594c4ce65512",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_888888.stl",
+      "exists": true,
+      "sha256": "0bc45596c6d1dd500902c048ab374a5f5eeb5c47c0eda5bbe9f914d8dcbcd0af",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_pod_camera__vis_888888.stl",
+      "exists": true,
+      "sha256": "a7819ab8ed764e046fe687973cd3485f9ac4f807255a75f9c76116c6bb2021e2",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_pod_camera__vis_white.stl",
+      "exists": true,
+      "sha256": "5ffb63ca1edc9d8d1604bebce10b14ebdade056aa67deaf9044ca31bee33a9d8",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_r_pod__vis_white.stl",
+      "exists": true,
+      "sha256": "6546dc1dd47353df1ed9ae5fb8413fba99ca02da524fcdab76eab87823c4a73e",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_l_pod__vis_white.stl",
+      "exists": true,
+      "sha256": "6546dc1dd47353df1ed9ae5fb8413fba99ca02da524fcdab76eab87823c4a73e",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_coxa__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "e49ed813e05ca262fa4678608f653a0154163d4be25049980ae53e40bf84e25b",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_coxa__vis_607d8b.stl",
+      "exists": true,
+      "sha256": "7e8c96929b049133f8331abdb2399e37e030d70fd7fa6b276df1d3aad833ce77",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_femur__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "37d95c7b3f912047f4b2eaad27fe9354cc1fe8bd2eab2686514ba50320b5b291",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_femur__vis_607d8b.stl",
+      "exists": true,
+      "sha256": "84db8c569effdc3a7fcb67a5f4cc66a94743a5c20a573fda74b2f1114b7a1903",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_grey.stl",
+      "exists": true,
+      "sha256": "1f86d51579c42467d418fe8f6a59eca2177a2c2584a9a97375032cc78e1011ed",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "169cb88a9e213c8800e0a2b369a7eb448c6855544e0f9b5b1ce0afa88277285c",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_20252a.stl",
+      "exists": true,
+      "sha256": "9dbd16372fe4e12bbd7ba7a7429b4407268045334eb8485b4c28f04dde6e6447",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_888888.stl",
+      "exists": true,
+      "sha256": "d2f0be62c39320f971c8be3c357f3cf4d629f1d17281ab44bb2d8980d013cb98",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_248aca.stl",
+      "exists": true,
+      "sha256": "5d6d757077262d3fca37b056c3381db288c0ea0aaaa5734432e6504ecef8057f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_coxa__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "23c1eb6b341aae5ff240b9e9c9b9ab696cb800da54915f651f469def85eb83ff",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_coxa__vis_607d8b.stl",
+      "exists": true,
+      "sha256": "ccae89a8b599e450d1cdd3e48f945f52a01d3239887a0718e2055dcfe6c4f3ba",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_femur__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "e221a0fc80b35ff56072c8f723dc027f9781dfac676af7b9eb63e09be5acb483",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_femur__vis_607d8b.stl",
+      "exists": true,
+      "sha256": "8fa6b45e80a767bf92ee7293ead885ac30fe007fa6b6fc735072fb4b5c431e8a",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_grey.stl",
+      "exists": true,
+      "sha256": "1f86d51579c42467d418fe8f6a59eca2177a2c2584a9a97375032cc78e1011ed",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "e85051afac8e8f6eea43912e226a9c986b1424c4ce472179c2397f9bc09a408f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_20252a.stl",
+      "exists": true,
+      "sha256": "9dbd16372fe4e12bbd7ba7a7429b4407268045334eb8485b4c28f04dde6e6447",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_888888.stl",
+      "exists": true,
+      "sha256": "d2f0be62c39320f971c8be3c357f3cf4d629f1d17281ab44bb2d8980d013cb98",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_248aca.stl",
+      "exists": true,
+      "sha256": "9d56cf2b46064e7f6b08cf74448998eb504b7a0ec42e9854c9049629c0eadfb9",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_coxa__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "e49ed813e05ca262fa4678608f653a0154163d4be25049980ae53e40bf84e25b",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_coxa__vis_607d8b.stl",
+      "exists": true,
+      "sha256": "7e8c96929b049133f8331abdb2399e37e030d70fd7fa6b276df1d3aad833ce77",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_femur__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "37d95c7b3f912047f4b2eaad27fe9354cc1fe8bd2eab2686514ba50320b5b291",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_femur__vis_607d8b.stl",
+      "exists": true,
+      "sha256": "84db8c569effdc3a7fcb67a5f4cc66a94743a5c20a573fda74b2f1114b7a1903",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_grey.stl",
+      "exists": true,
+      "sha256": "1f86d51579c42467d418fe8f6a59eca2177a2c2584a9a97375032cc78e1011ed",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "169cb88a9e213c8800e0a2b369a7eb448c6855544e0f9b5b1ce0afa88277285c",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_20252a.stl",
+      "exists": true,
+      "sha256": "9dbd16372fe4e12bbd7ba7a7429b4407268045334eb8485b4c28f04dde6e6447",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_888888.stl",
+      "exists": true,
+      "sha256": "d2f0be62c39320f971c8be3c357f3cf4d629f1d17281ab44bb2d8980d013cb98",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_248aca.stl",
+      "exists": true,
+      "sha256": "5d6d757077262d3fca37b056c3381db288c0ea0aaaa5734432e6504ecef8057f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_coxa__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "23c1eb6b341aae5ff240b9e9c9b9ab696cb800da54915f651f469def85eb83ff",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_coxa__vis_607d8b.stl",
+      "exists": true,
+      "sha256": "ccae89a8b599e450d1cdd3e48f945f52a01d3239887a0718e2055dcfe6c4f3ba",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_femur__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "e221a0fc80b35ff56072c8f723dc027f9781dfac676af7b9eb63e09be5acb483",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_femur__vis_607d8b.stl",
+      "exists": true,
+      "sha256": "8fa6b45e80a767bf92ee7293ead885ac30fe007fa6b6fc735072fb4b5c431e8a",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_grey.stl",
+      "exists": true,
+      "sha256": "1f86d51579c42467d418fe8f6a59eca2177a2c2584a9a97375032cc78e1011ed",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_286bb1.stl",
+      "exists": true,
+      "sha256": "e85051afac8e8f6eea43912e226a9c986b1424c4ce472179c2397f9bc09a408f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_20252a.stl",
+      "exists": true,
+      "sha256": "9dbd16372fe4e12bbd7ba7a7429b4407268045334eb8485b4c28f04dde6e6447",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_888888.stl",
+      "exists": true,
+      "sha256": "d2f0be62c39320f971c8be3c357f3cf4d629f1d17281ab44bb2d8980d013cb98",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_248aca.stl",
+      "exists": true,
+      "sha256": "9d56cf2b46064e7f6b08cf74448998eb504b7a0ec42e9854c9049629c0eadfb9",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_shoulder__vis_bracket_grey.stl",
+      "exists": true,
+      "sha256": "f903ad8e435c5382d5a3d0ca7293e3c8f8b967030a8c473ba759f8c9f705a8b8",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_upper__vis_grey.stl",
+      "exists": true,
+      "sha256": "326db19466e6c2ce419f4885e6f72c74f55bffb32924d4df41c4d7f934d93ca4",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_upper__vis_shell_blue.stl",
+      "exists": true,
+      "sha256": "2f05843ee832bb8922e7187f4f0a923cc04d2f01b9927e78419c4678ee37f58f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_forearm__vis_grey.stl",
+      "exists": true,
+      "sha256": "0aa7e1d38cf21bd10e6e63f2bbc5fa092158246f42e75e96f7fb5bab18de7c2b",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_forearm__vis_555555.stl",
+      "exists": true,
+      "sha256": "14a3215e66867efe798901aaeaca7f17ce395c0524f6d8870fd31339e4c80316",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_shoulder__vis_bracket_grey.stl",
+      "exists": true,
+      "sha256": "28d937e3154fe28d4a2929f47ee7192377f08d9e20fe11f082d97698a6907170",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_upper__vis_grey.stl",
+      "exists": true,
+      "sha256": "58da46c75559d046117984482d8177068169f1a26448b3a4f8d67337a5b8b392",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_upper__vis_shell_blue.stl",
+      "exists": true,
+      "sha256": "8d92272b47f614e62dc4635dda1cef459f60feabfa9dc033fda378de8f893da1",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_forearm__vis_grey.stl",
+      "exists": true,
+      "sha256": "c02ec7a53554bf11b906cd810bab29c745b799da1ace32a536dc3219dd505d67",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_forearm__vis_555555.stl",
+      "exists": true,
+      "sha256": "267cdab94b476c568c1a1f2924edb2de21bcfd83d92290b9fcb33ca8fdee230a",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__col_0.stl",
+      "exists": true,
+      "sha256": "79206c7c7c66a4401fd1bd75532c1533d88c76c768de5eccb1341756ed6ed446",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__col_1.stl",
+      "exists": true,
+      "sha256": "4fb04a2c477b3d8cd2fafab61782e187c32ff03918a81b0bbaccf796f845394c",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__col_2.stl",
+      "exists": true,
+      "sha256": "17fbc4aa18621179765cb5f2e1fabac7d4140342995519ed238182445efc47ad",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_pod_camera__col_0.stl",
+      "exists": true,
+      "sha256": "584f97f357fc6c616fda4c16c05bf8e95af583f8d5d34bef101055587aea8f0b",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_r_pod__col_0.stl",
+      "exists": true,
+      "sha256": "2f149f008fdefffdfdb2e01fb6653f11c29712bf0bccc90521ff73bebb8bd1e3",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_l_pod__col_0.stl",
+      "exists": true,
+      "sha256": "2f149f008fdefffdfdb2e01fb6653f11c29712bf0bccc90521ff73bebb8bd1e3",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_coxa__col_0.stl",
+      "exists": true,
+      "sha256": "b57fd5e9086cd5ed13a6a44a9f8b37bce7db12874c1c391dc7b0c750f0e1cfc1",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_femur__col_0.stl",
+      "exists": true,
+      "sha256": "0f2b05d63f87c1621a03cb58485674c8c3b114bd28b52a0ce030bb1d5b6f5c59",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__col_0.stl",
+      "exists": true,
+      "sha256": "e32670e78dac6b0e0c14402643ed141a7e87342135174d1d3a1f90b5b816bf7a",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_coxa__col_0.stl",
+      "exists": true,
+      "sha256": "ffab2e412a2c017d62d6be24a797e847706e25cdd4e3d12856c463d73f03e13e",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_femur__col_0.stl",
+      "exists": true,
+      "sha256": "6d464de560fc4dd4a418b43a2180094bec57fa8e9d7c4eda7c389e1b7c2958f9",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__col_0.stl",
+      "exists": true,
+      "sha256": "97b25f3c8c12ba168263a1b381108a2f77108e14cb905615d7b9ce1f8da173d9",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_coxa__col_0.stl",
+      "exists": true,
+      "sha256": "b57fd5e9086cd5ed13a6a44a9f8b37bce7db12874c1c391dc7b0c750f0e1cfc1",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_femur__col_0.stl",
+      "exists": true,
+      "sha256": "0f2b05d63f87c1621a03cb58485674c8c3b114bd28b52a0ce030bb1d5b6f5c59",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__col_0.stl",
+      "exists": true,
+      "sha256": "e32670e78dac6b0e0c14402643ed141a7e87342135174d1d3a1f90b5b816bf7a",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_coxa__col_0.stl",
+      "exists": true,
+      "sha256": "ffab2e412a2c017d62d6be24a797e847706e25cdd4e3d12856c463d73f03e13e",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_femur__col_0.stl",
+      "exists": true,
+      "sha256": "6d464de560fc4dd4a418b43a2180094bec57fa8e9d7c4eda7c389e1b7c2958f9",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__col_0.stl",
+      "exists": true,
+      "sha256": "97b25f3c8c12ba168263a1b381108a2f77108e14cb905615d7b9ce1f8da173d9",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_shoulder__col_0.stl",
+      "exists": true,
+      "sha256": "630464b0ac1082cad4fa09aecc50fd61cf8d8cc99d5caed3dfc0c633f88e9f20",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_upper__col_0.stl",
+      "exists": true,
+      "sha256": "b99f093b31d78c2abd81ac0a26e09f00050ccabe193a750463434a5984a43da0",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_forearm__col_0.stl",
+      "exists": true,
+      "sha256": "c62873180478c9514599318efd493b1ed731fa28fdc8486abe20f65cc0d6e6b4",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_shoulder__col_0.stl",
+      "exists": true,
+      "sha256": "914b2c21dd952492d1de90e6e24ddee54da88eb1bea7cc37fa39bff306d44568",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_upper__col_0.stl",
+      "exists": true,
+      "sha256": "19d72f77ddda990deb8930b0534556e3cd4a02d99f0ffcc4c6f15614696681c1",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_forearm__col_0.stl",
+      "exists": true,
+      "sha256": "754026baf93c4467cc479fcdceeb28f10292937cfdb6cd2c43e3e7c3205f8bba",
+      "kind": "collision"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "tools/export_urdf.py",
+      "exists": true,
+      "sha256": "8a226b0c48f3bb907573aff0749f1d13f57b66303c2762ca11e39166d3457be8"
+    },
+    {
+      "path": "hardware/src/config.py",
+      "exists": true,
+      "sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95"
+    },
+    {
+      "path": "tools/print_first_assembly.py",
+      "exists": true,
+      "sha256": "4f69d67b646393e0a25e39f611686d3429d54190a238a30d062ef77493ee33fd"
+    },
+    {
+      "path": "hardware/src/make_print_first_body.py",
+      "exists": true,
+      "sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "path": "hardware/src/make_print_first_leg.py",
+      "exists": true,
+      "sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "hardware/src/make_print_first_feet.py",
+      "exists": true,
+      "sha256": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-plan.json",
+      "exists": true,
+      "sha256": "21980af4bd10f0314784f81b759bdd4f0767563f283772a88034a0d4d8ad34ed"
+    }
+  ],
+  "source_sha256": {
+    "tools/export_urdf.py": "8a226b0c48f3bb907573aff0749f1d13f57b66303c2762ca11e39166d3457be8",
+    "hardware/src/config.py": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95",
+    "tools/print_first_assembly.py": "4f69d67b646393e0a25e39f611686d3429d54190a238a30d062ef77493ee33fd",
+    "hardware/src/make_print_first_body.py": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408",
+    "hardware/src/make_print_first_leg.py": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c",
+    "hardware/src/make_print_first_feet.py": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+    "docs/audits/20260905-round2/xiao-retention-plan.json": "21980af4bd10f0314784f81b759bdd4f0767563f283772a88034a0d4d8ad34ed"
+  }
+}

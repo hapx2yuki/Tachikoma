@@ -10,6 +10,19 @@
 #include "audio.h"
 #undef private
 int main(){
+  AsyncWebSocket failureWs;
+  fakeI2sInstallResult = 1;
+  Audio installFailure; installFailure.begin(&failureWs);
+  assert(installFailure.state() == Audio::INIT_FAILED && !installFailure.ready());
+  AsyncWebSocketClient failedClient(99);
+  installFailure.onEvent(&failureWs, &failedClient, WS_EVT_CONNECT, nullptr, nullptr, 0);
+  assert(failedClient.closed && !installFailure.setPtt(true));
+  fakeI2sInstallResult = ESP_OK;
+  fakeI2sPinResult = 1;
+  Audio pinFailure; pinFailure.begin(&failureWs);
+  assert(pinFailure.state() == Audio::INIT_FAILED && !pinFailure.ready());
+  fakeI2sPinResult = ESP_OK;
+  std::cout<<"PASS: I2S init and pin failures remain visible and reject PTT/bridge connections\n";
   Audio audio; AsyncWebSocket ws;audio.begin(&ws);
   assert(i2sConfig.bits_per_sample==32 && i2sConfig.bits_per_chan==32);
   assert(2*i2sConfig.bits_per_chan==64);

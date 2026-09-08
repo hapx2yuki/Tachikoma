@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-09-05",
+  "reviewed_on": "2026-09-06",
   "scope": "追加印刷の計画用。実機棚卸し未完、印刷ジョブ未実行。",
   "physical_stock_verified": false,
   "stock_snapshot_as_of": "2026-08-31",
@@ -13,6 +13,87 @@
     "hardware_catalog_pieces": 59,
     "original_catalog_pieces": 82,
     "assembly_pieces": 139,
+    "assembly_pieces_scope": "historical_full_kit_ledger_excluded_from_current_print_first",
+    "assembly_pieces_is_current_print_first_required": false,
+    "assembly_pieces_current_requirement_note": "旧全体キット台帳の履歴値であり、現行print-firstの必要数・currently_printable_quantityには使わない。",
+    "current_print_first_required": {
+      "source_path": "docs/print-first-manifest.json",
+      "json_pointer": "/production_quantity_layers/machine_design_required/total",
+      "quantity": 56,
+      "quantity_layers": {
+        "machine_design_required": 56,
+        "prototype_quantity": 31,
+        "remaining_after_prototype": 25,
+        "conditional_new_shin_shell_inclusive_maximum": 60
+      },
+      "currently_printable_quantity": 0,
+      "status": "FREEZE2_PENDING_CANDIDATE",
+      "source_manifest_exists": true,
+      "source_manifest_sha256": "4763be639a3fce4d3dbd25075c3f7d3baf12c8308e1b29ff2b993eef508acd1a",
+      "source_manifest_hash_semantics": "SHA-256はこの参照正本の内容ハッシュ。source_path/json_pointer/quantityを同じ正本から再計算する。",
+      "release_layers": {
+        "A_minimum_fit_prototype": {
+          "title": "初回全体仮組み（1靴・1脚の実物適合確認を含む）",
+          "quantity": 31,
+          "breakdown": {
+            "body": 16,
+            "unique_leg_parts": 10,
+            "tpu_shoe": 1,
+            "pla_spacers": 4,
+            "underfoot": 5,
+            "total": 31
+          },
+          "purpose": "全体仮組み用body16＋左右/前後の固有脚部品10＋1脚分足裏5（TPU靴1＋スペーサー4）",
+          "fit_scope": {
+            "tpu_shoe": 1,
+            "leg": 1
+          },
+          "source_quantity_layer": "machine_design_required.prototype_quantity",
+          "included_in_initial_prototype_quantity": true,
+          "currently_printable_quantity": 0,
+          "currently_printable_status": "FREEZE2_AND_PHYSICAL_STOCK_GATE_PENDING",
+          "release_rule": "freeze2・足の厳密検査・材料/現物確認を確認してから先行判定する"
+        },
+        "B_remaining_after_prototype": {
+          "title": "A合格後の残数",
+          "quantity": 25,
+          "breakdown": {
+            "body": 0,
+            "unique_leg_parts": 10,
+            "tpu_shoe": 3,
+            "pla_spacers": 12,
+            "underfoot": 15,
+            "total": 25
+          },
+          "source_quantity_layer": "machine_design_required.remaining_after_prototype",
+          "currently_printable_quantity": 0,
+          "currently_printable_status": "FREEZE2_AND_PHYSICAL_STOCK_GATE_PENDING",
+          "release_rule": "Aの実物適合・電装・最終CAD/組立・実C++物理試験の合格後に解放する"
+        },
+        "C_conditional_new_shin_shell": {
+          "title": "条件付き新規脛殻",
+          "quantity": 4,
+          "source_quantity_layer": "conditional_new_shin_shell.quantity",
+          "exclusive_with": {
+            "id": "existing_shin_shell_reuse",
+            "quantity": 4,
+            "rule": "既存脛殻4個の局所加工・再使用と新規印刷を同時に数えない"
+          },
+          "excluded_from_A_and_B": true,
+          "maximum_machine_total": 60,
+          "currently_printable_quantity": 0,
+          "currently_printable_status": "FREEZE2_AND_PHYSICAL_STOCK_GATE_PENDING",
+          "release_rule": "既存脛殻4個の局所加工・再使用が不成立の場合だけ選ぶ"
+        },
+        "invariant": {
+          "A_plus_B_equals_machine_design_required": true,
+          "machine_design_required": 56,
+          "A_plus_B": 56,
+          "C_is_exclusive_with_existing_shell_reuse": true,
+          "C_is_not_added_to_A_plus_B": true
+        }
+      }
+    },
     "spare_pieces": 2,
     "optional_stand_pieces": 1,
     "geometry_changed_files": 10,
@@ -23,7 +104,7 @@
     "print_jobs_sent": 0,
     "plate_files_with_errors": 9
   },
-  "count_rule": "139 は現設計を維持した場合の組立総数。予備 Peg 2 を加え 141、任意 Stand 1 は別。追加必要数ではなく、未採用候補も含まない。Guard は旧表 Left 1/Right 1 と実装 Right 2 の差があり採否未確定。",
+  "count_rule": "summary.assembly_pieces=139 は旧全体キット台帳の履歴値で、現行print-firstの必要数ではない。予備 Peg 2 を加え 141、任意 Stand 1 は別。現行の必要数は current_print_first_required の JSON Pointer が示す docs/print-first-manifest.json を正とし、旧台帳・未採用候補・PETG行を加算しない。Guard は旧表 Left 1/Right 1 と実装 Right 2 の差があり採否未確定。",
   "source_files": [
     {
       "path": "docs/print_manifest.md",
@@ -910,7 +991,9 @@
         "S-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-audio_cradle_spk",
@@ -979,7 +1062,9 @@
         "S-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-battery_cradle",
@@ -1047,7 +1132,9 @@
         "L-02"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-camera_carrier",
@@ -1117,7 +1204,9 @@
         "S-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-chassis",
@@ -1210,7 +1299,9 @@
         "S-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-claw_mount",
@@ -1281,7 +1372,9 @@
         "A-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-claw_mount_L",
@@ -1358,7 +1451,9 @@
         "A-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-coxa_bracket",
@@ -1448,7 +1543,9 @@
         "L-02"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-coxa_bracket_m",
@@ -1538,7 +1635,9 @@
         "L-02"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-elbow_shell",
@@ -1783,7 +1882,9 @@
         "S-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-eye_pod",
@@ -2115,7 +2216,9 @@
         "L-02"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-femur_link_m",
@@ -2185,7 +2288,9 @@
         "L-02"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-foot_pad",
@@ -2348,7 +2453,9 @@
         "A-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-forearm_L",
@@ -2447,7 +2554,9 @@
         "A-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-leg_foot_bored",
@@ -2593,7 +2702,9 @@
         "S-06"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-shin_shell",
@@ -2805,7 +2916,9 @@
         "A-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-shoulder_bracket_L",
@@ -2896,7 +3009,9 @@
         "A-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-thigh_cap",
@@ -3040,7 +3155,9 @@
         "L-02"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-tibia_link_m",
@@ -3111,7 +3228,9 @@
         "L-02"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-upper_arm",
@@ -3182,7 +3301,9 @@
         "A-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "HW-upper_arm_L",
@@ -3253,7 +3374,9 @@
         "A-04"
       ],
       "gates_semantics": "部品の設計確認/試験を記録する確認先。ここに並ぶ Issue 全体を全て Close するまで試作不可、という一括依存ではない。",
-      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。"
+      "additional_rule": "採用設計の必要数 − 現物で確認した同じ版の使用可能数（不足が負なら 0）。旧記録を差引き確定値にしない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG STLの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、この行を現行必要数・今印刷可数の集計へ含めない。版・適合・残量は未確認。"
     },
     {
       "id": "KIT-Arm_Left",
@@ -5484,7 +5607,7 @@
       "manufacturing_change": {
         "classification": "unchanged_in_this_audit"
       },
-      "change_note": "これは元キットの装飾ねじ形状で PLA 印刷対象。購入する金属 M3 ねじとは別物。",
+      "change_note": "これは元キットの装飾ねじ形状で PLA 印刷対象。金属 M3 ねじとは別物。",
       "gates": [
         "P-02",
         "S-08",
@@ -6820,7 +6943,9 @@
       "warnings": [
         "UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない"
       ],
-      "interpretation": "初期試作の旧 tibia・femur。現行骨格へそのまま使用しない。"
+      "interpretation": "初期試作の旧 tibia・femur。現行骨格へそのまま使用しない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-02",
@@ -6895,7 +7020,9 @@
         "SHAPE_REVIEW: chassis.stl distance=20.04mm volume=2.173%"
       ],
       "warnings": [],
-      "interpretation": "形状・数量の一致は、この部品の組立成立や印刷済み在庫を証明しない。"
+      "interpretation": "形状・数量の一致は、この部品の組立成立や印刷済み在庫を証明しない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-03",
@@ -6944,7 +7071,9 @@
       "total_instances": 5,
       "errors": [],
       "warnings": [],
-      "interpretation": "標準 tibia 2＋鏡像 2＋pod_neck 1。Walk_3 と重複する。"
+      "interpretation": "標準 tibia 2＋鏡像 2＋pod_neck 1。Walk_3 と重複する。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-04",
@@ -6993,7 +7122,9 @@
       "total_instances": 5,
       "errors": [],
       "warnings": [],
-      "interpretation": "標準 femur 2＋鏡像 2＋battery 1。旧印刷済み Walk_1/2 と重複する。"
+      "interpretation": "標準 femur 2＋鏡像 2＋battery 1。旧印刷済み Walk_1/2 と重複する。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-05",
@@ -7121,7 +7252,9 @@
         "SHAPE_REVIEW: coxa_bracket_m.stl distance=infmm volume=30.524%"
       ],
       "warnings": [],
-      "interpretation": "形状・数量の一致は、この部品の組立成立や印刷済み在庫を証明しない。"
+      "interpretation": "形状・数量の一致は、この部品の組立成立や印刷済み在庫を証明しない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-06",
@@ -7146,7 +7279,9 @@
       "total_instances": 1,
       "errors": [],
       "warnings": [],
-      "interpretation": "0.12mm 層の単品。旧 Walk_1 の 0.2mm 層で嵌合できるなら追加不要。"
+      "interpretation": "0.12mm 層の単品。旧 Walk_1 の 0.2mm 層で嵌合できるなら追加不要。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-07",
@@ -7197,7 +7332,9 @@
         "SHAPE_REVIEW: chassis.stl distance=20.04mm volume=2.173%"
       ],
       "warnings": [],
-      "interpretation": "形状・数量の一致は、この部品の組立成立や印刷済み在庫を証明しない。"
+      "interpretation": "形状・数量の一致は、この部品の組立成立や印刷済み在庫を証明しない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-08",
@@ -7261,7 +7398,9 @@
         "SHAPE_REVIEW: coxa_bracket_m.stl distance=infmm volume=30.524%"
       ],
       "warnings": [],
-      "interpretation": "形状・数量の一致は、この部品の組立成立や印刷済み在庫を証明しない。"
+      "interpretation": "形状・数量の一致は、この部品の組立成立や印刷済み在庫を証明しない。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-09",
@@ -7298,7 +7437,9 @@
       "total_instances": 4,
       "errors": [],
       "warnings": [],
-      "interpretation": "標準 2＋鏡像 2。PR-04 は別名の標準 1 個だけに分離し、L-02 後に残り標準 1＋鏡像 2。"
+      "interpretation": "標準 2＋鏡像 2。PR-04 は別名の標準 1 個だけに分離し、L-02 後に残り標準 1＋鏡像 2。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-10",
@@ -7412,7 +7553,9 @@
       "warnings": [
         "QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認"
       ],
-      "interpretation": "現物は 8 種 9 個。肩ブラケット左右・上腕左右の 4 個は入っていない。claw_mount_L は旧先行印刷と重複し得る。"
+      "interpretation": "現物は 8 種 9 個。肩ブラケット左右・上腕左右の 4 個は入っていない。claw_mount_L は旧先行印刷と重複し得る。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-11",
@@ -8367,7 +8510,9 @@
         "PRINT_SETTINGS_REVIEW: shoulder_bracket.stl 壁/充填が生成定義未満",
         "UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない"
       ],
-      "interpretation": "名前は単品でも 9 個入り。PETG 7 個は壁 2/15% で指定の壁 4/40% を満たさない。肩・前腕も旧形状。"
+      "interpretation": "名前は単品でも 9 個入り。PETG 7 個は壁 2/15% で指定の壁 4/40% を満たさない。肩・前腕も旧形状。",
+      "current_print_first_required": false,
+      "current_print_first_exclusion_reason": "旧PETG 3MFの履歴。現行print-firstは手持ちPLA+TPU95Aを使うため、このプレートと収録部品を現行必要数・今印刷可数の集計へ含めない。"
     },
     {
       "id": "PL-24",
@@ -8588,7 +8733,7 @@
         {
           "path": "docs/audits/20260905-round2/cabin-electronics/candidate_wire_route.stl",
           "sha256": "e7aea9597c611dedb3c14a94fc61ffc528f43f4330942ad3dfb7d3f7bcb200e7",
-          "role": "購入品/配線の占有検査用。印刷しない"
+          "role": "部品/配線の占有検査用。印刷しない"
         }
       ]
     },
@@ -8615,22 +8760,22 @@
         {
           "path": "docs/audits/20260905-round2/camera-ov3660-candidate/OV3660_FPC_bent_candidate.stl",
           "sha256": "a82103f34157cdebe0bbfc45c41bc78ab0bbcd3b57918c14c76d1cc2704c9b87",
-          "role": "購入品/配線の占有検査用。印刷しない"
+          "role": "部品/配線の占有検査用。印刷しない"
         },
         {
           "path": "docs/audits/20260905-round2/camera-ov3660-candidate/OV3660_FPC_straight_envelope.stl",
           "sha256": "4243910e88257a45f21d514a3179f7a8f1dd774e9c6f8f8362b9d723158b1ce1",
-          "role": "購入品/配線の占有検査用。印刷しない"
+          "role": "部品/配線の占有検査用。印刷しない"
         },
         {
           "path": "docs/audits/20260905-round2/camera-ov3660-candidate/OV3660_sensor_envelope.stl",
           "sha256": "d16c3c5c2756e986d696e39c96a291b065b5da1ffb300e029ad002b28dac730a",
-          "role": "購入品/配線の占有検査用。印刷しない"
+          "role": "部品/配線の占有検査用。印刷しない"
         },
         {
           "path": "docs/audits/20260905-round2/camera-ov3660-candidate/XIAO_envelope_head_candidate.stl",
           "sha256": "a59365375b8f98c0771cd6988ed128090bf6cd2fd601ab655dd6e19db1a5c5df",
-          "role": "購入品/配線の占有検査用。印刷しない"
+          "role": "部品/配線の占有検査用。印刷しない"
         },
         {
           "path": "docs/audits/20260905-round2/camera-ov3660-candidate/camera_base_with_xiao_cradle_candidate.stl",
@@ -9020,5 +9165,203 @@
       "note": "支持柱、受け座、手の接着部について、採用済みの新規印刷一式と本数はまだない。金属 M3 締結具を印刷部品に数えない。",
       "files": []
     }
-  ]
+  ],
+  "current_print_first_policy": {
+    "reviewed_on": "2026-09-06",
+    "required_materials": [
+      "手持ちPLA",
+      "手持ちTPU95A"
+    ],
+    "additional_purchase_petg_quantity": 0,
+    "petg_rows_preserved_as_history": true,
+    "current_aggregation_rule": "docs/print-first-manifest.jsonの生成済みassemblyを現行必要数の正とし、旧PETG STL/3MF行や保管参照品は現行必要数・今印刷可数へ混ぜない。旧PETGのparts/plates行はcurrent_print_first_required=falseと除外理由を保持する。",
+    "inventory_status": "手持ちPLA/TPU95Aの銘柄・残量・良品数は未確認。追加購入0は着手方針であり、不足ゼロの確定ではない。",
+    "excluded_part_ids": [
+      "HW-audio_cradle_mic",
+      "HW-audio_cradle_spk",
+      "HW-battery_cradle",
+      "HW-camera_carrier",
+      "HW-chassis",
+      "HW-claw_mount",
+      "HW-claw_mount_L",
+      "HW-coxa_bracket",
+      "HW-coxa_bracket_m",
+      "HW-eye_carrier",
+      "HW-femur_link",
+      "HW-femur_link_m",
+      "HW-forearm",
+      "HW-forearm_L",
+      "HW-pod_neck",
+      "HW-shoulder_bracket",
+      "HW-shoulder_bracket_L",
+      "HW-tibia_link",
+      "HW-tibia_link_m",
+      "HW-upper_arm",
+      "HW-upper_arm_L"
+    ],
+    "excluded_plate_ids": [
+      "PL-01",
+      "PL-02",
+      "PL-03",
+      "PL-04",
+      "PL-05",
+      "PL-06",
+      "PL-07",
+      "PL-08",
+      "PL-09",
+      "PL-10",
+      "PL-23"
+    ],
+    "quantity_layers": {
+      "machine_design_required": {
+        "body": 16,
+        "legs": 20,
+        "tpu_shoes": 4,
+        "pla_spacers": 16,
+        "total": 56,
+        "initial_prototype_quantity": 31,
+        "remaining_after_prototype_quantity": 25,
+        "currently_printable_quantity": 0,
+        "currently_printable_status": "FREEZE2_AND_PHYSICAL_STOCK_GATE_PENDING",
+        "basis": "docs/print-first-manifest.jsonの生成済みbody/legs/feet assemblyの部品数・脚対応数から算出。bodyはyaw蓋4個、頭殻逃がし1個、中央眼逃がし1個を含む。",
+        "source_manifest_sha256": "4763be639a3fce4d3dbd25075c3f7d3baf12c8308e1b29ff2b993eef508acd1a"
+      },
+      "conditional_new_shin_shell": {
+        "quantity": 4,
+        "currently_printable_quantity": 0,
+        "currently_printable_status": "FREEZE2_AND_PHYSICAL_STOCK_GATE_PENDING",
+        "exclusive_with": "既存脛殻4個の局所加工・再使用",
+        "maximum_machine_total": 60,
+        "basis": "既存脛殻4個を加工できない場合だけ。二案を合計しない。現行56へ排他的に加える。"
+      },
+      "non_production_ld_fit_fixtures": [
+        {
+          "id": "ld220_cradle",
+          "quantity": 1,
+          "currently_printable_quantity": 0,
+          "material": "手持ちPLA（残量未確認）",
+          "orientation": "基準面をベッドへ、ケース挿入口（+Z側）を上",
+          "purpose": "LD-220MG候補の現物でケース外形・軸端・ホーン径/PCD・ねじを確認",
+          "disposition": "本番構成へ組み込まず、寸法確認後も廃棄せず保管"
+        },
+        {
+          "id": "ld220_cap",
+          "quantity": 1,
+          "currently_printable_quantity": 0,
+          "material": "手持ちPLA（残量未確認）",
+          "orientation": "皿穴側（+Z側）を上",
+          "purpose": "LD-220MG候補の実物で蓋のねじ座・外形を確認",
+          "disposition": "本番構成へ組み込まず、寸法確認後も廃棄せず保管"
+        },
+        {
+          "id": "ld220_horn_adapter",
+          "quantity": 1,
+          "currently_printable_quantity": 0,
+          "material": "手持ちPLA（残量未確認）",
+          "orientation": "ホーン受け面/ポケット側（+Z側）を上",
+          "purpose": "付属金属ホーンの径・PCD・ねじを実物で確認",
+          "disposition": "本番構成へ組み込まず、寸法確認後も廃棄せず保管"
+        }
+      ],
+      "counting_rule": "本番56個へ治具3種を加えない。一体化済みケージ・蓋・ホーン変換板も二重計上しない。旧54/最大58は比較値として保持する。",
+      "release_layers": {
+        "A_minimum_fit_prototype": {
+          "title": "初回全体仮組み（1靴・1脚の実物適合確認を含む）",
+          "quantity": 31,
+          "breakdown": {
+            "body": 16,
+            "unique_leg_parts": 10,
+            "tpu_shoe": 1,
+            "pla_spacers": 4,
+            "underfoot": 5,
+            "total": 31
+          },
+          "purpose": "全体仮組み用body16＋左右/前後の固有脚部品10＋1脚分足裏5（TPU靴1＋スペーサー4）",
+          "fit_scope": {
+            "tpu_shoe": 1,
+            "leg": 1
+          },
+          "source_quantity_layer": "machine_design_required.prototype_quantity",
+          "included_in_initial_prototype_quantity": true,
+          "currently_printable_quantity": 0,
+          "currently_printable_status": "FREEZE2_AND_PHYSICAL_STOCK_GATE_PENDING",
+          "release_rule": "freeze2・足の厳密検査・材料/現物確認を確認してから先行判定する"
+        },
+        "B_remaining_after_prototype": {
+          "title": "A合格後の残数",
+          "quantity": 25,
+          "breakdown": {
+            "body": 0,
+            "unique_leg_parts": 10,
+            "tpu_shoe": 3,
+            "pla_spacers": 12,
+            "underfoot": 15,
+            "total": 25
+          },
+          "source_quantity_layer": "machine_design_required.remaining_after_prototype",
+          "currently_printable_quantity": 0,
+          "currently_printable_status": "FREEZE2_AND_PHYSICAL_STOCK_GATE_PENDING",
+          "release_rule": "Aの実物適合・電装・最終CAD/組立・実C++物理試験の合格後に解放する"
+        },
+        "C_conditional_new_shin_shell": {
+          "title": "条件付き新規脛殻",
+          "quantity": 4,
+          "source_quantity_layer": "conditional_new_shin_shell.quantity",
+          "exclusive_with": {
+            "id": "existing_shin_shell_reuse",
+            "quantity": 4,
+            "rule": "既存脛殻4個の局所加工・再使用と新規印刷を同時に数えない"
+          },
+          "excluded_from_A_and_B": true,
+          "maximum_machine_total": 60,
+          "currently_printable_quantity": 0,
+          "currently_printable_status": "FREEZE2_AND_PHYSICAL_STOCK_GATE_PENDING",
+          "release_rule": "既存脛殻4個の局所加工・再使用が不成立の場合だけ選ぶ"
+        },
+        "invariant": {
+          "A_plus_B_equals_machine_design_required": true,
+          "machine_design_required": 56,
+          "A_plus_B": 56,
+          "C_is_exclusive_with_existing_shell_reuse": true,
+          "C_is_not_added_to_A_plus_B": true
+        }
+      }
+    },
+    "historical_comparison_values": {
+      "machine_design_required": 54,
+      "initial_prototype": 29,
+      "remaining_after_prototype": 25,
+      "conditional_machine_maximum": 58,
+      "note": "頭殻逃がし1個と中央眼逃がし1個を現行assemblyへ意図的に追加した前の比較値。現行必要数へ戻す値ではない。"
+    },
+    "current_print_first_replacements": [
+      {
+        "source": "Head_Top_Eyecut#single",
+        "replacement": "pf_head_top_clearanced",
+        "quantity": 1,
+        "status": "CURRENT_CANDIDATE_FREEZE2_PENDING"
+      },
+      {
+        "source": "eye_pod_camera",
+        "replacement": "pf_eye_pod_camera_clearanced",
+        "quantity": 1,
+        "status": "CURRENT_CANDIDATE_FREEZE2_PENDING"
+      }
+    ],
+    "retained_reference_parts": [
+      {
+        "id": "KIT-Mouth_Peg_Grey",
+        "path": "model/Mouth_Peg_Grey.stl",
+        "current_print_first_required": false,
+        "quantity": 1,
+        "disposition": "既存の原型参照として保管。現行56個へ加えず、追加印刷を自動計上しない。"
+      }
+    ],
+    "authoritative_manifest": {
+      "path": "docs/print-first-manifest.json",
+      "sha256": "4763be639a3fce4d3dbd25075c3f7d3baf12c8308e1b29ff2b993eef508acd1a",
+      "status": "FREEZE2_PENDING_CANDIDATE",
+      "quantity_source": "production_quantity_layers and mass_summary in this manifest"
+    }
+  }
 }

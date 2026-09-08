@@ -4,7 +4,7 @@
 #include "servos.h"
 #include "peripherals.h"
 #include "control.h"
-static void start(Servos& s){s.enableAll();for(int n=0;n<33;n++){fakeMillis()+=100;s.softStart();}}
+static void start(Servos& s){s.setPowerReady(true);s.enableAll();for(int n=0;n<33;n++){fakeMillis()+=100;s.softStart();}}
 int main(){
  ControlState c;assert(!c.stand);std::cout<<"PASS: normal boot requires an explicit start command\n";
  Peripherals p;p.begin();fakeMilliVolts()=1836;for(int i=0;i<20;i++){fakeMillis()+=100;p.tick(false);}assert(!p.cutout());

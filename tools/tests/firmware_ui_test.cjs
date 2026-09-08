@@ -26,6 +26,14 @@ assert.equal(socket.sent.at(-1).stand,undefined,'Opening a page must not arm the
 assert.equal(socket.sent.at(-1).h,undefined,'Page reload must preserve the current body height');
 socket.onmessage({data:JSON.stringify({h:125,stand:false,i2c:false,vbat:7.4})});
 assert.equal(element('h').value,125);assert.match(element('stat').innerHTML,/サーボ通信異常/);
+socket.onmessage({data:JSON.stringify({stand:false,i2c:true,vbat_verified:false,lease_valid:false,
+  wifi_ap_ready:false,features:{status_leds:true,dfplayer:false,i2s_audio:false,i2s_state:'INIT_FAILED'}})});
+assert.match(element('stat').innerHTML,/VBAT未検証/);
+socket.onmessage({data:JSON.stringify({stand:false,i2c:true,vbat_verified:true,servo_rail_verified:false,
+  lease_valid:true,wifi_ap_ready:true,features:{status_leds:true,dfplayer:true,i2s_audio:true,i2s_state:'READY'}})});
+assert.match(element('stat').innerHTML,/サーボV\+/);
+vm.runInContext('applyHardwareFeatures({status_leds:true,dfplayer:false,i2s_audio:false,i2s_state:"INIT_FAILED"})',context);
+assert.match(element('hardwareStat').textContent,/I2S会話未対応（INIT_FAILED）/);
 element('h').value=120;element('h').input();vm.runInContext('sendState()',context);
 assert.equal(socket.sent.at(-1).h,120);
 element('rest').onclick();

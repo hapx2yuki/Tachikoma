@@ -7,6 +7,7 @@
 #include <string.h>
 
 #include "config.h"
+#include "profile_config.h"
 
 // I2S0 全二重ドライバ (INMP441 マイク + MAX98357A アンプ, 16kHz/16bit/mono)。
 // - 録音: setPtt(true) 中、専用タスクが I2S から読んだ PCM を /audio WS の
@@ -24,8 +25,11 @@
 //   短いクリティカルセクションでコピーとリセットの競合を防ぐ。
 class Audio {
  public:
+  enum State { UNINITIALIZED = 0, READY, INIT_FAILED, IO_FAILED };
+
   void begin(AsyncWebSocket* ws) {
     ws_ = ws;
+    state_ = UNINITIALIZED;
 
     i2s_config_t cfg = {};
     cfg.mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_TX | I2S_MODE_RX);
@@ -46,6 +50,7 @@ class Audio {
     cfg.tx_desc_auto_clear = true;  // 再生データ欠乏時にノイズでなく無音を出す
     if (i2s_driver_install(I2S_NUM_0, &cfg, 0, nullptr) != ESP_OK) {
       Serial.println("[audio] I2S driver initialization failed");
+      state_ = INIT_FAILED;
       return;
     }
 
@@ -58,6 +63,7 @@ class Audio {
     if (i2s_set_pin(I2S_NUM_0, &pins) != ESP_OK) {
       Serial.println("[audio] I2S pin initialization failed");
       i2s_driver_uninstall(I2S_NUM_0);
+      state_ = INIT_FAILED;
       return;
     }
     i2s_zero_dma_buffer(I2S_NUM_0);
@@ -65,22 +71,42 @@ class Audio {
     if (xTaskCreatePinnedToCore(taskEntry, "audio", 4096, this, 5, nullptr, 0) != pdPASS) {
       Serial.println("[audio] audio task creation failed");
       i2s_driver_uninstall(I2S_NUM_0);
+      state_ = INIT_FAILED;
+      return;
+    }
+    state_ = READY;
+  }
+
+  bool ready() const { return state_.load() == READY; }
+  State state() const { return state_.load(); }
+  const char* stateName() const {
+    switch (state_) {
+      case READY: return "READY";
+      case INIT_FAILED: return "INIT_FAILED";
+      case IO_FAILED: return "IO_FAILED";
+      default: return "UNINITIALIZED";
     }
   }
 
   // main の操作系 /ws から呼ぶ (PTT ボタンの edge)。ブリッジへ
   // ptt_start/ptt_end を通知し、録音タスクを起動/停止する
-  void setPtt(bool active) {
-    if (active == pttActive_) return;
+  bool setPtt(bool active) {
+    if (active && !ready()) return false;
+    if (active == pttActive_.load()) return true;
     pttActive_ = active;
     if (ws_) ws_->textAll(active ? "{\"type\":\"ptt_start\"}"
                                   : "{\"type\":\"ptt_end\"}");
+    return true;
   }
 
   // /audio WS のイベントハンドラから呼ぶ (main.cpp)
   void onEvent(AsyncWebSocket* server, AsyncWebSocketClient* client,
                AwsEventType type, void* arg, uint8_t* data, size_t len) {
     if (type == WS_EVT_CONNECT) {
+      if (!ready()) {
+        if (client) client->close();
+        return;
+      }
       // 単一ブリッジ接続を前提とした設計。2 台目以降が繋がると再生/録音の
       // フレームが両方へ混線するため、既存接続がある場合は新規接続を拒否する
       if (bridgeId_ != 0) {
@@ -152,19 +178,21 @@ class Audio {
         size_t written = 0;
         const size_t remaining = txCount_ - txOffset_;
         for (size_t i = 0; i < remaining / 2; ++i) {
-          const uint16_t sample = (uint16_t)tx_[txOffset_ + 2*i] |
+          const uint16_t raw = (uint16_t)tx_[txOffset_ + 2*i] |
                                    ((uint16_t)tx_[txOffset_ + 2*i+1] << 8);
-          dma[i] = (uint32_t)sample << 16;  // 符号付き値の左シフトは使わない
+          const int32_t sample = raw < 0x8000u ? raw : int32_t(raw) - 0x10000;
+          const int32_t scaled = sample * TACHIKOMA_AUDIO_VOLUME_PERCENT / 100;
+          dma[i] = (uint32_t)(uint16_t)scaled << 16;  // 負数の左シフトは使わない
         }
         const esp_err_t err = i2s_write(I2S_NUM_0, dma, remaining * 2,
                                        &written, pdMS_TO_TICKS(50));
         if (written > remaining * 2 || (written & 3) ||
             (err != ESP_OK && err != ESP_ERR_TIMEOUT)) {
-          resetPlayback(txGeneration_);
+          markIoFault();
         } else {
           txOffset_ += written / 2;
           if (written) lastWriteMs_ = txProgressMs_ = millis();
-          if (!written && millis() - txProgressMs_ >= 1000) resetPlayback(txGeneration_);
+          if (!written && millis() - txProgressMs_ >= 1000) markIoFault();
           if (!written) vTaskDelay(pdMS_TO_TICKS(5));
         }
       } else {
@@ -192,7 +220,10 @@ class Audio {
         }
         ws_->binaryAll(pcm, bytesRead / 2);
       }
-      if (err != ESP_OK) vTaskDelay(pdMS_TO_TICKS(5));
+      if (err != ESP_OK) {
+        markIoFault();
+        vTaskDelay(pdMS_TO_TICKS(5));
+      }
     }
   }
 
@@ -225,6 +256,13 @@ class Audio {
     ++generation_;
     clearDma_ = true;  // I2S 呼出しは audioTask だけが所有する
     portEXIT_CRITICAL(&ringMux_);
+  }
+
+  void markIoFault() {
+    const bool wasPtt = pttActive_.exchange(false);
+    state_ = IO_FAILED;
+    if (wasPtt && ws_) ws_->textAll("{\"type\":\"ptt_end\",\"reason\":\"i2s_fault\"}");
+    resetPlayback();
   }
 
   // ---- リングバッファ (producer: onEvent/AsyncTCPタスク, consumer: audioTask)
@@ -279,6 +317,7 @@ class Audio {
   }
 
   AsyncWebSocket* ws_ = nullptr;
+  std::atomic<State> state_{UNINITIALIZED};
   std::atomic<bool> pttActive_{false};
   std::atomic<bool> playing_{false};
   std::atomic<bool> draining_{false};

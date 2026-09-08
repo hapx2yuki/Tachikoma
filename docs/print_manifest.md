@@ -25,44 +25,44 @@
 「頭部中央寄せ」§7「境界スイープによる解決」参照。
 
 ```
-ls hardware/stl/*.stl          # 41 件 (本書 §1 と 1:1。2026-08-19 eye_pod_camera の印刷用 2 分割 shell/base を追加)
-ls model/*.stl                 # 58 件 (本書 §2 と 1:1)
-cd hardware/src && ../../.venv/bin/python build_all.py   # 全 watertight=True
-.venv/bin/python tools/make_head_eyecut.py                # Head_Top_Eyecut (build_all.py 対象外, 下記参照)
-.venv/bin/python tools/check_leg_assembly.py  # OK
-.venv/bin/python tools/check_screw_bosses.py  # result: OK (chassis arm tab fill 72.7%>=70%,
-                                               #  ARM_MOUNT_HUB_Y=11.0 確定で解消 -- docs/assembly.md
-                                               #  頭部中央寄せ§7参照)
-.venv/bin/python tools/check_arm.py           # result: OK ([1b]clr 3.3mm・[4]min_d 2mm 含め全項目OK)
-.venv/bin/python tools/check_pod_neck_strength.py  # result: OK (真の最弱点 y≈-43.5mm で
-                                               #  SF_nominal=8.07, Kt=2.5込み実効安全率3.23
-                                               #  -- 2026-07-31 QA 再検証で新規作成。
-                                               #  docs/assembly.md 強度検証節参照)
-.venv/bin/python tools/check_eye.py           # result: OK
-.venv/bin/python tools/check_audio.py         # result: OK
-.venv/bin/python tools/check_camera.py        # result: OK
-.venv/bin/python tools/check_head_pod_clearance.py  # PASS (clearance 3.779/2.706mm,
-                                               #  HEAD_RELIEF_PROTECT_H 8.0mm+テーパー)
-.venv/bin/python tools/check_shin_arm_leg.py  # overall = PASS ([C-duty]発火率42.5-44.2%,
-                                               #  ARM_LEG_YAW_GATE_DEG=20.0°)
-.venv/bin/python tools/check_urdf.py          # 380/380 OK
-.venv/bin/python tools/filament_calc.py       # 色別合計が docs/filament.md と完全一致
-                                               # (2026-09-04 実行値: 青833/灰189/黒40/白30/赤4/PETG573/TPU2 g
-                                               #  — 旧記載 青911/PETG570 は Head_Top_Eyecut ホロー化 (2026-08-22)
-                                               #  前の値だった。以下の経緯メモは履歴として残す)
-                                               # (2026-07-31 shin_shell 装飾面放射外向き化
-                                               #  タスクで ADJ_RELIEF_BANDS 追加により
-                                               #  shin_shell 実体積が減り、青が 913→895g へ
-                                               #  再度微減。他色は無変化。
-                                               #  さらに同日、リリーフカット再評価タスクで
-                                               #  KNEE_RELIEF/TIP_RELIEF/ADJ_RELIEF_BANDS を
-                                               #  firmware到達可能集合基準で撤去しキット形状へ
-                                               #  復元した結果、shin_shell 実体積が増え青が
-                                               #  895→911g へ再度増加。他色は無変化。
-                                               #  同日 QA 再検証で pod_neck の応力集中対策
-                                               #  [HEAD_RELIEF_PROTECT_H 6→8mm+テーパー追加] に
-                                               #  より PETG が 569→570g へ微増、あわせて
-                                               #  battery_cradle の旧誤記載 13g を実測17gへ訂正)
+ls hardware/stl/*.stl     # 41 件 (本書 §1 と 1:1。2026-08-19 eye_pod_camera の印刷用 2 分割 shell/base を追加)
+ls model/*.stl         # 58 件 (本書 §2 と 1:1)
+cd hardware/src && ../../.venv/bin/python build_all.py  # 全 watertight=True
+.venv/bin/python tools/make_head_eyecut.py        # Head_Top_Eyecut (build_all.py 対象外, 下記参照)
+.venv/bin/python tools/check_leg_assembly.py # OK
+.venv/bin/python tools/check_screw_bosses.py # result: OK (chassis arm tab fill 72.7%>=70%,
+                        # ARM_MOUNT_HUB_Y=11.0 確定で解消 -- docs/assembly.md
+                        # 頭部中央寄せ§7参照)
+.venv/bin/python tools/check_arm.py      # result: OK ([1b]clr 3.3mm・[4]min_d 2mm 含め全項目OK)
+.venv/bin/python tools/check_pod_neck_strength.py # result: OK (真の最弱点 y≈-43.5mm で
+                        # SF_nominal=8.07, Kt=2.5込み実効安全率3.23
+                        # -- 2026-07-31 QA 再検証で新規作成。
+                        # docs/assembly.md 強度検証節参照)
+.venv/bin/python tools/check_eye.py      # result: OK
+.venv/bin/python tools/check_audio.py     # result: OK
+.venv/bin/python tools/check_camera.py    # result: OK
+.venv/bin/python tools/check_head_pod_clearance.py # PASS (clearance 3.779/2.706mm,
+                        # HEAD_RELIEF_PROTECT_H 8.0mm+テーパー)
+.venv/bin/python tools/check_shin_arm_leg.py # overall = PASS ([C-duty]発火率42.5-44.2%,
+                        # ARM_LEG_YAW_GATE_DEG=20.0°)
+.venv/bin/python tools/check_urdf.py     # 380/380 OK
+.venv/bin/python tools/filament_calc.py    # 色別合計が docs/filament.md と完全一致
+                        # (2026-09-04 実行値: 青833/灰189/黒40/白30/赤4/PETG573/TPU2 g
+                        # — 旧記載 青911/PETG570 は Head_Top_Eyecut ホロー化 (2026-08-22)
+                        # 前の値だった。以下の経緯メモは履歴として残す)
+                        # (2026-07-31 shin_shell 装飾面放射外向き化
+                        # タスクで ADJ_RELIEF_BANDS 追加により
+                        # shin_shell 実体積が減り、青が 913→895g へ
+                        # 再度微減。他色は無変化。
+                        # さらに同日、リリーフカット再評価タスクで
+                        # KNEE_RELIEF/TIP_RELIEF/ADJ_RELIEF_BANDS を
+                        # firmware到達可能集合基準で撤去しキット形状へ
+                        # 復元した結果、shin_shell 実体積が増え青が
+                        # 895→911g へ再度増加。他色は無変化。
+                        # 同日 QA 再検証で pod_neck の応力集中対策
+                        # [HEAD_RELIEF_PROTECT_H 6→8mm+テーパー追加] に
+                        # より PETG が 569→570g へ微増、あわせて
+                        # battery_cradle の旧誤記載 13g を実測17gへ訂正)
 ```
 
 重量は `tools/filament_calc.py` の物理体積モデル (表面積×壁厚+インフィル)
@@ -239,12 +239,12 @@ printing.md 側の文言は結論として誤りではないため未修正 — 
 ### Phase 0 — 事前準備・テスト印刷 (assembly.md §0)
 
 1. サーボ・ホーン実測 → `config.py` 更新 → `build_all.py` **+
-   `tools/make_head_eyecut.py`** 再生成 → 検証7点セット green を確認
+  `tools/make_head_eyecut.py`** 再生成 → 検証7点セット green を確認
 2. テスト印刷 (各1個、PETG骨格+PLA灰): `coxa_bracket` / `femur_link` /
-   `tibia_link` / `leg_foot_bored` / `foot_pad`
+  `tibia_link` / `leg_foot_bored` / `foot_pad`
 3. 並行して `claw_mount` を片手分 (1個, PETG) 先行印刷し、爪ハブ
-   (`Arm_Left_Claw_Grey`, 150%キット部品を別途1個印刷) との接着面を
-   現物合わせ (printing.md)
+  (`Arm_Left_Claw_Grey`, 150%キット部品を別途1個印刷) との接着面を
+  現物合わせ (printing.md)
 
 ### Phase 1 — 脚 1 本の Go/No-Go (assembly.md §1)
 
@@ -263,40 +263,40 @@ PETG骨格は色替え不要の単色プレートにまとめる (filament.md �
 - `leg_foot_bored` ×3 追加 (計4, PLA灰) / `foot_pad` ×3 追加 (計4, **TPU**)
 - `chassis` / `pod_neck` / `battery_cradle` 各1 (PETG)
 - 脚意匠: `shin_shell` ×2 + `shin_shell_m` ×2 (PLA青) / `thigh_cap` ×4
-  (PLA灰) — 骨格寸法確定後ならこのフェーズと並行印刷可
+ (PLA灰) — 骨格寸法確定後ならこのフェーズと並行印刷可
 - キット (150%): `Leg_Toe_Black_x12` (黒) / `Leg_Thigh_Guard_Blue_x4`
-  (青) / `Leg_Shin_Guard_Grey_x4` (灰)
+ (青) / `Leg_Shin_Guard_Grey_x4` (灰)
 
 ### Phase 3 — 腕 (脚ベンチ試験合格後 or 並行可, assembly.md §2.5)
 
 腕は歩行に影響しないため脚と並行、または脚が Go した後の空き時間で。
 
 - PETG (同一プレート可): `shoulder_bracket`+`_L`, `upper_arm`+`_L`,
-  `forearm`+`_L`, `claw_mount_L` (Phase0で片手分は印刷済み)
+ `forearm`+`_L`, `claw_mount_L` (Phase0で片手分は印刷済み)
 - PLA青: `arm_pod_upper`+`_L`, `arm_pod_lower`+`_L`
 - PLA灰: `elbow_shell`+`_L`
 - キット (150%): `Arm_Left_Guard_Grey`×1, `Arm_Right_Guard_Grey`×1,
-  `Arm_Left_Claw_Grey`×1追加 (計2), `Arm_Left_Finger_Black_x3`×6,
-  `Arm_Left_FingerTip_Grey_x3`×6
+ `Arm_Left_Claw_Grey`×1追加 (計2), `Arm_Left_Finger_Black_x3`×6,
+ `Arm_Left_FingerTip_Grey_x3`×6
 
 ### Phase 4 — 頭部・目・音声・カメラ (assembly.md §2.7-2.9)
 
 - `Head_Top_Eyecut` (`tools/make_head_eyecut.py`, build_all.py 対象外
-  — 上記§1の注意参照) / `Head_Bottom_Armcut` (PLA青)
+ — 上記§1の注意参照) / `Head_Bottom_Armcut` (PLA青)
 - `eye_pod`×2 (PLA白) / `eye_carrier`×2 (PETG)
 - `eye_pod_camera_shell`×1 + `eye_pod_camera_base`×1 (PLA白, 接着で一体化) / `camera_carrier`×1 (PETG)
 - **印刷前に INMP441 基板寸法・スピーカー厚を実測**し `config.py` の
-  `AUDIO_MIC_*`/`AUDIO_SPK_REAL_H` と差異があれば更新→再生成
-  (assembly.md §2.8 前提)。その後 `Mouth_Cannon_Bored`/`Mouth_Neck_Bored`/
-  `Mouth_Ball_Bored` (PLA灰/青/灰) + `audio_cradle_mic`/`audio_cradle_spk`
-  (PETG)
+ `AUDIO_MIC_*`/`AUDIO_SPK_REAL_H` と差異があれば更新→再生成
+ (assembly.md §2.8 前提)。その後 `Mouth_Cannon_Bored`/`Mouth_Neck_Bored`/
+ `Mouth_Ball_Bored` (PLA灰/青/灰) + `audio_cradle_mic`/`audio_cradle_spk`
+ (PETG)
 - キット (150%): Head一式 (`Head_Peg_Lower`, `Head_Peg_Upper`, `Head_Dome_Grey`,
-  `Head_Plug_Grey`, `Head_Screw_Grey_x2`, `Head_Insert_Black_x4` —
-  **`Head_Plate_Grey` / `Head_Bottom_Cap_Grey` は印刷しない** (§2 #34/#28)) /
-  Mouth一式 (`Mouth_Cap_Grey`, `Mouth_Key_Grey`, `Mouth_Peg_Grey`) /
-  TailJoint一式 (`Head_TailJoint_Blue_Optional_Cross`,
-  `Head_TailJoint_Ball_Grey_Optional_Cross`, `Head_TailJoint_Peg`,
-  `Head_TailJoint_Peg_Optional_Cross_Repaired`)
+ `Head_Plug_Grey`, `Head_Screw_Grey_x2`, `Head_Insert_Black_x4` —
+ **`Head_Plate_Grey` / `Head_Bottom_Cap_Grey` は印刷しない** (§2 #34/#28)) /
+ Mouth一式 (`Mouth_Cap_Grey`, `Mouth_Key_Grey`, `Mouth_Peg_Grey`) /
+ TailJoint一式 (`Head_TailJoint_Blue_Optional_Cross`,
+ `Head_TailJoint_Ball_Grey_Optional_Cross`, `Head_TailJoint_Peg`,
+ `Head_TailJoint_Peg_Optional_Cross_Repaired`)
 
 ### Phase 5 — 意匠シェル最終 (Cabin, assembly.md §3)
 
@@ -310,20 +310,20 @@ PETG骨格は色替え不要の単色プレートにまとめる (filament.md �
 ### プレート構成 / X2D 運用上の注意
 
 - **ビルドボリューム**: シングルノズル256×256×260mm / デュアルノズル
-  235.5×256×256mm (確認日2026-07-27, printing.md 出典)。150%最大パーツ
-  Cabin_Front ≈170×195×110mm はどちらでも印刷可能 — 単独プレートで足りる
+ 235.5×256×256mm (確認日2026-07-27, printing.md 出典)。150%最大パーツ
+ Cabin_Front ≈170×195×110mm はどちらでも印刷可能 — 単独プレートで足りる
 - **デュアルノズル活用**: 骨格(PETG)と意匠(PLA)の同時プレート、Cabin/Head
-  周りの青+灰2色プレートでパージ削減 (printing.md/filament.md)
+ 周りの青+灰2色プレートでパージ削減 (printing.md/filament.md)
 - **PLA白は専用プレート** (`eye_pod`×2 + `eye_pod_camera_shell`/`_base`, インフィル
-  設定が他と異なるため他パーツと混在させない)
+ 設定が他と異なるため他パーツと混在させない)
 - **TPU (`foot_pad`×4) は要注意**: X2D の AMS へ直接給紙可能なのは
-  「AMS用TPU」専用グレードのみで、**硬度95A以下の一般TPU (95A HF/90A/85A)
-  はAMS直接給紙非推奨** — 外部スプールホルダー(バイパス給紙)または
-  トップマウントホルダーを使うこと。さらに右補助ノズル(デュアルノズルの
-  サブノズル)はTPU非対応のため**必ずメインノズル側で印刷**する
-  [出典: Bambu Lab公式Wiki「X2D用TPU印刷ガイド」
-  wiki.bambulab.com/ja/x2d/manual/tpu-printing-guide, 確認日2026-07-30,
-  `docs/shopping.md` B-3 に既出]
+ 「AMS用TPU」専用グレードのみで、**硬度95A以下の一般TPU (95A HF/90A/85A)
+ はAMS直接給紙非推奨** — 外部スプールホルダー(バイパス給紙)または
+ トップマウントホルダーを使うこと。さらに右補助ノズル(デュアルノズルの
+ サブノズル)はTPU非対応のため**必ずメインノズル側で印刷**する
+ [出典: Bambu Lab公式Wiki「X2D用TPU印刷ガイド」
+ wiki.bambulab.com/ja/x2d/manual/tpu-printing-guide, 確認日2026-07-30,
+ `docs/shopping.md` B-3 に既出]
 - **黒/白/赤の消費は僅少** (filament.md): AMS常設スプールで足りる想定
 
 ---
@@ -386,25 +386,25 @@ BOM.md 購入品) を突き合わせた。**未解決ゼロ**。
 最終結論を変えるものではなく、記載漏れ・記述精度の是正。
 
 1. **printing.md「新規設計パーツ」表に `Head_Top_Eyecut` の行が無かった**
-   (Head_Bottom_Armcut など他の `_Bored`/`_Armcut` 系加工版は全て表に
-   行があるのに Head_Top_Eyecut だけ prose 中の言及のみで壁厚/インフィル
-   の数値が無かった) → 表に行を追加 (壁2/8%, `tools/filament_calc.py`
-   の前提と一致させた)
+  (Head_Bottom_Armcut など他の `_Bored`/`_Armcut` 系加工版は全て表に
+  行があるのに Head_Top_Eyecut だけ prose 中の言及のみで壁厚/インフィル
+  の数値が無かった) → 表に行を追加 (壁2/8%, `tools/filament_calc.py`
+  の前提と一致させた)
 2. **printing.md「印刷しないもの」の集約リストに `Head_Top_Blue` が
-   欠けていた** (Head_Bottom_Blue 等は載っているのに Head_Top_Blue だけ
-   別節の prose にしか書かれていなかった) → リストへ追加
+  欠けていた** (Head_Bottom_Blue 等は載っているのに Head_Top_Blue だけ
+  別節の prose にしか書かれていなかった) → リストへ追加
 3. **assembly.md 冒頭の概要文が「腕は MG90S + サブマイクロ」のまま
-   古かった** — 2026-07-29 の固定爪化でグリップ用サブマイクロは腕から
-   廃止済み (同じ assembly.md 内の §2.5 / 行363 の記述とは矛盾していた)
-   → 「腕は MG90S ×3/腕 (肩ヨー/肩ピッチ/肘)、目はサブマイクロ×2」に
-   修正
+  古かった** — 2026-07-29 の固定爪化でグリップ用サブマイクロは腕から
+  廃止済み (同じ assembly.md 内の §2.5 / 行363 の記述とは矛盾していた)
+  → 「腕は MG90S ×3/腕 (肩ヨー/肩ピッチ/肘)、目はサブマイクロ×2」に
+  修正
 4. **assembly.md §0 手順2 に `tools/make_head_eyecut.py` の再生成手順が
-   無かった** — `build_all.py` だけを実行すると Head_Top_Eyecut.stl は
-   古いまま残る (import 一覧に無いため) → 手順2に注記を追加
+  無かった** — `build_all.py` だけを実行すると Head_Top_Eyecut.stl は
+  古いまま残る (import 一覧に無いため) → 手順2に注記を追加
 5. **assembly.md §2.5-6 の `Arm_Guard_Grey` という表記が実ファイル名と
-   不一致** (実際のキットファイルは `Arm_Left_Guard_Grey.stl`/
-   `Arm_Right_Guard_Grey.stl` の左右別形状2ファイルで、`Arm_Guard_Grey`
-   という単一ファイルは存在しない) → 実ファイル名2点の表記に修正
+  不一致** (実際のキットファイルは `Arm_Left_Guard_Grey.stl`/
+  `Arm_Right_Guard_Grey.stl` の左右別形状2ファイルで、`Arm_Guard_Grey`
+  という単一ファイルは存在しない) → 実ファイル名2点の表記に修正
 
 **2026-07-30 追記 (解消済み)**: 上記で記録していた `docs/shopping.md` の
 B-2表 (「現物合わせ・加工が必要な箇所」) の stale 3行 (TailJoint の
@@ -446,28 +446,28 @@ Stand_mount_Optional (任意治具) と Head_Plate_Grey / Head_Bottom_Cap_Grey (
 | foot_pad | foot_pad ×4 (TPU, 外部スプール) | TPU | (既存) |
 
 - PETG 骨格のうち**印刷済みの部品** (Phase0 の femur/tibia, 片脚試作, claw_mount 先行印刷分)
-  は該当プレートを Studio で開いて不要オブジェクトを削除してから印刷する
+ は該当プレートを Studio で開いて不要オブジェクトを削除してから印刷する
 - 接地面積 <150mm² のオブジェクトには外周ブリム 5mm を自動付与済み (make_plates.py)。
-  Head_TailJoint_Peg_..._Repaired は接地 0mm² (全面丸み) — サポート上印刷になる予備部品
+ Head_TailJoint_Peg_（一部省略）_Repaired は接地 0mm² (全面丸み) — サポート上印刷になる予備部品
 - **2026-08-21b 形状修正 (要再ダウンロード/開き直し)**: ① chassis から ESP32
-  ネジ止めボスを撤去 (後脚サーボ開口内に浮遊+基板がサーボと干渉する不成立
-  設計だった — 基板はテープ留め運用へ)。② tibia_link/_m の膝ディスク分離を
-  修正 (45°ウェッジがネックを切断していた → ガード r23 + femur ウェブ後退
-  web_x1=FEMUR_LEN-22.5)。chassis/femur/tibia を含む 6 プレート
-  (PETG_1/2/3, PETG_Walk_1/2/3) は新メッシュで再生成・再スライス済み。
-  **修正前の 3mf や印刷済みの旧 femur/tibia は使用不可**
+ ネジ止めボスを撤去 (後脚サーボ開口内に浮遊+基板がサーボと干渉する不成立
+ 設計だった — 基板はテープ留め運用へ)。② tibia_link/_m の膝ディスク分離を
+ 修正 (45°ウェッジがネックを切断していた → ガード r23 + femur ウェブ後退
+ web_x1=FEMUR_LEN-22.5)。chassis/femur/tibia を含む 6 プレート
+ (PETG_1/2/3, PETG_Walk_1/2/3) は新メッシュで再生成・再スライス済み。
+ **修正前の 3mf や印刷済みの旧 femur/tibia は使用不可**
 - **2026-09-04 tibia 膝ネック強度修正 (要再ダウンロード)**: 機構レビュー M-01 —
-  上記 45° ウェッジ×2 は femur が存在しない +X 側まで削り、ネックプレートが z=-23 で
-  3.7×3.0mm (11mm², σ≈240MPa, 破断確実) しか残っていなかった。femur 側障害物の膝
-  ±47° 掃引領域を数値減算する方式 (`_femur_knee_sweep`) + 外側 3mm 増厚に変更
-  (断面 115mm², `check_leg_link_strength.py` SF 2.1)。tibia 体積 32.4→34.3cm³。
-  `PETG_Walk_3_Tibia` / `PETG_2_Tibia` を再生成。あわせて全ホーン共締め下穴
-  `HORN_PILOT_D` 2.0→2.2 (coxa/femur も STL 変更、印刷済み品はドリル追加工可)。
-  **2026-09-04 より前の tibia 3mf/印刷物は使用不可**
+ 上記 45° ウェッジ×2 は femur が存在しない +X 側まで削り、ネックプレートが z=-23 で
+ 3.7×3.0mm (11mm², σ≈240MPa, 破断確実) しか残っていなかった。femur 側障害物の膝
+ ±47° 掃引領域を数値減算する方式 (`_femur_knee_sweep`) + 外側 3mm 増厚に変更
+ (断面 115mm², `check_leg_link_strength.py` SF 2.1)。tibia 体積 32.4→34.3cm³。
+ `PETG_Walk_3_Tibia` / `PETG_2_Tibia` を再生成。あわせて全ホーン共締め下穴
+ `HORN_PILOT_D` 2.0→2.2 (coxa/femur も STL 変更、印刷済み品はドリル追加工可)。
+ **2026-09-04 より前の tibia 3mf/印刷物は使用不可**
 - **PETG_Walk_1〜3 (2026-08-21)**: 歩行チェーン (chassis→coxa→femur→tibia) +
-  battery_cradle だけの歩行実験最小セット (番号 = 印刷推奨順)。腕・目・カメラ・
-  pod_neck・spk は含まない。PETG_1〜4 と部品が重複するので**どちらか一方の系列
-  だけを印刷する**こと。mic は ① に「ついで」同乗 — 本来のレイヤー 0.12 指定に
-  対し 0.2 で印刷される。圧入がきつい/粗い場合は PETG_5_Mic (0.12, 16分) で
-  刷り直す。歩行には別途 leg_foot_bored×4 (PLA_Matte_Gray 収載) と foot_pad×4
-  (TPU) が必要
+ battery_cradle だけの歩行実験最小セット (番号 = 印刷推奨順)。腕・目・カメラ・
+ pod_neck・spk は含まない。PETG_1〜4 と部品が重複するので**どちらか一方の系列
+ だけを印刷する**こと。mic は ① に「ついで」同乗 — 本来のレイヤー 0.12 指定に
+ 対し 0.2 で印刷される。圧入がきつい/粗い場合は PETG_5_Mic (0.12, 16分) で
+ 刷り直す。歩行には別途 leg_foot_bored×4 (PLA_Matte_Gray 収載) と foot_pad×4
+ (TPU) が必要

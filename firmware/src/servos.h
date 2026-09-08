@@ -41,9 +41,24 @@ class Servos {
     disableAll();  // ESP32 だけの再起動でも PCA に残った旧パルスを消す
   }
 
+  // VBAT の成立確認。通常動作では false の間、ready と通常 PWM を禁止する。
+  // CALIBRATION_MODE の単一軸診断は calibrateUs(..., diagnostic=true) だけが
+  // このゲートを迂回できる。
+  void setPowerReady(bool ready) {
+    if (powerReady_ == ready) return;
+    powerReady_ = ready;
+    if (!ready) {
+      disableAll();
+      calibrationAllowed_ = false;
+      calibrationChannel_ = -1;
+    }
+  }
+
+  bool powerReady() const { return powerReady_; }
+
   // 順次イネーブル (突入電流対策)。loop から繰り返し呼ぶ
   void softStart() {
-    if (fault_ || started_ >= N_CH) return;
+    if (fault_ || !powerReady_ || started_ >= N_CH) return;
     if (millis() - lastStart_ < 100) return;
     while (started_ < N_CH && !used_[started_]) started_++;
     if (started_ < N_CH) {
@@ -56,14 +71,14 @@ class Servos {
     lastStart_ = millis();
   }
   bool ready() const {
-    if (fault_) return false;
+    if (fault_ || !powerReady_) return false;
     for (int i = 0; i < N_CH; i++)
       if (used_[i] && !enabled_[i]) return false;
     return true;
   }
 
   void writeDeg(int ch, float deg) {
-    if (ch < 0 || ch >= N_CH || !enabled_[ch] || !isfinite(deg)) return;
+    if (ch < 0 || ch >= N_CH || !enabled_[ch] || !powerReady_ || !isfinite(deg)) return;
     float us = 1500.0f + deg * (US_MAX - US_MIN) / DEG_RANGE + trim(ch);
     us = fminf((float)US_MAX, fmaxf((float)US_MIN, us));
     writeUs(ch, (int)us);
@@ -73,26 +88,93 @@ class Servos {
     writeDeg(PCA_CH[leg][joint], deg * JOINT_SIGN[leg][joint]);
   }
 
-  void allNeutral() { allUs(1500); }
-
-  // CALIBRATION_MODE 用: 全 ch に同一パルス幅 (トリム込み, US_MIN..US_MAX にクランプ)。
-  // 500/2500 を出してホーンの振れ角を分度器で確認し、180° 品か 270° 品かを
-  // 組付け前に見分ける (assembly.md §1-1, 2026-09-04 レビュー E-06)
-  void allUs(int us) {
-    for (int ch = 0; ch < N_CH; ch++)
-      if (enabled_[ch]) {
-        int v = us + trim(ch);
-        v = v < US_MIN ? US_MIN : (v > US_MAX ? US_MAX : v);
-        writeUs(ch, v);
-      }
+  // CALIBRATION_MODE 用の安全な単一軸診断。ch と us の両方を明示し、機構軸
+  // ごとの保護範囲を満たすときだけ、その軸へ絶対パルスを出す。他の軸は先に
+  // PCA の ALL_LED_OFF で停止する。電源未検証の USB ベンチを許すのは、呼出側
+  // が専用の diagnostic=true を明示した場合だけで、通常制御からは到達できない。
+  bool calibrateUs(int ch, int us, bool cutout, bool stand,
+                   bool diagnostic = false) {
+    int low = 0, high = 0;
+    const bool allowed = diagnostic && stand && !cutout &&
+                         calibrationPulseRange(ch, low, high) &&
+                         us >= low && us <= high;
+    if (!allowed) {
+      if (calibrationAllowed_ || calibrationChannel_ >= 0) disableAll();
+      calibrationAllowed_ = false;
+      calibrationChannel_ = -1;
+      return false;
+    }
+    if (!calibrationAllowed_ || calibrationChannel_ != ch) {
+      disableAll();
+      if (fault_) return false;
+      enabled_[ch] = true;
+      started_ = N_CH;
+      calibrationChannel_ = ch;
+      calibrationAllowed_ = true;
+    }
+    writeUs(ch, us);
+    return !fault_;
   }
 
-  void calibrateUs(int us, bool cutout, bool stand = true) {
-    const bool allowed = stand && !cutout;
-    if (allowed && !calibrationAllowed_) enableAll();
-    if (!allowed && calibrationAllowed_) disableAll();
-    calibrationAllowed_ = allowed;
-    if (allowed) { softStart(); allUs(us); }
+  // 単軸選択を解除する明示的な停止。次周期以降に出力は残さない。
+  void stopCalibration() {
+    if (calibrationAllowed_ || calibrationChannel_ >= 0) disableAll();
+    calibrationAllowed_ = false;
+    calibrationChannel_ = -1;
+  }
+
+  // 校正用の機構軸別保護範囲。未使用チャンネルは false を返す。
+  bool calibrationPulseRange(int ch, int& low, int& high) const {
+    if (ch < 0 || ch >= N_CH || !used_[ch]) return false;
+    float minDeg = 0.0f, maxDeg = 0.0f;
+    float servoSign = 1.0f;
+    bool found = false;
+    for (int leg = 0; leg < 4; ++leg) {
+      if (ch == PCA_CH[leg][0]) {
+        minDeg = -LIM_YAW; maxDeg = LIM_YAW;
+        servoSign = (float)JOINT_SIGN[leg][0]; found = true;
+      }
+      if (ch == PCA_CH[leg][1]) {
+        minDeg = LIM_PITCH_UP; maxDeg = LIM_PITCH_DN;
+        servoSign = (float)JOINT_SIGN[leg][1]; found = true;
+      }
+      if (ch == PCA_CH[leg][2]) {
+        minDeg = -LIM_KNEE; maxDeg = LIM_KNEE;
+        servoSign = (float)JOINT_SIGN[leg][2]; found = true;
+      }
+    }
+    for (int arm = 0; arm < 2; ++arm) {
+      if (ch == ARM_CH[arm][0]) {
+        minDeg = -ARM_YAW_LIM; maxDeg = ARM_YAW_LIM;
+        servoSign = (float)ARM_SIGN[arm]; found = true;
+      }
+      if (ch == ARM_CH[arm][1]) {
+        minDeg = ARM_PITCH_MIN; maxDeg = ARM_PITCH_MAX;
+        servoSign = 1.0f; found = true;
+      }
+      // arms.h writes elbow-45 to the servo, so translate the logical elbow range.
+      if (ch == ARM_CH[arm][2]) {
+        minDeg = ARM_ELBOW_MIN - 45.0f; maxDeg = ARM_ELBOW_MAX - 45.0f;
+        servoSign = 1.0f; found = true;
+      }
+    }
+    if (ch == EYE_CH[0] || ch == EYE_CH[2]) {
+      minDeg = -EYE_LIM; maxDeg = EYE_LIM;
+      servoSign = 1.0f; found = true;
+    }
+    if (!found) return false;
+    // writeJoint()/Arms::update() で実際に出る raw servo angle は
+    // logical angle * sign。writeDeg() はさらに ch ごとの trim を足すため、
+    // 校正 API も同じ zero(US_MIN/US_MAX の中央) と trim を使って比較する。
+    const float rawMinDeg = fminf(minDeg * servoSign, maxDeg * servoSign);
+    const float rawMaxDeg = fmaxf(minDeg * servoSign, maxDeg * servoSign);
+    const float usPerDeg = (US_MAX - US_MIN) / DEG_RANGE;
+    const int endpointLow = US_MIN + CAL_ENDPOINT_MARGIN_US;
+    const int endpointHigh = US_MAX - CAL_ENDPOINT_MARGIN_US;
+    const float zeroUs = (US_MIN + US_MAX) * 0.5f + trim(ch);
+    low = max(endpointLow, (int)ceilf(zeroUs + rawMinDeg * usPerDeg));
+    high = min(endpointHigh, (int)floorf(zeroUs + rawMaxDeg * usPerDeg));
+    return low <= high;
   }
 
   void disableAll() {
@@ -104,7 +186,7 @@ class Servos {
     for (int ch = 0; ch < N_CH; ch++) enabled_[ch] = false;
     started_ = N_CH;  // softStart 再開防止 (再開は enableAll)
   }
-  void enableAll() { if (!fault_) { started_ = 0; lastStart_ = millis(); } }
+  void enableAll() { if (!fault_ && powerReady_) { started_ = 0; lastStart_ = millis(); } }
   bool faulted() const { return fault_; }
   void serviceFault() {
     if (millis() - lastBusCheck_ < 100) return;
@@ -174,7 +256,7 @@ class Servos {
     return Wire.endTransmission() == 0;
   }
   void writeUs(int ch, int us) {
-    if (fault_) return;
+    if (fault_ || (ch != calibrationChannel_ && !powerReady_)) return;
     const int b = ch / 16;
     // writeMicroseconds は内部の prescale 読出失敗も書込失敗も返さない。
     // 初期化・定期検査済みの値で同じ変換を行い、setPWM の ACK を検査する。
@@ -190,7 +272,9 @@ class Servos {
   Preferences prefs_;
   mutable portMUX_TYPE trimMux_ = portMUX_INITIALIZER_UNLOCKED;
   short trim_us_[N_CH] = {0};
-  bool calibrationAllowed_ = true;
+  bool calibrationAllowed_ = false;
+  int calibrationChannel_ = -1;
+  bool powerReady_ = false;
   bool enabled_[N_CH] = {false};
   bool used_[N_CH] = {false};
   int started_ = 0;

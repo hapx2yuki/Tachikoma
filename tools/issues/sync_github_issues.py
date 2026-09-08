@@ -114,19 +114,53 @@ def sync_milestones(dry):
 MARK_RE = re.compile(rf"<!--\s*{plan.MARKER}:\s*([A-Za-z0-9\-]+)\s*-->")
 
 
+def _load_issue_map():
+    """Return the checked-in key-to-number map without reading Issue bodies."""
+    if not MAP_PATH.is_file():
+        return {}
+    try:
+        payload = json.loads(MAP_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"Issue番号表を読めない: {MAP_PATH}: {exc}") from exc
+    if not isinstance(payload, dict):
+        raise RuntimeError("Issue番号表はオブジェクトでなければならない")
+    result = {}
+    seen_numbers = {}
+    for key, number in payload.items():
+        if not isinstance(key, str) or not isinstance(number, int) or number < 1:
+            raise RuntimeError(f"Issue番号表の値が不正: {key!r}: {number!r}")
+        previous_key = seen_numbers.get(number)
+        if previous_key is not None:
+            raise RuntimeError(
+                f"Issue番号表の番号重複: #{number} ({previous_key}, {key})"
+            )
+        seen_numbers[number] = key
+        result[key] = number
+    return result
+
+
 def load_existing():
-    """key -> {number, node_id, title, state} を全イシューから復元 (PR は除外)。"""
+    """key -> {number, node_id, title, state} を全Issueから復元 (PRは除外)。
+
+    既存Issueは本文のtachikoma-keyを優先する。後から作成された#99--#109は
+    既存本文を変更せずに管理できるよう、issue_map.jsonの番号を照合して復元する。
+    本文はこの関数の戻り値やスナップショットへ保存しない。
+    """
     items = api("GET", f"repos/{plan.REPO}/issues?state=all&per_page=100", paginate=True)
+    number_map = _load_issue_map()
+    mapped_by_number = {number: key for key, number in number_map.items()}
     found = {}
     for it in items:
         if "pull_request" in it:
             continue
         m = MARK_RE.search(it.get("body") or "")
-        if m:
-            if m.group(1) in found:
-                raise RuntimeError(f"Issueキー重複: {m.group(1)} (#{found[m.group(1)]['number']}, #{it['number']})")
-            found[m.group(1)] = {"number": it["number"], "node_id": it["node_id"],
-                                 "title": it["title"], "state": it["state"], "_new": False}
+        key = m.group(1) if m else mapped_by_number.get(it.get("number"))
+        if not key:
+            continue
+        if key in found:
+            raise RuntimeError(f"Issueキー重複: {key} (#{found[key]['number']}, #{it['number']})")
+        found[key] = {"number": it["number"], "node_id": it["node_id"],
+                      "title": it["title"], "state": it["state"], "_new": False}
     return found
 
 
@@ -162,6 +196,12 @@ def sync_issues(dry, update_bodies, milestones, specs=None):
     for spec in specs:
         if spec["key"] in existing:
             continue
+        if spec.get("issue_body_managed", True) is False:
+            # #99--#109 are already-issued records whose public definitions
+            # provide Project metadata only.  Do not create or replace their
+            # Issue bodies from the generated convenience text.
+            print(f"  ! issue {spec['key']}: metadata-only (既存Issue本文を管理しない)")
+            continue
         print(f"  + issue {spec['key']}: {spec['title']}")
         if dry:
             continue
@@ -178,6 +218,10 @@ def sync_issues(dry, update_bodies, milestones, specs=None):
         cur = existing.get(spec["key"])
         if cur is None:
             continue  # dry-runの新規Issue。作成予定はpass 1で表示済み。
+        if spec.get("issue_body_managed", True) is False:
+            # Never apply EXTRA_ISSUES bodies to existing #99--#109, even when
+            # a caller passed --update-bodies.
+            continue
         want = render_body(spec, numbers)
         # 新規作成直後は本文に未解決参照 (`KEY`) が残り得るので必ず再 PATCH
         if update_bodies or cur["_new"]:

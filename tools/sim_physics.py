@@ -40,6 +40,9 @@ import sim_gait as sg  # noqa: E402 (firmware 忠実歩容ロジック — 複�
 import mujoco  # noqa: E402
 
 URDF_PATH = ROOT / "hardware" / "urdf" / "tachikoma.urdf"
+# 実行時に生成する URDF/凸分解キャッシュがリポジトリ外へ置かれる場合が
+# ある。入力台帳の表示名だけを安定化し、内部の絶対実行パスとは分離する。
+FINGERPRINT_OUTPUT_ROOT = None
 FW_CONFIG = (ROOT / "firmware" / "src" / "config.h").read_text()
 
 # ---- firmware/src/config.h から直接読む (sim_gait.py と同じ規約: ハード
@@ -85,16 +88,24 @@ class PhaseDriver:
     def __init__(self, cycle_t: float = CYCLE_T, quarter: float = QUARTER):
         self.phase = 0.0
         self.holding = True  # 起動直後は静止 (gait.h と同じ初期値)
-        self.cycle_t = cycle_t
-        self.quarter = quarter
+        self.cycle_t = _finite_float(cycle_t, 'cycle_t', strictly_positive=True)
+        self.quarter = _finite_float(quarter, 'quarter', strictly_positive=True,
+                                     maximum=1.0)
 
     def step(self, dt: float, vx: float, vy: float, wz: float) -> float:
+        dt = _finite_float(dt, 'dt', minimum=0.0)
+        vx = _finite_float(vx, 'vx')
+        vy = _finite_float(vy, 'vy')
+        wz = _finite_float(wz, 'wz')
         mag = min(1.0, math.hypot(vx, vy) + abs(wz))
         if mag > 0.05:
             self.phase = math.fmod(self.phase + dt / self.cycle_t, 1.0)
             self.holding = False
         elif not self.holding:
-            q = math.ceil(self.phase / self.quarter + 1e-4) * self.quarter
+            # Keep the same boundary rule as firmware/src/gait.h.  An
+            # additive epsilon can turn a phase just below 1.0 into the
+            # following boundary (1.25), so moving never reaches holding.
+            q = math.ceil(self.phase / self.quarter) * self.quarter
             nxt = self.phase + dt / self.cycle_t
             if nxt >= q:
                 self.phase = math.fmod(q, 1.0)
@@ -118,6 +129,13 @@ def compute_leg_targets(phase: float, vx: float, vy: float, wz: float,
     その実行は合格にならない。未初期化二重失敗時は仮の0角で続けるため、
     実機の起動経路を証明する用途には使わない。
     """
+    phase = _finite_float(phase, 'phase')
+    vx = _finite_float(vx, 'vx')
+    vy = _finite_float(vy, 'vy')
+    wz = _finite_float(wz, 'wz')
+    body_h = _finite_float(body_h, 'body_h', strictly_positive=True)
+    if not isinstance(last_good, dict):
+        raise ValueError('last_good must be a dictionary')
     targets = {}
     leg_angles_deg = {}
     for i, leg in enumerate(sg._LEGS):
@@ -175,10 +193,17 @@ class LegOutputDriver:
     """firmware の脚出力スルー段 + 現在角側の安全制約。"""
     def __init__(self, initial=None):
         self.current = np.zeros((4, 3)) if initial is None else np.array(initial, dtype=float)
+        if self.current.shape != (4, 3) or not np.isfinite(self.current).all():
+            raise ValueError('initial leg angles must be a finite 4x3 array')
 
     def step(self, targets: dict, dt: float) -> tuple[dict, dict]:
+        if not isinstance(targets, dict):
+            raise ValueError('targets must be a dictionary')
+        dt = _finite_float(dt, 'dt', minimum=0.0)
         desired = np.array([[math.degrees(targets[n]) for n in leg_joint_names(leg)]
                             for leg in sg._LEGS])
+        if not np.isfinite(desired).all():
+            raise ValueError('targets must contain finite angles')
         self.current += np.clip(desired - self.current, -LEG_SLEW_DPS * dt, LEG_SLEW_DPS * dt)
         self.current = clamp_leg_angles(self.current)
         return ({n: math.radians(v) for leg, row in zip(sg._LEGS, self.current)
@@ -191,6 +216,104 @@ ARM_JOINTS = ["arm_r_yaw", "arm_r_pitch", "arm_r_elbow",
 EYE_JOINTS = ["eye_r_roll", "eye_l_roll"]
 ALL_LEG_JOINTS = [n for leg in sg._LEGS for n in leg_joint_names(leg)]
 ALL_JOINTS = ALL_LEG_JOINTS + ARM_JOINTS + EYE_JOINTS
+SERVO_GROUPS = ('leg', 'arm', 'eye')
+
+
+def _finite_float(value, name, *, minimum=None, strictly_positive=False,
+                  maximum=None):
+    """入力値を float へ正規化し、物理計算へ渡す前に有限性を保証する。"""
+    if isinstance(value, (bool, np.bool_)):
+        raise ValueError(f'{name} must be a finite number, not boolean')
+    try:
+        result = float(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f'{name} must be a finite number') from exc
+    if not math.isfinite(result):
+        raise ValueError(f'{name} must be finite')
+    if strictly_positive and result <= 0.0:
+        raise ValueError(f'{name} must be > 0')
+    if minimum is not None and result < minimum:
+        raise ValueError(f'{name} must be >= {minimum}')
+    if maximum is not None and result > maximum:
+        raise ValueError(f'{name} must be <= {maximum}')
+    return result
+
+
+def _gain_values(values, name):
+    """leg/arm/eye のPDゲインを厳密に正規化する。"""
+    if not isinstance(values, dict):
+        raise ValueError(f'{name} must be a leg/arm/eye mapping')
+    missing = [group for group in SERVO_GROUPS if group not in values]
+    unknown = sorted(set(values) - set(SERVO_GROUPS))
+    if missing or unknown:
+        raise ValueError(f'{name} groups missing={missing} unknown={unknown}')
+    return {group: _finite_float(values[group], f'{name}.{group}', minimum=0.0)
+            for group in SERVO_GROUPS}
+
+
+def validate_model_parameters(friction_lateral, kp, kv, offwidth=1280,
+                              offheight=720, *, timestep=0.002,
+                              effort_scale=1.0, mass_scale=1.0,
+                              self_collision=False,
+                              include_parent_collision=False, slope_deg=0.0,
+                              step_height_mm=0.0, step_front_y=0.25,
+                              contact_model='linked-hulls', hard_friction=.3,
+                              include_servo_collision=False,
+                              foot_candidate_dir=None):
+    """build_model の直接呼出しにもCLIと同じ入力境界を適用する。
+
+    ケースJSON経由ではない呼出しが NaN/inf、ゼロ速度、未知の接触方式を
+    MuJoCoへ渡すと、例外や非再現なモデルを結果JSONへ保存できる。ここで
+    数値を正規化してからモデルを組み立てる。
+    """
+    width = _finite_float(offwidth, 'offwidth', strictly_positive=True)
+    height = _finite_float(offheight, 'offheight', strictly_positive=True)
+    if not math.isclose(width, round(width), abs_tol=1e-9):
+        raise ValueError('offwidth must be an integer')
+    if not math.isclose(height, round(height), abs_tol=1e-9):
+        raise ValueError('offheight must be an integer')
+    if not isinstance(contact_model, str) or contact_model not in (
+            'linked-hulls', 'parts', 'vhacd'):
+        raise ValueError('contact_model must be linked-hulls, parts, or vhacd')
+    for name, value in (('self_collision', self_collision),
+                        ('include_parent_collision', include_parent_collision),
+                        ('include_servo_collision', include_servo_collision)):
+        if not isinstance(value, (bool, np.bool_)):
+            raise ValueError(f'{name} must be boolean')
+    slope = _finite_float(slope_deg, 'slope_deg')
+    if abs(slope) >= 90.0:
+        raise ValueError('slope_deg must be between -90 and 90 degrees')
+    candidate = None if foot_candidate_dir in (None, '') else foot_candidate_dir
+    if candidate is not None:
+        candidate_path = Path(candidate)
+        if not candidate_path.is_absolute():
+            candidate_path = ROOT / candidate_path
+        if not candidate_path.is_dir():
+            raise ValueError(f'foot_candidate_dir does not exist: {candidate}')
+    return {
+        'friction_lateral': _finite_float(friction_lateral,
+                                          'friction_lateral', minimum=0.0),
+        'kp': _gain_values(kp, 'kp'),
+        'kv': _gain_values(kv, 'kv'),
+        'offwidth': int(round(width)),
+        'offheight': int(round(height)),
+        'timestep': _finite_float(timestep, 'timestep', strictly_positive=True),
+        'effort_scale': _finite_float(effort_scale, 'effort_scale',
+                                      strictly_positive=True),
+        'mass_scale': _finite_float(mass_scale, 'mass_scale',
+                                    strictly_positive=True),
+        'self_collision': bool(self_collision),
+        'include_parent_collision': bool(include_parent_collision),
+        'slope_deg': slope,
+        'step_height_mm': _finite_float(step_height_mm, 'step_height_mm',
+                                        minimum=0.0),
+        'step_front_y': _finite_float(step_front_y, 'step_front_y'),
+        'contact_model': contact_model,
+        'hard_friction': _finite_float(hard_friction, 'hard_friction',
+                                       minimum=0.0),
+        'include_servo_collision': bool(include_servo_collision),
+        'foot_candidate_dir': candidate,
+    }
 
 
 def arm_targets_rad(leg_angles_deg: dict | None = None) -> tuple[dict, tuple[bool, bool]]:
@@ -248,6 +371,36 @@ def build_model(friction_lateral: float, kp: dict, kv: dict,
     タグを注入して discardvisual=false を明示指定する (元ファイルは変更せず
     メモリ上の文字列だけ書き換えて MjSpec.from_string に渡す)。
     """
+    # This import is also used in the optional foot-mass branch below. Keep it
+    # at function entry so the local binding is available to the print-first
+    # proxy contract before that branch is reached.
+    import export_urdf as E
+    params = validate_model_parameters(
+        friction_lateral, kp, kv, offwidth, offheight,
+        timestep=timestep, effort_scale=effort_scale, mass_scale=mass_scale,
+        self_collision=self_collision,
+        include_parent_collision=include_parent_collision, slope_deg=slope_deg,
+        step_height_mm=step_height_mm, step_front_y=step_front_y,
+        contact_model=contact_model, hard_friction=hard_friction,
+        include_servo_collision=include_servo_collision,
+        foot_candidate_dir=foot_candidate_dir)
+    friction_lateral = params['friction_lateral']
+    kp = params['kp']
+    kv = params['kv']
+    offwidth = params['offwidth']
+    offheight = params['offheight']
+    timestep = params['timestep']
+    effort_scale = params['effort_scale']
+    mass_scale = params['mass_scale']
+    self_collision = params['self_collision']
+    include_parent_collision = params['include_parent_collision']
+    slope_deg = params['slope_deg']
+    step_height_mm = params['step_height_mm']
+    step_front_y = params['step_front_y']
+    contact_model = params['contact_model']
+    hard_friction = params['hard_friction']
+    include_servo_collision = params['include_servo_collision']
+    foot_candidate_dir = params['foot_candidate_dir']
     urdf_text = URDF_PATH.read_text()
     inject = (f'<mujoco><compiler discardvisual="false" '
               f'meshdir="{URDF_PATH.parent}"/></mujoco>')
@@ -259,6 +412,22 @@ def build_model(friction_lateral: float, kp: dict, kv: dict,
     spec.option.integrator = mujoco.mjtIntegrator.mjINT_IMPLICITFAST
     if include_parent_collision:
         spec.option.disableflags |= int(mujoco.mjtDisableBit.mjDSBL_FILTERPARENT)
+    # Parent-link filtering stays disabled for the final print-first model.
+    # The current VHACD representation nevertheless produces false-positive
+    # contacts at five reviewed adjacent joint interfaces.  Add only the
+    # immutable, source-proven pair exclusions from sim_collision; there is no
+    # case-file input that can broaden this list.  Non-adjacent and any other
+    # parent-child pair therefore retain ordinary self-collision detection.
+    proxy_exclusion_contract = {'status': 'NOT_APPLICABLE', 'pairs': []}
+    if (getattr(E.C, 'PRINT_FIRST_ACTIVE', False)
+            and self_collision and include_parent_collision
+            and contact_model in ('parts', 'vhacd')):
+        from sim_collision import print_first_proxy_exclusion_contract
+        proxy_exclusion_contract = print_first_proxy_exclusion_contract()
+        for index, row in enumerate(proxy_exclusion_contract['pairs']):
+            spec.add_exclude(
+                name=f"print_first_proxy_interface_{index}",
+                bodyname1=row['body1'], bodyname2=row['body2'])
     # offscreen framebュファは既定 640x480 のため動画解像度に合わせて拡張
     spec.visual.global_.offwidth = max(offwidth, 640)
     spec.visual.global_.offheight = max(offheight, 480)
@@ -315,6 +484,7 @@ def build_model(friction_lateral: float, kp: dict, kv: dict,
             friction=[friction_lateral, .005, .0001], group=2, rgba=[.4, .4, .4, 1])
 
     part_metadata = {}
+    collision_cache_ledger = None
     if foot_candidate_dir and contact_model=='linked-hulls':
         raise ValueError('足候補は材料別接触で評価してください')
     if contact_model != 'linked-hulls':
@@ -324,8 +494,32 @@ def build_model(friction_lateral: float, kp: dict, kv: dict,
                 for geom in list(body.geoms):
                     if geom.group != 1:
                         spec.delete(geom)
-        for pi, (link, name, material, hulls) in enumerate(convex_parts(contact_model, include_servos=include_servo_collision,foot_candidate_dir=foot_candidate_dir)):
+        collision_parts = convex_parts(
+            contact_model, include_servos=include_servo_collision,
+            foot_candidate_dir=foot_candidate_dir)
+        collision_cache_ledger = getattr(convex_parts, 'last_cache_ledger', None)
+        if not isinstance(collision_cache_ledger, dict):
+            raise ValueError('convex_parts did not publish a collision cache ledger')
+        cache_entries_by_part = {}
+        for cache_entry in collision_cache_ledger.get('entries', []):
+            if not isinstance(cache_entry, dict):
+                raise ValueError('collision cache ledger entry is malformed')
+            cache_key = (cache_entry.get('link'), cache_entry.get('part'))
+            if cache_key in cache_entries_by_part:
+                raise ValueError(
+                    f'collision cache ledger has duplicate source part: {cache_key!r}')
+            cache_entries_by_part[cache_key] = cache_entry
+        for pi, (link, name, material, hulls) in enumerate(collision_parts):
             body = spec.body(link)
+            cache_entry = cache_entries_by_part.get((link, name))
+            if not isinstance(cache_entry, dict):
+                raise ValueError(
+                    f'collision cache ledger has no source part: {link}/{name}')
+            declared_hulls = cache_entry.get('hull_sha256')
+            if (not isinstance(declared_hulls, list)
+                    or len(declared_hulls) != len(hulls)):
+                raise ValueError(
+                    f'collision cache hull count is not exact for {link}/{name}')
             for hi, hull in enumerate(hulls):
                 unique = f'part_{pi}_{hi}'
                 spec.add_mesh(name=unique, uservert=(hull.vertices * .001).ravel(), userface=hull.faces.ravel())
@@ -334,7 +528,19 @@ def build_model(friction_lateral: float, kp: dict, kv: dict,
                     priority=1, mass=0, density=0,
                     friction=[friction_lateral if material=='TPU' else hard_friction, .005, .0001],
                     solref=[.02 if material=='TPU' else .004, 1])
-                part_metadata[unique] = {'link': link, 'part': name, 'material': material}
+                part_metadata[unique] = {
+                    'link': link,
+                    'part': name,
+                    'material': material,
+                    'hull_index': hi,
+                    'hull_count': len(hulls),
+                    'hull_sha256': declared_hulls[hi],
+                    'source_mesh_sha256': cache_entry.get('source_mesh_sha256'),
+                    'source_convex_hull_sha256': cache_entry.get(
+                        'source_convex_hull_sha256'),
+                    'cache_path': cache_entry.get('path'),
+                    'cache_sha256': cache_entry.get('sha256'),
+                }
     for body in spec.bodies:
         if body.name in ("world",):
             continue
@@ -403,11 +609,107 @@ def build_model(friction_lateral: float, kp: dict, kv: dict,
     # 全て同じパラメータから構築する。コンパイル後には質量・慣性を変えない。
     model = spec.compile()
 
+    # Preserve the compiled exclude table as evidence.  ``MjSpec`` may also
+    # contain excludes supplied by an input URDF, so the final print-first
+    # contract is checked against both the count and the body-id signatures;
+    # merely returning the requested Python dictionary is insufficient.
+    compiled_excludes = []
+    for exclude_index in range(int(model.nexclude)):
+        exclude = model.exclude(exclude_index)
+        signatures = np.asarray(exclude.signature, dtype=np.uint64).reshape(-1)
+        if signatures.size != 1:
+            raise ValueError(
+                f'compiled exclude {exclude_index} has invalid signature shape')
+        compiled_excludes.append({
+            'name': str(exclude.name),
+            'signature': int(signatures[0]),
+        })
+    expected_exclude_signatures = []
+    if proxy_exclusion_contract.get('status') != 'NOT_APPLICABLE':
+        for row in proxy_exclusion_contract.get('pairs', []):
+            body_ids = sorted(int(mujoco.mj_name2id(
+                model, mujoco.mjtObj.mjOBJ_BODY, body_name))
+                for body_name in (row['body1'], row['body2']))
+            if any(body_id < 0 for body_id in body_ids):
+                raise ValueError(
+                    f"proxy exclusion body is absent from compiled model: "
+                    f"{row['body1']}/{row['body2']}")
+            expected_exclude_signatures.append(
+                (body_ids[0] << 16) | body_ids[1])
+    compiled_signatures = [row['signature'] for row in compiled_excludes]
+    filter_parent_bit = int(mujoco.mjtDisableBit.mjDSBL_FILTERPARENT)
+    parent_filter_disabled = bool(
+        int(model.opt.disableflags) & filter_parent_bit)
+    parent_relations = []
+    parent_relation_errors = []
+    if proxy_exclusion_contract.get('status') != 'NOT_APPLICABLE':
+        spec_by_joint = {row.get('name'): row for row in getattr(E, 'JOINT_SPECS', [])}
+        for row in proxy_exclusion_contract.get('pairs', []):
+            joint_name = row.get('joint')
+            jspec = spec_by_joint.get(joint_name)
+            if not isinstance(jspec, dict):
+                parent_relation_errors.append(
+                    f'proxy exclusion joint missing from JOINT_SPECS: {joint_name}')
+                continue
+            parent_id = int(mujoco.mj_name2id(
+                model, mujoco.mjtObj.mjOBJ_BODY, jspec.get('parent')))
+            child_id = int(mujoco.mj_name2id(
+                model, mujoco.mjtObj.mjOBJ_BODY, jspec.get('child')))
+            joint_id = int(mujoco.mj_name2id(
+                model, mujoco.mjtObj.mjOBJ_JOINT, joint_name))
+            relation = {
+                'joint': joint_name,
+                'parent': jspec.get('parent'),
+                'child': jspec.get('child'),
+                'parent_id': parent_id,
+                'child_id': child_id,
+                'joint_id': joint_id,
+            }
+            if (parent_id < 0 or child_id < 0 or joint_id < 0
+                    or int(model.body_parentid[child_id]) != parent_id
+                    or int(model.jnt_bodyid[joint_id]) != child_id):
+                parent_relation_errors.append(
+                    f'compiled parent/joint relation mismatch: {joint_name}')
+                relation['match'] = False
+            else:
+                relation['match'] = True
+            parent_relations.append(relation)
+    parent_contract_ok = bool(
+        proxy_exclusion_contract.get('status') == 'NOT_APPLICABLE'
+        or (parent_filter_disabled and not parent_relation_errors
+            and len(parent_relations) == len(expected_exclude_signatures)))
+    proxy_exclusion_compiled = {
+        'status': (
+            'PASS' if proxy_exclusion_contract.get('status') != 'NOT_APPLICABLE'
+            and len(compiled_excludes) == len(expected_exclude_signatures)
+            and sorted(compiled_signatures) == sorted(expected_exclude_signatures)
+            and parent_contract_ok
+            else 'NOT_APPLICABLE' if proxy_exclusion_contract.get('status') == 'NOT_APPLICABLE'
+            else 'FAIL'),
+        'expected_count': len(expected_exclude_signatures),
+        'compiled_count': len(compiled_excludes),
+        'expected_signatures': sorted(expected_exclude_signatures),
+        'compiled_excludes': compiled_excludes,
+        'parent_filter_disabled': parent_filter_disabled,
+        'parent_filter_disable_bit': filter_parent_bit,
+        'parent_relations': parent_relations,
+        'parent_relation_errors': parent_relation_errors,
+        'parent_contract_ok': parent_contract_ok,
+    }
+
     jid = {n: mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_JOINT, n) for n in ALL_JOINTS}
     aid = {n: mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_ACTUATOR, f"act_{n}") for n in ALL_JOINTS}
     limits = {j.attrib['name']: float(j.find('limit').attrib['velocity'])
               for j in ET.fromstring(urdf_text).findall('joint') if j.find('limit') is not None}
-    return model, {"jid": jid, "aid": aid, "velocity_limits": limits, 'part_metadata': part_metadata}
+    return model, {"jid": jid, "aid": aid, "velocity_limits": limits,
+                   'part_metadata': part_metadata,
+                   'proxy_exclusion_contract': proxy_exclusion_contract,
+                   'proxy_exclusion_compiled': proxy_exclusion_compiled,
+                   'proxy_exclusion_pairs': [
+                       [row['body1'], row['body2']]
+                       for row in proxy_exclusion_contract.get('pairs', [])
+                   ],
+                   'collision_cache_ledger': collision_cache_ledger}
 
 
 def quat_to_rpy(q: np.ndarray) -> tuple[float, float, float]:
@@ -466,7 +768,32 @@ def draw_hud(img: np.ndarray, t: float, phase: str, vx: float, wz: float,
     return np.array(im)
 
 
-def input_fingerprints() -> dict:
+def fingerprint_key(path: Path, output_root=None) -> str:
+    """入力台帳用の相対キーを返す（外部出力先でも Path.relative_to で落とさない）。
+
+    リポジトリ内の既存キーは互換性のため維持する。実行出力配下は
+    ``$OUTPUT/``、それ以外の外部ファイルは basename と内容ハッシュで表す。
+    絶対パスを結果 JSONへ漏らさず、同名ファイルの衝突も避ける。
+    """
+    p = Path(path).resolve()
+    output = output_root if output_root is not None else FINGERPRINT_OUTPUT_ROOT
+    if output is not None:
+        try:
+            rel = p.relative_to(Path(output).resolve())
+            return "$OUTPUT/" + rel.as_posix()
+        except ValueError:
+            pass
+    try:
+        return p.relative_to(ROOT).as_posix()
+    except ValueError:
+        if p.is_file():
+            digest = hashlib.sha256(p.read_bytes()).hexdigest()[:16]
+        else:
+            digest = hashlib.sha256(str(p).encode()).hexdigest()[:16]
+        return f"$EXTERNAL/{p.name}#{digest}"
+
+
+def input_fingerprints(output_root=None) -> dict:
     """実行した制御コード・URDF・参照メッシュを内容ハッシュで固定する。"""
     files = {Path(__file__), URDF_PATH, ROOT / 'tools/sim_gait.py',
              ROOT / 'tools/export_urdf.py', ROOT / 'hardware/src/config.py'}
@@ -475,6 +802,18 @@ def input_fingerprints() -> dict:
     files.update((ROOT / 'tools/tests/firmware_stubs').rglob('*.h'))
     files.add(ROOT / 'tools/make_visuals.py')
     files.add(ROOT / 'tools/kit_assembly.py')
+    # print-first collision geometry adds the electronics reservation boxes
+    # from this assembly context; keep its source in the same runtime ledger
+    # even though those boxes are not serialized into the URDF mesh list.
+    files.add(ROOT / 'tools/print_first_assembly.py')
+    # These two files also define/record the retained electronics occupancy.
+    # Omitting them would allow a changed reservation plan to reuse a stale
+    # simulation result even when the source mesh bundle is unchanged.
+    files.add(ROOT / 'tools/print_first_components.py')
+    files.add(ROOT / 'tools/xiao_retention_plan.py')
+    xiao_plan = ROOT / 'docs/audits/20260905-round2/xiao-retention-plan.json'
+    if xiao_plan.is_file():
+        files.add(xiao_plan)
     files.update(ROOT.glob('tools/data/*.json'))
     files.update(ROOT.glob('hardware/stl/*.stl'))
     files.update(ROOT.glob('hardware/src/*.py'))
@@ -483,7 +822,7 @@ def input_fingerprints() -> dict:
     files.add(ROOT / 'firmware/src/main.cpp')
     for mesh in ET.parse(URDF_PATH).findall('.//mesh'):
         files.add((URDF_PATH.parent / mesh.attrib['filename']).resolve())
-    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+    return {fingerprint_key(p, output_root): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in sorted(files)}
 
 
@@ -495,9 +834,28 @@ def speed_torque_ranges(stall_ranges: np.ndarray, velocity: np.ndarray,
     実サーボの制御器/実測曲線は UNVERIFIED。外力で速度上限を超えることは
     あり得るので、速度そのものを強制変更する処理は行わない。
     """
+    stall_ranges = np.asarray(stall_ranges, dtype=float)
+    velocity = np.asarray(velocity, dtype=float)
+    no_load_speed = np.asarray(no_load_speed, dtype=float)
+    if stall_ranges.ndim != 2 or stall_ranges.shape[1] != 2:
+        raise ValueError('stall_ranges must be an Nx2 array')
+    count = stall_ranges.shape[0]
+    if velocity.shape != (count,) or no_load_speed.shape != (count,):
+        raise ValueError('velocity and no_load_speed must match stall_ranges')
+    if not np.isfinite(stall_ranges).all():
+        raise ValueError('stall_ranges must be finite')
+    if not np.isfinite(velocity).all():
+        raise ValueError('velocity must be finite')
+    if not np.isfinite(no_load_speed).all() or np.any(no_load_speed <= 0.0):
+        raise ValueError('no_load_speed must be finite and > 0')
+    if np.any(stall_ranges[:, 0] > stall_ranges[:, 1]):
+        raise ValueError('stall_ranges lower bound must not exceed upper bound')
     ratio = velocity / no_load_speed
-    return np.column_stack((stall_ranges[:, 0] * np.clip(1 + ratio, 0, 1),
-                            stall_ranges[:, 1] * np.clip(1 - ratio, 0, 1)))
+    result = np.column_stack((stall_ranges[:, 0] * np.clip(1 + ratio, 0, 1),
+                              stall_ranges[:, 1] * np.clip(1 - ratio, 0, 1)))
+    if not np.isfinite(result).all():
+        raise ValueError('speed-torque result is non-finite')
+    return result
 
 
 def walk_displacement(times, positions, walk_start, walk_end, vx, vy) -> dict:
@@ -744,6 +1102,10 @@ def main() -> int:
     warning_counts = {mujoco.mjtWarning(i).name: int(w.number)
                       for i, w in enumerate(data.warning) if w.number}
     checks['no_physics_warning'] = not warning_counts
+    required_check_names = [name for name, value in checks.items()
+                            if value is not None]
+    not_applicable_check_names = [name for name, value in checks.items()
+                                  if value is None]
     result = {'schema_version': 2, 'created_at_utc': datetime.now(timezone.utc).isoformat(),
               'engine': 'mujoco', 'mujoco_version': mujoco.__version__, 'python_version': platform.python_version(),
               'platform': platform.platform(), 'input_sha256': fingerprints, 'arguments': vars(args),
@@ -772,8 +1134,14 @@ def main() -> int:
                            'foot_contact_definition': '地面と接触する異なるtibiaリンク数。接触点数やTPUパッド数ではない'},
               'arm_leg_yaw_gate': {'fire_steps': arm_gate_count, 'phase_steps': phase_steps,
                                    'fire_steps_by_phase': gate_by_phase},
-              'simulation_acceptance': {'status': 'PASS' if all(v is not False for v in checks.values()) else 'FAIL',
-                                        'checks': checks, 'scope': '指定した仮定・閾値・シーケンスだけの数値判定'},
+              'simulation_acceptance': {
+                  'status': ('PASS' if all(checks[name] is True
+                                           for name in required_check_names)
+                             else 'FAIL'),
+                  'checks': checks,
+                  'required_check_names': required_check_names,
+                  'not_applicable_check_names': not_applicable_check_names,
+                  'scope': '指定した仮定・閾値・シーケンスだけの数値判定'},
               'physical_readiness': 'UNVERIFIED',
               'video_frames': frames, 'video_path': None if args.novideo else args.out, 'timeseries': metrics}
     Path(args.metrics).parent.mkdir(parents=True, exist_ok=True)

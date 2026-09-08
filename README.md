@@ -10,7 +10,7 @@
 最新は[第2次監査](docs/audits/20260905-round2/README.md)と
 [監査Issue #80](https://github.com/hapx2yuki/Tachikoma/issues/80)を参照。
 
-**追加で揃えるもの:** [追加購入の全一覧](docs/additional-purchases.md) / [追加印刷・再使用の全一覧](docs/additional-printing.md)。必要総数と手持ちの確認済み数量を区別し、設計未確定の部品を発注・一括印刷する指示にはしていない。[全Issuesの更新内容と着手条件](docs/issues-audit-20260905.md)も参照。
+**追加で揃えるもの:** [印刷優先構成の現在地](docs/print-first.md) / [追加購入の全一覧](docs/additional-purchases.md) / [追加印刷・再使用の全一覧](docs/additional-printing.md)。必要総数と手持ちの確認済み数量を区別し、設計未確定の部品を発注・一括印刷する指示にはしていない。[全Issuesの更新内容と着手条件](docs/issues-audit-20260905.md)も参照。
 
 > **Disclaimer / 免責**: 本プロジェクトは『攻殻機動隊』に登場するタチコマを
 > モチーフにした**非公式・非営利の個人ファン制作**であり、士郎正宗氏・
@@ -351,7 +351,7 @@ bosses.py` chassis arm tab) が発生し、「完全中央は物理的に不可�
     (距離を保存) であり `shin_shell_m` の構築チェーンとも可換であることを
     数式的に示した上で、実際に signed_distance で再検証し FR/RL が FL/RR と
     寸分違わず同じ 82.8%embed/median 1.585mm/max float 6.552mm になることを
-    確認済み (`/private/tmp/.../scratchpad/verify_shin_guard_mirror.py`)。
+    確認済み（リポジトリ内の検証用スクリプトで再現）。
     4脚とも同一の再現性のある結果になったため、README/docs の数値に脚別の
     注記は不要 (`tools/data/kit_assembly_front.json` の Leg_Thigh_Guard_Blue_x4
     側にあった同種の未検証 TODO も、thigh_cap には `_m` 変形版がそもそも

@@ -74,17 +74,16 @@ class SimulationRegression(unittest.TestCase):
         np.testing.assert_array_equal(trace[0],reference[0])
         self.assertGreater(np.max(abs(trace[1,3:15]-trace[0,3:15])),.1)
 
-    def test_candidate_mass_update_keeps_ground_collision_valid(self):
+    def test_open_candidate_mesh_fails_closed_before_collision_build(self):
         import sim_stress as stress
         case={'name':'candidate_regression','model':{'contact_model':'parts','friction':.6,
               'foot_candidate_dir':'docs/audits/20260905-round2/foot-support-candidates'},
               'segments':[{'name':'hold','duration':.5}]}
         with tempfile.TemporaryDirectory(prefix='tachikoma-contact-test-') as tmp:
-            result=stress.execute(case,tmp)
-        # コンパイル後の慣性座標変更ではBVH境界が古く、靴を抜けて脛へ落下した。
-        self.assertTrue(result['checks']['no_fall'])
-        self.assertGreater(result['min_base_z_m'],.11)
-        self.assertGreater(result['tpu_support']['fraction'],.95)
+            with self.assertRaisesRegex(ValueError, 'watertight'):
+                stress.execute(case,tmp)
+        # 候補STLは現状 open mesh のため、従来の凸包/質量結果を再利用せず
+        # 全部品の衝突モデル入口で未確認として止める。
 
     def test_inertial_mount_origins_and_pad_mass(self):
         import export_urdf as E
@@ -139,22 +138,40 @@ class SimulationRegression(unittest.TestCase):
         np.testing.assert_allclose(a['FR'],neutral['FR'])
 
     def test_no_phantom_base_damping_or_inertia(self):
-        m,idx=sp.build_model(1.,dict(leg=24.,arm=.8,eye=.05),dict(leg=.4,arm=.03,eye=.005))
+        import sim_collision
+        cache_root = Path(sim_collision.CACHE)
+        cache_before = {p: (p.stat().st_mtime_ns, p.read_bytes())
+                        for p in cache_root.glob('*.npz') if p.is_file()}
+        with tempfile.TemporaryDirectory(prefix='tachikoma-regression-cache-') as tmp, \
+                patch.object(sim_collision, 'CACHE', Path(tmp) / 'collision-cache'):
+            m,idx=sp.build_model(1.,dict(leg=24.,arm=.8,eye=.05),dict(leg=.4,arm=.03,eye=.005))
         np.testing.assert_equal(m.dof_damping[:6],np.zeros(6))
         np.testing.assert_equal(m.dof_armature[:6],np.zeros(6))
         for name in sp.ALL_JOINTS:
             self.assertGreater(m.dof_damping[m.jnt_dofadr[idx['jid'][name]]],0)
         self.assertEqual(set(idx['velocity_limits']),set(sp.ALL_JOINTS))
+        cache_after = {p: (p.stat().st_mtime_ns, p.read_bytes())
+                       for p in cache_root.glob('*.npz') if p.is_file()}
+        self.assertEqual(cache_after, cache_before)
 
     def test_compiled_mass_and_joint_constants_are_consistent(self):
         import mujoco
-        m,_=sp.build_model(1.,dict(leg=24.,arm=.8,eye=.05),dict(leg=.4,arm=.03,eye=.005),mass_scale=1.3)
+        import sim_collision
+        cache_root = Path(sim_collision.CACHE)
+        cache_before = {p: (p.stat().st_mtime_ns, p.read_bytes())
+                        for p in cache_root.glob('*.npz') if p.is_file()}
+        with tempfile.TemporaryDirectory(prefix='tachikoma-regression-cache-') as tmp, \
+                patch.object(sim_collision, 'CACHE', Path(tmp) / 'collision-cache'):
+            m,_=sp.build_model(1.,dict(leg=24.,arm=.8,eye=.05),dict(leg=.4,arm=.03,eye=.005),mass_scale=1.3)
         bid=mujoco.mj_name2id(m,mujoco.mjtObj.mjOBJ_BODY,'base_link')
         self.assertAlmostEqual(m.body_subtreemass[bid],m.body_mass.sum(),places=12)
         before={n:getattr(m,n).copy() for n in ('body_subtreemass','body_invweight0','dof_invweight0')}
         mujoco.mj_setConst(m,mujoco.MjData(m))
         for name,value in before.items():
             np.testing.assert_allclose(getattr(m,name),value,rtol=1e-12,atol=1e-12,err_msg=name)
+        cache_after = {p: (p.stat().st_mtime_ns, p.read_bytes())
+                       for p in cache_root.glob('*.npz') if p.is_file()}
+        self.assertEqual(cache_after, cache_before)
 
     def test_collision_cache_never_publishes_partial_archive(self):
         import sim_collision

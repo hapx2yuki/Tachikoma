@@ -1,7 +1,10 @@
 #include <Arduino.h>
 #include <cassert>
+#include <cmath>
 #include <iostream>
 #include <limits>
+#include <set>
+#include <string>
 #include "servos.h"
 #include "control.h"
 #include "leg_output.h"
@@ -30,7 +33,7 @@ int main() {
   deserializeJson(doc,"{\"vx\":2,\"vy\":0,\"wz\":0,\"h\":105,\"stand\":1,\"ptt\":1}");
   assert(updateControlFromJson(doc,c,400) && c.vx==1 && c.h==BODY_H_MIN && c.stand && c.ptt && c.lastCmdMs==400);
   std::cout << "PASS: malformed command rejection, atomic frame validation, partial updates do not re-enable\n";
-  Servos servos;servos.begin();
+  Servos servos;servos.begin();servos.setPowerReady(true);
   assert(pwmEvents().size()>=32);
   for(const auto& event:pwmEvents()) assert(event.us==0);
   pwmEvents().clear();servos.enableAll();
@@ -44,21 +47,111 @@ int main() {
   servos.disableAll();pwmEvents().clear();fakeMillis()+=1000;servos.softStart();servos.writeDeg(0,0);assert(pwmEvents().empty() && !servos.ready());
   std::cout << "PASS: boot full-off, actual sequential neutral pulses, unused camera channel, disabled latch\n";
   Peripherals peri; peri.begin();
+  // A low ADC value before any in-range sample is an unverified/open input,
+  // not a confirmed low battery.  Establish the battery first, then verify
+  // the three-second cutout latch on a genuinely low reading.
+  fakeMilliVolts()=1836;
+  for (int i=0;i<5;++i) { fakeMillis()+=100; peri.tick(false); }
+  assert(peri.vbatVerified() && !peri.cutout());
+  assert(std::string(peri.vbatState()) == "VERIFIED");
+  fakeMilliVolts()=0;
   for (int i=0;i<40;++i) { fakeMillis()+=100; peri.tick(false); }
-  assert(peri.cutout());
+  assert(peri.cutout() && !peri.vbatVerified());
   servos.enableAll();for(int i=0;i<33;++i){fakeMillis()+=100;servos.softStart();}
-  pwmEvents().clear();servos.calibrateUs(2500,peri.cutout());
-  assert(pwmEvents().size()==32);for(const auto& event:pwmEvents())assert(event.us==0);
-  pwmEvents().clear();servos.softStart();servos.allUs(2500);assert(pwmEvents().empty());
-  std::cout << "PASS: real low-voltage latch stops calibration PWM and cannot restart itself\n";
-  Servos calibration;calibration.begin();calibration.enableAll();
-  for(int i=0;i<33;++i){fakeMillis()+=100;calibration.softStart();}
-  pwmEvents().clear();calibration.calibrateUs(1500,false,false);
-  assert(pwmEvents().size()==32);for(const auto& event:pwmEvents())assert(event.us==0);
-  pwmEvents().clear();calibration.calibrateUs(1500,false,true);assert(pwmEvents().empty());
-  fakeMillis()+=100;calibration.calibrateUs(1500,false,true);
-  assert(pwmEvents().size()==2 && pwmEvents()[0].ch==0 && pwmEvents()[1].ch==0);
-  std::cout << "PASS: calibration also obeys rest and re-enable uses sequential start\n";
+  pwmEvents().clear();assert(!servos.calibrateUs(0,1500,peri.cutout(),true,true));
+  assert(pwmEvents().empty());
+  std::cout << "PASS: real low-voltage latch stops the single-axis diagnostic PWM\n";
+  Servos calibration;calibration.begin();calibration.setPowerReady(false);
+  pwmEvents().clear();assert(!calibration.calibrateUs(0,1500,false,true,false));
+  assert(pwmEvents().empty());
+  int low=0,high=0;assert(calibration.calibrationPulseRange(0,low,high));
+  assert(!calibration.calibrateUs(0,low-1,false,true,true));
+  assert(!calibration.calibrateUs(12,1500,false,true,true));
+  assert(pwmEvents().empty());
+  pwmEvents().clear();assert(calibration.calibrateUs(0,1500,false,true,true));
+  assert(pwmEvents().size()==33 && pwmEvents().back().ch==0 && pwmEvents().back().us>1490);
+  for(int ch=1;ch<16;ch++) assert(fakePCA[0].ticks[ch]==4096);
+  for(int ch=0;ch<16;ch++) if(ch!=0) assert(fakePCA[1].ticks[ch]==4096);
+  std::cout << "PASS: calibration requires explicit diagnostic mode, one used axis, and axis-safe pulse range\n";
+  std::set<int> usedChannels;
+  for (int leg=0; leg<4; ++leg) for (int joint=0; joint<3; ++joint)
+    usedChannels.insert(PCA_CH[leg][joint]);
+  for (int arm=0; arm<2; ++arm) for (int joint=0; joint<3; ++joint)
+    usedChannels.insert(ARM_CH[arm][joint]);
+  usedChannels.insert(EYE_CH[0]); usedChannels.insert(EYE_CH[2]);
+  assert(usedChannels.size()==20);
+  for (int ch=0; ch<N_CH; ++ch) {
+    int axisLow=0, axisHigh=0;
+    assert(calibration.calibrationPulseRange(ch,axisLow,axisHigh)==
+           (usedChannels.count(ch)!=0));
+    if (usedChannels.count(ch)) assert(axisLow>=US_MIN+CAL_ENDPOINT_MARGIN_US &&
+                                       axisHigh<=US_MAX-CAL_ENDPOINT_MARGIN_US &&
+                                       axisLow<=axisHigh);
+  }
+  std::cout << "PASS: all 20 connected axes have a bounded calibration range; unused channels reject selection\n";
+
+  // 校正範囲は論理関節角を実際の raw PWM へ写す契約そのものを表駆動で
+  // 検査する。特に FR/RL の pitch・knee は JOINT_SIGN=-1 のため、符号を
+  // 落とすと端点が左右反転してしまう。trim も通常出力と同じ zero へ加える。
+  const int endpointLow = US_MIN + CAL_ENDPOINT_MARGIN_US;
+  const int endpointHigh = US_MAX - CAL_ENDPOINT_MARGIN_US;
+  auto checkCalibrationAxis = [&](int ch, float logicalMin, float logicalMax,
+                                  int sign) {
+    const float usPerDeg = (US_MAX - US_MIN) / DEG_RANGE;
+    const float rawMinDeg = std::fmin(logicalMin * sign, logicalMax * sign);
+    const float rawMaxDeg = std::fmax(logicalMin * sign, logicalMax * sign);
+    const float zeroUs = (US_MIN + US_MAX) * 0.5f + calibration.trim(ch);
+    const int mappedLow = (int)std::ceil(zeroUs + rawMinDeg * usPerDeg);
+    const int mappedHigh = (int)std::floor(zeroUs + rawMaxDeg * usPerDeg);
+    const int expectedLow = mappedLow > endpointLow ? mappedLow : endpointLow;
+    const int expectedHigh = mappedHigh < endpointHigh ? mappedHigh : endpointHigh;
+    int actualLow = 0, actualHigh = 0;
+    assert(calibration.calibrationPulseRange(ch, actualLow, actualHigh));
+    assert(actualLow == expectedLow && actualHigh == expectedHigh);
+
+    // 両端値は許可され、選択軸以外は常に PCA の ALL_LED_OFF 状態にする。
+    for (int pulse : {actualLow, actualHigh}) {
+      pwmEvents().clear();
+      assert(calibration.calibrateUs(ch, pulse, false, true, true));
+      for (int board = 0; board < 2; ++board)
+        for (int local = 0; local < 16; ++local) {
+          const int global = board * 16 + local;
+          if (global == ch) assert(fakePCA[board].ticks[local] != 4096);
+          else assert(fakePCA[board].ticks[local] == 4096);
+        }
+      assert(!pwmEvents().empty() &&
+             pwmEvents().back().board * 16 + pwmEvents().back().ch == ch);
+    }
+    // 端点の外側は拒否され、その時点で残留出力も全消灯する。
+    pwmEvents().clear();
+    assert(!calibration.calibrateUs(ch, actualLow - 1, false, true, true));
+    for (const auto& board : fakePCA)
+      for (int ticks : board.ticks) assert(ticks == 4096);
+  };
+
+  for (int leg = 0; leg < 4; ++leg) {
+    checkCalibrationAxis(PCA_CH[leg][0], -LIM_YAW, LIM_YAW,
+                         JOINT_SIGN[leg][0]);
+    checkCalibrationAxis(PCA_CH[leg][1], LIM_PITCH_UP, LIM_PITCH_DN,
+                         JOINT_SIGN[leg][1]);
+    checkCalibrationAxis(PCA_CH[leg][2], -LIM_KNEE, LIM_KNEE,
+                         JOINT_SIGN[leg][2]);
+  }
+  for (int arm = 0; arm < 2; ++arm) {
+    checkCalibrationAxis(ARM_CH[arm][0], -ARM_YAW_LIM, ARM_YAW_LIM,
+                         ARM_SIGN[arm]);
+    checkCalibrationAxis(ARM_CH[arm][1], ARM_PITCH_MIN, ARM_PITCH_MAX, +1);
+    checkCalibrationAxis(ARM_CH[arm][2], ARM_ELBOW_MIN - 45.0f,
+                         ARM_ELBOW_MAX - 45.0f, +1);
+  }
+  checkCalibrationAxis(EYE_CH[0], -EYE_LIM, EYE_LIM, +1);
+  checkCalibrationAxis(EYE_CH[2], -EYE_LIM, EYE_LIM, +1);
+  // 非対称な FR pitch に trim を入れた場合も raw 範囲が同じ量だけ移動する。
+  calibration.setTrim(PCA_CH[FR][1], 37);
+  checkCalibrationAxis(PCA_CH[FR][1], LIM_PITCH_UP, LIM_PITCH_DN,
+                       JOINT_SIGN[FR][1]);
+  calibration.setTrim(PCA_CH[FR][1], 0);
+  std::cout << "PASS: table-driven raw calibration mapping covers all signs, endpoints, trim, margin, and full-off\n";
   LegCmd target[4]={};for(auto& l:target)l.ok=true;
   target[FR].ang.yaw=35;target[FL].ang.yaw=-35;
   LegOutput output;
