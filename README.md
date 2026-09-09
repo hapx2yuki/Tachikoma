@@ -7,7 +7,8 @@
 **2026-09-05 第2次監査結果:** 実サーボの占有、固定部品内部、挿入経路、材料別接触、実制御とSTL変換まで検査し、再現した不具合を修正。
 全STL/URDFを再生成したが、頭内収納・頭固定・首/Cabin・脚装飾・足裏支持に未解決事項があり、そのまま組立歩行できる設計とは判定していない。
 本文の旧「全検証PASS」は当時の検査範囲の記録であり、組立・実機歩行の合格を示さない。
-最新は[第2次監査](docs/audits/20260905-round2/README.md)と
+公開候補の最新記録は[2026-09-09再開監査](docs/audits/20260909-resume/README.md)です（WIP）。
+これは実印刷・実組立・通電・歩行の完了を示しません。設計の根拠・残課題は[第2次監査](docs/audits/20260905-round2/README.md)と
 [監査Issue #80](https://github.com/hapx2yuki/Tachikoma/issues/80)を参照。
 
 **追加で揃えるもの:** [印刷優先構成の現在地](docs/print-first.md) / [追加購入の全一覧](docs/additional-purchases.md) / [追加印刷・再使用の全一覧](docs/additional-printing.md)。必要総数と手持ちの確認済み数量を区別し、設計未確定の部品を発注・一括印刷する指示にはしていない。[全Issuesの更新内容と着手条件](docs/issues-audit-20260905.md)も参照。

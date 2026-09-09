@@ -198,8 +198,8 @@
       "path": "README.md",
       "role": "source_dependency:repository_context",
       "exists": true,
-      "bytes": 50301,
-      "sha256": "b7d25f8ab992bdecc18cc12b91dd39c37754c68e6b758eff9fd47f9f49c1637c"
+      "bytes": 50512,
+      "sha256": "db0fe7e4c35935b5f7f086ec54bce851c544702ef37c34c74df68d5b61365393"
     },
     {
       "path": "docs/HANDOFF.md",
@@ -3952,8 +3952,8 @@
   },
   "counts": {
     "selected_path_count": 342,
-    "selected_total_bytes": 39611034,
-    "selected_total_mib": 37.77602577209473,
+    "selected_total_bytes": 39611245,
+    "selected_total_mib": 37.77622699737549,
     "source_dependency_path_count": 165,
     "audit_and_document_path_count": 29,
     "battery_source_mesh_count": 1,
@@ -4014,7 +4014,7 @@
     "checked_on": "2026-09-09",
     "status": "COMPOSITE_TREE_GENERATOR49_PASS",
     "method": "一時GIT_INDEX_FILEへHEADをread-treeし、selected_filesのworktree内容だけを追加してwrite-tree、そのtreeをarchiveして検査。実indexは変更なし。",
-    "tree_hash": "0211823915129f6192dcdc150860f0681c1d18e1",
+    "tree_hash": "c065210fbb0236d86bb3740c65612f3d7a888e1b",
     "selected_path_count": 342,
     "selected_missing_from_composite_tree": [],
     "canonical_required_path_count": 53,
