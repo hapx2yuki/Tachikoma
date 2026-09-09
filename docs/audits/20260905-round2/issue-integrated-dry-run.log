@@ -1,0 +1,23 @@
+== labels ==
+== milestones ==
+== issues ==
+  + issue RV-16: RV-16 [機構不具合] 大腿・脛ガードの受け座と実際に入る組立経路を作る
+  + issue RV-17: RV-17 [機構不具合] 固定爪・指・指飾りの嵌合公差と接着座を検証する
+  ~ body/meta PR-06 (#24): ['body']
+  ~ body/meta A-01 (#46): ['body']
+  ~ body/meta A-02 (#47): ['body']
+  ~ body/meta A-04 (#49): ['body']
+  ~ body/meta S-02a (#58): ['body']
+  ~ body/meta S-02b (#59): ['body']
+  ~ body/meta S-02c (#60): ['body']
+  ~ body/meta S-02d (#61): ['body']
+  ~ body/meta RV-05 (#85): ['body']
+  ~ body/meta RV-08 (#89): ['body']
+  ~ body/meta RV-10 (#91): ['body']
+  ~ body/meta RV-12 (#93): ['body']
+== relations ==
+  blocked #24 (PR-06) by #17 (P-07)
+  blocked #24 (PR-06) by #90 (RV-09)
+  blocked #24 (PR-06) by #96 (RV-15)
+  planned RV-16: parent=E7, blocked_by=[]
+  planned RV-17: parent=E5, blocked_by=[]

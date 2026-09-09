@@ -1,0 +1,116 @@
+[verify] PLA_Matte_Blue_1.3mf
+    shin_shell.stl: 1 instance(s), PLA, distance=5.847446552324097e-06mm
+    要確認: QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認
+[verify] PLA_Matte_Blue_5_HeadTop.3mf
+    Head_Top_Eyecut.stl: 1 instance(s), PLA, distance=9.191498081920573e-07mm
+[verify] PLA_Matte_Gray.3mf
+    thigh_cap.stl: 4 instance(s), PLA, distance=8.00942897307415e-07mm
+    leg_foot_bored.stl: 4 instance(s), PLA, distance=6.977074129202151e-07mm
+    Mouth_Cannon_Bored.stl: 1 instance(s), PLA, distance=6.265344478033568e-07mm
+    Mouth_Ball_Bored.stl: 1 instance(s), PLA, distance=8.458083416882112e-07mm
+[verify] PLA_Matte_White.3mf
+    eye_pod.stl: 2 instance(s), PLA, distance=8.20935979152292e-07mm
+    eye_pod_camera_shell.stl: 1 instance(s), PLA, distance=7.560389427305137e-07mm
+    eye_pod_camera_base.stl: 1 instance(s), PLA, distance=4.995278145805625e-07mm
+[verify] elbow_shells_PLA_Matte.3mf
+    elbow_shell.stl: 1 instance(s), PLA, distance=4.785893486213402e-07mm
+    elbow_shell_L.stl: 1 instance(s), PLA, distance=4.785893486213402e-07mm
+[verify] foot_pad.3mf
+    foot_pad.stl: 1 instance(s), TPU, distance=2.429809435074144e-07mm
+    要確認: QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認
+[verify] PLA_Matte_White_3_CamBase.3mf
+    eye_pod_camera_base.stl: 1 instance(s), PLA, distance=4.995278145805625e-07mm
+[verify] PLA_Matte_Blue_2.3mf
+    Head_Bottom_Armcut.stl: 1 instance(s), PLA, distance=2.1149321664765334e-06mm
+    要確認: QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認
+[verify] PLA_Matte_Blue_3.3mf
+    Cabin_Front_Blue.stl: 1 instance(s), PLA, distance=6.230402812629436e-06mm
+[verify] PLA_Matte_Blue_4.3mf
+    Cabin_Back_Blue_Repaired.stl: 1 instance(s), PLA, distance=5.5319161169739176e-06mm
+    Head_TailJoint_Blue_Optional_Cross.stl: 1 instance(s), PLA, distance=3.372542708297755e-06mm
+    Leg_Thigh_Guard_Blue_x4.stl: 4 instance(s), PLA, distance=1.4539664349614376e-06mm
+[verify] PLA_Matte_Gray_2.3mf
+    Mouth_Cap_Grey.stl: 1 instance(s), PLA, distance=6.835990218161504e-07mm
+    Leg_Shin_Guard_Grey_x4.stl: 4 instance(s), PLA, distance=7.130122362967556e-07mm
+    Head_TailJoint_Peg_Optional_Cross_Repaired.stl: 1 instance(s), PLA, distance=7.388504683189261e-07mm
+    Mouth_Key_Grey.stl: 1 instance(s), PLA, distance=0.00014882201562919301mm
+    Arm_Left_Claw_Grey.stl: 2 instance(s), PLA, distance=5.385058210410885e-07mm
+    Cabin_Turrent_Right_Grey.stl: 1 instance(s), PLA, distance=7.543040237425627e-07mm
+    Arm_Right_Guard_Grey.stl: 1 instance(s), PLA, distance=4.975235161347978e-07mm
+    Arm_Left_Guard_Grey.stl: 1 instance(s), PLA, distance=5.000284351125006e-07mm
+    Head_Peg_Lower.stl: 1 instance(s), PLA, distance=9.248608859271408e-06mm
+    Head_Peg_Upper.stl: 1 instance(s), PLA, distance=9.769472543133649e-06mm
+    Head_TailJoint_Peg.stl: 1 instance(s), PLA, distance=1.0322181705977988e-05mm
+    Cabin_Turret_Peg_x2.stl: 2 instance(s), PLA, distance=1.1842060075987146e-05mm
+    Cabin_Spinnarette_Grey_x4.stl: 4 instance(s), PLA, distance=0.00014131023139962788mm
+    Mouth_Peg_Grey.stl: 1 instance(s), PLA, distance=0.003530354118055822mm
+    Head_Dome_Grey.stl: 1 instance(s), PLA, distance=7.978902390987577e-08mm
+    Head_Plug_Grey.stl: 1 instance(s), PLA, distance=8.322438379099943e-08mm
+    Cabin_Turrent_Left_Grey.stl: 1 instance(s), PLA, distance=7.601718888114108e-07mm
+    Head_Screw_Grey_x2.stl: 2 instance(s), PLA, distance=7.629773841380886e-08mm
+    Arm_Left_FingerTip_Grey_x3.stl: 6 instance(s), PLA, distance=0.00010032634856596602mm
+    Cabin_Peg_x2.stl: 2 instance(s), PLA, distance=3.303209654140069e-06mm
+    Head_TailJoint_Ball_Grey_Optional_Cross.stl: 1 instance(s), PLA, distance=0.00013656087488368552mm
+[verify] PLA_Black_1.3mf
+    Cabin_Front_Insert_Bottom_Wide_Black.stl: 1 instance(s), PLA, distance=4.979882457584881e-07mm
+    Head_Insert_Black_x4.stl: 4 instance(s), PLA, distance=7.501176171505071e-08mm
+    Leg_Toe_Black_x12.stl: 12 instance(s), PLA, distance=4.991001890438979e-07mm
+    Arm_Left_Finger_Black_x3.stl: 6 instance(s), PLA, distance=8.174797663139974e-08mm
+    Cabin_Front_Insert_Bottom_Long_Black_x2.stl: 2 instance(s), PLA, distance=4.905582409504896e-07mm
+    Cabin_Front_Insert_Front_Black.stl: 1 instance(s), PLA, distance=4.992970503730167e-07mm
+    Cabin_Front_Insert_Left_Black.stl: 1 instance(s), PLA, distance=4.921963658884497e-07mm
+    Cabin_Front_Insert_Right_Black.stl: 1 instance(s), PLA, distance=4.96747984501335e-07mm
+    Cabin_Front_Insert_Back_Black_x2.stl: 2 instance(s), PLA, distance=4.890658885503627e-07mm
+[verify] PLA_Red_1.3mf
+    Cabin_RedLight_Large_Red_x4.stl: 4 instance(s), PLA, distance=0.0013046879718947586mm
+    Cabin_RedLight_Small_Red_x4.stl: 4 instance(s), PLA, distance=0.0012762452185541685mm
+[verify] PLA_Matte_White_2.3mf
+    Cabin_Eye_White.stl: 1 instance(s), PLA, distance=1.407693656191374e-06mm
+[verify] PETG_1_Chassis.3mf
+    audio_cradle_spk.stl: 1 instance(s), PETG, distance=5.31624840571789e-08mm
+    chassis.stl: 1 instance(s), PETG, distance=6.955876564746252e-07mm
+    eye_carrier.stl: 2 instance(s), PETG, distance=4.942884544875431e-07mm
+    claw_mount.stl: 1 instance(s), PETG, distance=5.4532204358934507e-08mm
+    claw_mount_L.stl: 1 instance(s), PETG, distance=5.4532204358934507e-08mm
+[verify] PETG_2_Tibia.3mf
+    pod_neck.stl: 1 instance(s), PETG, distance=6.540495002081542e-07mm
+    tibia_link.stl: 2 instance(s), PETG, distance=4.999401973659867e-06mm
+    tibia_link_m.stl: 2 instance(s), PETG, distance=4.999401973659867e-06mm
+[verify] PETG_3_Femur.3mf
+    femur_link.stl: 2 instance(s), PETG, distance=7.265882317165015e-07mm
+    femur_link_m.stl: 2 instance(s), PETG, distance=7.265882317165015e-07mm
+    battery_cradle.stl: 1 instance(s), PETG, distance=6.355312504250821e-07mm
+[verify] PETG_4_CoxaArm.3mf
+    shoulder_bracket.stl: 1 instance(s), PETG, distance=8.128406156007641e-07mm
+    shoulder_bracket_L.stl: 1 instance(s), PETG, distance=8.128406156007641e-07mm
+    forearm.stl: 1 instance(s), PETG, distance=6.538021916674999e-07mm
+    forearm_L.stl: 1 instance(s), PETG, distance=6.538021916674999e-07mm
+    camera_carrier.stl: 1 instance(s), PETG, distance=4.999753544715886e-07mm
+    coxa_bracket.stl: 2 instance(s), PETG, distance=7.731000205876879e-07mm
+    coxa_bracket_m.stl: 2 instance(s), PETG, distance=7.731000205876879e-07mm
+    upper_arm.stl: 1 instance(s), PETG, distance=6.900299411601143e-07mm
+    upper_arm_L.stl: 1 instance(s), PETG, distance=6.900299411601143e-07mm
+[verify] PETG_5_Mic.3mf
+    audio_cradle_mic.stl: 1 instance(s), PETG, distance=1.5419025315773844e-07mm
+[verify] PETG_Walk_1_Chassis.3mf
+    battery_cradle.stl: 1 instance(s), PETG, distance=9.975143675223524e-07mm
+    chassis.stl: 1 instance(s), PETG, distance=3.8646972665384475e-06mm
+    audio_cradle_mic.stl: 1 instance(s), PETG, distance=4.7428696546930225e-07mm
+[verify] PETG_Walk_2_CoxaFemur.3mf
+    femur_link.stl: 2 instance(s), PETG, distance=7.265882317165015e-07mm
+    femur_link_m.stl: 2 instance(s), PETG, distance=7.265882317165015e-07mm
+    coxa_bracket.stl: 2 instance(s), PETG, distance=7.731000205876879e-07mm
+    coxa_bracket_m.stl: 2 instance(s), PETG, distance=7.731000205876879e-07mm
+[verify] PETG_Walk_3_Tibia.3mf
+    tibia_link.stl: 2 instance(s), PETG, distance=4.999401973659867e-06mm
+    tibia_link_m.stl: 2 instance(s), PETG, distance=4.999401973659867e-06mm
+[verify] PETG_Walk_4_Rest.3mf
+    camera_carrier.stl: 1 instance(s), PETG, distance=1.0246491922234202e-06mm
+    claw_mount.stl: 1 instance(s), PETG, distance=5.651709769866213e-09mm
+    claw_mount_L.stl: 1 instance(s), PETG, distance=5.651709769866213e-09mm
+    audio_cradle_spk.stl: 1 instance(s), PETG, distance=6.496223612368184e-09mm
+    pod_neck.stl: 1 instance(s), PETG, distance=1.000481614455531e-06mm
+    forearm_L.stl: 1 instance(s), PETG, distance=1.1526867128681222e-06mm
+    forearm.stl: 1 instance(s), PETG, distance=1.1526867128681222e-06mm
+    eye_carrier.stl: 2 instance(s), PETG, distance=4.690273595428436e-08mm
+    要確認: QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認

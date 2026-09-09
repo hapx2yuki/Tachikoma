@@ -56,7 +56,7 @@ if __name__ == "__main__":
   脚: coxa_bracket/femur_link/tibia_link/shin_shell 標準 ×2 (FL,RR) +
       ミラー版 _m ×2 (FR,RL)。leg_foot_bored(PLA灰)/foot_pad(TPU)/thigh_cap
       は対称なので共通 ×4。Leg_Toe_Black_x12 (元キット STL 150%, 無加工)
-      ×3/脚=12 を leg_foot_bored の甲へ瞬間接着
+      ×3/脚=12。現行は根元嵌合と先行接地が未成立 (RV-06)。組立前に改修が必要
   胴: chassis / pod_neck / battery_cradle 各1
   腕: shoulder_bracket/upper_arm/forearm/claw_mount/arm_pod_upper/
       arm_pod_lower/elbow_shell 右用+_L 各1 (固定爪化, 2026-07-29)。
@@ -74,8 +74,8 @@ if __name__ == "__main__":
       元パーツ Cabin_Eye_White をそのまま無加工で使う)
   頭部: Head_Bottom_Armcut を Head_Bottom_Blue の代わりに1個印刷 (2026-07-30
       追加。腕ソケットを肩ヨー可動域全域で干渉しないよう拡口済み+マウス
-      ソケット奥に配線受け穴を焼き込み済み。他の Head一式は無加工のまま
-      従来どおり)
+      ソケット奥に配線受け穴を焼き込み済み。Head_Top_Eyecutは別途
+      tools/make_head_eyecut.pyで生成。頭内収納と頭固定は未解決)
   ポッドネック: pod_neck 先端 NECK_TAPER_LEN 区間を丸ポストへ絞り込み済み
-      (2026-07-30, TailJoint_Blue/Ball は無加工のまま被せるだけでよい —
-      旧「梁先端4隅を現物合わせで面取り」は不要)""")
+      (2026-09-05監査: TailJoint_Blue/Ballの中実部分と実体交差が残る。
+      被せるだけでは組立できないため、首/受け側の設計検証が必要)""")

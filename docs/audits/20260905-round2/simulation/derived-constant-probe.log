@@ -1,0 +1,2 @@
+native_nominal PASS roll 4.24 pitch 2.3 power {'mean': 1.307797097318215, 'max': 35.62979920903849, 'p95': 4.426409312911933} self initial mm 0
+SCENARIO RESULTS: {'PASS': 1}

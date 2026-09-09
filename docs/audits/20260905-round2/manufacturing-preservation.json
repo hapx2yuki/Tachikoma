@@ -1,0 +1,632 @@
+{
+  "backup": "/Users/uratayuuki/Documents/Tachikoma-audit-backups/20260905-153305-round2/round2-start.tar.gz",
+  "stl_changes": 12,
+  "geometry_changes": 10,
+  "placement_only": 2,
+  "serialization_only": 0,
+  "all_changed_stls_closed": true,
+  "protected_files": 124,
+  "all_protected_unchanged": true,
+  "protected": [
+    {
+      "path": "TACHIKOMA_Phase0_PETG.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/urdf/render_ref_stand.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/urdf/render_urdf_stand.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/urdf/render_shin_before.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/urdf/render_shin_after.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/elbow_shells_PLA_Matte.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Matte_Gray.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PETG_Walk_2_CoxaFemur.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/claw_mount_L.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Matte_Blue_3.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Matte_Blue_2.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Matte_White_3_CamBase.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PETG_Walk_4_Rest.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Matte_Blue_1.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PETG_2_Tibia.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Matte_Blue_4.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Matte_Blue_5_HeadTop.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Black_1.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/leg_foot_bored.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PETG_3_Femur.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Matte_Gray_2.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PETG_Walk_3_Tibia.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PETG_1_Chassis.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Red_1.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/eye_pod_camera_base_x2.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PETG_Walk_1_Chassis.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PETG_4_CoxaArm.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/foot_pad.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Matte_White_2.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PLA_Matte_White.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "hardware/stl/PETG_5_Mic.3mf",
+      "kind": "print_project",
+      "unchanged": true
+    },
+    {
+      "path": "tachikoma_urdf_20260731/hardware/urdf/render_ref_stand.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "tachikoma_urdf_20260731/hardware/urdf/render_urdf_stand.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "tachikoma_urdf_20260731/hardware/urdf/render_shin_before.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "tachikoma_urdf_20260731/hardware/urdf/render_shin_after.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_chassis_layout.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_walk.mp4",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_shin_shell_detail.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/preview_leg_parts.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_head_center_sweep3.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/preview_arm_parts.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_eyes.mp4",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/preview_shells.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_mouth_cannon_pose_before_after.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_exploded_leg.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/preview_leg_assembly.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/preview_chassis.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/preview_gait.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/preview_robot.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_elbow_detail.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_proportions.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_physics_walk.mp4",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_shin_orientation_check.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_hand_detail.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_shin_shell_relief_removed.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_wiring.mp4",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_head_center_before_after.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_exploded_arm.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vis_assembly_steps.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/audits/20260905/foot_contact_115mm.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/audits/20260905/preview_leg_assembly.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/audits/20260905/preview_gait.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/audits/20260905/final-check_leg_assembly.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/audits/20260905/final-sim_gait.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/audits/20260905/simulation/forward_nominal_5s.png",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "docs/audits/20260905/simulation/forward_nominal.mp4",
+      "kind": "media",
+      "unchanged": true
+    },
+    {
+      "path": "model/Arm_Left_FingerTip_Grey_x3.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Plate_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Arm_Left_Elbow_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Leg_AnkleJoint_Grey_x4_Repaired.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Leg_KneeJoint_Grey_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Peg_Lower.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Spinnarette_Grey_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Stand_mount_Optional.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_TailJoint_Blue_Optional_Cross.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Insert_Black_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Arm_Right_Claw_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_TailJoint_Peg.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Peg_Upper.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Leg_HipJoint_Socket_Grey_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Screw_Grey_x2.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Turrent_Right_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Leg_Shin_Guard_Grey_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Turrent_Left_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Leg_Foot_Grey_x4_Repaired.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Eye_White_x3.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Plug_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Eye_White.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Mouth_Cannon_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Arm_Left_Claw_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Arm_Right_Elbow_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Mouth_Neck_Blue.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Front_Insert_Back_Black_x2.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Bottom_Blue.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Peg_x2.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Front_Insert_Right_Black.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Arm_Right_Guard_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Mouth_Peg_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Mouth_Key_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Front_Blue.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Arm_Right.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Top_Blue.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Bottom_Cap_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Mouth_Cap_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Front_Insert_Bottom_Wide_Black.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_TailJoint_Peg_Optional_Cross_Repaired.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Arm_Left.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Leg_Toe_Black_x12.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Back_Blue_Repaired.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_TailJoint_Ball_Grey_Optional_Cross.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Turret_Peg_x2.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Front_Insert_Left_Black.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Leg_HipJoint_Grey_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Front_Insert_Bottom_Long_Black_x2.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_RedLight_Large_Red_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Mouth_Ball_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_Front_Insert_Front_Black.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Leg_Thigh_Grey_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Cabin_RedLight_Small_Red_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Leg_Thigh_Guard_Blue_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Leg_Shin_Blue_x4.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Arm_Left_Finger_Black_x3.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Head_Dome_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    },
+    {
+      "path": "model/Arm_Left_Guard_Grey.stl",
+      "kind": "mesh",
+      "unchanged": true
+    }
+  ]
+}

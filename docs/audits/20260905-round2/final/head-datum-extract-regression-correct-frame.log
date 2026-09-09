@@ -1,0 +1,18 @@
+test_asymmetric_internal_cut_keeps_original_reference_frame (tools.tests.test_render_contracts.RenderContracts.test_asymmetric_internal_cut_keeps_original_reference_frame) ... ok
+test_failed_ik_does_not_render_invented_pose (tools.tests.test_render_contracts.RenderContracts.test_failed_ik_does_not_render_invented_pose) ... ok
+test_foot_render_matches_projected_workspace_at_height_limits (tools.tests.test_render_contracts.RenderContracts.test_foot_render_matches_projected_workspace_at_height_limits) ... ok
+test_head_shell_follows_config_and_matches_child_frame (tools.tests.test_render_contracts.RenderContracts.test_head_shell_follows_config_and_matches_child_frame) ... ok
+test_holding_is_independent_of_gait_phase (tools.tests.test_render_contracts.RenderContracts.test_holding_is_independent_of_gait_phase) ... ok
+test_mirrored_arm_retains_outward_winding (tools.tests.test_render_contracts.RenderContracts.test_mirrored_arm_retains_outward_winding) ... ok
+test_previews_share_current_holding_pose (tools.tests.test_render_contracts.RenderContracts.test_previews_share_current_holding_pose) ... ok
+test_replaced_stl_refreshes_in_same_process (tools.tests.test_render_contracts.RenderContracts.test_replaced_stl_refreshes_in_same_process) ... ok
+test_conflicting_duplicate_refuses_entire_batch (tools.tests.test_extract_meshes.ExtractMeshesTests.test_conflicting_duplicate_refuses_entire_batch) ... ok
+test_existing_part_is_not_overwritten (tools.tests.test_extract_meshes.ExtractMeshesTests.test_existing_part_is_not_overwritten) ... ok
+test_meaningful_part_number_is_preserved (tools.tests.test_extract_meshes.ExtractMeshesTests.test_meaningful_part_number_is_preserved) ... ok
+test_xml_attribute_order_single_quotes_and_units (tools.tests.test_extract_meshes.ExtractMeshesTests.test_xml_attribute_order_single_quotes_and_units) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.127s
+
+OK
+Peg                                              10.0 x   10.0 x   10.0 mm  watertight=True

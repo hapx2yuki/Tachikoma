@@ -39,39 +39,15 @@ def trans(x, y, z):
     return m
 
 
-def build():
-    # ヨー軸原点は股ピッチ軸より 27.6mm 上 (STD ヨーサーボのホーンスタック分)
-    HIP_DROP = C.HIP_DROP
-    meshes = []
-    chassis = trimesh.load(STL / "chassis.stl")
-    chassis.apply_transform(trans(0, 0, BODY_H + HIP_DROP))
-    meshes.append(("#8899aa", chassis))
+def stance_meshes():
+    """ミラー脚と重心補正を含む現行の保持姿勢を使う。"""
+    from make_visuals import robot_meshes, ARM_READY
+    return [(c, m) for m, c, _ in robot_meshes(
+        0.0, 0.0, 0.0, 0.0, BODY_H, arms=ARM_READY, holding=True)]
 
-    # 腕 (READY 姿勢)
-    from make_visuals import arm_meshes, ARM_READY
-    for side in (1, -1):
-        for m, c, a in arm_meshes(side, ARM_READY, BODY_H + HIP_DROP,
-                                  body_h=BODY_H):
-            meshes.append((c, m))
 
-    ang = leg_ik(STANCE_R, 0.0, -BODY_H)
-    assert ang, "stance unreachable"
-    yaw_d, pitch_d, knee_d = ang
-    for leg in range(4):
-        mnt = np.degrees(MOUNT[leg])
-        base = trans(ORIGIN[leg][0], ORIGIN[leg][1], BODY_H) @ rot(mnt + yaw_d, "z")
-        cox = trimesh.load(STL / "coxa_bracket.stl")
-        cox.apply_transform(base)
-        meshes.append(("#5577cc", cox))
-        fem = trimesh.load(STL / "femur_link.stl")
-        T_hip = base @ trans(C.COXA_LEN, 0, 0) @ rot(pitch_d, "y")
-        fem.apply_transform(T_hip)
-        meshes.append(("#cc7755", fem))
-        tib = trimesh.load(STL / "tibia_link.stl")
-        T_knee = T_hip @ trans(C.FEMUR_LEN, 0, 0) @ rot(knee_d, "y")
-        tib.apply_transform(T_knee)
-        meshes.append(("#55aa77", tib))
-
+def build(out=None):
+    meshes = stance_meshes()
     fig = plt.figure(figsize=(15, 5.5))
     light = np.array([0.4, -0.6, 0.7]); light /= np.linalg.norm(light)
     for i, (elev, azim) in enumerate([(18, -50), (5, -90), (35, -20)]):
@@ -90,16 +66,22 @@ def build():
         r = float((pts.max(0) - pts.min(0)).max()) / 2 * 1.02
         ax.set_xlim(cmid[0] - r, cmid[0] + r)
         ax.set_ylim(cmid[1] - r, cmid[1] + r)
-        ax.set_zlim(0, 2 * r)
+        zmin = min(0.0, float(pts[:, 2].min()) - 2.0)
+        ax.set_zlim(zmin, zmin + 2 * r)
         ax.set_box_aspect([1, 1, 1]); ax.axis("off")
         ax.view_init(elev=elev, azim=azim)
     fig.suptitle("Tachikoma walker — skeleton stance (body height 115 mm)")
     fig.tight_layout()
-    out = ROOT / "docs" / "preview_robot.png"
+    out = Path(out) if out else ROOT / "docs" / "preview_robot.png"
+    out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=110, facecolor="white")
     print(f"saved {out}")
-    print(f"stance angles: yaw={yaw_d:.1f} pitch={pitch_d:.1f} knee={knee_d:.1f}")
+    plt.close(fig)
+    print("現行の保持姿勢。接触・トルクは物理シミュレーションで別途検証する。")
 
 
 if __name__ == "__main__":
-    build()
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path)
+    build(parser.parse_args().output)

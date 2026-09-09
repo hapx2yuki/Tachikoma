@@ -1,0 +1,12 @@
+{
+  "video": "docs/audits/20260905-round2/simulation/native-nominal-replay.mp4",
+  "video_sha256": "8639e2de9de40b53aea6db7a6431a714ff2f4fa36bfec8184245b90cf4359392",
+  "source_result": "docs/audits/20260905-round2/simulation/stress-final/native_nominal.json",
+  "source_result_sha256": "bfdbc8abe68337a6b299c7eb3d402aece887625b1027e73550d617a62dac58f9",
+  "render_script_sha256": "7207c8bc509b8b95d444316f789f013d08bd781a74384a8a53a0afbfb1d103e1",
+  "frames": 101,
+  "playback_fps": 10,
+  "last_simulation_time_s": 10.000000000000009,
+  "input_hashes_match_current": true,
+  "interpretation": "保存した実積分qposの再生。10Hz抽出で中間姿勢を省く。物理計算を再実行した映像ではない。"
+}

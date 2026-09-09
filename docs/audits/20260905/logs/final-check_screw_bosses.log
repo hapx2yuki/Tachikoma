@@ -1,0 +1,30 @@
+  coxa tab#0: fill  74.3%  OK
+  coxa tab#1: fill  74.3%  OK
+  coxa tab#2: fill  99.2%  OK
+  coxa tab#3: fill  99.2%  OK
+  femur tab#0: fill  74.3%  OK
+  femur tab#1: fill  74.3%  OK
+  femur tab#2: fill  99.2%  OK
+  femur tab#3: fill  99.2%  OK
+  coxa_m tab#0: fill  74.3%  OK
+  coxa_m tab#1: fill  74.3%  OK
+  coxa_m tab#2: fill  99.2%  OK
+  coxa_m tab#3: fill  99.2%  OK
+  femur_m tab#0: fill  74.3%  OK
+  femur_m tab#1: fill  74.3%  OK
+  femur_m tab#2: fill  99.2%  OK
+  femur_m tab#3: fill  99.2%  OK
+  chassis tab(FR)#0: fill  96.1%  OK
+  chassis tab(FR)#1: fill 100.0%  OK
+  chassis tab(FR)#2: fill 100.0%  OK
+  chassis tab(FR)#3: fill 100.0%  OK
+  chassis tab(RR)#0: fill  93.7%  OK
+  chassis tab(RR)#1: fill  95.5%  OK
+  chassis tab(RR)#2: fill 100.0%  OK
+  chassis tab(RR)#3: fill 100.0%  OK
+  chassis arm tab#0: fill  72.7%  OK
+  chassis arm tab#1: fill  72.7%  OK
+  chassis arm tab#2: fill  72.7%  OK
+  chassis arm tab#3: fill  72.7%  OK
+
+result: OK

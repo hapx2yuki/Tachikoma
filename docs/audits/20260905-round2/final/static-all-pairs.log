@@ -1,0 +1,372 @@
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: divide by zero encountered in divide
+  center_mass = integrated[1:4] / volume
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+{
+  "parts": 58,
+  "all_pairs": 1653,
+  "tested_aabb_pairs": 96,
+  "intersection_tolerance_mm3": 0.01,
+  "intersections": [
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Eye_White#single"
+      ],
+      "intersection_mm3": 7784.868782437443
+    },
+    {
+      "parts": [
+        "pod_neck",
+        "Head_TailJoint_Blue_Optional_Cross#single"
+      ],
+      "intersection_mm3": 3281.7411766610808
+    },
+    {
+      "parts": [
+        "Head_TailJoint_Blue_Optional_Cross#single",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 3016.282946541561
+    },
+    {
+      "parts": [
+        "leg_fl_yaw_servo_case",
+        "eye_r_servo_case"
+      ],
+      "intersection_mm3": 2456.55410606332
+    },
+    {
+      "parts": [
+        "pod_neck",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 2047.6050308862777
+    },
+    {
+      "parts": [
+        "leg_fr_yaw_servo_case",
+        "eye_l_servo_case"
+      ],
+      "intersection_mm3": 2033.397495588455
+    },
+    {
+      "parts": [
+        "eye_carrier#l",
+        "leg_fr_yaw_servo_case"
+      ],
+      "intersection_mm3": 1791.8043797622329
+    },
+    {
+      "parts": [
+        "eye_carrier#r",
+        "leg_fl_yaw_servo_case"
+      ],
+      "intersection_mm3": 1578.2101962128988
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_rr_yaw_servo_case"
+      ],
+      "intersection_mm3": 1277.3459158053313
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_rl_yaw_servo_case"
+      ],
+      "intersection_mm3": 1276.0713472083628
+    },
+    {
+      "parts": [
+        "pod_neck",
+        "Cabin_Front_Blue"
+      ],
+      "intersection_mm3": 1199.5520073678779
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 1152.8017193271533
+    },
+    {
+      "parts": [
+        "chassis",
+        "Mouth_Ball_Grey#single"
+      ],
+      "intersection_mm3": 1149.4680504260905
+    },
+    {
+      "parts": [
+        "pod_neck",
+        "Cabin_Eye_White#single"
+      ],
+      "intersection_mm3": 878.342330392286
+    },
+    {
+      "parts": [
+        "Cabin_Eye_White#single",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 836.4139405575721
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Left_Black#single"
+      ],
+      "intersection_mm3": 637.5792667415316
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Right_Black#single"
+      ],
+      "intersection_mm3": 634.4368738373772
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Bottom_Wide_Black#single"
+      ],
+      "intersection_mm3": 626.8043969708829
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_fr_yaw_servo_case"
+      ],
+      "intersection_mm3": 597.0211859220339
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_fl_yaw_servo_case"
+      ],
+      "intersection_mm3": 596.5392933970367
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Back_Black#left"
+      ],
+      "intersection_mm3": 468.75429340616375
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Back_Black#right"
+      ],
+      "intersection_mm3": 465.9977857139647
+    },
+    {
+      "parts": [
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_RedLight_Large#back_right"
+      ],
+      "intersection_mm3": 317.25387735773074
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Spinnarette_Grey#front_left"
+      ],
+      "intersection_mm3": 229.7681396102195
+    },
+    {
+      "parts": [
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Spinnarette_Grey#back_left"
+      ],
+      "intersection_mm3": 229.7585938480353
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Front_Black#single"
+      ],
+      "intersection_mm3": 212.75810637653183
+    },
+    {
+      "parts": [
+        "Cabin_Eye_White#single",
+        "Head_TailJoint_Blue_Optional_Cross#single"
+      ],
+      "intersection_mm3": 195.23999111511762
+    },
+    {
+      "parts": [
+        "Cabin_Turrent_Right_Grey#single",
+        "Cabin_Turret_Peg#right"
+      ],
+      "intersection_mm3": 155.05283771401082
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "arm_l_yaw_servo_case"
+      ],
+      "intersection_mm3": 153.1479278502493
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "arm_r_yaw_servo_case"
+      ],
+      "intersection_mm3": 147.45031199512064
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "Head_Insert_Black_x4#1_measured"
+      ],
+      "intersection_mm3": 128.2452980856924
+    },
+    {
+      "parts": [
+        "chassis",
+        "Mouth_Neck_Blue#single"
+      ],
+      "intersection_mm3": 115.50713429968555
+    },
+    {
+      "parts": [
+        "Mouth_Cap_Grey#single",
+        "Mouth_Neck_Blue#single"
+      ],
+      "intersection_mm3": 112.87958713391514
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Spinnarette_Grey#front_right"
+      ],
+      "intersection_mm3": 94.77494639703461
+    },
+    {
+      "parts": [
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Spinnarette_Grey#back_right"
+      ],
+      "intersection_mm3": 94.72571664289217
+    },
+    {
+      "parts": [
+        "pod_neck",
+        "Head_Top_Eyecut#single"
+      ],
+      "intersection_mm3": 89.22988833709617
+    },
+    {
+      "parts": [
+        "Cabin_Turrent_Left_Grey#single",
+        "Cabin_Turret_Peg#left"
+      ],
+      "intersection_mm3": 62.76838624134992
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "Head_Insert_Black_x4#2_estimated"
+      ],
+      "intersection_mm3": 32.822277221643596
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "Head_Screw_Grey_x2#2_estimated_mirror"
+      ],
+      "intersection_mm3": 8.72324019074055
+    },
+    {
+      "parts": [
+        "Head_Screw_Grey_x2#1_measured",
+        "arm_r_yaw_servo_case"
+      ],
+      "intersection_mm3": 5.400390208145965
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Bottom_Long_Black#left"
+      ],
+      "intersection_mm3": 5.01682739533183
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Bottom_Long_Black#right"
+      ],
+      "intersection_mm3": 4.875832319465592
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turret_Peg#left"
+      ],
+      "intersection_mm3": 4.7867824088688735
+    },
+    {
+      "parts": [
+        "Head_Screw_Grey_x2#2_estimated_mirror",
+        "arm_l_yaw_servo_case"
+      ],
+      "intersection_mm3": 3.7920143737623193
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turret_Peg#right"
+      ],
+      "intersection_mm3": 0.6168723760494039
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turrent_Right_Grey#single"
+      ],
+      "intersection_mm3": 0.5720815972648173
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Head_TailJoint_Blue_Optional_Cross#single"
+      ],
+      "intersection_mm3": 0.40430647061017316
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turrent_Left_Grey#single"
+      ],
+      "intersection_mm3": 0.3580358388426248
+    },
+    {
+      "parts": [
+        "Mouth_Cannon_Grey",
+        "Mouth_Key_Grey#single"
+      ],
+      "intersection_mm3": 0.2749305538760547
+    },
+    {
+      "parts": [
+        "chassis",
+        "Mouth_Cap_Grey#single"
+      ],
+      "intersection_mm3": 0.21906747602562424
+    },
+    {
+      "parts": [
+        "Mouth_Cap_Grey#single",
+        "Mouth_Key_Grey#single"
+      ],
+      "intersection_mm3": 0.07012044321022003
+    }
+  ],
+  "errors": [],
+  "pass": false,
+  "interpretation": "同じ剛体内部のため動的接触では検出できない。装飾と支持梁を含む。購入電装の仮位置箱は含めない。嵌合・数値近似・物理的に不可能な体積共有を個別解釈し、交差を自動的に除去しない。終了1は未解釈を含む交差あり。"
+}

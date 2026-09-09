@@ -1,0 +1,17 @@
+{
+  "baseline_files": 515,
+  "baseline_kinds": {
+    "structured": 110,
+    "document": 21,
+    "print_project": 27,
+    "source": 77,
+    "media": 39,
+    "mesh": 241
+  },
+  "covered_files": 515,
+  "missing_review": [],
+  "pending_current_hash_refresh": [],
+  "additional_reviewed_files": 157,
+  "additional_pending_current_hash_refresh": [],
+  "method_note": "読解/構造解析/実メッシュ検査/静止画目視/動画抽出を区別。動画全フレームの目視や不在の元Downloads3MFの確認を主張しない。実行環境/Git内部は対象外。担当記録の存在は全欠陥の不存在を意味しない。"
+}

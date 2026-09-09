@@ -1,0 +1,99 @@
+[
+  {
+    "name": "toe_shoe_forward_mu0.35",
+    "model": {
+      "contact_model": "vhacd",
+      "friction": 0.35,
+      "hard_friction": 0.3,
+      "foot_candidate_dir": "docs/audits/20260905-round2/foot-support-candidates"
+    },
+    "segments": [
+      {
+        "name": "settle",
+        "duration": 2.0
+      },
+      {
+        "name": "walk",
+        "duration": 6.4,
+        "vy": 1.0
+      },
+      {
+        "name": "stop",
+        "duration": 1.6
+      }
+    ]
+  },
+  {
+    "name": "toe_shoe_forward_mu0.6",
+    "model": {
+      "contact_model": "vhacd",
+      "friction": 0.6,
+      "hard_friction": 0.3,
+      "foot_candidate_dir": "docs/audits/20260905-round2/foot-support-candidates"
+    },
+    "segments": [
+      {
+        "name": "settle",
+        "duration": 2.0
+      },
+      {
+        "name": "walk",
+        "duration": 6.4,
+        "vy": 1.0
+      },
+      {
+        "name": "stop",
+        "duration": 1.6
+      }
+    ]
+  },
+  {
+    "name": "toe_shoe_forward_mu1.0",
+    "model": {
+      "contact_model": "vhacd",
+      "friction": 1.0,
+      "hard_friction": 0.3,
+      "foot_candidate_dir": "docs/audits/20260905-round2/foot-support-candidates"
+    },
+    "segments": [
+      {
+        "name": "settle",
+        "duration": 2.0
+      },
+      {
+        "name": "walk",
+        "duration": 6.4,
+        "vy": 1.0
+      },
+      {
+        "name": "stop",
+        "duration": 1.6
+      }
+    ]
+  },
+  {
+    "name": "toe_shoe_right_mu0.6",
+    "model": {
+      "contact_model": "vhacd",
+      "friction": 0.6,
+      "hard_friction": 0.3,
+      "foot_candidate_dir": "docs/audits/20260905-round2/foot-support-candidates"
+    },
+    "segments": [
+      {
+        "name": "settle",
+        "duration": 2.0
+      },
+      {
+        "name": "walk",
+        "duration": 6.4,
+        "vy": 0.0,
+        "vx": 1.0
+      },
+      {
+        "name": "stop",
+        "duration": 1.6
+      }
+    ]
+  }
+]

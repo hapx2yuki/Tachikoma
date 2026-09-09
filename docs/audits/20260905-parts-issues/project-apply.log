@@ -1,0 +1,91 @@
+Project reviewed: 96 changed items: 75 statuses: {'Todo': 8, 'Ready': 15, 'Blocked': 55, 'In Progress': 13, 'Done': 5}
+P-04 Status Blocked
+P-05 Status Blocked
+PR-01 Status Blocked
+PR-02 Status Blocked
+PR-03 Status Blocked
+PR-04 Status Blocked
+PR-05 Status Blocked
+PR-06 Status Blocked
+PR-07 Status Blocked
+PR-08 Status Blocked
+PR-09 Status Blocked
+PR-10 Status Blocked
+PR-10 レーン E2 印刷キュー
+EL-04 Status Blocked
+EL-07 Status Blocked
+EL-08 Status Blocked
+L-01 Status Blocked
+L-02 Status Blocked
+L-03 Status Blocked
+L-04 Status Blocked
+L-05 Status Blocked
+L-06 Status Blocked
+L-07 Status Blocked
+L-08 Status Blocked
+L-09 Status Blocked
+L-10 Status Blocked
+EL-09 Status Ready
+EL-09 レーン E3 電装
+EL-10 レーン E3 電装
+L-11 Status Ready
+L-11 レーン E4 脚・歩行
+A-01 Status Blocked
+A-02 Status Blocked
+A-03 Status Blocked
+A-04 Status Blocked
+H-01 Status Blocked
+H-02 Status Blocked
+H-03 Status Blocked
+H-04 Status Blocked
+H-05 Status Blocked
+H-06 Status In Progress
+S-01 Status Blocked
+S-02a Status Blocked
+S-02b Status Blocked
+S-02c Status Blocked
+S-02d Status Blocked
+S-03 Status Blocked
+S-04 Status Blocked
+S-05 Status Blocked
+S-06 Status Blocked
+S-07 Status Blocked
+I-01 Status Blocked
+I-02 Status Blocked
+I-03 Status Blocked
+I-04 Status Blocked
+I-05 Status Blocked
+I-06 Status In Progress
+I-08 Status In Progress
+I-08 レーン E8 統合
+I-07 Status Blocked
+PR-11 レーン E2 印刷キュー
+E9 Status In Progress
+E9 レーン E9 独立監査
+RV-01 レーン E9 独立監査
+RV-02 レーン E9 独立監査
+RV-03 レーン E9 独立監査
+RV-04 レーン E9 独立監査
+RV-05 レーン E9 独立監査
+RV-06 Status In Progress
+RV-06 レーン E4 脚・歩行
+RV-07 Status In Progress
+RV-07 レーン E7 意匠シェル
+RV-08 Status In Progress
+RV-08 レーン E6 頭部
+RV-09 Status In Progress
+RV-09 レーン E7 意匠シェル
+RV-10 Status In Progress
+RV-10 レーン E5 腕
+RV-11 Status In Progress
+RV-11 レーン E3 電装
+RV-12 レーン E9 独立監査
+RV-13 レーン E7 意匠シェル
+RV-14 レーン E4 脚・歩行
+RV-15 Status In Progress
+RV-15 レーン E7 意匠シェル
+RV-16 Status In Progress
+RV-16 レーン E7 意匠シェル
+RV-17 Status In Progress
+RV-17 レーン E5 腕
+VERIFIED all 96 project Status/Lane and Issue states

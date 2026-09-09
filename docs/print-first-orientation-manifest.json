@@ -1,0 +1,3320 @@
+{
+ "schema_version": 1,
+ "status": "ORIENTATION_CANDIDATE_FREEZE2_PENDING",
+ "as_of": "2026-09-06",
+ "source_policy": {
+  "assembly_json_unchanged": true,
+  "stl_unchanged": true,
+  "source_hashes_rechecked": true,
+  "final_freeze2_required": true,
+  "stale_hashes_are_not_relabelled": true
+ },
+ "transform_convention": {
+  "rotation": "extrinsic XYZ degrees, applied to source STL vertices about its origin",
+  "bed_translation": "after rotation, XY center is 0 and minimum Z is 0",
+  "bed_coordinate_units": "mm"
+ },
+ "orientation_rules": {
+  "chassis": "chassis underside down; identity rotation",
+  "shelf": "shelf underside down; identity rotation",
+  "yaw_cap": "X180; countersink side up, flat side down",
+  "pitch_knee_cap": "standard X+90 / mirror X-90; actual countersink side up, flat side down",
+  "cabin_rail": "Y90; broad side face down",
+  "complex_links": "actual-STL load/support candidate rotations are recorded separately from physical print verification"
+ },
+ "source_assemblies": {
+  "body": {
+   "path": "outputs/print-first-20260905/body/assembly.json",
+   "sha256": "8908d9bbdd2f908f018820854376f83d4268713b402a7dc0ec5ab9555bfd5630",
+   "status": "GEOMETRY_GENERATED_NOT_YET_FULL_ASSEMBLY_VALIDATED",
+   "source_sha256": {
+    "hardware/src/make_print_first_body.py": "731dd27748b1cc23cd7546714d47f273e1dddcd531ad0af5cec72f164ad53f2c",
+    "hardware/src/config.py": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "tools/print_first_assembly.py": "90b66a293e5b33bc4744d11a2bd28c9f72c9bed357c817244a760ef1344b6424",
+    "tools/print_first_components.py": "8bc68e4d8861407eaff043252a42f1188c165ff826b500d77c6176585cedc6c0",
+    "tools/xiao_retention_plan.py": "0fcfe08aeff7ce9fde3a368150f67c011d7ec820ec048a53833c97c3be568322",
+    "tools/export_urdf.py": "fcb960325bbf4bf03b23f4db7d6d70446db0fbf30f9c93732aada6ea4c59851f",
+    "hardware/src/make_ld220_adapter.py": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+    "hardware/src/make_print_first_leg.py": "1e8bc2fceb6afbe437c5a63ccfd9746cf54c988d16ff917e5cede7acb1b9c348",
+    "docs/audits/20260905-round2/xiao-retention-plan.json": "276591eeeb3f34946b32b92774454297ac0527e3a7d69e9da4c30683fbc9f7d5"
+   },
+   "integrity": {
+    "assembly_path": "outputs/print-first-20260905/body/assembly.json",
+    "assembly_sha256": "8908d9bbdd2f908f018820854376f83d4268713b402a7dc0ec5ab9555bfd5630",
+    "generation_status": "GEOMETRY_GENERATED_NOT_YET_FULL_ASSEMBLY_VALIDATED",
+    "source_sha256_count": 9,
+    "source_sha256_checked": [
+     {
+      "path": "hardware/src/make_print_first_body.py",
+      "expected_sha256": "731dd27748b1cc23cd7546714d47f273e1dddcd531ad0af5cec72f164ad53f2c",
+      "actual_sha256": "731dd27748b1cc23cd7546714d47f273e1dddcd531ad0af5cec72f164ad53f2c",
+      "status": "MATCH"
+     },
+     {
+      "path": "hardware/src/config.py",
+      "expected_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+      "actual_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+      "status": "MATCH"
+     },
+     {
+      "path": "tools/print_first_assembly.py",
+      "expected_sha256": "90b66a293e5b33bc4744d11a2bd28c9f72c9bed357c817244a760ef1344b6424",
+      "actual_sha256": "90b66a293e5b33bc4744d11a2bd28c9f72c9bed357c817244a760ef1344b6424",
+      "status": "MATCH"
+     },
+     {
+      "path": "tools/print_first_components.py",
+      "expected_sha256": "8bc68e4d8861407eaff043252a42f1188c165ff826b500d77c6176585cedc6c0",
+      "actual_sha256": "8bc68e4d8861407eaff043252a42f1188c165ff826b500d77c6176585cedc6c0",
+      "status": "MATCH"
+     },
+     {
+      "path": "tools/xiao_retention_plan.py",
+      "expected_sha256": "0fcfe08aeff7ce9fde3a368150f67c011d7ec820ec048a53833c97c3be568322",
+      "actual_sha256": "0fcfe08aeff7ce9fde3a368150f67c011d7ec820ec048a53833c97c3be568322",
+      "status": "MATCH"
+     },
+     {
+      "path": "tools/export_urdf.py",
+      "expected_sha256": "fcb960325bbf4bf03b23f4db7d6d70446db0fbf30f9c93732aada6ea4c59851f",
+      "actual_sha256": "fcb960325bbf4bf03b23f4db7d6d70446db0fbf30f9c93732aada6ea4c59851f",
+      "status": "MATCH"
+     },
+     {
+      "path": "hardware/src/make_ld220_adapter.py",
+      "expected_sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+      "actual_sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+      "status": "MATCH"
+     },
+     {
+      "path": "hardware/src/make_print_first_leg.py",
+      "expected_sha256": "1e8bc2fceb6afbe437c5a63ccfd9746cf54c988d16ff917e5cede7acb1b9c348",
+      "actual_sha256": "1e8bc2fceb6afbe437c5a63ccfd9746cf54c988d16ff917e5cede7acb1b9c348",
+      "status": "MATCH"
+     },
+     {
+      "path": "docs/audits/20260905-round2/xiao-retention-plan.json",
+      "expected_sha256": "276591eeeb3f34946b32b92774454297ac0527e3a7d69e9da4c30683fbc9f7d5",
+      "actual_sha256": "276591eeeb3f34946b32b92774454297ac0527e3a7d69e9da4c30683fbc9f7d5",
+      "status": "MATCH"
+     }
+    ],
+    "status": "PASS",
+    "failures": []
+   }
+  },
+  "legs": {
+   "path": "outputs/print-first-20260905/legs/assembly.json",
+   "sha256": "25baedb08101c23abdb94167985d865f583487a5d0c87fe54c6d67959a46f4bc",
+   "status": "GEOMETRY_CANDIDATE_PHYSICAL_FIT_UNVERIFIED",
+   "source_sha256": {
+    "hardware/src/make_print_first_leg.py": "1e8bc2fceb6afbe437c5a63ccfd9746cf54c988d16ff917e5cede7acb1b9c348",
+    "hardware/src/config.py": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "hardware/src/make_leg.py": "ebbdba644c92a7547d2bae2dd3c049aea6c39684b8b4357a953a618be84d1723",
+    "hardware/src/make_ld220_adapter.py": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7"
+   },
+   "integrity": {
+    "assembly_path": "outputs/print-first-20260905/legs/assembly.json",
+    "assembly_sha256": "25baedb08101c23abdb94167985d865f583487a5d0c87fe54c6d67959a46f4bc",
+    "generation_status": "GEOMETRY_CANDIDATE_PHYSICAL_FIT_UNVERIFIED",
+    "source_sha256_count": 4,
+    "source_sha256_checked": [
+     {
+      "path": "hardware/src/make_print_first_leg.py",
+      "expected_sha256": "1e8bc2fceb6afbe437c5a63ccfd9746cf54c988d16ff917e5cede7acb1b9c348",
+      "actual_sha256": "1e8bc2fceb6afbe437c5a63ccfd9746cf54c988d16ff917e5cede7acb1b9c348",
+      "status": "MATCH"
+     },
+     {
+      "path": "hardware/src/config.py",
+      "expected_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+      "actual_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+      "status": "MATCH"
+     },
+     {
+      "path": "hardware/src/make_leg.py",
+      "expected_sha256": "ebbdba644c92a7547d2bae2dd3c049aea6c39684b8b4357a953a618be84d1723",
+      "actual_sha256": "ebbdba644c92a7547d2bae2dd3c049aea6c39684b8b4357a953a618be84d1723",
+      "status": "MATCH"
+     },
+     {
+      "path": "hardware/src/make_ld220_adapter.py",
+      "expected_sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+      "actual_sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+      "status": "MATCH"
+     }
+    ],
+    "status": "PASS",
+    "failures": []
+   }
+  }
+ },
+ "strength_rule": {
+  "material": "PLA",
+  "density_g_cm3": 1.24,
+  "infill_fraction": 0.5,
+  "allowable_bending_mpa": 55.0,
+  "required_safety_factor": 2.0,
+  "base_load_kgf": 1.9,
+  "load_kgf": 3.8,
+  "dynamic_factor": 2.0,
+  "load_includes_dynamic_factor": true,
+  "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+  "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+  "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+  "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+  "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+ },
+ "strength_rule_basis": "3.8kgf is already 1.9kgf base load x dynamic_factor 2.0; orientation ledger does not apply the dynamic factor again; printed material/layer strength remains UNVERIFIED",
+ "material_rule_source": {
+  "path": "hardware/src/config.py",
+  "sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+  "mapping": "PRINT_FIRST_MATERIALS; per-part longest prefix",
+  "density_lookup": "config.material_density_g_cm3(material)"
+ },
+ "counts": {
+  "body_rows": 16,
+  "body_design_instances": 16,
+  "legs_rows": 10,
+  "legs_design_instances": 20,
+  "design_instances_total": 36,
+  "known_plane_candidate_instances": 18,
+  "mechanical_geometric_candidate_instances": 18,
+  "mechanical_recommendation_required_instances": 0,
+  "status_partition_is_disjoint": true,
+  "trial_and_remaining_split": "not represented here; do not infer production approval from quantity"
+ },
+ "parts": [
+  {
+   "section": "body",
+   "name": "pf_chassis",
+   "source_path": "outputs/print-first-20260905/body/pf_chassis.stl",
+   "source_sha256_expected": "2a90ad5f5953c9cba9428714b00b392c937295f0134fa1ef8626385db3f0bf23",
+   "source_sha256_actual": "2a90ad5f5953c9cba9428714b00b392c937295f0134fa1ef8626385db3f0bf23",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [
+    "chassis"
+   ],
+   "bbox_mm": [
+    241.2073974609375,
+    161.7659912109375,
+    45.400001525878906
+   ],
+   "solid_pla_g_upper_bound": 177.19565378987494,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_chassis']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.25,
+    "infill_percent": 25.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "chassis_underside",
+    "description": "シャーシ下面をベッドへ。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -0.0,
+      13.11700439453125,
+      -0.0
+     ],
+     "bed_bounds_mm": [
+      [
+       -120.60369873046875,
+       -80.88299560546875,
+       0.0
+      ],
+      [
+       120.60369873046875,
+       80.88299560546875,
+       45.400001525878906
+      ]
+     ],
+     "support_face_count": 2016,
+     "support_face_area_mm2": 16027.77610133657,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_head_top_clearanced",
+   "source_path": "outputs/print-first-20260905/body/pf_head_top_clearanced.stl",
+   "source_sha256_expected": "b6024dda92eca4f52312a951876f3e4150cb9baaae6dbbdb7aafeb9b5a189ba9",
+   "source_sha256_actual": "b6024dda92eca4f52312a951876f3e4150cb9baaae6dbbdb7aafeb9b5a189ba9",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [
+    "Head_Top_Eyecut#single"
+   ],
+   "bbox_mm": [
+    123.66651153564453,
+    125.34599304199219,
+    96.02700519561768
+   ],
+   "solid_pla_g_upper_bound": 61.06515605956952,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_head_top_clearanced']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.08,
+    "infill_percent": 8.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "head_shell_original_underside_and_clearance_rim",
+    "description": "頭殻の元の下面をベッドへ。目開口/外装側を上へ置く幾何候補。",
+    "mechanical_basis": "actual_STL_head_shell_underside_and_clearance_obstacle_scan",
+    "load_direction": "head_shell_support_normal_to_print_bed",
+    "service_face": "eye_camera_opening_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -0.00197601318359375,
+      -11.0,
+      -9.686495780944824
+     ],
+     "bed_bounds_mm": [
+      [
+       -61.833255767822266,
+       -62.672996520996094,
+       0.0
+      ],
+      [
+       61.833255767822266,
+       62.672996520996094,
+       96.02700519561768
+      ]
+     ],
+     "support_face_count": 289,
+     "support_face_area_mm2": 656.9464264000417,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_ld220_yaw_cap_fr",
+   "source_path": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_fr.stl",
+   "source_sha256_expected": "00953418fbc707bad71b46d579f01cc18c2acc1a3ecc8eb051509cab396923d8",
+   "source_sha256_actual": "00953418fbc707bad71b46d579f01cc18c2acc1a3ecc8eb051509cab396923d8",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [],
+   "bbox_mm": [
+    19.5,
+    27.039999961853027,
+    4.0000001192092896
+   ],
+   "solid_pla_g_upper_bound": 2.4931738429996537,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_yaw_cap']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "yaw_cap_mount_face",
+    "description": "yaw蓋の皿頭側を上、平面側を下。X180度で上下を戻す。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      180.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       -1.0,
+       -1.2246467991473532e-16,
+       0.0
+      ],
+      [
+       0.0,
+       1.2246467991473532e-16,
+       -1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -110.85369873046875,
+      21.999619007110596,
+      1.6000000238418568
+     ],
+     "bed_bounds_mm": [
+      [
+       -9.75,
+       -13.519999980926514,
+       0.0
+      ],
+      [
+       9.75,
+       13.519999980926514,
+       4.000000119209293
+      ]
+     ],
+     "support_face_count": 134,
+     "support_face_area_mm2": 511.22087343036765,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": {
+     "status": "PASS_COUNTERSINK_SIDE_FROM_ACTUAL_MESH",
+     "expected_counterbore_side": "-Z",
+     "detected_counterbore_side": "-Z",
+     "thickness_axis": "Z",
+     "opening_metric_mm": {
+      "-Z": 3.199994614610937,
+      "+Z": 1.599994963781433
+     },
+     "opening_metric_difference_mm": 1.599999650829504,
+     "rotation_counterbore_vector_after": [
+      0.0,
+      1.2246467991473532e-16,
+      1.0
+     ],
+     "counterbore_points_up": true,
+     "probe": {
+      "long_axis": "X",
+      "transverse_axis": "Y",
+      "long_center_mm": 116.60369873046875,
+      "transverse_center_mm": 21.999619007110596
+     }
+    },
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_ld220_yaw_cap_fl",
+   "source_path": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_fl.stl",
+   "source_sha256_expected": "21d01e4f2e5632bb14c18e646646e3f78c0903b08c5b0c5c7d35ec5356cdd90e",
+   "source_sha256_actual": "21d01e4f2e5632bb14c18e646646e3f78c0903b08c5b0c5c7d35ec5356cdd90e",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [],
+   "bbox_mm": [
+    19.5,
+    27.039999961853027,
+    4.0000001192092896
+   ],
+   "solid_pla_g_upper_bound": 2.493173842999645,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_yaw_cap']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "yaw_cap_mount_face",
+    "description": "yaw蓋の皿頭側を上、平面側を下。X180度で上下を戻す。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      180.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       -1.0,
+       -1.2246467991473532e-16,
+       0.0
+      ],
+      [
+       0.0,
+       1.2246467991473532e-16,
+       -1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      110.85369873046875,
+      21.999619007110596,
+      1.6000000238418568
+     ],
+     "bed_bounds_mm": [
+      [
+       -9.75,
+       -13.519999980926514,
+       0.0
+      ],
+      [
+       9.75,
+       13.519999980926514,
+       4.000000119209293
+      ]
+     ],
+     "support_face_count": 134,
+     "support_face_area_mm2": 511.22087343036765,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": {
+     "status": "PASS_COUNTERSINK_SIDE_FROM_ACTUAL_MESH",
+     "expected_counterbore_side": "-Z",
+     "detected_counterbore_side": "-Z",
+     "thickness_axis": "Z",
+     "opening_metric_mm": {
+      "-Z": 3.199994614610937,
+      "+Z": 1.599994963781433
+     },
+     "opening_metric_difference_mm": 1.599999650829504,
+     "rotation_counterbore_vector_after": [
+      0.0,
+      1.2246467991473532e-16,
+      1.0
+     ],
+     "counterbore_points_up": true,
+     "probe": {
+      "long_axis": "X",
+      "transverse_axis": "Y",
+      "long_center_mm": -116.60369873046875,
+      "transverse_center_mm": 21.999619007110596
+     }
+    },
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_ld220_yaw_cap_rl",
+   "source_path": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_rl.stl",
+   "source_sha256_expected": "f62d58443bf8c64147c1e78e8fd9f2689e6ef4491da233e07480d517799e859c",
+   "source_sha256_actual": "f62d58443bf8c64147c1e78e8fd9f2689e6ef4491da233e07480d517799e859c",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [],
+   "bbox_mm": [
+    19.5,
+    27.040000915527344,
+    4.0000001192092896
+   ],
+   "solid_pla_g_upper_bound": 2.493173929254158,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_yaw_cap']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "yaw_cap_mount_face",
+    "description": "yaw蓋の皿頭側を上、平面側を下。X180度で上下を戻す。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      180.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       -1.0,
+       -1.2246467991473532e-16,
+       0.0
+      ],
+      [
+       0.0,
+       1.2246467991473532e-16,
+       -1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      102.3621597290039,
+      -42.5,
+      1.6000000238418648
+     ],
+     "bed_bounds_mm": [
+      [
+       -9.75,
+       -13.520000457763672,
+       0.0
+      ],
+      [
+       9.75,
+       13.520000457763672,
+       4.000000119209293
+      ]
+     ],
+     "support_face_count": 134,
+     "support_face_area_mm2": 511.2208863333799,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": {
+     "status": "PASS_COUNTERSINK_SIDE_FROM_ACTUAL_MESH",
+     "expected_counterbore_side": "-Z",
+     "detected_counterbore_side": "-Z",
+     "thickness_axis": "Z",
+     "opening_metric_mm": {
+      "-Z": 3.199997993536643,
+      "+Z": 1.5999972038683536
+     },
+     "opening_metric_difference_mm": 1.6000007896682893,
+     "rotation_counterbore_vector_after": [
+      0.0,
+      1.2246467991473532e-16,
+      1.0
+     ],
+     "counterbore_points_up": true,
+     "probe": {
+      "long_axis": "X",
+      "transverse_axis": "Y",
+      "long_center_mm": -108.1121597290039,
+      "transverse_center_mm": -42.5
+     }
+    },
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_ld220_yaw_cap_rr",
+   "source_path": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_rr.stl",
+   "source_sha256_expected": "043b2d70ad563c29d3a81dd9defc1c6e2d8094be95b1822e4b9b26419b8498f3",
+   "source_sha256_actual": "043b2d70ad563c29d3a81dd9defc1c6e2d8094be95b1822e4b9b26419b8498f3",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [],
+   "bbox_mm": [
+    19.5,
+    27.040000915527344,
+    4.0000001192092896
+   ],
+   "solid_pla_g_upper_bound": 2.493173929254157,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_yaw_cap']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "yaw_cap_mount_face",
+    "description": "yaw蓋の皿頭側を上、平面側を下。X180度で上下を戻す。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      180.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       -1.0,
+       -1.2246467991473532e-16,
+       0.0
+      ],
+      [
+       0.0,
+       1.2246467991473532e-16,
+       -1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -102.3621597290039,
+      -42.5,
+      1.6000000238418648
+     ],
+     "bed_bounds_mm": [
+      [
+       -9.75,
+       -13.520000457763672,
+       0.0
+      ],
+      [
+       9.75,
+       13.520000457763672,
+       4.000000119209293
+      ]
+     ],
+     "support_face_count": 134,
+     "support_face_area_mm2": 511.2208863333799,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": {
+     "status": "PASS_COUNTERSINK_SIDE_FROM_ACTUAL_MESH",
+     "expected_counterbore_side": "-Z",
+     "detected_counterbore_side": "-Z",
+     "thickness_axis": "Z",
+     "opening_metric_mm": {
+      "-Z": 3.199997993536643,
+      "+Z": 1.5999972038683536
+     },
+     "opening_metric_difference_mm": 1.6000007896682893,
+     "rotation_counterbore_vector_after": [
+      0.0,
+      1.2246467991473532e-16,
+      1.0
+     ],
+     "counterbore_points_up": true,
+     "probe": {
+      "long_axis": "X",
+      "transverse_axis": "Y",
+      "long_center_mm": 108.1121597290039,
+      "transverse_center_mm": -42.5
+     }
+    },
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_cabin_rail_l",
+   "source_path": "outputs/print-first-20260905/body/pf_cabin_rail_l.stl",
+   "source_sha256_expected": "fe8716efba0267128afaf4c9647b6e8a958799c077fc8e139fab0d16e791d951",
+   "source_sha256_actual": "fe8716efba0267128afaf4c9647b6e8a958799c077fc8e139fab0d16e791d951",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [],
+   "bbox_mm": [
+    43.0,
+    209.0,
+    166.0
+   ],
+   "solid_pla_g_upper_bound": 63.42682225118391,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_cabin_rail']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.4,
+    "infill_percent": 40.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "rail_side_face",
+    "description": "railの広い側面（元x最大側）をベッドへ。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      90.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       6.123233995736766e-17,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       -1.0,
+       0.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -35.0,
+      157.5,
+      -25.999999999999996
+     ],
+     "bed_bounds_mm": [
+      [
+       -83.0,
+       -104.5,
+       0.0
+      ],
+      [
+       83.0,
+       104.5,
+       43.0
+      ]
+     ],
+     "support_face_count": 98,
+     "support_face_area_mm2": 1420.6789960096303,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_cabin_rail_r",
+   "source_path": "outputs/print-first-20260905/body/pf_cabin_rail_r.stl",
+   "source_sha256_expected": "5f29a29d12cd2727e3079c73c0e0e46d5a787813765da00f1837ef27b2aa69ae",
+   "source_sha256_actual": "5f29a29d12cd2727e3079c73c0e0e46d5a787813765da00f1837ef27b2aa69ae",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [],
+   "bbox_mm": [
+    43.0,
+    209.0,
+    166.0
+   ],
+   "solid_pla_g_upper_bound": 63.438894107557516,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_cabin_rail']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.4,
+    "infill_percent": 40.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "rail_side_face",
+    "description": "railの広い側面（元x最大側）をベッドへ。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      90.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       6.123233995736766e-17,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       -1.0,
+       0.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -35.0,
+      157.5,
+      69.0
+     ],
+     "bed_bounds_mm": [
+      [
+       -83.0,
+       -104.5,
+       0.0
+      ],
+      [
+       83.0,
+       104.5,
+       43.0
+      ]
+     ],
+     "support_face_count": 6,
+     "support_face_area_mm2": 528.0,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_electronics_shelf_0",
+   "source_path": "outputs/print-first-20260905/body/pf_electronics_shelf_0.stl",
+   "source_sha256_expected": "d2a76e6cf2e81b3b52c33cdd12d34bc65e067714673c3cb2a840b0aa727461ac",
+   "source_sha256_actual": "d2a76e6cf2e81b3b52c33cdd12d34bc65e067714673c3cb2a840b0aa727461ac",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [],
+   "bbox_mm": [
+    138.0,
+    38.0,
+    6.0
+   ],
+   "solid_pla_g_upper_bound": 10.463981547288078,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_electronics_shelf']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.4,
+    "infill_percent": 40.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "shelf_underside",
+    "description": "棚下面をベッドへ。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -0.0,
+      80.0,
+      -48.0
+     ],
+     "bed_bounds_mm": [
+      [
+       -69.0,
+       -19.0,
+       0.0
+      ],
+      [
+       69.0,
+       19.0,
+       6.0
+      ]
+     ],
+     "support_face_count": 465,
+     "support_face_area_mm2": 2699.4538045138615,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_electronics_shelf_1",
+   "source_path": "outputs/print-first-20260905/body/pf_electronics_shelf_1.stl",
+   "source_sha256_expected": "48c6ed88a6d6bfe83b3454f8722536271f7d9f7e038f504782b20661f0646b80",
+   "source_sha256_actual": "48c6ed88a6d6bfe83b3454f8722536271f7d9f7e038f504782b20661f0646b80",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [],
+   "bbox_mm": [
+    138.0,
+    38.0,
+    6.0
+   ],
+   "solid_pla_g_upper_bound": 10.461997272067846,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_electronics_shelf']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.4,
+    "infill_percent": 40.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "shelf_underside",
+    "description": "棚下面をベッドへ。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -0.0,
+      80.0,
+      -82.0
+     ],
+     "bed_bounds_mm": [
+      [
+       -69.0,
+       -19.0,
+       0.0
+      ],
+      [
+       69.0,
+       19.0,
+       6.0
+      ]
+     ],
+     "support_face_count": 465,
+     "support_face_area_mm2": 2699.4538045138615,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_electronics_shelf_2",
+   "source_path": "outputs/print-first-20260905/body/pf_electronics_shelf_2.stl",
+   "source_sha256_expected": "607899e17f3d1ef1614bf106bb4d5e7942d81eee4570bfc20a424d1210c61c8a",
+   "source_sha256_actual": "607899e17f3d1ef1614bf106bb4d5e7942d81eee4570bfc20a424d1210c61c8a",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [],
+   "bbox_mm": [
+    138.0,
+    38.0,
+    6.0
+   ],
+   "solid_pla_g_upper_bound": 10.741696772281552,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_electronics_shelf']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.4,
+    "infill_percent": 40.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "shelf_underside",
+    "description": "棚下面をベッドへ。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -0.0,
+      80.0,
+      -114.0
+     ],
+     "bed_bounds_mm": [
+      [
+       -69.0,
+       -19.0,
+       0.0
+      ],
+      [
+       69.0,
+       19.0,
+       6.0
+      ]
+     ],
+     "support_face_count": 465,
+     "support_face_area_mm2": 2699.4538045138615,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_mouth_key",
+   "source_path": "outputs/print-first-20260905/body/pf_mouth_key.stl",
+   "source_sha256_expected": "83991c14042213c970ad0ebbe465cff0411506c9ca827659cb8a11324ca45593",
+   "source_sha256_actual": "83991c14042213c970ad0ebbe465cff0411506c9ca827659cb8a11324ca45593",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [
+    "Mouth_Key_Grey#single"
+   ],
+   "bbox_mm": [
+    29.984265327453613,
+    15.149925231933594,
+    7.169719219207764
+   ],
+   "solid_pla_g_upper_bound": 1.0772788908149133,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_mouth_key']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "mouth_key_broad_side_support_and_insertion_axis",
+    "description": "実STLの広い側面を下。キーの挿入長手軸をベッド面内に保つ幾何候補。",
+    "mechanical_basis": "actual_STL_support_face_scan_broad_side_candidate",
+    "load_direction": "mouth_key_insertion_and_retention_axis_in_bed_plane",
+    "service_face": "cannon_keyway_face_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      90.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       6.123233995736766e-17,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       -1.0,
+       0.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -10.554552316665651,
+      -92.92512893676758,
+      19.6921329498291
+     ],
+     "bed_bounds_mm": [
+      [
+       -3.5848596096038827,
+       -7.574962615966797,
+       0.0
+      ],
+      [
+       3.584859609603882,
+       7.574962615966797,
+       29.984265327453613
+      ]
+     ],
+     "support_face_count": 2,
+     "support_face_area_mm2": 33.17866170488561,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_camera_carrier",
+   "source_path": "outputs/print-first-20260905/body/pf_camera_carrier.stl",
+   "source_sha256_expected": "9b2ff67a5a5512b4b354d5874dcfdd43da539093a1f9290bb85b28577543281c",
+   "source_sha256_actual": "9b2ff67a5a5512b4b354d5874dcfdd43da539093a1f9290bb85b28577543281c",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [
+    "camera_carrier"
+   ],
+   "bbox_mm": [
+    26.0,
+    21.027525424957275,
+    34.63772964477539
+   ],
+   "solid_pla_g_upper_bound": 2.878655123917577,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_camera_carrier']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.4,
+    "infill_percent": 40.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "camera_carrier_broad_side_and_tray_service_direction",
+    "description": "実STLの広い側面を下。光学窓/トレーサービス側を上側へ向ける幾何候補。",
+    "mechanical_basis": "actual_STL_support_face_scan_broad_side_candidate",
+    "load_direction": "XIAO_tray_to_carrier_beam_load_in_bed_plane",
+    "service_face": "camera_window_and_XIAO_port_side_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      90.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       6.123233995736766e-17,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       -1.0,
+       0.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -0.7844333648681641,
+      3.54016375541687,
+      13.000000000000002
+     ],
+     "bed_bounds_mm": [
+      [
+       -17.318864822387695,
+       -10.513762712478638,
+       0.0
+      ],
+      [
+       17.318864822387695,
+       10.513762712478638,
+       26.0
+      ]
+     ],
+     "support_face_count": 2,
+     "support_face_area_mm2": 80.0,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_eye_pod_camera_clearanced",
+   "source_path": "outputs/print-first-20260905/body/pf_eye_pod_camera_clearanced.stl",
+   "source_sha256_expected": "1688de600f2ccdea8ef5004e0631bb98ee4459737b96394f22c0d58b73406812",
+   "source_sha256_actual": "1688de600f2ccdea8ef5004e0631bb98ee4459737b96394f22c0d58b73406812",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [
+    "eye_pod_camera"
+   ],
+   "bbox_mm": [
+    37.7279167175293,
+    37.72964286804199,
+    23.669429779052734
+   ],
+   "solid_pla_g_upper_bound": 12.427947792567073,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_eye_pod_camera_clearanced']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.08,
+    "infill_percent": 8.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "camera_pod_mount_base_and_optical_opening",
+    "description": "中央podの取付基部をベッドへ。レンズ/基板サービス側を上へ置く幾何候補。",
+    "mechanical_basis": "actual_STL_camera_pod_mount_base_and_clearance_scan",
+    "load_direction": "camera_pod_mount_load_normal_to_print_bed",
+    "service_face": "lens_and_fpc_service_side_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -0.0008831024169921875,
+      0.0015802383422851562,
+      -0.0
+     ],
+     "bed_bounds_mm": [
+      [
+       -18.86395835876465,
+       -18.864821434020996,
+       0.0
+      ],
+      [
+       18.86395835876465,
+       18.864821434020996,
+       23.669429779052734
+      ]
+     ],
+     "support_face_count": 43,
+     "support_face_area_mm2": 330.9406736151492,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_fixed_claw_r",
+   "source_path": "outputs/print-first-20260905/body/pf_fixed_claw_r.stl",
+   "source_sha256_expected": "2d578b4538247820dad31059d7e7947074eb0cf5d4aa64743fca19e90fb06ff3",
+   "source_sha256_actual": "2d578b4538247820dad31059d7e7947074eb0cf5d4aa64743fca19e90fb06ff3",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [
+    "claw_mount",
+    "Arm_Left_Claw_Grey",
+    "Arm_Left_Finger_Black_x3#0",
+    "Arm_Left_FingerTip_Grey_x3#0",
+    "Arm_Left_Finger_Black_x3#1",
+    "Arm_Left_FingerTip_Grey_x3#1",
+    "Arm_Left_Finger_Black_x3#2",
+    "Arm_Left_FingerTip_Grey_x3#2"
+   ],
+   "bbox_mm": [
+    31.689308166503906,
+    28.341384887695312,
+    27.32240867614746
+   ],
+   "solid_pla_g_upper_bound": 5.308518794313881,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_fixed_claw']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "fixed_claw_broad_root_support_and_adhesive_load_path",
+    "description": "固定爪の広い根元側を下。接着/保持荷重を積層面内へ置く幾何候補。右標準。",
+    "mechanical_basis": "actual_STL_support_face_scan_broad_root_candidate",
+    "load_direction": "forearm_claw_retention_load_in_bed_plane",
+    "service_face": "claw_opening_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      270.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       -1.8369701987210297e-16,
+       0.0,
+       -1.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0,
+       -1.8369701987210297e-16,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      3.661204338073736,
+      -0.12705326080322266,
+      -15.999999999999998
+     ],
+     "bed_bounds_mm": [
+      [
+       -13.661204338073732,
+       -14.170692443847656,
+       0.0
+      ],
+      [
+       13.661204338073732,
+       14.170692443847656,
+       31.689308166503906
+      ]
+     ],
+     "support_face_count": 62,
+     "support_face_area_mm2": 313.65485014591627,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "body",
+   "name": "pf_fixed_claw_l",
+   "source_path": "outputs/print-first-20260905/body/pf_fixed_claw_l.stl",
+   "source_sha256_expected": "4130138afb72d18e2b533fefd812586c0d51d432376d5c36603035a6cfbec2d7",
+   "source_sha256_actual": "4130138afb72d18e2b533fefd812586c0d51d432376d5c36603035a6cfbec2d7",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/body/assembly.json",
+   "quantity": 1,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": null,
+   "link_kind": null,
+   "replaces": [
+    "claw_mount",
+    "Arm_Left_Claw_Grey",
+    "Arm_Left_Finger_Black_x3#0",
+    "Arm_Left_FingerTip_Grey_x3#0",
+    "Arm_Left_Finger_Black_x3#1",
+    "Arm_Left_FingerTip_Grey_x3#1",
+    "Arm_Left_Finger_Black_x3#2",
+    "Arm_Left_FingerTip_Grey_x3#2"
+   ],
+   "bbox_mm": [
+    31.689308166503906,
+    28.341384887695312,
+    27.32240867614746
+   ],
+   "solid_pla_g_upper_bound": 5.3085204514049416,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_fixed_claw']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "fixed_claw_broad_root_support_and_adhesive_load_path",
+    "description": "固定爪の広い根元側を下。接着/保持荷重を積層面内へ置く幾何候補。左鏡像。",
+    "mechanical_basis": "actual_STL_support_face_scan_broad_root_candidate",
+    "load_direction": "forearm_claw_retention_load_in_bed_plane",
+    "service_face": "claw_opening_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      90.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       6.123233995736766e-17,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       -1.0,
+       0.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -3.661204338073728,
+      -0.12705326080322266,
+      -16.0
+     ],
+     "bed_bounds_mm": [
+      [
+       -13.66120433807373,
+       -14.170692443847656,
+       0.0
+      ],
+      [
+       13.66120433807373,
+       14.170692443847656,
+       31.689308166503906
+      ]
+     ],
+     "support_face_count": 62,
+     "support_face_area_mm2": 313.65485014591627,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "legs",
+   "name": "pf_coxa_bracket",
+   "source_path": "outputs/print-first-20260905/legs/pf_coxa_bracket.stl",
+   "source_sha256_expected": "a474dfab4c3f29ec4e6b171dac257862a94a3b377e92a42cb0fd3a25db97f630",
+   "source_sha256_actual": "a474dfab4c3f29ec4e6b171dac257862a94a3b377e92a42cb0fd3a25db97f630",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/legs/assembly.json",
+   "quantity": 2,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [
+    "FL",
+    "RR"
+   ],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": "link_structure",
+   "link_kind": "coxa",
+   "replaces": [
+    "coxa_bracket"
+   ],
+   "bbox_mm": [
+    65.0,
+    50.400001525878906,
+    38.81999969482422
+   ],
+   "solid_pla_g_upper_bound": 44.50972653565309,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_coxa_bracket']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": {
+     "material": "PLA",
+     "density_g_cm3": 1.24,
+     "infill_fraction": 0.5,
+     "allowable_bending_mpa": 55.0,
+     "required_safety_factor": 2.0,
+     "base_load_kgf": 1.9,
+     "load_kgf": 3.8,
+     "dynamic_factor": 2.0,
+     "load_includes_dynamic_factor": true,
+     "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+     "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+     "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+     "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+     "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+    },
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "coxa_mount_plate_and_yaw_riser_underside",
+    "description": "coxa取付板/ヨー立上がりの下面を下。ヨー軸とホーン座を水平に保つ幾何候補。",
+    "mechanical_basis": "actual_STL_plate_underside_and_yaw_load_axis_scan_candidate",
+    "load_direction": "yaw_riser_load_normal_to_coxa_plate",
+    "service_face": "LD_yaw_case_and_fastener_face_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -14.5,
+      7.200000762939453,
+      13.520000457763672
+     ],
+     "bed_bounds_mm": [
+      [
+       -32.5,
+       -25.200000762939453,
+       0.0
+      ],
+      [
+       32.5,
+       25.200000762939453,
+       38.81999969482422
+      ]
+     ],
+     "support_face_count": 12,
+     "support_face_area_mm2": 1674.7152797496783,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "legs",
+   "name": "pf_femur_link",
+   "source_path": "outputs/print-first-20260905/legs/pf_femur_link.stl",
+   "source_sha256_expected": "3f729432232121f9facea5dd4c86baee9e5e4cc48aa36c4fd12f6b48c80d9013",
+   "source_sha256_actual": "3f729432232121f9facea5dd4c86baee9e5e4cc48aa36c4fd12f6b48c80d9013",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/legs/assembly.json",
+   "quantity": 2,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [
+    "FL",
+    "RR"
+   ],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": "link_structure",
+   "link_kind": "femur",
+   "replaces": [
+    "femur_link"
+   ],
+   "bbox_mm": [
+    106.0,
+    53.900001525878906,
+    36.0
+   ],
+   "solid_pla_g_upper_bound": 42.06573639426332,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_femur_link']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": {
+     "material": "PLA",
+     "density_g_cm3": 1.24,
+     "infill_fraction": 0.5,
+     "allowable_bending_mpa": 55.0,
+     "required_safety_factor": 2.0,
+     "base_load_kgf": 1.9,
+     "load_kgf": 3.8,
+     "dynamic_factor": 2.0,
+     "load_includes_dynamic_factor": true,
+     "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+     "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+     "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+     "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+     "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+    },
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "femur_horn_face_up_and_bending_axis_in_bed_plane",
+    "description": "femurのホーン面を上、長手荷重軸をベッド面内へ置く幾何候補。標準はX+90度。",
+    "mechanical_basis": "actual_STL_link_load_axis_and_horn_face_scan_candidate",
+    "load_direction": "knee_bending_load_in_layer_plane",
+    "service_face": "LD_pitch_horn_and_cap_face_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      90.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       6.123233995736766e-17,
+       -1.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -35.0,
+      -0.0,
+      32.400001525878906
+     ],
+     "bed_bounds_mm": [
+      [
+       -53.0,
+       -18.0,
+       0.0
+      ],
+      [
+       53.0,
+       18.0,
+       53.900001525878906
+      ]
+     ],
+     "support_face_count": 41,
+     "support_face_area_mm2": 738.9867352731758,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "legs",
+   "name": "pf_tibia_link",
+   "source_path": "outputs/print-first-20260905/legs/pf_tibia_link.stl",
+   "source_sha256_expected": "8cde6a079275f5326a9fff1f464b9e6a07fa08e0b969013953ab038c12a3e526",
+   "source_sha256_actual": "8cde6a079275f5326a9fff1f464b9e6a07fa08e0b969013953ab038c12a3e526",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/legs/assembly.json",
+   "quantity": 2,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [
+    "FL",
+    "RR"
+   ],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": "link_structure",
+   "link_kind": "tibia",
+   "replaces": [
+    "tibia_link"
+   ],
+   "bbox_mm": [
+    36.0,
+    34.89999961853027,
+    153.0
+   ],
+   "solid_pla_g_upper_bound": 43.90102128264461,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_tibia_link']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": {
+     "material": "PLA",
+     "density_g_cm3": 1.24,
+     "infill_fraction": 0.5,
+     "allowable_bending_mpa": 55.0,
+     "required_safety_factor": 2.0,
+     "base_load_kgf": 1.9,
+     "load_kgf": 3.8,
+     "dynamic_factor": 2.0,
+     "load_includes_dynamic_factor": true,
+     "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+     "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+     "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+     "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+     "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+    },
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "tibia_horn_face_up_and_foot_load_axis_in_bed_plane",
+    "description": "tibiaのホーン面を上、足先荷重の長手軸をベッド面内へ置く幾何候補。標準はX+90度。",
+    "mechanical_basis": "actual_STL_link_load_axis_and_horn_face_scan_candidate",
+    "load_direction": "foot_contact_bending_load_in_bed_plane",
+    "service_face": "LD_knee_horn_and_shoe_socket_face_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      90.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       6.123233995736766e-17,
+       -1.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -0.0,
+      -58.5,
+      11.000000000000004
+     ],
+     "bed_bounds_mm": [
+      [
+       -18.0,
+       -76.5,
+       0.0
+      ],
+      [
+       18.0,
+       76.5,
+       34.89999961853027
+      ]
+     ],
+     "support_face_count": 6,
+     "support_face_area_mm2": 188.83218880227432,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "legs",
+   "name": "pf_ld220_coxa_cap",
+   "source_path": "outputs/print-first-20260905/legs/pf_ld220_coxa_cap.stl",
+   "source_sha256_expected": "f846205a3feab20b969869090029091fb902ff3c89bbc1b7956c99c8cc599fbe",
+   "source_sha256_actual": "f846205a3feab20b969869090029091fb902ff3c89bbc1b7956c99c8cc599fbe",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/legs/assembly.json",
+   "quantity": 2,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [
+    "FL",
+    "RR"
+   ],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": "removable_case_cap",
+   "link_kind": "coxa",
+   "replaces": [],
+   "bbox_mm": [
+    19.5,
+    4.0,
+    27.040000915527344
+   ],
+   "solid_pla_g_upper_bound": 1.9229832772349198,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_coxa_cap']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "pitch_knee_cap_flat_face",
+    "description": "pitch/knee蓋は実STLの皿頭側を上、平面側を下。標準はX+90度。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      90.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       6.123233995736766e-17,
+       -1.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      2.75,
+      -8.881784197001252e-16,
+      -11.399999618530273
+     ],
+     "bed_bounds_mm": [
+      [
+       -9.75,
+       -13.520000457763672,
+       0.0
+      ],
+      [
+       9.75,
+       13.520000457763672,
+       4.0
+      ]
+     ],
+     "support_face_count": 117,
+     "support_face_area_mm2": 260.0523525504923,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": {
+     "status": "PASS_COUNTERSINK_SIDE_FROM_ACTUAL_MESH",
+     "expected_counterbore_side": "+Y",
+     "detected_counterbore_side": "+Y",
+     "thickness_axis": "Y",
+     "opening_metric_mm": {
+      "-Y": 1.5999998089536818,
+      "+Y": 3.149543225578439
+     },
+     "opening_metric_difference_mm": 1.5495434166247573,
+     "rotation_counterbore_vector_after": [
+      0.0,
+      6.123233995736766e-17,
+      1.0
+     ],
+     "counterbore_points_up": true,
+     "probe": {
+      "long_axis": "X",
+      "transverse_axis": "Z",
+      "long_center_mm": -8.5,
+      "transverse_center_mm": 0.0
+     }
+    },
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "legs",
+   "name": "pf_ld220_femur_cap",
+   "source_path": "outputs/print-first-20260905/legs/pf_ld220_femur_cap.stl",
+   "source_sha256_expected": "129177deabd8873e7709dd1d6da81f2af480f0f0a47480eee4d693571d147a54",
+   "source_sha256_actual": "129177deabd8873e7709dd1d6da81f2af480f0f0a47480eee4d693571d147a54",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/legs/assembly.json",
+   "quantity": 2,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [
+    "FL",
+    "RR"
+   ],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": "removable_case_cap",
+   "link_kind": "femur",
+   "replaces": [],
+   "bbox_mm": [
+    19.5,
+    4.0,
+    27.040000915527344
+   ],
+   "solid_pla_g_upper_bound": 1.6756559999444387,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_femur_cap']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "pitch_knee_cap_flat_face",
+    "description": "pitch/knee蓋は実STLの皿頭側を上、平面側を下。標準はX+90度。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      90.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       6.123233995736766e-17,
+       -1.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -41.25,
+      -8.881784197001252e-16,
+      -11.399999618530273
+     ],
+     "bed_bounds_mm": [
+      [
+       -9.75,
+       -13.520000457763672,
+       0.0
+      ],
+      [
+       9.75,
+       13.520000457763672,
+       4.0
+      ]
+     ],
+     "support_face_count": 171,
+     "support_face_area_mm2": 270.1084933353827,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": {
+     "status": "PASS_COUNTERSINK_SIDE_FROM_ACTUAL_MESH",
+     "expected_counterbore_side": "+Y",
+     "detected_counterbore_side": "+Y",
+     "thickness_axis": "Y",
+     "opening_metric_mm": {
+      "-Y": 1.5999997833851176,
+      "+Y": 4.891830375743771
+     },
+     "opening_metric_difference_mm": 3.2918305923586533,
+     "rotation_counterbore_vector_after": [
+      0.0,
+      6.123233995736766e-17,
+      1.0
+     ],
+     "counterbore_points_up": true,
+     "probe": {
+      "long_axis": "X",
+      "transverse_axis": "Z",
+      "long_center_mm": 35.5,
+      "transverse_center_mm": 0.0
+     }
+    },
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "legs",
+   "name": "pf_coxa_bracket_m",
+   "source_path": "outputs/print-first-20260905/legs/pf_coxa_bracket_m.stl",
+   "source_sha256_expected": "66959b69c4224c80b1c5d32c884b848c234f4ef63c9389edadeeab96e74ad664",
+   "source_sha256_actual": "66959b69c4224c80b1c5d32c884b848c234f4ef63c9389edadeeab96e74ad664",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/legs/assembly.json",
+   "quantity": 2,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [
+    "FR",
+    "RL"
+   ],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": "link_structure",
+   "link_kind": "coxa",
+   "replaces": [
+    "coxa_bracket_m"
+   ],
+   "bbox_mm": [
+    65.0,
+    50.400001525878906,
+    38.81999969482422
+   ],
+   "solid_pla_g_upper_bound": 44.50972726153587,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_coxa_bracket']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": {
+     "material": "PLA",
+     "density_g_cm3": 1.24,
+     "infill_fraction": 0.5,
+     "allowable_bending_mpa": 55.0,
+     "required_safety_factor": 2.0,
+     "base_load_kgf": 1.9,
+     "load_kgf": 3.8,
+     "dynamic_factor": 2.0,
+     "load_includes_dynamic_factor": true,
+     "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+     "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+     "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+     "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+     "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+    },
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "coxa_mount_plate_and_yaw_riser_underside",
+    "description": "coxa取付板/ヨー立上がりの下面を下。ヨー軸とホーン座を水平に保つ幾何候補。",
+    "mechanical_basis": "actual_STL_plate_underside_and_yaw_load_axis_scan_candidate",
+    "load_direction": "yaw_riser_load_normal_to_coxa_plate",
+    "service_face": "LD_yaw_case_and_fastener_face_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -14.5,
+      -7.200000762939453,
+      13.520000457763672
+     ],
+     "bed_bounds_mm": [
+      [
+       -32.5,
+       -25.200000762939453,
+       0.0
+      ],
+      [
+       32.5,
+       25.200000762939453,
+       38.81999969482422
+      ]
+     ],
+     "support_face_count": 12,
+     "support_face_area_mm2": 1674.7152797496783,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "legs",
+   "name": "pf_femur_link_m",
+   "source_path": "outputs/print-first-20260905/legs/pf_femur_link_m.stl",
+   "source_sha256_expected": "805d0ad692ce46baa6cff99958423502466c4cca9caf4aa80fe84ca39a82e88b",
+   "source_sha256_actual": "805d0ad692ce46baa6cff99958423502466c4cca9caf4aa80fe84ca39a82e88b",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/legs/assembly.json",
+   "quantity": 2,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [
+    "FR",
+    "RL"
+   ],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": "link_structure",
+   "link_kind": "femur",
+   "replaces": [
+    "femur_link_m"
+   ],
+   "bbox_mm": [
+    106.0,
+    53.900001525878906,
+    36.0
+   ],
+   "solid_pla_g_upper_bound": 42.06573631281321,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_femur_link']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": {
+     "material": "PLA",
+     "density_g_cm3": 1.24,
+     "infill_fraction": 0.5,
+     "allowable_bending_mpa": 55.0,
+     "required_safety_factor": 2.0,
+     "base_load_kgf": 1.9,
+     "load_kgf": 3.8,
+     "dynamic_factor": 2.0,
+     "load_includes_dynamic_factor": true,
+     "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+     "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+     "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+     "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+     "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+    },
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "femur_horn_face_up_and_bending_axis_in_bed_plane",
+    "description": "femurのホーン面を上、長手荷重軸をベッド面内へ置く幾何候補。鏡像はX-90度。",
+    "mechanical_basis": "actual_STL_link_load_axis_and_horn_face_scan_candidate",
+    "load_direction": "knee_bending_load_in_layer_plane",
+    "service_face": "LD_pitch_horn_and_cap_face_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      -90.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       6.123233995736766e-17,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       -1.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -35.0,
+      -0.0,
+      32.400001525878906
+     ],
+     "bed_bounds_mm": [
+      [
+       -53.0,
+       -18.0,
+       0.0
+      ],
+      [
+       53.0,
+       18.0,
+       53.900001525878906
+      ]
+     ],
+     "support_face_count": 41,
+     "support_face_area_mm2": 738.9867352731758,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "legs",
+   "name": "pf_tibia_link_m",
+   "source_path": "outputs/print-first-20260905/legs/pf_tibia_link_m.stl",
+   "source_sha256_expected": "8e7d4664c39f92f22c93064e0a7e0231270c7dd4a2ea091b21d733b637661159",
+   "source_sha256_actual": "8e7d4664c39f92f22c93064e0a7e0231270c7dd4a2ea091b21d733b637661159",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/legs/assembly.json",
+   "quantity": 2,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [
+    "FR",
+    "RL"
+   ],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": "link_structure",
+   "link_kind": "tibia",
+   "replaces": [
+    "tibia_link_m"
+   ],
+   "bbox_mm": [
+    36.0,
+    34.89999961853027,
+    153.0
+   ],
+   "solid_pla_g_upper_bound": 43.90102259935983,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_tibia_link']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": {
+     "material": "PLA",
+     "density_g_cm3": 1.24,
+     "infill_fraction": 0.5,
+     "allowable_bending_mpa": 55.0,
+     "required_safety_factor": 2.0,
+     "base_load_kgf": 1.9,
+     "load_kgf": 3.8,
+     "dynamic_factor": 2.0,
+     "load_includes_dynamic_factor": true,
+     "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+     "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+     "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+     "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+     "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+    },
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "MECHANICAL_GEOMETRIC_CANDIDATE_PHYSICAL_PRINT_UNVERIFIED",
+    "basis": "tibia_horn_face_up_and_foot_load_axis_in_bed_plane",
+    "description": "tibiaのホーン面を上、足先荷重の長手軸をベッド面内へ置く幾何候補。鏡像はX-90度。",
+    "mechanical_basis": "actual_STL_link_load_axis_and_horn_face_scan_candidate",
+    "load_direction": "foot_contact_bending_load_in_bed_plane",
+    "service_face": "LD_knee_horn_and_shoe_socket_face_up_candidate",
+    "physical_verification_status": "UNVERIFIED_PRINT_ORIENTATION_WARP_LAYER_STRENGTH_AND_FIT",
+    "placement": {
+     "rotation_deg_xyz": [
+      -90.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       6.123233995736766e-17,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       -1.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -0.0,
+      58.5,
+      11.000000000000004
+     ],
+     "bed_bounds_mm": [
+      [
+       -18.0,
+       -76.5,
+       0.0
+      ],
+      [
+       18.0,
+       76.5,
+       34.89999961853027
+      ]
+     ],
+     "support_face_count": 6,
+     "support_face_area_mm2": 188.83218880227432,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": null,
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "legs",
+   "name": "pf_ld220_coxa_cap_m",
+   "source_path": "outputs/print-first-20260905/legs/pf_ld220_coxa_cap_m.stl",
+   "source_sha256_expected": "a0ed92195ddf5db13d7ea6311a3073a67df0370f7343e88fe03e464b6d2cf7b1",
+   "source_sha256_actual": "a0ed92195ddf5db13d7ea6311a3073a67df0370f7343e88fe03e464b6d2cf7b1",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/legs/assembly.json",
+   "quantity": 2,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [
+    "FR",
+    "RL"
+   ],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": "removable_case_cap",
+   "link_kind": "coxa",
+   "replaces": [],
+   "bbox_mm": [
+    19.5,
+    4.0,
+    27.040000915527344
+   ],
+   "solid_pla_g_upper_bound": 1.9229903053461308,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_coxa_cap']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "pitch_knee_cap_flat_face",
+    "description": "pitch/knee蓋は実STLの皿頭側を上、平面側を下。鏡像はX-90度。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      -90.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       6.123233995736766e-17,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       -1.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      2.75,
+      8.881784197001252e-16,
+      -11.399999618530273
+     ],
+     "bed_bounds_mm": [
+      [
+       -9.75,
+       -13.520000457763672,
+       0.0
+      ],
+      [
+       9.75,
+       13.520000457763672,
+       4.0
+      ]
+     ],
+     "support_face_count": 117,
+     "support_face_area_mm2": 260.0523525504923,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": {
+     "status": "PASS_COUNTERSINK_SIDE_FROM_ACTUAL_MESH",
+     "expected_counterbore_side": "-Y",
+     "detected_counterbore_side": "-Y",
+     "thickness_axis": "Y",
+     "opening_metric_mm": {
+      "-Y": 3.149543225578439,
+      "+Y": 1.5999998089536818
+     },
+     "opening_metric_difference_mm": 1.5495434166247573,
+     "rotation_counterbore_vector_after": [
+      0.0,
+      -6.123233995736766e-17,
+      1.0
+     ],
+     "counterbore_points_up": true,
+     "probe": {
+      "long_axis": "X",
+      "transverse_axis": "Z",
+      "long_center_mm": -8.5,
+      "transverse_center_mm": 0.0
+     }
+    },
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  },
+  {
+   "section": "legs",
+   "name": "pf_ld220_femur_cap_m",
+   "source_path": "outputs/print-first-20260905/legs/pf_ld220_femur_cap_m.stl",
+   "source_sha256_expected": "b91ecfbae3be91c4d8f37ca9dd61d0f7074ec051e415d37753924fbf5b0b6d61",
+   "source_sha256_actual": "b91ecfbae3be91c4d8f37ca9dd61d0f7074ec051e415d37753924fbf5b0b6d61",
+   "source_hash_status": "MATCH",
+   "assembly_source": "outputs/print-first-20260905/legs/assembly.json",
+   "quantity": 2,
+   "quantity_source": "assembly.parts row; legs length when present",
+   "instance_legs": [
+    "FR",
+    "RL"
+   ],
+   "quantity_semantics": "設計上の組立個数。適合試作/残数の分割は最終印刷manifestで管理する。",
+   "role": "removable_case_cap",
+   "link_kind": "femur",
+   "replaces": [],
+   "bbox_mm": [
+    19.5,
+    4.0,
+    27.040000915527344
+   ],
+   "solid_pla_g_upper_bound": 1.6756560372835778,
+   "material": {
+    "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_femur_cap']",
+    "config_source": "hardware/src/config.py",
+    "config_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+    "material": "PLA",
+    "wall_mm": 2.4,
+    "infill_fraction": 0.5,
+    "infill_percent": 50.0,
+    "density_g_cm3": 1.24,
+    "strength_rule": null,
+    "status": "CONFIG_DERIVED_RECHECK_AFTER_FREEZE2"
+   },
+   "orientation": {
+    "status": "KNOWN_PLANE_CANDIDATE",
+    "basis": "pitch_knee_cap_flat_face",
+    "description": "pitch/knee蓋は実STLの皿頭側を上、平面側を下。鏡像はX-90度。",
+    "mechanical_basis": null,
+    "load_direction": null,
+    "service_face": null,
+    "physical_verification_status": "UNVERIFIED_UNLESS_EXPLICIT_GEOMETRY_CHECK",
+    "placement": {
+     "rotation_deg_xyz": [
+      -90.0,
+      0.0,
+      0.0
+     ],
+     "rotation_matrix": [
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       6.123233995736766e-17,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       -1.0,
+       6.123233995736766e-17,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "bed_translation_mm": [
+      -41.25,
+      8.881784197001252e-16,
+      -11.399999618530273
+     ],
+     "bed_bounds_mm": [
+      [
+       -9.75,
+       -13.520000457763672,
+       0.0
+      ],
+      [
+       9.75,
+       13.520000457763672,
+       4.0
+      ]
+     ],
+     "support_face_count": 171,
+     "support_face_area_mm2": 270.1084933353827,
+     "support_plane_status": "CANDIDATE_GEOMETRIC_PLANE_DETECTED"
+    },
+    "geometry_check": {
+     "status": "PASS_COUNTERSINK_SIDE_FROM_ACTUAL_MESH",
+     "expected_counterbore_side": "-Y",
+     "detected_counterbore_side": "-Y",
+     "thickness_axis": "Y",
+     "opening_metric_mm": {
+      "-Y": 4.891830375743771,
+      "+Y": 1.5999997833851176
+     },
+     "opening_metric_difference_mm": 3.2918305923586533,
+     "rotation_counterbore_vector_after": [
+      0.0,
+      -6.123233995736766e-17,
+      1.0
+     ],
+     "counterbore_points_up": true,
+     "probe": {
+      "long_axis": "X",
+      "transverse_axis": "Z",
+      "long_center_mm": 35.5,
+      "transverse_center_mm": 0.0
+     }
+    },
+    "support_validation": {
+     "status": "PASS",
+     "source": "orientation.placement.support_face_area_mm2",
+     "failure": null
+    },
+    "support_interpretation": "幾何上の候補面を置いただけ。印刷反り、層間強度、実物適合、スライサーの支持材を検証していない。"
+   }
+  }
+ ],
+ "validation": {
+  "source_hash_mismatches": [],
+  "source_hash_mismatch_count": 0,
+  "all_hashes_match": true,
+  "unrecorded_hashes": [],
+  "unrecorded_hash_count": 0,
+  "recommendation_required": [],
+  "recommendation_required_count": 0,
+  "body_source_validation": {
+   "assembly_path": "outputs/print-first-20260905/body/assembly.json",
+   "assembly_sha256": "8908d9bbdd2f908f018820854376f83d4268713b402a7dc0ec5ab9555bfd5630",
+   "generation_status": "GEOMETRY_GENERATED_NOT_YET_FULL_ASSEMBLY_VALIDATED",
+   "source_sha256_count": 9,
+   "source_sha256_checked": [
+    {
+     "path": "hardware/src/make_print_first_body.py",
+     "expected_sha256": "731dd27748b1cc23cd7546714d47f273e1dddcd531ad0af5cec72f164ad53f2c",
+     "actual_sha256": "731dd27748b1cc23cd7546714d47f273e1dddcd531ad0af5cec72f164ad53f2c",
+     "status": "MATCH"
+    },
+    {
+     "path": "hardware/src/config.py",
+     "expected_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+     "actual_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+     "status": "MATCH"
+    },
+    {
+     "path": "tools/print_first_assembly.py",
+     "expected_sha256": "90b66a293e5b33bc4744d11a2bd28c9f72c9bed357c817244a760ef1344b6424",
+     "actual_sha256": "90b66a293e5b33bc4744d11a2bd28c9f72c9bed357c817244a760ef1344b6424",
+     "status": "MATCH"
+    },
+    {
+     "path": "tools/print_first_components.py",
+     "expected_sha256": "8bc68e4d8861407eaff043252a42f1188c165ff826b500d77c6176585cedc6c0",
+     "actual_sha256": "8bc68e4d8861407eaff043252a42f1188c165ff826b500d77c6176585cedc6c0",
+     "status": "MATCH"
+    },
+    {
+     "path": "tools/xiao_retention_plan.py",
+     "expected_sha256": "0fcfe08aeff7ce9fde3a368150f67c011d7ec820ec048a53833c97c3be568322",
+     "actual_sha256": "0fcfe08aeff7ce9fde3a368150f67c011d7ec820ec048a53833c97c3be568322",
+     "status": "MATCH"
+    },
+    {
+     "path": "tools/export_urdf.py",
+     "expected_sha256": "fcb960325bbf4bf03b23f4db7d6d70446db0fbf30f9c93732aada6ea4c59851f",
+     "actual_sha256": "fcb960325bbf4bf03b23f4db7d6d70446db0fbf30f9c93732aada6ea4c59851f",
+     "status": "MATCH"
+    },
+    {
+     "path": "hardware/src/make_ld220_adapter.py",
+     "expected_sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+     "actual_sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+     "status": "MATCH"
+    },
+    {
+     "path": "hardware/src/make_print_first_leg.py",
+     "expected_sha256": "1e8bc2fceb6afbe437c5a63ccfd9746cf54c988d16ff917e5cede7acb1b9c348",
+     "actual_sha256": "1e8bc2fceb6afbe437c5a63ccfd9746cf54c988d16ff917e5cede7acb1b9c348",
+     "status": "MATCH"
+    },
+    {
+     "path": "docs/audits/20260905-round2/xiao-retention-plan.json",
+     "expected_sha256": "276591eeeb3f34946b32b92774454297ac0527e3a7d69e9da4c30683fbc9f7d5",
+     "actual_sha256": "276591eeeb3f34946b32b92774454297ac0527e3a7d69e9da4c30683fbc9f7d5",
+     "status": "MATCH"
+    }
+   ],
+   "status": "PASS",
+   "failures": []
+  },
+  "legs_source_validation": {
+   "assembly_path": "outputs/print-first-20260905/legs/assembly.json",
+   "assembly_sha256": "25baedb08101c23abdb94167985d865f583487a5d0c87fe54c6d67959a46f4bc",
+   "generation_status": "GEOMETRY_CANDIDATE_PHYSICAL_FIT_UNVERIFIED",
+   "source_sha256_count": 4,
+   "source_sha256_checked": [
+    {
+     "path": "hardware/src/make_print_first_leg.py",
+     "expected_sha256": "1e8bc2fceb6afbe437c5a63ccfd9746cf54c988d16ff917e5cede7acb1b9c348",
+     "actual_sha256": "1e8bc2fceb6afbe437c5a63ccfd9746cf54c988d16ff917e5cede7acb1b9c348",
+     "status": "MATCH"
+    },
+    {
+     "path": "hardware/src/config.py",
+     "expected_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+     "actual_sha256": "c8655229c754b5d57f22ae43393bf35d4fa8d3d8578d5b3599743182c3af6e86",
+     "status": "MATCH"
+    },
+    {
+     "path": "hardware/src/make_leg.py",
+     "expected_sha256": "ebbdba644c92a7547d2bae2dd3c049aea6c39684b8b4357a953a618be84d1723",
+     "actual_sha256": "ebbdba644c92a7547d2bae2dd3c049aea6c39684b8b4357a953a618be84d1723",
+     "status": "MATCH"
+    },
+    {
+     "path": "hardware/src/make_ld220_adapter.py",
+     "expected_sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+     "actual_sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+     "status": "MATCH"
+    }
+   ],
+   "status": "PASS",
+   "failures": []
+  },
+  "geometry_failures": [],
+  "geometry_failure_count": 0,
+  "support_failures": [],
+  "support_failure_count": 0,
+  "fatal_validation_failures": [],
+  "fatal_validation_failure_count": 0,
+  "fatal_validation_status": "PASS",
+  "candidate_support_geometry_is_not_physical_print_pass": true,
+  "unknown_support_not_promoted": true,
+  "status_is_review_candidate": true
+ }
+}

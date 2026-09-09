@@ -1,0 +1,29 @@
+{
+  "pocket_intersection_mm3": 0.00022754990568375443,
+  "tab_holes_intersection_mm3": 1.6232409101255015e-05,
+  "horn_intersection_mm3": 7.0452120607103295e-06,
+  "added_outside_before_mm3": 5.312345983943256e-08,
+  "top_bridge_floor_z_mm": 10.299999999999999,
+  "top_bridge_symmetric_difference_mm3": 0.0001002157282636392,
+  "mesh": {
+    "before": {
+      "volume_mm3": 22486.91054277514,
+      "watertight": true,
+      "bodies": 1
+    },
+    "after": {
+      "volume_mm3": 18729.996389634838,
+      "watertight": true,
+      "bodies": 1
+    }
+  },
+  "assumptions": {
+    "sigma_MPa": 55,
+    "section_step_mm": 0.2,
+    "pitch_load_position_x_mm": 26.0,
+    "meaning": "足先荷重相当Fとピッチ反力偶力Mを別に置いた比較感度。力学モデルから同定した同時反力ではない。",
+    "limitations": "全断面は下枠の合成梁効果を仮定する。直接上板も併記し全断面SFを安全保証に使わない。応力集中・ねじ抜け・積層異方性・実スライサ経路・実荷重は未検証。"
+  },
+  "geometry_pass": true,
+  "print_strength_status": "UNVERIFIED"
+}

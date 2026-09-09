@@ -1,0 +1,101 @@
+{
+  "mode": "STL",
+  "method": "XY凸包の全角度組合せと格子間最大回転量による保守的距離下界。ケース/他の部品は別検査。",
+  "step_deg": 0.10000000000000142,
+  "radius_mm": 47.93158323098032,
+  "pairs": [
+    {
+      "pair": [
+        "FR",
+        "RR"
+      ],
+      "tested_angle_pairs": 328834,
+      "worst_angles_deg": [
+        -1.2999999999999972,
+        -20.299999999999997
+      ],
+      "sampled_convex_hull_gap_mm": 0.0,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": -0.08365639165293257,
+      "pass": false
+    },
+    {
+      "pair": [
+        "FL",
+        "RL"
+      ],
+      "tested_angle_pairs": 328834,
+      "worst_angles_deg": [
+        -40.0,
+        6.900000000000006
+      ],
+      "sampled_convex_hull_gap_mm": 0.0,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": -0.08365639165293257,
+      "pass": false
+    },
+    {
+      "pair": [
+        "FR",
+        "FL"
+      ],
+      "tested_angle_pairs": 332929,
+      "worst_angles_deg": [
+        12.900000000000006,
+        -12.899999999999999
+      ],
+      "sampled_convex_hull_gap_mm": 51.8605427258855,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": 51.77688633423257,
+      "pass": true
+    },
+    {
+      "pair": [
+        "RL",
+        "RR"
+      ],
+      "tested_angle_pairs": 332929,
+      "worst_angles_deg": [
+        -2.1000000000000014,
+        2.1000000000000014
+      ],
+      "sampled_convex_hull_gap_mm": 41.69067971491419,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": 41.60702332326126,
+      "pass": true
+    },
+    {
+      "pair": [
+        "FR",
+        "RL"
+      ],
+      "tested_angle_pairs": 332929,
+      "worst_angles_deg": [
+        35.400000000000006,
+        20.400000000000006
+      ],
+      "sampled_convex_hull_gap_mm": 54.45838853260016,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": 54.37473214094723,
+      "pass": true
+    },
+    {
+      "pair": [
+        "FL",
+        "RR"
+      ],
+      "tested_angle_pairs": 332929,
+      "worst_angles_deg": [
+        -35.4,
+        -20.4
+      ],
+      "sampled_convex_hull_gap_mm": 54.458388532600154,
+      "between_samples_motion_bound_mm": 0.08365639165293257,
+      "continuous_gap_lower_bound_mm": 54.37473214094722,
+      "pass": true
+    }
+  ],
+  "frame_material_lost_mm3": 0.00026602426918616784,
+  "watertight_single_body": true,
+  "pass": false
+}

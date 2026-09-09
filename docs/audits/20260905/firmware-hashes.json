@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-09-05T06:21:12.494644+00:00",
+  "files": {
+    "firmware/src/arms.h": "e948252993300995cf27358b5416ae63ca6b578567532189589e522895854af4",
+    "firmware/src/audio.h": "cbc7f55176e84ad52e34f302c53db03e34750286e696458ba41e81f0a5c8f886",
+    "firmware/src/config.h": "b5888d388d6f91f4faf3066e8028dacb98050d8293621225fbf5a45e25eee4b6",
+    "firmware/src/control.h": "bb1054fb82cf10a817acb48e2ad82624db2e887bbe1a5e3d2b456aa4a39b79ae",
+    "firmware/src/eyes.h": "c184c72ccb514d816802792f16e456545c2900df484c84a6a201eaf83679934e",
+    "firmware/src/gait.h": "b03436f06287db562ec5f2b613d6cf80bcdc714a52caa1c7280f71b1a3b2f1e8",
+    "firmware/src/ik.h": "a06ab5dc57766a9349a6b8db47e826357fc019118cec619d1656acfbb5c0130b",
+    "firmware/src/leg_output.h": "63589c7187352c8d484055f43285649dcfc4cbbec4ce70ef0822b33d5e3bea53",
+    "firmware/src/main.cpp": "63dcc1863b0817852e2dc8feea4061a43d4c7dd90b51d1fe9e5683946557364a",
+    "firmware/src/peripherals.h": "14fdc8a3d699cd072dbe759c5db22bb8f350a22007096b22876ec944338cb28b",
+    "firmware/src/servos.h": "e9a4f5d196f9074f0feadc55746397fb7051e787916a57697b278bd5072de962",
+    "firmware/src/web_ui.h": "e2418d2560df83266ec1177b46150f60e96b4e26abfd17b6ebad818211e54ca7",
+    "tools/voice_bridge.py": "1013ae2ee382b4e268d7f153840e37f453b95419ace96b2309881852d8d8f199",
+    "firmware/.pio/build/esp32dev/firmware.bin": "5cbe754333b61d5ad9e052334350dfe758b3e2dc89163cf96e139de7d1ff4c35"
+  }
+}

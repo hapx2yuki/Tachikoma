@@ -1,0 +1,84 @@
+{
+  "checked_at": "2026-09-05T17:29:52.485523+09:00",
+  "audit_commit": "0de71547c1af59abc6bcc3484b03b12e9430df2b",
+  "branch": "codex/audit-20260905",
+  "issue_bodies_match_plan": true,
+  "managed_issues": 96,
+  "open_issues": 91,
+  "closed_issues": [
+    81,
+    82,
+    83,
+    84,
+    93
+  ],
+  "dependency_count": 173,
+  "all_relations_match": true,
+  "project_items": 96,
+  "project_status_changes": [
+    {
+      "number": 81,
+      "before": "Ready",
+      "after": "Done"
+    },
+    {
+      "number": 82,
+      "before": "Ready",
+      "after": "Done"
+    },
+    {
+      "number": 83,
+      "before": "Ready",
+      "after": "Done"
+    },
+    {
+      "number": 84,
+      "before": "Ready",
+      "after": "Done"
+    },
+    {
+      "number": 93,
+      "before": "Ready",
+      "after": "Done"
+    }
+  ],
+  "other_statuses_preserved": true,
+  "completed_issue_evidence": [
+    {
+      "key": "RV-01",
+      "number": 81,
+      "comment_url": "https://github.com/hapx2yuki/Tachikoma/issues/81#issuecomment-5550593664",
+      "state": "closed",
+      "project_status": "Done"
+    },
+    {
+      "key": "RV-02",
+      "number": 82,
+      "comment_url": "https://github.com/hapx2yuki/Tachikoma/issues/82#issuecomment-5550593894",
+      "state": "closed",
+      "project_status": "Done"
+    },
+    {
+      "key": "RV-03",
+      "number": 83,
+      "comment_url": "https://github.com/hapx2yuki/Tachikoma/issues/83#issuecomment-5550594153",
+      "state": "closed",
+      "project_status": "Done"
+    },
+    {
+      "key": "RV-04",
+      "number": 84,
+      "comment_url": "https://github.com/hapx2yuki/Tachikoma/issues/84#issuecomment-5550594430",
+      "state": "closed",
+      "project_status": "Done"
+    },
+    {
+      "key": "RV-12",
+      "number": 93,
+      "comment_url": "https://github.com/hapx2yuki/Tachikoma/issues/93#issuecomment-5550594685",
+      "state": "closed",
+      "project_status": "Done"
+    }
+  ],
+  "note": "5件のCloseは修正・検査の完了。実機と未解決機構の課題はOPEN。"
+}

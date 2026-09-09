@@ -1,0 +1,481 @@
+======================================================================
+[0] URDF ロード
+  links=23 joints=22
+
+[1] XML 整形式 + 必須要素 + 名前一意性
+  OK ルート要素が <robot name=...>
+  OK リンク名の一意性 (23件)
+  OK 関節名の一意性 (22件)
+  OK 全 joint の parent/child が定義済み link を参照
+  OK 各リンクの親 joint は高々1つ (木構造)
+  OK base_link 以外の全リンクが到達可能
+  OK base_link: <inertial> あり
+  OK leg_fr_coxa: <inertial> あり
+  OK leg_fr_femur: <inertial> あり
+  OK leg_fr_tibia: <inertial> あり
+  OK leg_fl_coxa: <inertial> あり
+  OK leg_fl_femur: <inertial> あり
+  OK leg_fl_tibia: <inertial> あり
+  OK leg_rl_coxa: <inertial> あり
+  OK leg_rl_femur: <inertial> あり
+  OK leg_rl_tibia: <inertial> あり
+  OK leg_rr_coxa: <inertial> あり
+  OK leg_rr_femur: <inertial> あり
+  OK leg_rr_tibia: <inertial> あり
+  OK arm_r_shoulder: <inertial> あり
+  OK arm_r_upper: <inertial> あり
+  OK arm_r_forearm: <inertial> あり
+  OK arm_l_shoulder: <inertial> あり
+  OK arm_l_upper: <inertial> あり
+  OK arm_l_forearm: <inertial> あり
+  OK eye_r_pod: <inertial> あり
+  OK eye_l_pod: <inertial> あり
+  OK eye_pod_camera: <inertial> あり
+  OK camera_optical_frame: <inertial> あり
+  robot name = 'tachikoma'
+  OK <robot> 直下にトップレベル <material> が存在 (11件)
+  OK トップレベル material 'mat_333333': <color> あり
+  OK トップレベル material 'mat_black': <color> あり
+  OK トップレベル material 'mat_bracket_grey': <color> あり
+  OK トップレベル material 'mat_chassis_grey': <color> あり
+  OK トップレベル material 'mat_coxa_blue': <color> あり
+  OK トップレベル material 'mat_grey': <color> あり
+  OK トップレベル material 'mat_kit_blue': <color> あり
+  OK トップレベル material 'mat_palm_grey': <color> あり
+  OK トップレベル material 'mat_red': <color> あり
+  OK トップレベル material 'mat_shell_blue': <color> あり
+  OK トップレベル material 'mat_white': <color> あり
+  OK 全 <visual> の material 参照 (11種) がトップレベル宣言で解決可能 (未解決 0件)
+
+[2] 運動学照合 (config.py/firmware から独立再計算した期待値との突合, 許容1e-4m)
+  OK leg_fr_yaw: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_fr_yaw: origin 回転誤差 0.00000deg
+  OK leg_fr_yaw: axis 一致 [0. 0. 1.]
+  OK leg_fr_yaw: limit 一致 [-40.00,40.00]deg
+  OK leg_fl_yaw: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_fl_yaw: origin 回転誤差 0.00000deg
+  OK leg_fl_yaw: axis 一致 [0. 0. 1.]
+  OK leg_fl_yaw: limit 一致 [-40.00,40.00]deg
+  OK leg_rl_yaw: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_rl_yaw: origin 回転誤差 0.00000deg
+  OK leg_rl_yaw: axis 一致 [0. 0. 1.]
+  OK leg_rl_yaw: limit 一致 [-40.00,40.00]deg
+  OK leg_rr_yaw: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_rr_yaw: origin 回転誤差 0.00000deg
+  OK leg_rr_yaw: axis 一致 [0. 0. 1.]
+  OK leg_rr_yaw: limit 一致 [-40.00,40.00]deg
+  OK leg_fr_pitch: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_fr_pitch: origin 回転誤差 0.00000deg
+  OK leg_fr_pitch: axis 一致 [0. 1. 0.]
+  OK leg_fr_pitch: limit 一致 [-45.00,55.00]deg
+  OK leg_fr_knee: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_fr_knee: origin 回転誤差 0.00000deg
+  OK leg_fr_knee: axis 一致 [0. 1. 0.]
+  OK leg_fr_knee: limit 一致 [-44.00,44.00]deg
+  OK leg_fl_pitch: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_fl_pitch: origin 回転誤差 0.00000deg
+  OK leg_fl_pitch: axis 一致 [-0.  1.  0.]
+  OK leg_fl_pitch: limit 一致 [-45.00,55.00]deg
+  OK leg_fl_knee: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_fl_knee: origin 回転誤差 0.00000deg
+  OK leg_fl_knee: axis 一致 [-0.  1.  0.]
+  OK leg_fl_knee: limit 一致 [-44.00,44.00]deg
+  OK leg_rl_pitch: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_rl_pitch: origin 回転誤差 0.00000deg
+  OK leg_rl_pitch: axis 一致 [0. 1. 0.]
+  OK leg_rl_pitch: limit 一致 [-45.00,55.00]deg
+  OK leg_rl_knee: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_rl_knee: origin 回転誤差 0.00000deg
+  OK leg_rl_knee: axis 一致 [0. 1. 0.]
+  OK leg_rl_knee: limit 一致 [-44.00,44.00]deg
+  OK leg_rr_pitch: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_rr_pitch: origin 回転誤差 0.00000deg
+  OK leg_rr_pitch: axis 一致 [-0.  1.  0.]
+  OK leg_rr_pitch: limit 一致 [-45.00,55.00]deg
+  OK leg_rr_knee: origin xyz 誤差 0.00000mm < 0.1mm
+  OK leg_rr_knee: origin 回転誤差 0.00000deg
+  OK leg_rr_knee: axis 一致 [-0.  1.  0.]
+  OK leg_rr_knee: limit 一致 [-44.00,44.00]deg
+  OK arm_r_yaw: origin xyz 誤差 0.00000mm < 0.1mm
+  OK arm_r_yaw: origin 回転誤差 0.00000deg
+  OK arm_r_yaw: axis 一致 [ 0.  0. -1.]
+  OK arm_r_yaw: limit 一致 [-15.00,15.00]deg
+  OK arm_r_pitch: origin xyz 誤差 0.00000mm < 0.1mm
+  OK arm_r_pitch: origin 回転誤差 0.00000deg
+  OK arm_r_pitch: axis 一致 [0. 1. 0.]
+  OK arm_r_pitch: limit 一致 [-45.00,85.00]deg
+  OK arm_r_elbow: origin xyz 誤差 0.00000mm < 0.1mm
+  OK arm_r_elbow: origin 回転誤差 0.00000deg
+  OK arm_r_elbow: axis 一致 [0. 1. 0.]
+  OK arm_r_elbow: limit 一致 [0.00,95.00]deg
+  OK arm_l_yaw: origin xyz 誤差 0.00000mm < 0.1mm
+  OK arm_l_yaw: origin 回転誤差 0.00000deg
+  OK arm_l_yaw: axis 一致 [0. 0. 1.]
+  OK arm_l_yaw: limit 一致 [-15.00,15.00]deg
+  OK arm_l_pitch: origin xyz 誤差 0.00000mm < 0.1mm
+  OK arm_l_pitch: origin 回転誤差 0.00000deg
+  OK arm_l_pitch: axis 一致 [ 0. -1.  0.]
+  OK arm_l_pitch: limit 一致 [-45.00,85.00]deg
+  OK arm_l_elbow: origin xyz 誤差 0.00000mm < 0.1mm
+  OK arm_l_elbow: origin 回転誤差 0.00000deg
+  OK arm_l_elbow: axis 一致 [ 0. -1.  0.]
+  OK arm_l_elbow: limit 一致 [0.00,95.00]deg
+  OK eye_r_roll: origin xyz 誤差 0.00000mm < 0.1mm (EYE_SOCKETS_150 再計算)
+  OK eye_r_roll: limit 一致
+  OK eye_l_roll: origin xyz 誤差 0.00000mm < 0.1mm (EYE_SOCKETS_150 再計算)
+  OK eye_l_roll: limit 一致
+  OK eye_pod_camera_fixed: type=fixed
+  OK eye_pod_camera_fixed: origin xyz 誤差 0.00000mm < 0.1mm (EYE_SOCKETS_150[1] 再計算)
+  OK camera_optical_fixed: type=fixed
+  OK camera_optical_fixed: 光軸方位角 -0.0000deg ≈ 0 (水平前方, +Y) [config.py 独立再計算]
+  OK camera_optical_fixed: 光軸仰角 8.5884deg ≈ CAM2_RESIDUAL_DEG(8.5884deg)=ALPHA-THETA [config.py 独立再計算]
+  camera_optical_fixed: world 位置(mm)=[-0.     70.2973 63.2313] 方位角=-0.0000deg 仰角=8.5884deg
+
+[3] FK 照合 (URDF 関節チェーン FK vs robot_meshes(dress=True), 許容0.1mm)
+  OK pose00(zero/neutral): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=115.0 phase=0.00 vx=0.00 vy=0.00 wz=0.00 arm=(0.0,0.0,0.0)])
+  OK pose01(standing): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=115.0 phase=0.00 vx=0.00 vy=0.00 wz=0.00 arm=(10.0,30.0,40.0)])
+  OK pose02(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=129.5 phase=0.73 vx=0.86 vy=0.36 wz=-0.85 arm=(-9.3,4.7,87.3)])
+  OK pose03(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=114.0 phase=0.61 vx=-0.84 vy=0.31 wz=-0.99 arm=(-2.2,-31.1,33.8)])
+  OK pose04(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=129.6 phase=0.18 vx=-0.24 vy=-0.28 wz=0.54 arm=(-5.7,-26.9,7.8)])
+  OK pose05(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=106.5 phase=0.23 vx=0.56 vy=-0.23 wz=-0.19 arm=(9.3,30.9,31.8)])
+  OK pose06(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=126.4 phase=0.89 vx=0.98 vy=-0.04 wz=0.39 arm=(-8.1,-33.0,28.7)])
+  OK pose07(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=115.3 phase=0.90 vx=0.93 vy=0.37 wz=0.94 arm=(-5.7,34.9,38.7)])
+  OK pose08(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=119.8 phase=0.22 vx=-0.85 vy=-0.82 wz=-0.10 arm=(3.7,44.4,84.3)])
+  OK pose09(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=122.1 phase=0.41 vx=-0.60 vy=-0.91 wz=0.58 arm=(-2.2,17.9,49.3)])
+  OK pose10(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=113.8 phase=0.32 vx=0.47 vy=-0.13 wz=-0.88 arm=(8.2,22.5,87.0)])
+  OK pose11(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=114.3 phase=0.30 vx=-0.87 vy=0.36 wz=0.26 arm=(-11.5,41.6,14.2)])
+  OK pose12(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=123.2 phase=0.82 vx=-0.46 vy=-0.73 wz=0.21 arm=(13.4,-18.1,62.8)])
+  OK pose13(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=119.7 phase=0.15 vx=0.82 vy=0.54 wz=0.14 arm=(-11.6,33.0,65.6)])
+  OK pose14(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=113.0 phase=0.78 vx=-0.74 vy=0.54 wz=-0.12 arm=(-5.0,38.4,52.8)])
+  OK pose15(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=109.1 phase=0.71 vx=0.24 vy=0.43 wz=-0.85 arm=(-13.8,-36.1,21.7)])
+  OK pose16(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=116.4 phase=0.64 vx=0.64 vy=-0.32 wz=-0.08 arm=(5.4,2.1,67.6)])
+  OK pose17(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=116.2 phase=0.46 vx=0.03 vy=-0.58 wz=-0.90 arm=(9.3,44.2,36.6)])
+  OK pose18(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=113.0 phase=0.78 vx=0.70 vy=-0.47 wz=-0.97 arm=(13.5,-33.5,20.9)])
+  OK pose19(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=127.2 phase=0.63 vx=-0.16 vy=0.50 wz=0.70 arm=(-8.6,-31.5,15.6)])
+  OK pose20(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=109.1 phase=0.50 vx=0.63 vy=-0.59 wz=-0.09 arm=(6.2,15.0,13.6)])
+  OK pose21(random): 全 129 パーツ一致 (未一致0, worst=0.000000mm [body_h=112.7 phase=0.89 vx=-0.36 vy=-0.46 wz=-0.81 arm=(11.8,28.6,60.4)])
+  OK ランダム姿勢 20/20 件を評価 (試行20回)
+  OK 目 roll 関節 FK (eyes_video() 式と独立突合, 12件): worst=0.000000mm < 0.05mm
+
+[4] 接地 (実firmwareの停止立位: TPU支持、硬い形状の先行接地)
+  NG FR: TPU底z=+9.3571mm、硬い形状最低z=-8.7451mm、TPUが先行接地 (0.1mm許容)
+  NG FL: TPU底z=+9.3571mm、硬い形状最低z=-8.7451mm、TPUが先行接地 (0.1mm許容)
+  NG RL: TPU底z=+8.6992mm、硬い形状最低z=-13.3347mm、TPUが先行接地 (0.1mm許容)
+  NG RR: TPU底z=+8.6992mm、硬い形状最低z=-13.3347mm、TPUが先行接地 (0.1mm許容)
+  NG 実停止立位の4足TPU共面性: 0.6578mm < 0.1mm
+  最低支持形状を床へ置くときの股軸高さ=128.3347mm (指定115.0mm)。軟質材圧縮・姿勢緩和はこの静的検査の範囲外
+
+[5] 慣性 (全リンク質量>0、対称+正定値、総質量 2.5〜3.5kg)
+  OK base_link: 質量特性が有限
+  OK base_link: mass=1466.83g > 0
+  OK base_link: 慣性テンソル対称
+  OK base_link: 慣性テンソル正定値 (固有値 [0.00301296 0.01579118 0.01591429])
+  OK base_link: 主慣性の三角不等式
+  OK leg_fr_coxa: 質量特性が有限
+  OK leg_fr_coxa: mass=83.79g > 0
+  OK leg_fr_coxa: 慣性テンソル対称
+  OK leg_fr_coxa: 慣性テンソル正定値 (固有値 [1.5378394e-05 2.3009938e-05 2.8457378e-05])
+  OK leg_fr_coxa: 主慣性の三角不等式
+  OK leg_fr_femur: 質量特性が有限
+  OK leg_fr_femur: mass=95.79g > 0
+  OK leg_fr_femur: 慣性テンソル対称
+  OK leg_fr_femur: 慣性テンソル正定値 (固有値 [1.9351821e-05 5.3514065e-05 5.8686454e-05])
+  OK leg_fr_femur: 主慣性の三角不等式
+  OK leg_fr_tibia: 質量特性が有限
+  OK leg_fr_tibia: mass=94.30g > 0
+  OK leg_fr_tibia: 慣性テンソル対称
+  OK leg_fr_tibia: 慣性テンソル正定値 (固有値 [2.14284240e-05 1.51669748e-04 1.53581744e-04])
+  OK leg_fr_tibia: 主慣性の三角不等式
+  OK leg_fl_coxa: 質量特性が有限
+  OK leg_fl_coxa: mass=83.79g > 0
+  OK leg_fl_coxa: 慣性テンソル対称
+  OK leg_fl_coxa: 慣性テンソル正定値 (固有値 [1.5378394e-05 2.3009938e-05 2.8457378e-05])
+  OK leg_fl_coxa: 主慣性の三角不等式
+  OK leg_fl_femur: 質量特性が有限
+  OK leg_fl_femur: mass=95.79g > 0
+  OK leg_fl_femur: 慣性テンソル対称
+  OK leg_fl_femur: 慣性テンソル正定値 (固有値 [1.9359292e-05 5.3496703e-05 5.8683124e-05])
+  OK leg_fl_femur: 主慣性の三角不等式
+  OK leg_fl_tibia: 質量特性が有限
+  OK leg_fl_tibia: mass=94.30g > 0
+  OK leg_fl_tibia: 慣性テンソル対称
+  OK leg_fl_tibia: 慣性テンソル正定値 (固有値 [2.20444410e-05 1.50950608e-04 1.53026960e-04])
+  OK leg_fl_tibia: 主慣性の三角不等式
+  OK leg_rl_coxa: 質量特性が有限
+  OK leg_rl_coxa: mass=83.79g > 0
+  OK leg_rl_coxa: 慣性テンソル対称
+  OK leg_rl_coxa: 慣性テンソル正定値 (固有値 [1.5378394e-05 2.3009938e-05 2.8457378e-05])
+  OK leg_rl_coxa: 主慣性の三角不等式
+  OK leg_rl_femur: 質量特性が有限
+  OK leg_rl_femur: mass=95.79g > 0
+  OK leg_rl_femur: 慣性テンソル対称
+  OK leg_rl_femur: 慣性テンソル正定値 (固有値 [1.9351821e-05 5.3514065e-05 5.8686454e-05])
+  OK leg_rl_femur: 主慣性の三角不等式
+  OK leg_rl_tibia: 質量特性が有限
+  OK leg_rl_tibia: mass=94.30g > 0
+  OK leg_rl_tibia: 慣性テンソル対称
+  OK leg_rl_tibia: 慣性テンソル正定値 (固有値 [2.14284240e-05 1.51669748e-04 1.53581744e-04])
+  OK leg_rl_tibia: 主慣性の三角不等式
+  OK leg_rr_coxa: 質量特性が有限
+  OK leg_rr_coxa: mass=83.79g > 0
+  OK leg_rr_coxa: 慣性テンソル対称
+  OK leg_rr_coxa: 慣性テンソル正定値 (固有値 [1.5378394e-05 2.3009938e-05 2.8457378e-05])
+  OK leg_rr_coxa: 主慣性の三角不等式
+  OK leg_rr_femur: 質量特性が有限
+  OK leg_rr_femur: mass=95.79g > 0
+  OK leg_rr_femur: 慣性テンソル対称
+  OK leg_rr_femur: 慣性テンソル正定値 (固有値 [1.9359292e-05 5.3496703e-05 5.8683124e-05])
+  OK leg_rr_femur: 主慣性の三角不等式
+  OK leg_rr_tibia: 質量特性が有限
+  OK leg_rr_tibia: mass=94.30g > 0
+  OK leg_rr_tibia: 慣性テンソル対称
+  OK leg_rr_tibia: 慣性テンソル正定値 (固有値 [2.20444410e-05 1.50950608e-04 1.53026960e-04])
+  OK leg_rr_tibia: 主慣性の三角不等式
+  OK arm_r_shoulder: 質量特性が有限
+  OK arm_r_shoulder: mass=23.54g > 0
+  OK arm_r_shoulder: 慣性テンソル対称
+  OK arm_r_shoulder: 慣性テンソル正定値 (固有値 [2.013436e-06 3.106874e-06 3.673478e-06])
+  OK arm_r_shoulder: 主慣性の三角不等式
+  OK arm_r_upper: 質量特性が有限
+  OK arm_r_upper: mass=36.49g > 0
+  OK arm_r_upper: 慣性テンソル対称
+  OK arm_r_upper: 慣性テンソル正定値 (固有値 [4.7287310e-06 1.2719007e-05 1.2823657e-05])
+  OK arm_r_upper: 主慣性の三角不等式
+  OK arm_r_forearm: 質量特性が有限
+  OK arm_r_forearm: mass=8.53g > 0
+  OK arm_r_forearm: 慣性テンソル対称
+  OK arm_r_forearm: 慣性テンソル正定値 (固有値 [7.366230e-07 1.843255e-06 1.934396e-06])
+  OK arm_r_forearm: 主慣性の三角不等式
+  OK arm_l_shoulder: 質量特性が有限
+  OK arm_l_shoulder: mass=23.54g > 0
+  OK arm_l_shoulder: 慣性テンソル対称
+  OK arm_l_shoulder: 慣性テンソル正定値 (固有値 [2.013436e-06 3.106874e-06 3.673478e-06])
+  OK arm_l_shoulder: 主慣性の三角不等式
+  OK arm_l_upper: 質量特性が有限
+  OK arm_l_upper: mass=36.49g > 0
+  OK arm_l_upper: 慣性テンソル対称
+  OK arm_l_upper: 慣性テンソル正定値 (固有値 [4.7287310e-06 1.2719007e-05 1.2823657e-05])
+  OK arm_l_upper: 主慣性の三角不等式
+  OK arm_l_forearm: 質量特性が有限
+  OK arm_l_forearm: mass=8.53g > 0
+  OK arm_l_forearm: 慣性テンソル対称
+  OK arm_l_forearm: 慣性テンソル正定値 (固有値 [7.366230e-07 1.843255e-06 1.934396e-06])
+  OK arm_l_forearm: 主慣性の三角不等式
+  OK eye_r_pod: 質量特性が有限
+  OK eye_r_pod: mass=7.55g > 0
+  OK eye_r_pod: 慣性テンソル対称
+  OK eye_r_pod: 慣性テンソル正定値 (固有値 [6.73493e-07 6.73726e-07 9.07869e-07])
+  OK eye_r_pod: 主慣性の三角不等式
+  OK eye_l_pod: 質量特性が有限
+  OK eye_l_pod: mass=7.55g > 0
+  OK eye_l_pod: 慣性テンソル対称
+  OK eye_l_pod: 慣性テンソル正定値 (固有値 [6.73493e-07 6.73726e-07 9.07869e-07])
+  OK eye_l_pod: 主慣性の三角不等式
+  OK eye_pod_camera: 質量特性が有限
+  OK eye_pod_camera: mass=10.80g > 0
+  OK eye_pod_camera: 慣性テンソル対称
+  OK eye_pod_camera: 慣性テンソル正定値 (固有値 [1.040566e-06 1.115408e-06 1.397984e-06])
+  OK eye_pod_camera: 主慣性の三角不等式
+  OK camera_optical_frame: 質量特性が有限
+  OK camera_optical_frame: mass=1.00g > 0
+  OK camera_optical_frame: 慣性テンソル対称
+  OK camera_optical_frame: 慣性テンソル正定値 (固有値 [4.167e-09 4.167e-09 4.167e-09])
+  OK camera_optical_frame: 主慣性の三角不等式
+  OK 総質量 2.7264 kg (目標 2.5〜3.5kg)
+
+[5b] 質量の独立再計算 (leg_fr_coxa: RHO/壁厚/インフィルの drift・サーボ質量の重複計上/欠落を検出)
+  OK export_urdf.RHO が独立転記値と一致: {'PLA': 1.24, 'PETG': 1.27, 'TPU': 1.21}
+  OK leg_fr_coxa: 独立再計算質量 83.787g ≈ URDF記載値 83.787g (coxa_bracket_m 23.787g + pitch servo 60.0g)
+
+[6] メッシュ (全ファイル存在 / visual パーツ被覆 = robot_meshes(dress=True) 全パーツ)
+  OK URDF 参照メッシュ 75件、全て実在 (欠落0)
+  parts_manifest.json 記録数: 130
+  OK manifest 全130パーツが robot_meshes(dress=True) 出力と対応 (camera_carrier 1件は意図的な追加分として除外; 未対応 0件)
+  OK robot_meshes(dress=True) 実パーツ数 129 <= manifest記録数 130 (manifest が robot_meshes 出力を完全に被覆, +1分はcamera_carrier 等の意図的追加)
+
+[6b] 焼き出し visual STL の忠実性 (実ファイル vs bake_visual_meshes() 出力)
+  OK base_link__vis_chassis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK base_link__vis_kit_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000016mm)
+  OK base_link__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000015mm)
+  OK base_link__vis_black.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000010mm)
+  OK base_link__vis_white.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK base_link__vis_red.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000016mm)
+  OK eye_pod_camera__vis_white.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK eye_pod_camera__vis_chassis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK eye_r_pod__vis_white.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK eye_l_pod__vis_white.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK leg_fr_coxa__vis_coxa_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_fr_femur__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK leg_fr_femur__vis_kit_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_fr_tibia__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_fr_tibia__vis_333333.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_fr_tibia__vis_shell_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_fr_tibia__vis_black.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000008mm)
+  OK leg_fl_coxa__vis_coxa_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_fl_femur__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK leg_fl_femur__vis_kit_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_fl_tibia__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_fl_tibia__vis_333333.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_fl_tibia__vis_shell_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_fl_tibia__vis_black.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000008mm)
+  OK leg_rl_coxa__vis_coxa_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_rl_femur__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK leg_rl_femur__vis_kit_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_rl_tibia__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_rl_tibia__vis_333333.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_rl_tibia__vis_shell_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_rl_tibia__vis_black.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000008mm)
+  OK leg_rr_coxa__vis_coxa_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_rr_femur__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK leg_rr_femur__vis_kit_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_rr_tibia__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_rr_tibia__vis_333333.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_rr_tibia__vis_shell_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_rr_tibia__vis_black.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000008mm)
+  OK arm_r_shoulder__vis_bracket_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK arm_r_upper__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK arm_r_upper__vis_shell_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK arm_r_forearm__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000003mm)
+  OK arm_r_forearm__vis_palm_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK arm_r_forearm__vis_black.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK arm_l_shoulder__vis_bracket_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK arm_l_upper__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK arm_l_upper__vis_shell_blue.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK arm_l_forearm__vis_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000003mm)
+  OK arm_l_forearm__vis_palm_grey.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK arm_l_forearm__vis_black.stl: 実STLがbake_visual_meshes()出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK 焼き出し visual STL 50件をベイク処理そのものまで含めて検証
+  worst=0.000016mm
+
+[6c] 焼き出し collision STL の忠実性 (実ファイル vs build_collisions()+スケール出力)
+  OK base_link__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK base_link__col_1.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK base_link__col_2.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000015mm)
+  OK base_link__col_3.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK eye_pod_camera__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK eye_r_pod__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK eye_l_pod__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK leg_fr_coxa__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_fr_femur__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK leg_fr_tibia__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_fl_coxa__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_fl_femur__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK leg_fl_tibia__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_rl_coxa__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_rl_femur__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK leg_rl_tibia__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK leg_rr_coxa__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK leg_rr_femur__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK leg_rr_tibia__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000007mm)
+  OK arm_r_shoulder__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK arm_r_upper__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000003mm)
+  OK arm_r_forearm__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK arm_l_shoulder__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000001mm)
+  OK arm_l_upper__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000004mm)
+  OK arm_l_forearm__col_0.stl: 実STLがcollision焼き出し出力と三角形コーナー点群一致 (誤差0.000002mm)
+  OK 焼き出し collision STL 25件をベイク処理そのものまで含めて検証
+  worst=0.000015mm
+
+[7] スケール (メッシュ bbox が m 単位として妥当, 全長 ~0.4m 級)
+  visual メッシュ全体 bbox (静止姿勢ではなく各リンクローカル寄せ集めの参考値): [0.1731 0.3851 0.3394] m
+  標準立ち姿勢での組立時 bbox: [0.3786 0.3851 0.3085] m (X×Y×Z, 全長スケール ~0.4m 級を期待)
+  OK X 幅 0.379m が妥当範囲 (0.15〜1.0m)
+  OK Y 奥行 0.385m が妥当範囲 (0.15〜1.0m)
+  OK Z 高さ 0.309m が妥当範囲 (0.05〜1.0m)
+  OK mm 単位のまま焼き込まれていない (全長5m超なし)
+  OK cm/他単位混入なし (全長1cm未満なし)
+
+[8] collision (凸性・面数上限・foot_pad 底の包含)
+  OK base_link[0]: 面数 106 <= 200
+  OK base_link[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK base_link[0]: watertight
+  OK base_link[1]: 面数 180 <= 200
+  OK base_link[1]: 実質凸 (自身の凸包との体積差 0.003% < 1%, decimate後の数値誤差込み許容)
+  OK base_link[1]: watertight
+  OK base_link[2]: 面数 180 <= 200
+  OK base_link[2]: 実質凸 (自身の凸包との体積差 0.010% < 1%, decimate後の数値誤差込み許容)
+  OK base_link[2]: watertight
+  OK base_link[3]: 面数 180 <= 200
+  OK base_link[3]: 実質凸 (自身の凸包との体積差 0.029% < 1%, decimate後の数値誤差込み許容)
+  OK base_link[3]: watertight
+  OK eye_pod_camera[0]: 面数 180 <= 200
+  OK eye_pod_camera[0]: 実質凸 (自身の凸包との体積差 0.049% < 1%, decimate後の数値誤差込み許容)
+  OK eye_pod_camera[0]: watertight
+  OK eye_r_pod[0]: 面数 180 <= 200
+  OK eye_r_pod[0]: 実質凸 (自身の凸包との体積差 0.051% < 1%, decimate後の数値誤差込み許容)
+  OK eye_r_pod[0]: watertight
+  OK eye_l_pod[0]: 面数 180 <= 200
+  OK eye_l_pod[0]: 実質凸 (自身の凸包との体積差 0.051% < 1%, decimate後の数値誤差込み許容)
+  OK eye_l_pod[0]: watertight
+  OK leg_fr_coxa[0]: 面数 128 <= 200
+  OK leg_fr_coxa[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_fr_coxa[0]: watertight
+  OK leg_fr_femur[0]: 面数 98 <= 200
+  OK leg_fr_femur[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_fr_femur[0]: watertight
+  OK leg_fr_tibia[0]: 面数 156 <= 200
+  OK leg_fr_tibia[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_fr_tibia[0]: watertight
+  OK leg_fr_tibia: collision 凸包の最下点 (-159.432mm) が foot_pad 底 (-146.358mm) を包含
+  OK leg_fl_coxa[0]: 面数 128 <= 200
+  OK leg_fl_coxa[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_fl_coxa[0]: watertight
+  OK leg_fl_femur[0]: 面数 98 <= 200
+  OK leg_fl_femur[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_fl_femur[0]: watertight
+  OK leg_fl_tibia[0]: 面数 166 <= 200
+  OK leg_fl_tibia[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_fl_tibia[0]: watertight
+  OK leg_fl_tibia: collision 凸包の最下点 (-159.432mm) が foot_pad 底 (-146.358mm) を包含
+  OK leg_rl_coxa[0]: 面数 128 <= 200
+  OK leg_rl_coxa[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_rl_coxa[0]: watertight
+  OK leg_rl_femur[0]: 面数 98 <= 200
+  OK leg_rl_femur[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_rl_femur[0]: watertight
+  OK leg_rl_tibia[0]: 面数 156 <= 200
+  OK leg_rl_tibia[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_rl_tibia[0]: watertight
+  OK leg_rl_tibia: collision 凸包の最下点 (-159.432mm) が foot_pad 底 (-146.358mm) を包含
+  OK leg_rr_coxa[0]: 面数 128 <= 200
+  OK leg_rr_coxa[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_rr_coxa[0]: watertight
+  OK leg_rr_femur[0]: 面数 98 <= 200
+  OK leg_rr_femur[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_rr_femur[0]: watertight
+  OK leg_rr_tibia[0]: 面数 166 <= 200
+  OK leg_rr_tibia[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK leg_rr_tibia[0]: watertight
+  OK leg_rr_tibia: collision 凸包の最下点 (-159.432mm) が foot_pad 底 (-146.358mm) を包含
+  OK arm_r_shoulder[0]: 面数 180 <= 200
+  OK arm_r_shoulder[0]: 実質凸 (自身の凸包との体積差 0.001% < 1%, decimate後の数値誤差込み許容)
+  OK arm_r_shoulder[0]: watertight
+  OK arm_r_upper[0]: 面数 180 <= 200
+  OK arm_r_upper[0]: 実質凸 (自身の凸包との体積差 0.029% < 1%, decimate後の数値誤差込み許容)
+  OK arm_r_upper[0]: watertight
+  OK arm_r_forearm[0]: 面数 180 <= 200
+  OK arm_r_forearm[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK arm_r_forearm[0]: watertight
+  OK arm_l_shoulder[0]: 面数 180 <= 200
+  OK arm_l_shoulder[0]: 実質凸 (自身の凸包との体積差 0.001% < 1%, decimate後の数値誤差込み許容)
+  OK arm_l_shoulder[0]: watertight
+  OK arm_l_upper[0]: 面数 180 <= 200
+  OK arm_l_upper[0]: 実質凸 (自身の凸包との体積差 0.090% < 1%, decimate後の数値誤差込み許容)
+  OK arm_l_upper[0]: watertight
+  OK arm_l_forearm[0]: 面数 180 <= 200
+  OK arm_l_forearm[0]: 実質凸 (自身の凸包との体積差 0.000% < 1%, decimate後の数値誤差込み許容)
+  OK arm_l_forearm[0]: watertight
+
+======================================================================
+合計 434 項目: OK=429 NG=5
+  section[-]: 17/17 OK
+  section[1]: 36/36 OK
+  section[2]: 81/81 OK
+  section[3]: 24/24 OK
+  section[4]: 0/5 OK
+  section[5]: 115/115 OK
+  section[5b]: 2/2 OK
+  section[6b]: 50/50 OK
+  section[6c]: 25/25 OK
+  section[8]: 79/79 OK
+RESULT: FAIL

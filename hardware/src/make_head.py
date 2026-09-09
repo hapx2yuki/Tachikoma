@@ -208,7 +208,7 @@ def _armcut_box_right(hb_chassis: Manifold, mx: float, my: float):
 # Mouth_Neck_Blue の Cannon-local Y オフセット (tools/data/kit_assembly_front.json
 # の Mouth_Neck_Blue エントリ t.y=-28.97 が唯一の正。ここでの再定義は複写だが
 # 値そのものは同ファイルを見て一致させること)
-NECK_CANNON_LOCAL_Y = -28.97
+NECK_CANNON_LOCAL_Y = C.MOUTH_NECK_LOCAL_Y
 RELIEF_SCALE = 1.15   # Neck を局所原点中心に等方拡大する係数 (中心から
                        # 概ね半径12mmの円錐台に対し、片側+1.8mm程度の逃がし
                        # マージン相当 — [8]/[8b] 等の他マージンと同オーダー)

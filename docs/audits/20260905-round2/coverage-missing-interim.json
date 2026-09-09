@@ -1,0 +1,226 @@
+[
+  {
+    "path": "tools/tests/test_print_artifacts.py",
+    "bytes": 2885,
+    "sha256": "7fa28486f743d4d74f3df86fe28892c0e7e625b11cf8d9994d020e725c26501f",
+    "kind": "source",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_chassis_layout.png",
+    "bytes": 142453,
+    "sha256": "33000e9dbc0c416b3c3bf5e96adb67915a1d54eb366048db8bb5b498a38bd082",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_walk.mp4",
+    "bytes": 3762006,
+    "sha256": "5c757427d9138d59f9ad48f958d019a6538e4cc37a8fbe63c862a014383af2d6",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_shin_shell_detail.png",
+    "bytes": 156991,
+    "sha256": "086bbc39cce31a230950527c6cebfb09a51a78383f0ff0bf858119cd8254d531",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/preview_leg_parts.png",
+    "bytes": 391106,
+    "sha256": "d5d04338471df006db5d181d45b81bf3adcaecc55877bdc04f52036a774316d0",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_head_center_sweep3.png",
+    "bytes": 272308,
+    "sha256": "a8587812b30bbe158a1455c4c365b24eb70c8db76707f4b3465c1279d4e3431f",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/preview_arm_parts.png",
+    "bytes": 602109,
+    "sha256": "a2ea952eeb4c4d03f852affe6c61610068ba2196accf42550383ad8e6a51f410",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_eyes.mp4",
+    "bytes": 218731,
+    "sha256": "54c2c27bf72e0423fc2dde9c43e73ea0157dc410e80a889285ad8886cd418418",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/preview_shells.png",
+    "bytes": 496690,
+    "sha256": "632257bb844904fa418533c566bd05ab989d53bb7a86a7d885cf418096f33a94",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_mouth_cannon_pose_before_after.png",
+    "bytes": 436169,
+    "sha256": "1785fb4a703c36297227224ec3499e578abd86ba4a96b8819af599898c6e2f1b",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_exploded_leg.png",
+    "bytes": 118527,
+    "sha256": "f92a9ed4e693003583cdaf90241f39d57d419abd9ea94d3faa364d0383d4b9a4",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/preview_leg_assembly.png",
+    "bytes": 88181,
+    "sha256": "9fd62e48cd38249eeff73e86405db46c9c42c2f71fdc775931ecad1ed7ece4cd",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/preview_chassis.png",
+    "bytes": 154898,
+    "sha256": "346f9155d6084a2a3cee22179db6632b66b962b877dad7bb71e68ea0d02e5662",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/preview_gait.png",
+    "bytes": 116402,
+    "sha256": "70473756bcf55787bd0936f1a2c397ac7a8f23679b3d6e481535672b3615dd3a",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/preview_robot.png",
+    "bytes": 161258,
+    "sha256": "12a4ac767de61e86d56940a5e9ff6c8d6a1620bc47cd7c2fbca035242fe30f2c",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_elbow_detail.png",
+    "bytes": 416043,
+    "sha256": "a2a28515291e7f03176441a53fcfcb1f9fb2f62b78b9e1fa16b8d7f4875fceed",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_proportions.png",
+    "bytes": 233856,
+    "sha256": "5870587d01d9ef7f828568509571160b82d329f10d46d9c6dda0c5dd6036a4b4",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_physics_walk.mp4",
+    "bytes": 6942587,
+    "sha256": "767135d10381b4873328daac34d4800be105bab8d7bdd2553a1c093d77977ba8",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_shin_orientation_check.png",
+    "bytes": 34346,
+    "sha256": "6859c5e0959ab5786feb025b80fa2f2dcfc6d5d4e19c2f4964193d6f6c04d557",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_hand_detail.png",
+    "bytes": 308070,
+    "sha256": "6401b1118d2fcf7021df1b861dc407e7613f7cef1cc5dbb25983ffb1fc3742f8",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_shin_shell_relief_removed.png",
+    "bytes": 663412,
+    "sha256": "7981dd298ca5394e6d459ced81be458284a9a28af87509fbb71a468e1cc172f1",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_wiring.mp4",
+    "bytes": 5194297,
+    "sha256": "2fffd58da1115e569adefe17e6b781bcfa72d34fbc46e747d382c77ffca45b53",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_head_center_before_after.png",
+    "bytes": 212678,
+    "sha256": "122cd83b7751d9f58fe7bda6f97b1c468e65821ab98953cecd7d92e3589a286f",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_exploded_arm.png",
+    "bytes": 237903,
+    "sha256": "cbdb095990866de186a568c5222ecc5b405dde1aa34b9552bddd696c923e970d",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/vis_assembly_steps.png",
+    "bytes": 368158,
+    "sha256": "8c4a655175a31326cbfaa156b40e7edd237fc0b65358100319a6be08f7193338",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/audits/20260905/foot_contact_115mm.png",
+    "bytes": 377694,
+    "sha256": "f2ad2d0512ec3e80962d266948cd4ae07029f4ebb8a4bb2bd440ee2baab1b728",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/audits/20260905/preview_leg_assembly.png",
+    "bytes": 88806,
+    "sha256": "4e37d0809e6f7834046128d82dfb7fc6e6e5dd9d11dcff71deffd6d288bf3de9",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/audits/20260905/preview_gait.png",
+    "bytes": 117518,
+    "sha256": "40cba1d5d89a70440a12d0c381f26aa7382954c19348167c81907c02561a3e4e",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/audits/20260905/final-check_leg_assembly.png",
+    "bytes": 88806,
+    "sha256": "4e37d0809e6f7834046128d82dfb7fc6e6e5dd9d11dcff71deffd6d288bf3de9",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/audits/20260905/final-sim_gait.png",
+    "bytes": 117518,
+    "sha256": "40cba1d5d89a70440a12d0c381f26aa7382954c19348167c81907c02561a3e4e",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/audits/20260905/simulation/forward_nominal_5s.png",
+    "bytes": 405307,
+    "sha256": "4cf12dbe8be11eee0d3cfcdc74116a02d22eedd8e290b8afc8d8e59e142375d8",
+    "kind": "media",
+    "status": "unreviewed"
+  },
+  {
+    "path": "docs/audits/20260905/simulation/forward_nominal.mp4",
+    "bytes": 4320407,
+    "sha256": "78a071ede60564dbbb26315dca107fe2e8345de2655fc1b07ddb91e4201ca887",
+    "kind": "media",
+    "status": "unreviewed"
+  }
+]

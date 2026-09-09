@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 // タチコマ歩行ファームウェア 設定
 // 幾何値は hardware/src/config.py と一致させること
 
@@ -11,17 +12,17 @@ constexpr float FEMUR_LEN = 70.0f;   // 股ピッチ軸→膝軸 (STD サーボ�
 // (leg_foot_bored+foot_pad) は膝軸から見た tibia の物理原点 (=旧
 // TIBIA_LEN=135 の到達点) よりさらに foot_pad 底まで実体があり、しかも
 // tibia 軸は SWAY 込みの実スタンス姿勢によって鉛直から最大 20° 以上傾く
-// ため、単純な一次元押し出し (foot_pad 底の深さ 11.358mm をそのまま加算)
+// ため、旧・鉛直時の一次元近似 (foot_pad 底の深さ 11.358mm をそのまま加算)
 // では体高105mm・SWAY 込みの最悪位相で world z 残差が最大 3.5mm 残ることが
 // 判明した。tools/sim_gait.py の実際の foot_target()/leg_ik() (SWAY 込み)
 // を使い、実運用スタンス全域 (体高105-130mm, 全位相) を物理配置チェーンで
 // 数値評価し、最悪ケースがちょうど world z=0 に接する (めり込まない)
-// FOOT_GROUND_OFFSET=18.6mm で校正した (2026-07-29 実測+校正, hardware/
-// src/config.py FOOT_GROUND_OFFSET 参照)。135+18.6=153.6 (config.py
+// FOOT_GROUND_OFFSET=20.98mm で数値校正した (2026-09-04 ホスト計算、実機未確認, hardware/
+// src/config.py FOOT_GROUND_OFFSET 参照)。135+20.98=155.98 (config.py
 // TIBIA_LEN_GAIT と一致させること。tools/sim_gait.py が regex 突合で
 // 検査する)。ik.h はこの定数を物理形状目的では使っていないため、値を
 // 実効値にしても他の意味は壊れない。
-constexpr float TIBIA_LEN = 155.98f;  // 膝軸→足先接地点 (実効値, IK専用)。2026-09-04 153.6→155.98
+constexpr float TIBIA_LEN = 155.98f;  // 膝軸→足先接地点 (実効値, IK専用)。2026-09-04 校正値
                                       // (重心対応スタンスで最悪位相の脛傾きが増えた分の再校正,
                                       // config.py FOOT_GROUND_OFFSET 20.98)
 constexpr float HIP_R = 50.9f;       // ヨー軸の配置半径 (円形ハブ v3, 放射配置)
@@ -67,6 +68,15 @@ constexpr float EYE_SLEW_DPS = 500.0f;    // サッカードの速さ
 constexpr int ARM_SIGN[2] = {+1, -1};
 constexpr int US_MIN = 500, US_MAX = 2500; // サーボパルス範囲
 constexpr float DEG_RANGE = 180.0f;        // US_MIN..US_MAX に対応する角度
+constexpr int DFPLAYER_TRACK_MAX = 9999;   // mp3/0001.mp3〜9999.mp3 の4桁範囲
+// 通常動作の指令リース。期限切れでは速度だけをゼロにせず、stand と PWM を
+// 停止し、再開には明示的な stand=1 を要求する (main.cpp)。
+constexpr uint32_t CONTROL_LEASE_MS = 1500;
+// 校正 API はサーボの電気的端点 (500/2500us) を直接叩かせない。実際の
+// 機構リミットから算出した範囲に加え、上下端に 100us の保護余裕を取る。
+// これは単体・無負荷・ホーンを外した診断モード専用であり、実機の角度校正を
+// 合格にする値ではない。
+constexpr int CAL_ENDPOINT_MARGIN_US = 100;
 // 関節ソフトリミット (deg, 機構設計値。assembly.md 参照)
 constexpr float LIM_YAW = 40.0f;   // v3: 前脚が腕マウントから 35° 離れたため
                                    // ±35→±40 に緩和 (中立ヨー +18° + 歩容 ~22°。
@@ -135,12 +145,12 @@ constexpr float SWAY_LEAD = 0.11f; // v3: 離地瞬間のシフト率を上げ�
 // ワークスペース射影 (gait.h): 膝リミット 44° に対応する股ピッチ軸→足先の
 // 最大距離。v3 では遊脚の反対側 66° 隣の脚が sway で外側へ押されるため、
 // 足先目標をこの円内へ平面クランプして膝リミット超過を防ぐ
-constexpr float D_KNEE_MAX = 210.2f;  // sqrt(F²+T²+2FT·cos46°) - 0.5 (2026-09-04 T=155.98 で再計算)
-                                      // (T=TIBIA_LEN=153.6, 2026-07-29 接地
+constexpr float D_KNEE_MAX = 210.2110679755f;  // config.pyから生成。丸めず厳格契約で比較
+                                      // (T=TIBIA_LEN=155.98, 2026-09-04 接地
                                       // オフセット校正で 189.9→207.9)
 // 同 折り畳み側 (膝 +44°) の最小距離。近すぎる足先目標を外側へ押し出す
 // (対称性のため追加 — 歩容の最小使用 rr は ~80 で通常は発火しない)
-constexpr float D_KNEE_MIN = 119.1f;  // sqrt(F²+T²+2FT·cos134°) + 0.5 (2026-09-04 T=155.98 で再計算)
+constexpr float D_KNEE_MIN = 119.0764168484f;  // config.pyから生成。丸めず厳格契約で比較
                                       // (2026-07-29: 100.5→116.9)
 
 // ---------------- 腕の可動域・動作 (deg)
@@ -245,7 +255,8 @@ constexpr float ARM_SWING_DEG = 8.0f;     // 歩行時の腕スイング振幅
 //     採用。中立姿勢 (9.12°) とのマージンは10.88°で要求3°を大きく上回る。
 //   - 腕側の退避は従来どおり yaw のみで足りる (pitch/elbow は無関係)。
 //     check_shin_arm_leg.py の実チェッカーで [C-duty]/[C]/[B] を再検証し
-//     全て PASS・ceiling(0.25cm^3) 内に収まることを確認済み (docs/
+//     2026-09-05のホスト/静的検査で全て PASS・ceiling(0.25cm^3) 内に収まった履歴
+//     (実機完成・量産解放・連続歩行の合格ではない, docs/
 //     assembly.md 参照)。
 //   - FL(左脚)+左腕は FR+右腕の左右鏡像 (shin_shell/腕とも X ミラー構成) で、
 //     数値が厳密に一致する (危険方向の符号だけが反転, ARM_LEG_YAW_SIGN 参照)。
@@ -266,6 +277,11 @@ constexpr int PIN_DF_RX = 16, PIN_DF_TX = 17;  // ESP32 RX2/TX2
 constexpr int PIN_VBAT = 34;
 constexpr float VBAT_DIV = (100.0f + 33.0f) / 33.0f;  // 分圧比
 constexpr float VBAT_WARN = 6.8f, VBAT_CUT = 6.4f;     // 2S LiPo
+// ADC 分圧線が未実装・断線・USB給電だけのときに「電池あり」と誤認しない
+// ための成立範囲。2S LiPo の実電池電圧であり、HENGE の出力電圧ではない。
+// 上限は満充電 8.4V に配線誤差の余裕を加えた値。範囲外は UNVERIFIED として
+// 通常の stand/ready/PWM を禁止する。
+constexpr float VBAT_MAX_VALID = 8.8f;
 
 // ---------------- LED (WS2812B 直列順は docs/wiring.md と一致)
 constexpr int N_LED = 12;

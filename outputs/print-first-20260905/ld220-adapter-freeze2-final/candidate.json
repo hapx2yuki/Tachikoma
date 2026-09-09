@@ -1,0 +1,119 @@
+{
+  "status": "CANDIDATE_UNVERIFIED",
+  "parameters": {
+    "case_l": 39.78,
+    "case_w": 20.04,
+    "case_h": 40.0,
+    "total_with_horns": 51.4,
+    "main_projection": 6.4,
+    "shaft_from_end": 10.0,
+    "gap": 0.3,
+    "wall": 3.2,
+    "horn_d": 25.806,
+    "horn_t": 2.0,
+    "horn_clear": 0.2,
+    "plate_t": 4.0,
+    "shaft_access_d": 7.0,
+    "radial_hole_d": 2.7,
+    "pcd_min": 14.0,
+    "pcd_max": 20.0
+  },
+  "coordinate_system": "Z軸=サーボ出力軸、XY原点=軸、ケース上端Z0、ケースは-Zへ40mm",
+  "nominal_main_projection_mm": 6.4,
+  "nominal_assistant_projection_mm": 4.999999999999998,
+  "individual_projection_status": "UNVERIFIED: 図の51.4−40=11.4だけ確定。上下配分6.4/5は候補",
+  "main_horn_outer_face_frame": {
+    "canonical_main_outer_z_mm": 0.0,
+    "case_front_z_mm": -6.4,
+    "case_rear_z_mm": -46.4,
+    "case_translation": [
+      0,
+      0,
+      -6.4
+    ],
+    "case_bounds_mm": [
+      [
+        -29.78,
+        -10.02,
+        -46.4
+      ],
+      [
+        10.0,
+        10.02,
+        -6.4
+      ]
+    ],
+    "assistant_outer_z_mm": -51.4,
+    "assistant_inner_z_mm": -49.4,
+    "contract_status": "DESIGN_CANDIDATE_PHYSICAL_DIMENSIONS_UNVERIFIED"
+  },
+  "documented_dimensions_mm": {
+    "case": [
+      39.78,
+      20.04,
+      40.0
+    ],
+    "with_horns_axis_length": 51.4
+  },
+  "sources": [
+    "https://www.hiwonder.com/cdn/shop/products/8_b3bce00e-fee8-45b0-82c7-698ba062b0cf.jpg?v=1630310524+1200w",
+    "https://www.hiwonder.com/products/ld-220mg"
+  ],
+  "unverified": [
+    "出力軸のケース端からの距離10mm",
+    "主円盤の径:本文25.806mmと図の見かけ20mmの不一致",
+    "ホーン厚さ/軸方向段差/穴PCD/ねじ径とピッチ/付属ねじ数",
+    "ケース角/底突出/配線口とコネクター/曲げ半径の実包絡",
+    "PLAの温度/層間強度/ねじ引抜き/6V連続保持力",
+    "全脚への取付/動的干渉/全機支持"
+  ],
+  "purchase_plan": {
+    "new_hardware": false,
+    "cap_fasteners_per_servo": 2,
+    "cap_fastener": "既購入M3×10皿タップ、候補24本/12台。旧枠から配分を更新",
+    "horn_fasteners": "付属の金属ホーン用ねじを優先。実物径/長/本数未確認なので追加ねじ数を確定しない"
+  },
+  "assembly_order": [
+    "金属主/従ホーンを外す（中心ねじを保管）",
+    "ケーブルを+X溝へ逃がしケースを+Zから挿入",
+    "後端蓋を上から載せM3×10皿タップ2本で固定",
+    "従ホーン/主ホーンを元の中心ねじで取付",
+    "PCDとねじを実測し変換板を金属ホーンへねじ止め",
+    "荷重前に保持/引抜き/回転干渉を台上で確認"
+  ],
+  "interface": {
+    "cap_screw_centers": [
+      [
+        -34.5,
+        -7.0,
+        4.3
+      ],
+      [
+        -34.5,
+        7.0,
+        4.3
+      ]
+    ],
+    "cradle_merge_surface": "外側/後壁を新フレームに一体化。既存タブ穴とは互換でない",
+    "adapter_link_hole_centers": [
+      [
+        25,
+        0,
+        0
+      ],
+      [
+        34,
+        0,
+        0
+      ]
+    ],
+    "horn_pcd_adjustment_mm": [
+      14.0,
+      20.0
+    ]
+  },
+  "source_sha256": {
+    "hardware/src/make_ld220_adapter.py": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+    "hardware/src/lib.py": "ab7a9bf68f4b6f55d4bc4805a3036815f7ce75f2a00b2c60cf4d55a5874bc392"
+  }
+}

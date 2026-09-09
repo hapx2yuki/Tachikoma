@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-09-05T08:10:36.149334+00:00",
+  "script_sha256": "44e56479035620aa78131900e744f09efa9fb0f00dfe6d4bc3df56ff758286bd",
+  "cases": [
+    {
+      "name": "aligned_up10_linked",
+      "status": "PASS",
+      "fell_time_s": null,
+      "failed_checks": [],
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 260.7044565907271
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "walk_distance_m": 0.04405723683975623,
+      "input_hashes_match_current": true
+    },
+    {
+      "name": "aligned_down10_linked",
+      "status": "PASS",
+      "fell_time_s": null,
+      "failed_checks": [],
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 260.91307411727485
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "walk_distance_m": 0.24808011914746114,
+      "input_hashes_match_current": true
+    },
+    {
+      "name": "aligned_up10_vhacd",
+      "status": "FAIL",
+      "fell_time_s": null,
+      "failed_checks": [
+        "translation_progress"
+      ],
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 261.7388464901572
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "walk_distance_m": -0.15702354072619426,
+      "input_hashes_match_current": true
+    },
+    {
+      "name": "aligned_up10_shoe",
+      "status": "FAIL",
+      "fell_time_s": null,
+      "failed_checks": [
+        "translation_progress"
+      ],
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "TPU": 261.40990371902177,
+          "PLA": 1.1339795358400893
+        },
+        "fraction": 0.9956808000179563,
+        "status": "PASS",
+        "threshold_fraction": 0.95
+      },
+      "walk_distance_m": -0.028843527103316245,
+      "input_hashes_match_current": true
+    }
+  ],
+  "all_input_hashes_match_current": true
+}

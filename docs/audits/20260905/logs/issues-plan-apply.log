@@ -1,0 +1,19 @@
+== labels ==
+== milestones ==
+== issues ==
+  + issue PR-11: PR-11 [印刷] 片脚合格後に残りのtibiaを標準1本・ミラー2本印刷する
+  ~ body/meta PR-04 (#22): ['body', 'title']
+  ~ body/meta L-03 (#38): ['body']
+  ~ body/meta L-04 (#39): ['body']
+  ~ body/meta L-05 (#40): ['body']
+  ~ body/meta EL-09 (#75): ['body']
+  ~ body/meta L-11 (#77): ['body']
+== relations ==
+  blocked #38 (L-03) by #86 (PR-11)
+  blocked #39 (L-04) by #86 (PR-11)
+  blocked #40 (L-05) by #86 (PR-11)
+  remove blocked #75 (EL-09) by #45
+  remove blocked #77 (L-11) by #37
+  parent  #86 (PR-11) <- #4 (E2)
+  blocked #86 (PR-11) by #37 (L-02)
+  wrote tools/issues/issue_map.json

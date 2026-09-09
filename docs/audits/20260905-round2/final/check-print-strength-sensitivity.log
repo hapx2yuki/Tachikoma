@@ -1,0 +1,6 @@
+tibia_link: wall=1.6mm core=100% SF=2.110 at -24.786mm / required=2 [近似・現物UNVERIFIED]
+tibia_link: wall=1.6mm core=40% SF=2.010 at -24.786mm / required=2 [近似・現物UNVERIFIED]
+tibia_link: wall=1.8mm core=40% SF=2.057 at -24.786mm / required=2 [近似・現物UNVERIFIED]
+pod_neck: wall=1.6mm core=100% SF=3.088 at -43.186mm / required=3 [近似・現物UNVERIFIED]
+pod_neck: wall=1.6mm core=40% SF=2.710 at -43.186mm / required=3 [近似・現物UNVERIFIED]
+pod_neck: wall=1.8mm core=40% SF=2.791 at -43.186mm / required=3 [近似・現物UNVERIFIED]

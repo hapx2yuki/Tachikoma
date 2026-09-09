@@ -1,0 +1,268 @@
+{
+  "status": "CANDIDATES_ONLY_UNVERIFIED",
+  "limitations": "600g/68MPa/Kt2.5を仮定した梁断面感度。電装後質量、出口応力集中、線束曲率、実印刷強度は未確認。",
+  "coordinate_frame": "pod_neck STL local; chassis z = local z + CHASSIS_T",
+  "candidates": [
+    {
+      "name": "neck_d0_exit0",
+      "diameter_mm": 0,
+      "exit_y_mm": 0,
+      "volume_mm3": 16333.567609357095,
+      "components": 1,
+      "watertight": true,
+      "strength": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 193.28026356763164,
+            "sf": 3.1053167074863435
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 169.47404133659356,
+            "sf": 2.7228365811059927
+          }
+        }
+      ],
+      "head_top_intersection_mm3": 89.22992470526232
+    },
+    {
+      "name": "neck_d6_exit-80",
+      "diameter_mm": 6.0,
+      "exit_y_mm": -80.0,
+      "volume_mm3": 15409.697065285058,
+      "components": 1,
+      "watertight": true,
+      "strength": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 193.28026356763164,
+            "sf": 3.1053167074863435
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 169.47404133659356,
+            "sf": 2.7228365811059927
+          }
+        }
+      ],
+      "head_top_intersection_mm3": 89.22992470526232
+    },
+    {
+      "name": "neck_d6_exit-75",
+      "diameter_mm": 6.0,
+      "exit_y_mm": -75.0,
+      "volume_mm3": 15268.552381393427,
+      "components": 1,
+      "watertight": true,
+      "strength": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 193.28026356763164,
+            "sf": 3.1053167074863435
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 169.47404133659356,
+            "sf": 2.7228365811059927
+          }
+        }
+      ],
+      "head_top_intersection_mm3": 89.22992470526232
+    },
+    {
+      "name": "neck_d6_exit-70",
+      "diameter_mm": 6.0,
+      "exit_y_mm": -70.0,
+      "volume_mm3": 15127.407697501796,
+      "components": 1,
+      "watertight": true,
+      "strength": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 193.28026356763164,
+            "sf": 3.1053167074863435
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 169.47404133659356,
+            "sf": 2.7228365811059927
+          }
+        }
+      ],
+      "head_top_intersection_mm3": 89.22992470526232
+    },
+    {
+      "name": "neck_d6_exit-65",
+      "diameter_mm": 6.0,
+      "exit_y_mm": -65.0,
+      "volume_mm3": 14986.263037196883,
+      "components": 1,
+      "watertight": true,
+      "strength": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 193.28026356763164,
+            "sf": 3.1053167074863435
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 169.47404133659356,
+            "sf": 2.7228365811059927
+          }
+        }
+      ],
+      "head_top_intersection_mm3": 89.22992470526232
+    },
+    {
+      "name": "neck_d8_exit-80",
+      "diameter_mm": 8.0,
+      "exit_y_mm": -80.0,
+      "volume_mm3": 14712.413096205855,
+      "components": 1,
+      "watertight": true,
+      "strength": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 193.28026356763164,
+            "sf": 3.1053167074863435
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 169.47404133659356,
+            "sf": 2.7228365811059927
+          }
+        }
+      ],
+      "head_top_intersection_mm3": 89.22992470526232
+    },
+    {
+      "name": "neck_d8_exit-75",
+      "diameter_mm": 8.0,
+      "exit_y_mm": -75.0,
+      "volume_mm3": 14461.489220217552,
+      "components": 1,
+      "watertight": true,
+      "strength": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 193.28026356763164,
+            "sf": 3.1053167074863435
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 169.47404133659356,
+            "sf": 2.7228365811059927
+          }
+        }
+      ],
+      "head_top_intersection_mm3": 89.22992470526232
+    },
+    {
+      "name": "neck_d8_exit-70",
+      "diameter_mm": 8.0,
+      "exit_y_mm": -70.0,
+      "volume_mm3": 14210.565344229248,
+      "components": 1,
+      "watertight": true,
+      "strength": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 193.28026356763164,
+            "sf": 3.1053167074863435
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 169.47404133659356,
+            "sf": 2.7228365811059927
+          }
+        }
+      ],
+      "head_top_intersection_mm3": 89.22992470526232
+    },
+    {
+      "name": "neck_d8_exit-65",
+      "diameter_mm": 8.0,
+      "exit_y_mm": -65.0,
+      "volume_mm3": 13959.64147823923,
+      "components": 1,
+      "watertight": true,
+      "strength": [
+        {
+          "wall_mm": 1.6,
+          "density": 1.0,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 193.28026356763164,
+            "sf": 3.1053167074863435
+          }
+        },
+        {
+          "wall_mm": 1.6,
+          "density": 0.4,
+          "worst": {
+            "y_mm": -43.28629999999909,
+            "Z_mm3": 169.47404133659356,
+            "sf": 2.7228365811059927
+          }
+        }
+      ],
+      "head_top_intersection_mm3": 89.22992470526232
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+Processing esp32dev (platform: espressif32@6.12.0; board: esp32dev; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32dev.html
+PLATFORM: Espressif 32 (6.12.0) > Espressif ESP32 Dev Module
+HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b 
+ - tool-esptoolpy @ 2.40900.250804 (4.9.0) 
+ - toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 40 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- ArduinoJson @ 7.4.3
+|-- Adafruit PWM Servo Driver Library @ 3.0.3
+|-- Adafruit NeoPixel @ 1.15.5
+|-- DFRobotDFPlayerMini @ 1.0.6
+|-- ESPAsyncWebServer @ 3.12.0
+|-- AsyncTCP @ 3.5.0
+|-- ESPmDNS @ 2.0.0
+|-- Preferences @ 2.0.0
+|-- WiFi @ 2.0.0
+|-- Wire @ 2.0.0
+Building in release mode
+Compiling .pio/build/esp32dev/src/main.cpp.o
+Building .pio/build/esp32dev/bootloader.bin
+Generating partitions .pio/build/esp32dev/partitions.bin
+esptool.py v4.9.0
+Creating esp32 image...
+Merged 1 ELF section
+Successfully created esp32 image.
+Compiling .pio/build/esp32dev/libe63/Wire/Wire.cpp.o
+Compiling .pio/build/esp32dev/lib9ce/SPI/SPI.cpp.o
+Compiling .pio/build/esp32dev/libdcd/Adafruit BusIO/Adafruit_BusIO_Register.cpp.o
+Compiling .pio/build/esp32dev/libdcd/Adafruit BusIO/Adafruit_GenericDevice.cpp.o
+Compiling .pio/build/esp32dev/libdcd/Adafruit BusIO/Adafruit_I2CDevice.cpp.o
+Compiling .pio/build/esp32dev/libdcd/Adafruit BusIO/Adafruit_SPIDevice.cpp.o
+Compiling .pio/build/esp32dev/lib0a5/Adafruit PWM Servo Driver Library/Adafruit_PWMServoDriver.cpp.o
+Compiling .pio/build/esp32dev/lib8b9/Adafruit NeoPixel/Adafruit_NeoPixel.cpp.o
+Compiling .pio/build/esp32dev/lib8b9/Adafruit NeoPixel/Adafruit_Neopixel_RP2.cpp.o
+Compiling .pio/build/esp32dev/lib8b9/Adafruit NeoPixel/esp.c.o
+Compiling .pio/build/esp32dev/lib8b9/Adafruit NeoPixel/esp8266.c.o
+Archiving .pio/build/esp32dev/libe63/libWire.a
+Compiling .pio/build/esp32dev/lib8b9/Adafruit NeoPixel/kendyte_k210.c.o
+Indexing .pio/build/esp32dev/libe63/libWire.a
+Compiling .pio/build/esp32dev/lib8b9/Adafruit NeoPixel/psoc6.c.o
+Compiling .pio/build/esp32dev/lib465/DFRobotDFPlayerMini/DFRobotDFPlayerMini.cpp.o
+Archiving .pio/build/esp32dev/lib9ce/libSPI.a
+Archiving .pio/build/esp32dev/lib0a5/libAdafruit PWM Servo Driver Library.a
+Archiving .pio/build/esp32dev/libdcd/libAdafruit BusIO.a
+Indexing .pio/build/esp32dev/lib9ce/libSPI.a
+Indexing .pio/build/esp32dev/lib0a5/libAdafruit PWM Servo Driver Library.a
+Indexing .pio/build/esp32dev/libdcd/libAdafruit BusIO.a
+Compiling .pio/build/esp32dev/lib17b/AsyncTCP/AsyncTCP.cpp.o
+Archiving .pio/build/esp32dev/lib8b9/libAdafruit NeoPixel.a
+Indexing .pio/build/esp32dev/lib8b9/libAdafruit NeoPixel.a
+Compiling .pio/build/esp32dev/lib992/FS/FS.cpp.o
+Compiling .pio/build/esp32dev/lib992/FS/vfs_api.cpp.o
+Compiling .pio/build/esp32dev/lib315/WiFi/WiFi.cpp.o
+Archiving .pio/build/esp32dev/lib465/libDFRobotDFPlayerMini.a
+Compiling .pio/build/esp32dev/lib315/WiFi/WiFiAP.cpp.o
+Indexing .pio/build/esp32dev/lib465/libDFRobotDFPlayerMini.a
+Compiling .pio/build/esp32dev/lib315/WiFi/WiFiClient.cpp.o
+Compiling .pio/build/esp32dev/lib315/WiFi/WiFiGeneric.cpp.o
+Compiling .pio/build/esp32dev/lib315/WiFi/WiFiMulti.cpp.o
+Compiling .pio/build/esp32dev/lib315/WiFi/WiFiSTA.cpp.o
+Compiling .pio/build/esp32dev/lib315/WiFi/WiFiScan.cpp.o
+Archiving .pio/build/esp32dev/lib17b/libAsyncTCP.a
+Indexing .pio/build/esp32dev/lib17b/libAsyncTCP.a
+Compiling .pio/build/esp32dev/lib315/WiFi/WiFiServer.cpp.o
+Compiling .pio/build/esp32dev/lib315/WiFi/WiFiUdp.cpp.o
+Archiving .pio/build/esp32dev/lib992/libFS.a
+Indexing .pio/build/esp32dev/lib992/libFS.a
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/AsyncEventSource.cpp.o
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/AsyncJson.cpp.o
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/AsyncWebHeader.cpp.o
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/AsyncWebServerRequest.cpp.o
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/AsyncWebSocket.cpp.o
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/BackPort_SHA1Builder.cpp.o
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/ChunkPrint.cpp.o
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/Middleware.cpp.o
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/WebAuthentication.cpp.o
+Archiving .pio/build/esp32dev/lib315/libWiFi.a
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/WebHandlers.cpp.o
+Indexing .pio/build/esp32dev/lib315/libWiFi.a
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/WebRequest.cpp.o
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/WebResponses.cpp.o
+Compiling .pio/build/esp32dev/lib70c/ESPAsyncWebServer/WebServer.cpp.o
+Compiling .pio/build/esp32dev/libf2e/ESPmDNS/ESPmDNS.cpp.o
+Compiling .pio/build/esp32dev/lib0ca/Preferences/Preferences.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/Esp.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/FirmwareMSC.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/FunctionalInterrupt.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/HWCDC.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/HardwareSerial.cpp.o
+Archiving .pio/build/esp32dev/libf2e/libESPmDNS.a
+Indexing .pio/build/esp32dev/libf2e/libESPmDNS.a
+Compiling .pio/build/esp32dev/FrameworkArduino/IPAddress.cpp.o
+Archiving .pio/build/esp32dev/lib0ca/libPreferences.a
+Indexing .pio/build/esp32dev/lib0ca/libPreferences.a
+Compiling .pio/build/esp32dev/FrameworkArduino/IPv6Address.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/MD5Builder.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/Print.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/Stream.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/StreamString.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/Tone.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/USB.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/USBCDC.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/USBMSC.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/WMath.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/WString.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/base64.cpp.o
+Archiving .pio/build/esp32dev/lib70c/libESPAsyncWebServer.a
+Compiling .pio/build/esp32dev/FrameworkArduino/cbuf.cpp.o
+Indexing .pio/build/esp32dev/lib70c/libESPAsyncWebServer.a
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-adc.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-bt.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-cpu.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-dac.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-gpio.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-i2c-slave.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-i2c.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-ledc.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-matrix.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-misc.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-psram.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-rgb-led.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-rmt.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-sigmadelta.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-spi.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-time.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-timer.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-tinyusb.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-touch.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-uart.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/firmware_msc_fat.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/libb64/cdecode.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/libb64/cencode.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/main.cpp.o
+Compiling .pio/build/esp32dev/FrameworkArduino/stdlib_noniso.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/wiring_pulse.c.o
+Compiling .pio/build/esp32dev/FrameworkArduino/wiring_shift.c.o
+Archiving .pio/build/esp32dev/libFrameworkArduino.a
+Indexing .pio/build/esp32dev/libFrameworkArduino.a
+Linking .pio/build/esp32dev/firmware.elf
+Retrieving maximum program size .pio/build/esp32dev/firmware.elf
+Checking size .pio/build/esp32dev/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [==        ]  19.4% (used 63720 bytes from 327680 bytes)
+Flash: [=======   ]  71.9% (used 942841 bytes from 1310720 bytes)
+Building .pio/build/esp32dev/firmware.bin
+esptool.py v4.9.0
+Creating esp32 image...
+Merged 27 ELF sections
+Successfully created esp32 image.
+========================= [SUCCESS] Took 9.65 seconds =========================

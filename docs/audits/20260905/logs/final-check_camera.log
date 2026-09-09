@@ -1,0 +1,50 @@
+[1] eye_pod_camera 外殻無傷 + 光軸設計の自己整合
+  OK  eye_pod_camera: 単一連結体 + watertight
+  OK  eye_pod_camera: キャビティ影響範囲外の外殻ズレ 最大0.0000mm < 0.1mm (4851/20000点)
+  OK  CAM2_ALPHA_DEG 再計算値 46.5884° ≈ config値 46.5884°
+  OK  install_rotation: 直交行列 (回転行列として妥当)
+  OK  install_rotation: ローカル +Z がソケット法線と一致
+  光軸 (取付後, グローバル): 仰角 8.59° / 方位ズレ 0.00° (0°=正面)
+  OK  取付後の光軸仰角 8.59° ≈ config.CAM2_RESIDUAL_DEG 8.59°
+  OK  光軸仰角 |8.59°| ≤ 10° (ユーザー要求: 水平前方 ±10° 以内)
+  OK  方位ズレ |0.00°| < 1° (中央目は機体中心面上のため左右へ流れない)
+
+[2] 瞳径とFOVのケラレ計算
+  レンズ後退距離 L=6.57mm, 半画角=34.35°, ケラレ無し最小径=8.98mm
+  OK  採用瞳径 10.0mm ≥ 必要最小径 8.98mm (半径マージン 0.51mm) — 光学FOV 68.7° 全域でケラレ無し
+
+[3] camera_carrier + モジュールダミーの干渉/収容
+  OK  camera_carrier: 単一連結体 + watertight
+  OK  camera_carrier vs eye_pod_camera(実体) 交差体積 0.00mm3 < 5.0 — キャビティへ食い込みなく収まる
+  OK  モジュールダミー (実姿勢) vs eye_pod_camera(実体) 交差体積 0.00mm3 < 2.0 — キャビティへ正しく収まる
+  OK  モジュールダミーの 100.0% が camera_carrier のポケット (空隙) 内に収まる (要 ≥98%)
+  OK  モジュール footprint (クリア+肉厚+安全代込み) の実メッシュに対する 最小マージン 0.22mm > 0 (θ=38.0° で成立)
+
+[4] 全アセンブリ視界検証 (最重要: 自機体による FOV 遮蔽)
+  pose(ph=0.00 v=(0,1,0) bh=115 arms=TUCK): 49 本中 0 本遮蔽 (0.0%)
+  pose(ph=0.25 v=(0,1,0) bh=115 arms=TUCK): 49 本中 0 本遮蔽 (0.0%)
+  pose(ph=0.50 v=(0,1,0) bh=115 arms=TUCK): 49 本中 0 本遮蔽 (0.0%)
+  pose(ph=0.75 v=(0,1,0) bh=115 arms=TUCK): 49 本中 0 本遮蔽 (0.0%)
+  pose(ph=0.25 v=(1,0,0) bh=115 arms=TUCK): 49 本中 0 本遮蔽 (0.0%)
+  pose(ph=0.00 v=(0,0,0) bh=105 arms=TUCK): 49 本中 0 本遮蔽 (0.0%)
+  pose(ph=0.00 v=(0,0,0) bh=130 arms=TUCK): 49 本中 0 本遮蔽 (0.0%)
+  pose(ph=0.00 v=(0,0,0) bh=115 arms=READY): 49 本中 0 本遮蔽 (0.0%)
+  OK  自機体による FOV 遮蔽率 最悪 0.0% < 15% (8 ポーズ掃引: 歩行位相×体高105-130×腕TUCK/READY。旧 Cabin_Eye 案は 80% 遮蔽で不採用 — 恒久回帰チェック)
+
+[5] 印刷用 2 分割 (shell/base) の整合 (2026-08-19 印刷性再設計)
+  OK  eye_pod_camera_shell: 単一連結体 + watertight
+  OK  eye_pod_camera_base: 単一連結体 + watertight
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+  OK  shell vs base 交差体積 0.000mm3 ≈ 0 (プラグ/溝クリアランス)
+  OK  shell+base 体積 10672mm3 ≈ 一体参照 10718mm3 (差 -46mm3 — プラグ/溝ディテール分)
+  OK  camera_carrier vs shell 0.00 / vs base 0.00 mm3 — 先入れ挿入でどちらにも食い込まない
+  OK  モジュールダミー vs shell+base 交差体積 計0.00mm3 < 1.0
+  OK  eye_pod_camera_shell: 印刷第1層接地面積 525mm2 > 300 (一体版 143mm2 の解消)
+  OK  eye_pod_camera_base: 印刷第1層接地面積 561mm2 > 300 (一体版 143mm2 の解消)
+
+[6] ネック/座グリ整合
+  OK  eye_pod_camera ネック径 28.0mm < Head_Top ボア 30.0mm (片側クリアランス 1.00mm)
+  OK  瞳中心 z=18.6 が座グリ縁 z=10.5 より 8.1mm 上 (縁に隠れない, check_eye [3] と同じ基準)
+
+result: OK

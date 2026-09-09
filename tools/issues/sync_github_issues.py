@@ -114,17 +114,53 @@ def sync_milestones(dry):
 MARK_RE = re.compile(rf"<!--\s*{plan.MARKER}:\s*([A-Za-z0-9\-]+)\s*-->")
 
 
+def _load_issue_map():
+    """Return the checked-in key-to-number map without reading Issue bodies."""
+    if not MAP_PATH.is_file():
+        return {}
+    try:
+        payload = json.loads(MAP_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"Issue番号表を読めない: {MAP_PATH}: {exc}") from exc
+    if not isinstance(payload, dict):
+        raise RuntimeError("Issue番号表はオブジェクトでなければならない")
+    result = {}
+    seen_numbers = {}
+    for key, number in payload.items():
+        if not isinstance(key, str) or not isinstance(number, int) or number < 1:
+            raise RuntimeError(f"Issue番号表の値が不正: {key!r}: {number!r}")
+        previous_key = seen_numbers.get(number)
+        if previous_key is not None:
+            raise RuntimeError(
+                f"Issue番号表の番号重複: #{number} ({previous_key}, {key})"
+            )
+        seen_numbers[number] = key
+        result[key] = number
+    return result
+
+
 def load_existing():
-    """key -> {number, node_id, title, state} を全イシューから復元 (PR は除外)。"""
+    """key -> {number, node_id, title, state} を全Issueから復元 (PRは除外)。
+
+    既存Issueは本文のtachikoma-keyを優先する。後から作成された#99--#109は
+    既存本文を変更せずに管理できるよう、issue_map.jsonの番号を照合して復元する。
+    本文はこの関数の戻り値やスナップショットへ保存しない。
+    """
     items = api("GET", f"repos/{plan.REPO}/issues?state=all&per_page=100", paginate=True)
+    number_map = _load_issue_map()
+    mapped_by_number = {number: key for key, number in number_map.items()}
     found = {}
     for it in items:
         if "pull_request" in it:
             continue
         m = MARK_RE.search(it.get("body") or "")
-        if m:
-            found[m.group(1)] = {"number": it["number"], "node_id": it["node_id"],
-                                 "title": it["title"], "state": it["state"], "_new": False}
+        key = m.group(1) if m else mapped_by_number.get(it.get("number"))
+        if not key:
+            continue
+        if key in found:
+            raise RuntimeError(f"Issueキー重複: {key} (#{found[key]['number']}, #{it['number']})")
+        found[key] = {"number": it["number"], "node_id": it["node_id"],
+                      "title": it["title"], "state": it["state"], "_new": False}
     return found
 
 
@@ -143,7 +179,7 @@ def render_body(spec, numbers):
         head.append(" / ".join(meta))
     if spec["blocked_by"]:
         head.append("")
-        head.append("## 前提 (blocked by — これらが Close するまで着手しない)")
+        head.append("## 完了待ちの条件（採用・組立・試験の前に満たす。独立した準備は本文参照）")
         for b in spec["blocked_by"]:
             title = next((i["title"] for i in plan.ISSUES if i["key"] == b), b)
             head.append(f"- {ref(b)} {title}")
@@ -152,12 +188,19 @@ def render_body(spec, numbers):
     return "\n".join(head) + "\n\n" + body + "\n" + plan.FOOTER
 
 
-def sync_issues(dry, update_bodies, milestones):
+def sync_issues(dry, update_bodies, milestones, specs=None):
+    specs = plan.ISSUES if specs is None else specs
     existing = load_existing()
     numbers = {k: v["number"] for k, v in existing.items()}
     # --- pass 1: 作成 (本文はプレースホルダ付きで仮) ---
-    for spec in plan.ISSUES:
+    for spec in specs:
         if spec["key"] in existing:
+            continue
+        if spec.get("issue_body_managed", True) is False:
+            # #99--#109 are already-issued records whose public definitions
+            # provide Project metadata only.  Do not create or replace their
+            # Issue bodies from the generated convenience text.
+            print(f"  ! issue {spec['key']}: metadata-only (既存Issue本文を管理しない)")
             continue
         print(f"  + issue {spec['key']}: {spec['title']}")
         if dry:
@@ -170,11 +213,15 @@ def sync_issues(dry, update_bodies, milestones):
                                  "title": created["title"], "state": created["state"], "_new": True}
         numbers[spec["key"]] = created["number"]
         time.sleep(0.3)   # secondary rate limit 対策
-    if dry:
-        return existing
     # --- pass 2: 本文を実番号で確定 (新規は必ず、既存は --update-bodies 時) ---
-    for spec in plan.ISSUES:
-        cur = existing[spec["key"]]
+    for spec in specs:
+        cur = existing.get(spec["key"])
+        if cur is None:
+            continue  # dry-runの新規Issue。作成予定はpass 1で表示済み。
+        if spec.get("issue_body_managed", True) is False:
+            # Never apply EXTRA_ISSUES bodies to existing #99--#109, even when
+            # a caller passed --update-bodies.
+            continue
         want = render_body(spec, numbers)
         # 新規作成直後は本文に未解決参照 (`KEY`) が残り得るので必ず再 PATCH
         if update_bodies or cur["_new"]:
@@ -185,15 +232,18 @@ def sync_issues(dry, update_bodies, milestones):
             if it["title"] != spec["title"]:
                 patch["title"] = spec["title"]
             have_labels = {l["name"] for l in it.get("labels", [])}
-            if set(spec["labels"]) - have_labels:
-                patch["labels"] = sorted(have_labels | set(spec["labels"]))
+            managed_labels = {name for name, _, _ in plan.LABELS}
+            want_labels = (have_labels - managed_labels) | set(spec["labels"])
+            if want_labels != have_labels:
+                patch["labels"] = sorted(want_labels)
             ms = milestones.get(spec["milestone"]) if spec["milestone"] else None
             if ms and (it.get("milestone") or {}).get("number") != ms:
                 patch["milestone"] = ms
             if patch:
                 print(f"  ~ body/meta {spec['key']} (#{cur['number']}): {sorted(patch)}")
-                api("PATCH", f"repos/{plan.REPO}/issues/{cur['number']}", patch)
-                time.sleep(0.2)
+                if not dry:
+                    api("PATCH", f"repos/{plan.REPO}/issues/{cur['number']}", patch)
+                    time.sleep(0.2)
     return existing
 
 
@@ -214,18 +264,21 @@ def fetch_relations(numbers):
     return rel
 
 
-def sync_relations(dry, existing):
+def sync_relations(dry, existing, specs=None, reconcile=False):
+    specs = plan.ISSUES if specs is None else specs
     numbers = {k: v["number"] for k, v in existing.items()}
     node = {v["number"]: v["node_id"] for v in existing.values()}
-    rel = fetch_relations(set(numbers.values())) if not dry else {}
-    for spec in plan.ISSUES:
+    rel = fetch_relations(set(numbers.values()))
+    for spec in specs:
         me = numbers.get(spec["key"])
         if me is None:
+            if dry:
+                print(f"  planned {spec['key']}: parent={spec['parent']}, blocked_by={spec['blocked_by']}")
             continue
         # 親子
         if spec["parent"]:
             p = numbers.get(spec["parent"])
-            if p and (dry or rel[me]["parent"] != p):
+            if p and rel[me]["parent"] != p:
                 print(f"  parent  #{me} ({spec['key']}) <- #{p} ({spec['parent']})")
                 if not dry:
                     graphql("mutation($p:ID!,$c:ID!){ addSubIssue(input:{issueId:$p, subIssueId:$c, replaceParent:true}){ issue{number} } }",
@@ -234,12 +287,22 @@ def sync_relations(dry, existing):
         # 依存
         for b in spec["blocked_by"]:
             bn = numbers.get(b)
-            if bn and (dry or bn not in rel[me]["blocked_by"]):
+            if bn and bn not in rel[me]["blocked_by"]:
                 print(f"  blocked #{me} ({spec['key']}) by #{bn} ({b})")
                 if not dry:
                     graphql("mutation($i:ID!,$b:ID!){ addBlockedBy(input:{issueId:$i, blockingIssueId:$b}){ issue{number} } }",
                             {"i": node[me], "b": node[bn]})
                     time.sleep(0.2)
+        if reconcile:
+            # 管理外の関係は消さない。明示された対象の、plan管理キーに限る。
+            want = {numbers[b] for b in spec['blocked_by'] if b in numbers}
+            managed_numbers = {numbers[s['key']] for s in plan.ISSUES if s['key'] in numbers}
+            stale = (rel[me]['blocked_by'] & managed_numbers) - want
+            for bn in sorted(stale):
+                print(f"  remove blocked #{me} ({spec['key']}) by #{bn}")
+                if not dry:
+                    graphql("mutation($i:ID!,$b:ID!){ removeBlockedBy(input:{issueId:$i, blockingIssueId:$b}){ issue{number} } }",
+                            {'i': node[me], 'b': node[bn]})
 
 
 # ---------------------------------------------------------------- plan doc (mermaid)
@@ -301,9 +364,11 @@ def update_plan_doc(numbers):
     gen = render_plan_doc(numbers)
     if doc.exists():
         txt = doc.read_text()
-        new = re.sub(r"<!-- BEGIN GENERATED.*?<!-- END GENERATED -->", lambda m: gen, txt, flags=re.S)
-        if new == txt:
+        new, count = re.subn(r"<!-- BEGIN GENERATED.*?<!-- END GENERATED -->", lambda m: gen, txt, flags=re.S)
+        if count == 0:
             new = txt.rstrip() + "\n\n" + gen + "\n"
+        elif count > 1:
+            raise RuntimeError("生成節が複数存在するため自動更新を停止。重複節を確認してください。")
     else:
         new = "# 物理製作 ビルドプラン\n\n" + gen + "\n"
     doc.write_text(new)
@@ -313,26 +378,35 @@ def update_plan_doc(numbers):
 # ---------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--apply", action="store_true")
+    mode = ap.add_mutually_exclusive_group()
+    mode.add_argument("--dry-run", action="store_true")
+    mode.add_argument("--apply", action="store_true")
     ap.add_argument("--update-bodies", action="store_true", help="既存イシューの本文/タイトル/ラベル/マイルストーンも plan.py で上書き")
     ap.add_argument("--plan-doc", action="store_true", help="docs/build_plan.md の自動生成節を更新")
+    ap.add_argument("--keys", nargs="+", help="同期するIssueキーを限定（本文・親子・依存）。未指定は全件")
+    ap.add_argument("--reconcile-dependencies", action="store_true", help="指定キーから不要になった管理内依存を削除（--keys必須）")
     a = ap.parse_args()
     if not (a.dry_run or a.apply or a.plan_doc):
         ap.error("--dry-run / --apply / --plan-doc のいずれかを指定")
     dry = not a.apply
+    if a.reconcile_dependencies and not a.keys:
+        ap.error("--reconcile-dependencies は --keys による対象限定が必要")
+    specs = plan.ISSUES
+    if a.keys:
+        unknown = set(a.keys) - {s['key'] for s in specs}
+        if unknown:
+            ap.error(f"不明なキー: {sorted(unknown)}")
+        specs = [s for s in specs if s['key'] in a.keys]
 
     if a.dry_run or a.apply:
         print("== labels ==")
         sync_labels(dry)
         print("== milestones ==")
         ms = sync_milestones(dry)
-        if dry:
-            ms = {m[0]: -1 for m in plan.MILESTONES}
         print("== issues ==")
-        existing = sync_issues(dry, a.update_bodies, ms)
+        existing = sync_issues(dry, a.update_bodies, ms, specs)
         print("== relations ==")
-        sync_relations(dry, existing)
+        sync_relations(dry, existing, specs, a.reconcile_dependencies)
         if not dry:
             MAP_PATH.write_text(json.dumps({k: v["number"] for k, v in sorted(existing.items())},
                                            ensure_ascii=False, indent=1) + "\n")

@@ -52,6 +52,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import base64
+import concurrent.futures
 import io
 import json
 import logging
@@ -63,6 +64,7 @@ import threading
 import time
 import wave
 from collections import deque
+from contextlib import suppress
 from pathlib import Path
 from typing import AsyncIterator, Optional
 
@@ -78,6 +80,7 @@ CHANNELS = 1
 FRAME_MS = 100
 FRAME_BYTES = int(SAMPLE_RATE * SAMPLE_WIDTH * FRAME_MS / 1000)  # 3200 bytes
 BYTES_PER_SECOND = SAMPLE_RATE * SAMPLE_WIDTH * CHANNELS  # 32000 bytes/秒 (再生速度)
+MAX_UTTERANCE_BYTES = BYTES_PER_SECOND * 60  # PTT 故障時も 60 秒で録音を打ち切る
 
 log = logging.getLogger("voice_bridge")
 
@@ -89,6 +92,8 @@ class ConversationHistory:
     """直近 N ターン (user+assistant) を Anthropic messages 形式で保持する。"""
 
     def __init__(self, max_turns: int = 6):
+        if max_turns < 0:
+            raise ValueError("history_turns は 0 以上を指定してください")
         self.max_turns = max_turns
         self._messages: deque = deque()
 
@@ -226,17 +231,48 @@ def fetch_camera_image_block(url: Optional[str], mock: bool,
         log.info("[mock camera] --camera-url 指定ありだが --mock のため画像取得をスキップ")
         return None
     try:
-        resp = requests.get(url, timeout=timeout)
-        resp.raise_for_status()
-        media_type = _IMAGE_MEDIA_TYPES.get(
-            resp.headers.get("Content-Type", "").split(";")[0].strip().lower(),
-            "image/jpeg")
-        b64 = base64.b64encode(resp.content).decode("ascii")
-        log.info("[camera] 静止画取得 %s (%d bytes, %s)", url, len(resp.content), media_type)
-        return {
-            "type": "image",
-            "source": {"type": "base64", "media_type": media_type, "data": b64},
-        }
+        if not math.isfinite(timeout) or timeout <= 0:
+            raise ValueError("camera_timeout は正の有限値を指定してください")
+        deadline = time.monotonic() + timeout
+        image = bytearray()
+        # .content は MJPEG の無限レスポンスを最後まで待ってしまう。
+        # 最初の JPEG 完了で閉じ、静止画も 4 MiB と総取得時間で制限する。
+        with requests.get(url, stream=True, timeout=(timeout, min(timeout, 1.0))) as resp:
+            resp.raise_for_status()
+            content_type = resp.headers.get("Content-Type", "").split(";")[0].strip().lower()
+            multipart = content_type == "multipart/x-mixed-replace"
+            if content_type not in _IMAGE_MEDIA_TYPES and not multipart:
+                raise ValueError("カメラ応答が画像ではありません")
+            jpeg_start = -1
+            # 1 byte ごとに期限確認。大きい read は低速な途切れない応答で
+            # chunk 完成まで待ち続け、HTTP の read timeout も発火しない。
+            for chunk in resp.iter_content(chunk_size=1):
+                if time.monotonic() > deadline:
+                    raise TimeoutError("カメラ画像の取得時間を超えました")
+                old_size = len(image)
+                image.extend(chunk)
+                if len(image) > 4 * 1024 * 1024:
+                    raise ValueError("カメラ画像が 4 MiB を超えました")
+                if multipart or content_type in ("image/jpeg", "image/jpg"):
+                    if jpeg_start < 0:
+                        jpeg_start = image.find(b"\xff\xd8", max(0, old_size - 1))
+                    end = image.find(b"\xff\xd9", max(jpeg_start + 2, old_size - 1))
+                    if jpeg_start >= 0 and end >= 0:
+                        image = image[jpeg_start:end + 2]
+                        content_type = "image/jpeg"
+                        break
+            if not image:
+                raise ValueError("カメラ画像が空です")
+            magic_ok = ((content_type in ("image/jpeg", "image/jpg") and image.startswith(b"\xff\xd8") and image.endswith(b"\xff\xd9")) or
+                        (content_type == "image/png" and image.startswith(b"\x89PNG\r\n\x1a\n")) or
+                        (content_type == "image/webp" and image.startswith(b"RIFF") and image[8:12] == b"WEBP") or
+                        (content_type == "image/gif" and image[:6] in (b"GIF87a", b"GIF89a")))
+            if not magic_ok:
+                raise ValueError("カメラ応答の画像形式が一致しません")
+        media_type = _IMAGE_MEDIA_TYPES.get(content_type, "image/jpeg")
+        b64 = base64.b64encode(image).decode("ascii")
+        log.info("[camera] 静止画取得 %s (%d bytes, %s)", url, len(image), media_type)
+        return {"type": "image", "source": {"type": "base64", "media_type": media_type, "data": b64}}
     except Exception:
         log.exception("カメラ画像の取得に失敗しました (%s) — 画像なしで続行します", url)
         return None
@@ -302,28 +338,39 @@ async def llm_respond(user_text: str, history: ConversationHistory,
 # TTS (ElevenLabs ストリーミング)
 # ==================================================================
 def _tts_stream_worker(text: str, api_key: str, voice_id: str, model_id: str,
-                        queue: "asyncio.Queue", loop: asyncio.AbstractEventLoop
-                        ) -> None:
-    """requests のストリーミング読み出しを別スレッドで行い、届いたチャンクを
-    asyncio.Queue へ橋渡しする (requests は同期 API のため)。
-    """
+                        queue: "asyncio.Queue", loop: asyncio.AbstractEventLoop,
+                        stopped: threading.Event) -> None:
+    """有界キューへ流し、切断で待機を中断し HTTP 応答を閉じる。"""
+    def offer(item):
+        if stopped.is_set() or loop.is_closed():
+            return False
+        future = asyncio.run_coroutine_threadsafe(queue.put(item), loop)
+        while not stopped.is_set():
+            try:
+                future.result(timeout=0.1)
+                return True
+            except concurrent.futures.TimeoutError:
+                continue
+        future.cancel()
+        return False
     try:
-        resp = requests.post(
+        with requests.post(
             f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/stream",
             params={"output_format": "pcm_16000"},
             headers={"xi-api-key": api_key, "Content-Type": "application/json"},
             json={"text": text, "model_id": model_id},
-            stream=True,
-            timeout=60,
-        )
-        resp.raise_for_status()
-        for chunk in resp.iter_content(chunk_size=FRAME_BYTES):
-            if chunk:
-                loop.call_soon_threadsafe(queue.put_nowait, chunk)
-    except Exception as e:  # スレッド内例外はキュー経由で呼び出し側へ raise させる
-        loop.call_soon_threadsafe(queue.put_nowait, e)
+            stream=True, timeout=(10, 15),
+        ) as resp:
+            resp.raise_for_status()
+            for chunk in resp.iter_content(chunk_size=FRAME_BYTES):
+                if stopped.is_set() or (chunk and not offer(chunk)):
+                    break
+    except Exception as e:
+        if not stopped.is_set():
+            offer(e)
     finally:
-        loop.call_soon_threadsafe(queue.put_nowait, None)  # 終端番兵
+        if not stopped.is_set():
+            offer(None)
 
 
 async def tts_synthesize(text: str, mock: bool,
@@ -340,20 +387,24 @@ async def tts_synthesize(text: str, mock: bool,
     api_key = _require_env("ELEVENLABS_API_KEY")
     voice_id = _require_env("ELEVENLABS_VOICE_ID")
     loop = asyncio.get_event_loop()
-    queue: asyncio.Queue = asyncio.Queue()
+    queue: asyncio.Queue = asyncio.Queue(maxsize=16)
+    stopped = threading.Event()
     thread = threading.Thread(
         target=_tts_stream_worker,
-        args=(text, api_key, voice_id, model_id, queue, loop),
+        args=(text, api_key, voice_id, model_id, queue, loop, stopped),
         daemon=True,
     )
     thread.start()
-    while True:
-        item = await queue.get()
-        if item is None:
-            break
-        if isinstance(item, Exception):
-            raise item
-        yield item
+    try:
+        while True:
+            item = await queue.get()
+            if item is None:
+                break
+            if isinstance(item, Exception):
+                raise item
+            yield item
+    finally:
+        stopped.set()  # キュー待ち worker を解除。HTTP の無応答は read timeout (15 秒) で終了する。
 
 
 # ==================================================================
@@ -372,19 +423,27 @@ async def run_pipeline(ws, pcm_buffer: bytes, args: argparse.Namespace,
                                args.anthropic_model, image_block=image_block)
     await ws.send(json.dumps({"type": "tts_begin"}))
     n_bytes = 0
-    start = time.monotonic()
+    next_send_at = time.monotonic()
+    pending_pcm = bytearray()
     try:
         async for chunk in tts_synthesize(reply, args.mock, args.elevenlabs_model):
-            await ws.send(chunk)
-            n_bytes += len(chunk)
-            # ESP32 側の再生リングバッファ (約 0.5 秒分) は溢れを無言で
-            # 切り捨てるため、実時間の再生速度に合わせて送信をペーシングする。
-            # (TTS プロバイダやローカル網は概ね実時間より高速に届くのが通常)
-            target_elapsed = n_bytes / BYTES_PER_SECOND
-            actual_elapsed = time.monotonic() - start
-            sleep_s = target_elapsed - actual_elapsed
-            if sleep_s > 0:
-                await asyncio.sleep(sleep_s)
+            pending_pcm.extend(chunk)
+            count = len(pending_pcm) - len(pending_pcm) % SAMPLE_WIDTH
+            pcm = bytes(pending_pcm[:count])
+            del pending_pcm[:count]
+            for frame in chunk_bytes(pcm):
+                # 生成遅延を「送信してよい残高」にしない。直前の実送信から測る。
+                delay = next_send_at - time.monotonic()
+                if delay > 0:
+                    await asyncio.sleep(delay)
+                await ws.send(frame)
+                n_bytes += len(frame)
+                next_send_at = time.monotonic() + len(frame) / BYTES_PER_SECOND
+        if pending_pcm:
+            raise ValueError("TTS PCM が 16bit サンプルの途中で終了しました")
+        delay = next_send_at - time.monotonic()
+        if delay > 0:
+            await asyncio.sleep(delay)
     except Exception:
         log.exception("TTS 合成/送信中にエラーが発生しました")
         raise
@@ -403,36 +462,58 @@ async def handle_connection(ws, args: argparse.Namespace,
                              ) -> None:
     """1 接続分のメインループ。ESP32 からのフレームを捌く。"""
     pcm_buffer = bytearray()
-    busy = False
-    async for message in ws:
-        if isinstance(message, (bytes, bytearray)):
-            if busy:
-                continue  # 応答生成中に届いたマイク音声は捨てる (半二重運用)
-            pcm_buffer += message
-            continue
+    recording = False
+    pipeline_task = None
+
+    async def process(pcm):
         try:
-            msg = json.loads(message)
-        except json.JSONDecodeError:
-            log.warning("不正な制御フレーム (JSON でない): %r", message)
-            continue
-        mtype = msg.get("type")
-        if mtype == "ptt_start":
-            pcm_buffer = bytearray()
-            log.info("ptt_start: 録音開始")
-        elif mtype == "ptt_end":
-            log.info("ptt_end: 録音終了 (%d bytes) -> パイプライン実行",
-                      len(pcm_buffer))
-            busy = True
+            await run_pipeline(ws, pcm, args, history, persona_text)
+        except Exception:
+            log.exception("パイプライン実行中にエラーが発生しました")
+
+    try:
+        async for message in ws:
+            busy = pipeline_task is not None and not pipeline_task.done()
+            if isinstance(message, (bytes, bytearray)):
+                if busy or not recording:
+                    continue
+                if len(pcm_buffer) + len(message) > MAX_UTTERANCE_BYTES:
+                    log.warning("録音が 60 秒を超えたため破棄しました。PTT を押し直してください")
+                    pcm_buffer.clear()
+                    recording = False
+                else:
+                    pcm_buffer.extend(message)
+                continue
             try:
-                await run_pipeline(ws, bytes(pcm_buffer), args, history,
-                                    persona_text)
-            except Exception:
-                log.exception("パイプライン実行中にエラーが発生しました")
-            finally:
-                pcm_buffer = bytearray()
-                busy = False
-        else:
-            log.debug("未知の制御フレーム: %s", msg)
+                msg = json.loads(message)
+            except json.JSONDecodeError:
+                log.warning("不正な制御フレーム (JSON でない)")
+                continue
+            if not isinstance(msg, dict):
+                continue
+            mtype = msg.get("type")
+            if busy:
+                # 生成タスクを待たず受信し続け、再生中の押下をキューへ残さない。
+                continue
+            if mtype == "ptt_start":
+                pcm_buffer.clear()
+                recording = True
+                log.info("ptt_start: 録音開始")
+            elif mtype == "ptt_end" and recording:
+                recording = False
+                pcm = bytes(pcm_buffer)
+                pcm_buffer.clear()
+                if pcm:
+                    log.info("ptt_end: 録音終了 (%d bytes)", len(pcm))
+                    pipeline_task = asyncio.create_task(process(pcm))
+            else:
+                log.debug("未処理の制御フレーム: %s", msg)
+    finally:
+        if pipeline_task is not None:
+            if not pipeline_task.done():
+                pipeline_task.cancel()
+            with suppress(asyncio.CancelledError):
+                await pipeline_task
 
 
 def resolve_url(args: argparse.Namespace) -> str:
@@ -450,7 +531,7 @@ async def run_client(args: argparse.Namespace) -> None:
     while True:
         try:
             log.info("接続試行: %s", url)
-            async with websockets.connect(url, max_size=None) as ws:
+            async with websockets.connect(url, max_size=16384, max_queue=16) as ws:
                 log.info("接続成功: %s", url)
                 backoff = 1.0
                 await handle_connection(ws, args, history, persona_text)

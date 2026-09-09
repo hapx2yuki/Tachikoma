@@ -1,0 +1,10 @@
+test_same_volume_and_height_are_not_shape_identity (test_print_artifacts.PrintArtifactsTests.test_same_volume_and_height_are_not_shape_identity) ... ok
+test_tpu_regeneration_preserves_source_and_rejects_overwrite (test_print_artifacts.PrintArtifactsTests.test_tpu_regeneration_preserves_source_and_rejects_overwrite) ... ok
+test_vertex_order_translation_and_rotation_are_allowed (test_print_artifacts.PrintArtifactsTests.test_vertex_order_translation_and_rotation_are_allowed) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.212s
+
+OK
+    brim: foot_pad.stl (contact 8mm2)
+  built foot_pad.3mf: 4 instances / 1 objects / 1 plate(s) / 65KB

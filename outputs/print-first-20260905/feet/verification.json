@@ -1,0 +1,1383 @@
+{
+  "status": "PASS_GEOMETRY_BENCH_REQUIRED",
+  "checks": [
+    {
+      "name": "入力の鮮度:hardware/src/make_print_first_feet.py",
+      "pass_geometry": true
+    },
+    {
+      "name": "入力の鮮度:hardware/src/config.py",
+      "pass_geometry": true
+    },
+    {
+      "name": "入力の鮮度:hardware/stl/leg_foot_bored.stl",
+      "pass_geometry": true
+    },
+    {
+      "name": "入力の鮮度:hardware/stl/tibia_link.stl",
+      "pass_geometry": true
+    },
+    {
+      "name": "入力の鮮度:hardware/stl/shin_shell.stl",
+      "pass_geometry": true
+    },
+    {
+      "name": "入力の鮮度:hardware/stl/shin_shell_m.stl",
+      "pass_geometry": true
+    },
+    {
+      "name": "STL:tpu_shoe",
+      "pass_geometry": true,
+      "volume_mm3": 24236.53756526715,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "STL:pla_spacer_positive_y",
+      "pass_geometry": true,
+      "volume_mm3": 459.7504965997189,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "STL:pla_spacer_negative_y",
+      "pass_geometry": true,
+      "volume_mm3": 459.7504965997189,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "STL:pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "volume_mm3": 459.7505457007116,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "STL:pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "volume_mm3": 459.7505457007116,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "STL:shin_shell_retained",
+      "pass_geometry": true,
+      "volume_mm3": 69806.63383618464,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "STL:shin_shell_retained_print",
+      "pass_geometry": true,
+      "volume_mm3": 69806.63272094601,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "STL:shin_shell_retained_m",
+      "pass_geometry": true,
+      "volume_mm3": 69806.32202410286,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "STL:shin_shell_retained_m_print",
+      "pass_geometry": true,
+      "volume_mm3": 69806.32099870063,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "STL:tpu_shoe_print",
+      "pass_geometry": true,
+      "volume_mm3": 24236.537592662546,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "STL:pla_spacer_print",
+      "pass_geometry": true,
+      "volume_mm3": 459.75058540316036,
+      "components": 1,
+      "role": "printable_or_assembly"
+    },
+    {
+      "name": "実体交差:foot/tibia",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:foot/shoe",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:foot/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:foot/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:foot/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:foot/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:tibia/shoe",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:tibia/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:tibia/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:tibia/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:tibia/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:shoe/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:shoe/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:shoe/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:shoe/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:spacer_positive_y/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:spacer_positive_y/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:spacer_positive_y/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:spacer_negative_y/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:spacer_negative_y/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "実体交差:pla_spacer_upper_positive_y/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "甲の上からの連続挿入",
+      "pass_geometry": true,
+      "swept_intersection_mm3": 0.0,
+      "travel_mm": 60
+    },
+    {
+      "name": "脛の上からの連続挿入",
+      "pass_geometry": true,
+      "swept_intersection_mm3": 0.0012363902477393117,
+      "travel_mm": 65
+    },
+    {
+      "name": "φ10プラグの脛挿入",
+      "pass_geometry": true,
+      "swept_intersection_mm3": 0.010714697224270991,
+      "numeric_dilation_mm": 0.0001,
+      "volume_tolerance_mm3": 0.02
+    },
+    {
+      "name": "スペーサー外側から挿入:positive",
+      "pass_geometry": true,
+      "swept_intersection_mm3": 0.002689080343086763
+    },
+    {
+      "name": "スペーサー外側から挿入:negative",
+      "pass_geometry": true,
+      "swept_intersection_mm3": 0.002689080346966355
+    },
+    {
+      "name": "ねじ包絡:shank/foot",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank/tibia",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank/shoe",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head/foot",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head/tibia",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head/shoe",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut/foot",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut/tibia",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut/shoe",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank_upper/foot",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank_upper/tibia",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank_upper/shoe",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank_upper/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank_upper/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank_upper/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:shank_upper/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head_upper/foot",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head_upper/tibia",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head_upper/shoe",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head_upper/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head_upper/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head_upper/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:head_upper/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut_upper/foot",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut_upper/tibia",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut_upper/shoe",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut_upper/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut_upper/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut_upper/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "ねじ包絡:nut_upper/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "M3×40の突出2山以上",
+      "pass_geometry": true,
+      "grip_mm": 34.8,
+      "assumed_nut_height_mm": 4,
+      "protrusion_mm": 1.2000000000000028,
+      "maximum_nut_height_for_two_threads_mm": 4.200000000000003,
+      "limitation": "実ねじ全ねじ長/頭形/ナイロン部高さ/在庫は未測定"
+    },
+    {
+      "name": "保持した脛殻:standard/foot",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:standard/tibia",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:standard/shoe",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:standard/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:standard/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:standard/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:standard/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:/shank",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:/head",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:/nut",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:/shank_upper",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:/head_upper",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:/nut_upper",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "殻差分の数値残片:",
+      "pass_geometry": true,
+      "absolute_fragment_volume_mm3": 0.0014063039028267296,
+      "per_fragment_threshold_mm3": 0.001
+    },
+    {
+      "name": "脛殻の膝側を保存:",
+      "pass_geometry": true,
+      "highest_cut_z_mm": 84.0,
+      "cut_above_85mm_volume_mm3": 0.0
+    },
+    {
+      "name": "上側スペーサーの殻支持:/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "contact_area_mm2": 47.55114257372679
+    },
+    {
+      "name": "上側スペーサーの殻支持:/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "contact_area_mm2": 47.55114257372679
+    },
+    {
+      "name": "殻を下ろす経路:/ear0",
+      "pass_geometry": true,
+      "swept_intersection_mm3": 0.0
+    },
+    {
+      "name": "殻を下ろす経路:/ear1",
+      "pass_geometry": true,
+      "swept_intersection_mm3": 0.0
+    },
+    {
+      "name": "耳を閉じる経路:",
+      "pass_geometry": true,
+      "max_intersection_mm3": 0.0,
+      "angular_step_deg": 0.5,
+      "between_sample_displacement_bound_mm": 0.2181661564992912,
+      "relief_clearance_mm": 0.3,
+      "elastic_fibre_strain_demand": 0.05235987755982988
+    },
+    {
+      "name": "保持した脛殻:_m/foot",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:_m/tibia",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:_m/shoe",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:_m/spacer_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:_m/spacer_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:_m/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "保持した脛殻:_m/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:_m/shank",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:_m/head",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:_m/nut",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:_m/shank_upper",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:_m/head_upper",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "脛殻とねじ:_m/nut_upper",
+      "pass_geometry": true,
+      "intersection_mm3": 0.0
+    },
+    {
+      "name": "殻差分の数値残片:_m",
+      "pass_geometry": true,
+      "absolute_fragment_volume_mm3": 0.001198160048809842,
+      "per_fragment_threshold_mm3": 0.001
+    },
+    {
+      "name": "脛殻の膝側を保存:_m",
+      "pass_geometry": true,
+      "highest_cut_z_mm": 84.0,
+      "cut_above_85mm_volume_mm3": 0.0
+    },
+    {
+      "name": "上側スペーサーの殻支持:_m/pla_spacer_upper_positive_y",
+      "pass_geometry": true,
+      "contact_area_mm2": 47.55114257372679
+    },
+    {
+      "name": "上側スペーサーの殻支持:_m/pla_spacer_upper_negative_y",
+      "pass_geometry": true,
+      "contact_area_mm2": 47.55114257372679
+    },
+    {
+      "name": "殻を下ろす経路:_m/ear0",
+      "pass_geometry": true,
+      "swept_intersection_mm3": 0.0
+    },
+    {
+      "name": "殻を下ろす経路:_m/ear1",
+      "pass_geometry": true,
+      "swept_intersection_mm3": 0.0
+    },
+    {
+      "name": "耳を閉じる経路:_m",
+      "pass_geometry": true,
+      "max_intersection_mm3": 0.0,
+      "angular_step_deg": 0.5,
+      "between_sample_displacement_bound_mm": 0.2181661564992912,
+      "relief_clearance_mm": 0.3,
+      "elastic_fibre_strain_demand": 0.05235987755982988
+    },
+    {
+      "name": "連続角度域でTPUが先行接地",
+      "pass_geometry": true,
+      "tilt_range_deg": [
+        -89.0,
+        45.32539043561644
+      ],
+      "roll_range_deg": [
+        -15.0,
+        15.0
+      ],
+      "evaluated_normals": 404845,
+      "worst_grid": {
+        "clearance_mm": 4.151835557414843,
+        "tilt_deg": -0.04940663117660904,
+        "roll_deg": 0.0
+      },
+      "interpolation_bound_mm": 0.3506691468091111,
+      "conservative_clearance_mm": 3.8011664106057323,
+      "scope": "足/脛全体/左右スペーサー/標準と鏡像の脛殻。床は平面。TPU変形は含めない。",
+      "assumption": "足実効長>=物理脛135mm、pitch[-45,55]、knee[-44,44]、IKのhypot半径>=0"
+    },
+    {
+      "name": "形状による保持:下向き抜け",
+      "pass_geometry": true,
+      "stop_intersection_mm3": 15.14180528997747
+    },
+    {
+      "name": "形状による保持:横ずれX",
+      "pass_geometry": true,
+      "stop_intersection_mm3": 135.7877670715038
+    },
+    {
+      "name": "形状による保持:横ずれY",
+      "pass_geometry": true,
+      "stop_intersection_mm3": 153.35345193227113
+    }
+  ],
+  "pairs": [
+    {
+      "a": "foot",
+      "b": "tibia",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "foot",
+      "b": "shoe",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "foot",
+      "b": "spacer_positive_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "foot",
+      "b": "spacer_negative_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "foot",
+      "b": "pla_spacer_upper_positive_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "foot",
+      "b": "pla_spacer_upper_negative_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "tibia",
+      "b": "shoe",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "tibia",
+      "b": "spacer_positive_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "tibia",
+      "b": "spacer_negative_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "tibia",
+      "b": "pla_spacer_upper_positive_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "tibia",
+      "b": "pla_spacer_upper_negative_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "shoe",
+      "b": "spacer_positive_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "shoe",
+      "b": "spacer_negative_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "shoe",
+      "b": "pla_spacer_upper_positive_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "shoe",
+      "b": "pla_spacer_upper_negative_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "spacer_positive_y",
+      "b": "spacer_negative_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "spacer_positive_y",
+      "b": "pla_spacer_upper_positive_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "spacer_positive_y",
+      "b": "pla_spacer_upper_negative_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "spacer_negative_y",
+      "b": "pla_spacer_upper_positive_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "spacer_negative_y",
+      "b": "pla_spacer_upper_negative_y",
+      "volume_mm3": 0.0
+    },
+    {
+      "a": "pla_spacer_upper_positive_y",
+      "b": "pla_spacer_upper_negative_y",
+      "volume_mm3": 0.0
+    }
+  ],
+  "shell_changes": [
+    {
+      "variant": "standard",
+      "original_volume_mm3": 81950.77486998825,
+      "removed_volume_mm3": 12144.157760573276,
+      "retained_volume_fraction": 0.8518117607421062,
+      "removed_bounds_mm": [
+        [
+          -8.794469833374023,
+          -25.569002151489258,
+          3.0
+        ],
+        [
+          28.05150032043457,
+          25.569002151489258,
+          84.0
+        ]
+      ],
+      "numerical_difference_fragment_volume_mm3": 0.0014063039028267296,
+      "negative_numerical_difference_fragment_volume_mm3": 0.00020489657710769105,
+      "negative_numerical_difference_fragment_count": 4,
+      "negative_fragment_signed_tolerance_mm3": 0.001,
+      "negative_fragment_audit": [
+        {
+          "serialized_volume_mm3": -5.039939254454969e-07,
+          "native_volume_mm3": -5.039103989409183e-07,
+          "native_status": "NoError",
+          "bounds_extents_mm": [
+            0.005431175231933594,
+            2.7019286155700684,
+            0.1710968017578125
+          ],
+          "tolerance_mm3": 0.001,
+          "strict_boolean_tolerance_mm3": 1e-06
+        },
+        {
+          "serialized_volume_mm3": -3.1417487534231753e-07,
+          "native_volume_mm3": -3.141748753476663e-07,
+          "native_status": "NoError",
+          "bounds_extents_mm": [
+            0.0011034011840820312,
+            0.5831801891326904,
+            0.02703857421875
+          ],
+          "tolerance_mm3": 0.001,
+          "strict_boolean_tolerance_mm3": 1e-06
+        },
+        {
+          "serialized_volume_mm3": -0.00010203825490862073,
+          "native_volume_mm3": -0.00010203825490997349,
+          "native_status": "NoError",
+          "bounds_extents_mm": [
+            0.0084228515625,
+            5.5950000286102295,
+            0.233001708984375
+          ],
+          "tolerance_mm3": 0.001,
+          "strict_boolean_tolerance_mm3": 1e-06
+        },
+        {
+          "serialized_volume_mm3": -0.0001020401533982825,
+          "native_volume_mm3": -0.00010204015340022565,
+          "native_status": "NoError",
+          "bounds_extents_mm": [
+            0.0084228515625,
+            5.5950000286102295,
+            0.233001708984375
+          ],
+          "tolerance_mm3": 0.001,
+          "strict_boolean_tolerance_mm3": 1e-06
+        }
+      ],
+      "intersection_foot_mm3": 0.0,
+      "intersection_tibia_mm3": 0.0,
+      "intersection_shoe_mm3": 0.0,
+      "intersection_spacer_positive_y_mm3": 0.0,
+      "intersection_spacer_negative_y_mm3": 0.0,
+      "intersection_pla_spacer_upper_positive_y_mm3": 0.0,
+      "intersection_pla_spacer_upper_negative_y_mm3": 0.0,
+      "pla_spacer_upper_positive_y_case_contact_area_mm2": 47.55114257372679,
+      "pla_spacer_upper_negative_y_case_contact_area_mm2": 47.55114257372679
+    },
+    {
+      "variant": "_m",
+      "original_volume_mm3": 81950.77486998825,
+      "removed_volume_mm3": 12144.46826440459,
+      "retained_volume_fraction": 0.8518079558716547,
+      "removed_bounds_mm": [
+        [
+          -8.794469833374023,
+          -25.569002151489258,
+          3.0
+        ],
+        [
+          28.05150032043457,
+          25.569002151489258,
+          84.0
+        ]
+      ],
+      "numerical_difference_fragment_volume_mm3": 0.001198160048809842,
+      "negative_numerical_difference_fragment_volume_mm3": 0.00020480600824448905,
+      "negative_numerical_difference_fragment_count": 4,
+      "negative_fragment_signed_tolerance_mm3": 0.001,
+      "negative_fragment_audit": [
+        {
+          "serialized_volume_mm3": -0.00010198256183432027,
+          "native_volume_mm3": -0.0001019825618344336,
+          "native_status": "NoError",
+          "bounds_extents_mm": [
+            0.0084228515625,
+            5.5950000286102295,
+            0.233001708984375
+          ],
+          "tolerance_mm3": 0.001,
+          "strict_boolean_tolerance_mm3": 1e-06
+        },
+        {
+          "serialized_volume_mm3": -0.00010203825490928686,
+          "native_volume_mm3": -0.00010203825490996677,
+          "native_status": "NoError",
+          "bounds_extents_mm": [
+            0.0084228515625,
+            5.5950000286102295,
+            0.233001708984375
+          ],
+          "tolerance_mm3": 0.001,
+          "strict_boolean_tolerance_mm3": 1e-06
+        },
+        {
+          "serialized_volume_mm3": -3.141748753469435e-07,
+          "native_volume_mm3": -3.1417487534419683e-07,
+          "native_status": "NoError",
+          "bounds_extents_mm": [
+            0.0011034011840820312,
+            0.5831801891326904,
+            0.02703857421875
+          ],
+          "tolerance_mm3": 0.001,
+          "strict_boolean_tolerance_mm3": 1e-06
+        },
+        {
+          "serialized_volume_mm3": -4.710166255350127e-07,
+          "native_volume_mm3": -4.7093309908305403e-07,
+          "native_status": "NoError",
+          "bounds_extents_mm": [
+            0.005385398864746094,
+            2.661342144012451,
+            0.169464111328125
+          ],
+          "tolerance_mm3": 0.001,
+          "strict_boolean_tolerance_mm3": 1e-06
+        }
+      ],
+      "intersection_foot_mm3": 0.0,
+      "intersection_tibia_mm3": 0.0,
+      "intersection_shoe_mm3": 0.0,
+      "intersection_spacer_positive_y_mm3": 0.0,
+      "intersection_spacer_negative_y_mm3": 0.0,
+      "intersection_pla_spacer_upper_positive_y_mm3": 0.0,
+      "intersection_pla_spacer_upper_negative_y_mm3": 0.0,
+      "pla_spacer_upper_positive_y_case_contact_area_mm2": 47.55114257372679,
+      "pla_spacer_upper_negative_y_case_contact_area_mm2": 47.55114257372679
+    }
+  ],
+  "continuous_support": {
+    "tilt_range_deg": [
+      -89.0,
+      45.32539043561644
+    ],
+    "roll_range_deg": [
+      -15.0,
+      15.0
+    ],
+    "evaluated_normals": 404845,
+    "worst_grid": {
+      "clearance_mm": 4.151835557414843,
+      "tilt_deg": -0.04940663117660904,
+      "roll_deg": 0.0
+    },
+    "interpolation_bound_mm": 0.3506691468091111,
+    "conservative_clearance_mm": 3.8011664106057323,
+    "scope": "足/脛全体/左右スペーサー/標準と鏡像の脛殻。床は平面。TPU変形は含めない。",
+    "assumption": "足実効長>=物理脛135mm、pitch[-45,55]、knee[-44,44]、IKのhypot半径>=0"
+  },
+  "retention": [
+    {
+      "direction": "下向き抜け",
+      "translation_mm": [
+        0,
+        0,
+        -1
+      ],
+      "stop_intersection_mm3": 15.14180528997747
+    },
+    {
+      "direction": "横ずれX",
+      "translation_mm": [
+        1,
+        0,
+        0
+      ],
+      "stop_intersection_mm3": 135.7877670715038
+    },
+    {
+      "direction": "横ずれY",
+      "translation_mm": [
+        0,
+        1,
+        0
+      ],
+      "stop_intersection_mm3": 153.35345193227113
+    }
+  ],
+  "strength_demand": {
+    "reference_load_n": 22.4,
+    "proof_load_n": null,
+    "proof_load_is_established": false,
+    "reference_22p4_is_not_a_pass": true,
+    "plug_compression_area_mm2": 78.53981633974483,
+    "plug_compression_demand_mpa": 0.28520565802067643,
+    "two_ear_net_area_mm2": 27.2,
+    "ear_net_tension_demand_mpa": 0.8235294117647058,
+    "two_flange_bearing_area_mm2": 115.3592822398172,
+    "flange_bearing_demand_mpa": 0.19417596542802046,
+    "confidence": "22.4N等の固定参照値による断面平均。機械合格ではなく、応力集中/座屈/積層/クリープを実物試験で別に確認する"
+  },
+  "support_eccentricity": {
+    "status": "CAD_SUPPORT_ENVELOPE_ONLY",
+    "tilt_source": "design_roll_range (final simulation not supplied)",
+    "simulation_source": null,
+    "requested_max_abs_pitch_deg": 0.0,
+    "requested_max_abs_roll_deg": 15.0,
+    "plug_axis_xy_mm": [
+      0.0,
+      0.0
+    ],
+    "cases": [
+      {
+        "normal": [
+          0.0,
+          -0.25881904510252074,
+          0.9659258262890683
+        ],
+        "minimum_signed_mm": -18.44052342499485,
+        "support_cut_mm": -18.24052342499485,
+        "support_tolerance_mm": 0.2,
+        "contact_sample_count": 24,
+        "convex_hull_area_mm2": 5.569413806347525,
+        "support_centroid_xyz_mm": [
+          1.6702853498517545e-08,
+          18.58275662867342,
+          -14.111800024394196
+        ],
+        "support_centroid_xy_mm": [
+          1.6702853498517545e-08,
+          18.58275662867342
+        ],
+        "support_centroid_eccentricity_mm": 18.58275662867342,
+        "edge_support_xyz_mm": [
+          0.0,
+          19.0517638,
+          -13.986129931592835
+        ],
+        "edge_support_eccentricity_mm": 19.0517638,
+        "support_z_min_mm": -14.193185175000002,
+        "support_z_max_mm": -13.986129931592835,
+        "support_centroid_z_mm": -14.111800024394196,
+        "source": "actual shoe STL vertices and triangle-edge intersections",
+        "hull_vertex_count": 11,
+        "pitch_deg": -0.0,
+        "roll_deg": -15.0
+      },
+      {
+        "normal": [
+          0.0,
+          0.25881904510252074,
+          0.9659258262890683
+        ],
+        "minimum_signed_mm": -21.287532921122576,
+        "support_cut_mm": -21.087532921122577,
+        "support_tolerance_mm": 0.2,
+        "contact_sample_count": 24,
+        "convex_hull_area_mm2": 2.974157493698751,
+        "support_centroid_xyz_mm": [
+          -1.2300168179170747e-08,
+          -29.585258770243392,
+          -14.111129577581174
+        ],
+        "support_centroid_xy_mm": [
+          -1.2300168179170747e-08,
+          -29.585258770243392
+        ],
+        "support_centroid_eccentricity_mm": 29.585258770243392,
+        "edge_support_xyz_mm": [
+          0.0,
+          -30.0517638,
+          -13.986129931592831
+        ],
+        "edge_support_eccentricity_mm": 30.0517638,
+        "support_z_min_mm": -14.193185174999998,
+        "support_z_max_mm": -13.986129931592831,
+        "support_centroid_z_mm": -14.111129577581174,
+        "source": "actual shoe STL vertices and triangle-edge intersections",
+        "hull_vertex_count": 12,
+        "pitch_deg": -0.0,
+        "roll_deg": 15.0
+      }
+    ],
+    "maximum_edge_eccentricity_mm": 30.0517638,
+    "maximum_centroid_eccentricity_mm": 29.585258770243392,
+    "limitation": "床との実接触圧力分布、TPUの変形、歩行中の接触移動は未測定。傾斜時の偏心は実STL最低支持点からの幾何量として扱う。"
+  },
+  "root_section": {
+    "status": "CAD_SECTION_ONLY",
+    "section_z_mm": 0.0,
+    "source": "actual leg_foot_bored.stl horizontal section at plug root",
+    "area_mm2": 78.41371253647907,
+    "centroid_xy_mm": [
+      -7.079265785997994e-17,
+      3.020486735359144e-17
+    ],
+    "inertia_xx_mm4": 489.29907285021756,
+    "inertia_yy_mm4": 489.29907285021756,
+    "inertia_xy_mm4": -2.6645352591003757e-15,
+    "principal_inertia_min_mm4": 489.29907285021756,
+    "principal_inertia_max_mm4": 489.29907285021756,
+    "outer_radius_mm": 5.000000145161929,
+    "weakest_section_modulus_mm3": 97.8598117289397,
+    "limitation": "STLの中実断面を計算しただけで、薄肉印刷の周壁/充填、積層異方性、座面の局所応力、疲労/クリープは未確認"
+  },
+  "contact_load_demand": {
+    "status": "UNVERIFIED_FORCE_COMPARISON",
+    "simulation": {
+      "status": "UNVERIFIED_FINAL_SIM_PENDING",
+      "source": null,
+      "limitation": "最終形状のシムJSONを--simulationで指定していない"
+    },
+    "critical_support_tilt": {
+      "normal": [
+        0.0,
+        0.25881904510252074,
+        0.9659258262890683
+      ],
+      "minimum_signed_mm": -21.287532921122576,
+      "support_cut_mm": -21.087532921122577,
+      "support_tolerance_mm": 0.2,
+      "contact_sample_count": 24,
+      "convex_hull_area_mm2": 2.974157493698751,
+      "support_centroid_xyz_mm": [
+        -1.2300168179170747e-08,
+        -29.585258770243392,
+        -14.111129577581174
+      ],
+      "support_centroid_xy_mm": [
+        -1.2300168179170747e-08,
+        -29.585258770243392
+      ],
+      "support_centroid_eccentricity_mm": 29.585258770243392,
+      "edge_support_xyz_mm": [
+        0.0,
+        -30.0517638,
+        -13.986129931592831
+      ],
+      "edge_support_eccentricity_mm": 30.0517638,
+      "support_z_min_mm": -14.193185174999998,
+      "support_z_max_mm": -13.986129931592831,
+      "support_centroid_z_mm": -14.111129577581174,
+      "source": "actual shoe STL vertices and triangle-edge intersections",
+      "hull_vertex_count": 12,
+      "pitch_deg": -0.0,
+      "roll_deg": 15.0
+    },
+    "support_centroid_eccentricity_max_mm": 29.585258770243392,
+    "support_edge_eccentricity_max_mm": 30.0517638,
+    "horizontal_force_lever_arm_max_mm": 14.193185175000002,
+    "section": {
+      "status": "CAD_SECTION_ONLY",
+      "section_z_mm": 0.0,
+      "source": "actual leg_foot_bored.stl horizontal section at plug root",
+      "area_mm2": 78.41371253647907,
+      "centroid_xy_mm": [
+        -7.079265785997994e-17,
+        3.020486735359144e-17
+      ],
+      "inertia_xx_mm4": 489.29907285021756,
+      "inertia_yy_mm4": 489.29907285021756,
+      "inertia_xy_mm4": -2.6645352591003757e-15,
+      "principal_inertia_min_mm4": 489.29907285021756,
+      "principal_inertia_max_mm4": 489.29907285021756,
+      "outer_radius_mm": 5.000000145161929,
+      "weakest_section_modulus_mm3": 97.8598117289397,
+      "limitation": "STLの中実断面を計算しただけで、薄肉印刷の周壁/充填、積層異方性、座面の局所応力、疲労/クリープは未確認"
+    },
+    "reference_22p4_N": 22.4,
+    "reference_22p4_is_not_a_pass": true,
+    "reference_limitation": "22.4 Nは従来の固定参照値。最終シムの接触力の代用にせず、機械合格判定にも使わない。",
+    "limitation": "最終シムの鉛直/水平接触力が未入力のため要求値を計算できない"
+  },
+  "printing": {
+    "tpu_shoes": 4,
+    "pla_spacers": 16,
+    "shoe_volume_each_mm3": 24236.53756526715,
+    "spacer_volume_each_mm3": 459.7504965997189,
+    "tpu_solid_4_mass_g": 117.304841815893,
+    "pla_solid_16_mass_g": 9.121449852538422,
+    "density_assumption_g_cm3": {
+      "TPU": 1.21,
+      "TPU95A": 1.21,
+      "PLA": 1.24
+    },
+    "density_source_config": {
+      "path": "hardware/src/config.py",
+      "sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95"
+    },
+    "old_blue_shells": "旧標準2/鏡像2を保管。加工する場合は生成差分だけ。新たに印刷する場合は対応4個。",
+    "printer_setting": "TPU95A: 0.2mm、4周壁、100%充填、底面を下。PLAスペーサー: 0.2mm、4周壁、100%、フランジを下。既存3MFに入っていない。"
+  },
+  "boolean_volume_audit": [],
+  "actual_hardware_test": "NOT_RUN: 印刷/実機へ書込/ねじ締結/床歩行をこの検査は実行しない",
+  "checker_path": "tools/check_print_first_feet.py",
+  "checker_sha256": "ddeb7758bbced16ec65bf0b88409f97b3d5592ff71322e0eedc8ca3859d1fce9",
+  "assembly_path": "outputs/print-first-20260905/feet/assembly.json",
+  "assembly_sha256": "94235d0ea030fc45b0ca2edb8a2cf2a0083253e2a65df2fe859857d13b6cbed6",
+  "config_path": "hardware/src/config.py",
+  "config_sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95",
+  "input_sha256": {
+    "hardware/src/make_print_first_feet.py": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+    "hardware/src/config.py": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95",
+    "hardware/stl/leg_foot_bored.stl": "38d87915b8e96e1caf55139ea98dafab86f1550bb5bff0ee15d603d2e7176739",
+    "hardware/stl/tibia_link.stl": "25efbbaf125428a074f483e3639960cb24cdd3a6b1e15fafb6d9cec7838627d1",
+    "hardware/stl/shin_shell.stl": "192e365f1114b29457f804734b41a6a7d3dc7e8e0f1650ce3ec0e58665a30e6a",
+    "hardware/stl/shin_shell_m.stl": "a2901e1a70d3e1de33419382868314a5500b84491f14a72fc25bf046698c94f8"
+  },
+  "expected_check_names": [
+    "M3×40の突出2山以上",
+    "STL:pla_spacer_negative_y",
+    "STL:pla_spacer_positive_y",
+    "STL:pla_spacer_print",
+    "STL:pla_spacer_upper_negative_y",
+    "STL:pla_spacer_upper_positive_y",
+    "STL:shin_shell_retained",
+    "STL:shin_shell_retained_m",
+    "STL:shin_shell_retained_m_print",
+    "STL:shin_shell_retained_print",
+    "STL:tpu_shoe",
+    "STL:tpu_shoe_print",
+    "φ10プラグの脛挿入",
+    "ねじ包絡:head/foot",
+    "ねじ包絡:head/pla_spacer_upper_negative_y",
+    "ねじ包絡:head/pla_spacer_upper_positive_y",
+    "ねじ包絡:head/shoe",
+    "ねじ包絡:head/spacer_negative_y",
+    "ねじ包絡:head/spacer_positive_y",
+    "ねじ包絡:head/tibia",
+    "ねじ包絡:head_upper/foot",
+    "ねじ包絡:head_upper/pla_spacer_upper_negative_y",
+    "ねじ包絡:head_upper/pla_spacer_upper_positive_y",
+    "ねじ包絡:head_upper/shoe",
+    "ねじ包絡:head_upper/spacer_negative_y",
+    "ねじ包絡:head_upper/spacer_positive_y",
+    "ねじ包絡:head_upper/tibia",
+    "ねじ包絡:nut/foot",
+    "ねじ包絡:nut/pla_spacer_upper_negative_y",
+    "ねじ包絡:nut/pla_spacer_upper_positive_y",
+    "ねじ包絡:nut/shoe",
+    "ねじ包絡:nut/spacer_negative_y",
+    "ねじ包絡:nut/spacer_positive_y",
+    "ねじ包絡:nut/tibia",
+    "ねじ包絡:nut_upper/foot",
+    "ねじ包絡:nut_upper/pla_spacer_upper_negative_y",
+    "ねじ包絡:nut_upper/pla_spacer_upper_positive_y",
+    "ねじ包絡:nut_upper/shoe",
+    "ねじ包絡:nut_upper/spacer_negative_y",
+    "ねじ包絡:nut_upper/spacer_positive_y",
+    "ねじ包絡:nut_upper/tibia",
+    "ねじ包絡:shank/foot",
+    "ねじ包絡:shank/pla_spacer_upper_negative_y",
+    "ねじ包絡:shank/pla_spacer_upper_positive_y",
+    "ねじ包絡:shank/shoe",
+    "ねじ包絡:shank/spacer_negative_y",
+    "ねじ包絡:shank/spacer_positive_y",
+    "ねじ包絡:shank/tibia",
+    "ねじ包絡:shank_upper/foot",
+    "ねじ包絡:shank_upper/pla_spacer_upper_negative_y",
+    "ねじ包絡:shank_upper/pla_spacer_upper_positive_y",
+    "ねじ包絡:shank_upper/shoe",
+    "ねじ包絡:shank_upper/spacer_negative_y",
+    "ねじ包絡:shank_upper/spacer_positive_y",
+    "ねじ包絡:shank_upper/tibia",
+    "スペーサー外側から挿入:negative",
+    "スペーサー外側から挿入:positive",
+    "上側スペーサーの殻支持:/pla_spacer_upper_negative_y",
+    "上側スペーサーの殻支持:/pla_spacer_upper_positive_y",
+    "上側スペーサーの殻支持:_m/pla_spacer_upper_negative_y",
+    "上側スペーサーの殻支持:_m/pla_spacer_upper_positive_y",
+    "保持した脛殻:_m/foot",
+    "保持した脛殻:_m/pla_spacer_upper_negative_y",
+    "保持した脛殻:_m/pla_spacer_upper_positive_y",
+    "保持した脛殻:_m/shoe",
+    "保持した脛殻:_m/spacer_negative_y",
+    "保持した脛殻:_m/spacer_positive_y",
+    "保持した脛殻:_m/tibia",
+    "保持した脛殻:standard/foot",
+    "保持した脛殻:standard/pla_spacer_upper_negative_y",
+    "保持した脛殻:standard/pla_spacer_upper_positive_y",
+    "保持した脛殻:standard/shoe",
+    "保持した脛殻:standard/spacer_negative_y",
+    "保持した脛殻:standard/spacer_positive_y",
+    "保持した脛殻:standard/tibia",
+    "入力の鮮度:hardware/src/config.py",
+    "入力の鮮度:hardware/src/make_print_first_feet.py",
+    "入力の鮮度:hardware/stl/leg_foot_bored.stl",
+    "入力の鮮度:hardware/stl/shin_shell.stl",
+    "入力の鮮度:hardware/stl/shin_shell_m.stl",
+    "入力の鮮度:hardware/stl/tibia_link.stl",
+    "実体交差:foot/pla_spacer_upper_negative_y",
+    "実体交差:foot/pla_spacer_upper_positive_y",
+    "実体交差:foot/shoe",
+    "実体交差:foot/spacer_negative_y",
+    "実体交差:foot/spacer_positive_y",
+    "実体交差:foot/tibia",
+    "実体交差:pla_spacer_upper_positive_y/pla_spacer_upper_negative_y",
+    "実体交差:shoe/pla_spacer_upper_negative_y",
+    "実体交差:shoe/pla_spacer_upper_positive_y",
+    "実体交差:shoe/spacer_negative_y",
+    "実体交差:shoe/spacer_positive_y",
+    "実体交差:spacer_negative_y/pla_spacer_upper_negative_y",
+    "実体交差:spacer_negative_y/pla_spacer_upper_positive_y",
+    "実体交差:spacer_positive_y/pla_spacer_upper_negative_y",
+    "実体交差:spacer_positive_y/pla_spacer_upper_positive_y",
+    "実体交差:spacer_positive_y/spacer_negative_y",
+    "実体交差:tibia/pla_spacer_upper_negative_y",
+    "実体交差:tibia/pla_spacer_upper_positive_y",
+    "実体交差:tibia/shoe",
+    "実体交差:tibia/spacer_negative_y",
+    "実体交差:tibia/spacer_positive_y",
+    "形状による保持:下向き抜け",
+    "形状による保持:横ずれX",
+    "形状による保持:横ずれY",
+    "殻を下ろす経路:/ear0",
+    "殻を下ろす経路:/ear1",
+    "殻を下ろす経路:_m/ear0",
+    "殻を下ろす経路:_m/ear1",
+    "殻差分の数値残片:",
+    "殻差分の数値残片:_m",
+    "甲の上からの連続挿入",
+    "耳を閉じる経路:",
+    "耳を閉じる経路:_m",
+    "脛の上からの連続挿入",
+    "脛殻とねじ:/head",
+    "脛殻とねじ:/head_upper",
+    "脛殻とねじ:/nut",
+    "脛殻とねじ:/nut_upper",
+    "脛殻とねじ:/shank",
+    "脛殻とねじ:/shank_upper",
+    "脛殻とねじ:_m/head",
+    "脛殻とねじ:_m/head_upper",
+    "脛殻とねじ:_m/nut",
+    "脛殻とねじ:_m/nut_upper",
+    "脛殻とねじ:_m/shank",
+    "脛殻とねじ:_m/shank_upper",
+    "脛殻の膝側を保存:",
+    "脛殻の膝側を保存:_m",
+    "連続角度域でTPUが先行接地"
+  ],
+  "permitted_status_states": [
+    "PASS_GEOMETRY_BENCH_REQUIRED"
+  ]
+}

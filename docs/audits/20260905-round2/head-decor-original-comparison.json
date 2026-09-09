@@ -1,0 +1,32 @@
+[
+  {
+    "part": "Head_Dome_Grey#single",
+    "original_head_intersection_mm3": 0.0,
+    "modified_head_intersection_mm3": 0.0
+  },
+  {
+    "part": "Head_Plug_Grey#single",
+    "original_head_intersection_mm3": 0.0,
+    "modified_head_intersection_mm3": 0.0
+  },
+  {
+    "part": "Head_Screw_Grey_x2#1_measured",
+    "original_head_intersection_mm3": 3.8010372740186295e-05,
+    "modified_head_intersection_mm3": 3.801493495653174e-05
+  },
+  {
+    "part": "Head_Screw_Grey_x2#2_estimated_mirror",
+    "original_head_intersection_mm3": 8.723243349417734,
+    "modified_head_intersection_mm3": 8.72324019074055
+  },
+  {
+    "part": "Head_Insert_Black_x4#1_measured",
+    "original_head_intersection_mm3": 156.38511839331332,
+    "modified_head_intersection_mm3": 128.2452980856924
+  },
+  {
+    "part": "Head_Insert_Black_x4#2_estimated",
+    "original_head_intersection_mm3": 99.97106709783189,
+    "modified_head_intersection_mm3": 32.822277221643596
+  }
+]

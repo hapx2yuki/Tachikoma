@@ -1,0 +1,102 @@
+{
+  "status": "候補比較のみ。製作承認・全身IK再校正・接着/圧縮/疲労試験なし。",
+  "frame": "leg_foot_bored local (sphere); toe raw STL scaled 1.5 (shoe)",
+  "source_matrix_scale": {
+    "FR_0": 1.5,
+    "FR_1": 1.4999999999999993,
+    "FR_2": 1.4999999999999998,
+    "FL_0": 1.5,
+    "FL_1": 1.4999999999999993,
+    "FL_2": 1.4999999999999998,
+    "RL_0": 1.5,
+    "RL_1": 1.4999999999999993,
+    "RL_2": 1.4999999999999998,
+    "RR_0": 1.5,
+    "RR_1": 1.4999999999999993,
+    "RR_2": 1.4999999999999998
+  },
+  "evaluated_print_scale": 1.5,
+  "scale_correction": "印刷仕様150%で評価。JSONが100%なら根元(原toe Y最大面中心)を固定して拡大。JSON自体は変更しない。",
+  "reachable_tilt_deg": [
+    -42.072767931713095,
+    8.977699324410562
+  ],
+  "sampled_command_poses": 24960,
+  "continuous_tilt_samples": 1001,
+  "mount_angle_change": {
+    "best_within_15_deg": {
+      "delta_deg": 15.0,
+      "worst_clearance_mm": -24.03526070348953
+    },
+    "best_all_360_deg": {
+      "delta_deg": -157.25,
+      "worst_clearance_mm": -9.90618221101192
+    },
+    "candidate_count": 1441,
+    "limitation": "俯仰角のみ。全体が上下逆になる案も含めた比較。"
+  },
+  "spherical_support": {
+    "radius_mm": 15.0,
+    "center_local_mm": [
+      0,
+      2.5,
+      -32.95197750679642
+    ],
+    "pad_depth_increase_mm": 36.59397888183594,
+    "worst_rigid_clearance_mm": 2.072684025109581,
+    "foot_intersection_mm3": 0.0,
+    "components": 1,
+    "watertight": true
+  },
+  "toe_shoe": {
+    "thickness_mm": 1.5,
+    "voxel_pitch_mm": 0.3,
+    "worst_rigid_clearance_mm": 1.641613717703983,
+    "voxel_isolated_fragment_removed_mm3": 34.90615290437778,
+    "shoe_foot_intersection_mm3": 4.6743517144550875e-07,
+    "components_per_shoe": 1,
+    "watertight": true,
+    "root_load_sensitivity": [
+      {
+        "toe": "FR_0",
+        "toe_foot_intersection_mm3": 29.358877855688956,
+        "hidden_seat_contact_area_mm2": 49.48443556550287,
+        "single_toe_average_contact_traction_mpa": 0.4519966681320012,
+        "root_y_mm": 10.0,
+        "section_moduli_mm3": [
+          166.10099663705915,
+          497.9585521359398
+        ],
+        "one_toe_bending_mpa_Kt1": 2.314356896022273,
+        "three_equal_toes_bending_mpa_Kt1": 0.7714522986740909
+      },
+      {
+        "toe": "FR_1",
+        "toe_foot_intersection_mm3": 29.58497985923673,
+        "hidden_seat_contact_area_mm2": 47.038634497958114,
+        "single_toe_average_contact_traction_mpa": 0.47549849689983903,
+        "root_y_mm": 10.0,
+        "section_moduli_mm3": [
+          166.10099663705915,
+          497.9585521359398
+        ],
+        "one_toe_bending_mpa_Kt1": 2.293585715361445,
+        "three_equal_toes_bending_mpa_Kt1": 0.7645285717871483
+      },
+      {
+        "toe": "FR_2",
+        "toe_foot_intersection_mm3": 29.01888439402911,
+        "hidden_seat_contact_area_mm2": 47.38727346666738,
+        "single_toe_average_contact_traction_mpa": 0.4720001461095456,
+        "root_y_mm": 10.0,
+        "section_moduli_mm3": [
+          166.10099663705915,
+          497.9585521359398
+        ],
+        "one_toe_bending_mpa_Kt1": 2.643518861031341,
+        "three_equal_toes_bending_mpa_Kt1": 0.8811729536771137
+      }
+    ],
+    "limitations": "toe下面の仮靴は装飾toeへ荷重を流す。原toe/足の隠れた座加工、接着強度、固定具、層方向は未検証。"
+  }
+}

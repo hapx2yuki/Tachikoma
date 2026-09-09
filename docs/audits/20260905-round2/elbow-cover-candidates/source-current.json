@@ -1,0 +1,14 @@
+{
+  "status": "現CADのケース底配置を全リンク比較",
+  "mode": "source",
+  "configured_cover_center_y_mm": -13.8,
+  "coordinate_frame": "elbow_shell原点（肘軸）局所。軸/サーボ/骨格/外形は変更せず取付Yだけを移す。",
+  "poses": 18,
+  "variants": [
+    {
+      "offset_local_y_mm": 0.0,
+      "actual_contacts": []
+    }
+  ],
+  "limits": "18実姿勢と0姿勢のみ。全到達集合/接着/可視配置の採用判断は別途。"
+}

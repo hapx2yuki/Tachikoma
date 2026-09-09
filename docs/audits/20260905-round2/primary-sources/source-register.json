@@ -1,0 +1,104 @@
+{
+  "files": [
+    {
+      "path": "DS3218-page1.png",
+      "bytes": 272322,
+      "sha256": "5509fb9674c529f4c73a601df08813196a351440be4cd501bcfc63da51337612",
+      "publisher": "DSSERVO",
+      "source_type": "png",
+      "checked_date": "2026-09-05",
+      "intended_use": "内部参照のみ。公開は出典と数値測定結果。",
+      "redistribution_permission": "UNVERIFIED",
+      "git_action": "exclude_local_copy_keep_local_file"
+    },
+    {
+      "path": "DS3218.pdf",
+      "bytes": 370241,
+      "sha256": "40d6aaa3ffa14d8a7edfcd3bb86224b84fbbc150080e9525d8a03db124268e18",
+      "publisher": "DSSERVO",
+      "source_type": "pdf",
+      "checked_date": "2026-09-05",
+      "intended_use": "内部参照のみ。公開は出典と数値測定結果。",
+      "redistribution_permission": "UNVERIFIED",
+      "git_action": "exclude_local_copy_keep_local_file"
+    },
+    {
+      "path": "OV3660_Camera_Module_Specification.pdf",
+      "bytes": 387241,
+      "sha256": "c38741e9cf0083322f73a09c53a7a3fb9a89c420700eee8849763e27019e87fa",
+      "publisher": "Seeed Studio",
+      "source_type": "pdf",
+      "checked_date": "2026-09-05",
+      "intended_use": "内部参照のみ。公開は出典と数値測定結果。",
+      "redistribution_permission": "UNVERIFIED",
+      "git_action": "exclude_local_copy_keep_local_file"
+    },
+    {
+      "path": "OV3660_Camera_Module_Specification.png",
+      "bytes": 767807,
+      "sha256": "8720fc774528e5b39ba6cb6978991da8de62b974f714689b8f411b3d533be9dc",
+      "publisher": "Seeed Studio",
+      "source_type": "png",
+      "checked_date": "2026-09-05",
+      "intended_use": "内部参照のみ。公開は出典と数値測定結果。",
+      "redistribution_permission": "UNVERIFIED",
+      "git_action": "exclude_local_copy_keep_local_file"
+    },
+    {
+      "path": "xiao-esp32s3-sense-3d_model.zip",
+      "bytes": 8832441,
+      "sha256": "773c16cb7518a3a18df926979f24c7e224f19309aad69962ec8a54454e288c59",
+      "publisher": "Seeed Studio",
+      "source_type": "zip",
+      "checked_date": "2026-09-05",
+      "intended_use": "内部参照のみ。公開は出典と数値測定結果。",
+      "redistribution_permission": "UNVERIFIED",
+      "git_action": "exclude_local_copy_keep_local_file"
+    },
+    {
+      "path": "xiao-step-measured/Camer_Module.stl",
+      "bytes": 2259053,
+      "sha256": "aaf90a638c90dec4fd7a255ab6cddb6cbddb8b6dc725f0397f2b3f7fc7f0f057",
+      "publisher": "Seeed Studio",
+      "source_type": "stl",
+      "checked_date": "2026-09-05",
+      "intended_use": "内部参照のみ。公開は出典と数値測定結果。",
+      "redistribution_permission": "UNVERIFIED",
+      "git_action": "exclude_local_copy_keep_local_file"
+    },
+    {
+      "path": "xiao-step-measured/JUSHUO_AFC01-S24FCA-00.stl",
+      "bytes": 8508912,
+      "sha256": "f2dafd876dd03d8b291636644f2bb004e5aff35601afaa21dcdcc644b9f49403",
+      "publisher": "Seeed Studio",
+      "source_type": "stl",
+      "checked_date": "2026-09-05",
+      "intended_use": "内部参照のみ。公開は出典と数値測定結果。",
+      "redistribution_permission": "UNVERIFIED",
+      "git_action": "exclude_local_copy_keep_local_file"
+    },
+    {
+      "path": "xiao-step-measured/Seeed_Studio_XIAO-ESP32-S3_Sense.stl",
+      "bytes": 29072246,
+      "sha256": "7823d15984d6bebe69d5f9171cbd2c129ec3497ac7e05219abdd711d07804312",
+      "publisher": "Seeed Studio",
+      "source_type": "stl",
+      "checked_date": "2026-09-05",
+      "intended_use": "内部参照のみ。公開は出典と数値測定結果。",
+      "redistribution_permission": "UNVERIFIED",
+      "git_action": "exclude_local_copy_keep_local_file"
+    },
+    {
+      "path": "xiao-step-measured/Sense_Expansion_Board.stl",
+      "bytes": 19022074,
+      "sha256": "609451372ad2c6c7b36913104dd458e8039cd002ecb1f8e415f568812b252136",
+      "publisher": "Seeed Studio",
+      "source_type": "stl",
+      "checked_date": "2026-09-05",
+      "intended_use": "内部参照のみ。公開は出典と数値測定結果。",
+      "redistribution_permission": "UNVERIFIED",
+      "git_action": "exclude_local_copy_keep_local_file"
+    }
+  ],
+  "details": "README.md"
+}

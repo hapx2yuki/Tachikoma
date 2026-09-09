@@ -1,0 +1,254 @@
+{
+  "date": "2026-09-05T17:00:41.711649+09:00",
+  "phase": "verify",
+  "results": [
+    {
+      "name": "coxa-sweep",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_coxa_sweep.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-integrated/verify/coxa-sweep.json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 2.881,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/coxa-sweep.log",
+      "log_sha256": "4a13c17c8b69b05300fc4b9003f10403e66967a1e4b5de1da0c6adab558e334b"
+    },
+    {
+      "name": "static-assembly",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_static_assembly.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-integrated/verify/static-all-pairs.json"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 3.663,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/static-assembly.log",
+      "log_sha256": "562773a6f47a5f5d8307955710a1f074fc14a1f329e0ae91f3c1c83204ff964d"
+    },
+    {
+      "name": "sim-gait",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/sim_gait.py",
+        "--output",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-integrated/verify/gait.png"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 1.903,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/sim-gait.log",
+      "log_sha256": "f7dc749592af3e246109cd2896e7056bae47768795eb78587e2592258475b041"
+    },
+    {
+      "name": "check-screw-bosses",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_screw_bosses.py"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 0.763,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-screw-bosses.log",
+      "log_sha256": "084c80de929279522b677d5682cc5654f736d6d0ec007db41f7ae3330373fc75"
+    },
+    {
+      "name": "check-leg-link-strength",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_leg_link_strength.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 1.044,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-leg-link-strength.log",
+      "log_sha256": "584ae260cdd8b20b065de325431c6c518374a03da418274093afcf0f59e3cd52"
+    },
+    {
+      "name": "check-arm",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_arm.py"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 31.105,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-arm.log",
+      "log_sha256": "8ef39ee6d5f4c1edc2cdab98b570ecca2990b138f8d27664f321c04d2411f29e"
+    },
+    {
+      "name": "check-eye",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_eye.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.611,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-eye.log",
+      "log_sha256": "8a2f252388e935718c5a85b31691c8101e17bfb533b0a5106def208b61c9a223"
+    },
+    {
+      "name": "check-audio",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_audio.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 7.728,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-audio.log",
+      "log_sha256": "46335163333ae31d12e08f8bceca2a0421868d86ecfcd1bcac54fad6ad7833d9"
+    },
+    {
+      "name": "check-leg-assembly",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_leg_assembly.py",
+        "--output",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-integrated/verify/leg-assembly.png"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 51.354,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-leg-assembly.log",
+      "log_sha256": "e77b5aa0041c482db147e0fd22748fb9732ed415ec4b7fb06c98323203491c3f"
+    },
+    {
+      "name": "check-camera",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_camera.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 9.382,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-camera.log",
+      "log_sha256": "a0706e1cc8fd92bbc9bd915fcf1d3da578a2dc48781cefe08d753e533b523829"
+    },
+    {
+      "name": "check-head-pod-clearance",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_head_pod_clearance.py"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 0.638,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-head-pod-clearance.log",
+      "log_sha256": "d7d87760a7ffb60213e405daca89a546e105aa42fc9db814c7239e260ae7d7d1"
+    },
+    {
+      "name": "check-pod-neck-strength",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_pod_neck_strength.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.966,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-pod-neck-strength.log",
+      "log_sha256": "8531445df4cdc3687973ddd54a9316ba00882c4b18eb7b97dd898c38a3a8e4b2"
+    },
+    {
+      "name": "check-urdf",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_urdf.py"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 23.472,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-urdf.log",
+      "log_sha256": "685623d517830ad761466f29c7bab1bc2f3657ccd25736f27c504f964d2f61d5"
+    },
+    {
+      "name": "check-print-artifacts",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_print_artifacts.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-integrated/verify/check_print_artifacts.json"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 7.416,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-print-artifacts.log",
+      "log_sha256": "fcb0c379c8552cb3cd22294b6ddc63422713977af452abf359f4802f6584ec07"
+    },
+    {
+      "name": "check-toe-contact",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_toe_contact.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-integrated/verify/check_toe_contact.json"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 14.837,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-toe-contact.log",
+      "log_sha256": "f8ae894e8f27deae174052a477778da2f28cba03f3c857c31baabe9c15bc8bea"
+    },
+    {
+      "name": "check-print-strength-sensitivity",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_print_strength_sensitivity.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-integrated/verify/check_print_strength_sensitivity.json"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 4.151,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-print-strength-sensitivity.log",
+      "log_sha256": "5a1a97aa093316cc84ead966185a06c059a2d9f698c9488d770b7ce63d1de95e"
+    },
+    {
+      "name": "check-mouth-chassis",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_mouth_chassis.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-integrated/verify/check_mouth_chassis.json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 13.713,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-mouth-chassis.log",
+      "log_sha256": "a4d017a5db109c945a1469291c19f7529b865b505cb1b1bea1de5fe5ebcd5a37"
+    },
+    {
+      "name": "check-kit-transforms",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_kit_transforms.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-integrated/verify/check_kit_transforms.json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.629,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/check-kit-transforms.log",
+      "log_sha256": "c2428caec6814c408d758fb15b741e223ed695ddf8351a3a032405d80a53cbed"
+    },
+    {
+      "name": "power-budget",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_power_budget.py",
+        "--output",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-integrated/verify/power-budget.json"
+      ],
+      "returncode": 2,
+      "status": "UNVERIFIED",
+      "seconds": 0.084,
+      "log": "docs/audits/20260905-round2/final-integrated/verify/power-budget.log",
+      "log_sha256": "f198b0ac53065501ad16f6d4fd516f9f0018ad88cc961c964ef641759393dc05"
+    }
+  ]
+}

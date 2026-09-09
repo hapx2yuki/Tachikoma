@@ -2,7 +2,9 @@
 
 usage:
   cd <repo> && .venv/bin/python tools/make_plates.py [プレート名 ... | all | verify]
-    プレート名省略/all: PLATES 全部を再生成
+    プレート名省略/all: PLATES 全部を outputs/print-plates へ生成
+    --output-dir DIR: 生成先を指定。既存ファイルの置換は --overwrite が必要
+    現物3MFには個別調整/印刷済み除外があるため、内容を確認してから採用する
     verify: 生成せず、既存 3mf の埋め込みメッシュ照合だけ実行
 
 経緯 (2026-08-20): 従来この工程はセッション scratchpad の使い捨てスクリプト
@@ -15,7 +17,7 @@ usage:
 ためリポジトリへ恒久化した。対策としてこのツールは:
   1. 中間キャッシュを持たない (毎回 STL / model から直接読む)
   2. **生成した 3mf から埋め込みメッシュを抽出し直し、ソースメッシュと
-     体積・bbox を照合する検証 (verify_3mf) を必須で通す** — 「ログに正しい
+     頂点・build変換・材料を照合する検証 (verify_3mf) を必須で通す** — 「ログに正しい
      寸法が出た」ではなく「成果物の中身」を検査する
   3. プレート構成 (PLATES) を固定し、再パッキングによる構成ドリフトを防ぐ
 
@@ -28,6 +30,7 @@ X2D ベッド 256x256。左ノズル専用帯を避けて X>=45 に配置 (既�
 同じマージン)。スロット: 1=青 (Panchroma Sapphire Blue / Generic PLA),
 2=白 PLA Matte, 3=グレー PLA Matte (AMS 実装に一致 — docs/print_manifest.md)。
 """
+import argparse
 import re
 import shutil
 import sys
@@ -43,13 +46,14 @@ ROOT = Path(__file__).resolve().parent.parent
 STL = ROOT / "hardware" / "stl"
 MODEL = ROOT / "model"
 TEMPLATE_3MF = STL / "elbow_shells_PLA_Matte.3mf"
+REVIEW_OUTPUT = ROOT / "outputs" / "print-plates"
 SCALE = 1.5
 
 # AMS 実装: 1=青 (Panchroma Sapphire Blue), 2=白 PLA Matte, 3=グレー PLA Matte,
 # 4=PETG Translucent。black/red は AMS 非搭載 — スロット1へ出力するので
 # **印刷前に Studio でフィラメント割当を黒/赤へ差し替えること** (ファイル名で
 # 色を明示して事故防止)
-COLOR_SLOT = {"blue": "1", "gray": "3", "white": "2", "petg": "4", "tpu": "1",  # tpu: 外部スプール (AMS 不可) — Studio 側で手動割当
+COLOR_SLOT = {"blue": "1", "gray": "3", "white": "2", "petg": "4", "tpu": "6",  # プロジェクト内6番=Generic TPU。AMS位置ではない
               "black": "1", "red": "1"}
 
 # name -> (rule, qty, wall_loops, sparse_infill, color, kit)
@@ -164,7 +168,8 @@ PLATES = {
     "PLA_Matte_White": dict(    # 印刷済み
         items=["eye_pod.stl", "eye_pod_camera_shell.stl", "eye_pod_camera_base.stl"], color="white", gap=10),
     "elbow_shells_PLA_Matte": dict(items=["elbow_shell.stl", "elbow_shell_L.stl"], color="gray", gap=10),
-    "foot_pad": dict(items=["foot_pad.stl"], color="tpu", gap=10),
+    "foot_pad": dict(items=["foot_pad.stl"], color="tpu", gap=10,
+                     template="foot_pad.3mf"),  # 実際のTPU温度/サポート設定も保持
     "PLA_Matte_White_3_CamBase": dict(   # 2026-09-04: 印刷済み eye_pod_camera_base は旧 rev (ポケット壁が
         items=["eye_pod_camera_base.stl"], color="white", gap=10),  # y 方向に ~1mm 違う, 体積 2.7% 差) → 再印刷用 (5g)
     # 管理外 (印刷済み・単発): leg_foot_bored.3mf, claw_mount_L.3mf, eye_pod_camera_base_x2.3mf
@@ -405,8 +410,16 @@ def _preview_png(out_path, plate_name, items, meshes, color):
     plt.close(fig)
 
 
-def build_plate(plate_name: str) -> Path:
+def build_plate(plate_name: str, output_dir: Path | None = None,
+                overwrite: bool = False) -> Path:
+    """現物3MFを保全し、既定では別の確認用フォルダへ生成する。"""
     spec = PLATES[plate_name]
+    output_dir = Path(output_dir) if output_dir is not None else REVIEW_OUTPUT
+    out = output_dir / f"{plate_name}.3mf"
+    if out.exists() and not overwrite:
+        raise FileExistsError(f"既存ファイルを保護: {out}。別の --output-dir を指定してください。"
+                              "意図した置換に限り --overwrite を指定できます。")
+    output_dir.mkdir(parents=True, exist_ok=True)
     color = spec["color"]
     slot = COLOR_SLOT[color]
     # "plates" キーがあれば 1 ファイル複数ベッド。無ければ従来の単一プレート
@@ -425,7 +438,7 @@ def build_plate(plate_name: str) -> Path:
         sub_items.append(pack(entries, gap))
 
     work = Path(tempfile.mkdtemp(prefix=f"plate_{plate_name}_"))
-    with zipfile.ZipFile(TEMPLATE_3MF) as z:
+    with zipfile.ZipFile(STL / spec["template"] if "template" in spec else TEMPLATE_3MF) as z:
         z.extractall(work)
     for f in (work / "3D/Objects").iterdir():
         f.unlink()
@@ -572,14 +585,17 @@ def build_plate(plate_name: str) -> Path:
             {f"plate_{i + 1}": {"nozzle_sequence": [], "optimal_assignment": [],
                                 "sequence": []} for i in range(n_sub)}))
 
-    out = STL / f"{plate_name}.3mf"
-    if out.exists():
-        out.unlink()
-    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+    # 最後まで生成できるまで既存ファイルは保持する。
+    pending = work / "result.3mf"
+    with zipfile.ZipFile(pending, "w", zipfile.ZIP_DEFLATED) as z:
         z.write(work / "[Content_Types].xml", "[Content_Types].xml")
         for f in sorted(work.rglob("*")):
-            if f.is_file() and f.name != "[Content_Types].xml":
+            if f.is_file() and f.name != "[Content_Types].xml" and f != pending:
                 z.write(f, str(f.relative_to(work)))
+    if out.exists() and not overwrite:
+        shutil.rmtree(work)
+        raise FileExistsError(f"生成中に出力先が作成されました: {out}")
+    shutil.move(str(pending), str(out))
     shutil.rmtree(work)
     n_inst = sum(len(its) for its in sub_items)
     print(f"  built {out.name}: {n_inst} instances / {len(order)} objects / "
@@ -589,36 +605,32 @@ def build_plate(plate_name: str) -> Path:
 
 # ---------------- 成果物検証 ----------------
 def verify_3mf(path: Path) -> bool:
-    """3mf に実際に埋め込まれたメッシュを抽出し、ソースメッシュと照合する。
-    体積差 >0.5% か bbox 差 >0.3mm で NG (stale 埋め込みの検出が目的)。"""
-    zf = zipfile.ZipFile(path)
-    ms = zf.read("Metadata/model_settings.config").decode()
-    pairs = re.findall(r'<object id="(\d+)">\s*<metadata key="name" value="([^"]+)"', ms)
-    main = zf.read("3D/3dmodel.model").decode()
-    ok_all = True
-    for oid, name in pairs:
-        m2 = re.search(rf'<object id="{oid}"[^>]*>.*?p:path="([^"]+)"', main, re.S)
-        xml = zf.read(m2.group(1).lstrip("/")).decode()
-        verts = np.array(re.findall(r'<vertex x="([^"]+)" y="([^"]+)" z="([^"]+)"', xml), float)
-        faces = np.array(re.findall(r'<triangle v1="(\d+)" v2="(\d+)" v3="(\d+)"', xml), int)
-        emb = trimesh.Trimesh(vertices=verts, faces=faces, process=False)
-        if name in PARTS:
-            src = load_oriented(name)          # rot90 は体積/高さに影響しない
-        else:
-            print(f"    {name}: PARTS 未登録 — スキップ (照合対象外)")
-            continue
-        dv = abs(emb.volume - src.volume) / max(src.volume, 1e-9)
-        dz = abs(emb.extents[2] - src.extents[2])
-        ok = dv < 0.005 and dz < 0.3
-        ok_all &= ok
-        print(f"    {name}: embedded {emb.volume/1000:7.1f}cm3 h{emb.extents[2]:5.1f} "
-              f"/ source {src.volume/1000:7.1f}cm3 h{src.extents[2]:5.1f} "
-              f"({'OK' if ok else '** STALE/NG **'})")
-    return ok_all
+    """頂点・build変換・材料を、生成処理から独立した読取器で照合する。"""
+    from check_print_artifacts import audit
+    try:
+        report = audit(path)
+    except Exception as exc:
+        print(f"    3MF読取NG: {type(exc).__name__}: {exc}")
+        return False
+    for row in report["objects"]:
+        print(f"    {row['name']}: {row['instances']} instance(s), "
+              f"{row.get('material', 'UNRESOLVED')}, "
+              f"distance={row.get('vertex_distance_mm')}mm")
+    for error in report["errors"]:
+        print(f"    NG: {error}")
+    for warning in report["warnings"]:
+        print(f"    要確認: {warning}")
+    return not report["errors"]
 
 
 if __name__ == "__main__":
-    args = sys.argv[1:] or ["all"]
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("names", nargs="*", help="プレート名 / all / verify")
+    parser.add_argument("--output-dir", type=Path, default=REVIEW_OUTPUT,
+                        help="生成先 (既定: outputs/print-plates)。現物STL横へ自動上書きしない")
+    parser.add_argument("--overwrite", action="store_true", help="指定した生成先の同名3MFを明示的に置換")
+    options = parser.parse_args()
+    args = options.names or ["all"]
     if args == ["verify"]:
         ok = True
         for name in PLATES:
@@ -628,10 +640,18 @@ if __name__ == "__main__":
                 ok &= verify_3mf(p)
         sys.exit(0 if ok else 1)
     names = list(PLATES) if args == ["all"] else args
+    unknown = set(names) - PLATES.keys()
+    if unknown:
+        parser.error(f"未登録プレート: {sorted(unknown)}")
+    if not options.overwrite:
+        existing = [options.output_dir / f"{name}.3mf" for name in names
+                    if (options.output_dir / f"{name}.3mf").exists()]
+        if existing:
+            parser.error(f"既存ファイルを保護: {existing}。別の --output-dir を指定してください。")
     ok = True
     for name in names:
         print(f"[build] {name}")
-        out = build_plate(name)
+        out = build_plate(name, options.output_dir, options.overwrite)
         ok &= verify_3mf(out)
     print(f"verify: {'ALL OK' if ok else 'NG あり — 出荷しないこと'}")
     sys.exit(0 if ok else 1)

@@ -1,0 +1,18 @@
+{
+  "before_forearm_volume_mm3": 2951.1798855192296,
+  "after_forearm_volume_mm3": 2802.386046732598,
+  "removed_mm3": 148.7938387866318,
+  "removed_bounds_mm": [
+    9.0,
+    -13.0,
+    -10.0,
+    12.838153021410283,
+    -9.0,
+    10.0
+  ],
+  "wrist_end_removed_mm3": 0.0,
+  "inflated_cover_outside_sphere_mm3": 2.163955900144463e-05,
+  "forearm_components": 1,
+  "forearm_watertight": true,
+  "cover_mount_y_mm": -13.8
+}

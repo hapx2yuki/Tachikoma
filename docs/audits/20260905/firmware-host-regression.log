@@ -1,0 +1,50 @@
+
+$ c++ -std=c++17 -include tools/tests/firmware_stubs/Arduino.h -I tools/tests/firmware_stubs -I firmware/src -I firmware/.pio/libdeps/esp32dev/ArduinoJson/src tools/tests/firmware_contract_test.cpp -o /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-im41f04_/contract
+
+$ /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-im41f04_/contract
+PASS: IK rejects non-finite inputs without mutating output
+PASS: malformed command rejection, atomic frame validation, partial updates do not re-enable
+PASS: boot full-off, actual sequential neutral pulses, unused camera channel, disabled latch
+PASS: real low-voltage latch stops calibration PWM and cannot restart itself
+PASS: front leg slew exit keeps both arms in retreat (actual PWM output)
+PASS: 10000 changing-command frames keep finite angles and leg yaw constraints
+PASS: trim update during NVS write remains pending and is saved next time
+
+$ c++ -std=c++17 -include tools/tests/firmware_stubs/Arduino.h -I tools/tests/firmware_stubs -I firmware/src -I firmware/.pio/libdeps/esp32dev/ArduinoJson/src tools/tests/firmware_audio_test.cpp -o /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-im41f04_/audio
+
+$ /var/folders/7t/5_nqyj9d1wg_lwtjr_gw9x600000gn/T/tachikoma-firmware-tests-im41f04_/audio
+PASS: I2S keeps PCM16 and requests 64 BCLK per WS frame
+PASS: rejected second connection cannot reset the active playback
+PASS: overflow/wrap/read sizes retain PCM16 sample boundaries; odd frames rejected
+PASS: owner disconnect clears playback; I2S reset is deferred to audio task
+
+$ node tools/tests/firmware_ui_test.cjs
+PASS: UI initialization, rest, reconnect, background stop
+
+$ /Users/uratayuuki/Documents/Tachikoma/.venv/bin/python tools/tests/firmware_voice_test.py
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.029s
+
+OK
+
+$ /Users/uratayuuki/Documents/Tachikoma/.venv/bin/python tools/voice_bridge.py --mock --self-test
+2026-09-05 15:16:01,923 [INFO] server listening on 127.0.0.1:8765
+2026-09-05 15:16:01,927 [INFO] connection open
+2026-09-05 15:16:01,927 [INFO] ptt_start: 録音開始
+2026-09-05 15:16:01,960 [INFO] ptt_end: 録音終了 (9600 bytes)
+2026-09-05 15:16:01,960 [INFO] [mock STT] transcript = 'こんにちは、調子はどう?'
+2026-09-05 15:16:01,961 [INFO] [mock LLM] おー、元気なのだ! 今日もマスターと話せて嬉しいな。
+2026-09-05 15:16:03,178 [INFO] TTS送信完了 (38400 bytes)
+2026-09-05 15:16:03,178 [INFO] server closing
+2026-09-05 15:16:03,179 [INFO] server closed
+[self-test] ダミー ESP32 サーバを起動し、ブリッジのクライアント動作 (--mock) を検証します
+  OK  ダミーサーバ側の検証が完了した
+  OK  tts_begin を受信した
+  OK  PCM 音声フレームを受信した (38400 bytes)
+  OK  PCM フレームは tts_begin より後に届いた (順序が正しい)
+  OK  tts_end を受信した
+  OK  エラー無し (error=None)
+[self-test] PASS
+
+PASS: all firmware host checks

@@ -33,7 +33,20 @@
       "X-SIGN CONSEQUENCE: the fix rot(180,'y')@rot(90,'x') = (world 180deg flip about the Y/front-back axis) applied on top of the old rot(90,'x') necessarily flips both world Z (up/down, intended) and world X (left/right) -- this is forced by orthonormality once outward_normal (local Z -> world -Y, i.e. the shell's outward/backward-facing sign, contains()-verified in 2026-07-29's re-measurement and NOT reopened this session) is held fixed and local Y's world-Z sign is flipped: a proper rotation can only flip an even number of the three axis signs. CONSEQUENCE: for all 6 back-mounted trim-part instances (Cabin_RedLight_Large#back_left/right, Cabin_RedLight_Small#back_left/right, Cabin_Spinnarette_Grey#back_left/right), the recomputed X sign is opposite the old one, so the physical ring that was labelled '...#back_left' under the old (wrong) rotation is now on the ROBOT'S RIGHT, and vice versa -- the left/right key suffixes and 'side' fields were swapped accordingly (the underlying per-instance ring measurements, i.e. which diameter/method-text belongs to which physical ring on the mesh, were NOT altered, only which world position + which side label they resolve to).",
       "translation_robot_z0 for Cabin_Back_Blue_Repaired, (0,-235,55), is UNCHANGED by this fix and does not need re-deriving: the raw STL's own bbox is already centered at its local origin on all 3 axes to 5+ significant figures (X [-47.261,47.261], Y [-60.839,60.839], Z [-15.910,15.910]), so for any 90-degree-multiple axis rotation (which only permutes/negates coordinates) the transformed bbox's world center is exactly t regardless of which such rotation is chosen -- verified numerically this session (old and new rotations give byte-identical world bounding boxes for Cabin_Back_Blue_Repaired, [Y:-258.865..-211.135, Z:-36.259..146.259] at zb=0).",
       "NOT re-checked this session (out of the stated scope of 'Cabin_Back orientation + its own attached decoration'): Cabin_Peg_x2 (pos_mm still null/UNVERIFIED, unaffected since it is X-centerline-only and the seam Y-plane did not move); Cabin_Turrent_Left/Right_Grey, Cabin_Turret_Peg_x2, Cabin_Eye_White, and the Front-mounted RedLight/Spinnarette/Insert instances (all shell_mount=Cabin_Front_Blue, not Cabin_Back_Blue_Repaired, untouched); Head_TailJoint_Blue/Ball (shell_mount=pod_neck per their own entries, not the Cabin shell, untouched)."
-    ]
+    ],
+    "shell_translation_reference_20260905": {
+      "Cabin_Front_Blue": [
+        0.0,
+        -156.0,
+        55.0
+      ],
+      "Cabin_Back_Blue_Repaired": [
+        0.0,
+        -235.0,
+        55.0
+      ]
+    },
+    "current_placement_20260905": "pos_mm/matrixは上記の旧配置で記録された測定値を保持する。kit_assembly.pyがconfig.CABIN_POSESとの差分を殻と装飾へ同じように適用する。BackのzはPeg2個と既存ソケットによる検証で48.692503へ修正。旧シームのY gapだけの検査では高さずれを見逃した。"
   },
   "parts": {
     "Cabin_Eye_White": {
@@ -70,7 +83,32 @@
         0.1687,
         0.227
       ],
-      "matrix": [[-1.277301, 0.332067, -0.712905, -72.718774], [0.627152, 1.250525, -0.541172, -164.028011], [0.474534, -0.758893, -1.203703, 85.679686], [0.0, 0.0, 0.0, 1.0]],
+      "matrix": [
+        [
+          -1.277301,
+          0.332067,
+          -0.712905,
+          -72.718774
+        ],
+        [
+          0.627152,
+          1.250525,
+          -0.541172,
+          -164.028011
+        ],
+        [
+          0.474534,
+          -0.758893,
+          -1.203703,
+          85.679686
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
       "confidence": "high",
       "method": "2026-07-29 REPLACED (turret 90-degree-orientation fix, user-reported): the part's TRUE mounting-flange plane was found on the raw Cabin_Turrent_Left_Grey.stl itself via sharp-edge ring extraction + largest-flat-facet cross-check (both agree to <0.5deg): a clean circular flange, local raw centroid (-5.215,2.327,-0.376), local raw outward normal (-0.9591,0.1865,-0.2128) [trimesh facet-normal convention, i.e. pointing away from the turret's own solid material], dia 22.6-23.2mm raw = 33.9-34.8mm scaled (close to the prior session's 35.67mm claim; small method variance). This flange axis is ~102deg away from the part's local +Z -- NOT close to it -- so the generic rear-JSON convention (align local +Z to outward_normal) put the turret ~90-100deg off, i.e. mounted with the flange roughly PERPENDICULAR to the hull instead of flush/parallel, matching the user's exact complaint ('90度誤り...垂直に刺さっている'). The matching socket on Cabin_Front_Blue was independently re-measured (not reused from the prior session): a near-perfect circular ring (n=64, stdR=0.0007mm raw, dia 40.6mm scaled -- matches the prior '40.3-40.6mm' note) at cabin-local raw (43.345,17.928,-5.457). Outward sign resolved via trimesh.contains() point-sampling (unambiguous). ROOT CAUSE of the prior outward_normal=(0.95,0.23,0.19) also found: it equals the UNROTATED cabin-local ring normal (0.959,0.227,0.169) used directly as if it were already robot-frame -- the Front shell's own ghost rotation rot(180,'z')@rot(90,'x') (which maps local(x,y,z)->robot(-x,z,y)) was never applied. Corrected outward_normal above IS the properly shell-rotated value. Because the turret's own bbox-center (raw STL is pre-centered at origin) sits 5.72mm (raw) = 8.58mm (scaled) away from its true flange centroid, a rotation-only fix would still mis-place the part by that much -- so this entry now carries an explicit 'matrix' (SCALE baked into the 3x3 block, applied directly to raw vertices, same convention as kit_assembly_front.json's Head_Eye_White_x3) solving simultaneously for R (flange-normal to socket-normal, single-vector align_vectors -- roll/clocking about that axis is NOT independently constrained by any secondary feature found on this mesh; see residual table) and t (so the flange centroid lands exactly on the socket centroid, not the bbox center).",
       "verification": "Flange-centroid-to-socket-centroid residual: 0.000mm (solved exactly by construction, unchanged by the 2026-07-29-B roll fix below). Flange-normal-to-socket-normal residual: ~0.03deg (was 0.00deg; the tiny nonzero value is floating-point noise from the original matrix's 6-decimal-place rounding, re-verified this session -- not a new physical gap). Whole-part interpenetration check (3000 surface samples vs the transformed Cabin_Front_Blue solid via trimesh.contains), re-run after the roll fix: 9.1% of samples nominally 'inside' with mean penetration depth 0.0009mm / max 0.0034mm -- essentially unchanged from the pre-roll-fix 9.0%/0.001mm/0.004mm, confirming the roll-only rotation (about the flange-normal axis) did not disturb the flush-mount fit. pos_mm/outward_normal above are the flange-centroid/socket values for documentation; the 'matrix' field is authoritative for rendering (kit_assembly.py oriented_mesh()).",
@@ -91,7 +129,32 @@
         0.1689,
         0.2272
       ],
-      "matrix": [[-1.277099, -0.332005, 0.713296, 72.425337], [-0.627304, 1.250481, -0.541098, -162.543349], [-0.474877, -0.758992, -1.203504, 85.757785], [0.0, 0.0, 0.0, 1.0]],
+      "matrix": [
+        [
+          -1.277099,
+          -0.332005,
+          0.713296,
+          72.425337
+        ],
+        [
+          -0.627304,
+          1.250481,
+          -0.541098,
+          -162.543349
+        ],
+        [
+          -0.474877,
+          -0.758992,
+          -1.203504,
+          85.757785
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
       "confidence": "high",
       "method": "2026-07-29 REPLACED, independently re-measured (not a code-side mirror of Left): own flange found via the same ring+facet method, local raw centroid (5.482,1.490,0.099), local raw outward normal (0.9591,0.1865,-0.2129) -- an authentic near-mirror of Left's flange (x-component flipped, y/z within 0.8mm/0.5mm, consistent with independent STL modeling noise). Matching socket on Cabin_Front_Blue: ring at cabin-local raw (-43.333,17.937,-5.448), n=64, stdR=0.0009mm raw, dia 40.6mm scaled. Same 'matrix' construction as Left (R solved by single-vector flange-normal align, t solved so flange centroid lands exactly on the socket centroid).",
       "verification": "Flange-centroid/socket-centroid residual: 0.000mm (unchanged by the 2026-07-29-B roll fix). Flange-normal/socket-normal residual: ~0.055deg (was 0.00deg; floating-point noise from the original matrix's 6-decimal rounding, not a new physical gap). Interpenetration check, re-run after the roll fix: 14.7% of 3000 surface samples nominally inside, mean penetration 0.0009mm / max 0.0028mm -- essentially unchanged from the pre-fix 14.6%/0.001mm/0.003mm.",
@@ -461,7 +524,11 @@
       "shell_mount": "Cabin_Front_Blue (assumed, by name)",
       "side": "center",
       "frame": "robot",
-      "pos_mm": [0.0, -159.8, 15.8],
+      "pos_mm": [
+        0.0,
+        -159.8,
+        15.8
+      ],
       "confidence": "medium",
       "method": "Searched both shells' ring-extraction output for a single centered high-aspect (69.68x4.06mm, aspect 17.2) slot; no clean match found within tolerance (closest candidates had aspect <3.2, i.e. not thin/long enough). RESOLVED 2026-07-28 via source_offset instead: offset=(-10.177295,115.748936,-0.513009) matches Cabin_Front_Insert_Bottom_Long_Black_x2's own offset Z component to 6 decimal places (-0.5130093 both) -- near-certain the two parts share the same flat underside-vent plane. Bottom_Long's RIGHT instance is already placed (high confidence) at robot (33.0,-159.8,-35.4); the kit-space delta (Wide-Long)=(22.02,34.13,0.00) rotated through the Front shell's R=rot(180,'z')@rot(90,'x') gives a robot-frame delta of (-33.03,0.00,+51.19). Adding this to Bottom_Long's RIGHT instance position gives Wide ~= (0.00,-159.8,+15.8) -- the X=0.00 result matches this part's own 'side: center' naming exactly, a strong internal-consistency check that Bottom_Long's right-side instance was the correct delta anchor.",
       "note": "MEDIUM confidence: X,Y are high-confidence (derived from Bottom_Long's own already-verified position + a tight 6-decimal source_offset Z match). Z (+15.8) is only medium/low confidence because it depends on the Front shell's R=rot(180,'z')@rot(90,'x') rotation, which (per meta.methodology_caveats_2026_07_28) is NOT independently re-confirmable from source_offset (Cabin_Front_Blue has a mismatched source_object_id) -- it is the pre-existing reasoned/photo-cross-checked rotation, not a forensically re-derived one. Z=+15.8mm is also 51mm away from Bottom_Long's own Z=-35.4mm, which is less than the naive 'same vent panel, so should be near the same Z' expectation -- NOT independently visually confirmed against a bottom-face photo crop this session (recommended before treating this as final)."
@@ -474,7 +541,9 @@
       "pos_mm": null,
       "confidence": "low",
       "method": "Own-part geometry (58.0x18.6x17.6mm) is a flat-bottomed WEDGE/scoop shape, not axisymmetric -> the circular/oval ring-extraction method used for the other parts does not apply. A coincidental circular-diameter match was found at the Bottom_Long_Black_x2 location, but that location is a much better fit (by count and aspect ratio) for Bottom_Long_Black_x2 itself, so it was NOT reassigned to Cabin_Peg. 2026-07-28: source_offset was checked -- offset=(-10.178146,176.379059,32.486625). X matches the kit's shared centerline value (-10.178, used by 10+ other centered parts) exactly, consistent with the existing 'center/structural, on the seam' description. However Y,Z could not be resolved: no sibling part shares a matching offset component (unlike Cabin_Front_Insert_Bottom_Wide_Black's clean 6-decimal Z match to Bottom_Long above), and Cabin_Front_Blue/Back cannot be used as a source_offset anchor at all (meta.methodology_caveats_2026_07_28, source_object_id mismatch) -- so absolute Y,Z remain undetermined.",
-      "note": "UNVERIFIED: exact seam position not resolved. Functionally this is almost certainly an internal locating/glue key running along the Front/Back mating flange (analogous to Head_Peg_Upper/Lower at the Head_Top/Bottom seam) -- given the Front/Back shells were independently re-verified to meet at the Y=-155.99 seam (0.08mm gap, 0cm3 overlap, see shell_reverification below), Cabin_Peg_x2 most likely sits along that seam plane (world Y ~ -156, i.e. robot_z0 y ~ 0 in this frame after the Front/Back translation), but the two specific (x,z) locations were not identified from the mesh. 2026-07-28: X=0 (centerline) is now source_offset-confirmed, but this alone does not distinguish the 2 instances (which differ in Y/Z, not X, per the 'spans the parting seam' description) -- pos_mm kept null / confidence kept 'low', no new placement to add."
+      "note": "UNVERIFIED: exact seam position not resolved. Functionally this is almost certainly an internal locating/glue key running along the Front/Back mating flange (analogous to Head_Peg_Upper/Lower at the Head_Top/Bottom seam) -- given the Front/Back shells were independently re-verified to meet at the Y=-155.99 seam (0.08mm gap, 0cm3 overlap, see shell_reverification below), Cabin_Peg_x2 most likely sits along that seam plane (world Y ~ -156, i.e. robot_z0 y ~ 0 in this frame after the Front/Back translation), but the two specific (x,z) locations were not identified from the mesh. 2026-07-28: X=0 (centerline) is now source_offset-confirmed, but this alone does not distinguish the 2 instances (which differ in Y/Z, not X, per the 'spans the parting seam' description) -- pos_mm kept null / confidence kept 'low', no new placement to add.",
+      "assembly_used": false,
+      "superseded_by": "2026-09-05のCabin_Peg_x2#lower/#upper。位置未解決の元記録を保存。"
     },
     "Head_TailJoint_Blue_Optional_Cross": {
       "source_stl": "Head_TailJoint_Blue_Optional_Cross.stl",
@@ -519,6 +588,24 @@
       "finding_2026_07_30": "FLIP BUG (confirmed, fixed): see Head_TailJoint_Blue_Optional_Cross's 'finding_2026_07_30' for the full cross-part derivation. This entry's own contribution: with R=identity, its SOLID disc face (local y>=0, this entry's own text: 'presumably the visible flared collar seen abutting the pod') actually landed at world y in [-104,-96.2] -- i.e. on the HEAD side, away from the pod, the opposite of this entry's own stated intent -- while its HOLLOW bore (local y<0, meant to receive Blue's flared base) landed at world y in [-111.8,-104], deep on the pod side where Blue's geometry never reached it (unused).",
       "fix_2026_07_30": "Added R_axis_deg=[['x',180]] (same mechanism as Head_TailJoint_Blue_Optional_Cross). Axisymmetric about local-Y (X==Z==31.2mm per this entry's own 'method' text), so local X vs Z choice is visually equivalent. Re-verified via trimesh.section() sweep after the fix: the SOLID disc now lands at world y in [-111.8,-104] (pod-side, 'abutting the pod' as this entry's own text intended) and the HOLLOW bore now lands at world y in [-102.2,-96.2] (head-side, facing Blue). See Head_TailJoint_Blue_Optional_Cross's fix note for the combined hollow-vs-hollow overlap check (world y~[-102,-96.2]). Position/scale (pos_mm) unchanged -- rotation only.",
       "note": "Same round-bore-vs-rectangular-beam caveat as Head_TailJoint_Blue applies (bore ~17mm dia vs beam diagonal 20mm). Position estimated at the pod_neck flange (y=-104) where the collar would sit against the Cabin_Front mounting point; not independently pinned down beyond that."
+    },
+    "Cabin_Peg_x2#lower": {
+      "source_stl": "Cabin_Peg_x2.stl",
+      "shell_mount": "Cabin seam",
+      "frame": "robot",
+      "config_peg_pose": "lower",
+      "confidence": "existing socket mesh fit, 0.1mm expanded clearance verified",
+      "method": "cabin_peg_alignment_candidate.json: 両殻/2個のPegの実メッシュ交差0で姿勢を確定。寸法はconfig.CABIN_PEG_POSESに一元化。",
+      "color_status": "UNVERIFIED: STLには色なし。内側キーの描画色は灰色で実部品の材色を規定しない。"
+    },
+    "Cabin_Peg_x2#upper": {
+      "source_stl": "Cabin_Peg_x2.stl",
+      "shell_mount": "Cabin seam",
+      "frame": "robot",
+      "config_peg_pose": "upper",
+      "confidence": "existing socket mesh fit, 0.1mm expanded clearance verified",
+      "method": "cabin_peg_alignment_candidate.json: 両殻/2個のPegの実メッシュ交差0で姿勢を確定。寸法はconfig.CABIN_PEG_POSESに一元化。",
+      "color_status": "UNVERIFIED: STLには色なし。内側キーの描画色は灰色で実部品の材色を規定しない。"
     }
   },
   "shell_reverification": {
@@ -531,9 +618,10 @@
         -156.0,
         55.0
       ],
-      "verified": true,
+      "verified": false,
       "verification_method": "Loaded Cabin_Front_Blue.stl and Cabin_Back_Blue_Repaired.stl, applied both ghost transforms (body_h=115 reference), then checked (a) Y-axis gap between Front's rearmost bound and Back's frontmost bound, (b) boolean mesh intersection volume, (c) whether pod_neck's flange world position (y=-104, z=zb+CHASSIS_T+beam_h/2) falls inside Front's bounding box.",
-      "verification_result": "Front Y range [-211.05,-100.95], Back Y range [-258.86,-211.14] -> 0.08mm gap (essentially flush, no interpenetration). Boolean intersection volume = 0.000 cm3. pod_neck flange (y=-104, z=152.6) falls inside Front's bounding box on both Y and Z. CONFIRMS the existing shell_ghosts placement is geometrically sound: Front and Back meet cleanly at their seam and the neck attaches to Front's lower-front region as intended."
+      "verification_result": "Front Y range [-211.05,-100.95], Back Y range [-258.86,-211.14] -> 0.08mm gap (essentially flush, no interpenetration). Boolean intersection volume = 0.000 cm3. pod_neck flange (y=-104, z=152.6) falls inside Front's bounding box on both Y and Z. CONFIRMS the existing shell_ghosts placement is geometrically sound: Front and Back meet cleanly at their seam and the neck attaches to Front's lower-front region as intended.",
+      "superseded_by": "2026-09-05のPeg/ソケット検査とconfig.CABIN_POSES。以下は旧検証の記録で、組立成立の根拠にはしない。"
     },
     "Cabin_Back_Blue_Repaired": {
       "ghost_transform_source": "tools/make_visuals.py shell_ghosts()",
@@ -544,9 +632,10 @@
         -235.0,
         55.0
       ],
-      "verified": true,
+      "verified": false,
       "verification_method": "see Cabin_Front_Blue entry (joint check). 2026-07-30 ADDED: asymmetric-feature cross-section check (local-Y narrow/wide profile compared against Front's confirmed-correct profile) and cross-check against the independently-measured back-mounted RedLight_Large/Small + Spinnarette_Grey trim-part heights vs their front counterparts -- see meta.methodology_caveats_2026_07_30 EVIDENCE 1/2 for full numeric detail.",
-      "verification_result": "see Cabin_Front_Blue entry; Back mates flush against Front with zero interpenetration (UNCHANGED by the rotation fix -- this metric is invariant to the flip and does NOT by itself confirm orientation, see caveat). Orientation itself (which was NOT previously independently verified beyond the seam/photo-cross-check) is now confirmed via non-symmetric features: old rot(90,'x') put Cabin_Back_Blue_Repaired's narrow/dome-like end at the BOTTOM of its world-Z range and its wide/skirt-like end at the TOP -- the opposite pattern from the already-confirmed Cabin_Front_Blue (narrow=top/wide=bottom) -- and put its back-mounted RedLight_Large/Small (world Z~-2mm) and Spinnarette_Grey (world Z~+142mm) trim parts far from their front-shell counterparts (RedLight front Z~+110mm, Spinnarette front Z~-28mm). The corrected rotation rot(180,'y')@rot(90,'x') restores the narrow=top/wide=bottom pattern and brings the back trim-part heights within a few mm of their front counterparts."
+      "verification_result": "see Cabin_Front_Blue entry; Back mates flush against Front with zero interpenetration (UNCHANGED by the rotation fix -- this metric is invariant to the flip and does NOT by itself confirm orientation, see caveat). Orientation itself (which was NOT previously independently verified beyond the seam/photo-cross-check) is now confirmed via non-symmetric features: old rot(90,'x') put Cabin_Back_Blue_Repaired's narrow/dome-like end at the BOTTOM of its world-Z range and its wide/skirt-like end at the TOP -- the opposite pattern from the already-confirmed Cabin_Front_Blue (narrow=top/wide=bottom) -- and put its back-mounted RedLight_Large/Small (world Z~-2mm) and Spinnarette_Grey (world Z~+142mm) trim parts far from their front-shell counterparts (RedLight front Z~+110mm, Spinnarette front Z~-28mm). The corrected rotation rot(180,'y')@rot(90,'x') restores the narrow=top/wide=bottom pattern and brings the back trim-part heights within a few mm of their front counterparts.",
+      "superseded_by": "2026-09-05のPeg/ソケット検査とconfig.CABIN_POSES。以下は旧検証の記録で、組立成立の根拠にはしない。"
     }
   }
 }

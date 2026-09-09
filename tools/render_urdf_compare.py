@@ -103,7 +103,7 @@ def _m_to_mm(T_m: np.ndarray) -> np.ndarray:
 def gait_case(phase, vx, vy, wz, body_h):
     out = {}
     for li, leg in enumerate(E.LEGS):
-        lx, ly, lz = foot_target(li, phase, vx, vy, wz)
+        lx, ly, lz = foot_target(li, phase, vx, vy, wz, holding=abs(vx)+abs(vy)+abs(wz) <= 0.05)
         lz = lz + (BODY_H - body_h)
         a = leg_ik(lx, ly, lz)
         if a is None:
@@ -175,7 +175,8 @@ def render(meshes, title, out_path, elev=18, azim=-55):
     r = float((pts.max(0) - pts.min(0)).max()) / 2 * 1.05
     ax.set_xlim(c[0] - r, c[0] + r)
     ax.set_ylim(c[1] - r, c[1] + r)
-    ax.set_zlim(0, 2 * r)
+    zmin = min(0.0, float(pts[:, 2].min()) - 2.0)
+    ax.set_zlim(zmin, zmin + 2 * r)
     ax.set_box_aspect([1, 1, 1])
     ax.axis("off")
     ax.view_init(elev=elev, azim=azim)
@@ -199,4 +200,9 @@ def main():
 
 if __name__ == "__main__":
     import japanize_matplotlib  # noqa: F401 (日本語タイトル文字化け対策)
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path, default=OUT_DIR)
+    OUT_DIR = parser.parse_args().output_dir
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
     main()

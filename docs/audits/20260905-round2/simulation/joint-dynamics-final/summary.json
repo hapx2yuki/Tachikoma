@@ -1,0 +1,135 @@
+{
+  "created_utc": "2026-09-05T08:11:13.874190+00:00",
+  "script_sha256": "5195971b48b743194da551f63688703873f373842a9e0025f68d7a1f3608f078",
+  "cases": [
+    {
+      "name": "armature_0.0001_dt0.002",
+      "status": "PASS",
+      "fell_time_s": null,
+      "warning_counts": {},
+      "failed_checks": [],
+      "walk_distance_m": 0.1857030074492494,
+      "max_abs_roll_deg": 4.917533365016053,
+      "max_abs_pitch_deg": 2.263129708520727,
+      "positive_mechanical_power_W": {
+        "mean": 1.2053106051600695,
+        "max": 50.75096881182707,
+        "p95": 4.16187055119924
+      },
+      "input_hashes_match_current": true
+    },
+    {
+      "name": "armature_0.0001_dt0.0005",
+      "status": "PASS",
+      "fell_time_s": null,
+      "warning_counts": {},
+      "failed_checks": [],
+      "walk_distance_m": 0.16479351207858323,
+      "max_abs_roll_deg": 4.362128595738014,
+      "max_abs_pitch_deg": 2.1860402080562897,
+      "positive_mechanical_power_W": {
+        "mean": 1.2078630863036355,
+        "max": 33.73512134981239,
+        "p95": 3.9886121700127366
+      },
+      "input_hashes_match_current": true
+    },
+    {
+      "name": "armature_0_dt0.002",
+      "status": "PASS",
+      "fell_time_s": null,
+      "warning_counts": {},
+      "failed_checks": [],
+      "walk_distance_m": 0.2016427195262327,
+      "max_abs_roll_deg": 4.625463878357279,
+      "max_abs_pitch_deg": 2.28501643595565,
+      "positive_mechanical_power_W": {
+        "mean": 1.1926264237813753,
+        "max": 59.5278328321657,
+        "p95": 4.069978461124593
+      },
+      "input_hashes_match_current": true
+    },
+    {
+      "name": "armature_0_dt0.0005",
+      "status": "PASS",
+      "fell_time_s": null,
+      "warning_counts": {},
+      "failed_checks": [],
+      "walk_distance_m": 0.1664476925250956,
+      "max_abs_roll_deg": 4.305340254223316,
+      "max_abs_pitch_deg": 2.1917002076432106,
+      "positive_mechanical_power_W": {
+        "mean": 1.1982848045781678,
+        "max": 36.61542558714879,
+        "p95": 3.9242292681634514
+      },
+      "input_hashes_match_current": true
+    },
+    {
+      "name": "damping_0",
+      "status": "PASS",
+      "fell_time_s": null,
+      "warning_counts": {},
+      "failed_checks": [],
+      "walk_distance_m": 0.16768516242206594,
+      "max_abs_roll_deg": 4.317194637145616,
+      "max_abs_pitch_deg": 2.3147120229282767,
+      "positive_mechanical_power_W": {
+        "mean": 1.2115504086138995,
+        "max": 35.56078825392208,
+        "p95": 4.220412392255982
+      },
+      "input_hashes_match_current": true
+    },
+    {
+      "name": "damping_0.05",
+      "status": "PASS",
+      "fell_time_s": null,
+      "warning_counts": {},
+      "failed_checks": [],
+      "walk_distance_m": 0.16824649101326614,
+      "max_abs_roll_deg": 4.2624332192970495,
+      "max_abs_pitch_deg": 2.27399613669675,
+      "positive_mechanical_power_W": {
+        "mean": 1.451670506894637,
+        "max": 36.070633424736,
+        "p95": 4.769510027102889
+      },
+      "input_hashes_match_current": true
+    },
+    {
+      "name": "gain_0.5",
+      "status": "PASS",
+      "fell_time_s": null,
+      "warning_counts": {},
+      "failed_checks": [],
+      "walk_distance_m": 0.1655867390501012,
+      "max_abs_roll_deg": 3.582459019198686,
+      "max_abs_pitch_deg": 2.3779513410808795,
+      "positive_mechanical_power_W": {
+        "mean": 1.1606403570412207,
+        "max": 24.604605130790738,
+        "p95": 3.184531929723777
+      },
+      "input_hashes_match_current": true
+    },
+    {
+      "name": "gain_2",
+      "status": "PASS",
+      "fell_time_s": null,
+      "warning_counts": {},
+      "failed_checks": [],
+      "walk_distance_m": 0.16592624142517398,
+      "max_abs_roll_deg": 4.699690917419248,
+      "max_abs_pitch_deg": 2.0483871657743804,
+      "positive_mechanical_power_W": {
+        "mean": 1.5384423313563265,
+        "max": 40.03839637173419,
+        "p95": 7.04833493238535
+      },
+      "input_hashes_match_current": true
+    }
+  ],
+  "all_input_hashes_match_current": true
+}

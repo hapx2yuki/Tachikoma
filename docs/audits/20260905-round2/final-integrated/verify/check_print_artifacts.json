@@ -1,0 +1,1563 @@
+[
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/TACHIKOMA_Phase0_PETG.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "tibia_link.stl",
+        "instances": 1,
+        "vertex_distance_mm": null,
+        "relative_volume_difference": 0.06848170409506014,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "4",
+        "name": "femur_link.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.596055597276679,
+        "relative_volume_difference": 0.02097105417942366,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      }
+    ],
+    "errors": [
+      "SHAPE_REVIEW: tibia_link.stl distance=infmm volume=6.848%",
+      "SHAPE_REVIEW: femur_link.stl distance=7.596mm volume=2.097%"
+    ],
+    "warnings": [
+      "UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない"
+    ],
+    "actual_quantities": {
+      "tibia_link.stl": 1,
+      "femur_link.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PETG_1_Chassis.3mf",
+    "objects": [
+      {
+        "id": "10",
+        "name": "audio_cradle_spk.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.31624840571789e-08,
+        "relative_volume_difference": 2.2158447166876953e-10,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "2",
+        "name": "chassis.stl",
+        "instances": 1,
+        "vertex_distance_mm": 20.040558671778097,
+        "relative_volume_difference": 0.021733587014756365,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "25%"
+      },
+      {
+        "id": "4",
+        "name": "eye_carrier.stl",
+        "instances": 2,
+        "vertex_distance_mm": 4.942884544875431e-07,
+        "relative_volume_difference": 5.262601819393843e-09,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "6",
+        "name": "claw_mount.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.4532204358934507e-08,
+        "relative_volume_difference": 4.081051298252996e-09,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "8",
+        "name": "claw_mount_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.4532204358934507e-08,
+        "relative_volume_difference": 4.081051298252996e-09,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      }
+    ],
+    "errors": [
+      "SHAPE_REVIEW: chassis.stl distance=20.04mm volume=2.173%"
+    ],
+    "warnings": [],
+    "actual_quantities": {
+      "audio_cradle_spk.stl": 1,
+      "chassis.stl": 1,
+      "eye_carrier.stl": 2,
+      "claw_mount.stl": 1,
+      "claw_mount_L.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PETG_2_Tibia.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "pod_neck.stl",
+        "instances": 1,
+        "vertex_distance_mm": 6.540495002081542e-07,
+        "relative_volume_difference": 2.9007538427453753e-09,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "4",
+        "name": "tibia_link.stl",
+        "instances": 2,
+        "vertex_distance_mm": 4.999401973659867e-06,
+        "relative_volume_difference": 1.0505103575373386e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "6",
+        "name": "tibia_link_m.stl",
+        "instances": 2,
+        "vertex_distance_mm": 4.999401973659867e-06,
+        "relative_volume_difference": 1.0505103575373386e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "pod_neck.stl": 1,
+      "tibia_link.stl": 2,
+      "tibia_link_m.stl": 2
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PETG_3_Femur.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "femur_link.stl",
+        "instances": 2,
+        "vertex_distance_mm": 7.265882317165015e-07,
+        "relative_volume_difference": 2.1329383725816363e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "4",
+        "name": "femur_link_m.stl",
+        "instances": 2,
+        "vertex_distance_mm": 7.265882317165015e-07,
+        "relative_volume_difference": 2.1329383725816363e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "6",
+        "name": "battery_cradle.stl",
+        "instances": 1,
+        "vertex_distance_mm": 6.355312504250821e-07,
+        "relative_volume_difference": 1.3162751034371239e-09,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "3",
+        "infill": "20%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "femur_link.stl": 2,
+      "femur_link_m.stl": 2,
+      "battery_cradle.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PETG_4_CoxaArm.3mf",
+    "objects": [
+      {
+        "id": "10",
+        "name": "shoulder_bracket.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.375616055078127,
+        "relative_volume_difference": 0.021940777098493514,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "12",
+        "name": "shoulder_bracket_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.375616055078127,
+        "relative_volume_difference": 0.021940777098493885,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "14",
+        "name": "forearm.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.050548987495217,
+        "relative_volume_difference": 0.6369857463439558,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "16",
+        "name": "forearm_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.050548987495217,
+        "relative_volume_difference": 0.6369857463439558,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "18",
+        "name": "camera_carrier.stl",
+        "instances": 1,
+        "vertex_distance_mm": 4.999753544715886e-07,
+        "relative_volume_difference": 1.9738590073136412e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "2",
+        "name": "coxa_bracket.stl",
+        "instances": 2,
+        "vertex_distance_mm": null,
+        "relative_volume_difference": 0.3052439938656222,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "4",
+        "name": "coxa_bracket_m.stl",
+        "instances": 2,
+        "vertex_distance_mm": null,
+        "relative_volume_difference": 0.30524399386562245,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "6",
+        "name": "upper_arm.stl",
+        "instances": 1,
+        "vertex_distance_mm": 6.900299411601143e-07,
+        "relative_volume_difference": 2.1026099169026484e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "8",
+        "name": "upper_arm_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 6.900299411601143e-07,
+        "relative_volume_difference": 2.1026099169026484e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      }
+    ],
+    "errors": [
+      "SHAPE_REVIEW: shoulder_bracket.stl distance=7.376mm volume=2.194%",
+      "SHAPE_REVIEW: shoulder_bracket_L.stl distance=7.376mm volume=2.194%",
+      "SHAPE_REVIEW: forearm.stl distance=5.051mm volume=63.699%",
+      "SHAPE_REVIEW: forearm_L.stl distance=5.051mm volume=63.699%",
+      "SHAPE_REVIEW: coxa_bracket.stl distance=infmm volume=30.524%",
+      "SHAPE_REVIEW: coxa_bracket_m.stl distance=infmm volume=30.524%"
+    ],
+    "warnings": [],
+    "actual_quantities": {
+      "shoulder_bracket.stl": 1,
+      "shoulder_bracket_L.stl": 1,
+      "forearm.stl": 1,
+      "forearm_L.stl": 1,
+      "camera_carrier.stl": 1,
+      "coxa_bracket.stl": 2,
+      "coxa_bracket_m.stl": 2,
+      "upper_arm.stl": 1,
+      "upper_arm_L.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PETG_5_Mic.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "audio_cradle_mic.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.5419025315773844e-07,
+        "relative_volume_difference": 1.4573197499040205e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "audio_cradle_mic.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PETG_Walk_1_Chassis.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "battery_cradle.stl",
+        "instances": 1,
+        "vertex_distance_mm": 9.975143675223524e-07,
+        "relative_volume_difference": 2.5267805162268873e-09,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "3",
+        "infill": "20%"
+      },
+      {
+        "id": "4",
+        "name": "chassis.stl",
+        "instances": 1,
+        "vertex_distance_mm": 20.0405584943798,
+        "relative_volume_difference": 0.02173358350821237,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "25%"
+      },
+      {
+        "id": "6",
+        "name": "audio_cradle_mic.stl",
+        "instances": 1,
+        "vertex_distance_mm": 4.7428696546930225e-07,
+        "relative_volume_difference": 6.335500798083006e-09,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      }
+    ],
+    "errors": [
+      "SHAPE_REVIEW: chassis.stl distance=20.04mm volume=2.173%"
+    ],
+    "warnings": [],
+    "actual_quantities": {
+      "battery_cradle.stl": 1,
+      "chassis.stl": 1,
+      "audio_cradle_mic.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PETG_Walk_2_CoxaFemur.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "femur_link.stl",
+        "instances": 2,
+        "vertex_distance_mm": 7.265882317165015e-07,
+        "relative_volume_difference": 2.132938355991218e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "4",
+        "name": "femur_link_m.stl",
+        "instances": 2,
+        "vertex_distance_mm": 7.265882317165015e-07,
+        "relative_volume_difference": 2.132938355991218e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "6",
+        "name": "coxa_bracket.stl",
+        "instances": 2,
+        "vertex_distance_mm": null,
+        "relative_volume_difference": 0.3052439938656222,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "8",
+        "name": "coxa_bracket_m.stl",
+        "instances": 2,
+        "vertex_distance_mm": null,
+        "relative_volume_difference": 0.30524399386562245,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      }
+    ],
+    "errors": [
+      "SHAPE_REVIEW: coxa_bracket.stl distance=infmm volume=30.524%",
+      "SHAPE_REVIEW: coxa_bracket_m.stl distance=infmm volume=30.524%"
+    ],
+    "warnings": [],
+    "actual_quantities": {
+      "femur_link.stl": 2,
+      "femur_link_m.stl": 2,
+      "coxa_bracket.stl": 2,
+      "coxa_bracket_m.stl": 2
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PETG_Walk_3_Tibia.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "tibia_link.stl",
+        "instances": 2,
+        "vertex_distance_mm": 4.999401973659867e-06,
+        "relative_volume_difference": 1.0505103575373386e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "4",
+        "name": "tibia_link_m.stl",
+        "instances": 2,
+        "vertex_distance_mm": 4.999401973659867e-06,
+        "relative_volume_difference": 1.0505103575373386e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "tibia_link.stl": 2,
+      "tibia_link_m.stl": 2
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PETG_Walk_4_Rest.3mf",
+    "objects": [
+      {
+        "id": "10",
+        "name": "camera_carrier.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.0246491922234202e-06,
+        "relative_volume_difference": 4.0637946909126794e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "12",
+        "name": "claw_mount.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.651709769866213e-09,
+        "relative_volume_difference": 1.659575265319973e-10,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "14",
+        "name": "claw_mount_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.651709769866213e-09,
+        "relative_volume_difference": 1.659575265319973e-10,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "16",
+        "name": "audio_cradle_spk.stl",
+        "instances": 1,
+        "vertex_distance_mm": 6.496223612368184e-09,
+        "relative_volume_difference": 3.934798831689277e-10,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "2",
+        "name": "pod_neck.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.000481614455531e-06,
+        "relative_volume_difference": 3.4378017958545025e-09,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "4",
+        "name": "forearm_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.050549363182917,
+        "relative_volume_difference": 0.6369857497374507,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "6",
+        "name": "forearm.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.050549363182917,
+        "relative_volume_difference": 0.6369857497374507,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "8",
+        "name": "eye_carrier.stl",
+        "instances": 2,
+        "vertex_distance_mm": 4.690273595428436e-08,
+        "relative_volume_difference": 1.4896326878208207e-10,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      }
+    ],
+    "errors": [
+      "SHAPE_REVIEW: forearm_L.stl distance=5.051mm volume=63.699%",
+      "SHAPE_REVIEW: forearm.stl distance=5.051mm volume=63.699%"
+    ],
+    "warnings": [
+      "QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認"
+    ],
+    "defined_quantities": {
+      "pod_neck.stl": 1,
+      "shoulder_bracket.stl": 1,
+      "shoulder_bracket_L.stl": 1,
+      "upper_arm.stl": 1,
+      "upper_arm_L.stl": 1,
+      "forearm.stl": 1,
+      "forearm_L.stl": 1,
+      "eye_carrier.stl": 2,
+      "camera_carrier.stl": 1,
+      "claw_mount.stl": 1,
+      "claw_mount_L.stl": 1,
+      "audio_cradle_spk.stl": 1
+    },
+    "actual_quantities": {
+      "camera_carrier.stl": 1,
+      "claw_mount.stl": 1,
+      "claw_mount_L.stl": 1,
+      "audio_cradle_spk.stl": 1,
+      "pod_neck.stl": 1,
+      "forearm_L.stl": 1,
+      "forearm.stl": 1,
+      "eye_carrier.stl": 2
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Black_1.3mf",
+    "objects": [
+      {
+        "id": "10",
+        "name": "Cabin_Front_Insert_Bottom_Wide_Black.stl",
+        "instances": 1,
+        "vertex_distance_mm": 4.979882457584881e-07,
+        "relative_volume_difference": 3.6339936001356937e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "12",
+        "name": "Head_Insert_Black_x4.stl",
+        "instances": 4,
+        "vertex_distance_mm": 7.501176171505071e-08,
+        "relative_volume_difference": 7.91872162650352e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "14",
+        "name": "Leg_Toe_Black_x12.stl",
+        "instances": 12,
+        "vertex_distance_mm": 4.991001890438979e-07,
+        "relative_volume_difference": 5.73745598499706e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "3",
+        "infill": "15%"
+      },
+      {
+        "id": "16",
+        "name": "Arm_Left_Finger_Black_x3.stl",
+        "instances": 6,
+        "vertex_distance_mm": 8.174797663139974e-08,
+        "relative_volume_difference": 2.3257839163256232e-11,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "3",
+        "infill": "15%"
+      },
+      {
+        "id": "18",
+        "name": "Cabin_Front_Insert_Bottom_Long_Black_x2.stl",
+        "instances": 2,
+        "vertex_distance_mm": 4.905582409504896e-07,
+        "relative_volume_difference": 2.333724413586147e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "2",
+        "name": "Cabin_Front_Insert_Front_Black.stl",
+        "instances": 1,
+        "vertex_distance_mm": 4.992970503730167e-07,
+        "relative_volume_difference": 4.6998186386505145e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "4",
+        "name": "Cabin_Front_Insert_Left_Black.stl",
+        "instances": 1,
+        "vertex_distance_mm": 4.921963658884497e-07,
+        "relative_volume_difference": 3.986899276346213e-10,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "6",
+        "name": "Cabin_Front_Insert_Right_Black.stl",
+        "instances": 1,
+        "vertex_distance_mm": 4.96747984501335e-07,
+        "relative_volume_difference": 8.933201732140595e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "8",
+        "name": "Cabin_Front_Insert_Back_Black_x2.stl",
+        "instances": 2,
+        "vertex_distance_mm": 4.890658885503627e-07,
+        "relative_volume_difference": 2.963523620924521e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "Cabin_Front_Insert_Bottom_Wide_Black.stl": 1,
+      "Head_Insert_Black_x4.stl": 4,
+      "Leg_Toe_Black_x12.stl": 12,
+      "Arm_Left_Finger_Black_x3.stl": 6,
+      "Cabin_Front_Insert_Bottom_Long_Black_x2.stl": 2,
+      "Cabin_Front_Insert_Front_Black.stl": 1,
+      "Cabin_Front_Insert_Left_Black.stl": 1,
+      "Cabin_Front_Insert_Right_Black.stl": 1,
+      "Cabin_Front_Insert_Back_Black_x2.stl": 2
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Matte_Blue_1.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "shin_shell.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.847446552324097e-06,
+        "relative_volume_difference": 8.137001579350744e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "6%"
+      }
+    ],
+    "errors": [],
+    "warnings": [
+      "QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認"
+    ],
+    "defined_quantities": {
+      "Head_Top_Eyecut.stl": 1,
+      "shin_shell.stl": 2,
+      "shin_shell_m.stl": 2
+    },
+    "actual_quantities": {
+      "shin_shell.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Matte_Blue_2.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "Head_Bottom_Armcut.stl",
+        "instances": 1,
+        "vertex_distance_mm": null,
+        "relative_volume_difference": 0.08837399639418018,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [
+      "SHAPE_REVIEW: Head_Bottom_Armcut.stl distance=infmm volume=8.837%"
+    ],
+    "warnings": [
+      "QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認"
+    ],
+    "defined_quantities": {
+      "Head_Bottom_Armcut.stl": 1,
+      "arm_pod_upper.stl": 1,
+      "arm_pod_upper_L.stl": 1,
+      "arm_pod_lower.stl": 1,
+      "arm_pod_lower_L.stl": 1,
+      "Mouth_Neck_Bored.stl": 1
+    },
+    "actual_quantities": {
+      "Head_Bottom_Armcut.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Matte_Blue_3.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "Cabin_Front_Blue.stl",
+        "instances": 1,
+        "vertex_distance_mm": 6.230402812629436e-06,
+        "relative_volume_difference": 5.840067698443403e-10,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "Cabin_Front_Blue.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Matte_Blue_4.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "Cabin_Back_Blue_Repaired.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.5319161169739176e-06,
+        "relative_volume_difference": 1.1604886135689873e-10,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "4",
+        "name": "Head_TailJoint_Blue_Optional_Cross.stl",
+        "instances": 1,
+        "vertex_distance_mm": 3.372542708297755e-06,
+        "relative_volume_difference": 3.0769280481610144e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "6",
+        "name": "Leg_Thigh_Guard_Blue_x4.stl",
+        "instances": 4,
+        "vertex_distance_mm": 1.4539664349614376e-06,
+        "relative_volume_difference": 2.1002992992847158e-08,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "Cabin_Back_Blue_Repaired.stl": 1,
+      "Head_TailJoint_Blue_Optional_Cross.stl": 1,
+      "Leg_Thigh_Guard_Blue_x4.stl": 4
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Matte_Blue_5_HeadTop.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "Head_Top_Eyecut.stl",
+        "instances": 1,
+        "vertex_distance_mm": 9.191498081920573e-07,
+        "relative_volume_difference": 2.6791514682830828e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "Head_Top_Eyecut.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Matte_Gray.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "thigh_cap.stl",
+        "instances": 4,
+        "vertex_distance_mm": 8.00942897307415e-07,
+        "relative_volume_difference": 7.319303801398508e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "6%"
+      },
+      {
+        "id": "4",
+        "name": "leg_foot_bored.stl",
+        "instances": 4,
+        "vertex_distance_mm": 6.977074129202151e-07,
+        "relative_volume_difference": 1.3881469913444533e-08,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "3",
+        "infill": "20%"
+      },
+      {
+        "id": "6",
+        "name": "Mouth_Cannon_Bored.stl",
+        "instances": 1,
+        "vertex_distance_mm": 3.4233812147924403,
+        "relative_volume_difference": 0.013659871509034681,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "8",
+        "name": "Mouth_Ball_Bored.stl",
+        "instances": 1,
+        "vertex_distance_mm": 8.458083416882112e-07,
+        "relative_volume_difference": 1.461187389199302e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [
+      "SHAPE_REVIEW: Mouth_Cannon_Bored.stl distance=3.423mm volume=1.366%"
+    ],
+    "warnings": [],
+    "actual_quantities": {
+      "thigh_cap.stl": 4,
+      "leg_foot_bored.stl": 4,
+      "Mouth_Cannon_Bored.stl": 1,
+      "Mouth_Ball_Bored.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Matte_Gray_2.3mf",
+    "objects": [
+      {
+        "id": "10",
+        "name": "Mouth_Cap_Grey.stl",
+        "instances": 1,
+        "vertex_distance_mm": 6.835990218161504e-07,
+        "relative_volume_difference": 3.7235242082965625e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "12",
+        "name": "Leg_Shin_Guard_Grey_x4.stl",
+        "instances": 4,
+        "vertex_distance_mm": 7.130122362967556e-07,
+        "relative_volume_difference": 1.4240691602408092e-08,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "14",
+        "name": "Head_TailJoint_Peg_Optional_Cross_Repaired.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.388504683189261e-07,
+        "relative_volume_difference": 4.925273540328286e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "16",
+        "name": "Mouth_Key_Grey.stl",
+        "instances": 1,
+        "vertex_distance_mm": 0.00014882201562919301,
+        "relative_volume_difference": 3.293137734162632e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "18",
+        "name": "Arm_Left_Claw_Grey.stl",
+        "instances": 2,
+        "vertex_distance_mm": 5.385058210410885e-07,
+        "relative_volume_difference": 6.418807027510202e-10,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "2",
+        "name": "Cabin_Turrent_Right_Grey.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.543040237425627e-07,
+        "relative_volume_difference": 2.647065871678295e-10,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "20",
+        "name": "Arm_Right_Guard_Grey.stl",
+        "instances": 1,
+        "vertex_distance_mm": 4.975235161347978e-07,
+        "relative_volume_difference": 1.531740448870571e-08,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "22",
+        "name": "Arm_Left_Guard_Grey.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.000284351125006e-07,
+        "relative_volume_difference": 3.5024762405389473e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "24",
+        "name": "Head_Peg_Lower.stl",
+        "instances": 1,
+        "vertex_distance_mm": 9.248608859271408e-06,
+        "relative_volume_difference": 1.572604319446118e-08,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "26",
+        "name": "Head_Peg_Upper.stl",
+        "instances": 1,
+        "vertex_distance_mm": 9.769472543133649e-06,
+        "relative_volume_difference": 3.368281635032089e-08,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "28",
+        "name": "Head_TailJoint_Peg.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.0322181705977988e-05,
+        "relative_volume_difference": 3.15694103176919e-08,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "30",
+        "name": "Cabin_Turret_Peg_x2.stl",
+        "instances": 2,
+        "vertex_distance_mm": 1.1842060075987146e-05,
+        "relative_volume_difference": 1.3276340243756728e-08,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "32",
+        "name": "Cabin_Spinnarette_Grey_x4.stl",
+        "instances": 4,
+        "vertex_distance_mm": 0.00014131023139962788,
+        "relative_volume_difference": 2.266966841980518e-08,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "34",
+        "name": "Mouth_Peg_Grey.stl",
+        "instances": 1,
+        "vertex_distance_mm": 0.003530354118055822,
+        "relative_volume_difference": 1.4856262730026978e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "36",
+        "name": "Head_Dome_Grey.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.978902390987577e-08,
+        "relative_volume_difference": 8.667331230630322e-11,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "38",
+        "name": "Head_Plug_Grey.stl",
+        "instances": 1,
+        "vertex_distance_mm": 8.322438379099943e-08,
+        "relative_volume_difference": 1.8537527281636798e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "4",
+        "name": "Cabin_Turrent_Left_Grey.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.601718888114108e-07,
+        "relative_volume_difference": 1.6406235199715955e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "40",
+        "name": "Head_Screw_Grey_x2.stl",
+        "instances": 2,
+        "vertex_distance_mm": 7.629773841380886e-08,
+        "relative_volume_difference": 1.5862495044651938e-10,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "42",
+        "name": "Arm_Left_FingerTip_Grey_x3.stl",
+        "instances": 6,
+        "vertex_distance_mm": 0.00010032634856596602,
+        "relative_volume_difference": 1.4042290686181909e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "6",
+        "name": "Cabin_Peg_x2.stl",
+        "instances": 2,
+        "vertex_distance_mm": 3.303209654140069e-06,
+        "relative_volume_difference": 1.1167899397070736e-08,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "8",
+        "name": "Head_TailJoint_Ball_Grey_Optional_Cross.stl",
+        "instances": 1,
+        "vertex_distance_mm": 0.00013656087488368552,
+        "relative_volume_difference": 6.371839447777493e-09,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "Mouth_Cap_Grey.stl": 1,
+      "Leg_Shin_Guard_Grey_x4.stl": 4,
+      "Head_TailJoint_Peg_Optional_Cross_Repaired.stl": 1,
+      "Mouth_Key_Grey.stl": 1,
+      "Arm_Left_Claw_Grey.stl": 2,
+      "Cabin_Turrent_Right_Grey.stl": 1,
+      "Arm_Right_Guard_Grey.stl": 1,
+      "Arm_Left_Guard_Grey.stl": 1,
+      "Head_Peg_Lower.stl": 1,
+      "Head_Peg_Upper.stl": 1,
+      "Head_TailJoint_Peg.stl": 1,
+      "Cabin_Turret_Peg_x2.stl": 2,
+      "Cabin_Spinnarette_Grey_x4.stl": 4,
+      "Mouth_Peg_Grey.stl": 1,
+      "Head_Dome_Grey.stl": 1,
+      "Head_Plug_Grey.stl": 1,
+      "Cabin_Turrent_Left_Grey.stl": 1,
+      "Head_Screw_Grey_x2.stl": 2,
+      "Arm_Left_FingerTip_Grey_x3.stl": 6,
+      "Cabin_Peg_x2.stl": 2,
+      "Head_TailJoint_Ball_Grey_Optional_Cross.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Matte_White.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "eye_pod.stl",
+        "instances": 2,
+        "vertex_distance_mm": 8.20935979152292e-07,
+        "relative_volume_difference": 1.7409220057498162e-09,
+        "filament_slot": 2,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "4",
+        "name": "eye_pod_camera_shell.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.560389427305137e-07,
+        "relative_volume_difference": 1.3278133253507186e-08,
+        "filament_slot": 2,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "6",
+        "name": "eye_pod_camera_base.stl",
+        "instances": 1,
+        "vertex_distance_mm": 4.995278145805625e-07,
+        "relative_volume_difference": 4.956920433813727e-09,
+        "filament_slot": 2,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "eye_pod.stl": 2,
+      "eye_pod_camera_shell.stl": 1,
+      "eye_pod_camera_base.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Matte_White_2.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "Cabin_Eye_White.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.407693656191374e-06,
+        "relative_volume_difference": 1.3969307681588614e-09,
+        "filament_slot": 2,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "Cabin_Eye_White.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Matte_White_3_CamBase.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "eye_pod_camera_base.stl",
+        "instances": 1,
+        "vertex_distance_mm": 4.995278145805625e-07,
+        "relative_volume_difference": 4.956920433813727e-09,
+        "filament_slot": 2,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "eye_pod_camera_base.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/PLA_Red_1.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "Cabin_RedLight_Large_Red_x4.stl",
+        "instances": 4,
+        "vertex_distance_mm": 0.0013046879718947586,
+        "relative_volume_difference": 3.6108478747250203e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      },
+      {
+        "id": "4",
+        "name": "Cabin_RedLight_Small_Red_x4.stl",
+        "instances": 4,
+        "vertex_distance_mm": 0.0012762452185541685,
+        "relative_volume_difference": 6.50725031042201e-09,
+        "filament_slot": 1,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "Cabin_RedLight_Large_Red_x4.stl": 4,
+      "Cabin_RedLight_Small_Red_x4.stl": 4
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/claw_mount_L.3mf",
+    "objects": [
+      {
+        "id": "10",
+        "name": "forearm_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.0505487381775245,
+        "relative_volume_difference": 0.6369857530175599,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "12",
+        "name": "forearm.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.0505487381775245,
+        "relative_volume_difference": 0.6369857530175596,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "14",
+        "name": "claw_mount_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 5.651709769866213e-09,
+        "relative_volume_difference": 1.6595781649872388e-10,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "16",
+        "name": "elbow_shell.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.4344227001560448e-06,
+        "relative_volume_difference": 1.9930050189117378e-07,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "18",
+        "name": "elbow_shell_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.4344227001560448e-06,
+        "relative_volume_difference": 1.98833086974654e-07,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "2",
+        "name": "upper_arm_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.984719304488552e-06,
+        "relative_volume_difference": 7.291560221264903e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "4",
+        "name": "upper_arm.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.984719304488552e-06,
+        "relative_volume_difference": 7.291560221264903e-08,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "6",
+        "name": "shoulder_bracket_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.37561607507815,
+        "relative_volume_difference": 0.02194073964309403,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "8",
+        "name": "shoulder_bracket.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.37561607507815,
+        "relative_volume_difference": 0.02194073964309366,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "2",
+        "infill": "15%"
+      }
+    ],
+    "errors": [
+      "SHAPE_REVIEW: forearm_L.stl distance=5.051mm volume=63.699%",
+      "SHAPE_REVIEW: forearm.stl distance=5.051mm volume=63.699%",
+      "SHAPE_REVIEW: shoulder_bracket_L.stl distance=7.376mm volume=2.194%",
+      "SHAPE_REVIEW: shoulder_bracket.stl distance=7.376mm volume=2.194%"
+    ],
+    "warnings": [
+      "PRINT_SETTINGS_REVIEW: forearm_L.stl 壁/充填が生成定義未満",
+      "PRINT_SETTINGS_REVIEW: forearm.stl 壁/充填が生成定義未満",
+      "PRINT_SETTINGS_REVIEW: claw_mount_L.stl 壁/充填が生成定義未満",
+      "PRINT_SETTINGS_REVIEW: upper_arm_L.stl 壁/充填が生成定義未満",
+      "PRINT_SETTINGS_REVIEW: upper_arm.stl 壁/充填が生成定義未満",
+      "PRINT_SETTINGS_REVIEW: shoulder_bracket_L.stl 壁/充填が生成定義未満",
+      "PRINT_SETTINGS_REVIEW: shoulder_bracket.stl 壁/充填が生成定義未満",
+      "UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない"
+    ],
+    "actual_quantities": {
+      "forearm_L.stl": 1,
+      "forearm.stl": 1,
+      "claw_mount_L.stl": 1,
+      "elbow_shell.stl": 1,
+      "elbow_shell_L.stl": 1,
+      "upper_arm_L.stl": 1,
+      "upper_arm.stl": 1,
+      "shoulder_bracket_L.stl": 1,
+      "shoulder_bracket.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/elbow_shells_PLA_Matte.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "elbow_shell.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.4344227001560448e-06,
+        "relative_volume_difference": 1.9930050189117378e-07,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "15%"
+      },
+      {
+        "id": "4",
+        "name": "elbow_shell_L.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.4344227001560448e-06,
+        "relative_volume_difference": 1.98833086974654e-07,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "15%"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "actual_quantities": {
+      "elbow_shell.stl": 1,
+      "elbow_shell_L.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/eye_pod_camera_base_x2.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "eye_pod_camera_base.stl",
+        "instances": 2,
+        "vertex_distance_mm": 5.227185824717544e-07,
+        "relative_volume_difference": 9.979975434277783e-09,
+        "filament_slot": 2,
+        "material": "PLA",
+        "wall_loops": "2",
+        "infill": "8%"
+      }
+    ],
+    "errors": [],
+    "warnings": [
+      "UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない"
+    ],
+    "actual_quantities": {
+      "eye_pod_camera_base.stl": 2
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/foot_pad.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "foot_pad.stl",
+        "instances": 1,
+        "vertex_distance_mm": 2.429809435074144e-07,
+        "relative_volume_difference": 3.053258461233895e-09,
+        "filament_slot": 6,
+        "material": "TPU",
+        "wall_loops": "3",
+        "infill": "30%"
+      }
+    ],
+    "errors": [],
+    "warnings": [
+      "QUANTITY_REVIEW: 現物は全数生成定義と異なる。印刷済み除外/個別配置か履歴確認"
+    ],
+    "defined_quantities": {
+      "foot_pad.stl": 4
+    },
+    "actual_quantities": {
+      "foot_pad.stl": 1
+    }
+  },
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/hardware/stl/leg_foot_bored.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "leg_foot_bored.stl",
+        "instances": 1,
+        "vertex_distance_mm": 6.61838340491064e-08,
+        "relative_volume_difference": 1.7380407555906668e-10,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "3",
+        "infill": "20%"
+      },
+      {
+        "id": "4",
+        "name": "Arm_Left_Claw_Grey.stl",
+        "instances": 1,
+        "vertex_distance_mm": 1.2160357827800817e-08,
+        "relative_volume_difference": 2.2302515655739842e-10,
+        "filament_slot": 3,
+        "material": "PLA",
+        "wall_loops": "3",
+        "infill": "20%"
+      }
+    ],
+    "errors": [],
+    "warnings": [
+      "UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない"
+    ],
+    "actual_quantities": {
+      "leg_foot_bored.stl": 1,
+      "Arm_Left_Claw_Grey.stl": 1
+    }
+  }
+]

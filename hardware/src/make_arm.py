@@ -25,7 +25,8 @@ make_chassis.py の取付 XY と firmware の kinematics 側で吸収)。
 """
 from pathlib import Path
 
-from manifold3d import Manifold
+import numpy as np
+from manifold3d import Manifold, OpType
 
 import config as C
 from lib import (box, cyl_x, cyl_y, rbox, servo_pocket, servo_tab_holes,
@@ -103,7 +104,26 @@ def shoulder_bracket() -> Manifold:
     ポケット・箱枠とも z 対称形状なので、上載せ版の z 反転で成立する
     (manifold の mirror は法線を正しく処理する)。
     """
-    return _shoulder_bracket_up().mirror([0, 0, 1])
+    m = _shoulder_bracket_up().mirror([0, 0, 1])
+    # 上腕ホーン円板がヨー取付板の +Y 張出しへ食い込んでいた。
+    # ピッチ全域の実体交差だけから箱形の工具アクセス可能な逃げを導く。
+    # サーボ箱枠側 (y<=FRAME_Y) は保持し、張出しだけを除去する。
+    pitch_z = 2.5 + PA["HORN_HUB_H"] - 2.0 + 2.5 + FRAME_TOP - 0.1
+    arm = upper_arm()
+    overlaps = [m ^ arm.rotate([0, float(a), 0]).translate([20, 0, -pitch_z])
+                for a in np.arange(C.ARM_PITCH_LIMIT_DEG[0],
+                                   C.ARM_PITCH_LIMIT_DEG[1] + .01,
+                                   C.ARM_SWEEP_STEP_DEG)]
+    occupied = [np.array(part.bounding_box()).reshape(2, 3)
+                for part in overlaps if not part.is_empty()]
+    if occupied:
+        bounds = np.array([np.min([p[0] for p in occupied], axis=0),
+                           np.max([p[1] for p in occupied], axis=0)])
+        bounds[0] -= C.ARM_JOINT_CLEAR
+        bounds[1] += C.ARM_JOINT_CLEAR
+        bounds[0, 1] = max(bounds[0, 1], FRAME_Y + .1)
+        m -= box(*(bounds[1] - bounds[0])).translate(bounds.mean(axis=0))
+    return m
 
 
 def upper_arm() -> Manifold:
@@ -143,8 +163,9 @@ def forearm() -> Manifold:
     16.4mm を直接比較する意味はない — 単純な桁違いの誤読を招く記述だった)。
     ユーザーの「手が長い」への定量回答としては、この16.4mm目安と下限13-14mm
     の一致で十分であり、raw55.4mm との照合は不要かつ不成立
-    中央ブロックは x≥9 に置き、肘 95° 折りでも上腕箱枠上面 (z=8.7) を
-    躱す (check_arm [1] のブーリアンで検証)。手首端は M3 フランジでなく
+    中央ブロックは上腕の肘箱枠の逆回転包絡を除去して全域を逃がす。
+    x≥9 だけでは 0..95° の全域で箱枠との交差が残っていた。
+    手首端は M3 フランジでなく
     平坦な接着面へ変更 (claw_mount 側と同じ理由 — この長さでは M3 ボスの
     肉厚を確保できない。詳細は claw_mount() docstring)。
     """
@@ -157,11 +178,31 @@ def forearm() -> Manifold:
         [9 + block_len / 2, 0, 0])
     m += cyl_x(1.5, 20.0).translate([C.FOREARM_LEN - 0.75, 0, 0])  # 手首の平坦端
     m -= _horn_negative_micro("+x")
+    # 腕長・手首位置・ホーン穴を維持した内部逃げ。
+    # forearm 座標では、固定された上腕箱枠を肘角の逆向きへ回す。
+    gap = C.ARM_JOINT_CLEAR
+    envelope = box(FRAME_X1 - FRAME_X0 + 2 * gap,
+                   2 * (FRAME_Y + gap), 2 * (FRAME_TOP + gap)).translate(
+                       [(FRAME_X0 + FRAME_X1) / 2, 0, 0])
+    m -= Manifold.batch_boolean(
+        [envelope.rotate([0, -float(a), 0])
+         for a in np.arange(C.ARM_ELBOW_LIMIT_DEG[0] - C.ARM_SWEEP_STEP_DEG,
+                            C.ARM_ELBOW_LIMIT_DEG[1] + C.ARM_SWEEP_STEP_DEG + .01,
+                            C.ARM_SWEEP_STEP_DEG)], OpType.Add)
+    # ケース底へ配置した元キット肘カバーを全肘角で避ける。
+    # 球包絡は Y 軸回転で不変。ホーン円板と腕長は維持する。
+    from arm_shell import elbow_shell_swept_clearance
+    m -= elbow_shell_swept_clearance()
     return m
 
 
 def claw_mount() -> Manifold:
     """前腕手首面 → 元キット Arm_Claw_Grey (爪ハブ) への接着アダプタ。
+
+    [2026-09-05監査] 以下の3MF導出は過去の設計記録で、元組立3MFを今回
+    再取得できていない。全9部品検査は10組の食い込みを検出しており、
+    接合公差・指先取付・接着強度はUNVERIFIED。過去の「成立」「許容」
+    という記述を合格根拠には使わない。tools/check_hand_assembly.py参照。
 
     可動グリッパ (palm_base/grip_slider/grip_finger) 廃止 (2026-07-29,
     ユーザー方針「爪は可動不要, キット元デザイン準拠の固定爪へ」) に伴う
@@ -212,8 +253,8 @@ def claw_mount() -> Manifold:
 
     構造: forearm 手首端と同径 (φ20) の単純な円盤 (厚み
     CLAW_MOUNT_THICKNESS)。前面が爪ハブの平坦近位面と突き合わせ接着になる。
-    接着面は現物合わせ (双方を軽く均してから瞬間接着またはエポキシ —
-    常時荷重は指3本+チップの自重のみで小さいため接着で足りる)。
+    接着面の公差・材料・剥離強度は未確認。実物を削って合わせる前に、
+    上記の食い込みと取付座の形状を解決する。
     """
     T = C.CLAW_MOUNT_THICKNESS
     return cyl_x(T, 20.0).translate([T / 2, 0, 0])

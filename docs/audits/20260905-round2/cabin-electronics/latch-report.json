@@ -1,0 +1,714 @@
+{
+  "status": "DESIGN_CANDIDATE_NOT_PRINT_RELEASE",
+  "frame": "chassis plate bottom z=0",
+  "mesh_simplification_tolerance_mm": 0.015,
+  "source_sha256": {
+    "tools/design_cabin_latch_candidate.py": "50e21878738b5c47f1e399f4909000f7f3cfb7b28fe4b01408b7b487919788db",
+    "tools/design_cabin_electronics.py": "a2b09a0596cafc6981aa2ef4e47a465cd42df981f06ce3ade08c06bb46d37343",
+    "hardware/src/config.py": "23c9c32156265855d26e93f65392649d11161207061a1bba0122214e9a78b169",
+    "hardware/src/lib.py": "ab7a9bf68f4b6f55d4bc4805a3036815f7ce75f2a00b2c60cf4d55a5874bc392",
+    "tools/kit_assembly.py": "f3810e68432190f91437c02cd982b2cee88bb99473d813ab87187b21158a8b9e",
+    "tools/data/cabin_peg_alignment_candidate.json": "351add58be6b685577824839b8b1c37e4ad0b7225b64d431a4102e608ba8a7bd",
+    "model/Cabin_Peg_x2.stl": "181efd9d1633a92df644ce3fab6bb9f5b4e4df5427f21f3797db03f5433c6b4d",
+    "model/Cabin_Back_Blue_Repaired.stl": "c5b325a3fb4e818014650ce3762950719323f67cc6f30b5dcc8d19cbbaad4be2",
+    "docs/audits/20260905-round2/cabin-electronics/candidate_cabin_front_with_wire_route.stl": "b570118720880cde6c612220fdea8c08db389f6f5eebec3c9e54bf62685cf9a6",
+    "docs/audits/20260905-round2/cabin-electronics/candidate_cabin_back_crossover.stl": "4ee66b1631c50ba45dc61f2ae8377b079c32b6ad84ca168d994f63bdf8d1fd50"
+  },
+  "design": {
+    "beam_active_length_mm": 15.0,
+    "beam_width_mm": 7.0,
+    "beam_thickness_mm": 1.6,
+    "nominal_engagement_mm": 0.6,
+    "insertion_cam_deg": 30,
+    "release_cam_deg": 60,
+    "recess_clearance_mm": 0.2,
+    "maximum_geometry_deflection_mm": 0.85,
+    "peg_front_half": "original unchanged; bond only into Front",
+    "rear_cap_removal": "straight rearward pull; no outside holes or tools"
+  },
+  "checks": {
+    "back_added_outside_original_mm3": 1.8292397062241214e-06,
+    "detent_removed_mm3": 14.14336718339473,
+    "back_watertight": true,
+    "back_body_count": 1,
+    "back_remaining_volume_mm3": 670292.2201935949,
+    "cap_front_collision_mm3": 0.0
+  },
+  "pegs": [
+    {
+      "name": "lower",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -211.0932502746582
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          9.95
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "socket_roof_measurements_mm": [
+        [
+          9.73465409405947,
+          9.75340970234826,
+          9.772165310637051,
+          9.790917571353932,
+          9.73465409405947,
+          9.75340970234826,
+          9.772165310637051,
+          9.79091789381891,
+          9.73465409405947,
+          9.75340970234826,
+          9.772165310637051,
+          9.790918216283886
+        ],
+        [
+          9.734654094059474,
+          9.753407947102703,
+          9.77215769192152,
+          9.790907436740335,
+          9.734654094059474,
+          9.753407624637724,
+          9.772157369456542,
+          9.790907114275356,
+          9.734654094059474,
+          9.753407302172747,
+          9.772157046991563,
+          9.790906791810379
+        ]
+      ],
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 18598.816178525358,
+      "front_half_changed_mm3": 0.0,
+      "closed_cap_overlap_mm3": 0.0,
+      "front_overlap_mm3": 0.0,
+      "fully_deflected_continuous_travel_overlap_mm3": 0.0,
+      "deflected_front_overlap_mm3": 0.0,
+      "travel_samples": [
+        {
+          "cap_rear_shift_mm": 0.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 0.25,
+          "required_tip_deflection_mm": 0.038183593749999994,
+          "relaxed_overlap_mm3": 0.02998645135485968
+        },
+        {
+          "cap_rear_shift_mm": 0.5,
+          "required_tip_deflection_mm": 0.53955078125,
+          "relaxed_overlap_mm3": 0.4224269567863042
+        },
+        {
+          "cap_rear_shift_mm": 0.75,
+          "required_tip_deflection_mm": 0.65078125,
+          "relaxed_overlap_mm3": 0.8132354188159221
+        },
+        {
+          "cap_rear_shift_mm": 1.0,
+          "required_tip_deflection_mm": 0.65078125,
+          "relaxed_overlap_mm3": 1.2024119015168515
+        },
+        {
+          "cap_rear_shift_mm": 1.25,
+          "required_tip_deflection_mm": 0.65078125,
+          "relaxed_overlap_mm3": 1.5899566948398831
+        },
+        {
+          "cap_rear_shift_mm": 1.5,
+          "required_tip_deflection_mm": 0.65078125,
+          "relaxed_overlap_mm3": 1.9758696835375313
+        },
+        {
+          "cap_rear_shift_mm": 1.75,
+          "required_tip_deflection_mm": 0.65078125,
+          "relaxed_overlap_mm3": 2.3601483593913026
+        },
+        {
+          "cap_rear_shift_mm": 2.0,
+          "required_tip_deflection_mm": 0.65078125,
+          "relaxed_overlap_mm3": 2.7042958013484535
+        },
+        {
+          "cap_rear_shift_mm": 2.25,
+          "required_tip_deflection_mm": 0.64912109375,
+          "relaxed_overlap_mm3": 2.9710341983228963
+        },
+        {
+          "cap_rear_shift_mm": 2.5,
+          "required_tip_deflection_mm": 0.64580078125,
+          "relaxed_overlap_mm3": 3.1603636996978355
+        },
+        {
+          "cap_rear_shift_mm": 2.75,
+          "required_tip_deflection_mm": 0.6441406249999999,
+          "relaxed_overlap_mm3": 3.272284210501149
+        },
+        {
+          "cap_rear_shift_mm": 3.0,
+          "required_tip_deflection_mm": 0.6408203124999999,
+          "relaxed_overlap_mm3": 3.306795709249815
+        },
+        {
+          "cap_rear_shift_mm": 3.25,
+          "required_tip_deflection_mm": 0.6375,
+          "relaxed_overlap_mm3": 3.2897322582861728
+        },
+        {
+          "cap_rear_shift_mm": 3.5,
+          "required_tip_deflection_mm": 0.6358398437499999,
+          "relaxed_overlap_mm3": 3.271405089332916
+        },
+        {
+          "cap_rear_shift_mm": 3.75,
+          "required_tip_deflection_mm": 0.63251953125,
+          "relaxed_overlap_mm3": 3.253114182693285
+        },
+        {
+          "cap_rear_shift_mm": 4.0,
+          "required_tip_deflection_mm": 0.62919921875,
+          "relaxed_overlap_mm3": 3.2348599947275183
+        },
+        {
+          "cap_rear_shift_mm": 4.25,
+          "required_tip_deflection_mm": 0.6275390624999999,
+          "relaxed_overlap_mm3": 3.179733249582254
+        },
+        {
+          "cap_rear_shift_mm": 4.5,
+          "required_tip_deflection_mm": 0.6242187499999999,
+          "relaxed_overlap_mm3": 2.873666846817358
+        },
+        {
+          "cap_rear_shift_mm": 4.75,
+          "required_tip_deflection_mm": 0.62255859375,
+          "relaxed_overlap_mm3": 2.490821174231634
+        },
+        {
+          "cap_rear_shift_mm": 5.0,
+          "required_tip_deflection_mm": 0.6192382812499999,
+          "relaxed_overlap_mm3": 2.1096432625730612
+        },
+        {
+          "cap_rear_shift_mm": 5.25,
+          "required_tip_deflection_mm": 0.6159179687499998,
+          "relaxed_overlap_mm3": 1.730133209720147
+        },
+        {
+          "cap_rear_shift_mm": 5.5,
+          "required_tip_deflection_mm": 0.6142578124999999,
+          "relaxed_overlap_mm3": 1.3522908698696083
+        },
+        {
+          "cap_rear_shift_mm": 5.75,
+          "required_tip_deflection_mm": 0.6109374999999999,
+          "relaxed_overlap_mm3": 0.976116231583276
+        },
+        {
+          "cap_rear_shift_mm": 6.0,
+          "required_tip_deflection_mm": 0.564453125,
+          "relaxed_overlap_mm3": 0.6038848157286655
+        },
+        {
+          "cap_rear_shift_mm": 6.25,
+          "required_tip_deflection_mm": 0.3984375,
+          "relaxed_overlap_mm3": 0.30301718823761276
+        },
+        {
+          "cap_rear_shift_mm": 6.5,
+          "required_tip_deflection_mm": 0.232421875,
+          "relaxed_overlap_mm3": 0.10487220360252969
+        },
+        {
+          "cap_rear_shift_mm": 6.75,
+          "required_tip_deflection_mm": 0.06640625,
+          "relaxed_overlap_mm3": 0.00944986182344946
+        },
+        {
+          "cap_rear_shift_mm": 7.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 7.25,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 7.5,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 7.75,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 8.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 8.25,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 8.5,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 8.75,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 9.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 9.25,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 9.5,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 9.75,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 10.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 10.25,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 10.5,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 10.75,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 11.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 11.25,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 11.5,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 11.75,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 12.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        }
+      ],
+      "maximum_required_tip_deflection_mm": 0.65078125
+    },
+    {
+      "name": "upper",
+      "transform": [
+        [
+          6.123233995736766e-17,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -211.0932502746582
+        ],
+        [
+          -1.0,
+          0.0,
+          6.123233995736766e-17,
+          94.05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "socket_roof_measurements_mm": [
+        [
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558
+        ],
+        [
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558,
+          9.79656028747558
+        ]
+      ],
+      "watertight": true,
+      "body_count": 1,
+      "volume_mm3": 18599.175960317305,
+      "front_half_changed_mm3": 0.0,
+      "closed_cap_overlap_mm3": 0.0,
+      "front_overlap_mm3": 0.0,
+      "fully_deflected_continuous_travel_overlap_mm3": 0.0,
+      "deflected_front_overlap_mm3": 0.0,
+      "travel_samples": [
+        {
+          "cap_rear_shift_mm": 0.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 0.25,
+          "required_tip_deflection_mm": 0.038183593749999994,
+          "relaxed_overlap_mm3": 0.0320206191045798
+        },
+        {
+          "cap_rear_shift_mm": 0.5,
+          "required_tip_deflection_mm": 0.53955078125,
+          "relaxed_overlap_mm3": 0.45202061910457925
+        },
+        {
+          "cap_rear_shift_mm": 0.75,
+          "required_tip_deflection_mm": 0.69560546875,
+          "relaxed_overlap_mm3": 0.8720206191045774
+        },
+        {
+          "cap_rear_shift_mm": 1.0,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 1.2920206191045738
+        },
+        {
+          "cap_rear_shift_mm": 1.25,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 1.7120206191045764
+        },
+        {
+          "cap_rear_shift_mm": 1.5,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 2.132020619104571
+        },
+        {
+          "cap_rear_shift_mm": 1.75,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 2.5447853406455785
+        },
+        {
+          "cap_rear_shift_mm": 2.0,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 2.89378270476805
+        },
+        {
+          "cap_rear_shift_mm": 2.25,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 3.167002846059368
+        },
+        {
+          "cap_rear_shift_mm": 2.5,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 3.364445764519564
+        },
+        {
+          "cap_rear_shift_mm": 2.75,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 3.48611146014862
+        },
+        {
+          "cap_rear_shift_mm": 3.0,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 3.5319999329465497
+        },
+        {
+          "cap_rear_shift_mm": 3.25,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 3.532422208795035
+        },
+        {
+          "cap_rear_shift_mm": 3.5,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 3.532422208795035
+        },
+        {
+          "cap_rear_shift_mm": 3.75,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 3.532422208795035
+        },
+        {
+          "cap_rear_shift_mm": 4.0,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 3.532422208795035
+        },
+        {
+          "cap_rear_shift_mm": 4.25,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 3.4720712610253885
+        },
+        {
+          "cap_rear_shift_mm": 4.5,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 3.138180827639306
+        },
+        {
+          "cap_rear_shift_mm": 4.75,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 2.7181808276393054
+        },
+        {
+          "cap_rear_shift_mm": 5.0,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 2.298180827639304
+        },
+        {
+          "cap_rear_shift_mm": 5.25,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 1.8781808276392955
+        },
+        {
+          "cap_rear_shift_mm": 5.5,
+          "required_tip_deflection_mm": 0.697265625,
+          "relaxed_overlap_mm3": 1.4581808276393111
+        },
+        {
+          "cap_rear_shift_mm": 5.75,
+          "required_tip_deflection_mm": 0.69560546875,
+          "relaxed_overlap_mm3": 1.0381808276393092
+        },
+        {
+          "cap_rear_shift_mm": 6.0,
+          "required_tip_deflection_mm": 0.584375,
+          "relaxed_overlap_mm3": 0.636819013730177
+        },
+        {
+          "cap_rear_shift_mm": 6.25,
+          "required_tip_deflection_mm": 0.418359375,
+          "relaxed_overlap_mm3": 0.3286681959984947
+        },
+        {
+          "cap_rear_shift_mm": 6.5,
+          "required_tip_deflection_mm": 0.25234375,
+          "relaxed_overlap_mm3": 0.12151022422118851
+        },
+        {
+          "cap_rear_shift_mm": 6.75,
+          "required_tip_deflection_mm": 0.08798828125,
+          "relaxed_overlap_mm3": 0.01534509839826173
+        },
+        {
+          "cap_rear_shift_mm": 7.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 7.25,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 7.5,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 7.75,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 8.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 8.25,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 8.5,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 8.75,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 9.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 9.25,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 9.5,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 9.75,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 10.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 10.25,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 10.5,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 10.75,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 11.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 11.25,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 11.5,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 11.75,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        },
+        {
+          "cap_rear_shift_mm": 12.0,
+          "required_tip_deflection_mm": 0,
+          "relaxed_overlap_mm3": 0.0
+        }
+      ],
+      "maximum_required_tip_deflection_mm": 0.697265625
+    }
+  ],
+  "analytical_estimate": {
+    "model": "Euler-Bernoulli cantilever, point load at free end, friction omitted, all four beams engaged; not a force measurement",
+    "max_required_deflection_mm": 0.697265625,
+    "max_surface_strain_fraction": 0.007437500000000001,
+    "modulus_sensitivity_MPa": [
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "estimates": [
+      {
+        "E_MPa": 800,
+        "radial_N_each": 1.1847111111111115,
+        "insertion_N_four": 2.735973115647763,
+        "release_N_four": 8.207919346943287
+      },
+      {
+        "E_MPa": 1200,
+        "radial_N_each": 1.777066666666667,
+        "insertion_N_four": 4.1039596734716435,
+        "release_N_four": 12.31187902041493
+      },
+      {
+        "E_MPa": 1600,
+        "radial_N_each": 2.369422222222223,
+        "insertion_N_four": 5.471946231295526,
+        "release_N_four": 16.415838693886574
+      },
+      {
+        "E_MPa": 2000,
+        "radial_N_each": 2.9617777777777783,
+        "insertion_N_four": 6.8399327891194055,
+        "release_N_four": 20.519798367358216
+      }
+    ],
+    "UNVERIFIED": [
+      "actual printed modulus and layer direction",
+      "notch stress concentration",
+      "friction and dimensional error",
+      "fatigue and creep",
+      "minimum retention force under walking shock",
+      "adhesive bond on Front half"
+    ]
+  }
+}

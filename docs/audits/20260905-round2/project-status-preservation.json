@@ -1,0 +1,33 @@
+{
+  "before_items": 94,
+  "after_items": 96,
+  "existing_status_changes": [],
+  "new_items": [
+    {
+      "url": "https://github.com/hapx2yuki/Tachikoma/issues/97",
+      "status": "Ready"
+    },
+    {
+      "url": "https://github.com/hapx2yuki/Tachikoma/issues/98",
+      "status": "Ready"
+    }
+  ],
+  "initializations_of_unset_status": [
+    {
+      "url": "https://github.com/hapx2yuki/Tachikoma/issues/94",
+      "before": null,
+      "after": "Blocked"
+    },
+    {
+      "url": "https://github.com/hapx2yuki/Tachikoma/issues/95",
+      "before": null,
+      "after": "Blocked"
+    },
+    {
+      "url": "https://github.com/hapx2yuki/Tachikoma/issues/96",
+      "before": null,
+      "after": "Ready"
+    }
+  ],
+  "established_statuses_preserved": true
+}

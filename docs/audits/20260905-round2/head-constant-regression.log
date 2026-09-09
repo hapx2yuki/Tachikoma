@@ -1,0 +1,14 @@
+test_asymmetric_internal_cut_keeps_original_reference_frame (tools.tests.test_render_contracts.RenderContracts.test_asymmetric_internal_cut_keeps_original_reference_frame) ... ok
+test_failed_ik_does_not_render_invented_pose (tools.tests.test_render_contracts.RenderContracts.test_failed_ik_does_not_render_invented_pose) ... ok
+test_foot_render_matches_projected_workspace_at_height_limits (tools.tests.test_render_contracts.RenderContracts.test_foot_render_matches_projected_workspace_at_height_limits) ... ok
+test_head_height_has_one_config_source (tools.tests.test_render_contracts.RenderContracts.test_head_height_has_one_config_source) ... ok
+test_head_shell_follows_config_and_matches_child_frame (tools.tests.test_render_contracts.RenderContracts.test_head_shell_follows_config_and_matches_child_frame) ... ok
+test_holding_is_independent_of_gait_phase (tools.tests.test_render_contracts.RenderContracts.test_holding_is_independent_of_gait_phase) ... ok
+test_mirrored_arm_retains_outward_winding (tools.tests.test_render_contracts.RenderContracts.test_mirrored_arm_retains_outward_winding) ... ok
+test_previews_share_current_holding_pose (tools.tests.test_render_contracts.RenderContracts.test_previews_share_current_holding_pose) ... ok
+test_replaced_stl_refreshes_in_same_process (tools.tests.test_render_contracts.RenderContracts.test_replaced_stl_refreshes_in_same_process) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.169s
+
+OK

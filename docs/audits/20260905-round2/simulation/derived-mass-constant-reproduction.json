@@ -1,0 +1,18 @@
+[
+  {
+    "mass_scale": 1.0,
+    "sum_mass_kg": 2.7475382889999995,
+    "base_subtree_mass_kg": 2.7475382890000004,
+    "first_servo_invweight": 840.1736149161375,
+    "after_setConst_subtree_mass_kg": 2.7475382890000004,
+    "after_setConst_first_servo_invweight": 442.53810990487887
+  },
+  {
+    "mass_scale": 1.3,
+    "sum_mass_kg": 3.5717997756999997,
+    "base_subtree_mass_kg": 2.7475382890000004,
+    "first_servo_invweight": 840.1736149161375,
+    "after_setConst_subtree_mass_kg": 3.5717997756999993,
+    "after_setConst_first_servo_invweight": 380.28808118132224
+  }
+]

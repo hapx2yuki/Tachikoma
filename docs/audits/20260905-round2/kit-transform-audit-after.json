@@ -1,0 +1,834 @@
+{
+  "pass": true,
+  "unresolved_placements": 2,
+  "note": "位置不明は別件として残す。参照/行列の整合は組立可能性の証明ではない。",
+  "placements": [
+    {
+      "part": "Head_Top_Eyecut",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Head_Bottom_Blue",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Head_Dome_Grey",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Head_Plug_Grey",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Head_Screw_Grey_x2",
+      "instance": "1_measured",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Head_Screw_Grey_x2",
+      "instance": "2_estimated_mirror",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Head_Insert_Black_x4",
+      "instance": "1_measured",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Head_Insert_Black_x4",
+      "instance": "2_estimated",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Head_Insert_Black_x4",
+      "instance": "3_unresolved",
+      "source": "front",
+      "unresolved": true,
+      "pass": true
+    },
+    {
+      "part": "Head_Insert_Black_x4",
+      "instance": "4_unresolved",
+      "source": "front",
+      "unresolved": true,
+      "pass": true
+    },
+    {
+      "part": "Head_Eye_White_x3",
+      "instance": "eye_0_right",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000008318109368,
+        1.5000001440080528,
+        1.4999997112450776
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Head_Eye_White_x3",
+      "instance": "eye_1_center_front",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000008318109368,
+        1.5000001440080528,
+        1.4999997112450776
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Head_Eye_White_x3",
+      "instance": "eye_2_left",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000008318109368,
+        1.5000001440080528,
+        1.4999997112450776
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Mouth_Cannon_Grey",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Mouth_Cap_Grey",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Mouth_Key_Grey",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Mouth_Peg_Grey",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Mouth_Ball_Grey",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Mouth_Neck_Blue",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Leg_Thigh_Guard_Blue_x4",
+      "instance": "FR",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000452872253,
+        1.500000250900314,
+        1.4999998030599977
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Thigh_Guard_Blue_x4",
+      "instance": "FL",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000452872253,
+        1.500000250900314,
+        1.4999998030599977
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Thigh_Guard_Blue_x4",
+      "instance": "RL",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000452872253,
+        1.500000250900314,
+        1.4999998030599977
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Thigh_Guard_Blue_x4",
+      "instance": "RR",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000452872253,
+        1.500000250900314,
+        1.4999998030599977
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Shin_Guard_Grey_x4",
+      "instance": "FR",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000000000000002,
+        1.5,
+        1.4999999999999998
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Shin_Guard_Grey_x4",
+      "instance": "FL",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000000000000002,
+        1.5,
+        1.4999999999999998
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Shin_Guard_Grey_x4",
+      "instance": "RL",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000000000000002,
+        1.5,
+        1.4999999999999998
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Shin_Guard_Grey_x4",
+      "instance": "RR",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000000000000002,
+        1.5,
+        1.4999999999999998
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FR_0",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000931044609,
+        1.4999996826256545,
+        1.4999993863297363
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FR_1",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000008465389068,
+        1.499999665538352,
+        1.4999994879227398
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FR_2",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000005203418432,
+        1.500000076658665,
+        1.4999994029994907
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FL_0",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000931044609,
+        1.4999996826256545,
+        1.4999993863297363
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FL_1",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000008465389068,
+        1.499999665538352,
+        1.4999994879227398
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "FL_2",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000005203418432,
+        1.500000076658665,
+        1.4999994029994907
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RL_0",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000931044609,
+        1.4999996826256545,
+        1.4999993863297363
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RL_1",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000008465389068,
+        1.499999665538352,
+        1.4999994879227398
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RL_2",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000005203418432,
+        1.500000076658665,
+        1.4999994029994907
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RR_0",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000931044609,
+        1.4999996826256545,
+        1.4999993863297363
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RR_1",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000008465389068,
+        1.499999665538352,
+        1.4999994879227398
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Leg_Toe_Black_x12",
+      "instance": "RR_2",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000005203418432,
+        1.500000076658665,
+        1.4999994029994907
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Arm_Right_Guard_Grey",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Arm_Left_Guard_Grey",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Arm_Left_Claw_Grey",
+      "instance": "single",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000678370518,
+        1.5000003721331892,
+        1.4999996721740563
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Arm_Left_Finger_Black_x3",
+      "instance": "peg_0",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000001175148403,
+        1.4999999113214257,
+        1.499999273521884
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Arm_Left_Finger_Black_x3",
+      "instance": "peg_1",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000007199267795,
+        1.5000000667078912,
+        1.4999996476021136
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Arm_Left_Finger_Black_x3",
+      "instance": "peg_2",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000491673236,
+        1.499999886536086,
+        1.4999993035617647
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Arm_Left_FingerTip_Grey_x3",
+      "instance": "peg_0",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000001175148403,
+        1.4999999113214257,
+        1.499999273521884
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Arm_Left_FingerTip_Grey_x3",
+      "instance": "peg_1",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.5000007199267795,
+        1.5000000667078912,
+        1.4999996476021136
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Arm_Left_FingerTip_Grey_x3",
+      "instance": "peg_2",
+      "source": "front",
+      "unresolved": false,
+      "singular_values": [
+        1.500000491673236,
+        1.499999886536086,
+        1.4999993035617647
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Eye_White",
+      "instance": "single",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Turrent_Left_Grey",
+      "instance": "single",
+      "source": "rear",
+      "unresolved": false,
+      "singular_values": [
+        1.5000007242065827,
+        1.5000000514141398,
+        1.4999997014597393
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Turrent_Right_Grey",
+      "instance": "single",
+      "source": "rear",
+      "unresolved": false,
+      "singular_values": [
+        1.5000001925532949,
+        1.5000001426446345,
+        1.4999994461459494
+      ],
+      "expected_scale": 1.5,
+      "finite": true,
+      "affine_last_row": true,
+      "scale_ok": true,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Turret_Peg",
+      "instance": "left",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Turret_Peg",
+      "instance": "right",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_RedLight_Large",
+      "instance": "front_left",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_RedLight_Large",
+      "instance": "front_right",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_RedLight_Large",
+      "instance": "back_left",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_RedLight_Large",
+      "instance": "back_right",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_RedLight_Small",
+      "instance": "front_left",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_RedLight_Small",
+      "instance": "front_right",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_RedLight_Small",
+      "instance": "back_left",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_RedLight_Small",
+      "instance": "back_right",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Spinnarette_Grey",
+      "instance": "front_left",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Spinnarette_Grey",
+      "instance": "front_right",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Spinnarette_Grey",
+      "instance": "back_left",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Spinnarette_Grey",
+      "instance": "back_right",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Front_Insert_Front_Black",
+      "instance": "single",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Front_Insert_Left_Black",
+      "instance": "single",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Front_Insert_Right_Black",
+      "instance": "single",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Front_Insert_Back_Black",
+      "instance": "left",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Front_Insert_Back_Black",
+      "instance": "right",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Front_Insert_Bottom_Long_Black",
+      "instance": "left",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Front_Insert_Bottom_Long_Black",
+      "instance": "right",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Front_Insert_Bottom_Wide_Black",
+      "instance": "single",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Head_TailJoint_Blue_Optional_Cross",
+      "instance": "single",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Head_TailJoint_Ball_Grey_Optional_Cross",
+      "instance": "single",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Peg_x2",
+      "instance": "lower",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    },
+    {
+      "part": "Cabin_Peg_x2",
+      "instance": "upper",
+      "source": "rear",
+      "unresolved": false,
+      "pass": true
+    }
+  ]
+}

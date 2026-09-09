@@ -1,0 +1,75 @@
+aligned_up10_linked PASS roll 19.29 pitch 3.67 power {'mean': 1.400305547644448, 'max': 35.07069513941484, 'p95': 4.660494986609686} self initial mm 0
+aligned_down10_linked PASS roll 17.95 pitch 4.22 power {'mean': 1.2844809950634453, 'max': 34.496204165286244, 'p95': 4.13622801966812} self initial mm 0
+aligned_up10_vhacd FAIL roll 12.75 pitch 2.71 power {'mean': 1.2941134103878391, 'max': 36.02036314973136, 'p95': 4.396793206319175} self initial mm 0
+aligned_up10_shoe FAIL roll 14.23 pitch 3.28 power {'mean': 1.3176785782196205, 'max': 33.18932754319403, 'p95': 4.400021454510201} self initial mm 0
+[
+  {
+    "name": "aligned_up10_linked",
+    "status": "PASS",
+    "fell_time_s": null,
+    "failed_checks": [],
+    "tpu_support": {
+      "normal_impulse_Ns": {
+        "MIXED": 260.7044565907271
+      },
+      "fraction": null,
+      "status": "UNVERIFIED",
+      "threshold_fraction": 0.95
+    },
+    "walk_distance_m": 0.04405723683975623,
+    "input_hashes_match_current": true
+  },
+  {
+    "name": "aligned_down10_linked",
+    "status": "PASS",
+    "fell_time_s": null,
+    "failed_checks": [],
+    "tpu_support": {
+      "normal_impulse_Ns": {
+        "MIXED": 260.91307411727485
+      },
+      "fraction": null,
+      "status": "UNVERIFIED",
+      "threshold_fraction": 0.95
+    },
+    "walk_distance_m": 0.24808011914746114,
+    "input_hashes_match_current": true
+  },
+  {
+    "name": "aligned_up10_vhacd",
+    "status": "FAIL",
+    "fell_time_s": null,
+    "failed_checks": [
+      "translation_progress"
+    ],
+    "tpu_support": {
+      "normal_impulse_Ns": {
+        "PLA": 261.7388464901572
+      },
+      "fraction": 0.0,
+      "status": "FAIL",
+      "threshold_fraction": 0.95
+    },
+    "walk_distance_m": -0.15702354072619426,
+    "input_hashes_match_current": true
+  },
+  {
+    "name": "aligned_up10_shoe",
+    "status": "FAIL",
+    "fell_time_s": null,
+    "failed_checks": [
+      "translation_progress"
+    ],
+    "tpu_support": {
+      "normal_impulse_Ns": {
+        "TPU": 261.40990371902177,
+        "PLA": 1.1339795358400893
+      },
+      "fraction": 0.9956808000179563,
+      "status": "PASS",
+      "threshold_fraction": 0.95
+    },
+    "walk_distance_m": -0.028843527103316245,
+    "input_hashes_match_current": true
+  }
+]

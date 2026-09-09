@@ -1,0 +1,8 @@
+WARNING: Nan, Inf or huge value in QACC at DOF 9. The simulation is unstable. Time = 0.0540.
+
+simulation_acceptance = FAIL  physical_readiness = UNVERIFIED
+walk = {'available': False, 'reason': '歩行区間が2周期未満、または指令がゼロ'}
+turn_deg = None  max_roll = 178.674  max_pitch = 80.195  fell = True
+max_leg_saturation_fraction = 0.92857  nonfoot_ground_contact_steps = 0
+failed_checks = completed, no_fall, leg_torque_saturation, walk_progress, turn_progress, no_physics_warning
+metrics saved -> docs/audits/20260905/simulation/zero_friction.json

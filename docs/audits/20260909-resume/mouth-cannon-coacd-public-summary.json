@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "study": "Mouth_Cannon_Grey1 CoACD bounded independent study",
+  "status": "DIAGNOSTIC_ONLY",
+  "formal_gate_changed": false,
+  "official_sources": {
+    "documentation": "https://github.com/SarahWeiii/CoACD",
+    "license": "https://github.com/SarahWeiii/CoACD/blob/main/LICENSE",
+    "license_name": "MIT"
+  },
+  "software": {
+    "name": "coacd",
+    "version": "1.0.14",
+    "repository_venv_modified": false,
+    "real_metric_input_units": "metres",
+    "evaluation_units": "millimetres"
+  },
+  "unit_bounds_preflight": {
+    "status": "PASS",
+    "conversion": "source mm * 0.001 -> real_metric m -> * 1000",
+    "roundtrip_max_abs_error_mm": 1.4210854715202004e-14,
+    "roundtrip_tolerance_mm": 1e-12
+  },
+  "source": {
+    "semantic_part": "base_link/Mouth_Cannon_Grey",
+    "physical_source": "hardware/stl/Mouth_Cannon_Bored.stl",
+    "mesh_sha256": "72e716316b622264dcc5064be6033d17975b86778104e5f8e396d64c65a8b767",
+    "vertices": 1044,
+    "faces": 2100,
+    "volume_mm3": 7332.7029192127475,
+    "formal_coverage_points": 19618,
+    "formal_coverage_points_sha256": "25cdf6170c16152383bff2d73875a9edf934ab1412521f497841830856d6745",
+    "formal_coverage_tolerance_mm": 0.011
+  },
+  "candidates": [
+    {
+      "id": "coacd-normalized-default",
+      "threshold": 0.05,
+      "real_metric": false,
+      "status": "EVALUATED",
+      "piece_count": 75,
+      "wall_seconds": 32.95886679098476,
+      "all_pieces_closed": true,
+      "all_pieces_winding_consistent": true,
+      "all_pieces_convex": true,
+      "coverage_fraction_at_0.011mm": 1.0,
+      "piece_sum_volume_mm3": 9732.350925349618,
+      "piece_sum_excess_mm3": 2399.64800613687,
+      "piece_sum_excess_fraction": 0.3272528605856162,
+      "union_volume_mm3": 9682.58517251121,
+      "union_minus_source_mm3": 2345.8081774198945,
+      "source_minus_union_mm3": 3.233204213514155,
+      "symmetric_difference_mm3": 2349.0413816334085,
+      "sampled_surface_max_error_mm": 2.2545257981022977,
+      "sampled_surface_error_method": "19618 source coverage-grid points plus 20000 seed=0 union-surface samples with trimesh closest-point queries; not continuous Hausdorff"
+    },
+    {
+      "id": "coacd-real-metric-0.011mm",
+      "threshold_m": 0.000011,
+      "threshold_mm": 0.011,
+      "real_metric": true,
+      "input_scale_mm_to_m": 0.001,
+      "output_scale_m_to_mm": 1000.0,
+      "status": "TIMEOUT",
+      "timeout_seconds": 120.0,
+      "wall_seconds": 120.02755833300762,
+      "piece_count": 0
+    },
+    {
+      "id": "coacd-real-metric-0.005mm",
+      "threshold_m": 0.000005,
+      "threshold_mm": 0.005,
+      "real_metric": true,
+      "input_scale_mm_to_m": 0.001,
+      "output_scale_m_to_mm": 1000.0,
+      "status": "TIMEOUT",
+      "timeout_seconds": 120.0,
+      "wall_seconds": 120.02668425004231,
+      "piece_count": 0
+    }
+  ],
+  "decision": "Do not adopt CoACD as the all-part collision approximation from this one-part study: the default run reaches the 0.011 mm sampled coverage certificate but retains 2345.808177 mm3 source-external Boolean volume and 2.254526 mm sampled boundary deviation; the two real-metric targets time out before returning pieces."
+}

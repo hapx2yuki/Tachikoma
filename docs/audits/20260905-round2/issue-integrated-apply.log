@@ -1,0 +1,33 @@
+== labels ==
+== milestones ==
+== issues ==
+  + issue RV-16: RV-16 [機構不具合] 大腿・脛ガードの受け座と実際に入る組立経路を作る
+  + issue RV-17: RV-17 [機構不具合] 固定爪・指・指飾りの嵌合公差と接着座を検証する
+  ~ body/meta PR-06 (#24): ['body']
+  ~ body/meta A-01 (#46): ['body']
+  ~ body/meta A-02 (#47): ['body']
+  ~ body/meta A-04 (#49): ['body']
+  ~ body/meta S-02a (#58): ['body']
+  ~ body/meta S-02b (#59): ['body']
+  ~ body/meta S-02c (#60): ['body']
+  ~ body/meta S-02d (#61): ['body']
+  ~ body/meta RV-05 (#85): ['body']
+  ~ body/meta RV-08 (#89): ['body']
+  ~ body/meta RV-10 (#91): ['body']
+  ~ body/meta RV-12 (#93): ['body']
+== relations ==
+  blocked #24 (PR-06) by #17 (P-07)
+  blocked #24 (PR-06) by #90 (RV-09)
+  blocked #24 (PR-06) by #96 (RV-15)
+  blocked #46 (A-01) by #98 (RV-17)
+  blocked #47 (A-02) by #98 (RV-17)
+  blocked #58 (S-02a) by #97 (RV-16)
+  blocked #59 (S-02b) by #97 (RV-16)
+  blocked #60 (S-02c) by #97 (RV-16)
+  blocked #61 (S-02d) by #97 (RV-16)
+  blocked #85 (RV-05) by #97 (RV-16)
+  blocked #85 (RV-05) by #98 (RV-17)
+  parent  #97 (RV-16) <- #9 (E7)
+  parent  #98 (RV-17) <- #7 (E5)
+  wrote tools/issues/issue_map.json
+  wrote docs/build_plan.md

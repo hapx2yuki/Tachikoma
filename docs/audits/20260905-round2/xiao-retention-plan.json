@@ -1,0 +1,2081 @@
+{
+  "schema": "tachikoma.xiao-retention-plan.v1",
+  "as_of": "2026-09-09",
+  "status": "CANDIDATE_ONLY_UNVERIFIED_HARDWARE_AND_FREEZE2_GEOMETRY",
+  "purpose": "既存XIAO本体基板・Sense拡張基板・カメラ/FPCを買い替えず保持するための独立候補",
+  "scope_boundary": [
+    "この計画は shared config/body/assembly の変更を含まない",
+    "既存カメラを寸法確定品とは扱わず、STEP/仕様書は候補の包絡だけに使う",
+    "候補STLは量産印刷数へ入れず、現物適合試作を通過するまで採用しない",
+    "公開時の再生成は保存済み測定要約JSONと数値引数だけで実行でき、メーカー原本STEP/STLを要求しない"
+  ],
+  "holder_mesh_policy": {
+    "frame": "eye_pod_camera",
+    "holder_z_offset_mm": 4.0,
+    "holder_z_offset_source": {
+      "status": "READ_ONLY_PRINT_FIRST_CONFIG_REFERENCE",
+      "source_path": "hardware/src/config.py",
+      "source_sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95",
+      "value_mm": 4.0,
+      "frame": "eye_pod_camera local +Z"
+    },
+    "roles": {
+      "xiao_all_boards_occupancy": {
+        "role": "board_occupancy",
+        "apply_holder_z_offset": true,
+        "frame": "eye_pod_camera"
+      },
+      "camera_child_lens_occupancy": {
+        "role": "camera_child_lens_occupancy",
+        "apply_holder_z_offset": false,
+        "frame": "eye_pod_camera"
+      },
+      "xiao_tray_floor_candidate": {
+        "role": "holder_floor",
+        "apply_holder_z_offset": true,
+        "frame": "eye_pod_camera"
+      },
+      "xiao_tray_rib_left_candidate": {
+        "role": "holder_rib",
+        "apply_holder_z_offset": true,
+        "frame": "eye_pod_camera"
+      },
+      "xiao_tray_rib_right_candidate": {
+        "role": "holder_rib",
+        "apply_holder_z_offset": true,
+        "frame": "eye_pod_camera"
+      },
+      "xiao_tray_holder3_union_candidate": {
+        "role": "holder_union",
+        "apply_holder_z_offset": true,
+        "frame": "eye_pod_camera"
+      }
+    },
+    "offset_applies_to": [
+      "board_occupancy",
+      "holder_floor",
+      "holder_rib",
+      "holder_union"
+    ],
+    "camera_child_lens_rule": "fixed at camera-local measured proxy position; no holder +Z translation",
+    "board_fpc_rule": "board connector endpoint follows board/holder +Z; camera endpoint stays fixed"
+  },
+  "retained_hardware": {
+    "xiao_assembly_without_sd": {
+      "source_path": "docs/audits/20260905-round2/primary-sources/xiao-step-measured/camera_removed_without_sd_envelope.stl",
+      "source_required_at_runtime": false,
+      "source_sha256": null,
+      "source_summary": "XIAO主基板・Sense拡張基板・USB・shield等の閉じた全厚包絡。カメラとMicroSDを除外",
+      "size_flat_mm": [
+        22.781981150153914,
+        17.780000000000022,
+        8.03000009999998
+      ],
+      "placement_center_chassis_mm": [
+        0,
+        45.0,
+        23.0
+      ],
+      "world_bounds_chassis_mm": [
+        [
+          -8.890000000000011,
+          33.609009424923045,
+          18.98499995000001
+        ],
+        [
+          8.890000000000011,
+          56.390990575076955,
+          27.01500004999999
+        ]
+      ],
+      "holder_spec": {
+        "id": "xiao_internal_tray_retention_candidate",
+        "status": "CANDIDATE_ONLY_UNVERIFIED_HARDWARE",
+        "coordinate_frame": "eye_pod_camera local for holder/occupancy; board envelope is centered in its flat frame",
+        "reuse_intent": {
+          "xiao_main_board": "retain_existing_board; revision and soldered headers require inspection",
+          "sense_expansion_board": "retain_existing_board; MicroSD is optional and must remain serviceable",
+          "camera_module": "retain_existing_camera; exact part and lens/FPC interface require measurement",
+          "fpc": "retain_existing_fpc; free length, bend radius, locking direction, and contacts require measurement",
+          "new_purchase_required": false
+        },
+        "inputs": {
+          "board_size_mm": [
+            22.781981150153914,
+            17.780000000000022,
+            8.03000009999998
+          ],
+          "board_frame_flat_to_chassis": [
+            [
+              6.123233995736766e-17,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              -1.0,
+              6.123233995736766e-17,
+              0.0,
+              45.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              23.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "camera_frame_chassis": [
+            [
+              -1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.726436032120812,
+              0.6872340876561426,
+              49.5944
+            ],
+            [
+              0.0,
+              0.6872340876561426,
+              0.726436032120812,
+              29.6528
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "base_camera_frame": [
+            [
+              -1.0,
+              -8.896275615220562e-17,
+              8.416190257130466e-17,
+              4.726450842501261e-15
+            ],
+            [
+              1.2246467991473532e-16,
+              -0.726436032120812,
+              0.6872340876561426,
+              49.5944
+            ],
+            [
+              0.0,
+              0.6872340876561426,
+              0.726436032120812,
+              57.25280000000001
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "fpc_start_mm": [
+            0.0,
+            62.63829487111535,
+            30.429156144709673
+          ],
+          "connector_center_mm": [
+            -0.03167809710800957,
+            53.260754782519044,
+            25.410000000000007
+          ],
+          "fpc_free_length_mm": 9.2,
+          "camera_child_envelope_size_mm": [
+            8.0,
+            9.56709,
+            9.10175
+          ],
+          "camera_child_center_camera_mm": [
+            0.0,
+            -7.32913,
+            13.96086
+          ],
+          "clearance_each_side_mm": 0.3,
+          "wall_mm": 1.2,
+          "short_rib_height_mm": 3.0,
+          "rib_floor_overlap_mm": 0.39999999999999997,
+          "floor_board_clearance_mm": 0.01,
+          "holder_z_offset_mm": 4.0,
+          "holder_z_offset_frame": "eye_pod_camera local +Z",
+          "rib_floor_overlap_source": "wall_mm/3 (derived)"
+        },
+        "relative_frames": {
+          "board_to_camera": [
+            [
+              -6.123233995736766e-17,
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.726436032120812,
+              -4.448137807610281e-17,
+              0.6872340876561426,
+              -1.234493232382917
+            ],
+            [
+              -0.6872340876561426,
+              4.208095128565233e-17,
+              0.726436032120812,
+              -7.990261926820708
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "holder_offset_camera": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              4.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "board_to_camera_after_holder_offset": [
+            [
+              -6.123233995736766e-17,
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.726436032120812,
+              -4.448137807610281e-17,
+              0.6872340876561426,
+              -1.234493232382917
+            ],
+            [
+              -0.6872340876561426,
+              4.208095128565233e-17,
+              0.726436032120812,
+              -3.9902619268207076
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "fpc_start_camera_mm": [
+            -0.0,
+            -8.942016826768242,
+            9.528182268509106
+          ],
+          "connector_center_camera_mm": [
+            0.03167809710800957,
+            -5.579169007667769,
+            -0.5624788130939571
+          ],
+          "connector_center_camera_after_holder_offset_mm": [
+            0.03167809710800957,
+            -5.579169007667769,
+            3.437521186906043
+          ],
+          "board_to_base": [
+            [
+              -6.123233995736766e-17,
+              1.0,
+              0.0,
+              4.1637991171010006e-15
+            ],
+            [
+              -1.0,
+              -6.123233995736765e-17,
+              0.0,
+              45.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              50.60000000000002
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "board_to_base_after_holder_offset": [
+            [
+              -6.123233995736766e-17,
+              1.0,
+              0.0,
+              4.50044672738622e-15
+            ],
+            [
+              -1.0,
+              -6.123233995736765e-17,
+              0.0,
+              47.74893635062457
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              53.50574412848327
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "fpc_start_base_mm": [
+            6.3238672527338594e-15,
+            62.63829487111534,
+            58.02915614470969
+          ],
+          "connector_center_base_mm": [
+            -0.03167809710800439,
+            53.260754782519044,
+            53.01000000000002
+          ],
+          "connector_center_base_after_holder_offset_mm": [
+            -0.03167809710800405,
+            56.00969113314361,
+            55.91574412848327
+          ],
+          "fpc_endpoints": {
+            "camera_end": {
+              "point_camera_mm": [
+                -0.0,
+                -8.942016826768242,
+                9.528182268509106
+              ],
+              "movement_camera_mm": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "movement_rule": "fixed existing camera/carrier endpoint"
+            },
+            "board_connector_end": {
+              "point_camera_nominal_mm": [
+                0.03167809710800957,
+                -5.579169007667769,
+                -0.5624788130939571
+              ],
+              "holder_offset_camera_mm": [
+                0.0,
+                0.0,
+                4.0
+              ],
+              "point_camera_after_holder_offset_mm": [
+                0.03167809710800957,
+                -5.579169007667769,
+                3.437521186906043
+              ],
+              "movement_rule": "move with board occupancy and holder only"
+            },
+            "straight_endpoint_distance_after_holder_offset_mm": 6.957434970390984,
+            "free_length_mm": 9.2,
+            "remaining_free_length_mm": 2.2425650296090156,
+            "nominal_length_status": "PASS_DISTANCE_WITHIN_FREE_LENGTH",
+            "hardware_status": "UNVERIFIED_PURCHASED_FPC_AND_BEND_RADIUS"
+          },
+          "transform_rule": "inverse(camera_frame_chassis) @ board_frame_flat_to_chassis; for board/holder use holder_offset_camera @ board_to_camera; then base_camera_frame"
+        },
+        "occupancy": {
+          "xiao_all_boards": {
+            "frame": "eye_pod_camera",
+            "size_mm": [
+              22.781981150153914,
+              17.780000000000022,
+              8.03000009999998
+            ],
+            "transform_camera_nominal": [
+              [
+                -6.123233995736766e-17,
+                -1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.726436032120812,
+                -4.448137807610281e-17,
+                0.6872340876561426,
+                -1.234493232382917
+              ],
+              [
+                -0.6872340876561426,
+                4.208095128565233e-17,
+                0.726436032120812,
+                -7.990261926820708
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "transform_camera": [
+              [
+                -6.123233995736766e-17,
+                -1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.726436032120812,
+                -4.448137807610281e-17,
+                0.6872340876561426,
+                -1.234493232382917
+              ],
+              [
+                -0.6872340876561426,
+                4.208095128565233e-17,
+                0.726436032120812,
+                -3.9902619268207076
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "transform_base_nominal": [
+              [
+                -6.123233995736766e-17,
+                1.0,
+                0.0,
+                4.1637991171010006e-15
+              ],
+              [
+                -1.0,
+                -6.123233995736765e-17,
+                0.0,
+                45.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                50.60000000000002
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "transform_base": [
+              [
+                -6.123233995736766e-17,
+                1.0,
+                0.0,
+                4.50044672738622e-15
+              ],
+              [
+                -1.0,
+                -6.123233995736765e-17,
+                0.0,
+                47.74893635062457
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                53.50574412848327
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "holder_offset_applied": true,
+            "design_mass_g": 10.0,
+            "mass_status": "UNVERIFIED_DESIGN_ALLOWANCE",
+            "contents": "XIAO main board + Sense Expansion Board + USB/shield/header/SD allowance"
+          },
+          "camera_child_lens": {
+            "frame": "eye_pod_camera",
+            "size_mm": [
+              8.0,
+              9.56709,
+              9.10175
+            ],
+            "center_camera_mm": [
+              0.0,
+              -7.32913,
+              13.96086
+            ],
+            "holder_offset_applied": false,
+            "source": "OV3660 candidate child envelope from saved measurement summary; raw source mesh is not a runtime dependency",
+            "design_mass_g": 5.0,
+            "mass_status": "UNVERIFIED_DESIGN_ALLOWANCE",
+            "geometry_status": "OV3660 candidate envelope; purchased camera identity and lens center unverified"
+          }
+        },
+        "printed_holder_concept": {
+          "part_role": "detachable tray plus two short ribs in eye_pod_camera local coordinates; no camera shell/body rewrite",
+          "print_orientation": "tray floor down, board flat, USB and MicroSD service sides open",
+          "floor_envelope_mm": [
+            23.381981150153916,
+            20.780000000000022,
+            1.2
+          ],
+          "side_clearance_each_mm": 0.3,
+          "rail_wall_mm": 1.2,
+          "short_rib_height_mm": 3.0,
+          "rib_floor_overlap_mm": 0.39999999999999997,
+          "rib_floor_overlap_rule": "rib bottom sinks by overlap; rib top remains at the original height",
+          "floor_board_clearance_mm": 0.01,
+          "floor_board_clearance_rule": "keep the holder floor below the board occupancy by this candidate clearance so STL roundtrip intersection remains zero",
+          "holder_z_offset_mm": 4.0,
+          "holder_z_offset_rule": "apply only to board occupancy, floor, ribs and holder union; camera child/lens remains fixed",
+          "floor_support_rule": "floor Y span includes both rib wall widths so each rib has a volumetric footprint",
+          "retention": "nonconductive strap through serviceable slots; adhesive is not the primary torque path",
+          "strap_slot_concept_mm": {
+            "width": 3.0,
+            "height": 1.0
+          },
+          "anchor_status": "UNCONNECTED_CANDIDATE_RIBS_NEED_MECHANICAL_INTEGRATION",
+          "anchor": "mechanical integration must choose a verified head/chassis face after freeze2; the two ribs are not connected to the carrier by this helper"
+        },
+        "mass_candidates": {
+          "xiao_main_plus_expansion_g": 10.0,
+          "camera_child_lens_g": 5.0,
+          "status": "UNVERIFIED_DESIGN_ALLOWANCE",
+          "use": "pass as arguments to mechanical mesh mass/COM/inertia calculation; do not add to measured mass automatically",
+          "decision": "accepted_as_design_allowance_only; replace or retain after measurement"
+        },
+        "required_checks_before_adoption": [
+          "measure the purchased XIAO and Sense Expansion Board including USB, shield, headers, SD and solder joints",
+          "identify the purchased camera board and verify lens center against camera_frame_chassis",
+          "measure FPC free length, connector insertion face/sign, bend radius and strain relief",
+          "run actual mesh self/intersection and insertion checks with the frozen head, coxa/yaw and all electronics",
+          "print one tray and one board/camera assembly for fit before production quantity"
+        ]
+      }
+    },
+    "xiao_assembly_with_sd": {
+      "source_path": "docs/audits/20260905-round2/primary-sources/xiao-step-measured/camera_removed_with_sd_envelope.stl",
+      "source_required_at_runtime": false,
+      "source_sha256": null,
+      "source_summary": "上記にMicroSD包絡を含めた閉じた全厚包絡。MicroSDは後回しにできるが装着時の逃げを残す",
+      "size_flat_mm": [
+        24.363340291762498,
+        17.780000000000022,
+        8.500000085098844
+      ],
+      "placement_center_chassis_mm": [
+        0,
+        45.0,
+        23.0
+      ],
+      "world_bounds_chassis_mm": [
+        [
+          -8.890000000000011,
+          32.81832985411875,
+          18.749999957450576
+        ],
+        [
+          8.890000000000011,
+          57.18167014588125,
+          27.250000042549424
+        ]
+      ],
+      "holder_spec": {
+        "id": "xiao_internal_tray_retention_candidate",
+        "status": "CANDIDATE_ONLY_UNVERIFIED_HARDWARE",
+        "coordinate_frame": "eye_pod_camera local for holder/occupancy; board envelope is centered in its flat frame",
+        "reuse_intent": {
+          "xiao_main_board": "retain_existing_board; revision and soldered headers require inspection",
+          "sense_expansion_board": "retain_existing_board; MicroSD is optional and must remain serviceable",
+          "camera_module": "retain_existing_camera; exact part and lens/FPC interface require measurement",
+          "fpc": "retain_existing_fpc; free length, bend radius, locking direction, and contacts require measurement",
+          "new_purchase_required": false
+        },
+        "inputs": {
+          "board_size_mm": [
+            24.363340291762498,
+            17.780000000000022,
+            8.500000085098844
+          ],
+          "board_frame_flat_to_chassis": [
+            [
+              6.123233995736766e-17,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              -1.0,
+              6.123233995736766e-17,
+              0.0,
+              45.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              23.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "camera_frame_chassis": [
+            [
+              -1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.726436032120812,
+              0.6872340876561426,
+              49.5944
+            ],
+            [
+              0.0,
+              0.6872340876561426,
+              0.726436032120812,
+              29.6528
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "base_camera_frame": [
+            [
+              -1.0,
+              -8.896275615220562e-17,
+              8.416190257130466e-17,
+              4.726450842501261e-15
+            ],
+            [
+              1.2246467991473532e-16,
+              -0.726436032120812,
+              0.6872340876561426,
+              49.5944
+            ],
+            [
+              0.0,
+              0.6872340876561426,
+              0.726436032120812,
+              57.25280000000001
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "fpc_start_mm": [
+            0.0,
+            62.63829487111535,
+            30.429156144709673
+          ],
+          "connector_center_mm": [
+            -0.03167809710800957,
+            53.260754782519044,
+            25.410000000000007
+          ],
+          "fpc_free_length_mm": 9.2,
+          "camera_child_envelope_size_mm": [
+            8.0,
+            9.56709,
+            9.10175
+          ],
+          "camera_child_center_camera_mm": [
+            0.0,
+            -7.32913,
+            13.96086
+          ],
+          "clearance_each_side_mm": 0.3,
+          "wall_mm": 1.2,
+          "short_rib_height_mm": 3.0,
+          "rib_floor_overlap_mm": 0.39999999999999997,
+          "floor_board_clearance_mm": 0.01,
+          "holder_z_offset_mm": 4.0,
+          "holder_z_offset_frame": "eye_pod_camera local +Z",
+          "rib_floor_overlap_source": "wall_mm/3 (derived)"
+        },
+        "relative_frames": {
+          "board_to_camera": [
+            [
+              -6.123233995736766e-17,
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.726436032120812,
+              -4.448137807610281e-17,
+              0.6872340876561426,
+              -1.234493232382917
+            ],
+            [
+              -0.6872340876561426,
+              4.208095128565233e-17,
+              0.726436032120812,
+              -7.990261926820708
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "holder_offset_camera": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              4.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "board_to_camera_after_holder_offset": [
+            [
+              -6.123233995736766e-17,
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.726436032120812,
+              -4.448137807610281e-17,
+              0.6872340876561426,
+              -1.234493232382917
+            ],
+            [
+              -0.6872340876561426,
+              4.208095128565233e-17,
+              0.726436032120812,
+              -3.9902619268207076
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "fpc_start_camera_mm": [
+            -0.0,
+            -8.942016826768242,
+            9.528182268509106
+          ],
+          "connector_center_camera_mm": [
+            0.03167809710800957,
+            -5.579169007667769,
+            -0.5624788130939571
+          ],
+          "connector_center_camera_after_holder_offset_mm": [
+            0.03167809710800957,
+            -5.579169007667769,
+            3.437521186906043
+          ],
+          "board_to_base": [
+            [
+              -6.123233995736766e-17,
+              1.0,
+              0.0,
+              4.1637991171010006e-15
+            ],
+            [
+              -1.0,
+              -6.123233995736765e-17,
+              0.0,
+              45.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              50.60000000000002
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "board_to_base_after_holder_offset": [
+            [
+              -6.123233995736766e-17,
+              1.0,
+              0.0,
+              4.50044672738622e-15
+            ],
+            [
+              -1.0,
+              -6.123233995736765e-17,
+              0.0,
+              47.74893635062457
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              53.50574412848327
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "fpc_start_base_mm": [
+            6.3238672527338594e-15,
+            62.63829487111534,
+            58.02915614470969
+          ],
+          "connector_center_base_mm": [
+            -0.03167809710800439,
+            53.260754782519044,
+            53.01000000000002
+          ],
+          "connector_center_base_after_holder_offset_mm": [
+            -0.03167809710800405,
+            56.00969113314361,
+            55.91574412848327
+          ],
+          "fpc_endpoints": {
+            "camera_end": {
+              "point_camera_mm": [
+                -0.0,
+                -8.942016826768242,
+                9.528182268509106
+              ],
+              "movement_camera_mm": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "movement_rule": "fixed existing camera/carrier endpoint"
+            },
+            "board_connector_end": {
+              "point_camera_nominal_mm": [
+                0.03167809710800957,
+                -5.579169007667769,
+                -0.5624788130939571
+              ],
+              "holder_offset_camera_mm": [
+                0.0,
+                0.0,
+                4.0
+              ],
+              "point_camera_after_holder_offset_mm": [
+                0.03167809710800957,
+                -5.579169007667769,
+                3.437521186906043
+              ],
+              "movement_rule": "move with board occupancy and holder only"
+            },
+            "straight_endpoint_distance_after_holder_offset_mm": 6.957434970390984,
+            "free_length_mm": 9.2,
+            "remaining_free_length_mm": 2.2425650296090156,
+            "nominal_length_status": "PASS_DISTANCE_WITHIN_FREE_LENGTH",
+            "hardware_status": "UNVERIFIED_PURCHASED_FPC_AND_BEND_RADIUS"
+          },
+          "transform_rule": "inverse(camera_frame_chassis) @ board_frame_flat_to_chassis; for board/holder use holder_offset_camera @ board_to_camera; then base_camera_frame"
+        },
+        "occupancy": {
+          "xiao_all_boards": {
+            "frame": "eye_pod_camera",
+            "size_mm": [
+              24.363340291762498,
+              17.780000000000022,
+              8.500000085098844
+            ],
+            "transform_camera_nominal": [
+              [
+                -6.123233995736766e-17,
+                -1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.726436032120812,
+                -4.448137807610281e-17,
+                0.6872340876561426,
+                -1.234493232382917
+              ],
+              [
+                -0.6872340876561426,
+                4.208095128565233e-17,
+                0.726436032120812,
+                -7.990261926820708
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "transform_camera": [
+              [
+                -6.123233995736766e-17,
+                -1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.726436032120812,
+                -4.448137807610281e-17,
+                0.6872340876561426,
+                -1.234493232382917
+              ],
+              [
+                -0.6872340876561426,
+                4.208095128565233e-17,
+                0.726436032120812,
+                -3.9902619268207076
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "transform_base_nominal": [
+              [
+                -6.123233995736766e-17,
+                1.0,
+                0.0,
+                4.1637991171010006e-15
+              ],
+              [
+                -1.0,
+                -6.123233995736765e-17,
+                0.0,
+                45.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                50.60000000000002
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "transform_base": [
+              [
+                -6.123233995736766e-17,
+                1.0,
+                0.0,
+                4.50044672738622e-15
+              ],
+              [
+                -1.0,
+                -6.123233995736765e-17,
+                0.0,
+                47.74893635062457
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                53.50574412848327
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "holder_offset_applied": true,
+            "design_mass_g": 10.0,
+            "mass_status": "UNVERIFIED_DESIGN_ALLOWANCE",
+            "contents": "XIAO main board + Sense Expansion Board + USB/shield/header/SD allowance"
+          },
+          "camera_child_lens": {
+            "frame": "eye_pod_camera",
+            "size_mm": [
+              8.0,
+              9.56709,
+              9.10175
+            ],
+            "center_camera_mm": [
+              0.0,
+              -7.32913,
+              13.96086
+            ],
+            "holder_offset_applied": false,
+            "source": "OV3660 candidate child envelope from saved measurement summary; raw source mesh is not a runtime dependency",
+            "design_mass_g": 5.0,
+            "mass_status": "UNVERIFIED_DESIGN_ALLOWANCE",
+            "geometry_status": "OV3660 candidate envelope; purchased camera identity and lens center unverified"
+          }
+        },
+        "printed_holder_concept": {
+          "part_role": "detachable tray plus two short ribs in eye_pod_camera local coordinates; no camera shell/body rewrite",
+          "print_orientation": "tray floor down, board flat, USB and MicroSD service sides open",
+          "floor_envelope_mm": [
+            24.9633402917625,
+            20.780000000000022,
+            1.2
+          ],
+          "side_clearance_each_mm": 0.3,
+          "rail_wall_mm": 1.2,
+          "short_rib_height_mm": 3.0,
+          "rib_floor_overlap_mm": 0.39999999999999997,
+          "rib_floor_overlap_rule": "rib bottom sinks by overlap; rib top remains at the original height",
+          "floor_board_clearance_mm": 0.01,
+          "floor_board_clearance_rule": "keep the holder floor below the board occupancy by this candidate clearance so STL roundtrip intersection remains zero",
+          "holder_z_offset_mm": 4.0,
+          "holder_z_offset_rule": "apply only to board occupancy, floor, ribs and holder union; camera child/lens remains fixed",
+          "floor_support_rule": "floor Y span includes both rib wall widths so each rib has a volumetric footprint",
+          "retention": "nonconductive strap through serviceable slots; adhesive is not the primary torque path",
+          "strap_slot_concept_mm": {
+            "width": 3.0,
+            "height": 1.0
+          },
+          "anchor_status": "UNCONNECTED_CANDIDATE_RIBS_NEED_MECHANICAL_INTEGRATION",
+          "anchor": "mechanical integration must choose a verified head/chassis face after freeze2; the two ribs are not connected to the carrier by this helper"
+        },
+        "mass_candidates": {
+          "xiao_main_plus_expansion_g": 10.0,
+          "camera_child_lens_g": 5.0,
+          "status": "UNVERIFIED_DESIGN_ALLOWANCE",
+          "use": "pass as arguments to mechanical mesh mass/COM/inertia calculation; do not add to measured mass automatically",
+          "decision": "accepted_as_design_allowance_only; replace or retain after measurement"
+        },
+        "required_checks_before_adoption": [
+          "measure the purchased XIAO and Sense Expansion Board including USB, shield, headers, SD and solder joints",
+          "identify the purchased camera board and verify lens center against camera_frame_chassis",
+          "measure FPC free length, connector insertion face/sign, bend radius and strain relief",
+          "run actual mesh self/intersection and insertion checks with the frozen head, coxa/yaw and all electronics",
+          "print one tray and one board/camera assembly for fit before production quantity"
+        ]
+      }
+    },
+    "main_board_reference": {
+      "source_path": "docs/audits/20260905-round2/primary-sources/xiao-step-measured/Seeed_Studio_XIAO-ESP32-S3_Sense.stl",
+      "source_required_at_runtime": false,
+      "source_sha256": "7823d15984d6bebe69d5f9171cbd2c129ec3497ac7e05219abdd711d07804312",
+      "bounds_mm": [
+        [
+          -8.67334131441358,
+          -0.24999998509883903,
+          -15.00139995541252
+        ],
+        [
+          13.808639835740346,
+          4.210000014901311,
+          2.7786000445875025
+        ]
+      ],
+      "dimensions_mm": [
+        22.481981150153928,
+        4.46000000000015,
+        17.780000000000022
+      ],
+      "mesh": "Seeed_Studio_XIAO-ESP32-S3_Sense.stl",
+      "identity": "official 2023 STEP reference; purchased revision unverified"
+    },
+    "sense_expansion_board_reference": {
+      "source_path": "docs/audits/20260905-round2/primary-sources/xiao-step-measured/Sense_Expansion_Board.stl",
+      "source_required_at_runtime": false,
+      "source_sha256": "609451372ad2c6c7b36913104dd458e8039cd002ecb1f8e415f568812b252136",
+      "bounds_mm": [
+        [
+          -8.973341314413569,
+          1.030000014901168,
+          -14.5013999554125
+        ],
+        [
+          15.389998977348931,
+          8.250000100000005,
+          2.2786000445875
+        ]
+      ],
+      "dimensions_mm": [
+        24.363340291762498,
+        7.220000085098837,
+        16.78
+      ],
+      "mesh": "Sense_Expansion_Board.stl",
+      "identity": "official 2023 STEP reference; purchased revision unverified"
+    },
+    "historical_camera_reference": {
+      "source_path": "docs/audits/20260905-round2/primary-sources/xiao-step-measured/Camer_Module.stl",
+      "source_required_at_runtime": false,
+      "source_sha256": "aaf90a638c90dec4fd7a255ab6cddb6cbddb8b6dc725f0397f2b3f7fc7f0f057",
+      "bounds_mm": [
+        [
+          -7.2,
+          5.5999998999999985,
+          -13.0
+        ],
+        [
+          12.75,
+          13.71,
+          -0.5
+        ]
+      ],
+      "dimensions_mm": [
+        19.95,
+        8.110000100000002,
+        12.5
+      ],
+      "mesh": "Camer_Module.stl",
+      "identity": "official 2023 STEP reference; purchased revision unverified"
+    },
+    "historical_fpc_connector_reference": {
+      "source_path": "docs/audits/20260905-round2/primary-sources/xiao-step-measured/JUSHUO_AFC01-S24FCA-00.stl",
+      "source_required_at_runtime": false,
+      "source_sha256": "f2dafd876dd03d8b291636644f2bb004e5aff35601afaa21dcdcc644b9f49403",
+      "bounds_mm": [
+        [
+          -8.843105571855661,
+          5.170000014901149,
+          -14.179721858304502
+        ],
+        [
+          -2.8431054718556568,
+          7.180000114901167,
+          2.0202781416955027
+        ]
+      ],
+      "dimensions_mm": [
+        6.000000100000005,
+        2.0100001000000187,
+        16.200000000000003
+      ],
+      "mesh": "JUSHUO_AFC01-S24FCA-00.stl",
+      "identity": "official 2023 STEP reference; purchased revision unverified"
+    }
+  },
+  "existing_camera_frame": {
+    "frame_name": "eye_pod_camera / camera_carrier",
+    "frame_chassis": [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -0.726436032120812,
+        0.6872340876561426,
+        49.5944
+      ],
+      [
+        0.0,
+        0.6872340876561426,
+        0.726436032120812,
+        29.6528
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "basis": "保存済みOV3660候補の camera_frame_chassis。購入カメラの現物フレームではない",
+    "current_base_camera_frame": [
+      [
+        -1.0,
+        -8.896275615220562e-17,
+        8.416190257130466e-17,
+        4.726450842501261e-15
+      ],
+      [
+        1.2246467991473532e-16,
+        -0.726436032120812,
+        0.6872340876561426,
+        49.5944
+      ],
+      [
+        0.0,
+        0.6872340876561426,
+        0.726436032120812,
+        57.25280000000001
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "current_base_frame_source": {
+      "status": "READ_ONLY_NORMAL_PROFILE_REFERENCE",
+      "frame_context": "export_urdf.camera_mount_frame({}) outside A.context; normal-profile reference only",
+      "not_print_first_final": true,
+      "final_frame_source_required": "A.context(generated=False) or final print-first integration context",
+      "source_path": "tools/export_urdf.py",
+      "source_sha256": "8a226b0c48f3bb907573aff0749f1d13f57b66303c2762ca11e39166d3457be8",
+      "config_path": "hardware/src/config.py",
+      "config_sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95"
+    },
+    "current_base_frame_status": "NORMAL_PROFILE_REFERENCE_ONLY_FINAL_CONTEXT_REQUIRED",
+    "conversion_rule": "board_to_camera = inverse(frame_chassis) @ board_frame_flat_to_chassis; board_to_base = current_base_camera_frame @ board_to_camera",
+    "old_frame_direct_reuse_forbidden": true,
+    "holder_z_offset_mm": 4.0,
+    "camera_child_lens_fixed_under_holder_offset": true,
+    "current_camera_proxy_dimensions_mm": [
+      20.5,
+      12.5,
+      5.54
+    ],
+    "camera_proxy_is_not_hardware_confirmation": true
+  },
+  "board_and_fpc_position": {
+    "board_frame_flat_to_chassis": [
+      [
+        6.123233995736766e-17,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.0,
+        6.123233995736766e-17,
+        0.0,
+        45.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        23.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "board_center_chassis_mm": [
+      0.0,
+      45.0,
+      23.0
+    ],
+    "connector_center_chassis_mm": [
+      -0.03167809710800957,
+      53.260754782519044,
+      25.410000000000007
+    ],
+    "opening_candidates_chassis_mm": [
+      [
+        -0.03167809710800975,
+        56.260754782519044,
+        25.410000000000007
+      ],
+      [
+        -0.03167809710800939,
+        50.260754782519044,
+        25.410000000000007
+      ]
+    ],
+    "fpc_start_chassis_mm": [
+      0.0,
+      62.63829487111535,
+      30.429156144709673
+    ],
+    "board_to_camera": [
+      [
+        -6.123233995736766e-17,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.726436032120812,
+        -4.448137807610281e-17,
+        0.6872340876561426,
+        -1.234493232382917
+      ],
+      [
+        -0.6872340876561426,
+        4.208095128565233e-17,
+        0.726436032120812,
+        -7.990261926820708
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "board_to_camera_after_holder_offset": [
+      [
+        -6.123233995736766e-17,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.726436032120812,
+        -4.448137807610281e-17,
+        0.6872340876561426,
+        -1.234493232382917
+      ],
+      [
+        -0.6872340876561426,
+        4.208095128565233e-17,
+        0.726436032120812,
+        -3.9902619268207076
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "fpc_start_camera_mm": [
+      -0.0,
+      -8.942016826768242,
+      9.528182268509106
+    ],
+    "connector_center_camera_mm": [
+      0.03167809710800957,
+      -5.579169007667769,
+      -0.5624788130939571
+    ],
+    "connector_center_camera_after_holder_offset_mm": [
+      0.03167809710800957,
+      -5.579169007667769,
+      3.437521186906043
+    ],
+    "board_to_base": [
+      [
+        -6.123233995736766e-17,
+        1.0,
+        0.0,
+        4.1637991171010006e-15
+      ],
+      [
+        -1.0,
+        -6.123233995736765e-17,
+        0.0,
+        45.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        50.60000000000002
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "board_to_base_after_holder_offset": [
+      [
+        -6.123233995736766e-17,
+        1.0,
+        0.0,
+        4.50044672738622e-15
+      ],
+      [
+        -1.0,
+        -6.123233995736765e-17,
+        0.0,
+        47.74893635062457
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        53.50574412848327
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "fpc_start_base_mm": [
+      6.3238672527338594e-15,
+      62.63829487111534,
+      58.02915614470969
+    ],
+    "connector_center_base_mm": [
+      -0.03167809710800439,
+      53.260754782519044,
+      53.01000000000002
+    ],
+    "connector_center_base_after_holder_offset_mm": [
+      -0.03167809710800405,
+      56.00969113314361,
+      55.91574412848327
+    ],
+    "fpc_endpoints": {
+      "camera_end": {
+        "point_camera_mm": [
+          -0.0,
+          -8.942016826768242,
+          9.528182268509106
+        ],
+        "movement_camera_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "movement_rule": "fixed existing camera/carrier endpoint"
+      },
+      "board_connector_end": {
+        "point_camera_nominal_mm": [
+          0.03167809710800957,
+          -5.579169007667769,
+          -0.5624788130939571
+        ],
+        "holder_offset_camera_mm": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "point_camera_after_holder_offset_mm": [
+          0.03167809710800957,
+          -5.579169007667769,
+          3.437521186906043
+        ],
+        "movement_rule": "move with board occupancy and holder only"
+      },
+      "straight_endpoint_distance_after_holder_offset_mm": 6.957434970390984,
+      "free_length_mm": 9.2,
+      "remaining_free_length_mm": 2.2425650296090156,
+      "nominal_length_status": "PASS_DISTANCE_WITHIN_FREE_LENGTH",
+      "hardware_status": "UNVERIFIED_PURCHASED_FPC_AND_BEND_RADIUS"
+    },
+    "holder_z_offset_mm": 4.0,
+    "relative_transform_status": "DERIVED_FROM_SAVED_CANDIDATE_FRAMES_NORMAL_BASE_REFERENCE_ONLY_FINAL_CONTEXT_REQUIRED",
+    "candidate_straight_lengths_mm": [
+      8.115783972510984,
+      13.356512664300581
+    ],
+    "fpc_reference": {
+      "total_length_mm": 21.2,
+      "sensor_mm": [
+        8,
+        8,
+        5.3
+      ],
+      "contact_width_mm": 12.5,
+      "flex_width_mm": 6.5,
+      "derived_free_curve_length_mm": 9.2,
+      "actual_purchased_fpc_confirmed": false,
+      "connector_axis": "STEP X (sign must be checked on actual locking flap / cable; not asserted)"
+    },
+    "candidate_route": {
+      "length_mm": 9.1999999999999,
+      "minimum_radius_mm": 3.3160227703515366,
+      "source_status": "CANDIDATE ONLY: 現物FPC入口/曲率/基板revision/ストラップ/装着順未検証",
+      "do_not_promote_to_requirement": true
+    }
+  },
+  "holder_concept": {
+    "name": "xiao_internal_tray_retention_candidate",
+    "print_quantity": 1,
+    "production_manifest_status": "EXCLUDED_UNTIL_MEASURED_AND_ONE_UNIT_FIT_PASSES",
+    "nominal_rule": "board envelope + 0.30mm each side; floor Y span adds both 1.20mm rib walls; rib bottoms overlap floor by wall/3 while rib tops stay unchanged",
+    "retention_rule": "nonconductive strap or mechanical clip; adhesive alone is not the primary load path",
+    "camera_side": "reuse existing central camera shell/carrier and route the retained FPC to the tray; do not print a replacement camera module",
+    "occupancy_records": [
+      "xiao_all_boards",
+      "camera_child_lens"
+    ],
+    "mesh_role_policy": {
+      "xiao_all_boards_occupancy": {
+        "role": "board_occupancy",
+        "apply_holder_z_offset": true,
+        "frame": "eye_pod_camera"
+      },
+      "camera_child_lens_occupancy": {
+        "role": "camera_child_lens_occupancy",
+        "apply_holder_z_offset": false,
+        "frame": "eye_pod_camera"
+      },
+      "xiao_tray_floor_candidate": {
+        "role": "holder_floor",
+        "apply_holder_z_offset": true,
+        "frame": "eye_pod_camera"
+      },
+      "xiao_tray_rib_left_candidate": {
+        "role": "holder_rib",
+        "apply_holder_z_offset": true,
+        "frame": "eye_pod_camera"
+      },
+      "xiao_tray_rib_right_candidate": {
+        "role": "holder_rib",
+        "apply_holder_z_offset": true,
+        "frame": "eye_pod_camera"
+      },
+      "xiao_tray_holder3_union_candidate": {
+        "role": "holder_union",
+        "apply_holder_z_offset": true,
+        "frame": "eye_pod_camera"
+      }
+    },
+    "occupancy_quantity": "one record each; without-SD and with-SD are mutually exclusive comparison candidates",
+    "printed_subparts": [
+      "xiao_tray_floor_candidate",
+      "xiao_tray_rib_left_candidate",
+      "xiao_tray_rib_right_candidate"
+    ],
+    "serialized_holder3_union_candidate": "xiao_tray_holder3_union_candidate",
+    "union_counting_rule": "holder3 union is a one-piece alternative/inspection artifact; never print or count it together with the three constituent parts",
+    "tie_slot_parameters_mm": {
+      "width": 3.0,
+      "height": 1.0
+    },
+    "design_mass_candidates_g": {
+      "xiao_main_plus_expansion": 10.0,
+      "camera_child_lens": 5.0
+    },
+    "design_mass_status": "未実測の設計余裕値。UNVERIFIED_DESIGN_ALLOWANCEとして扱い、COM/慣性へ候補値として渡す",
+    "anchor_status": "UNCONNECTED_CANDIDATE_RIBS_NEED_MECHANICAL_INTEGRATION",
+    "anchor_rule": "mechanical owner chooses verified head/chassis attachment after yaw/coxa and freeze2 geometry are frozen; helper ribs are not connected to carrier",
+    "candidate_reference_assets": [
+      "docs/audits/20260905-round2/camera-ov3660-candidate/camera_base_with_xiao_cradle_candidate.stl",
+      "docs/audits/20260905-round2/camera-ov3660-candidate/OV3660_FPC_bent_candidate.stl"
+    ]
+  },
+  "minimal_integration_api": {
+    "module": "tools/xiao_retention_plan.py",
+    "functions": [
+      "build_holder_spec",
+      "make_holder_meshes",
+      "holder_mesh_role",
+      "holder_mesh_offset_policy",
+      "inspect_holder_meshes",
+      "export_holder_meshes",
+      "inspect_serialized_holder_meshes"
+    ],
+    "required_arguments": [
+      "board_size_mm",
+      "board_frame_flat_to_chassis",
+      "camera_frame_chassis",
+      "fpc_start_mm",
+      "connector_center_mm",
+      "fpc_free_length_mm"
+    ],
+    "optional_arguments": {
+      "base_camera_frame": "A.context(generated=False) の最終 camera_mount_frame。make_planの通常設定参照値は代用不可",
+      "camera_child_envelope_size_mm": [
+        8.0,
+        9.56709,
+        9.10175
+      ],
+      "camera_child_center_camera_mm": [
+        0.0,
+        -7.32913,
+        13.96086
+      ],
+      "clearance_each_side_mm": 0.3,
+      "wall_mm": 1.2,
+      "short_rib_height_mm": 3.0,
+      "rib_floor_overlap_mm": "wall_mm/3 by default; explicit positive value may be supplied",
+      "floor_board_clearance_mm": 0.01,
+      "holder_z_offset_mm": 0.0,
+      "board_design_mass_g": 10.0,
+      "camera_design_mass_g": 5.0
+    },
+    "integration_contract": [
+      "機械側は最終凍結後の実メッシュ包絡とフレームを渡し、返却された床/レール包絡を新holder候補へ変換する",
+      "camera_frame_chassis と board_frame_flat_to_chassis は別入力として保持し、cameraローカルへ逆変換してから最終 base_camera_frame へ戻す。カメラを基板中心へ推定移動しない",
+      "FPC点は基板と同じ inverse(camera_frame_chassis) で変換し、旧 chassis の絶対点を head+33 mm へ直接流用しない",
+      "FPC入口の符号・曲率・実長が未確認なら status を UNVERIFIED のまま保持する",
+      "xiao_all_boards と camera_child_lens は占有を各1式返し、without-SD/with-SD候補は比較用で本番数量へ二重計上しない",
+      "床のY幅は基板の逃げに左右リブ壁厚を加え、リブ下端はwall_mm/3（既定）だけ床へ沈めて実体積を重ねる。リブ上端は変更しない",
+      "holder_z_offset_mmはcameraローカル+Zへ適用するが、camera_child_lensは固定し、基板側FPC端だけを同じ量だけ移動する",
+      "holder3 unionは3部品の一体化候補であり、STL再読時にwatertight/1solidと基板占有との交差体積0を検査する。3部品と同時に数量計上しない",
+      "make_holder_meshes は spec の数値だけを使い、メーカー原本 STEP/STL の配布や読み込みを要求しない",
+      "共有 config.py/body/assembly の変更と本APIの候補計算を混ぜない"
+    ]
+  },
+  "source_files": [
+    {
+      "path": "docs/audits/20260905-round2/primary-sources/xiao-step-measured/camera-removed-summary.json",
+      "exists": true,
+      "sha256": "3e2e2970ccfaca8dd3d4525b99197b829bdcb1ac4ea587133ff1cd82785bf34c"
+    },
+    {
+      "path": "docs/audits/20260905-round2/primary-sources/xiao-step-measured/assembly-bounds.json",
+      "exists": true,
+      "sha256": "2db2319d989e3d65e61f68b4a7066f4b9cf6d128def20c189e37207658225635"
+    },
+    {
+      "path": "docs/audits/20260905-round2/camera-ov3660-candidate/comparison.json",
+      "exists": true,
+      "sha256": "3e84bc396f8d44310ef0b3c865d8e2be6212a3d7b59cfe43fe737ce37b88722b"
+    },
+    {
+      "path": "docs/audits/20260905-round2/camera-ov3660-candidate/xiao-placement-search.json",
+      "exists": true,
+      "sha256": "547e8b49cc9db0cc9a5f5bb67646180c69c4a74ec73b1bad0156d6768b3219e2"
+    },
+    {
+      "path": "docs/audits/20260905-round2/camera-ov3660-candidate/xiao-cradle-comparison.json",
+      "exists": true,
+      "sha256": "7c9b6072fb302e5ce06ab2f004f4939457cd4b7e5a4485d3fb2b27902ee9a79f"
+    },
+    {
+      "path": "docs/audits/20260905-round2/primary-sources/source-register.json",
+      "exists": true,
+      "sha256": "1619bf93e83ca6c7aca7862b7bc3c1a65372480cbbca3f449e1a5b1e4577cee5"
+    },
+    {
+      "path": "tools/xiao_retention_plan.py",
+      "exists": true,
+      "sha256": "9d3d1020c01b84ba8e8d2e0df7f162c6fa31ada01e24180848613996bdfa8ec4"
+    },
+    {
+      "path": "hardware/src/config.py",
+      "exists": true,
+      "sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95"
+    },
+    {
+      "path": "tools/export_urdf.py",
+      "exists": true,
+      "sha256": "8a226b0c48f3bb907573aff0749f1d13f57b66303c2762ca11e39166d3457be8"
+    }
+  ],
+  "source_policy": {
+    "runtime_inputs": "summary JSON, candidate JSON and numeric API arguments only",
+    "manufacturer_raw_files_required": false,
+    "manufacturer_source_register": {
+      "path": "docs/audits/20260905-round2/primary-sources/source-register.json",
+      "sha256": "1619bf93e83ca6c7aca7862b7bc3c1a65372480cbbca3f449e1a5b1e4577cee5",
+      "use": "attribution and provenance only; raw STEP/STL remains excluded from public runtime"
+    }
+  },
+  "limitations": [
+    "公式STEPは2023年の旧カメラ世代の参考であり、既存候補XIAO/カメラ/FPCの型番・改版を証明しない",
+    "camera_removed_* はカメラを除く包絡で、カメラは既存中央カメラフレームへ別配置する。全体のFPC経路は候補である",
+    "MicroSD、USBプラグ、アンテナ、外部ヘッダ、はんだ、実FPC長の常設包絡は未確定",
+    "今回の局所候補の geometry_pass は新しい頭・脚統合や実機適合の合格を意味しない"
+  ],
+  "holder_meshes": {
+    "without_sd_candidate": {
+      "xiao_all_boards_occupancy": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_all_boards_occupancy.stl",
+        "exists": true,
+        "sha256": "093fe3abf58a58caea1f21fbd0083191b1cc5e55fb2015d72c90928793cb6cb1",
+        "role": "board_occupancy",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": true,
+        "bounds_mm": [
+          [
+            -8.890000000000011,
+            -12.268564123968499,
+            -14.735179647470293
+          ],
+          [
+            8.890000000000011,
+            9.799577659202665,
+            6.754655793828878
+          ]
+        ],
+        "volume_mm3": 3252.660948049744,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      },
+      "camera_child_lens_occupancy": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_camera_child_lens_occupancy.stl",
+        "exists": true,
+        "sha256": "be76570943322d5d2fb23dae5b80af1837baa1933b7e78502a906fad1c711eb5",
+        "role": "camera_child_lens_occupancy",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": false,
+        "bounds_mm": [
+          [
+            -4.0,
+            -12.112675,
+            9.409985
+          ],
+          [
+            4.0,
+            -2.545585,
+            18.511735
+          ]
+        ],
+        "volume_mm3": 696.6180912600001,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      },
+      "xiao_tray_floor_candidate": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_floor_candidate.stl",
+        "exists": true,
+        "sha256": "bcc0493e58600c5eaf3a9fd570054d09b637cbf41c60240f1f8ebf7fa4d2d0bf",
+        "role": "holder_floor",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": true,
+        "bounds_mm": [
+          [
+            -10.390000000000011,
+            -13.318048179668676,
+            -15.820337472633318
+          ],
+          [
+            10.390000000000011,
+            4.492146335360128,
+            1.1202802492308042
+          ]
+        ],
+        "volume_mm3": 583.0530819602388,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      },
+      "xiao_tray_rib_left_candidate": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_rib_left_candidate.stl",
+        "exists": true,
+        "sha256": "842790dd3969e622dd6c0ff761cd04d8b0be4b12fa09af69af3b667abd03317d",
+        "role": "holder_rib",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": true,
+        "bounds_mm": [
+          [
+            9.190000000000012,
+            -12.76826090954376,
+            -15.239188646936668
+          ],
+          [
+            10.390000000000011,
+            6.560720939205115,
+            3.306852705914447
+          ]
+        ],
+        "volume_mm3": 95.67906686642944,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      },
+      "xiao_tray_rib_right_candidate": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_rib_right_candidate.stl",
+        "exists": true,
+        "sha256": "339a0d66e27f441f78717b876cfa3668083addc7b23743d87700c85c726aa309",
+        "role": "holder_rib",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": true,
+        "bounds_mm": [
+          [
+            -10.390000000000011,
+            -12.76826090954376,
+            -15.239188646936668
+          ],
+          [
+            -9.190000000000012,
+            6.5607209392051145,
+            3.306852705914448
+          ]
+        ],
+        "volume_mm3": 95.67906686642966,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      },
+      "xiao_tray_holder3_union_candidate": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_holder3_union_candidate.stl",
+        "exists": true,
+        "sha256": "6967534cf862b84b4ee8c979d442e006b78dde207ade9a3646705e9d09b69b52",
+        "role": "holder_union",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": true,
+        "bounds_mm": [
+          [
+            -10.390000343322754,
+            -13.318047987452527,
+            -15.820337279700228
+          ],
+          [
+            10.390000343322754,
+            6.560720809158388,
+            3.306852578697112
+          ]
+        ],
+        "volume_mm3": 751.9645390634231,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      }
+    },
+    "with_sd_candidate": {
+      "xiao_all_boards_occupancy": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_all_boards_occupancy.stl",
+        "exists": true,
+        "sha256": "8ff1b1aeb16d65991c898504bad38997f2bec00bb028ee4a5dc5011b6c3f71d1",
+        "role": "board_occupancy",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": true,
+        "bounds_mm": [
+          [
+            -8.890000000000011,
+            -13.004442259541463,
+            -15.449274063076361
+          ],
+          [
+            8.890000000000011,
+            10.535455794775629,
+            7.468750209434946
+          ]
+        ],
+        "volume_mm3": 3682.0316551572046,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      },
+      "camera_child_lens_occupancy": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_camera_child_lens_occupancy.stl",
+        "exists": true,
+        "sha256": "be76570943322d5d2fb23dae5b80af1837baa1933b7e78502a906fad1c711eb5",
+        "role": "camera_child_lens_occupancy",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": false,
+        "bounds_mm": [
+          [
+            -4.0,
+            -12.112675,
+            9.409985
+          ],
+          [
+            4.0,
+            -2.545585,
+            18.511735
+          ]
+        ],
+        "volume_mm3": 696.6180912600001,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      },
+      "xiao_tray_floor_candidate": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_floor_candidate.stl",
+        "exists": true,
+        "sha256": "a94f21ef066c4ccb44ae39c2b450364a51c5481f022103bd6fd7498c3e9246a7",
+        "role": "holder_floor",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": true,
+        "bounds_mm": [
+          [
+            -10.390000000000011,
+            -14.05392631524164,
+            -16.534431888239386
+          ],
+          [
+            10.390000000000011,
+            4.905024459975275,
+            1.4929497405648133
+          ]
+        ],
+        "volume_mm3": 622.48585351539,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      },
+      "xiao_tray_rib_left_candidate": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_rib_left_candidate.stl",
+        "exists": true,
+        "sha256": "f969357856d18a4214e2f9cd0d7d5735046af5033322ba58b603a2ac89e353e9",
+        "role": "holder_rib",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": true,
+        "bounds_mm": [
+          [
+            9.190000000000012,
+            -13.504139045116723,
+            -15.953283062542738
+          ],
+          [
+            10.390000000000011,
+            6.973599063820262,
+            3.679522197248456
+          ]
+        ],
+        "volume_mm3": 102.14998847389204,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      },
+      "xiao_tray_rib_right_candidate": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_rib_right_candidate.stl",
+        "exists": true,
+        "sha256": "ac2e4917d4fd6bc47b1c638a758b8589ba4e6dde4500db92f177479fa50d1018",
+        "role": "holder_rib",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": true,
+        "bounds_mm": [
+          [
+            -10.390000000000011,
+            -13.504139045116725,
+            -15.953283062542736
+          ],
+          [
+            -9.190000000000012,
+            6.973599063820261,
+            3.679522197248458
+          ]
+        ],
+        "volume_mm3": 102.14998847389211,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      },
+      "xiao_tray_holder3_union_candidate": {
+        "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_holder3_union_candidate.stl",
+        "exists": true,
+        "sha256": "ed33edcd723eba1c3fd24f3896aeaa3a03b096817ac95e7ac9b95d6529df57de",
+        "role": "holder_union",
+        "frame": "eye_pod_camera",
+        "holder_z_offset_applied": true,
+        "bounds_mm": [
+          [
+            -10.390000343322754,
+            -14.05392648202594,
+            -16.53443204568736
+          ],
+          [
+            10.390000343322754,
+            6.97359926287149,
+            3.6795223888039597
+          ]
+        ],
+        "volume_mm3": 802.8210888128484,
+        "status": "CANDIDATE_ONLY_NOT_FOR_PRODUCTION"
+      }
+    },
+    "geometry_checks": {
+      "without_sd_pre_serialization": {
+        "status": "GEOMETRY_CHECK_PASS_CANDIDATE_ONLY",
+        "holder3_union": {
+          "watertight": true,
+          "winding_consistent": true,
+          "solid_count": 1,
+          "volume_mm3": 751.9645390634231,
+          "pass": true
+        },
+        "board_occupancy_x_holder3": {
+          "intersection_volume_mm3": 0.0,
+          "tolerance_mm3": 0.001,
+          "pass": true
+        },
+        "interpretation": "幾何候補の一体性・基板との体積非交差のみを確認。carrier接続、実機適合、保持力、量産採用は未確認。"
+      },
+      "without_sd_serialized_roundtrip": {
+        "status": "SERIALIZE_ROUNDTRIP_PASS_CANDIDATE_ONLY",
+        "holder3_union": {
+          "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_holder3_union_candidate.stl",
+          "sha256": "6967534cf862b84b4ee8c979d442e006b78dde207ade9a3646705e9d09b69b52",
+          "watertight": true,
+          "winding_consistent": true,
+          "solid_count": 1,
+          "volume_mm3": 751.9644429526679,
+          "pass": true
+        },
+        "board_occupancy_x_holder3": {
+          "board_path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_all_boards_occupancy.stl",
+          "holder_path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_holder3_union_candidate.stl",
+          "reload_paths_are_same_as_recorded_paths": true,
+          "intersection_volume_mm3": 0.0,
+          "tolerance_mm3": 0.001,
+          "pass": true
+        },
+        "interpretation": "STL再読結果。幾何候補の検査であり、carrier統合・実機適合・保持力・量産採用を示さない。"
+      },
+      "with_sd_pre_serialization": {
+        "status": "GEOMETRY_CHECK_PASS_CANDIDATE_ONLY",
+        "holder3_union": {
+          "watertight": true,
+          "winding_consistent": true,
+          "solid_count": 1,
+          "volume_mm3": 802.8210888128484,
+          "pass": true
+        },
+        "board_occupancy_x_holder3": {
+          "intersection_volume_mm3": 0.0,
+          "tolerance_mm3": 0.001,
+          "pass": true
+        },
+        "interpretation": "幾何候補の一体性・基板との体積非交差のみを確認。carrier接続、実機適合、保持力、量産採用は未確認。"
+      },
+      "with_sd_serialized_roundtrip": {
+        "status": "SERIALIZE_ROUNDTRIP_PASS_CANDIDATE_ONLY",
+        "holder3_union": {
+          "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_holder3_union_candidate.stl",
+          "sha256": "ed33edcd723eba1c3fd24f3896aeaa3a03b096817ac95e7ac9b95d6529df57de",
+          "watertight": true,
+          "winding_consistent": true,
+          "solid_count": 1,
+          "volume_mm3": 802.8208579805323,
+          "pass": true
+        },
+        "board_occupancy_x_holder3": {
+          "board_path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_all_boards_occupancy.stl",
+          "holder_path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_holder3_union_candidate.stl",
+          "reload_paths_are_same_as_recorded_paths": true,
+          "intersection_volume_mm3": 0.0,
+          "tolerance_mm3": 0.001,
+          "pass": true
+        },
+        "interpretation": "STL再読結果。幾何候補の検査であり、carrier統合・実機適合・保持力・量産採用を示さない。"
+      }
+    },
+    "selection_rule": "comparison_only; choose one after measurement; never count both as production quantity"
+  }
+}

@@ -1,0 +1,4206 @@
+{
+  "schema_version": 2,
+  "record_type": "curated-publication-allowlist",
+  "created_on": "2026-09-09",
+  "status": "WIP_PUBLISHED",
+  "selection_rule": "公開対象は相対パスを個別列挙する。既存allowlistのsource/docs選択を保持し、現行print-first URDF（86 parts、80 mesh=visual56/collision24）と参照STL、body/legs/feetの印刷候補STL37枚＋assembly.json各1件、generator49不足出力（足部1枚は印刷候補と共有、XIAO候補12枚）、LD220治具STL3枚＋candidate.jsonを追加する。outputs/cache/private/raw購入データは再帰追加しない。",
+  "selected_files": [
+    {
+      "path": "docs/audits/20260909-resume/README.md",
+      "role": "new_audit_record",
+      "exists": true,
+      "bytes": 22086,
+      "sha256": "c288365eaedc591d902eca0314bfeae66cc7062c47fbd05b0ef3ded804345bd0"
+    },
+    {
+      "path": "docs/audits/20260909-resume/github-issues-wip-comment-plan.md",
+      "role": "new_audit_record",
+      "exists": true,
+      "bytes": 11326,
+      "sha256": "042976b946f6c7a6ed8f2ec7354698a087e10a97e2dfa102ac6944e6d3f46031"
+    },
+    {
+      "path": "docs/audits/20260909-resume/github-issues-wip-comment-plan.json",
+      "role": "new_audit_record",
+      "exists": true,
+      "bytes": 356687,
+      "sha256": "5b4b8cf7c160e70a83f4f8733cc8da0c53db7ac5122f577a074a5fc0086ebdaa"
+    },
+    {
+      "path": "docs/print-first.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 17636,
+      "sha256": "6feea7f33b5dfa33754c2f779bc9755ced6ae45a68d3a74935204e2a8b19317a"
+    },
+    {
+      "path": "docs/print-first-manifest.json",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 359074,
+      "sha256": "4763be639a3fce4d3dbd25075c3f7d3baf12c8308e1b29ff2b993eef508acd1a"
+    },
+    {
+      "path": "docs/print-first-manifest.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 30927,
+      "sha256": "5be72c194297e0c23ab438cd964891f41041122bb779a3b2c72bcbbbcab3f5e6"
+    },
+    {
+      "path": "docs/print-first-orientation-manifest.json",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 100085,
+      "sha256": "9a5041ed85be636998a249f83fa9dece66c7258a28ce7e010ace612880f3b6dd"
+    },
+    {
+      "path": "docs/print-first-orientation-manifest.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 7581,
+      "sha256": "8564adb280625ceb432405701db8cdc279e1784ce7200f553591c4b834dc61e4"
+    },
+    {
+      "path": "docs/print-first-electrical.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 21699,
+      "sha256": "4526b39ba797474777907e2e848cacde57801534a12ee45ac196ea75134c7fa9"
+    },
+    {
+      "path": "docs/print-first-simulation.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 18641,
+      "sha256": "a3af02542e5766cc7133a63fcd0ef3f1923a99783f37db6468534eb736101fcf"
+    },
+    {
+      "path": "docs/print_manifest.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 39155,
+      "sha256": "cc234de726c6165b991a9cc82925f828d6e0080d4e2ba0beb6094a8a9a482563"
+    },
+    {
+      "path": "docs/printing.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 36382,
+      "sha256": "36a2f57d6c63ae66558de8f653ccdc2a9ae15b075fe7857e145c0c73f462c73a"
+    },
+    {
+      "path": "docs/wiring.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 31623,
+      "sha256": "312173c78f14dce3eb0e735cbde6cb07fcc711abe7096ca5ab2936661786eb30"
+    },
+    {
+      "path": "docs/voice.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 16103,
+      "sha256": "e22b0dc51320d82000ae37c3e02ca28f7acf0172060b1b8cc1642997d5d84d38"
+    },
+    {
+      "path": "docs/additional-printing.json",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 391398,
+      "sha256": "09e1a86ad70e8706eb14c1c7f7009eb9aa40e4b1606bf222a6d9935e72012f5b"
+    },
+    {
+      "path": "docs/additional-printing.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 96732,
+      "sha256": "f05dfcb4ea4a95d067dfc334b6007ee67672ef753b9ce3511c7016579aad2637"
+    },
+    {
+      "path": "docs/additional-purchases.json",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 229131,
+      "sha256": "7091aa888e932674aaf2695b97933a33a5d77842548c1c1fc25cb7b43df12644"
+    },
+    {
+      "path": "docs/additional-purchases.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 72534,
+      "sha256": "d60c4f0829937a9d81322a8fbf65dd5511e9c81ef8f9e9d9f3d65edd28870672"
+    },
+    {
+      "path": "docs/issues-audit-20260905.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 104725,
+      "sha256": "0a4a9120b3b77f2c454e8e0fecc3b4e57f94a08ec94e5b9d2d7a365cf8f8311f"
+    },
+    {
+      "path": "docs/audits/20260905-round2/README.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 11896,
+      "sha256": "bb7c20ba8cc2fef7c807ef93074ef4ed6dc802afd5214231d5dea028e42a431f"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-plan.json",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 65963,
+      "sha256": "21980af4bd10f0314784f81b759bdd4f0767563f283772a88034a0d4d8ad34ed"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-plan.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 10443,
+      "sha256": "eef70aaf9a4b540f123678838313d1d3671b83d79e0dc336d2563bbba6332e14"
+    },
+    {
+      "path": "docs/audits/20260905-round2/github-issues-refresh-20260906.json",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 463349,
+      "sha256": "0c5980b1d6b4d933413428d31e27de0529a71e05cdcd470b204bac3af8f984c8"
+    },
+    {
+      "path": "docs/audits/20260905-round2/github-issues-refresh-20260906.md",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 4417,
+      "sha256": "8586fbac8e2039246edd9863bf7f03fabad5f4da678d15be7095bfd8c7a20d45"
+    },
+    {
+      "path": "docs/audits/20260905-round2/github-safe-snapshot-20260906.json",
+      "role": "existing_public_document",
+      "exists": true,
+      "bytes": 103145,
+      "sha256": "982f87af52d87e0c0fc693918551fc4280e31b57632445ac7d35a8ba575c5aa8"
+    },
+    {
+      "path": ".gitignore",
+      "role": "source_dependency:repository_context",
+      "exists": true,
+      "bytes": 1171,
+      "sha256": "808a557695d22d17ec0ad8f4672e6f5785f0a4ac0753d0ee8133c920d41fa574"
+    },
+    {
+      "path": "AGENTS.md",
+      "role": "source_dependency:repository_context",
+      "exists": true,
+      "bytes": 7268,
+      "sha256": "5560a4a478d72d2df0e75d58b639b7a635793755f000d7c4f64b0efd9a650950"
+    },
+    {
+      "path": "README.md",
+      "role": "source_dependency:repository_context",
+      "exists": true,
+      "bytes": 50512,
+      "sha256": "db0fe7e4c35935b5f7f086ec54bce851c544702ef37c34c74df68d5b61365393"
+    },
+    {
+      "path": "docs/HANDOFF.md",
+      "role": "source_dependency:repository_context",
+      "exists": true,
+      "bytes": 33820,
+      "sha256": "a64fa19160ced543019c010799871c9567faf4a55ad0de0150de5b449c97fe49"
+    },
+    {
+      "path": "docs/assembly.md",
+      "role": "source_dependency:repository_context",
+      "exists": true,
+      "bytes": 104751,
+      "sha256": "3416b1baec91c63c0f49fc305d7a635ad474fee1b270e83dad098dfa904ab696"
+    },
+    {
+      "path": "tools/make_print_first_publication_allowlist.py",
+      "role": "source_dependency:publication_allowlist",
+      "exists": true,
+      "bytes": 117149,
+      "sha256": "5dde5c11be1e109269e7b486d373af9ad842f4b323095ac37f7edcf8b6c0af17"
+    },
+    {
+      "path": "tools/print_first_source_closure.py",
+      "role": "source_dependency:publication_allowlist",
+      "exists": true,
+      "bytes": 4087,
+      "sha256": "ec525cdc0bfb7a6af9a10f1f64d6589a5d2abe733cf5ec93b6542466d1ae33b3"
+    },
+    {
+      "path": "tools/generate_print_first.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 215266,
+      "sha256": "1404d9f4849bc806aea89348c7b498f5b6b4c2ba993334072a18ff31eadfd037"
+    },
+    {
+      "path": "tools/config_contract.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 12772,
+      "sha256": "f0fa0e66cf8ed9759b13e35a9ee9dcb96a3d87e095e85cf7300d3ad0fc06ef4e"
+    },
+    {
+      "path": "hardware/src/config.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 104994,
+      "sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95"
+    },
+    {
+      "path": "hardware/src/build_all.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 4561,
+      "sha256": "e543937b4b9a8db6f5cedb4340abab80f69be1c2134494bc2b02b3427d3424cb"
+    },
+    {
+      "path": "hardware/src/arm_shell.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 7801,
+      "sha256": "107388d7696b9f7f0c3e98e447e7ec8499311b027acd1bc21e7ada254208a8ea"
+    },
+    {
+      "path": "hardware/src/make_arm.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 16049,
+      "sha256": "5e876a9b434bdbe90e7f6c03a03bebf9bc39bbbe72353d92446c520148c2616d"
+    },
+    {
+      "path": "hardware/src/make_audio.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 13171,
+      "sha256": "d378f0d3dab3dcc8c49276ced6512b61e1601ef8332681751d6b59b04fa6ef5a"
+    },
+    {
+      "path": "hardware/src/make_camera.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 20241,
+      "sha256": "5b4bf2e02d70d4f77566239622da782285362c6c0f3bee02e3fa30911d48b807"
+    },
+    {
+      "path": "hardware/src/make_chassis.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 27111,
+      "sha256": "4ecb52e2a5b246986a05a9d824333af954b464bd4a94640e9af208e166f202bd"
+    },
+    {
+      "path": "hardware/src/make_eye.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 5421,
+      "sha256": "59f070c7398ffa01dbc92530efa3bd580606b0c2080e63ce809853f96852ddaa"
+    },
+    {
+      "path": "hardware/src/make_head.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 34618,
+      "sha256": "116a93a1b5217b120e97d86b1b23d509f85d229f9e2908edeefce94bc535eeb1"
+    },
+    {
+      "path": "hardware/src/make_ld220_adapter.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 9352,
+      "sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7"
+    },
+    {
+      "path": "hardware/src/make_leg.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 23794,
+      "sha256": "19513866a9a1beb5c5cfbf4f8d5c9dbe6729263b16b1b3efb1a7a23b0fda789e"
+    },
+    {
+      "path": "hardware/src/make_print_first_body.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 61236,
+      "sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "path": "hardware/src/make_print_first_feet.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 17038,
+      "sha256": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a"
+    },
+    {
+      "path": "hardware/src/make_print_first_leg.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 37597,
+      "sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "hardware/src/lib.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 7431,
+      "sha256": "ab7a9bf68f4b6f55d4bc4805a3036815f7ce75f2a00b2c60cf4d55a5874bc392"
+    },
+    {
+      "path": "hardware/src/shell_mod.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 17352,
+      "sha256": "cf85140dde5c8d0e8873493d00dfe63d4150c96b772d3aa71a09e0251565ed02"
+    },
+    {
+      "path": "tools/print_first_assembly.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 35231,
+      "sha256": "4f69d67b646393e0a25e39f611686d3429d54190a238a30d062ef77493ee33fd"
+    },
+    {
+      "path": "tools/make_head_eyecut.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 21024,
+      "sha256": "071bfba70b6f287d5b45be4d8753e00b62b6422a6ac8b3985b63cdf6b3db41d8"
+    },
+    {
+      "path": "tools/print_first_components.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 20788,
+      "sha256": "878227ee9bc0c6cf6bee3446418f17223f9b8322b291d2ea60f0435db89bc950"
+    },
+    {
+      "path": "tools/make_print_first_manifest.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 85044,
+      "sha256": "23d460a1f98bac31a3a9ae6a58da1d8a2fc7eb24350048dc4740cafb42b3e31e"
+    },
+    {
+      "path": "tools/make_print_orientation_manifest.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 42459,
+      "sha256": "bd1fff592385a7b11d07bd21089aa8c9c8cb0e47abdfaf85b2073ba4de8c3cf8"
+    },
+    {
+      "path": "tools/make_print_first_freeze_manifest.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 16586,
+      "sha256": "08f4ca76ff188d58b1c2ce65c89a792679db9eb5c3da395bef7e6518d092a84c"
+    },
+    {
+      "path": "tools/generate_print_first_profile.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 4943,
+      "sha256": "6b866a1f9651e83f01a026d90d49fdc3b46f9457d1eb07008e6e36a0d03ac172"
+    },
+    {
+      "path": "tools/export_print_first_native_trace.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 13576,
+      "sha256": "1f05e04bf19b2f6184f1aa79b028409914b9eb3ba1cac78d0c472cac48aa648d"
+    },
+    {
+      "path": "tools/render_print_first.py",
+      "role": "source_dependency:print_first_generation",
+      "exists": true,
+      "bytes": 18652,
+      "sha256": "78be2e0121c9087e25fac75231d1dc367d5bb3d7dbbe84a3161df9be90a8d048"
+    },
+    {
+      "path": "tools/xiao_retention_plan.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 56912,
+      "sha256": "9d3d1020c01b84ba8e8d2e0df7f162c6fa31ada01e24180848613996bdfa8ec4"
+    },
+    {
+      "path": "tools/design_xiao_camera_cradle.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 7428,
+      "sha256": "9c6f6b8c0b400ac43a30a2d17d25d5c2ddb70e6da696984756938cc55ee532b9"
+    },
+    {
+      "path": "tools/design_xiao_head_mount.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 5655,
+      "sha256": "e805d37f56f5c986b369b4ace58b805968d0b9367455fb1c5e14f76ddd3edb14"
+    },
+    {
+      "path": "tools/audit_mechanical_inventory.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 8963,
+      "sha256": "ecda58cf80dc93bd796756e66d0a99a7e651ec1447f629b06bf0519e0bffaf28"
+    },
+    {
+      "path": "tools/check_ld220_adapter.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 11305,
+      "sha256": "0cd3450b143b4032c220c3c7394e1f9311feca991ae4bde9779f85f9ff151cd9"
+    },
+    {
+      "path": "tools/check_ov3660_full_fov.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 3847,
+      "sha256": "8f84d6a9322d3420f356c09dd70ecfa096163aea6475fc899c058445bfb33ac2"
+    },
+    {
+      "path": "tools/check_print_first_body.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 39750,
+      "sha256": "ca27e7cb1f0f1cd745dd9442ba14727a46e7c83f157eccf6e609a233526569e1"
+    },
+    {
+      "path": "tools/check_print_first_feet.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 62596,
+      "sha256": "ddeb7758bbced16ec65bf0b88409f97b3d5592ff71322e0eedc8ca3859d1fce9"
+    },
+    {
+      "path": "tools/check_print_first_motion_quality.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 48586,
+      "sha256": "b7d97ab7e4405a07a1a27742769e64733258c98269fc92491ba7e025968a1d29"
+    },
+    {
+      "path": "tools/check_print_first_native_trace.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 43099,
+      "sha256": "55be33ff67be92d930fecf10c80c646ff35b129959b169ce706651621ea9a5aa"
+    },
+    {
+      "path": "tools/check_print_first_proxy_exclusions.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 168443,
+      "sha256": "e70db09dd24a2188c98742c85f0e36d501242fd681e1e4284462981555fa5bc5"
+    },
+    {
+      "path": "tools/check_print_first_t0_mesh.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 58468,
+      "sha256": "cf7a4f928d8636121fa98ed8a9de6051b454fa8c1dafa158ec76ef77e4ecd2d1"
+    },
+    {
+      "path": "tools/diagnose_print_first_initial.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 40929,
+      "sha256": "9d239d02c3283af278533a1ba05511bfee5f254b537f15a3f4f9a5b5e639d5fd"
+    },
+    {
+      "path": "tools/sim_print_first.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 181175,
+      "sha256": "b7081af37f6dbd04a99ff1b12fcf54bd391676be043af4e1f3f34a3b0bc04fa5"
+    },
+    {
+      "path": "tools/sim_collision.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 117170,
+      "sha256": "a6a0e300b6aa42fdb9df4f9c2bec1e8d211fd28e4014ed7bf47ecd29b0d061e1"
+    },
+    {
+      "path": "tools/sim_physics.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 66372,
+      "sha256": "f562901d86577a48710ab39344ba80a151ef7a1f45e54c87b687280cb445e356"
+    },
+    {
+      "path": "tools/sim_self_collision.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 72051,
+      "sha256": "9cf1ac0574c5e4223804fce897dbf4baa42c04cbcfbd1697988141aa319d417d"
+    },
+    {
+      "path": "tools/sim_stress.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 92277,
+      "sha256": "3aef1b42b5b204aed31558fbcb5d81dc857df1f791318aff13d0638b0f2d15f3"
+    },
+    {
+      "path": "tools/sim_yaw_pack_search.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 8422,
+      "sha256": "43a3ecfe3424e64a830563778527e60395d740cb8d7af5bdac8e57cf9b3444c9"
+    },
+    {
+      "path": "tools/check_print_artifacts.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 10067,
+      "sha256": "3047888b271f48b94a8e7cd1eea8637cdfdf4de42ada99408f8216abb3fc343d"
+    },
+    {
+      "path": "tools/mesh_checks.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 5491,
+      "sha256": "e60bbfaf89ee456407a133380359c7553771f4c84011d648f4e3109c54f618c1"
+    },
+    {
+      "path": "tools/check_toe_contact.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 6410,
+      "sha256": "c81436f7c745557821692cb4b6dad1bf4ea20c79b6cc55803c171e190ef9f402"
+    },
+    {
+      "path": "tools/check_print_strength_sensitivity.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 9418,
+      "sha256": "3125fe888f2fcc175e4fba2729bb07f2d30e473ffc7787ccc4422e6a23589980"
+    },
+    {
+      "path": "tools/check_leg_link_strength.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 19345,
+      "sha256": "a1d0defe365edd5932f527c4d583ccd852b8d0fd8685683ea27e800d540e7d88"
+    },
+    {
+      "path": "tools/filament_calc.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 9647,
+      "sha256": "99177c143d322c727f5bfe25bea2b6b824b313e0ac65613d49f4d95ac0a27d0d"
+    },
+    {
+      "path": "tools/export_urdf.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 57334,
+      "sha256": "8a226b0c48f3bb907573aff0749f1d13f57b66303c2762ca11e39166d3457be8"
+    },
+    {
+      "path": "tools/check_urdf.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 40211,
+      "sha256": "a6b2426d0b91313c49d386c65a4627e414c58a9746f57352a14c0571a05c91d4"
+    },
+    {
+      "path": "tools/check_static_assembly.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 3120,
+      "sha256": "731336abb8980f4577b4759ca1216b092351af662ed23dbe77c7ced96783e241"
+    },
+    {
+      "path": "tools/check_head_pod_clearance.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 3369,
+      "sha256": "f09ead13546b174b680c2cff05e623185bb93baccae8294fd11f46a68e5ef1d6"
+    },
+    {
+      "path": "tools/check_pod_neck_strength.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 7176,
+      "sha256": "9b2f48f624e92ca7ecc268926f30e119e0a6ad4d4819fbfaee856fd3b4a23b16"
+    },
+    {
+      "path": "tools/check_shin_arm_leg.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 37414,
+      "sha256": "9a2edb95d5abc093fd8ed407ccc71adbfadc4a509ee356d8b36913efc784a5e2"
+    },
+    {
+      "path": "tools/check_camera.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 15918,
+      "sha256": "bb08cf7b00afb8c40e913f5751a61e09e00205dc64e028bfdbc4bf35286463ca"
+    },
+    {
+      "path": "tools/check_audio.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 21600,
+      "sha256": "f5c37968a6c08f85786615e0c203a6011fd579c5b1b66cce249f3bc40edd5fb3"
+    },
+    {
+      "path": "tools/check_arm.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 40034,
+      "sha256": "f976752a6ef6e77499e672bc26f0ca1c0c00c504188133157251189c93278ef1"
+    },
+    {
+      "path": "tools/check_eye.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 10028,
+      "sha256": "36b2a17e965362c4c9454324a16fe79893ac81c7fb7c1d50a876c450b26852d7"
+    },
+    {
+      "path": "tools/check_mouth_chassis.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 6762,
+      "sha256": "8a82217eebbf36ef8f566df7b00c554316b6c9343b60b679c1f740cb51608216"
+    },
+    {
+      "path": "tools/check_leg_assembly.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 27145,
+      "sha256": "d09ce9ac8996fa6e4dc1bd8349f00b0f9023e1ec097361ec5b361b06b6d2895e"
+    },
+    {
+      "path": "tools/check_coxa_sweep.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 6790,
+      "sha256": "aaad2c7dae0698a4371e65873727128fd86cf3c20fec40480985383c235f69a5"
+    },
+    {
+      "path": "tools/check_screw_bosses.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 4970,
+      "sha256": "5cffb63ecaf60a53ff576fee4f48b90df2418c83c5ea75ba538a68e5bfc1f407"
+    },
+    {
+      "path": "tools/check_kit_transforms.py",
+      "role": "source_dependency:mechanism_and_diagnostics",
+      "exists": true,
+      "bytes": 1897,
+      "sha256": "f46ed68a90a31ca78b251620b532cb255c9af253dfb930ff36f5f94bbf280bb9"
+    },
+    {
+      "path": "tools/run_design_audit.py",
+      "role": "source_dependency:audit_orchestration",
+      "exists": true,
+      "bytes": 4566,
+      "sha256": "8adca30da18ab547693603da546b10eb9e255d789ac0391a69f1a19f77c9dff8"
+    },
+    {
+      "path": "tools/sim_gait.py",
+      "role": "source_dependency:audit_orchestration",
+      "exists": true,
+      "bytes": 17298,
+      "sha256": "8920c3ebe8896a520f3d505e79796818094bfbbaae7009b303b71714ed434134"
+    },
+    {
+      "path": "tools/check_power_budget.py",
+      "role": "source_dependency:audit_orchestration",
+      "exists": true,
+      "bytes": 3777,
+      "sha256": "c586157b35d03550459de805e3ced86b297ab5b2172027dd5b8a96dc2dda79ce"
+    },
+    {
+      "path": "tools/tests/test_print_first_contracts.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 144212,
+      "sha256": "dc21782bc6a609691452761d13bb778e6cabb41bfec286a06b221119145f83ce"
+    },
+    {
+      "path": "tools/tests/test_print_first_initial_diagnostic.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 5840,
+      "sha256": "60d1c391a265b1b85d7ac5430a8bffe98f1ca9b6dfaa5477c4ee831c697fc61f"
+    },
+    {
+      "path": "tools/tests/test_print_first_motion_quality.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 22989,
+      "sha256": "f7c1463738c13996d2fc817d02b9a91464a965649df74bd0bf7ab81256ac9d8a"
+    },
+    {
+      "path": "tools/tests/test_print_first_t0_contracts.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 12675,
+      "sha256": "468ccdb4dcdcc54cfb709a65a48d9b92d8910adda03ce576fe43b653f8b25026"
+    },
+    {
+      "path": "tools/tests/test_config_contract.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 3303,
+      "sha256": "29d0ee05228156d5ed23f4383c151aa2bdf1a5e5ff2d90ac1b08992db85535f4"
+    },
+    {
+      "path": "tools/tests/test_print_first_native_trace.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 6639,
+      "sha256": "01b2b5b0988a925ab92e40529a95aa3eb1cc15ec020a6892494f3be0a6aac615"
+    },
+    {
+      "path": "tools/tests/test_print_first_cabin_storage.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 4821,
+      "sha256": "51c000ba3483a3d073be38766cfe4772793b8968a1f05d927071a7d4855be951"
+    },
+    {
+      "path": "tools/tests/test_print_first_gate_hardening.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 8396,
+      "sha256": "0a72aca072777a03b4c5434938709a428a9867449d767f33b3c4c78a2ed5c637"
+    },
+    {
+      "path": "tools/tests/simulation_firmware_trace.cpp",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 1143,
+      "sha256": "cc0488bf7d9c1335e3fe9be640a5ef8300bf26b98846bcba4553dd62775bb031"
+    },
+    {
+      "path": "tools/tests/simulation_output_trace.cpp",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 2270,
+      "sha256": "5242df4608e7e8671f2340434300b42520b4ddd849a48b7e8d427886845477a5"
+    },
+    {
+      "path": "tools/tests/simulation_regression.py",
+      "role": "source_dependency:print_first_contract_tests",
+      "exists": true,
+      "bytes": 15495,
+      "sha256": "757e3a8f768da90752b71ced9522bd24cce1468eaf292525c756578ef5eabd22"
+    },
+    {
+      "path": "tools/tests/test_audit_gates.py",
+      "role": "source_dependency:audit_regression_tests",
+      "exists": true,
+      "bytes": 2124,
+      "sha256": "2d30deaa91da8f6e01ff29fe7a85710567f1fbd8a8135cf229300357ba0ef12c"
+    },
+    {
+      "path": "tools/tests/test_issue_sync.py",
+      "role": "source_dependency:audit_regression_tests",
+      "exists": true,
+      "bytes": 5221,
+      "sha256": "2db5165fdfc6ae48a46c348be5eb41c4e35c146ccba21ed7657e89c7bd182a88"
+    },
+    {
+      "path": "tools/tests/test_print_artifacts.py",
+      "role": "source_dependency:audit_regression_tests",
+      "exists": true,
+      "bytes": 2885,
+      "sha256": "7fa28486f743d4d74f3df86fe28892c0e7e625b11cf8d9994d020e725c26501f"
+    },
+    {
+      "path": "tools/tests/test_render_contracts.py",
+      "role": "source_dependency:audit_regression_tests",
+      "exists": true,
+      "bytes": 5827,
+      "sha256": "cac2e1bc1a2ad874c2412b10ef91188bb9bfde37fe7d9910096d4d9f195c72cd"
+    },
+    {
+      "path": "tools/tests/test_extract_meshes.py",
+      "role": "source_dependency:audit_regression_tests",
+      "exists": true,
+      "bytes": 2677,
+      "sha256": "5b3f23d4185fe23f5ae80bd9d8b16bbaee6cebe548c18c5cd95392b1cae52564"
+    },
+    {
+      "path": "tools/tests/test_mesh_checks.py",
+      "role": "source_dependency:audit_regression_tests",
+      "exists": true,
+      "bytes": 5373,
+      "sha256": "6e8c67348756263b26756db0b905652de6c0e66a37def4148d44e7a32ce3e5b7"
+    },
+    {
+      "path": "tools/tests/test_coxa_sweep.py",
+      "role": "source_dependency:audit_regression_tests",
+      "exists": true,
+      "bytes": 808,
+      "sha256": "e317808210b96f6d4b60ed117e67d390c0380fe74abeda5e80231eb6ec50ce2c"
+    },
+    {
+      "path": "tools/tests/test_integration_audit.py",
+      "role": "source_dependency:audit_regression_tests",
+      "exists": true,
+      "bytes": 5806,
+      "sha256": "c54194b26909c24efba7cc5203fce3a0820ff6d3fcb0d946b11fb582a29bb4e9"
+    },
+    {
+      "path": "tools/tests/test_stl_export.py",
+      "role": "source_dependency:audit_regression_tests",
+      "exists": true,
+      "bytes": 1826,
+      "sha256": "9476950807612f4deb678cfa02a2bc394d9158db5e5c596da1f724f660f466d6"
+    },
+    {
+      "path": "tools/tests/test_export_stl.py",
+      "role": "source_dependency:audit_regression_tests",
+      "exists": true,
+      "bytes": 6377,
+      "sha256": "86b68dca3814a4b7044f5fda84815666b1e0700440f166ef9bb600e5090341e9"
+    },
+    {
+      "path": "tools/tests/firmware_run.py",
+      "role": "source_dependency:firmware_host_tests",
+      "exists": true,
+      "bytes": 2007,
+      "sha256": "92f0c23770b09e0deb4c4f3a8a8f62b1ee23518f72e2e06d4b28fd61b87ed6c7"
+    },
+    {
+      "path": "tools/tests/firmware_calibration_main_test.cpp",
+      "role": "source_dependency:firmware_host_tests",
+      "exists": true,
+      "bytes": 1220,
+      "sha256": "b6a421bd298e15ed69cd9649d6f729c5b51907b78db18e7fa6d4284227fc2766"
+    },
+    {
+      "path": "tools/tests/firmware_contract_test.cpp",
+      "role": "source_dependency:firmware_host_tests",
+      "exists": true,
+      "bytes": 10736,
+      "sha256": "4f622133ea24c5812abcc26050125654d69f28f5f7118fa4f164deb4ba97a7de"
+    },
+    {
+      "path": "tools/tests/firmware_fault_test.cpp",
+      "role": "source_dependency:firmware_host_tests",
+      "exists": true,
+      "bytes": 2449,
+      "sha256": "6339f58694c18be3b6f6001555e331367f7956c0bdbc472c1ef195f530d37fa4"
+    },
+    {
+      "path": "tools/tests/firmware_main_test.cpp",
+      "role": "source_dependency:firmware_host_tests",
+      "exists": true,
+      "bytes": 6200,
+      "sha256": "91d96e5e460942e56aad2f316c6f8ed093acfa6e532230d2b6e1b3e969bf2094"
+    },
+    {
+      "path": "tools/tests/firmware_audio_test.cpp",
+      "role": "source_dependency:firmware_host_tests",
+      "exists": true,
+      "bytes": 4828,
+      "sha256": "b6010a595303191d114050c636359c57a241e52987caebb3783171b5cd26b429"
+    },
+    {
+      "path": "tools/tests/firmware_ui_test.cjs",
+      "role": "source_dependency:firmware_host_tests",
+      "exists": true,
+      "bytes": 3858,
+      "sha256": "e93f7266fe862f0ee8742efe92691383253f800d93bbf7429989bc29b5070797"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/WiFi.h",
+      "role": "source_dependency:firmware_host_tests",
+      "exists": true,
+      "bytes": 480,
+      "sha256": "0d91f88e6852e578240c5eb13b9950458d10aad49e3a598889cf4a506970b025"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/ESPAsyncWebServer.h",
+      "role": "source_dependency:firmware_host_tests",
+      "exists": true,
+      "bytes": 1976,
+      "sha256": "f1637bdded3788d7280433ee4c7d358955ec0ce73a75b518c32cdc6ae4e6b14b"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/driver/i2s.h",
+      "role": "source_dependency:firmware_host_tests",
+      "exists": true,
+      "bytes": 1545,
+      "sha256": "ca40ae4611bc011f303c9be73cee6fa7027e6fa5a169a18f0a092c0ac196bb79"
+    },
+    {
+      "path": "firmware/platformio.ini",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 1700,
+      "sha256": "9ab69ce4256a136ee12ff54ce89cb390e2ebe4b047df4eeb790d7c4ddc843ad7"
+    },
+    {
+      "path": "firmware/src/config.h",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 24588,
+      "sha256": "cf005acd48548c00fee4b1760ae2b6d8793abcacf69ec8562697e860e58440ce"
+    },
+    {
+      "path": "firmware/src/arms.h",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 12451,
+      "sha256": "8228c2ae9b486c95d556f0e30836c501fba358fa3caf529e02062be460f2824c"
+    },
+    {
+      "path": "firmware/src/audio.h",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 13875,
+      "sha256": "8f06d5a9dc29d3c1e5f1481096826f70efc1a282739938463513486dc1c14602"
+    },
+    {
+      "path": "firmware/src/control.h",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 3627,
+      "sha256": "1b49280d56c93ed86028e9dc5c9b99f2c7de7f32c019eae512fd45593b24cbba"
+    },
+    {
+      "path": "firmware/src/gait.h",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 11187,
+      "sha256": "75372bbf6594bf0767c79907a0c78638888b1322113009ed443b09f37fa84733"
+    },
+    {
+      "path": "firmware/src/main.cpp",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 24298,
+      "sha256": "add5b65cfc4aa50c95fb823cb1a2d8b57bc3a6010b615e13f985f8ba962cadd9"
+    },
+    {
+      "path": "firmware/src/peripherals.h",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 4935,
+      "sha256": "71e985abb8bcd980ffe93ea759b5ea8d2f7af6225ae8707bc3c2ea171743f954"
+    },
+    {
+      "path": "firmware/src/web_ui.h",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 14919,
+      "sha256": "4b39e90a41a079a24f8b8f1f27c6b09cb4beee105f0788868c2078641e944f15"
+    },
+    {
+      "path": "firmware/src/print_first_gait.h",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 1369,
+      "sha256": "bbe8cfff2393b9906cb501b277e3eeac5efb1f18d9b1b3db8da2b2a8be52f0be"
+    },
+    {
+      "path": "firmware/src/profile_config.h",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 1496,
+      "sha256": "fa67ffce8879346b4e425a32b73377e8ba68dd92bf622f44e2d18886666a4668"
+    },
+    {
+      "path": "firmware/src/servos.h",
+      "role": "source_dependency:firmware_print_first",
+      "exists": true,
+      "bytes": 11539,
+      "sha256": "1bc1f0c3417266df65af46d7c3c987155285a218f1ef49c3dcbf00f9ec6a2597"
+    },
+    {
+      "path": "tools/issues/make_print_first_update_plan.py",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 28039,
+      "sha256": "12994233275f52e21fb4e03487d0778b7dca7a0c2115eaf9d97f11253a466fee"
+    },
+    {
+      "path": "tools/issues/audit_plan_data.py",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 114191,
+      "sha256": "0100fafb755638d024d1819445a6c1d8327833b066cc099362780b9af54e60eb"
+    },
+    {
+      "path": "tools/issues/plan.py",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 9563,
+      "sha256": "92d800468e87ec0da242b2a2f635e4ec64fc1da5bd198a072493f2fe3f10c05c"
+    },
+    {
+      "path": "tools/issues/issue_map.json",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 1443,
+      "sha256": "47649b4f09b146d74fe03fff1f001b1f9fe907e34e611d4fa9b882378e2b193b"
+    },
+    {
+      "path": "tools/issues/issue_publication_data.py",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 14157,
+      "sha256": "ef2f1645500ff20aed0f1ce172a4e798416a76e70e891cb4a5d06bdefd31ff56"
+    },
+    {
+      "path": "tools/issues/sync_github_issues.py",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 20298,
+      "sha256": "a025afb30762906e07a264dabb0e81f7bb49537858551213896a97b49b95c1ab"
+    },
+    {
+      "path": "tools/issues/sync_project.py",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 14030,
+      "sha256": "b0b41f0dd5d99d4d09b49e909ce9b3b017545571ef0d5e4e23e0038398f014fb"
+    },
+    {
+      "path": "tools/issues/fetch_public_snapshot.py",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 21035,
+      "sha256": "b3c070ba44df1a083d237bb3e356fd005b60add5354657ca4551f7d754f8a69c"
+    },
+    {
+      "path": "tools/issues/public_purchase_ledger.py",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 40256,
+      "sha256": "5c39d5204e5a706082e87cfa97bcaf877d4da1882343afc652db2b162b16b244"
+    },
+    {
+      "path": "tools/issues/publication_gate.py",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 4049,
+      "sha256": "ab8c1850a1b49582ee94add2f31b727c1ddb14ffa1dcff47203c494397fe101e"
+    },
+    {
+      "path": "tools/issues/update_github_issues.py",
+      "role": "source_dependency:issue_publication_plan",
+      "exists": true,
+      "bytes": 92914,
+      "sha256": "8d98f62043343fbd16fd2f8c4d3401858f3cf74b3334af719679b67b18bc8f92"
+    },
+    {
+      "path": "tools/tests/test_additional_printing_contracts.py",
+      "role": "source_dependency:publication_contract_tests",
+      "exists": true,
+      "bytes": 7105,
+      "sha256": "d810d56af815753e9e4251c811705a42d11ade1fc99eddd6151e5a1ff9f2cd06"
+    },
+    {
+      "path": "tools/tests/test_additional_purchases_contracts.py",
+      "role": "source_dependency:publication_contract_tests",
+      "exists": true,
+      "bytes": 5160,
+      "sha256": "5a066faa078c7edd58e42bad4cf1ed185cc095c4464537b1a1bc2cf9f68151dc"
+    },
+    {
+      "path": "tools/tests/test_additional_purchases_privacy.py",
+      "role": "source_dependency:publication_contract_tests",
+      "exists": true,
+      "bytes": 7086,
+      "sha256": "bf45b836fb1cde86209af55f0520f38eaf8a1f550946b107d129102cc45ca891"
+    },
+    {
+      "path": "tools/tests/test_generate_print_first_contracts.py",
+      "role": "source_dependency:publication_contract_tests",
+      "exists": true,
+      "bytes": 61206,
+      "sha256": "42591c2f305c06efc0879da34d7e4f00155c0d2dc9a0734d64c7a60ec4d9822e"
+    },
+    {
+      "path": "tools/tests/test_issue_append_update.py",
+      "role": "source_dependency:publication_contract_tests",
+      "exists": true,
+      "bytes": 28408,
+      "sha256": "4c9361cc591d402627e52c0630c60bb0b6fad03b6bea843849f22cf70b9bea9d"
+    },
+    {
+      "path": "tools/tests/test_issue_publication_contracts.py",
+      "role": "source_dependency:publication_contract_tests",
+      "exists": true,
+      "bytes": 4385,
+      "sha256": "c902826021982bba5dc72ec49c6ff81319e1abfc2c50b395de4892ea5d810ad4"
+    },
+    {
+      "path": "tools/tests/test_publication_gate.py",
+      "role": "source_dependency:publication_contract_tests",
+      "exists": true,
+      "bytes": 13214,
+      "sha256": "49ed47107009861f409afedb14e4f3da35c16889dce9f5c3c8cc1ee55f382016"
+    },
+    {
+      "path": "tools/tests/test_safe_snapshot_contracts.py",
+      "role": "source_dependency:publication_contract_tests",
+      "exists": true,
+      "bytes": 4196,
+      "sha256": "05709ee961a73080d14c19be8205bb9d1c117c27c8b9144ef4e0e91136bc5f4d"
+    },
+    {
+      "path": "tools/tests/test_battery_cradle_feature.py",
+      "role": "source_dependency:focused_pair_regression",
+      "exists": true,
+      "bytes": 11199,
+      "sha256": "4012b3829b714323e951f07802887f21390fb0b90faf2c5c0b9bb08625a700ea"
+    },
+    {
+      "path": "firmware/tests/audio_volume_test.cpp",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 1156,
+      "sha256": "3c5f4dbaf1dcd7dd8e96f1f685c1ecfa8e4b2759aa176150e508e6e2d9532d5e"
+    },
+    {
+      "path": "firmware/tests/peripheral_profile_test.cpp",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 1171,
+      "sha256": "35b8107d953e8eb6fe3d7a5722530ed4d6574dfd6f07f305f8d9316dd8413c48"
+    },
+    {
+      "path": "firmware/tests/profile_main_test.cpp",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 5637,
+      "sha256": "86ee78c91a890e33a022689bf3636c5f25c470380c30a6afe347575c695a2649"
+    },
+    {
+      "path": "firmware/tests/profile_ui_test.cjs",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 2249,
+      "sha256": "4ab2877b0e6ddc0d86f177f81e2e70654001b4535335ad6ff993ca4aedeca5a8"
+    },
+    {
+      "path": "firmware/tests/run_print_first.py",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 3168,
+      "sha256": "e99dc80b24facdd57772da8e31b263dc16c5508477e22e29a3e7f0217f7d8659"
+    },
+    {
+      "path": "firmware/tests/stubs/Adafruit_NeoPixel.h",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 358,
+      "sha256": "6b4acffd502a054d2dff90a69af15d64b702636d0da05c2744e92ce6ce61f8cd"
+    },
+    {
+      "path": "firmware/tests/stubs/DFRobotDFPlayerMini.h",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 235,
+      "sha256": "0af611953530bcb6c960cf85d78e12ea62209b2759a558ba06b9726dfbe722e0"
+    },
+    {
+      "path": "firmware/tests/stubs/ESPAsyncWebServer.h",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 1805,
+      "sha256": "6b63a261e2aa66ebe8d7468ac74f92d3448f16821792ec05706af6fa102844e5"
+    },
+    {
+      "path": "firmware/tests/stubs/HardwareSerial.h",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 156,
+      "sha256": "8e9fe46f7ea727f3320d6fb75e86577fa7ac91492a14aecc498a7e1cba8f1ce2"
+    },
+    {
+      "path": "firmware/tests/stubs/peripheral_probe.h",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 144,
+      "sha256": "690e055ef5ec016f8f84fbee9ea44b5e07b6cce946d3624436755686bdb7150e"
+    },
+    {
+      "path": "firmware/tests/write_electrical_manifest.py",
+      "role": "source_dependency:firmware_contract_tests",
+      "exists": true,
+      "bytes": 8441,
+      "sha256": "bf9b85cbb59154db39298cea3f8e2aaa409606d4fffbc8e955f25474f1871f6b"
+    },
+    {
+      "path": "tools/kit_assembly.py",
+      "role": "source_dependency:generator_static_python",
+      "exists": true,
+      "bytes": 23496,
+      "sha256": "f3810e68432190f91437c02cd982b2cee88bb99473d813ab87187b21158a8b9e"
+    },
+    {
+      "path": "tools/make_visuals.py",
+      "role": "source_dependency:generator_static_python",
+      "exists": true,
+      "bytes": 93184,
+      "sha256": "600a652877cdf91a29f203b727aec82eda12ff9e3005faa9f0e26ce1ecbc33b8"
+    },
+    {
+      "path": "firmware/src/eyes.h",
+      "role": "source_dependency:firmware_runtime_headers",
+      "exists": true,
+      "bytes": 2733,
+      "sha256": "c184c72ccb514d816802792f16e456545c2900df484c84a6a201eaf83679934e"
+    },
+    {
+      "path": "firmware/src/ik.h",
+      "role": "source_dependency:firmware_runtime_headers",
+      "exists": true,
+      "bytes": 2122,
+      "sha256": "a06ab5dc57766a9349a6b8db47e826357fc019118cec619d1656acfbb5c0130b"
+    },
+    {
+      "path": "firmware/src/leg_output.h",
+      "role": "source_dependency:firmware_runtime_headers",
+      "exists": true,
+      "bytes": 1215,
+      "sha256": "63589c7187352c8d484055f43285649dcfc4cbbec4ce70ef0822b33d5e3bea53"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/Adafruit_NeoPixel.h",
+      "role": "source_dependency:firmware_stub_closure",
+      "exists": true,
+      "bytes": 260,
+      "sha256": "4f1dde5e626c82f7d879e68da3528409ef0d68c611d9a16ee13e6650ab5f74fe"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/Adafruit_PWMServoDriver.h",
+      "role": "source_dependency:firmware_stub_closure",
+      "exists": true,
+      "bytes": 804,
+      "sha256": "8fd826de36167d46d7713a1037579143f5cec727d05af6167cfe00106e0d7bb5"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/Arduino.h",
+      "role": "source_dependency:firmware_stub_closure",
+      "exists": true,
+      "bytes": 1934,
+      "sha256": "c8c23f988e194540dff081435850423a6ee3d7c59961d322542ffd8be645ce3c"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/DFRobotDFPlayerMini.h",
+      "role": "source_dependency:firmware_stub_closure",
+      "exists": true,
+      "bytes": 175,
+      "sha256": "58febb4349f6aa16817946b026fb1b02eff12d0bd101ca930da33e8ce2011c52"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/ESPmDNS.h",
+      "role": "source_dependency:firmware_stub_closure",
+      "exists": true,
+      "bytes": 136,
+      "sha256": "8e895135c36ae8584ad1d029546fe40c61d0fc5e0c6f30f0690859274eb18682"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/HardwareSerial.h",
+      "role": "source_dependency:firmware_stub_closure",
+      "exists": true,
+      "bytes": 97,
+      "sha256": "7102d373940d0a91639c2e0a584340173bf4baea98f65d92160d20bd37d48200"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/Preferences.h",
+      "role": "source_dependency:firmware_stub_closure",
+      "exists": true,
+      "bytes": 616,
+      "sha256": "d1f8570aaa6cf88e4632e7f928ddcf120559579d40028a91bd2b1a24bfd893bc"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/Wire.h",
+      "role": "source_dependency:firmware_stub_closure",
+      "exists": true,
+      "bytes": 1090,
+      "sha256": "07ac2825f63b0c180d315d5b7842b5d1a26456874391b6e8f9f3e0a524981e64"
+    },
+    {
+      "path": "tools/tests/firmware_stubs/esp_task_wdt.h",
+      "role": "source_dependency:firmware_stub_closure",
+      "exists": true,
+      "bytes": 128,
+      "sha256": "dc653eeda366dd06f369899c1d71ded0e82bd9fc35192cbb6ed6b8db2fda7fed"
+    },
+    {
+      "path": "docs/audits/20260905-round2/primary-sources/xiao-step-measured/camera-removed-summary.json",
+      "role": "source_input_audit_record",
+      "exists": true,
+      "bytes": 2644,
+      "sha256": "3e2e2970ccfaca8dd3d4525b99197b829bdcb1ac4ea587133ff1cd82785bf34c"
+    },
+    {
+      "path": "docs/audits/20260905-round2/primary-sources/xiao-step-measured/assembly-bounds.json",
+      "role": "source_input_audit_record",
+      "exists": true,
+      "bytes": 43281,
+      "sha256": "2db2319d989e3d65e61f68b4a7066f4b9cf6d128def20c189e37207658225635"
+    },
+    {
+      "path": "docs/audits/20260905-round2/camera-ov3660-candidate/comparison.json",
+      "role": "source_input_audit_record",
+      "exists": true,
+      "bytes": 2628,
+      "sha256": "3e84bc396f8d44310ef0b3c865d8e2be6212a3d7b59cfe43fe737ce37b88722b"
+    },
+    {
+      "path": "docs/audits/20260905-round2/camera-ov3660-candidate/xiao-placement-search.json",
+      "role": "source_input_audit_record",
+      "exists": true,
+      "bytes": 39582,
+      "sha256": "547e8b49cc9db0cc9a5f5bb67646180c69c4a74ec73b1bad0156d6768b3219e2"
+    },
+    {
+      "path": "docs/audits/20260905-round2/camera-ov3660-candidate/xiao-cradle-comparison.json",
+      "role": "source_input_audit_record",
+      "exists": true,
+      "bytes": 16113,
+      "sha256": "7c9b6072fb302e5ce06ab2f004f4939457cd4b7e5a4485d3fb2b27902ee9a79f"
+    },
+    {
+      "path": "docs/audits/20260905-round2/primary-sources/source-register.json",
+      "role": "source_input_audit_record",
+      "exists": true,
+      "bytes": 4216,
+      "sha256": "1619bf93e83ca6c7aca7862b7bc3c1a65372480cbbca3f449e1a5b1e4577cee5"
+    },
+    {
+      "path": "hardware/stl/battery_cradle.stl",
+      "role": "source_mesh_required_by_battery_test",
+      "exists": true,
+      "bytes": 128084,
+      "sha256": "c5362681caa42cd76275e2db9db5318b2759d2edf7eaed23aecb9a64de6965ab"
+    },
+    {
+      "path": "hardware/urdf-print-first/tachikoma.urdf",
+      "role": "generated_candidate_urdf",
+      "exists": true,
+      "bytes": 29014,
+      "sha256": "a63d2d4c61ac99e70e60a2dd8f9708d84f0aaa4d8244166da9a9ac89874b15f8"
+    },
+    {
+      "path": "hardware/urdf-print-first/parts_manifest.json",
+      "role": "generated_candidate_manifest",
+      "exists": true,
+      "bytes": 30879,
+      "sha256": "7d5a9f44dc07ec691944a6280f05ef996f326a8a6d79b728be192b282f5d7b87"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_forearm__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9084,
+      "sha256": "754026baf93c4467cc479fcdceeb28f10292937cfdb6cd2c43e3e7c3205f8bba",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_forearm__vis_555555.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 1174484,
+      "sha256": "267cdab94b476c568c1a1f2924edb2de21bcfd83d92290b9fcb33ca8fdee230a",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_forearm__vis_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 300384,
+      "sha256": "c02ec7a53554bf11b906cd810bab29c745b799da1ace32a536dc3219dd505d67",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_shoulder__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9084,
+      "sha256": "914b2c21dd952492d1de90e6e24ddee54da88eb1bea7cc37fa39bff306d44568",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_shoulder__vis_bracket_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 176784,
+      "sha256": "28d937e3154fe28d4a2929f47ee7192377f08d9e20fe11f082d97698a6907170",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_upper__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9084,
+      "sha256": "19d72f77ddda990deb8930b0534556e3cd4a02d99f0ffcc4c6f15614696681c1",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_upper__vis_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 377184,
+      "sha256": "58da46c75559d046117984482d8177068169f1a26448b3a4f8d67337a5b8b392",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_l_upper__vis_shell_blue.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 135684,
+      "sha256": "8d92272b47f614e62dc4635dda1cef459f60feabfa9dc033fda378de8f893da1",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_forearm__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9084,
+      "sha256": "c62873180478c9514599318efd493b1ed731fa28fdc8486abe20f65cc0d6e6b4",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_forearm__vis_555555.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 1174784,
+      "sha256": "14a3215e66867efe798901aaeaca7f17ce395c0524f6d8870fd31339e4c80316",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_forearm__vis_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 300384,
+      "sha256": "0aa7e1d38cf21bd10e6e63f2bbc5fa092158246f42e75e96f7fb5bab18de7c2b",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_shoulder__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9084,
+      "sha256": "630464b0ac1082cad4fa09aecc50fd61cf8d8cc99d5caed3dfc0c633f88e9f20",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_shoulder__vis_bracket_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 176784,
+      "sha256": "f903ad8e435c5382d5a3d0ca7293e3c8f8b967030a8c473ba759f8c9f705a8b8",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_upper__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9084,
+      "sha256": "b99f093b31d78c2abd81ac0a26e09f00050ccabe193a750463434a5984a43da0",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_upper__vis_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 377184,
+      "sha256": "326db19466e6c2ce419f4885e6f72c74f55bffb32924d4df41c4d7f934d93ca4",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/arm_r_upper__vis_shell_blue.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 135684,
+      "sha256": "2f05843ee832bb8922e7187f4f0a923cc04d2f01b9927e78419c4678ee37f58f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 5884,
+      "sha256": "79206c7c7c66a4401fd1bd75532c1533d88c76c768de5eccb1341756ed6ed446",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__col_1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 5284,
+      "sha256": "4fb04a2c477b3d8cd2fafab61782e187c32ff03918a81b0bbaccf796f845394c",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__col_2.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9084,
+      "sha256": "17fbc4aa18621179765cb5f2e1fabac7d4140342995519ed238182445efc47ad",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 1665484,
+      "sha256": "213e0848069ad2f5cd547ecc7f9a17419e5c1523a83b0dbc0ea82d74870d4c8f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_607d8b.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 157684,
+      "sha256": "fab3eb4f7cfe85b88bfc091c776dc9616b94ba0acc7d2263e140594c4ce65512",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_888888.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9684,
+      "sha256": "0bc45596c6d1dd500902c048ab374a5f5eeb5c47c0eda5bbe9f914d8dcbcd0af",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_chassis_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 128084,
+      "sha256": "9b372acdd8ca25628603230304842d7ed4bab85f054056da5ab7a0d01acd53e1",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 503484,
+      "sha256": "6176c785c953e81cc6e00edbff9062e21ddaac0e058d4908955bae5d98ff0735",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/base_link__vis_kit_blue.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 2255284,
+      "sha256": "999acb2e5f7ed8e6830a665997d97acc466e3119ed378a8cf65ce9219194ed7d",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_l_pod__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9084,
+      "sha256": "2f149f008fdefffdfdb2e01fb6653f11c29712bf0bccc90521ff73bebb8bd1e3",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_l_pod__vis_white.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 380884,
+      "sha256": "6546dc1dd47353df1ed9ae5fb8413fba99ca02da524fcdab76eab87823c4a73e",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_pod_camera__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9084,
+      "sha256": "584f97f357fc6c616fda4c16c05bf8e95af583f8d5d34bef101055587aea8f0b",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_pod_camera__vis_888888.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 30184,
+      "sha256": "a7819ab8ed764e046fe687973cd3485f9ac4f807255a75f9c76116c6bb2021e2",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_pod_camera__vis_white.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 329084,
+      "sha256": "5ffb63ca1edc9d8d1604bebce10b14ebdade056aa67deaf9044ca31bee33a9d8",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_r_pod__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 9084,
+      "sha256": "2f149f008fdefffdfdb2e01fb6653f11c29712bf0bccc90521ff73bebb8bd1e3",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/eye_r_pod__vis_white.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 380884,
+      "sha256": "6546dc1dd47353df1ed9ae5fb8413fba99ca02da524fcdab76eab87823c4a73e",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_coxa__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 6084,
+      "sha256": "ffab2e412a2c017d62d6be24a797e847706e25cdd4e3d12856c463d73f03e13e",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_coxa__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 435884,
+      "sha256": "23c1eb6b341aae5ff240b9e9c9b9ab696cb800da54915f651f469def85eb83ff",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_coxa__vis_607d8b.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 61584,
+      "sha256": "ccae89a8b599e450d1cdd3e48f945f52a01d3239887a0718e2055dcfe6c4f3ba",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_femur__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 4984,
+      "sha256": "6d464de560fc4dd4a418b43a2180094bec57fa8e9d7c4eda7c389e1b7c2958f9",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_femur__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 399584,
+      "sha256": "e221a0fc80b35ff56072c8f723dc027f9781dfac676af7b9eb63e09be5acb483",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_femur__vis_607d8b.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 98284,
+      "sha256": "8fa6b45e80a767bf92ee7293ead885ac30fe007fa6b6fc735072fb4b5c431e8a",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 5084,
+      "sha256": "97b25f3c8c12ba168263a1b381108a2f77108e14cb905615d7b9ce1f8da173d9",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_20252a.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 155584,
+      "sha256": "9dbd16372fe4e12bbd7ba7a7429b4407268045334eb8485b4c28f04dde6e6447",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_248aca.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 686484,
+      "sha256": "9d56cf2b46064e7f6b08cf74448998eb504b7a0ec42e9854c9049629c0eadfb9",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 289484,
+      "sha256": "e85051afac8e8f6eea43912e226a9c986b1424c4ce472179c2397f9bc09a408f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_888888.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 153684,
+      "sha256": "d2f0be62c39320f971c8be3c357f3cf4d629f1d17281ab44bb2d8980d013cb98",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 57584,
+      "sha256": "1f86d51579c42467d418fe8f6a59eca2177a2c2584a9a97375032cc78e1011ed",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_coxa__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 6084,
+      "sha256": "b57fd5e9086cd5ed13a6a44a9f8b37bce7db12874c1c391dc7b0c750f0e1cfc1",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_coxa__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 435684,
+      "sha256": "e49ed813e05ca262fa4678608f653a0154163d4be25049980ae53e40bf84e25b",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_coxa__vis_607d8b.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 61784,
+      "sha256": "7e8c96929b049133f8331abdb2399e37e030d70fd7fa6b276df1d3aad833ce77",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_femur__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 4584,
+      "sha256": "0f2b05d63f87c1621a03cb58485674c8c3b114bd28b52a0ce030bb1d5b6f5c59",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_femur__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 399684,
+      "sha256": "37d95c7b3f912047f4b2eaad27fe9354cc1fe8bd2eab2686514ba50320b5b291",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_femur__vis_607d8b.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 98084,
+      "sha256": "84db8c569effdc3a7fcb67a5f4cc66a94743a5c20a573fda74b2f1114b7a1903",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 3084,
+      "sha256": "e32670e78dac6b0e0c14402643ed141a7e87342135174d1d3a1f90b5b816bf7a",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_20252a.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 155584,
+      "sha256": "9dbd16372fe4e12bbd7ba7a7429b4407268045334eb8485b4c28f04dde6e6447",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_248aca.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 686284,
+      "sha256": "5d6d757077262d3fca37b056c3381db288c0ea0aaaa5734432e6504ecef8057f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 289384,
+      "sha256": "169cb88a9e213c8800e0a2b369a7eb448c6855544e0f9b5b1ce0afa88277285c",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_888888.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 153684,
+      "sha256": "d2f0be62c39320f971c8be3c357f3cf4d629f1d17281ab44bb2d8980d013cb98",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 57584,
+      "sha256": "1f86d51579c42467d418fe8f6a59eca2177a2c2584a9a97375032cc78e1011ed",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_coxa__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 6084,
+      "sha256": "b57fd5e9086cd5ed13a6a44a9f8b37bce7db12874c1c391dc7b0c750f0e1cfc1",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_coxa__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 435684,
+      "sha256": "e49ed813e05ca262fa4678608f653a0154163d4be25049980ae53e40bf84e25b",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_coxa__vis_607d8b.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 61784,
+      "sha256": "7e8c96929b049133f8331abdb2399e37e030d70fd7fa6b276df1d3aad833ce77",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_femur__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 4584,
+      "sha256": "0f2b05d63f87c1621a03cb58485674c8c3b114bd28b52a0ce030bb1d5b6f5c59",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_femur__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 399684,
+      "sha256": "37d95c7b3f912047f4b2eaad27fe9354cc1fe8bd2eab2686514ba50320b5b291",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_femur__vis_607d8b.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 98084,
+      "sha256": "84db8c569effdc3a7fcb67a5f4cc66a94743a5c20a573fda74b2f1114b7a1903",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 3084,
+      "sha256": "e32670e78dac6b0e0c14402643ed141a7e87342135174d1d3a1f90b5b816bf7a",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_20252a.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 155584,
+      "sha256": "9dbd16372fe4e12bbd7ba7a7429b4407268045334eb8485b4c28f04dde6e6447",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_248aca.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 686284,
+      "sha256": "5d6d757077262d3fca37b056c3381db288c0ea0aaaa5734432e6504ecef8057f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 289384,
+      "sha256": "169cb88a9e213c8800e0a2b369a7eb448c6855544e0f9b5b1ce0afa88277285c",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_888888.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 153684,
+      "sha256": "d2f0be62c39320f971c8be3c357f3cf4d629f1d17281ab44bb2d8980d013cb98",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 57584,
+      "sha256": "1f86d51579c42467d418fe8f6a59eca2177a2c2584a9a97375032cc78e1011ed",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_coxa__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 6084,
+      "sha256": "ffab2e412a2c017d62d6be24a797e847706e25cdd4e3d12856c463d73f03e13e",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_coxa__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 435884,
+      "sha256": "23c1eb6b341aae5ff240b9e9c9b9ab696cb800da54915f651f469def85eb83ff",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_coxa__vis_607d8b.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 61584,
+      "sha256": "ccae89a8b599e450d1cdd3e48f945f52a01d3239887a0718e2055dcfe6c4f3ba",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_femur__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 4984,
+      "sha256": "6d464de560fc4dd4a418b43a2180094bec57fa8e9d7c4eda7c389e1b7c2958f9",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_femur__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 399584,
+      "sha256": "e221a0fc80b35ff56072c8f723dc027f9781dfac676af7b9eb63e09be5acb483",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_femur__vis_607d8b.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 98284,
+      "sha256": "8fa6b45e80a767bf92ee7293ead885ac30fe007fa6b6fc735072fb4b5c431e8a",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__col_0.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 5084,
+      "sha256": "97b25f3c8c12ba168263a1b381108a2f77108e14cb905615d7b9ce1f8da173d9",
+      "kind": "collision"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_20252a.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 155584,
+      "sha256": "9dbd16372fe4e12bbd7ba7a7429b4407268045334eb8485b4c28f04dde6e6447",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_248aca.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 686484,
+      "sha256": "9d56cf2b46064e7f6b08cf74448998eb504b7a0ec42e9854c9049629c0eadfb9",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_286bb1.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 289484,
+      "sha256": "e85051afac8e8f6eea43912e226a9c986b1424c4ce472179c2397f9bc09a408f",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_888888.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 153684,
+      "sha256": "d2f0be62c39320f971c8be3c357f3cf4d629f1d17281ab44bb2d8980d013cb98",
+      "kind": "visual"
+    },
+    {
+      "path": "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_grey.stl",
+      "role": "generated_candidate_mesh:urdf_reference",
+      "exists": true,
+      "bytes": 57584,
+      "sha256": "1f86d51579c42467d418fe8f6a59eca2177a2c2584a9a97375032cc78e1011ed",
+      "kind": "visual"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_cabin_rail_l.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 272784,
+      "sha256": "fe8716efba0267128afaf4c9647b6e8a958799c077fc8e139fab0d16e791d951"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_cabin_rail_r.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 270284,
+      "sha256": "5f29a29d12cd2727e3079c73c0e0e46d5a787813765da00f1837ef27b2aa69ae"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_camera_carrier.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 30184,
+      "sha256": "9b2ff67a5a5512b4b354d5874dcfdd43da539093a1f9290bb85b28577543281c"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_chassis.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 671784,
+      "sha256": "2a90ad5f5953c9cba9428714b00b392c937295f0134fa1ef8626385db3f0bf23"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_electronics_shelf_0.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 148784,
+      "sha256": "d2a76e6cf2e81b3b52c33cdd12d34bc65e067714673c3cb2a840b0aa727461ac"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_electronics_shelf_1.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 147184,
+      "sha256": "48c6ed88a6d6bfe83b3454f8722536271f7d9f7e038f504782b20661f0646b80"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_electronics_shelf_2.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 155084,
+      "sha256": "607899e17f3d1ef1614bf106bb4d5e7942d81eee4570bfc20a424d1210c61c8a"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_eye_pod_camera_clearanced.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 329084,
+      "sha256": "1688de600f2ccdea8ef5004e0631bb98ee4459737b96394f22c0d58b73406812"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_fixed_claw_l.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 1174484,
+      "sha256": "4130138afb72d18e2b533fefd812586c0d51d432376d5c36603035a6cfbec2d7"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_fixed_claw_r.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 1174784,
+      "sha256": "2d578b4538247820dad31059d7e7947074eb0cf5d4aa64743fca19e90fb06ff3"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_head_top_clearanced.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 1836784,
+      "sha256": "b6024dda92eca4f52312a951876f3e4150cb9baaae6dbbdb7aafeb9b5a189ba9"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_fl.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 39484,
+      "sha256": "21d01e4f2e5632bb14c18e646646e3f78c0903b08c5b0c5c7d35ec5356cdd90e"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_fr.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 39484,
+      "sha256": "00953418fbc707bad71b46d579f01cc18c2acc1a3ecc8eb051509cab396923d8"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_rl.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 39484,
+      "sha256": "f62d58443bf8c64147c1e78e8fd9f2689e6ef4491da233e07480d517799e859c"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_rr.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 39484,
+      "sha256": "043b2d70ad563c29d3a81dd9defc1c6e2d8094be95b1822e4b9b26419b8498f3"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/pf_mouth_key.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 9684,
+      "sha256": "83991c14042213c970ad0ebbe465cff0411506c9ca827659cb8a11324ca45593"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/pla_spacer_negative_y_foot_frame.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 38484,
+      "sha256": "e08791bff267a072581ea2dd7314782a82409a65a3cc672d12964e6a1f7b68bf"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/pla_spacer_positive_y_foot_frame.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 38484,
+      "sha256": "0583fa0905eb4d3b2e411cb5923b17a0151996f23562be9b29846f68f034f0ac"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/pla_spacer_print.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 38484,
+      "sha256": "c24de9e2659a8fcf7b5dc08dc9108afe03a4b36153e99aaac805e9c59bbfd767"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/pla_spacer_upper_negative_y_foot_frame.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 38484,
+      "sha256": "94322de634b33db81ab2ce0bc85f4c88f1444d443a81cb2c82bef1e551afaf03"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/pla_spacer_upper_positive_y_foot_frame.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 38484,
+      "sha256": "37f0b6e83f49be5eba95eddcdc5c5baa6944e87c2d9f9930ebb9f97cedebcce1"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/shin_shell_retained_foot_frame.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 686484,
+      "sha256": "7e662fb53a2117158eec0f5948e96ca7e0a030a0f912a539a611970d330cd8b4"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/shin_shell_retained_m_foot_frame.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 686284,
+      "sha256": "2297ae9a4e669341dfee1442b805e7c2cb38a411351eabb4ddaa11e899003aef"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/shin_shell_retained_m_print.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 686284,
+      "sha256": "c15cc32f52eff4f61bc9852ac69c1c151236d208b4acb2edba719e00ed1e9d68"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/shin_shell_retained_print.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 686484,
+      "sha256": "fa2237b8b20f02470b8bdd355ff300a7708cf6cf45a52639115c4d88b47cb151"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/tpu_shoe_foot_frame.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 155584,
+      "sha256": "d4d23df508f2ec98fd823b214b9acb392d6c4f956bd9dc3bbd96976084137bbc"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/tpu_shoe_print.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 155584,
+      "sha256": "a47d91a5d082a88bd710b0816ccb9d9e48b5dd3ea138d761a02246414a7b6b95"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_coxa_bracket.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 435884,
+      "sha256": "a474dfab4c3f29ec4e6b171dac257862a94a3b377e92a42cb0fd3a25db97f630"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_coxa_bracket_m.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 435684,
+      "sha256": "66959b69c4224c80b1c5d32c884b848c234f4ef63c9389edadeeab96e74ad664"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_femur_link.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 399584,
+      "sha256": "3f729432232121f9facea5dd4c86baee9e5e4cc48aa36c4fd12f6b48c80d9013"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_femur_link_m.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 399684,
+      "sha256": "805d0ad692ce46baa6cff99958423502466c4cca9caf4aa80fe84ca39a82e88b"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_ld220_coxa_cap.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 61584,
+      "sha256": "f846205a3feab20b969869090029091fb902ff3c89bbc1b7956c99c8cc599fbe"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_ld220_coxa_cap_m.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 61784,
+      "sha256": "a0ed92195ddf5db13d7ea6311a3073a67df0370f7343e88fe03e464b6d2cf7b1"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_ld220_femur_cap.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 98284,
+      "sha256": "129177deabd8873e7709dd1d6da81f2af480f0f0a47480eee4d693571d147a54"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_ld220_femur_cap_m.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 98084,
+      "sha256": "b91ecfbae3be91c4d8f37ca9dd61d0f7074ec051e415d37753924fbf5b0b6d61"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_tibia_link.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 289484,
+      "sha256": "8cde6a079275f5326a9fff1f464b9e6a07fa08e0b969013953ab038c12a3e526"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_tibia_link_m.stl",
+      "role": "generated_candidate_mesh:print_first_output",
+      "exists": true,
+      "bytes": 289384,
+      "sha256": "8e7d4664c39f92f22c93064e0a7e0231270c7dd4a2ea091b21d733b637661159"
+    },
+    {
+      "path": "outputs/print-first-20260905/body/assembly.json",
+      "role": "generated_candidate_assembly:print_first_output",
+      "exists": true,
+      "bytes": 79556,
+      "sha256": "729cbf8ba5da04a5ee0e5e7cffcdde831ef656b2db84ef62b1ecf87024a64c8b"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/assembly.json",
+      "role": "generated_candidate_assembly:print_first_output",
+      "exists": true,
+      "bytes": 28092,
+      "sha256": "8bc061d4e4c5cfd2005235cb7a1371569788a44bb3f11e8d8899f9905109d535"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/assembly.json",
+      "role": "generated_candidate_assembly:print_first_output",
+      "exists": true,
+      "bytes": 16056,
+      "sha256": "94235d0ea030fc45b0ca2edb8a2cf2a0083253e2a65df2fe859857d13b6cbed6"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_camera_child_lens_occupancy.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 684,
+      "sha256": "be76570943322d5d2fb23dae5b80af1837baa1933b7e78502a906fad1c711eb5"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_all_boards_occupancy.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 684,
+      "sha256": "8ff1b1aeb16d65991c898504bad38997f2bec00bb028ee4a5dc5011b6c3f71d1"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_floor_candidate.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 684,
+      "sha256": "a94f21ef066c4ccb44ae39c2b450364a51c5481f022103bd6fd7498c3e9246a7"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_holder3_union_candidate.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 2584,
+      "sha256": "ed33edcd723eba1c3fd24f3896aeaa3a03b096817ac95e7ac9b95d6529df57de"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_rib_left_candidate.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 684,
+      "sha256": "f969357856d18a4214e2f9cd0d7d5735046af5033322ba58b603a2ac89e353e9"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_rib_right_candidate.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 684,
+      "sha256": "ac2e4917d4fd6bc47b1c638a758b8589ba4e6dde4500db92f177479fa50d1018"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_camera_child_lens_occupancy.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 684,
+      "sha256": "be76570943322d5d2fb23dae5b80af1837baa1933b7e78502a906fad1c711eb5"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_all_boards_occupancy.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 684,
+      "sha256": "093fe3abf58a58caea1f21fbd0083191b1cc5e55fb2015d72c90928793cb6cb1"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_floor_candidate.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 684,
+      "sha256": "bcc0493e58600c5eaf3a9fd570054d09b637cbf41c60240f1f8ebf7fa4d2d0bf"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_holder3_union_candidate.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 2384,
+      "sha256": "6967534cf862b84b4ee8c979d442e006b78dde207ade9a3646705e9d09b69b52"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_rib_left_candidate.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 684,
+      "sha256": "842790dd3969e622dd6c0ff761cd04d8b0be4b12fa09af69af3b667abd03317d"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_rib_right_candidate.stl",
+      "role": "generated_candidate_mesh:generator49_missing_output",
+      "exists": true,
+      "bytes": 684,
+      "sha256": "339a0d66e27f441f78717b876cfa3668083addc7b23743d87700c85c726aa309"
+    },
+    {
+      "path": "outputs/print-first-20260905/ld220-adapter-freeze2-final/ld220_cap.stl",
+      "role": "generated_fixture_mesh:ld220",
+      "exists": true,
+      "bytes": 39484,
+      "sha256": "5c072c77e963597377a29b3f83e40bd51c128cf64276ba34752176d5ef97378e"
+    },
+    {
+      "path": "outputs/print-first-20260905/ld220-adapter-freeze2-final/ld220_cradle.stl",
+      "role": "generated_fixture_mesh:ld220",
+      "exists": true,
+      "bytes": 38884,
+      "sha256": "6581a046130b95fde18b48057e6c852ee1f9f49fc0cff5fe64f3ecd55a9eb590"
+    },
+    {
+      "path": "outputs/print-first-20260905/ld220-adapter-freeze2-final/ld220_horn_adapter.stl",
+      "role": "generated_fixture_mesh:ld220",
+      "exists": true,
+      "bytes": 119084,
+      "sha256": "5ef1d4a7b5c75953d1823f659bbb2dc3d5320572318ce901a9af5b79241797e8"
+    },
+    {
+      "path": "outputs/print-first-20260905/ld220-adapter-freeze2-final/candidate.json",
+      "role": "generated_fixture_manifest:ld220",
+      "exists": true,
+      "bytes": 3441,
+      "sha256": "98e20ef5b78d58392504a9e339f4e5afbc37c1f484589d689fc6eacc67214941"
+    },
+    {
+      "path": "docs/audits/20260909-resume/public-evidence-summary.md",
+      "role": "new_audit_record",
+      "exists": true,
+      "bytes": 7196,
+      "sha256": "bf5e8d8645804ef83e69e49ee58e7ff5573c828f514e3a5feb4a284a62f6e977"
+    },
+    {
+      "path": "docs/audits/20260909-resume/mouth-cannon-coacd-public-summary.json",
+      "role": "new_audit_record",
+      "exists": true,
+      "bytes": 3198,
+      "sha256": "d5a9f5171f6e7e0d74dd3b762c5cd885084477c48932023236f4b19f932f270f"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/verification.json",
+      "role": "generated_candidate_support:print_first_feet",
+      "exists": true,
+      "bytes": 42430,
+      "sha256": "1396ca1b513afb0b1d01315a6208f3e81a6a0d015ecd42c5f590510c94d44968"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/assembly-preview.png",
+      "role": "generated_candidate_support:print_first_feet",
+      "exists": true,
+      "bytes": 526539,
+      "sha256": "1dbd02f8a37557e1a750d918e055fa9cc9b621f056e8b35b2e56524870317bed"
+    },
+    {
+      "path": "outputs/print-first-20260905/feet/shell-local-changes.png",
+      "role": "generated_candidate_support:print_first_feet",
+      "exists": true,
+      "bytes": 129819,
+      "sha256": "c0e26b0bca5ab43ff19cda6d1da69f1d82b3a84f161c87f2ef5a138560bb8505"
+    },
+    {
+      "path": "docs/audits/20260909-resume/collector-regression-summary-20260909.json",
+      "role": "new_audit_record",
+      "exists": true,
+      "bytes": 4294,
+      "sha256": "dfa494afdc6cdd5b137c053f24342a5ad38471460881215c34b1c27cf3f6f35b"
+    },
+    {
+      "path": "docs/audits/20260909-resume/github-publication-result.json",
+      "role": "new_audit_record",
+      "exists": true,
+      "bytes": 2522,
+      "sha256": "c2d7d773e58a79e6d4300845bb36dca02d057546bafc889495af181fc6ce2d85"
+    }
+  ],
+  "selected_source_test_candidates": [
+    {
+      "id": "historical-3mf-preservation",
+      "source_path": "tools/generate_print_first.py",
+      "source_sha256": "1404d9f4849bc806aea89348c7b498f5b6b4c2ba993334072a18ff31eadfd037",
+      "test_path": "tools/tests/test_generate_print_first_contracts.py",
+      "test_sha256": "42591c2f305c06efc0879da34d7e4f00155c0d2dc9a0734d64c7a60ec4d9822e",
+      "status": "CANDIDATE_SOURCE_AND_TEST_REVIEW_NOT_SELF_CONTAINED",
+      "evidence": "履歴3MF保持・欠落拒否2件と、現行候補のgenerator契約49件が一時composite treeで49/49 PASS。全物理シム・実印刷・実機適合は未確認。"
+    },
+    {
+      "id": "battery-vhacd-coverage",
+      "source_path": "tools/sim_collision.py",
+      "source_sha256": "a6a0e300b6aa42fdb9df4f9c2bec1e8d211fd28e4014ed7bf47ecd29b0d061e1",
+      "test_path": "tools/tests/test_battery_cradle_feature.py",
+      "test_sha256": "4012b3829b714323e951f07802887f21390fb0b90faf2c5c0b9bb08625a700ea",
+      "status": "CANDIDATE_SOURCE_AND_TEST_REVIEW_NOT_SELF_CONTAINED",
+      "evidence": "battery特則は1832凸セル、23026/23026、5帯の双方向Boolean対称差0.0 mm²でPASS。現行sim_collision.pyとbattery回帰4件を一時composite treeで再確認。実機電源・連続定格は未確認。"
+    },
+    {
+      "id": "native-trace-gate",
+      "source_path": "tools/sim_print_first.py",
+      "source_sha256": "b7081af37f6dbd04a99ff1b12fcf54bd391676be043af4e1f3f34a3b0bc04fa5",
+      "test_path": "tools/tests/test_print_first_native_trace.py",
+      "test_sha256": "01b2b5b0988a925ab92e40529a95aa3eb1cc15ec020a6892494f3be0a6aac615",
+      "status": "CANDIDATE_SOURCE_AND_TEST_REVIEW_NOT_SELF_CONTAINED",
+      "evidence": "現行body構成のnative trace 1141行はDYNAMIC_PASS（固定・動的geometry true、交差なし）。native回帰3件もPASS。全link pairの材料別VHACD・サーボ外形・full dynamics・実機は未確認。"
+    }
+  ],
+  "existing_document_edits": {
+    "paths": [
+      "docs/audits/20260909-resume/README.md",
+      "docs/voice.md"
+    ],
+    "reason": "公開後追補としてREADMEへ外部反映の実結果を追記し、docs/voice.mdのAP_PASS未設定時の現行挙動を明示した。physics担当のdocs/print-first.md、hardware/src/config.py、docs/assembly.mdは編集していない。"
+  },
+  "explicit_exclusions": {
+    "paths": [
+      "outputs/",
+      "outputs/private/",
+      "outputs/print-first-20260905/",
+      "hardware/urdf/",
+      "model/",
+      "hardware/stl/** (except hardware/stl/battery_cradle.stl)",
+      "tools/data/kit_assembly_front.json",
+      "tools/data/kit_assembly_rear.json",
+      "docs/audits/20260905-round2/manufacturing-preservation.json",
+      "docs/audits/20260905-round2/print-first-publication-allowlist-20260906.json",
+      "docs/audits/20260905-round2/print-first-publication-allowlist-20260906.md"
+    ],
+    "patterns": [
+      "outputs/**",
+      "**/collision-cache/**",
+      "**/*.npz",
+      "**/*.npy",
+      "**/*.3mf",
+      "**/*.mp4",
+      "**/*.bin",
+      "**/*.zip",
+      "**/.pio/**",
+      "**/__pycache__/**",
+      "hardware/urdf/**/*.stl",
+      "hardware/urdf/**/*.urdf",
+      "hardware/stl/**/*.stl (except one focused-test source)",
+      "absolute home paths",
+      "private orders and external purchase records",
+      "repository-external backup archives"
+    ],
+    "exceptions": {
+      "hardware/urdf-print-first/": "tachikoma.urdf、parts_manifest.json、現行URDF参照STL80枚（visual56/collision24）のみを個別選択",
+      "hardware/stl/battery_cradle.stl": "battery特則試験が実際に読む公開原本メッシュ1件",
+      "outputs/print-first-20260905/": "body/legs/feetのSTL37枚＋assembly.json各1件、足部stage契約補助のverification.json・確認図2件、generator49足部共有1枚、LD220治具STL3枚＋candidate.jsonを個別選択。その他のoutputsは除外",
+      "docs/audits/20260905-round2/xiao-retention-candidate/": "generator49不足出力としてXIAO候補STL12枚のみを個別選択"
+    },
+    "reason": "監査raw出力・cache・元3MF/モデル・私的注文・絶対homeパス・実行環境を公開束へ含めない。現行候補の再現に必要な生成物、generator49の不足出力引継ぎ、LD220候補、電池試験入力だけを個別に残す。"
+  },
+  "public_safety_checks": {
+    "selected_paths_repository_relative": true,
+    "absolute_home_paths_in_allowlist": false,
+    "private_order_details_selected": false,
+    "repository_external_backup_selected": false,
+    "output_paths_selected": true,
+    "cache_paths_selected": false,
+    "private_paths_selected": false,
+    "collision_cache_selected": false,
+    "candidate_generated_stl_selected": true,
+    "candidate_generated_stl_count": 80,
+    "candidate_generated_stl_referenced_only": false,
+    "all_untracked_files_included": false,
+    "github_write_performed": true,
+    "git_stage_commit_push_performed": true,
+    "latest_battery_evidence_selected": false,
+    "latest_firmware_reverification_selected": false,
+    "audit_evidence_summary_selected": true,
+    "source_test_pairs_self_contained": false,
+    "source_closure_missing_count": 50,
+    "source_closure_missing_untracked_count": 18,
+    "source_closure_non_output_coverage_count": 52,
+    "source_closure_non_output_coverage_complete": true,
+    "source_closure_gap_explicit": true,
+    "text_content_scan_status": "PASS_NO_VALUE_LEAK_FINDINGS",
+    "binary_content_scan_status": "PASS_NO_VALUE_LEAK_FINDINGS",
+    "local_markdown_links_status": "PASS_ALL_RESOLVED",
+    "head_tracked_dependencies_available_in_composite_tree": true,
+    "selected_paths_present_in_composite_tree": true,
+    "composite_tree_missing_required_output_count": 1,
+    "source_test_pairs_self_contained_reason": "3組の直接列挙だけではsource closure全体を自己完結しないが、HEAD＋342選択pathのcomposite treeでbattery4/native3/generator49=49件を再現し、全てPASS。canonical motion-quality入力1件は意図的に除外。",
+    "urdf_candidate_generated_stl_referenced_only": true,
+    "print_first_output_stl_count": 37,
+    "print_first_output_assembly_count": 3,
+    "xiao_candidate_stl_count": 12,
+    "ld220_fixture_stl_count": 3,
+    "ld220_fixture_manifest_selected": true,
+    "generator49_missing_output_required_count": 13,
+    "generator49_missing_output_unique_selected_count": 12,
+    "print_first_output_support_count": 3,
+    "publication_readback_status": "PASS",
+    "publication_result_path": "docs/audits/20260909-resume/github-publication-result.json",
+    "publication_result_verified_at": "2026-09-08T19:12:30Z",
+    "source_closure_missing_count_observed_at": "2026-09-09T04:02:00+09:00",
+    "source_closure_missing_count_scope": "historical_allowlist_generation_snapshot_not_current_worktree",
+    "source_closure_missing_untracked_count_observed_at": "2026-09-09T04:02:00+09:00",
+    "source_closure_missing_untracked_count_scope": "historical_allowlist_generation_snapshot_not_current_worktree",
+    "source_closure_missing_untracked_count_note": "18は公開前allowlist生成時点の履歴値であり、現在の未追跡件数ではない。",
+    "source_closure_missing_count_note": "50は公開前allowlist生成時点の閉包差分であり、現在の未追跡件数ではない。"
+  },
+  "content_scan": {
+    "text_path_count": 206,
+    "text_status": "PASS_NO_VALUE_LEAK_FINDINGS",
+    "text_findings": {},
+    "binary_stl_path_count": 133,
+    "binary_findings": {},
+    "patterns": [
+      "absolute home/private path",
+      "file URI",
+      "secret-like token",
+      "email",
+      "order id",
+      "postal code"
+    ],
+    "text_scanned_path_count": 206,
+    "binary_status": "PASS_NO_VALUE_LEAK_FINDINGS",
+    "intentional_fixture_findings": {
+      "tools/tests/test_print_first_gate_hardening.py": [
+        "absolute_workspace_path"
+      ]
+    },
+    "intentional_fixture_note": "tools/tests/test_print_first_gate_hardening.pyの/tmp出力先は危険な絶対パス拒否を検証する固定試験値で、公開環境値ではない。"
+  },
+  "public_link_checks": {
+    "markdown_path_count": 20,
+    "local_link_count": 864,
+    "external_or_anchor_count": 501,
+    "numeric_table_targets_ignored": 3,
+    "missing_local_links": [],
+    "status": "PASS_ALL_RESOLVED",
+    "note": "外部URLは形式を保持し、現作業ツリー内の相対根拠リンクだけ実在確認。READMEが示すoutputs監査rawは実在するが、この公開束からは除外。"
+  },
+  "candidate_artifacts": {
+    "urdf_path": "hardware/urdf-print-first/tachikoma.urdf",
+    "manifest_path": "hardware/urdf-print-first/parts_manifest.json",
+    "urdf_sha256": "a63d2d4c61ac99e70e60a2dd8f9708d84f0aaa4d8244166da9a9ac89874b15f8",
+    "manifest_sha256": "7d5a9f44dc07ec691944a6280f05ef996f326a8a6d79b728be192b282f5d7b87",
+    "urdf_mesh_reference_count": 80,
+    "urdf_mesh_reference_paths": [
+      "hardware/urdf-print-first/meshes/arm_l_forearm__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_l_forearm__vis_555555.stl",
+      "hardware/urdf-print-first/meshes/arm_l_forearm__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_l_shoulder__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_l_shoulder__vis_bracket_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_l_upper__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_l_upper__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_l_upper__vis_shell_blue.stl",
+      "hardware/urdf-print-first/meshes/arm_r_forearm__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_r_forearm__vis_555555.stl",
+      "hardware/urdf-print-first/meshes/arm_r_forearm__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_r_shoulder__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_r_shoulder__vis_bracket_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_r_upper__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_r_upper__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_r_upper__vis_shell_blue.stl",
+      "hardware/urdf-print-first/meshes/base_link__col_0.stl",
+      "hardware/urdf-print-first/meshes/base_link__col_1.stl",
+      "hardware/urdf-print-first/meshes/base_link__col_2.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_chassis_grey.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_kit_blue.stl",
+      "hardware/urdf-print-first/meshes/eye_l_pod__col_0.stl",
+      "hardware/urdf-print-first/meshes/eye_l_pod__vis_white.stl",
+      "hardware/urdf-print-first/meshes/eye_pod_camera__col_0.stl",
+      "hardware/urdf-print-first/meshes/eye_pod_camera__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/eye_pod_camera__vis_white.stl",
+      "hardware/urdf-print-first/meshes/eye_r_pod__col_0.stl",
+      "hardware/urdf-print-first/meshes/eye_r_pod__vis_white.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_coxa__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_coxa__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_coxa__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_femur__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_femur__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_femur__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_20252a.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_248aca.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_coxa__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_coxa__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_coxa__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_femur__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_femur__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_femur__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_20252a.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_248aca.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_coxa__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_coxa__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_coxa__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_femur__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_femur__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_femur__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_20252a.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_248aca.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_coxa__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_coxa__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_coxa__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_femur__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_femur__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_femur__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_20252a.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_248aca.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_grey.stl"
+    ],
+    "urdf_mesh_references_all_exist": true,
+    "manifest_mesh_reference_count": 80,
+    "manifest_mesh_references_all_exist": true,
+    "unreferenced_candidate_meshes": [],
+    "urdf_bytes": 29014,
+    "manifest_bytes": 30879,
+    "total_parts": 86,
+    "links_count": 23,
+    "visual_mesh_count": 56,
+    "collision_mesh_count": 24,
+    "manifest_mesh_reference_paths": [
+      "hardware/urdf-print-first/meshes/arm_l_forearm__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_l_forearm__vis_555555.stl",
+      "hardware/urdf-print-first/meshes/arm_l_forearm__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_l_shoulder__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_l_shoulder__vis_bracket_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_l_upper__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_l_upper__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_l_upper__vis_shell_blue.stl",
+      "hardware/urdf-print-first/meshes/arm_r_forearm__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_r_forearm__vis_555555.stl",
+      "hardware/urdf-print-first/meshes/arm_r_forearm__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_r_shoulder__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_r_shoulder__vis_bracket_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_r_upper__col_0.stl",
+      "hardware/urdf-print-first/meshes/arm_r_upper__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/arm_r_upper__vis_shell_blue.stl",
+      "hardware/urdf-print-first/meshes/base_link__col_0.stl",
+      "hardware/urdf-print-first/meshes/base_link__col_1.stl",
+      "hardware/urdf-print-first/meshes/base_link__col_2.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_chassis_grey.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/base_link__vis_kit_blue.stl",
+      "hardware/urdf-print-first/meshes/eye_l_pod__col_0.stl",
+      "hardware/urdf-print-first/meshes/eye_l_pod__vis_white.stl",
+      "hardware/urdf-print-first/meshes/eye_pod_camera__col_0.stl",
+      "hardware/urdf-print-first/meshes/eye_pod_camera__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/eye_pod_camera__vis_white.stl",
+      "hardware/urdf-print-first/meshes/eye_r_pod__col_0.stl",
+      "hardware/urdf-print-first/meshes/eye_r_pod__vis_white.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_coxa__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_coxa__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_coxa__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_femur__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_femur__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_femur__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_20252a.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_248aca.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/leg_fl_tibia__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_coxa__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_coxa__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_coxa__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_femur__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_femur__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_femur__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_20252a.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_248aca.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/leg_fr_tibia__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_coxa__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_coxa__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_coxa__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_femur__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_femur__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_femur__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_20252a.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_248aca.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/leg_rl_tibia__vis_grey.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_coxa__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_coxa__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_coxa__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_femur__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_femur__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_femur__vis_607d8b.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__col_0.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_20252a.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_248aca.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_286bb1.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_888888.stl",
+      "hardware/urdf-print-first/meshes/leg_rr_tibia__vis_grey.stl"
+    ],
+    "generation_run_id": "d93022334ee143b68ee0d06646e8f40e",
+    "generation_status": "GENERATED",
+    "generation_exit_code": 0
+  },
+  "source_closure_requirements": {
+    "closure_definition_path": "tools/print_first_source_closure.py",
+    "closure_definition_sha256": "ec525cdc0bfb7a6af9a10f1f64d6589a5d2abe733cf5ec93b6542466d1ae33b3",
+    "source_closure_count": 38,
+    "freeze_additional_input_count": 15,
+    "three_pair_paths": [
+      "tools/generate_print_first.py",
+      "tools/sim_collision.py",
+      "tools/sim_print_first.py",
+      "tools/tests/test_generate_print_first_contracts.py",
+      "tools/tests/test_battery_cradle_feature.py",
+      "tools/tests/test_print_first_native_trace.py"
+    ],
+    "three_pair_path_count": 6,
+    "full_required_path_count": 53,
+    "missing_from_three_pairs": [
+      {
+        "path": "hardware/src/config.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95"
+      },
+      {
+        "path": "firmware/platformio.ini",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "9ab69ce4256a136ee12ff54ce89cb390e2ebe4b047df4eeb790d7c4ddc843ad7"
+      },
+      {
+        "path": "firmware/src/arms.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "8228c2ae9b486c95d556f0e30836c501fba358fa3caf529e02062be460f2824c"
+      },
+      {
+        "path": "firmware/src/audio.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "8f06d5a9dc29d3c1e5f1481096826f70efc1a282739938463513486dc1c14602"
+      },
+      {
+        "path": "firmware/src/config.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "cf005acd48548c00fee4b1760ae2b6d8793abcacf69ec8562697e860e58440ce"
+      },
+      {
+        "path": "firmware/src/control.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "1b49280d56c93ed86028e9dc5c9b99f2c7de7f32c019eae512fd45593b24cbba"
+      },
+      {
+        "path": "firmware/src/gait.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "75372bbf6594bf0767c79907a0c78638888b1322113009ed443b09f37fa84733"
+      },
+      {
+        "path": "firmware/src/main.cpp",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "add5b65cfc4aa50c95fb823cb1a2d8b57bc3a6010b615e13f985f8ba962cadd9"
+      },
+      {
+        "path": "firmware/src/peripherals.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "71e985abb8bcd980ffe93ea759b5ea8d2f7af6225ae8707bc3c2ea171743f954"
+      },
+      {
+        "path": "firmware/src/print_first_gait.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "bbe8cfff2393b9906cb501b277e3eeac5efb1f18d9b1b3db8da2b2a8be52f0be"
+      },
+      {
+        "path": "firmware/src/profile_config.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "fa67ffce8879346b4e425a32b73377e8ba68dd92bf622f44e2d18886666a4668"
+      },
+      {
+        "path": "firmware/src/servos.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "1bc1f0c3417266df65af46d7c3c987155285a218f1ef49c3dcbf00f9ec6a2597"
+      },
+      {
+        "path": "firmware/src/web_ui.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "4b39e90a41a079a24f8b8f1f27c6b09cb4beee105f0788868c2078641e944f15"
+      },
+      {
+        "path": "tools/print_first_assembly.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "4f69d67b646393e0a25e39f611686d3429d54190a238a30d062ef77493ee33fd"
+      },
+      {
+        "path": "tools/sim_physics.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "f562901d86577a48710ab39344ba80a151ef7a1f45e54c87b687280cb445e356"
+      },
+      {
+        "path": "tools/sim_stress.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "3aef1b42b5b204aed31558fbcb5d81dc857df1f791318aff13d0638b0f2d15f3"
+      },
+      {
+        "path": "tools/export_urdf.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "8a226b0c48f3bb907573aff0749f1d13f57b66303c2762ca11e39166d3457be8"
+      },
+      {
+        "path": "tools/print_first_components.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "878227ee9bc0c6cf6bee3446418f17223f9b8322b291d2ea60f0435db89bc950"
+      },
+      {
+        "path": "tools/generate_print_first_profile.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "6b866a1f9651e83f01a026d90d49fdc3b46f9457d1eb07008e6e36a0d03ac172"
+      },
+      {
+        "path": "tools/export_print_first_native_trace.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "1f05e04bf19b2f6184f1aa79b028409914b9eb3ba1cac78d0c472cac48aa648d"
+      },
+      {
+        "path": "tools/check_print_first_native_trace.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "55be33ff67be92d930fecf10c80c646ff35b129959b169ce706651621ea9a5aa"
+      },
+      {
+        "path": "tools/diagnose_print_first_initial.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "9d239d02c3283af278533a1ba05511bfee5f254b537f15a3f4f9a5b5e639d5fd"
+      },
+      {
+        "path": "tools/check_print_first_body.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "ca27e7cb1f0f1cd745dd9442ba14727a46e7c83f157eccf6e609a233526569e1"
+      },
+      {
+        "path": "tools/check_print_first_t0_mesh.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "cf7a4f928d8636121fa98ed8a9de6051b454fa8c1dafa158ec76ef77e4ecd2d1"
+      },
+      {
+        "path": "tools/sim_self_collision.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "9cf1ac0574c5e4223804fce897dbf4baa42c04cbcfbd1697988141aa319d417d"
+      },
+      {
+        "path": "tools/check_print_first_proxy_exclusions.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "e70db09dd24a2188c98742c85f0e36d501242fd681e1e4284462981555fa5bc5"
+      },
+      {
+        "path": "tools/check_print_first_feet.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "ddeb7758bbced16ec65bf0b88409f97b3d5592ff71322e0eedc8ca3859d1fce9"
+      },
+      {
+        "path": "tools/xiao_retention_plan.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "9d3d1020c01b84ba8e8d2e0df7f162c6fa31ada01e24180848613996bdfa8ec4"
+      },
+      {
+        "path": "tools/check_print_first_motion_quality.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "b7d97ab7e4405a07a1a27742769e64733258c98269fc92491ba7e025968a1d29"
+      },
+      {
+        "path": "tools/make_print_first_freeze_manifest.py",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "08f4ca76ff188d58b1c2ce65c89a792679db9eb5c3da395bef7e6518d092a84c"
+      },
+      {
+        "path": "tools/tests/simulation_output_trace.cpp",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "5242df4608e7e8671f2340434300b42520b4ddd849a48b7e8d427886845477a5"
+      },
+      {
+        "path": "tools/tests/simulation_firmware_trace.cpp",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "cc0488bf7d9c1335e3fe9be640a5ef8300bf26b98846bcba4553dd62775bb031"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/ESPAsyncWebServer.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "f1637bdded3788d7280433ee4c7d358955ec0ce73a75b518c32cdc6ae4e6b14b"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/WiFi.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "0d91f88e6852e578240c5eb13b9950458d10aad49e3a598889cf4a506970b025"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/driver/i2s.h",
+        "category": "source_closure",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "ca40ae4611bc011f303c9be73cee6fa7027e6fa5a169a18f0a092c0ac196bb79"
+      },
+      {
+        "path": "firmware/src/eyes.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "c184c72ccb514d816802792f16e456545c2900df484c84a6a201eaf83679934e"
+      },
+      {
+        "path": "firmware/src/ik.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "a06ab5dc57766a9349a6b8db47e826357fc019118cec619d1656acfbb5c0130b"
+      },
+      {
+        "path": "firmware/src/leg_output.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "63589c7187352c8d484055f43285649dcfc4cbbec4ce70ef0822b33d5e3bea53"
+      },
+      {
+        "path": "docs/audits/20260905-round2/xiao-retention-plan.json",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "21980af4bd10f0314784f81b759bdd4f0767563f283772a88034a0d4d8ad34ed"
+      },
+      {
+        "path": "outputs/print-first-20260905/final-simulation/cases/motion-quality-cases.json",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "264f2fde5ec54674ce98e49ad19093156cd0e5a7b2674c0c44e9d99abeec99f0"
+      },
+      {
+        "path": "tools/print_first_source_closure.py",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "ec525cdc0bfb7a6af9a10f1f64d6589a5d2abe733cf5ec93b6542466d1ae33b3"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/Adafruit_NeoPixel.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "4f1dde5e626c82f7d879e68da3528409ef0d68c611d9a16ee13e6650ab5f74fe"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/Adafruit_PWMServoDriver.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "8fd826de36167d46d7713a1037579143f5cec727d05af6167cfe00106e0d7bb5"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/Arduino.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "c8c23f988e194540dff081435850423a6ee3d7c59961d322542ffd8be645ce3c"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/DFRobotDFPlayerMini.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "58febb4349f6aa16817946b026fb1b02eff12d0bd101ca930da33e8ce2011c52"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/ESPmDNS.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "8e895135c36ae8584ad1d029546fe40c61d0fc5e0c6f30f0690859274eb18682"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/HardwareSerial.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "7102d373940d0a91639c2e0a584340173bf4baea98f65d92160d20bd37d48200"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/Preferences.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "d1f8570aaa6cf88e4632e7f928ddcf120559579d40028a91bd2b1a24bfd893bc"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/Wire.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "07ac2825f63b0c180d315d5b7842b5d1a26456874391b6e8f9f3e0a524981e64"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/esp_task_wdt.h",
+        "category": "freeze_additional_input",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "dc653eeda366dd06f369899c1d71ded0e82bd9fc35192cbb6ed6b8db2fda7fed"
+      }
+    ],
+    "missing_count": 50,
+    "missing_untracked_count": 18,
+    "missing_untracked_paths": [
+      "firmware/src/print_first_gait.h",
+      "firmware/src/profile_config.h",
+      "tools/print_first_assembly.py",
+      "tools/print_first_components.py",
+      "tools/generate_print_first_profile.py",
+      "tools/export_print_first_native_trace.py",
+      "tools/check_print_first_native_trace.py",
+      "tools/diagnose_print_first_initial.py",
+      "tools/check_print_first_body.py",
+      "tools/check_print_first_t0_mesh.py",
+      "tools/check_print_first_proxy_exclusions.py",
+      "tools/check_print_first_feet.py",
+      "tools/xiao_retention_plan.py",
+      "tools/check_print_first_motion_quality.py",
+      "tools/make_print_first_freeze_manifest.py",
+      "docs/audits/20260905-round2/xiao-retention-plan.json",
+      "outputs/print-first-20260905/final-simulation/cases/motion-quality-cases.json",
+      "tools/print_first_source_closure.py"
+    ],
+    "canonical_non_output_selected_count": 52,
+    "canonical_non_output_required_count": 52,
+    "canonical_non_output_not_selected": [],
+    "self_contained": false,
+    "required_action": "公開前allowlist生成時点（2026-09-09T04:02:00+09:00）の閉包差分50（未追跡18を含む）を履歴として記録済み。これは現在の未追跡件数ではない。HEAD追跡のdata/model/hardware/stlは合成treeで利用可能と確認した。公開束単体の完全自己完結性は、意図的に除外した生成出力手渡しのためfalse。",
+    "source_closure": [
+      {
+        "path": "hardware/src/config.py",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95"
+      },
+      {
+        "path": "firmware/platformio.ini",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "9ab69ce4256a136ee12ff54ce89cb390e2ebe4b047df4eeb790d7c4ddc843ad7"
+      },
+      {
+        "path": "firmware/src/arms.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "8228c2ae9b486c95d556f0e30836c501fba358fa3caf529e02062be460f2824c"
+      },
+      {
+        "path": "firmware/src/audio.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "8f06d5a9dc29d3c1e5f1481096826f70efc1a282739938463513486dc1c14602"
+      },
+      {
+        "path": "firmware/src/config.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "cf005acd48548c00fee4b1760ae2b6d8793abcacf69ec8562697e860e58440ce"
+      },
+      {
+        "path": "firmware/src/control.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "1b49280d56c93ed86028e9dc5c9b99f2c7de7f32c019eae512fd45593b24cbba"
+      },
+      {
+        "path": "firmware/src/gait.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "75372bbf6594bf0767c79907a0c78638888b1322113009ed443b09f37fa84733"
+      },
+      {
+        "path": "firmware/src/main.cpp",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "add5b65cfc4aa50c95fb823cb1a2d8b57bc3a6010b615e13f985f8ba962cadd9"
+      },
+      {
+        "path": "firmware/src/peripherals.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "71e985abb8bcd980ffe93ea759b5ea8d2f7af6225ae8707bc3c2ea171743f954"
+      },
+      {
+        "path": "firmware/src/print_first_gait.h",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "bbe8cfff2393b9906cb501b277e3eeac5efb1f18d9b1b3db8da2b2a8be52f0be"
+      },
+      {
+        "path": "firmware/src/profile_config.h",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "fa67ffce8879346b4e425a32b73377e8ba68dd92bf622f44e2d18886666a4668"
+      },
+      {
+        "path": "firmware/src/servos.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "1bc1f0c3417266df65af46d7c3c987155285a218f1ef49c3dcbf00f9ec6a2597"
+      },
+      {
+        "path": "firmware/src/web_ui.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "4b39e90a41a079a24f8b8f1f27c6b09cb4beee105f0788868c2078641e944f15"
+      },
+      {
+        "path": "tools/print_first_assembly.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "4f69d67b646393e0a25e39f611686d3429d54190a238a30d062ef77493ee33fd"
+      },
+      {
+        "path": "tools/sim_collision.py",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "a6a0e300b6aa42fdb9df4f9c2bec1e8d211fd28e4014ed7bf47ecd29b0d061e1"
+      },
+      {
+        "path": "tools/sim_physics.py",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "f562901d86577a48710ab39344ba80a151ef7a1f45e54c87b687280cb445e356"
+      },
+      {
+        "path": "tools/sim_print_first.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "b7081af37f6dbd04a99ff1b12fcf54bd391676be043af4e1f3f34a3b0bc04fa5"
+      },
+      {
+        "path": "tools/sim_stress.py",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "3aef1b42b5b204aed31558fbcb5d81dc857df1f791318aff13d0638b0f2d15f3"
+      },
+      {
+        "path": "tools/export_urdf.py",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "8a226b0c48f3bb907573aff0749f1d13f57b66303c2762ca11e39166d3457be8"
+      },
+      {
+        "path": "tools/print_first_components.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "878227ee9bc0c6cf6bee3446418f17223f9b8322b291d2ea60f0435db89bc950"
+      },
+      {
+        "path": "tools/generate_print_first_profile.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "6b866a1f9651e83f01a026d90d49fdc3b46f9457d1eb07008e6e36a0d03ac172"
+      },
+      {
+        "path": "tools/export_print_first_native_trace.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "1f05e04bf19b2f6184f1aa79b028409914b9eb3ba1cac78d0c472cac48aa648d"
+      },
+      {
+        "path": "tools/generate_print_first.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "1404d9f4849bc806aea89348c7b498f5b6b4c2ba993334072a18ff31eadfd037"
+      },
+      {
+        "path": "tools/check_print_first_native_trace.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "55be33ff67be92d930fecf10c80c646ff35b129959b169ce706651621ea9a5aa"
+      },
+      {
+        "path": "tools/diagnose_print_first_initial.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "9d239d02c3283af278533a1ba05511bfee5f254b537f15a3f4f9a5b5e639d5fd"
+      },
+      {
+        "path": "tools/check_print_first_body.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "ca27e7cb1f0f1cd745dd9442ba14727a46e7c83f157eccf6e609a233526569e1"
+      },
+      {
+        "path": "tools/check_print_first_t0_mesh.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "cf7a4f928d8636121fa98ed8a9de6051b454fa8c1dafa158ec76ef77e4ecd2d1"
+      },
+      {
+        "path": "tools/sim_self_collision.py",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "9cf1ac0574c5e4223804fce897dbf4baa42c04cbcfbd1697988141aa319d417d"
+      },
+      {
+        "path": "tools/check_print_first_proxy_exclusions.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "e70db09dd24a2188c98742c85f0e36d501242fd681e1e4284462981555fa5bc5"
+      },
+      {
+        "path": "tools/check_print_first_feet.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "ddeb7758bbced16ec65bf0b88409f97b3d5592ff71322e0eedc8ca3859d1fce9"
+      },
+      {
+        "path": "tools/xiao_retention_plan.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "9d3d1020c01b84ba8e8d2e0df7f162c6fa31ada01e24180848613996bdfa8ec4"
+      },
+      {
+        "path": "tools/check_print_first_motion_quality.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "b7d97ab7e4405a07a1a27742769e64733258c98269fc92491ba7e025968a1d29"
+      },
+      {
+        "path": "tools/make_print_first_freeze_manifest.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "08f4ca76ff188d58b1c2ce65c89a792679db9eb5c3da395bef7e6518d092a84c"
+      },
+      {
+        "path": "tools/tests/simulation_output_trace.cpp",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "5242df4608e7e8671f2340434300b42520b4ddd849a48b7e8d427886845477a5"
+      },
+      {
+        "path": "tools/tests/simulation_firmware_trace.cpp",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "cc0488bf7d9c1335e3fe9be640a5ef8300bf26b98846bcba4553dd62775bb031"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/ESPAsyncWebServer.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "f1637bdded3788d7280433ee4c7d358955ec0ce73a75b518c32cdc6ae4e6b14b"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/WiFi.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "0d91f88e6852e578240c5eb13b9950458d10aad49e3a598889cf4a506970b025"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/driver/i2s.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "ca40ae4611bc011f303c9be73cee6fa7027e6fa5a169a18f0a092c0ac196bb79"
+      }
+    ],
+    "freeze_additional_inputs": [
+      {
+        "path": "firmware/src/eyes.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "c184c72ccb514d816802792f16e456545c2900df484c84a6a201eaf83679934e"
+      },
+      {
+        "path": "firmware/src/ik.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "a06ab5dc57766a9349a6b8db47e826357fc019118cec619d1656acfbb5c0130b"
+      },
+      {
+        "path": "firmware/src/leg_output.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "63589c7187352c8d484055f43285649dcfc4cbbec4ce70ef0822b33d5e3bea53"
+      },
+      {
+        "path": "docs/audits/20260905-round2/xiao-retention-plan.json",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "21980af4bd10f0314784f81b759bdd4f0767563f283772a88034a0d4d8ad34ed"
+      },
+      {
+        "path": "outputs/print-first-20260905/final-simulation/cases/motion-quality-cases.json",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "264f2fde5ec54674ce98e49ad19093156cd0e5a7b2674c0c44e9d99abeec99f0"
+      },
+      {
+        "path": "tools/print_first_source_closure.py",
+        "exists": true,
+        "git_tracked": false,
+        "sha256": "ec525cdc0bfb7a6af9a10f1f64d6589a5d2abe733cf5ec93b6542466d1ae33b3"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/Adafruit_NeoPixel.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "4f1dde5e626c82f7d879e68da3528409ef0d68c611d9a16ee13e6650ab5f74fe"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/Adafruit_PWMServoDriver.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "8fd826de36167d46d7713a1037579143f5cec727d05af6167cfe00106e0d7bb5"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/Arduino.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "c8c23f988e194540dff081435850423a6ee3d7c59961d322542ffd8be645ce3c"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/DFRobotDFPlayerMini.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "58febb4349f6aa16817946b026fb1b02eff12d0bd101ca930da33e8ce2011c52"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/ESPmDNS.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "8e895135c36ae8584ad1d029546fe40c61d0fc5e0c6f30f0690859274eb18682"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/HardwareSerial.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "7102d373940d0a91639c2e0a584340173bf4baea98f65d92160d20bd37d48200"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/Preferences.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "d1f8570aaa6cf88e4632e7f928ddcf120559579d40028a91bd2b1a24bfd893bc"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/Wire.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "07ac2825f63b0c180d315d5b7842b5d1a26456874391b6e8f9f3e0a524981e64"
+      },
+      {
+        "path": "tools/tests/firmware_stubs/esp_task_wdt.h",
+        "exists": true,
+        "git_tracked": true,
+        "sha256": "dc653eeda366dd06f369899c1d71ded0e82bd9fc35192cbb6ed6b8db2fda7fed"
+      }
+    ],
+    "selected_source_dependency_path_count": 169,
+    "selected_source_dependency_paths": [
+      ".gitignore",
+      "AGENTS.md",
+      "README.md",
+      "docs/HANDOFF.md",
+      "docs/assembly.md",
+      "tools/make_print_first_publication_allowlist.py",
+      "tools/print_first_source_closure.py",
+      "tools/generate_print_first.py",
+      "tools/config_contract.py",
+      "hardware/src/config.py",
+      "hardware/src/build_all.py",
+      "hardware/src/arm_shell.py",
+      "hardware/src/make_arm.py",
+      "hardware/src/make_audio.py",
+      "hardware/src/make_camera.py",
+      "hardware/src/make_chassis.py",
+      "hardware/src/make_eye.py",
+      "hardware/src/make_head.py",
+      "hardware/src/make_ld220_adapter.py",
+      "hardware/src/make_leg.py",
+      "hardware/src/make_print_first_body.py",
+      "hardware/src/make_print_first_feet.py",
+      "hardware/src/make_print_first_leg.py",
+      "hardware/src/lib.py",
+      "hardware/src/shell_mod.py",
+      "tools/print_first_assembly.py",
+      "tools/make_head_eyecut.py",
+      "tools/print_first_components.py",
+      "tools/make_print_first_manifest.py",
+      "tools/make_print_orientation_manifest.py",
+      "tools/make_print_first_freeze_manifest.py",
+      "tools/generate_print_first_profile.py",
+      "tools/export_print_first_native_trace.py",
+      "tools/render_print_first.py",
+      "tools/xiao_retention_plan.py",
+      "tools/design_xiao_camera_cradle.py",
+      "tools/design_xiao_head_mount.py",
+      "tools/audit_mechanical_inventory.py",
+      "tools/check_ld220_adapter.py",
+      "tools/check_ov3660_full_fov.py",
+      "tools/check_print_first_body.py",
+      "tools/check_print_first_feet.py",
+      "tools/check_print_first_motion_quality.py",
+      "tools/check_print_first_native_trace.py",
+      "tools/check_print_first_proxy_exclusions.py",
+      "tools/check_print_first_t0_mesh.py",
+      "tools/diagnose_print_first_initial.py",
+      "tools/sim_print_first.py",
+      "tools/sim_collision.py",
+      "tools/sim_physics.py",
+      "tools/sim_self_collision.py",
+      "tools/sim_stress.py",
+      "tools/sim_yaw_pack_search.py",
+      "tools/check_print_artifacts.py",
+      "tools/mesh_checks.py",
+      "tools/check_toe_contact.py",
+      "tools/check_print_strength_sensitivity.py",
+      "tools/check_leg_link_strength.py",
+      "tools/filament_calc.py",
+      "tools/export_urdf.py",
+      "tools/check_urdf.py",
+      "tools/check_static_assembly.py",
+      "tools/check_head_pod_clearance.py",
+      "tools/check_pod_neck_strength.py",
+      "tools/check_shin_arm_leg.py",
+      "tools/check_camera.py",
+      "tools/check_audio.py",
+      "tools/check_arm.py",
+      "tools/check_eye.py",
+      "tools/check_mouth_chassis.py",
+      "tools/check_leg_assembly.py",
+      "tools/check_coxa_sweep.py",
+      "tools/check_screw_bosses.py",
+      "tools/check_kit_transforms.py",
+      "tools/run_design_audit.py",
+      "tools/sim_gait.py",
+      "tools/check_power_budget.py",
+      "tools/tests/test_print_first_contracts.py",
+      "tools/tests/test_print_first_initial_diagnostic.py",
+      "tools/tests/test_print_first_motion_quality.py",
+      "tools/tests/test_print_first_t0_contracts.py",
+      "tools/tests/test_config_contract.py",
+      "tools/tests/test_print_first_native_trace.py",
+      "tools/tests/simulation_firmware_trace.cpp",
+      "tools/tests/simulation_output_trace.cpp",
+      "tools/tests/simulation_regression.py",
+      "tools/tests/test_audit_gates.py",
+      "tools/tests/test_issue_sync.py",
+      "tools/tests/test_print_artifacts.py",
+      "tools/tests/test_render_contracts.py",
+      "tools/tests/test_extract_meshes.py",
+      "tools/tests/test_mesh_checks.py",
+      "tools/tests/test_coxa_sweep.py",
+      "tools/tests/test_integration_audit.py",
+      "tools/tests/test_stl_export.py",
+      "tools/tests/test_export_stl.py",
+      "tools/tests/firmware_run.py",
+      "tools/tests/firmware_calibration_main_test.cpp",
+      "tools/tests/firmware_contract_test.cpp",
+      "tools/tests/firmware_fault_test.cpp",
+      "tools/tests/firmware_main_test.cpp",
+      "tools/tests/firmware_audio_test.cpp",
+      "tools/tests/firmware_ui_test.cjs",
+      "tools/tests/firmware_stubs/WiFi.h",
+      "tools/tests/firmware_stubs/ESPAsyncWebServer.h",
+      "tools/tests/firmware_stubs/driver/i2s.h",
+      "firmware/platformio.ini",
+      "firmware/src/config.h",
+      "firmware/src/arms.h",
+      "firmware/src/audio.h",
+      "firmware/src/control.h",
+      "firmware/src/gait.h",
+      "firmware/src/main.cpp",
+      "firmware/src/peripherals.h",
+      "firmware/src/web_ui.h",
+      "firmware/src/print_first_gait.h",
+      "firmware/src/profile_config.h",
+      "firmware/src/servos.h",
+      "tools/issues/make_print_first_update_plan.py",
+      "tools/issues/audit_plan_data.py",
+      "tools/issues/plan.py",
+      "tools/issues/issue_map.json",
+      "tools/issues/issue_publication_data.py",
+      "tools/issues/sync_github_issues.py",
+      "tools/issues/sync_project.py",
+      "tools/issues/fetch_public_snapshot.py",
+      "tools/issues/public_purchase_ledger.py",
+      "tools/issues/publication_gate.py",
+      "tools/issues/update_github_issues.py",
+      "tools/tests/test_additional_printing_contracts.py",
+      "tools/tests/test_additional_purchases_contracts.py",
+      "tools/tests/test_additional_purchases_privacy.py",
+      "tools/tests/test_generate_print_first_contracts.py",
+      "tools/tests/test_issue_append_update.py",
+      "tools/tests/test_issue_publication_contracts.py",
+      "tools/tests/test_publication_gate.py",
+      "tools/tests/test_safe_snapshot_contracts.py",
+      "tools/tests/test_battery_cradle_feature.py",
+      "firmware/tests/audio_volume_test.cpp",
+      "firmware/tests/peripheral_profile_test.cpp",
+      "firmware/tests/profile_main_test.cpp",
+      "firmware/tests/profile_ui_test.cjs",
+      "firmware/tests/run_print_first.py",
+      "firmware/tests/stubs/Adafruit_NeoPixel.h",
+      "firmware/tests/stubs/DFRobotDFPlayerMini.h",
+      "firmware/tests/stubs/ESPAsyncWebServer.h",
+      "firmware/tests/stubs/HardwareSerial.h",
+      "firmware/tests/stubs/peripheral_probe.h",
+      "firmware/tests/write_electrical_manifest.py",
+      "tools/kit_assembly.py",
+      "tools/make_visuals.py",
+      "firmware/src/eyes.h",
+      "firmware/src/ik.h",
+      "firmware/src/leg_output.h",
+      "tools/tests/firmware_stubs/Adafruit_NeoPixel.h",
+      "tools/tests/firmware_stubs/Adafruit_PWMServoDriver.h",
+      "tools/tests/firmware_stubs/Arduino.h",
+      "tools/tests/firmware_stubs/DFRobotDFPlayerMini.h",
+      "tools/tests/firmware_stubs/ESPmDNS.h",
+      "tools/tests/firmware_stubs/HardwareSerial.h",
+      "tools/tests/firmware_stubs/Preferences.h",
+      "tools/tests/firmware_stubs/Wire.h",
+      "tools/tests/firmware_stubs/esp_task_wdt.h",
+      "docs/audits/20260905-round2/primary-sources/xiao-step-measured/camera-removed-summary.json",
+      "docs/audits/20260905-round2/primary-sources/xiao-step-measured/assembly-bounds.json",
+      "docs/audits/20260905-round2/camera-ov3660-candidate/comparison.json",
+      "docs/audits/20260905-round2/camera-ov3660-candidate/xiao-placement-search.json",
+      "docs/audits/20260905-round2/camera-ov3660-candidate/xiao-cradle-comparison.json",
+      "docs/audits/20260905-round2/primary-sources/source-register.json"
+    ],
+    "groups": {
+      "repository_context": [
+        ".gitignore",
+        "AGENTS.md",
+        "README.md",
+        "docs/HANDOFF.md",
+        "docs/assembly.md"
+      ],
+      "publication_allowlist": [
+        "tools/make_print_first_publication_allowlist.py",
+        "tools/print_first_source_closure.py"
+      ],
+      "print_first_generation": [
+        "tools/generate_print_first.py",
+        "tools/config_contract.py",
+        "hardware/src/config.py",
+        "hardware/src/build_all.py",
+        "hardware/src/arm_shell.py",
+        "hardware/src/make_arm.py",
+        "hardware/src/make_audio.py",
+        "hardware/src/make_camera.py",
+        "hardware/src/make_chassis.py",
+        "hardware/src/make_eye.py",
+        "hardware/src/make_head.py",
+        "hardware/src/make_ld220_adapter.py",
+        "hardware/src/make_leg.py",
+        "hardware/src/make_print_first_body.py",
+        "hardware/src/make_print_first_feet.py",
+        "hardware/src/make_print_first_leg.py",
+        "hardware/src/lib.py",
+        "hardware/src/shell_mod.py",
+        "tools/print_first_assembly.py",
+        "tools/make_head_eyecut.py",
+        "tools/print_first_components.py",
+        "tools/make_print_first_manifest.py",
+        "tools/make_print_orientation_manifest.py",
+        "tools/make_print_first_freeze_manifest.py",
+        "tools/generate_print_first_profile.py",
+        "tools/export_print_first_native_trace.py",
+        "tools/render_print_first.py"
+      ],
+      "mechanism_and_diagnostics": [
+        "tools/xiao_retention_plan.py",
+        "tools/design_xiao_camera_cradle.py",
+        "tools/design_xiao_head_mount.py",
+        "tools/audit_mechanical_inventory.py",
+        "tools/check_ld220_adapter.py",
+        "tools/check_ov3660_full_fov.py",
+        "tools/check_print_first_body.py",
+        "tools/check_print_first_feet.py",
+        "tools/check_print_first_motion_quality.py",
+        "tools/check_print_first_native_trace.py",
+        "tools/check_print_first_proxy_exclusions.py",
+        "tools/check_print_first_t0_mesh.py",
+        "tools/diagnose_print_first_initial.py",
+        "tools/sim_print_first.py",
+        "tools/sim_collision.py",
+        "tools/sim_physics.py",
+        "tools/sim_self_collision.py",
+        "tools/sim_stress.py",
+        "tools/sim_yaw_pack_search.py",
+        "tools/check_print_artifacts.py",
+        "tools/mesh_checks.py",
+        "tools/check_toe_contact.py",
+        "tools/check_print_strength_sensitivity.py",
+        "tools/check_leg_link_strength.py",
+        "tools/filament_calc.py",
+        "tools/export_urdf.py",
+        "tools/check_urdf.py",
+        "tools/check_static_assembly.py",
+        "tools/check_head_pod_clearance.py",
+        "tools/check_pod_neck_strength.py",
+        "tools/check_shin_arm_leg.py",
+        "tools/check_camera.py",
+        "tools/check_audio.py",
+        "tools/check_arm.py",
+        "tools/check_eye.py",
+        "tools/check_mouth_chassis.py",
+        "tools/check_leg_assembly.py",
+        "tools/check_coxa_sweep.py",
+        "tools/check_screw_bosses.py",
+        "tools/check_kit_transforms.py"
+      ],
+      "audit_orchestration": [
+        "tools/run_design_audit.py",
+        "tools/sim_gait.py",
+        "tools/check_power_budget.py"
+      ],
+      "print_first_contract_tests": [
+        "tools/tests/test_print_first_contracts.py",
+        "tools/tests/test_print_first_initial_diagnostic.py",
+        "tools/tests/test_print_first_motion_quality.py",
+        "tools/tests/test_print_first_t0_contracts.py",
+        "tools/tests/test_config_contract.py",
+        "tools/tests/test_print_first_native_trace.py",
+        "tools/tests/simulation_firmware_trace.cpp",
+        "tools/tests/simulation_output_trace.cpp",
+        "tools/tests/simulation_regression.py"
+      ],
+      "audit_regression_tests": [
+        "tools/tests/test_audit_gates.py",
+        "tools/tests/test_issue_sync.py",
+        "tools/tests/test_print_artifacts.py",
+        "tools/tests/test_render_contracts.py",
+        "tools/tests/test_extract_meshes.py",
+        "tools/tests/test_mesh_checks.py",
+        "tools/tests/test_coxa_sweep.py",
+        "tools/tests/test_integration_audit.py",
+        "tools/tests/test_stl_export.py",
+        "tools/tests/test_export_stl.py"
+      ],
+      "firmware_host_tests": [
+        "tools/tests/firmware_run.py",
+        "tools/tests/firmware_calibration_main_test.cpp",
+        "tools/tests/firmware_contract_test.cpp",
+        "tools/tests/firmware_fault_test.cpp",
+        "tools/tests/firmware_main_test.cpp",
+        "tools/tests/firmware_audio_test.cpp",
+        "tools/tests/firmware_ui_test.cjs",
+        "tools/tests/firmware_stubs/WiFi.h",
+        "tools/tests/firmware_stubs/ESPAsyncWebServer.h",
+        "tools/tests/firmware_stubs/driver/i2s.h"
+      ],
+      "firmware_print_first": [
+        "firmware/platformio.ini",
+        "firmware/src/config.h",
+        "firmware/src/arms.h",
+        "firmware/src/audio.h",
+        "firmware/src/control.h",
+        "firmware/src/gait.h",
+        "firmware/src/main.cpp",
+        "firmware/src/peripherals.h",
+        "firmware/src/web_ui.h",
+        "firmware/src/print_first_gait.h",
+        "firmware/src/profile_config.h",
+        "firmware/src/servos.h"
+      ],
+      "issue_publication_plan": [
+        "tools/issues/make_print_first_update_plan.py",
+        "tools/issues/audit_plan_data.py",
+        "tools/issues/plan.py",
+        "tools/issues/issue_map.json",
+        "tools/issues/issue_publication_data.py",
+        "tools/issues/sync_github_issues.py",
+        "tools/issues/sync_project.py",
+        "tools/issues/fetch_public_snapshot.py",
+        "tools/issues/public_purchase_ledger.py",
+        "tools/issues/publication_gate.py",
+        "tools/issues/update_github_issues.py"
+      ],
+      "publication_contract_tests": [
+        "tools/tests/test_additional_printing_contracts.py",
+        "tools/tests/test_additional_purchases_contracts.py",
+        "tools/tests/test_additional_purchases_privacy.py",
+        "tools/tests/test_generate_print_first_contracts.py",
+        "tools/tests/test_issue_append_update.py",
+        "tools/tests/test_issue_publication_contracts.py",
+        "tools/tests/test_publication_gate.py",
+        "tools/tests/test_safe_snapshot_contracts.py"
+      ]
+    },
+    "ast_local_import_closure_count": 31,
+    "ast_local_import_closure": [
+      "hardware/src/config.py",
+      "hardware/src/lib.py",
+      "hardware/src/make_audio.py",
+      "hardware/src/make_camera.py",
+      "hardware/src/make_chassis.py",
+      "hardware/src/make_eye.py",
+      "hardware/src/make_ld220_adapter.py",
+      "hardware/src/make_leg.py",
+      "hardware/src/make_print_first_leg.py",
+      "tools/check_print_first_native_trace.py",
+      "tools/config_contract.py",
+      "tools/export_urdf.py",
+      "tools/generate_print_first.py",
+      "tools/issues/public_purchase_ledger.py",
+      "tools/issues/publication_gate.py",
+      "tools/kit_assembly.py",
+      "tools/make_print_first_publication_allowlist.py",
+      "tools/make_visuals.py",
+      "tools/print_first_assembly.py",
+      "tools/print_first_components.py",
+      "tools/print_first_source_closure.py",
+      "tools/sim_collision.py",
+      "tools/sim_gait.py",
+      "tools/sim_physics.py",
+      "tools/sim_print_first.py",
+      "tools/sim_self_collision.py",
+      "tools/sim_stress.py",
+      "tools/tests/test_battery_cradle_feature.py",
+      "tools/tests/test_generate_print_first_contracts.py",
+      "tools/tests/test_print_first_native_trace.py",
+      "tools/xiao_retention_plan.py"
+    ],
+    "generator_serial_stage_paths": [
+      "hardware/src/build_all.py",
+      "tools/make_head_eyecut.py",
+      "tools/xiao_retention_plan.py",
+      "hardware/src/make_print_first_feet.py",
+      "tools/check_print_first_feet.py",
+      "hardware/src/make_print_first_leg.py",
+      "hardware/src/make_print_first_body.py",
+      "tools/generate_print_first_profile.py",
+      "tools/print_first_assembly.py"
+    ],
+    "generator_static_input_count": 56,
+    "generator_static_inputs_selected_count": 54,
+    "generator_static_inputs_omitted_for_safety": [
+      "tools/data/kit_assembly_front.json",
+      "tools/data/kit_assembly_rear.json"
+    ],
+    "generator_static_inputs_missing": [],
+    "known_source_gaps": [
+      "outputs/print-first-20260905/final-simulation/cases/motion-quality-cases.json (意図的に公開対象外の生成入力。合成treeで唯一のcanonical欠落)"
+    ],
+    "head_tracked_publication_exclusions_available": [
+      "tools/data/kit_assembly_front.json",
+      "tools/data/kit_assembly_rear.json",
+      "model/**",
+      "hardware/stl/** (except hardware/stl/battery_cradle.stl)"
+    ],
+    "head_tracked_publication_exclusions_note": "上記は個別allowlistからは除外するが、HEAD追跡物として仮合成treeに含まれ、依存欠落ではない。",
+    "canonical_missing_from_composite_tree": [
+      "outputs/print-first-20260905/final-simulation/cases/motion-quality-cases.json"
+    ],
+    "missing_counts_history": [
+      {
+        "observed_at": "2026-09-09T04:02:00+09:00",
+        "scope": "allowlist_generation_before_external_publication",
+        "missing_count": 50,
+        "missing_untracked_count": 18,
+        "note": "公開前allowlist生成時点の観測値。現在の未追跡件数を表さない。"
+      }
+    ],
+    "missing_count_scope": "historical_allowlist_generation_snapshot_not_current_worktree",
+    "missing_untracked_count_scope": "historical_allowlist_generation_snapshot_not_current_worktree",
+    "missing_counts_observed_at": "2026-09-09T04:02:00+09:00",
+    "missing_counts_note": "missing_count=50、missing_untracked_count=18、missing_untracked_pathsは公開前allowlist生成時点の履歴値であり、現在の未追跡件数ではない。"
+  },
+  "counts": {
+    "selected_path_count": 342,
+    "selected_total_bytes": 39611245,
+    "selected_total_mib": 37.77622699737549,
+    "source_dependency_path_count": 165,
+    "audit_and_document_path_count": 29,
+    "battery_source_mesh_count": 1,
+    "generated_candidate_path_count": 137,
+    "generated_candidate_mesh_count": 129,
+    "generated_candidate_total_bytes": 32775321,
+    "role_counts": {
+      "new_audit_record": 7,
+      "existing_public_document": 22,
+      "source_dependency:repository_context": 5,
+      "source_dependency:publication_allowlist": 2,
+      "source_dependency:print_first_generation": 27,
+      "source_dependency:mechanism_and_diagnostics": 40,
+      "source_dependency:audit_orchestration": 3,
+      "source_dependency:print_first_contract_tests": 11,
+      "source_dependency:audit_regression_tests": 10,
+      "source_dependency:firmware_host_tests": 10,
+      "source_dependency:firmware_print_first": 12,
+      "source_dependency:issue_publication_plan": 11,
+      "source_dependency:publication_contract_tests": 8,
+      "source_dependency:focused_pair_regression": 1,
+      "source_dependency:firmware_contract_tests": 11,
+      "source_dependency:generator_static_python": 2,
+      "source_dependency:firmware_runtime_headers": 3,
+      "source_dependency:firmware_stub_closure": 9,
+      "source_input_audit_record": 6,
+      "source_mesh_required_by_battery_test": 1,
+      "generated_candidate_urdf": 1,
+      "generated_candidate_manifest": 1,
+      "generated_candidate_mesh:urdf_reference": 80,
+      "generated_candidate_mesh:print_first_output": 36,
+      "generated_candidate_mesh:generator49_missing_output": 13,
+      "generated_candidate_assembly:print_first_output": 3,
+      "generated_fixture_mesh:ld220": 3,
+      "generated_fixture_manifest:ld220": 1,
+      "generated_candidate_support:print_first_feet": 3
+    },
+    "source_input_audit_record_count": 6,
+    "generated_candidate_urdf_path_count": 82,
+    "generated_candidate_urdf_mesh_count": 80,
+    "generated_candidate_urdf_total_bytes": 19743613,
+    "print_first_output_path_count": 43,
+    "print_first_output_stl_count": 37,
+    "print_first_output_assembly_count": 3,
+    "print_first_output_total_bytes": 13019900,
+    "generator49_missing_output_required_path_count": 13,
+    "generator49_missing_output_unique_selected_count": 12,
+    "generator49_missing_output_total_bytes": 167392,
+    "xiao_candidate_stl_count": 12,
+    "ld220_fixture_path_count": 4,
+    "ld220_fixture_stl_count": 3,
+    "ld220_fixture_manifest_count": 1,
+    "ld220_fixture_total_bytes": 200893,
+    "print_first_output_support_count": 3,
+    "binary_non_stl_image_count": 2
+  },
+  "virtual_tree_check": {
+    "checked_on": "2026-09-09",
+    "status": "COMPOSITE_TREE_GENERATOR49_PASS",
+    "method": "一時GIT_INDEX_FILEへHEADをread-treeし、selected_filesのworktree内容だけを追加してwrite-tree、そのtreeをarchiveして検査。実indexは変更なし。",
+    "tree_hash": "c065210fbb0236d86bb3740c65612f3d7a888e1b",
+    "selected_path_count": 342,
+    "selected_missing_from_composite_tree": [],
+    "canonical_required_path_count": 53,
+    "canonical_missing_from_composite_tree": [
+      "outputs/print-first-20260905/final-simulation/cases/motion-quality-cases.json"
+    ],
+    "head_tracked_dependencies_available": [
+      "tools/data/kit_assembly_front.json",
+      "tools/data/kit_assembly_rear.json",
+      "model/**",
+      "hardware/stl/**"
+    ],
+    "focused_tests": [
+      {
+        "name": "battery-cradle-feature",
+        "command": ".venv/bin/python tools/tests/test_battery_cradle_feature.py",
+        "status": "PASS",
+        "tests_run": 4,
+        "failures": 0
+      },
+      {
+        "name": "print-first-native-trace",
+        "command": ".venv/bin/python -m unittest tools.tests.test_print_first_native_trace",
+        "status": "PASS",
+        "tests_run": 3,
+        "failures": 0
+      },
+      {
+        "name": "generate-print-first-contracts",
+        "command": ".venv/bin/python -m unittest tools.tests.test_generate_print_first_contracts",
+        "status": "PASS",
+        "tests_run": 49,
+        "passed": 49,
+        "failures": 0
+      }
+    ],
+    "real_git_index_touched": false,
+    "reproduction_status": "HEAD tree plus 342 explicitly selected current paths; feet stage support outputs included; generator49 contract suite 49/49 PASS; canonical motion-quality input remains intentionally excluded."
+  },
+  "updated_on": "2026-09-09",
+  "selected_output_artifacts": {
+    "print_first_candidate": {
+      "root": "outputs/print-first-20260905/{body,legs,feet}",
+      "stl_count": 37,
+      "stl_paths": [
+        "outputs/print-first-20260905/body/pf_cabin_rail_l.stl",
+        "outputs/print-first-20260905/body/pf_cabin_rail_r.stl",
+        "outputs/print-first-20260905/body/pf_camera_carrier.stl",
+        "outputs/print-first-20260905/body/pf_chassis.stl",
+        "outputs/print-first-20260905/body/pf_electronics_shelf_0.stl",
+        "outputs/print-first-20260905/body/pf_electronics_shelf_1.stl",
+        "outputs/print-first-20260905/body/pf_electronics_shelf_2.stl",
+        "outputs/print-first-20260905/body/pf_eye_pod_camera_clearanced.stl",
+        "outputs/print-first-20260905/body/pf_fixed_claw_l.stl",
+        "outputs/print-first-20260905/body/pf_fixed_claw_r.stl",
+        "outputs/print-first-20260905/body/pf_head_top_clearanced.stl",
+        "outputs/print-first-20260905/body/pf_ld220_yaw_cap_fl.stl",
+        "outputs/print-first-20260905/body/pf_ld220_yaw_cap_fr.stl",
+        "outputs/print-first-20260905/body/pf_ld220_yaw_cap_rl.stl",
+        "outputs/print-first-20260905/body/pf_ld220_yaw_cap_rr.stl",
+        "outputs/print-first-20260905/body/pf_mouth_key.stl",
+        "outputs/print-first-20260905/feet/pla_spacer_negative_y_foot_frame.stl",
+        "outputs/print-first-20260905/feet/pla_spacer_positive_y_foot_frame.stl",
+        "outputs/print-first-20260905/feet/pla_spacer_print.stl",
+        "outputs/print-first-20260905/feet/pla_spacer_upper_negative_y_foot_frame.stl",
+        "outputs/print-first-20260905/feet/pla_spacer_upper_positive_y_foot_frame.stl",
+        "outputs/print-first-20260905/feet/shin_shell_retained_foot_frame.stl",
+        "outputs/print-first-20260905/feet/shin_shell_retained_m_foot_frame.stl",
+        "outputs/print-first-20260905/feet/shin_shell_retained_m_print.stl",
+        "outputs/print-first-20260905/feet/shin_shell_retained_print.stl",
+        "outputs/print-first-20260905/feet/tpu_shoe_foot_frame.stl",
+        "outputs/print-first-20260905/feet/tpu_shoe_print.stl",
+        "outputs/print-first-20260905/legs/pf_coxa_bracket.stl",
+        "outputs/print-first-20260905/legs/pf_coxa_bracket_m.stl",
+        "outputs/print-first-20260905/legs/pf_femur_link.stl",
+        "outputs/print-first-20260905/legs/pf_femur_link_m.stl",
+        "outputs/print-first-20260905/legs/pf_ld220_coxa_cap.stl",
+        "outputs/print-first-20260905/legs/pf_ld220_coxa_cap_m.stl",
+        "outputs/print-first-20260905/legs/pf_ld220_femur_cap.stl",
+        "outputs/print-first-20260905/legs/pf_ld220_femur_cap_m.stl",
+        "outputs/print-first-20260905/legs/pf_tibia_link.stl",
+        "outputs/print-first-20260905/legs/pf_tibia_link_m.stl"
+      ],
+      "assembly_json_count": 3,
+      "assembly_json_paths": [
+        "outputs/print-first-20260905/body/assembly.json",
+        "outputs/print-first-20260905/legs/assembly.json",
+        "outputs/print-first-20260905/feet/assembly.json"
+      ],
+      "selected_path_count": 43,
+      "total_bytes": 13019900,
+      "support_path_count": 3,
+      "support_paths": [
+        "outputs/print-first-20260905/feet/verification.json",
+        "outputs/print-first-20260905/feet/assembly-preview.png",
+        "outputs/print-first-20260905/feet/shell-local-changes.png"
+      ]
+    },
+    "generator49_gap_resolution": {
+      "status": "RESOLVED_BY_EXPLICIT_SELECTION",
+      "required_path_count": 13,
+      "unique_selected_path_count": 12,
+      "shared_with_print_first_candidate": [
+        "outputs/print-first-20260905/feet/tpu_shoe_foot_frame.stl"
+      ],
+      "foot_path": "outputs/print-first-20260905/feet/tpu_shoe_foot_frame.stl",
+      "xiao_paths": [
+        "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_camera_child_lens_occupancy.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_all_boards_occupancy.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_floor_candidate.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_holder3_union_candidate.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_rib_left_candidate.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/with_sd_xiao_tray_rib_right_candidate.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_camera_child_lens_occupancy.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_all_boards_occupancy.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_floor_candidate.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_holder3_union_candidate.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_rib_left_candidate.stl",
+        "docs/audits/20260905-round2/xiao-retention-candidate/without_sd_xiao_tray_rib_right_candidate.stl"
+      ],
+      "note": "足部1枚は37枚の印刷候補にも含まれるため、selected_filesへは重複登録しない。"
+    },
+    "ld220_fixture": {
+      "root": "outputs/print-first-20260905/ld220-adapter-freeze2-final",
+      "stl_count": 3,
+      "stl_paths": [
+        "outputs/print-first-20260905/ld220-adapter-freeze2-final/ld220_cap.stl",
+        "outputs/print-first-20260905/ld220-adapter-freeze2-final/ld220_cradle.stl",
+        "outputs/print-first-20260905/ld220-adapter-freeze2-final/ld220_horn_adapter.stl"
+      ],
+      "manifest_path": "outputs/print-first-20260905/ld220-adapter-freeze2-final/candidate.json",
+      "selected_path_count": 4,
+      "total_bytes": 200893,
+      "status": "CANDIDATE_UNVERIFIED"
+    },
+    "collector_regression_summary": {
+      "path": "docs/audits/20260909-resume/collector-regression-summary-20260909.json",
+      "role": "new_audit_record",
+      "status": "PASS",
+      "body_native_pose_count": 1141,
+      "legacy_verify_count": 23,
+      "legacy_pass_count": 14,
+      "legacy_fail_count": 8,
+      "legacy_unverified_count": 1,
+      "firmware_regression_pass_count": 59
+    }
+  },
+  "public_evidence_documents": {
+    "public_evidence_summary": {
+      "path": "docs/audits/20260909-resume/public-evidence-summary.md",
+      "role": "new_audit_record",
+      "status": "WIP_REVIEW_ONLY",
+      "includes": "最新生成run、body全1141姿勢DYNAMIC_PASS、linked-hulls後退近似のFAIL/INVALID境界、CoACD調査境界"
+    },
+    "coacd_public_summary": {
+      "path": "docs/audits/20260909-resume/mouth-cannon-coacd-public-summary.json",
+      "role": "new_audit_record",
+      "copied_from": "outputs/audits/20260909-resume/mouth-cannon-coacd-study-20260908T182529Z/public-summary.json",
+      "status": "DIAGNOSTIC_ONLY",
+      "formal_gate_changed": false
+    },
+    "github_publication_result": {
+      "path": "docs/audits/20260909-resume/github-publication-result.json",
+      "role": "new_audit_record",
+      "status": "PASS",
+      "verified_at": "2026-09-08T19:12:30Z",
+      "includes": "Issue107件の追記、旧コメント16件保持、Project11件追加、依存18件追加、親87件保持、循環0の読み戻し"
+    }
+  },
+  "publication_history": {
+    "status": "WIP_PUBLISHED",
+    "verified_at": "2026-09-08T19:12:30Z",
+    "result_path": "docs/audits/20260909-resume/github-publication-result.json",
+    "draft_pr_url": "https://github.com/hapx2yuki/Tachikoma/pull/111",
+    "public_commit_history": [
+      {
+        "sha": "14c372880507462f7eb181a1b75a0ad7b217ccb5",
+        "role": "公開候補の証拠commit A",
+        "self_reference": false
+      },
+      {
+        "sha": "a8156fbfc7539f35f0fbaad25808c44f98247540",
+        "role": "AP設定説明の公開追補commit",
+        "self_reference": false
+      }
+    ],
+    "self_reference_policy": "このallowlistを含む今回の追補commit SHAは自己参照を避けるため記録しない。上記の到達履歴を公開入力として用いる。"
+  }
+}

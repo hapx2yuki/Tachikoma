@@ -1,0 +1,52 @@
+[A] 自脚: shin_shell vs femur_link/coxa_bracket (pitch x knee グリッド)
+  worst = 0.0000 cm^3 at None  (OK)
+  実歩容 180 姿勢: worst = 0.0000 cm^3  (OK)
+
+[B] 隣接脚 45°ペア (単側最大内寄せヨー, crouch=(45,30) 含む)
+  (tibia-tibia判定: ik_poses 8件中 firmware到達不能 4件を除外 -- [(-37, 44), (19, -44), (8, -44), (45, 30)] は gait.h の D_KNEE_MIN/MAX 射影の不動点条件を満たさず、歩容コマンドとして 出力され得ない。pk_reachable() docstring 参照)
+  FR-RR(単側FR): shin-shin(到達可能集合限定) 0.0000 cm^3 [参考:物理全域 8.4860 cm^3], tibia-tibia(到達可能集合限定) 0.0000 cm^3
+  FR-RR(単側RR): shin-shin(到達可能集合限定) 0.0000 cm^3 [参考:物理全域 8.4860 cm^3], tibia-tibia(到達可能集合限定) 0.0000 cm^3
+  FR-RR(和・対称): shin-shin(到達可能集合限定) 0.0000 cm^3 [参考:物理全域 7.6547 cm^3], tibia-tibia(到達可能集合限定) 0.0000 cm^3
+  FR-RR(和・偏り): shin-shin(到達可能集合限定) 0.0000 cm^3 [参考:物理全域 7.6197 cm^3], tibia-tibia(到達可能集合限定) 0.0000 cm^3
+  shin-shin worst(到達可能集合限定) = 0.0000 cm^3  (OK (firmware到達可能集合では非接触 -- gait.h D_KNEE_MIN/MAX 射影が crouch(45,30)級の組合せを構造的に排除。shell_mod.py の ADJ_RELIEF_BANDS 撤去によりキット形状へ復元済み))
+  shin-shin worst(参考:物理全域, raw関節指令の経路が将来追加された場合の理論上限) = 8.4860 cm^3
+  tibia-tibia worst(到達可能集合限定) = 0.0000 cm^3  (OK (firmware到達可能集合では非接触 -- gait.h D_KNEE_MIN 射影が crouch(45,30)級の組合せを構造的に排除。raw関節指令の経路が将来 追加された場合は要再検討, 下記コメント/docs/assembly.md参照))
+
+  隣接脚 遠ペア (フルヨー±LIM_YAW, crouch 含む)
+    FR-FL: worst shin-shin 0.0000 cm^3
+    RL-RR: worst shin-shin 0.0000 cm^3
+  遠ペア worst = 0.0000 cm^3  (OK)
+
+[C] 腕 (READY/TUCK) vs shin_shell -- 脚×腕連成クランプ (firmware 複製) 検証
+
+[C-duty] 通常歩行中のクランプ発火時間比率 (FR脚, 前進速度 0.1-1.0 で確認)
+    vx=0.1: gate 超過比率 = 0.0% (0/600)
+    vx=0.3: gate 超過比率 = 2.2% (13/600)
+    vx=0.5: gate 超過比率 = 6.5% (39/600)
+    vx=0.7: gate 超過比率 = 9.2% (55/600)
+    vx=1.0: gate 超過比率 = 12.7% (76/600)
+  歩容周期 CYCLE_T=1.6s のうち約 0-13% (低速→最大速度) でクランプが発火する。 2026-09-04 の重心対応スタンス (STANCE_OFF_Y -30) で FR の前方ヨー使用量が 減り、旧 42-44% (速度非依存・常態) から速度依存の低頻度へ変わった。 docs/assembly.md §3/§4 参照。
+  (OK, 最大速度で 25% 未満の想定レンジ内かを監視 — レンジ外なら docs/assembly.md の数値記述も要更新)
+  before (クランプなし, 参考値):
+    READY: FR関節限界姿勢(yaw40,pitch-45,knee41) = 6.8538 cm^3, 実歩容由来姿勢(yaw33.15,pitch-41.06,knee30.46) = 1.4834 cm^3
+    TUCK: FR関節限界姿勢(yaw40,pitch-45,knee41) = 0.4680 cm^3, 実歩容由来姿勢(yaw33.15,pitch-41.06,knee30.46) = 0.0000 cm^3
+  after (クランプあり, 実際の firmware 出力に相当):
+    READY->clamped(yaw=-15.0) @ FR関節限界姿勢(yaw40,pitch-45,knee41) = 0.0000 cm^3
+    READY->clamped(yaw=-15.0) @ 実歩容由来姿勢(yaw33.15,pitch-41.06,knee30.46) = 0.0000 cm^3
+    TUCK->clamped(yaw=-15.0) @ FR関節限界姿勢(yaw40,pitch-45,knee41) = 0.0000 cm^3
+    TUCK->clamped(yaw=-15.0) @ 実歩容由来姿勢(yaw33.15,pitch-41.06,knee30.46) = 0.0000 cm^3
+  代表姿勢2点×READY/TUCK worst = 0.0000 cm^3  (OK, ceiling=0.25)
+
+  全域グリッド (FR脚 yaw全域 x pitch/knee 到達可能集合 x 腕 pitch/elbow 全域, クランプ通過後の到達可能集合)
+  (leg_pitch x leg_knee: 83/132 が firmware到達可能集合)
+  worst = 0.0000 cm^3 at (leg_yaw,leg_pitch,leg_knee,arm_pitch,arm_elbow)=None  (OK, ceiling=0.25)
+
+  FL脚+左腕 (鏡像) の代表姿勢確認 (危険方向は yaw 符号が反転)
+    READY->clamped(yaw=-15.0) @ FL関節限界姿勢(yaw-40,pitch-45,knee41) = 0.0000 cm^3
+    READY->clamped(yaw=-15.0) @ 実歩容由来姿勢(yaw-33.15,pitch-41.06,knee30.46) = 0.0000 cm^3
+  FL+左腕 worst = 0.0000 cm^3  (OK, ceiling=0.25)
+  (before/after 比較: 無対策 READY 代表姿勢で最大 ~5.6cm^3 -> クランプ後は 上記 worst 全て 0.25cm^3 未満。既知許容残留の 根拠は firmware/src/config.h ARM_LEG_YAW_GATE_DEG のコメント参照)
+
+============================================================
+overall = PASS
+(shin-shin[B]・tibia-tibia[B] は共に firmware到達可能集合 (pk_reachable()) に統一した基準で overall に算入する -- 2026-07-31 リリーフカット再評価タスクで shin-shin も tibia-tibia と同じ基準に統一し、旧 KNOWN_BOLT_BOSS_CEILING 特例 (worst<1.0cm^3を KNOWN NGとしてPASS扱い) は shell_mod.py ADJ_RELIEF_BANDS 撤去により不要化・削除した。 腕干渉[C]は 2026-07-31 の連成クランプ追加により overall に 算入するようになった)

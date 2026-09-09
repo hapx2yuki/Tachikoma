@@ -1,0 +1,41 @@
+{
+  "manifold_volume_mm3": 784.0,
+  "variants": [
+    {
+      "process": false,
+      "validate": false,
+      "mesh_volume_mm3": 784.0,
+      "STL_volume_mm3": 784.0,
+      "watertight": true,
+      "winding": true,
+      "component_signed_volumes_mm3": [
+        1000.0,
+        -216.0
+      ]
+    },
+    {
+      "process": true,
+      "validate": false,
+      "mesh_volume_mm3": 784.0,
+      "STL_volume_mm3": 784.0,
+      "watertight": true,
+      "winding": true,
+      "component_signed_volumes_mm3": [
+        1000.0,
+        -216.0
+      ]
+    },
+    {
+      "process": true,
+      "validate": true,
+      "mesh_volume_mm3": 1216.0,
+      "STL_volume_mm3": 1216.0,
+      "watertight": true,
+      "winding": true,
+      "component_signed_volumes_mm3": [
+        1000.0,
+        216.0
+      ]
+    }
+  ]
+}

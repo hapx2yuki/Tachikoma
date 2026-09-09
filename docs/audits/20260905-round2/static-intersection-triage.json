@@ -1,0 +1,516 @@
+{
+  "source": "final/static-all-pairs.json",
+  "note": "追加口逃げ修正前の51組。未検証を合格に変える除外リストとして使用しない。",
+  "rows": [
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Eye_White#single"
+      ],
+      "intersection_mm3": 7784.868782437443,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "pod_neck",
+        "Head_TailJoint_Blue_Optional_Cross#single"
+      ],
+      "intersection_mm3": 3281.7411766610808,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "Head_TailJoint_Blue_Optional_Cross#single",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 3016.282946541561,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "leg_fl_yaw_servo_case",
+        "eye_r_servo_case"
+      ],
+      "intersection_mm3": 2456.55410606332,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "pod_neck",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 2047.6050308862777,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "leg_fr_yaw_servo_case",
+        "eye_l_servo_case"
+      ],
+      "intersection_mm3": 2033.397495588455,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "eye_carrier#l",
+        "leg_fr_yaw_servo_case"
+      ],
+      "intersection_mm3": 1791.8043797622329,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "eye_carrier#r",
+        "leg_fl_yaw_servo_case"
+      ],
+      "intersection_mm3": 1578.2101962128988,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_rr_yaw_servo_case"
+      ],
+      "intersection_mm3": 1277.3459158053313,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_rl_yaw_servo_case"
+      ],
+      "intersection_mm3": 1276.0713472083628,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "pod_neck",
+        "Cabin_Front_Blue"
+      ],
+      "intersection_mm3": 1199.5520073678779,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 1152.8017193271533,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "chassis",
+        "Mouth_Ball_Grey#single"
+      ],
+      "intersection_mm3": 1149.4680504260905,
+      "issue_key": "RV-08",
+      "category": "reproduced_defect",
+      "finding": "実配置と生成座標の一致を確認。口の固定部とシャーシ/Capの内部逃げを修正中。"
+    },
+    {
+      "parts": [
+        "pod_neck",
+        "Cabin_Eye_White#single"
+      ],
+      "intersection_mm3": 878.342330392286,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "Cabin_Eye_White#single",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 836.4139405575721,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Left_Black#single"
+      ],
+      "intersection_mm3": 637.5792667415316,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Right_Black#single"
+      ],
+      "intersection_mm3": 634.4368738373772,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Bottom_Wide_Black#single"
+      ],
+      "intersection_mm3": 626.8043969708829,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_fr_yaw_servo_case"
+      ],
+      "intersection_mm3": 597.0211859220339,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_fl_yaw_servo_case"
+      ],
+      "intersection_mm3": 596.5392933970367,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Back_Black#left"
+      ],
+      "intersection_mm3": 468.75429340616375,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Back_Black#right"
+      ],
+      "intersection_mm3": 465.9977857139647,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_RedLight_Large#back_right"
+      ],
+      "intersection_mm3": 317.25387735773074,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Spinnarette_Grey#front_left"
+      ],
+      "intersection_mm3": 229.7681396102195,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Spinnarette_Grey#back_left"
+      ],
+      "intersection_mm3": 229.7585938480353,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Front_Black#single"
+      ],
+      "intersection_mm3": 212.75810637653183,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Eye_White#single",
+        "Head_TailJoint_Blue_Optional_Cross#single"
+      ],
+      "intersection_mm3": 195.23999111511762,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "Cabin_Turrent_Right_Grey#single",
+        "Cabin_Turret_Peg#right"
+      ],
+      "intersection_mm3": 155.05283771401082,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "arm_l_yaw_servo_case"
+      ],
+      "intersection_mm3": 153.1479278502493,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "arm_r_yaw_servo_case"
+      ],
+      "intersection_mm3": 147.45031199512064,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "Head_Insert_Black_x4#1_measured"
+      ],
+      "intersection_mm3": 128.2452980856924,
+      "issue_key": "S-08",
+      "category": "placement_unverified",
+      "finding": "原型Headでも重なる。元3MF不在、推定を含む装飾配置の再照合が必要。測定名だけを根拠に受理しない。"
+    },
+    {
+      "parts": [
+        "chassis",
+        "Mouth_Neck_Blue#single"
+      ],
+      "intersection_mm3": 115.50713429968555,
+      "issue_key": "RV-08",
+      "category": "reproduced_defect",
+      "finding": "実配置と生成座標の一致を確認。口の固定部とシャーシ/Capの内部逃げを修正中。"
+    },
+    {
+      "parts": [
+        "Mouth_Cap_Grey#single",
+        "Mouth_Neck_Blue#single"
+      ],
+      "intersection_mm3": 112.87958713391514,
+      "issue_key": "RV-08",
+      "category": "reproduced_defect",
+      "finding": "実配置と生成座標の一致を確認。口の固定部とシャーシ/Capの内部逃げを修正中。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Spinnarette_Grey#front_right"
+      ],
+      "intersection_mm3": 94.77494639703461,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Spinnarette_Grey#back_right"
+      ],
+      "intersection_mm3": 94.72571664289217,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "pod_neck",
+        "Head_Top_Eyecut#single"
+      ],
+      "intersection_mm3": 89.22988833709617,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "Cabin_Turrent_Left_Grey#single",
+        "Cabin_Turret_Peg#left"
+      ],
+      "intersection_mm3": 62.76838624134992,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "Head_Insert_Black_x4#2_estimated"
+      ],
+      "intersection_mm3": 32.822277221643596,
+      "issue_key": "S-08",
+      "category": "placement_unverified",
+      "finding": "原型Headでも重なる。元3MF不在、推定を含む装飾配置の再照合が必要。測定名だけを根拠に受理しない。"
+    },
+    {
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "Head_Screw_Grey_x2#2_estimated_mirror"
+      ],
+      "intersection_mm3": 8.72324019074055,
+      "issue_key": "S-08",
+      "category": "placement_unverified",
+      "finding": "原型Headでも重なる。元3MF不在、推定を含む装飾配置の再照合が必要。測定名だけを根拠に受理しない。"
+    },
+    {
+      "parts": [
+        "Head_Screw_Grey_x2#1_measured",
+        "arm_r_yaw_servo_case"
+      ],
+      "intersection_mm3": 5.400390208145965,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Bottom_Long_Black#left"
+      ],
+      "intersection_mm3": 5.01682739533183,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Bottom_Long_Black#right"
+      ],
+      "intersection_mm3": 4.875832319465592,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turret_Peg#left"
+      ],
+      "intersection_mm3": 4.7867824088688735,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Head_Screw_Grey_x2#2_estimated_mirror",
+        "arm_l_yaw_servo_case"
+      ],
+      "intersection_mm3": 3.7920143737623193,
+      "issue_key": "RV-09",
+      "category": "reproduced_defect",
+      "finding": "実ケースまたは保持板との幾何交差。実購入型番を同定し頭内配置を再設計。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turret_Peg#right"
+      ],
+      "intersection_mm3": 0.6168723760494039,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turrent_Right_Grey#single"
+      ],
+      "intersection_mm3": 0.5720815972648173,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Head_TailJoint_Blue_Optional_Cross#single"
+      ],
+      "intersection_mm3": 0.40430647061017316,
+      "issue_key": "RV-15",
+      "category": "reproduced_defect",
+      "finding": "固定部同士の全長交差。丸ポスト末端だけの確認や0..15mmの目移動では解消しない。"
+    },
+    {
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turrent_Left_Grey#single"
+      ],
+      "intersection_mm3": 0.3580358388426248,
+      "issue_key": "RV-15",
+      "category": "placement_unverified",
+      "finding": "原型の装飾接合。押込み/接着を仮定せず、受け座と挿入深さを実物または元組立データで再照合。"
+    },
+    {
+      "parts": [
+        "Mouth_Cannon_Grey",
+        "Mouth_Key_Grey#single"
+      ],
+      "intersection_mm3": 0.2749305538760547,
+      "issue_key": "RV-08",
+      "category": "fit_unverified",
+      "finding": "小交差でも閉じた部品の共有体積を自動許容しない。組立公差/座面の実形状照合が必要。"
+    },
+    {
+      "parts": [
+        "chassis",
+        "Mouth_Cap_Grey#single"
+      ],
+      "intersection_mm3": 0.21906747602562424,
+      "issue_key": "RV-08",
+      "category": "reproduced_defect",
+      "finding": "実配置と生成座標の一致を確認。口の固定部とシャーシ/Capの内部逃げを修正中。"
+    },
+    {
+      "parts": [
+        "Mouth_Cap_Grey#single",
+        "Mouth_Key_Grey#single"
+      ],
+      "intersection_mm3": 0.07012044321022003,
+      "issue_key": "RV-08",
+      "category": "reproduced_defect",
+      "finding": "実配置と生成座標の一致を確認。口の固定部とシャーシ/Capの内部逃げを修正中。"
+    }
+  ]
+}

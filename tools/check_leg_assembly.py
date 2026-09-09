@@ -6,6 +6,7 @@ coxa 原点に固定し、femur を股ピッチ角、tibia を膝角で回転配
 併せて docs/preview_leg_assembly.png を出力する。
 """
 import sys
+import argparse
 from pathlib import Path
 
 import numpy as np
@@ -88,14 +89,19 @@ def leg_at(pitch_deg: float, knee_deg: float, mirror: bool = False):
 def pair_intersection(a: trimesh.Trimesh, b: trimesh.Trimesh) -> float:
     try:
         inter = trimesh.boolean.intersection([a, b], engine="manifold")
-    except Exception:
-        return float("nan")
-    if inter is None or inter.is_empty:
+    except Exception as exc:
+        raise RuntimeError("干渉ブーリアン計算失敗: 未検査を0体積として扱えない") from exc
+    if inter is None:
+        raise RuntimeError("ブーリアン演算がメッシュを返さなかった")
+    if inter.is_empty:
         return 0.0
-    return float(inter.volume) / 1000.0  # cm^3
+    volume = float(inter.volume) / 1000.0  # cm^3
+    if not np.isfinite(volume) or volume < 0:
+        raise ValueError(f"干渉体積が不正: {volume}")
+    return volume
 
 
-def main():
+def main(output=None):
     poses = [
         ("neutral", 20, 0), ("crouch", 45, 30), ("high", -10, -20),
         ("reach", 0, -35), ("tuck", 55, 45),
@@ -364,8 +370,8 @@ def main():
     print(f"  トゥ (Leg_Toe_Black_x12 x{n_toe}, 装飾) 最小 world z = "
           f"{worst_toe_z:+.2f}mm at {worst_toe_at} [参考値 — 甲コラムの tibia 軸から"
           f"横へ大きく (最大22mm) 離れるため上記の一次元校正では拾いきれない。"
-          f"foot_pad が実接地を担う設計 (装飾のトゥがこれより深く見えても、"
-          f"接地力は主に foot_pad が受ける想定)]")
+          f"負の値では剛体トゥが地面に先に触れる。足裏だけが荷重を受ける"
+          f"ことは未検証であり、フルドレス歩行の合格根拠に使用しない)]")
 
     # ---- [8] leg_foot_bored の tibia 差込プラグ ↔ tibia_link ソケットボアの
     # 実体干渉 (2026-07-28 レビュー finding, critical への回帰チェック):
@@ -402,10 +408,10 @@ def main():
         worst_toe_foot = max(worst_toe_foot, pair_intersection(foot_only, tm))
     toe_foot_pct = 100 * worst_toe_foot / toe_vol if toe_vol else float("nan")
     print(f"[9] トゥ相互重なり (FR脚 {len(toe_meshes)}本): worst "
-          f"{worst_toe_toe:.4f} cm^3 ({'OK' if worst_toe_toe < 0.001 else 'NG'})")
+          f"{worst_toe_toe:.4f} cm^3 ({'OK' if worst_toe_toe < 0.00001 else 'NG'})")
     print(f"    トゥ↔足本体 重なり (FR脚): worst {worst_toe_foot:.4f} cm^3 "
           f"= トゥ体積の{toe_foot_pct:.2f}% "
-          f"({'OK' if toe_foot_pct < 5.0 else 'NG'} — 5%未満は接着代として許容)")
+          f"({'OK' if worst_toe_foot < 0.00001 else 'NG'} — 接着だけでは実体重なりを解消できない)")
 
     # ---- [10] 膝 ±45° 密掃引 (femur∩tibia) + 脚リンク単一ボディ検査
     # (2026-08-21 ユーザー発見の回帰: tibia の 45° ウェッジがガード円筒
@@ -415,9 +421,11 @@ def main():
     # 修正は tibia ガード r23 + femur ウェブ後退 web_x1=FEMUR_LEN-22.5 —
     # make_leg.py の両コメント参照。ここでは実 STL で膝可動域全体の
     # femur∩tibia = 0 と、脚 3 リンクの単一ボディ性を恒常検査する)
+    body_counts = []
     for _n in ("coxa_bracket", "femur_link", "tibia_link"):
         _m = trimesh.load(STL / f"{_n}.stl")
         _nb = len(_m.split(only_watertight=False))
+        body_counts.append(_nb)
         print(f"[10] {_n}: {_nb} body ({'OK' if _nb == 1 else 'NG <<< 分離ボディ'})")
     fem_k = trimesh.load(STL / "femur_link.stl")
     fem_k.apply_translation([-C.FEMUR_LEN, 0, 0])   # 膝軸原点系へ
@@ -472,10 +480,34 @@ def main():
         ax.set_box_aspect([1, 1, 1]); ax.axis("off")
         ax.view_init(elev=elev, azim=azim)
     fig.tight_layout()
-    out = ROOT / "docs" / "preview_leg_assembly.png"
+    out = Path(output) if output else ROOT / "docs" / "preview_leg_assembly.png"
+    out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=110, facecolor="white")
+    plt.close(fig)
     print(f"saved {out}")
+    from check_coxa_sweep import run as check_coxa_sweep
+    coxa_sweep = check_coxa_sweep()
+    print("根元ブラケット全ヨー包絡:", "PASS" if coxa_sweep["pass"] else "FAIL")
+    checks = {
+        "根元ブラケット全ヨー": coxa_sweep["pass"],
+        "脚内干渉": worst < 0.01,
+        "隣接脚干渉": worst2 < 0.01,
+        "ポッド干渉": worst_pod < 0.01,
+        "電池干渉": worst3 < 0.01,
+        "足裏接地校正": -0.15 <= _w_current <= 1.5 and abs(_drift) < 0.15,
+        "足差込": plug_overlap < 0.001,
+        "トゥ数量": n_toe == 12 and len(toe_meshes) == 3,
+        "トゥ嵌合": worst_toe_toe < 0.00001 and worst_toe_foot < 0.00001,
+        "単一ボディ": all(n == 1 for n in body_counts),
+        "膝掃引": worst_knee[0] < 0.001,
+    }
+    failed = [name for name, passed in checks.items() if not passed]
+    print("RESULT:", "FAIL: " + ", ".join(failed) if failed else "PASS")
+    print("注: 接地校正は足裏のみ。トゥ先行接地・現物のたわみは別の実機ゲート。")
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, help="検証画像の保存先")
+    sys.exit(main(parser.parse_args().output))

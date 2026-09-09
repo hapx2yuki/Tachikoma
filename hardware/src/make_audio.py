@@ -34,7 +34,7 @@ from pathlib import Path
 
 import numpy as np
 import trimesh
-from manifold3d import Manifold, Mesh as MMesh
+from manifold3d import Manifold, Mesh as MMesh, OpType
 
 import config as C
 from lib import box, cyl, cyl_y, export
@@ -76,16 +76,21 @@ def mouth_cannon_bored() -> Manifold:
     # 収納。側面グリップスリット (CANNON_Y_SLOT_LO..HI) より前方、フレア段差
     # (CANNON_Y_COLLAR) より手前の丸穴区間 (外径ほぼ一定 ~19.6-19.9mm) 内に完全に
     # 収まる — 両端とも内部境界なのでパディングしない
-    m -= _bore_y(C.AUDIO_MIC_Y0, C.AUDIO_MIC_Y1, C.AUDIO_MIC_D)
+    # 砲口から先入れするクレードルの挿入経路をスピーカー室まで連通する。
+    # 旧終端 AUDIO_MIC_Y1 では次の 0.72mm が元の φ10.7 穴のままで、
+    # φ16.4 のクレードルは最終位置に収まっても前後どちらからも入らなかった。
+    # スリット側へは広げず、砲口側の不可視内壁のみを延長する。
+    mic_entry_y1 = C.AUDIO_SPK_Y0 + C.CLEAR  # 同一平面の薄膜を STL 往復で残さない
+    m -= _bore_y(C.AUDIO_MIC_Y0, mic_entry_y1, C.AUDIO_MIC_D)
 
     # 回転キー溝: ポートの反対側 (局所 +Z) にクレードルのキー突起を受ける溝を
     # 掘る。マイクポケットの Y 範囲全長に渡す。キー無しで挿入すると干渉するので
     # 誤った向きでは物理的に挿入できない (config.AUDIO_MIC_KEY_* 参照)
-    mic_len = C.AUDIO_MIC_Y1 - C.AUDIO_MIC_Y0
+    mic_len = mic_entry_y1 - C.AUDIO_MIC_Y0
     key_r0 = C.AUDIO_MIC_D / 2 - 0.1   # ポケット壁と確実に重ねる (隙間防止)
     m -= box(C.AUDIO_MIC_KEY_W + 2 * C.CLEAR, mic_len,
              C.AUDIO_MIC_KEY_H + C.CLEAR + 0.1).translate(
-        [0, (C.AUDIO_MIC_Y0 + C.AUDIO_MIC_Y1) / 2,
+        [0, (C.AUDIO_MIC_Y0 + mic_entry_y1) / 2,
          key_r0 + (C.AUDIO_MIC_KEY_H + C.CLEAR) / 2])
 
     # マイクポート: 基板ポート (下面実装想定) から砲身下面 (局所 -Z, スリットの
@@ -104,10 +109,46 @@ def mouth_cannon_bored() -> Manifold:
 
 
 def mouth_neck_bored() -> Manifold:
-    """Mouth_Neck_Blue に配線ボア (中心軸, Y) を貫通させる。"""
+    """配線ボアと Ball/Cap の接触部に隠れる座。"""
     m = _load("Mouth_Neck_Blue")
     m -= cyl_y(60.0, C.AUDIO_WIRE_BORE_D)
-    return m
+    m -= mouth_ball_seat()
+    m -= mouth_cap_seat()
+    return m.simplify(0.01)
+
+
+def mouth_cap_seat() -> Manifold:
+    """砲身側のCapを前から差し込める座。静止嵌合だけでは途中で引掛かる。"""
+    cap = _load("Mouth_Cap_Grey").translate(
+        [0, C.MOUTH_CAP_LOCAL_Y - C.MOUTH_NECK_LOCAL_Y, 0])
+    neck_top = _load("Mouth_Neck_Blue").bounding_box()[4]
+    reach = neck_top-cap.bounding_box()[1]+.5
+    # +Yへ抜くので、Neck上端より前のCap面は掃引中もNeckへ戻らない。
+    # 非接触の砲口側を先に除くと、同じ切削を少ない面で計算できる。
+    cap = cap ^ box(100,100,100).translate([0,neck_top+C.MOUTH_CAP_SEAT_CLEAR+.5-50,0])
+    # 0.1mm掃引の間も片側0.2mmの余裕で包含する。全長を超えると非交差。
+    distances = np.linspace(0, reach, int(np.ceil(reach/.1))+1)
+    # Minkowski和は和集合に分配できる。先に各Capを膨張させると、掃引後の
+    # 細分化した大量面へMinkowski演算を掛ける計算量を避けられる。
+    expanded = cap.minkowski_sum(Manifold.sphere(C.MOUTH_CAP_SEAT_CLEAR, 16))
+    return Manifold.batch_boolean([expanded.translate([0, float(d), 0]) for d in distances], OpType.Add)
+
+
+def mouth_ball_seat() -> Manifold:
+    """元 Ball の全頂点から求めた包含球 + 接着代 (Neck ローカル)。
+
+    薄いボア加工後の重心は球心と異なるので使用しない。球の最小二乗
+    中心を求め、最大頂点距離を半径に使い、球形の近似誤差も内包する。
+    この座は組立後 Ball に覆われる面だけを削り、外向きの襟を残す。
+    """
+    ball = trimesh.load(MODEL / "Mouth_Ball_Grey.stl", force="mesh")
+    vertices = np.asarray(ball.vertices) * C.SCALE
+    center = np.linalg.lstsq(np.column_stack((2 * vertices, np.ones(len(vertices)))),
+                             np.square(vertices).sum(axis=1), rcond=None)[0][:3]
+    radius = float(np.linalg.norm(vertices - center, axis=1).max())
+    center[1] += C.MOUTH_BALL_LOCAL_Y - C.MOUTH_NECK_LOCAL_Y
+    # 多面体球の内接誤差を抑え、0.2mm の設計クリアランスを確保する。
+    return Manifold.sphere(radius + C.MOUTH_BALL_SEAT_CLEAR, 128).translate(center.tolist())
 
 
 def mouth_ball_bored() -> Manifold:

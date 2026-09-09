@@ -45,11 +45,8 @@ def check(cond, msg):
 
 
 def _vol(a, b):
-    try:
-        r = trimesh.boolean.intersection([a, b], engine="manifold")
-        return 0.0 if r is None or r.is_empty else float(r.volume)
-    except Exception:
-        return 0.0
+    from mesh_checks import intersection_volume_mm3
+    return intersection_volume_mm3(a, b) / 1.0
 
 
 print("[1] eye_pod_camera 外殻無傷 + 光軸設計の自己整合")
@@ -230,17 +227,16 @@ for (ph, vx_, vy_, wz_, body_h, arm_pose) in POSES:
     dirs = np.array(dirs)
     origins = np.tile(lens_global, (len(dirs), 1))
     locs, idx_ray, _ = combined.ray.intersects_location(
-        ray_origins=origins, ray_directions=dirs, multiple_hits=False)
+        ray_origins=origins, ray_directions=dirs, multiple_hits=True)
     hit_dist = np.full(len(dirs), np.inf)
     if len(idx_ray):
         d = np.linalg.norm(locs - origins[idx_ray], axis=1)
         for i, dd in zip(idx_ray, d):
-            hit_dist[i] = min(hit_dist[i], dd)
-    # 自パーツ (eye_pod_camera/camera_carrier 自身, φ ~20mm 級) によるレンズ
-    # 直近のヒットは自己遮蔽ではなく設計上の枠 (レンズ鏡筒自体) なので、
-    # SELF_R を超える距離のヒットだけを「自機体による FOV 遮蔽」として数える
-    SELF_R = 25.0
-    occluded_far = (hit_dist >= SELF_R) & (hit_dist < 400.0)
+            # 光線始点の浮動小数点接触だけを除く。鏡筒/保持材も画角内に
+            # 入れば光を遮るため、旧25mm以内の一括除外は行わない。
+            if dd > 0.1:
+                hit_dist[i] = min(hit_dist[i], dd)
+    occluded_far = hit_dist < 400.0
     frac = float(occluded_far.sum()) / len(dirs)
     if frac > worst_frac:
         worst_frac, worst_pose = frac, (ph, vx_, vy_, wz_, body_h, arm_pose is MV.ARM_READY)

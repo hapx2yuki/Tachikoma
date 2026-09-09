@@ -1,0 +1,4 @@
+[
+ {"name":"contact_parts_self","model":{"contact_model":"parts","self_collision":true,"include_parent_collision":true},"segments":[{"name":"hold","duration":0.2}]},
+ {"name":"contact_vhacd_self","model":{"contact_model":"vhacd","self_collision":true,"include_parent_collision":true},"segments":[{"name":"hold","duration":0.2}]}
+]

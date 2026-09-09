@@ -1,0 +1,106 @@
+{
+  "created_utc": "2026-09-05T08:10:02.870481+00:00",
+  "script_sha256": "44e56479035620aa78131900e744f09efa9fb0f00dfe6d4bc3df56ff758286bd",
+  "cases": [
+    {
+      "name": "aligned_up10_linked",
+      "controller": "native",
+      "model": {
+        "slope_deg": 10
+      },
+      "initial_orientation": "X-axis rotation equals floor slope; externally pre-positioned",
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "aligned_down10_linked",
+      "controller": "native",
+      "model": {
+        "slope_deg": -10
+      },
+      "initial_orientation": "X-axis rotation equals floor slope; externally pre-positioned",
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "aligned_up10_vhacd",
+      "controller": "native",
+      "model": {
+        "slope_deg": 10,
+        "contact_model": "vhacd",
+        "hard_friction": 0.3
+      },
+      "initial_orientation": "X-axis rotation equals floor slope; externally pre-positioned",
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "name": "aligned_up10_shoe",
+      "controller": "native",
+      "model": {
+        "slope_deg": 10,
+        "contact_model": "vhacd",
+        "hard_friction": 0.3,
+        "friction": 0.6,
+        "foot_candidate_dir": "docs/audits/20260905-round2/foot-support-candidates"
+      },
+      "initial_orientation": "X-axis rotation equals floor slope; externally pre-positioned",
+      "segments": [
+        {
+          "name": "settle",
+          "duration": 2.0
+        },
+        {
+          "name": "walk",
+          "duration": 6.4,
+          "vy": 1.0
+        },
+        {
+          "name": "stop",
+          "duration": 1.6
+        }
+      ]
+    }
+  ],
+  "criterion": "sim_stressの既定基準を共用。転倒時刻が整定/歩行のどちらかも比較。",
+  "limitations": "本体を床角に揃える外部初期配置。自動姿勢適応、実IMU応答、登坂性能の保証ではない。"
+}

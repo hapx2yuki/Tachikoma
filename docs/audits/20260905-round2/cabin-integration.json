@@ -1,0 +1,22 @@
+{
+  "pegs": [
+    {
+      "peg": "lower",
+      "max_coordinate_error_mm": 0.0,
+      "intersections_mm3": {
+        "Cabin_Front_Blue": 0.0,
+        "Cabin_Back_Blue_Repaired": 0.0
+      }
+    },
+    {
+      "peg": "upper",
+      "max_coordinate_error_mm": 0.0,
+      "intersections_mm3": {
+        "Cabin_Front_Blue": 0.0,
+        "Cabin_Back_Blue_Repaired": 0.0
+      }
+    }
+  ],
+  "back_decorations_tested": 6,
+  "inactive_kit_parts_excluded": 2
+}

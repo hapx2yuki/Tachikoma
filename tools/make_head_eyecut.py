@@ -44,9 +44,8 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "hardware" / "src"))
 import config as C  # noqa: E402
 
-SCALE = 1.5
-HEAD_TOP_Z_OFFSET = 57.7   # tools/make_visuals.py HEAD_TOP_Z_OFFSET と同一定数
-                           # (同ファイルが唯一の正 — 複写、要追従)
+SCALE = C.SCALE
+HEAD_TOP_Z_OFFSET = C.HEAD_TOP_Z_OFFSET
 
 # ---- 内殻ホローのパラメータ ----
 PITCH = 0.7            # ボクセルピッチ。marching cubes の面誤差 ~±0.6mm
@@ -292,11 +291,10 @@ def build():
 
 if __name__ == "__main__":
     bored, out_local, out_ch = build()
-    tm_local = _to_trimesh(out_local)
-    if not tm_local.is_watertight:
-        tm_local = _to_trimesh(_to_manifold(tm_local))
+    # 他の生成STLと同じ保存後の閉体/面向き/体積検査を通し、失敗時は旧版を保持。
+    from lib import export
+    tm_local = export(out_local, "Head_Top_Eyecut")
     dst = ROOT / "hardware" / "stl" / "Head_Top_Eyecut.stl"
-    tm_local.export(dst)
     # STL 往復後の再読込で最終検証 (lib.export と同じ発想)
     reread = trimesh.load(dst)
     e = reread.extents

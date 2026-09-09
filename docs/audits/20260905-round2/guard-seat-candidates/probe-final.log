@@ -1,0 +1,6 @@
+femur pocket 0.1 bodies 1 water True lost 1428.4895155606023 protectloss 2.4729034413986213 exposedarea 0.0 bestinsert 67.77181566457972
+femur open_positive_z 0.1 bodies 37 water False lost 1797.3475235510675 protectloss 2.4808626407029726 exposedarea 724.684010739825 bestinsert 0.0
+femur pocket 0.15 bodies 1 water True lost 1534.3531328761571 protectloss 3.5135349491483807 exposedarea 0.0 bestinsert 41.34991342634769
+tibia pocket 0.1 bodies 1 water True lost 1306.1264091183589 protectloss 0.0851553729039841 exposedarea 0.0 bestinsert 163.69836860384396
+tibia open_positive_x 0.1 bodies 12 water False lost 7707.572993277216 protectloss 0.08515537290398362 exposedarea 542.4506665404471 bestinsert 0.0
+tibia pocket 0.15 bodies 1 water True lost 1387.032597518219 protectloss 0.0851553729039841 exposedarea 0.0 bestinsert 142.00861557280192

@@ -1,0 +1,4 @@
+TACHIKOMA_Phase0_PETG.3mf: NG / warnings=1
+  SHAPE_REVIEW: tibia_link.stl distance=infmm volume=6.848%
+  SHAPE_REVIEW: femur_link.stl distance=7.596mm volume=2.097%
+  UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない

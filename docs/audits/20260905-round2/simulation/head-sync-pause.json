@@ -1,0 +1,29 @@
+{
+  "reason": "Parent detected HeadTop KIT y=12 vs config hub y=11; paused final run until geometry regenerated",
+  "preserved": [
+    {
+      "old": "stress-final",
+      "preserved_as": "stress-before-head-sync"
+    },
+    {
+      "old": "foot-candidate-final",
+      "preserved_as": "foot-candidate-before-head-sync"
+    },
+    {
+      "old": "stress-final.log",
+      "preserved_as": "stress-before-head-sync.log"
+    },
+    {
+      "old": "foot-candidate-final.log",
+      "preserved_as": "foot-candidate-before-head-sync.log"
+    },
+    {
+      "old": "all-pairs-native-20servos-final.json",
+      "preserved_as": "all-pairs-native-20servos-before-head-sync.json"
+    },
+    {
+      "old": "all-pairs-native-20servos-final.log",
+      "preserved_as": "all-pairs-native-20servos-before-head-sync.log"
+    }
+  ]
+}

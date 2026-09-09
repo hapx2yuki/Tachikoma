@@ -1,0 +1,51 @@
+[
+  {
+    "method": "current",
+    "source_volume": 34268.206280593244,
+    "memory_volume": 34268.206252967815,
+    "stl_volume": 34268.206252967815,
+    "memory_closed": false,
+    "stl_closed": false,
+    "faces": 2756,
+    "stl_components": [
+      {
+        "faces": 2754,
+        "volume": 34268.206252967815
+      },
+      {
+        "faces": 2,
+        "volume": 0.0
+      }
+    ]
+  },
+  {
+    "method": "unique_non_degenerate_without_normals",
+    "source_volume": 34268.206280593244,
+    "memory_volume": 34268.206252967815,
+    "stl_volume": 34268.206252967815,
+    "memory_closed": true,
+    "stl_closed": true,
+    "faces": 2754,
+    "stl_components": [
+      {
+        "faces": 2754,
+        "volume": 34268.206252967815
+      }
+    ]
+  },
+  {
+    "method": "old_validate",
+    "source_volume": 34268.206280593244,
+    "memory_volume": 34268.206252967815,
+    "stl_volume": 34268.206252967815,
+    "memory_closed": true,
+    "stl_closed": true,
+    "faces": 2754,
+    "stl_components": [
+      {
+        "faces": 2754,
+        "volume": 34268.206252967815
+      }
+    ]
+  }
+]

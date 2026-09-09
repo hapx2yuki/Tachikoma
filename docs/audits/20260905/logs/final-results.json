@@ -1,0 +1,150 @@
+[
+  {
+    "name": "check_leg_assembly",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_leg_assembly.py",
+      "--output",
+      "docs/audits/20260905/final-check_leg_assembly.png"
+    ],
+    "exit_code": 0,
+    "seconds": 39.03,
+    "script_sha256": "14f296862a420936468a4eefbfa13b4f8acaecf600b76e645da7db3eec67bfda",
+    "log": "docs/audits/20260905/logs/final-check_leg_assembly.log"
+  },
+  {
+    "name": "check_screw_bosses",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_screw_bosses.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.64,
+    "script_sha256": "5cffb63ecaf60a53ff576fee4f48b90df2418c83c5ea75ba538a68e5bfc1f407",
+    "log": "docs/audits/20260905/logs/final-check_screw_bosses.log"
+  },
+  {
+    "name": "sim_gait",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/sim_gait.py",
+      "--output",
+      "docs/audits/20260905/final-sim_gait.png"
+    ],
+    "exit_code": 0,
+    "seconds": 1.53,
+    "script_sha256": "8cc019fb81eb292fa66c62c71a660c81381698debea3fc5bc7808c6a3587cd37",
+    "log": "docs/audits/20260905/logs/final-sim_gait.log"
+  },
+  {
+    "name": "check_leg_link_strength",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_leg_link_strength.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.65,
+    "script_sha256": "862641e9456c79f4bad586aa829520b731932be9fce8f9b7fdd4003d22d7e781",
+    "log": "docs/audits/20260905/logs/final-check_leg_link_strength.log"
+  },
+  {
+    "name": "check_arm",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_arm.py"
+    ],
+    "exit_code": 0,
+    "seconds": 10.92,
+    "script_sha256": "181e5b31eb37de3be67ef1b58cedc3c3ec7d9596ac2d58bc2a7317d77016235c",
+    "log": "docs/audits/20260905/logs/final-check_arm.log"
+  },
+  {
+    "name": "check_eye",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_eye.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.42,
+    "script_sha256": "36b2a17e965362c4c9454324a16fe79893ac81c7fb7c1d50a876c450b26852d7",
+    "log": "docs/audits/20260905/logs/final-check_eye.log"
+  },
+  {
+    "name": "check_audio",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_audio.py"
+    ],
+    "exit_code": 0,
+    "seconds": 2.06,
+    "script_sha256": "b10b2aa1f495b076ae608ce0ebf5d34c64ff505bb8b976bb0f3317790d4107d7",
+    "log": "docs/audits/20260905/logs/final-check_audio.log"
+  },
+  {
+    "name": "check_camera",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_camera.py"
+    ],
+    "exit_code": 0,
+    "seconds": 5.5,
+    "script_sha256": "727aa94d5abaca0422c626579acfeac926dc021221fa9232459ab9cc677735a5",
+    "log": "docs/audits/20260905/logs/final-check_camera.log"
+  },
+  {
+    "name": "check_shin_arm_leg",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_shin_arm_leg.py"
+    ],
+    "exit_code": 0,
+    "seconds": 74.48,
+    "script_sha256": "04d000608abf1b38514b75ac349da357e467e71c46083bd664c31244a7bc52b2",
+    "log": "docs/audits/20260905/logs/final-check_shin_arm_leg.log"
+  },
+  {
+    "name": "check_head_pod_clearance",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_head_pod_clearance.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.5,
+    "script_sha256": "39783b467f796ae62c14c18fde0702b64a0138e5f23ac94f4c2a392353d43d29",
+    "log": "docs/audits/20260905/logs/final-check_head_pod_clearance.log"
+  },
+  {
+    "name": "check_pod_neck_strength",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_pod_neck_strength.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.62,
+    "script_sha256": "9b2f48f624e92ca7ecc268926f30e119e0a6ad4d4819fbfaee856fd3b4a23b16",
+    "log": "docs/audits/20260905/logs/final-check_pod_neck_strength.log"
+  },
+  {
+    "name": "check_urdf",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "tools/check_urdf.py"
+    ],
+    "exit_code": 0,
+    "seconds": 12.56,
+    "script_sha256": "716f815d33a6a2f51cd2598437e69e01616e83f714401e5ea21a2b61b575d88f",
+    "log": "docs/audits/20260905/logs/final-check_urdf.log"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "files": [
+    {
+      "path": "hardware/src/lib.py",
+      "sha256": "ab7a9bf68f4b6f55d4bc4805a3036815f7ce75f2a00b2c60cf4d55a5874bc392",
+      "review_method": "全行読解、STL往復/空洞符号/鏡映/保存失敗を負例で独立検査。最終固定後に該当差分を再読・対応回帰/入力照合を再実行",
+      "findings": [
+        "validate=Trueによる空洞反転を再現・修正後784を保持、原子的置換で既存STL保持"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/stl-export-peer.md",
+        "docs/audits/20260905-round2/stl-export-peer-tests-final.log",
+        "docs/audits/20260905-round2/stl-export-and-integration-final.log"
+      ]
+    },
+    {
+      "path": "tools/tests/test_export_stl.py",
+      "sha256": "86b68dca3814a4b7044f5fda84815666b1e0700440f166ef9bb600e5090341e9",
+      "review_method": "作成・全行自己読解・9独立回帰実行",
+      "findings": [
+        "独立9試験PASS、機構担当3と合わせ12PASS"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/stl-export-peer.md",
+        "docs/audits/20260905-round2/stl-export-peer-tests-final.log",
+        "docs/audits/20260905-round2/stl-export-and-integration-final.log"
+      ]
+    },
+    {
+      "path": "tools/tests/test_stl_export.py",
+      "sha256": "9476950807612f4deb678cfa02a2bc394d9158db5e5c596da1f724f660f466d6",
+      "review_method": "全行読解・機構担当3試験を独立実行",
+      "findings": [
+        "正常保存/欠面保持/実tibiaの面除去と体積保存PASS"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/stl-export-peer.md",
+        "docs/audits/20260905-round2/stl-export-peer-tests-final.log",
+        "docs/audits/20260905-round2/stl-export-and-integration-final.log"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,421 @@
+{
+  "status": "LOCAL_APERTURE_PASS",
+  "lens_world_mm": [
+    0.0,
+    67.13320225178998,
+    35.153382158479005
+  ],
+  "axis_world": [
+    0.0,
+    0.9887865305833612,
+    0.14933585281813438
+  ],
+  "pupil_diameter_mm": 10,
+  "setback_mm": 3.2,
+  "test": "対角102度の円形円錐を9半径×72方位で検査。画像矩形より保守的な円錐。0.1〜400mmの全交点を調べる。",
+  "local_camera_assembly": {
+    "rays": 648,
+    "occluded_rays": 0,
+    "nearest_hit_by_part": {},
+    "first_hits": {}
+  },
+  "full_robot": [
+    {
+      "pose": "holding",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707281
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.77367098152708
+        }
+      }
+    },
+    {
+      "pose": "zero",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707279
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_00",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707279
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_01",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707279
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_02",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707279
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_03",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707279
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_04",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707279
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_05",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.9989841876895
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707281
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_06",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707283
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_07",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.9989841876895
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.829503577072835
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.77367098152709
+        }
+      }
+    },
+    {
+      "pose": "walk_08",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707279
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_09",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.829503577072835
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.77367098152709
+        }
+      }
+    },
+    {
+      "pose": "walk_10",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707282
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.77367098152706
+        }
+      }
+    },
+    {
+      "pose": "walk_11",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.829503577072806
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_12",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768947
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707283
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.77367098152709
+        }
+      }
+    },
+    {
+      "pose": "walk_13",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768949
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707279
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_14",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768947
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.8295035770728
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.7736709815271
+        }
+      }
+    },
+    {
+      "pose": "walk_15",
+      "rays": 648,
+      "occluded_rays": 3,
+      "nearest_hit_by_part": {
+        "Mouth_Cap_Grey#single": 3
+      },
+      "first_hits": {
+        "593": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.99898418768947
+        },
+        "594": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 63.82950357707283
+        },
+        "595": {
+          "part": "Mouth_Cap_Grey#single",
+          "distance_mm": 65.77367098152709
+        }
+      }
+    }
+  ],
+  "interpretation": "自部品による機体遮蔽と開口のケラレを分けて記録。648本は離散サンプルであり連続全画素の保証ではない。"
+}

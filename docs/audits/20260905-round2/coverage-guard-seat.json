@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "path": "tools/design_guard_seat_candidates.py",
+      "sha256": "7958dbe1df2c720077da6f8d8e70a3abb9910496d01ab8acfe83e78a0a83980c",
+      "review_method": "全行作成・自己読解、6案の実Boolean/STL再読/26方向/左右/固定域比較",
+      "findings": [
+        "全案未採用、局所案は挿入不可、開放案は外面切除/脛分離"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/guard-seat-candidates.md",
+        "docs/audits/20260905-round2/guard-seat-candidates/comparison-final.json"
+      ]
+    },
+    {
+      "path": "tools/render_guard_seat_candidates.py",
+      "sha256": "a47daeea71f7330da40c825aee94818018d79ef2fd78bfb12ed8c31b8da86784",
+      "review_method": "全行作成・自己読解・実行・出力PNGの目視",
+      "findings": [
+        "実Y=0断面で埋没/入口の切除を区別"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/guard-seat-candidates.md",
+        "docs/audits/20260905-round2/guard-seat-candidates/comparison-final.json"
+      ]
+    },
+    {
+      "path": "hardware/src/shell_mod.py",
+      "sha256": "cf85140dde5c8d0e8873493d00dfe63d4150c96b772d3aa71a09e0251565ed02",
+      "review_method": "全体読解、関数生成と印刷/リンク変換を実メッシュ照合",
+      "findings": [
+        "ガード用負形状がなくJSONの埋没配置をそのまま実体共有する"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/guard-seat-candidates.md",
+        "docs/audits/20260905-round2/guard-seat-candidates/comparison-final.json"
+      ]
+    },
+    {
+      "path": "tools/data/kit_assembly_front.json",
+      "sha256": "38ef2052d3d208c085272adb755da1c01f6ea95db6dc2c60f430d63296a4e18a",
+      "review_method": "大腿/脛ガード全履歴・行列を読解、現KITローダと左右実体比較",
+      "findings": [
+        "signed_distance正1mmの最適化を組立可能と誤認した原因を再現"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/guard-seat-candidates.md",
+        "docs/audits/20260905-round2/guard-seat-candidates/comparison-final.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "method": "肩ピッチ出力軸/軸間長を保持し主ケースを軸周り30度刻み12候補×18姿勢で検査。既存支持枠を含む全パーツ。ケース方向変更は新支持枠が必須。改修STLや成立証明ではない。",
+  "poses_source": "simulation/all-pairs-native-20servos-before-head-sync.json (angles only; meshes and placements are current)",
+  "rows": [
+    {
+      "native_axis_case_rotation_deg": 0,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 773.5696633466187,
+          "link": "leg_fr_coxa"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 30,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 379.8174280758373,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "zero",
+          "intersection_mm3": 720.0825979257617,
+          "link": "arm_r_shoulder"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 60,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 302.18074498264053,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "holding",
+          "intersection_mm3": 1084.199462949711,
+          "link": "arm_r_shoulder"
+        },
+        "Arm_Right_Guard_Grey": {
+          "pose": "zero",
+          "intersection_mm3": 30.080392234847523,
+          "link": "arm_r_upper"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 90,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 298.60359342427336,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "zero",
+          "intersection_mm3": 768.0818319814895,
+          "link": "arm_r_shoulder"
+        },
+        "Arm_Right_Guard_Grey": {
+          "pose": "walk_12",
+          "intersection_mm3": 35.90037670287222,
+          "link": "arm_r_upper"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 120,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 307.2542870652572,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "holding",
+          "intersection_mm3": 691.379288684658,
+          "link": "arm_r_shoulder"
+        },
+        "Arm_Right_Guard_Grey": {
+          "pose": "walk_04",
+          "intersection_mm3": 32.796312312914175,
+          "link": "arm_r_upper"
+        },
+        "arm_pod_upper": {
+          "pose": "zero",
+          "intersection_mm3": 53.730167263942924,
+          "link": "arm_r_upper"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 150,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 313.63975819382995,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "zero",
+          "intersection_mm3": 643.5116203999991,
+          "link": "arm_r_shoulder"
+        },
+        "arm_pod_upper": {
+          "pose": "zero",
+          "intersection_mm3": 120.51720406397476,
+          "link": "arm_r_upper"
+        },
+        "Arm_Right_Guard_Grey": {
+          "pose": "walk_04",
+          "intersection_mm3": 1.5986507466826154,
+          "link": "arm_r_upper"
+        },
+        "arm_pod_lower": {
+          "pose": "zero",
+          "intersection_mm3": 0.30534128295595525,
+          "link": "arm_r_upper"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 180,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 363.22930236806604,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "holding",
+          "intersection_mm3": 579.5007904896835,
+          "link": "arm_r_shoulder"
+        },
+        "arm_pod_upper": {
+          "pose": "walk_10",
+          "intersection_mm3": 130.3948486006452,
+          "link": "arm_r_upper"
+        },
+        "arm_pod_lower": {
+          "pose": "zero",
+          "intersection_mm3": 23.987735394790246,
+          "link": "arm_r_upper"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 210,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 470.41357851012026,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "holding",
+          "intersection_mm3": 643.209626697495,
+          "link": "arm_r_shoulder"
+        },
+        "arm_pod_upper": {
+          "pose": "walk_04",
+          "intersection_mm3": 67.06907807392724,
+          "link": "arm_r_upper"
+        },
+        "arm_pod_lower": {
+          "pose": "zero",
+          "intersection_mm3": 29.633104437111722,
+          "link": "arm_r_upper"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 240,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 616.98087989063,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "holding",
+          "intersection_mm3": 487.94803371776317,
+          "link": "arm_r_shoulder"
+        },
+        "arm_pod_upper": {
+          "pose": "walk_04",
+          "intersection_mm3": 7.1190934419954415,
+          "link": "arm_r_upper"
+        },
+        "arm_pod_lower": {
+          "pose": "walk_04",
+          "intersection_mm3": 44.04279312237304,
+          "link": "arm_r_upper"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 270,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 790.4212477662053,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "zero",
+          "intersection_mm3": 258.825062492109,
+          "link": "arm_r_shoulder"
+        },
+        "arm_pod_lower": {
+          "pose": "walk_02",
+          "intersection_mm3": 20.479347563440438,
+          "link": "arm_r_upper"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 300,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 969.5920033111792,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "holding",
+          "intersection_mm3": 368.88564224767697,
+          "link": "arm_r_shoulder"
+        }
+      }
+    },
+    {
+      "native_axis_case_rotation_deg": 330,
+      "maximum_intersections": {
+        "leg_fr_pitch_servo_case": {
+          "pose": "walk_06",
+          "intersection_mm3": 1068.7523520472414,
+          "link": "leg_fr_coxa"
+        },
+        "shoulder_bracket": {
+          "pose": "zero",
+          "intersection_mm3": 377.40869284952873,
+          "link": "arm_r_shoulder"
+        }
+      }
+    }
+  ]
+}

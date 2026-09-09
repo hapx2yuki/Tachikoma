@@ -1,0 +1,145 @@
+{
+  "scope": "Cabin/neck/XIAO candidate sources and read-only peer review; separate from firmware35 files",
+  "files": [
+    {
+      "path": "tools/design_cabin_electronics.py",
+      "sha256": "a2b09a0596cafc6981aa2ef4e47a465cd42df981f06ce3ade08c06bb46d37343",
+      "review_method": "全行通読・実メッシュBoolean・連続挿入・外壁余裕・STL再読。最終固定後に該当差分を再読・対応回帰/入力照合を再実行",
+      "findings": [
+        "中実殻に収納室が無い。局所候補を生成"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/cabin-electronics/independent-check.json",
+        "docs/audits/20260905-round2/stl-export-and-integration-final.log"
+      ]
+    },
+    {
+      "path": "tools/design_cabin_latch_candidate.py",
+      "sha256": "50e21878738b5c47f1e399f4909000f7f3cfb7b28fe4b01408b7b487919788db",
+      "review_method": "全行通読・変形経路の二分探索・連続抜去・梁式の次元確認。最終固定後に該当差分を再読・対応回帰/入力照合を再実行",
+      "findings": [
+        "着脱保持候補。実材料と保持力は未実測"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/cabin-electronics/latch-report.json",
+        "docs/audits/20260905-round2/stl-export-and-integration-final.log"
+      ]
+    },
+    {
+      "path": "tools/check_cabin_candidate.py",
+      "sha256": "2b84833a38707f7d00d7b03cb630072e7b3be94d034e204413f13b523205d2b3",
+      "review_method": "独立したSTL再読、元形状膨張差分、局所69条件",
+      "findings": [
+        "局所合格と全組立不合格の境界を明示"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/cabin-electronics/independent-check.json"
+      ]
+    },
+    {
+      "path": "tools/render_cabin_candidate.py",
+      "sha256": "9bd35eac3f9bd9164e859ba313b88f9614135f2ce2122f89657c4b4480c1b16d",
+      "review_method": "生成図を目視・GLB座標の照合",
+      "findings": [
+        "比較図は検討用。元STLを上書きしない"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/cabin-electronics/candidate-overview.png"
+      ]
+    },
+    {
+      "path": "tools/measure_xiao_step.py",
+      "sha256": "6756cf8b4020bf98ab28a8338892653616023327812a119f266e908dddb1daa4",
+      "review_method": "全行通読・OCCT組立変換・部品別境界・3D出力確認",
+      "findings": [
+        "カメラ除去後もUSB/SDが基板外へ出る"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/primary-sources/xiao-step-measured/camera-removed-summary.json"
+      ]
+    },
+    {
+      "path": "tools/design_neck_reinforcement_candidate.py",
+      "sha256": "c8d6ace79edf3386939faa080edab685d519d56f838c2d59de5b184ab789cab9",
+      "review_method": "11候補の断面感度・実Headと既存外装全接触の比較",
+      "findings": [
+        "局所強度改善と全組立不成立を分離"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/neck-reinforcement-candidates/comparison.json"
+      ]
+    },
+    {
+      "path": "tools/probe_cabin_eye_alignment.py",
+      "sha256": "45f7aef14d94434a00504152cd36c5cf66824257840e78c2663b2acc7b44c8fd",
+      "review_method": "法線軸の実投影範囲照合、32位置のBoolean",
+      "findings": [
+        "7.39mm移動だけでは解消せず、0～15mmに全非交差なし"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/cabin-electronics/eye-position-probe.json"
+      ]
+    },
+    {
+      "path": "tools/check_cabin_external_interfaces.py",
+      "sha256": "bbad0940a1bc0412929e84524355e15538bd73727b5618fa7b5d7c6eabf3b17f",
+      "review_method": "既存と候補を独立全実体比較。最終固定後に該当差分を再読・対応回帰/入力照合を再実行",
+      "findings": [
+        "前殻/首/Eye/Ballの実体交差が残る"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/cabin-electronics/external-interface-check.json",
+        "docs/audits/20260905-round2/stl-export-and-integration-final.log"
+      ]
+    },
+    {
+      "path": "tools/tests/test_coxa_sweep.py",
+      "sha256": "e317808210b96f6d4b60ed117e67d390c0380fe74abeda5e80231eb6ec50ce2c",
+      "review_method": "検査の見逃しを再現する変異試験、root修正後に5試験実行",
+      "findings": [
+        "箱枠を保ったままホーン座を失う負例を拒否"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/coxa-extract-peer-tests.log"
+      ]
+    },
+    {
+      "path": "tools/check_coxa_sweep.py",
+      "sha256": "aaad2c7dae0698a4371e65873727128fd86cf3c20fec40480985383c235f69a5",
+      "review_method": "全行レビュー・格子間距離式導出・0.137度独立格子・ミラー実体対称差・負例。最終改訂の該当部を再読し負例/依存/保存経路を再照合",
+      "findings": [
+        "主担当の現修正を独立確認。詳細peer-review.md"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/peer-review.md",
+        "docs/audits/20260905-round2/coxa-extract-peer-tests.log",
+        "docs/audits/20260905-round2/integration-peer-review.md"
+      ]
+    },
+    {
+      "path": "hardware/src/make_leg.py",
+      "sha256": "ebbdba644c92a7547d2bae2dd3c049aea6c39684b8b4357a953a618be84d1723",
+      "review_method": "後端切削差分・箱枠とr10ホーン座の実体差分。最終改訂の該当部を再読し負例/依存/保存経路を再照合",
+      "findings": [
+        "主担当の現修正を独立確認。詳細peer-review.md"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/peer-review.md",
+        "docs/audits/20260905-round2/coxa-extract-peer-tests.log",
+        "docs/audits/20260905-round2/integration-peer-review.md"
+      ]
+    },
+    {
+      "path": "tools/extract_meshes.py",
+      "sha256": "ca280077a5344601a1e4cda9e7bd84f754a971ac53be4244ac5fbead426b2571",
+      "review_method": "全行レビュー・単位/同名保護/名前保持の回帰試験",
+      "findings": [
+        "主担当の現修正を独立確認。詳細peer-review.md"
+      ],
+      "evidence": [
+        "docs/audits/20260905-round2/peer-review.md",
+        "docs/audits/20260905-round2/coxa-extract-peer-tests.log"
+      ]
+    }
+  ]
+}

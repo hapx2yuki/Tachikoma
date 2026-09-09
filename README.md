@@ -4,6 +4,15 @@
 2 本の可動腕 (キット準拠の固定爪を持つ) を持ち、スマホから操作できる
 ロボット**へ改造するプロジェクト。
 
+**2026-09-05 第2次監査結果:** 実サーボの占有、固定部品内部、挿入経路、材料別接触、実制御とSTL変換まで検査し、再現した不具合を修正。
+全STL/URDFを再生成したが、頭内収納・頭固定・首/Cabin・脚装飾・足裏支持に未解決事項があり、そのまま組立歩行できる設計とは判定していない。
+本文の旧「全検証PASS」は当時の検査範囲の記録であり、組立・実機歩行の合格を示さない。
+公開候補の最新記録は[2026-09-09再開監査](docs/audits/20260909-resume/README.md)です（WIP）。
+これは実印刷・実組立・通電・歩行の完了を示しません。設計の根拠・残課題は[第2次監査](docs/audits/20260905-round2/README.md)と
+[監査Issue #80](https://github.com/hapx2yuki/Tachikoma/issues/80)を参照。
+
+**追加で揃えるもの:** [印刷優先構成の現在地](docs/print-first.md) / [追加購入の全一覧](docs/additional-purchases.md) / [追加印刷・再使用の全一覧](docs/additional-printing.md)。必要総数と手持ちの確認済み数量を区別し、設計未確定の部品を発注・一括印刷する指示にはしていない。[全Issuesの更新内容と着手条件](docs/issues-audit-20260905.md)も参照。
+
 > **Disclaimer / 免責**: 本プロジェクトは『攻殻機動隊』に登場するタチコマを
 > モチーフにした**非公式・非営利の個人ファン制作**であり、士郎正宗氏・
 > 講談社・Production I.G ほか原作の権利者とは一切関係ありません。
@@ -41,10 +50,8 @@
   (φ42.3 座グリ, STL 実測) の底へ φ30 貫通ボアを開け (Head_Top_Eyecut.stl
   生成済み)、シェル内側から嵌める
 - ギミック: WS2812 LED (目バックライト/赤ランプ)、DFPlayer サウンド。頭部は
-  完全固定 (可動部なし, `docs/assembly.md` §3) — 頭部ヨー用の firmware
-  チャンネル (CH_HEAD, ch12) は実装済みだが、駆動対象の物理パーツは
-  2026-07-30 実測の結果未確定 (詳細 `docs/wiring.md`「頭部ヨー (CH_HEAD)
-  の物理対象」)
+  完全固定 (可動部なし, `docs/assembly.md` §3)。未実装の頭部ヨーに対応する
+  CH_HEAD/ch12は、現在のfirmwareでは常時出力停止。
 - **音声会話**: 砲身 (Mouth_Cannon) 内蔵のマイク (INMP441) + スピーカー
   (φ20mm, MAX98357A アンプ経由) で、Wi-Fi 越しのブリッジ
   (`tools/voice_bridge.py`) と STT→LLM→TTS (声クローン) の音声会話ができる
@@ -76,20 +83,12 @@
 
 ```bash
 # 1. STL 再生成 (config.py をサーボ実測値に合わせてから)
-cd hardware/src && ../../.venv/bin/python build_all.py
+.venv/bin/python hardware/src/build_all.py
+.venv/bin/python tools/make_head_eyecut.py
+.venv/bin/python tools/export_urdf.py
 
-# 2. 検証セット
-./.venv/bin/python tools/check_leg_assembly.py   # 関節干渉 (サーボ実体込み, shin_shell 非依存) -- OK
-./.venv/bin/python tools/check_screw_bosses.py   # タブビスの肉厚 -- OK
-./.venv/bin/python tools/sim_gait.py             # IK/歩容/トルク/安定マージン -- OK
-./.venv/bin/python tools/check_arm.py            # 腕: 取付/トルク/作業域/相互接触 (脚は粗近似) -- OK
-./.venv/bin/python tools/check_eye.py            # 目: ポッド/キャリア/幾何 -- OK
-./.venv/bin/python tools/check_audio.py          # 音声: 砲身内蔵マイク/スピーカー -- OK
-./.venv/bin/python tools/check_camera.py         # カメラ (頭部中央目): 瞳開口/FOV/収容/全アセンブリ視界 -- OK
-./.venv/bin/python tools/check_shin_arm_leg.py   # shin_shell 実メッシュ込みの自脚/隣接脚干渉 -- PASS
-./.venv/bin/python tools/check_head_pod_clearance.py  # 頭部×pod_neck 逃がしカットのクリアランス -- PASS
-./.venv/bin/python tools/check_pod_neck_strength.py  # pod_neck 曲げ強度 (全区間σ(y)スキャン) -- OK
-./.venv/bin/python tools/check_urdf.py           # URDF 380項目 -- PASS
+# 2. 全検証セット。未使用の空ディレクトリを指定し、失敗も保存する
+.venv/bin/python tools/run_design_audit.py --phase verify --output-dir outputs/audit-verify
 
 # 3. ファームウェア書き込み (ESP32 を USB 接続して)
 cd firmware && ../.venv/bin/pio run -t upload
@@ -103,7 +102,7 @@ bosses.py` chassis arm tab) が発生し、「完全中央は物理的に不可�
 判明した。続く「境界スイープ (実現可能な最中央値確定)」タスクで
 `hub_y∈[0,12]` を実メッシュで直接スイープし、全チェッカーが緑になる
 最小値 **`hub_y=11.0`** (旧12.0からわずか1mmの中央寄せ) を実測で確定・
-採用した。上記チェック一式は現在すべて OK/PASS。詳細な数値根拠・
+採用した。当時のチェック一式はOK/PASSだったが、2026-09-05に実ケースの占有と全固定部品を含めると成立しないことが判明した。過去の数値根拠・
 スイープ表は `docs/assembly.md`「頭部中央寄せ」§6-7 参照。
 
 操作: WiFi「Tachikoma」(パスワードは firmware/src/config.h の AP_PASS — 各自設定) に接続 → http://192.168.4.1/
@@ -353,7 +352,7 @@ bosses.py` chassis arm tab) が発生し、「完全中央は物理的に不可�
     (距離を保存) であり `shin_shell_m` の構築チェーンとも可換であることを
     数式的に示した上で、実際に signed_distance で再検証し FR/RL が FL/RR と
     寸分違わず同じ 82.8%embed/median 1.585mm/max float 6.552mm になることを
-    確認済み (`/private/tmp/.../scratchpad/verify_shin_guard_mirror.py`)。
+    確認済み（リポジトリ内の検証用スクリプトで再現）。
     4脚とも同一の再現性のある結果になったため、README/docs の数値に脚別の
     注記は不要 (`tools/data/kit_assembly_front.json` の Leg_Thigh_Guard_Blue_x4
     側にあった同種の未検証 TODO も、thigh_cap には `_m` 変形版がそもそも

@@ -1,0 +1,7 @@
+== labels ==
+== milestones ==
+== issues ==
+  + issue PR-11: PR-11 [印刷] 片脚合格後に残りのtibiaを標準1本・ミラー2本印刷する
+== relations ==
+  remove blocked #75 (EL-09) by #45
+  remove blocked #77 (L-11) by #37

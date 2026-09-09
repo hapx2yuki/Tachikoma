@@ -1,0 +1,38 @@
+[
+  {
+    "tolerance_mm": 0.001,
+    "closed": true,
+    "volume": 54609.82333902774,
+    "components": 1,
+    "volume_change": 0.0030299126665340737,
+    "removed_mm3": 0.000619222701482042,
+    "added_mm3": 0.0036485124476686366
+  },
+  {
+    "tolerance_mm": 0.005,
+    "closed": true,
+    "volume": 54609.90409523918,
+    "components": 1,
+    "volume_change": 0.08377681332785869,
+    "removed_mm3": 0.009559266208438279,
+    "added_mm3": 0.09333556172929047
+  },
+  {
+    "tolerance_mm": 0.01,
+    "closed": true,
+    "volume": 54610.79566922594,
+    "components": 1,
+    "volume_change": 0.9753679345085402,
+    "removed_mm3": 0.024043545219612262,
+    "added_mm3": 0.997908102289039
+  },
+  {
+    "tolerance_mm": 0.025,
+    "closed": true,
+    "volume": 54620.78878303522,
+    "components": 1,
+    "volume_change": 10.968457151444454,
+    "removed_mm3": 1.43697667568413,
+    "added_mm3": 12.40393035411331
+  }
+]

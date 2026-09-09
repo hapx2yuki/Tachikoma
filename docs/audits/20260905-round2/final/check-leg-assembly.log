@@ -1,0 +1,73 @@
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: divide by zero encountered in divide
+  center_mass = integrated[1:4] / volume
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+pose          pitch   knee   coxa-fem  fem-tib  coxa-tib
+neutral          20      0      0.000    0.000    0.000
+crouch           45     30      0.000    0.000    0.000
+high            -10    -20      0.000    0.000    0.000
+reach             0    -35      0.000    0.000    0.000
+tuck             55     45      0.000    0.000    0.000
+sprawl          -38     33      0.000    0.000    0.000
+sprawl+         -45     45      0.000    0.000    0.000
+sprawl-         -45    -20      0.000    0.000    0.000
+neutral_m        20      0      0.000    0.000    0.000
+crouch_m         45     30      0.000    0.000    0.000
+high_m          -10    -20      0.000    0.000    0.000
+reach_m           0    -35      0.000    0.000    0.000
+tuck_m           55     45      0.000    0.000    0.000
+sprawl_m        -38     33      0.000    0.000    0.000
+sprawl+_m       -45     45      0.000    0.000    0.000
+sprawl-_m       -45    -20      0.000    0.000    0.000
+
+worst = 0.000 cm^3  (OK)
+
+IK 到達可能極値姿勢 (pitch,knee): [(-3, 24), (-37, 44), (-45, 18), (19, -44), (8, -44), (-41, -6), (20, 0)]
+隣接脚の干渉 45°ペア (単側 ±17.5°, 和 ≤26°, IK 到達姿勢のみ):
+  FR-RR(単側FR): worst 0.000 cm^3
+  FR-RR(単側RR): worst 0.000 cm^3
+  FR-RR(和・対称): worst 0.000 cm^3
+  FR-RR(和・偏り): worst 0.000 cm^3
+隣接脚の干渉 遠ペア (フルヨー ±40°, サーボ空間極値):
+  FR-FL(前寄せ) pose ( 20,  0)/( 20,  0): 0.000 cm^3
+  FR-FL(前寄せ) pose ( 45, 30)/( 45, 30): 0.000 cm^3
+  FR-FL(前寄せ) pose (-38, 33)/(-38, 33): 0.000 cm^3
+  FR-FL(前寄せ) pose (-10,-20)/( 20,  0): 0.000 cm^3
+  FR-FL(前寄せ) pose (-45, 45)/(-45, 45): 0.000 cm^3
+  RL-RR(後寄せ) pose ( 20,  0)/( 20,  0): 0.000 cm^3
+  RL-RR(後寄せ) pose ( 45, 30)/( 45, 30): 0.000 cm^3
+  RL-RR(後寄せ) pose (-38, 33)/(-38, 33): 0.000 cm^3
+  RL-RR(後寄せ) pose (-10,-20)/( 20,  0): 0.000 cm^3
+  RL-RR(後寄せ) pose (-45, 45)/(-45, 45): 0.000 cm^3
+隣接脚 worst = 0.000 cm^3  (OK)
+
+ポッド (Cabin) と後脚 (ポッド側ヨー +30°, IK 到達姿勢):
+  RL yaw=+30: worst 0.000 cm^3
+  RR yaw=-30: worst 0.000 cm^3
+ポッド worst = 0.000 cm^3  (OK)
+
+バッテリークレードル+パック実体と脚 (内側/ポッド側ヨー最悪):
+  FR yaw=-18: worst 0.000 cm^3
+  FL yaw=+18: worst 0.000 cm^3
+  RL yaw=-18/+30: worst 0.000 cm^3
+  RR yaw=+18/-30: worst 0.000 cm^3
+クレードル worst = 0.000 cm^3  (OK)
+
+足の地面クリアランス (leg_foot_bored+foot_pad 実メッシュ, 体高110-130, SWAY込み全位相スタンス相のみ):
+  config.py TIBIA_LEN_GAIT = 155.98mm での worst world z = -0.002mm (OK — 埋め込み側 -0.15mm 未満は NG, 浮き側は body_h の現物合わせで吸収できる範囲として 1.5mm まで許容)
+  再校正 (二分探索) による最適値 = 155.98mm (config.py との差 -0.00mm, OK)
+  トゥ (Leg_Toe_Black_x12 x12, 装飾) 最小 world z = -19.55mm at ('RL', np.float64(110.0), np.float64(0.25)) [参考値 — 甲コラムの tibia 軸から横へ大きく (最大22mm) 離れるため上記の一次元校正では拾いきれない。負の値では剛体トゥが地面に先に触れる。足裏だけが荷重を受けることは未検証であり、フルドレス歩行の合格根拠に使用しない)]
+
+[8] tibia ソケット ↔ leg_foot_bored プラグ 干渉体積: 0.0000 cm^3 (OK)
+[9] トゥ相互重なり (FR脚 3本): worst 0.0000 cm^3 (OK)
+    トゥ↔足本体 重なり (FR脚): worst 0.0296 cm^3 = トゥ体積の1.20% (NG — 接着だけでは実体重なりを解消できない)
+[10] coxa_bracket: 1 body (OK)
+[10] femur_link: 1 body (OK)
+[10] tibia_link: 1 body (OK)
+[10] 膝 ±45° 掃引 femur∩tibia: worst 0.0000 cm^3 @ +0deg (OK)
+
+foot_pad 接地面積 (半径4.0mm 球冠, 圧縮代1.0mm 想定): 22.0mm^2 (x4 脚)
+saved /Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final/leg-assembly.png
+根元ブラケット全ヨー包絡: PASS
+RESULT: FAIL: トゥ嵌合
+注: 接地校正は足裏のみ。トゥ先行接地・現物のたわみは別の実機ゲート。

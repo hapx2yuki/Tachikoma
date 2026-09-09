@@ -1,0 +1,543 @@
+{
+  "status": "DESIGN_CANDIDATE_NOT_PRINT_RELEASE",
+  "units": "mm",
+  "frame": "chassis plate bottom z=0",
+  "mesh_simplification_tolerance_mm": 0.015,
+  "checks": {
+    "back_crossover_removed_mm3": 9628.996535942424,
+    "support_union_added_outside_original_mm3": -4.101174340208745e-06,
+    "carved_volume_mm3": 1649252.890366773,
+    "peg_protection_removed_mm3": 0.0,
+    "back_peg_protection_removed_mm3": 0.0,
+    "neck_flange_region_removed_without_wire_mm3": 0.0,
+    "peg_lower": {
+      "overlap_mm3": 0.0,
+      "carved_shell_overlap_mm3": 0.0
+    },
+    "peg_upper": {
+      "overlap_mm3": 0.0,
+      "carved_shell_overlap_mm3": 0.0
+    },
+    "tray_0": {
+      "static_overlap_mm3": 0.0,
+      "continuous_insertion_overlap_mm3": 0.0,
+      "insertion_max_overlap_mm3": 0.0,
+      "at_rear_shift_mm": 0,
+      "body_count": 1,
+      "volume_mm3": 24610.892249173954
+    },
+    "tray_1": {
+      "static_overlap_mm3": 0.0,
+      "continuous_insertion_overlap_mm3": 0.0,
+      "insertion_max_overlap_mm3": 0.0,
+      "at_rear_shift_mm": 0,
+      "body_count": 1,
+      "volume_mm3": 24570.711726909198
+    },
+    "wire_module_overlap_mm3": {
+      "ESP32_with_vertical_headers": 0.0,
+      "UBEC_reserved": 0.0,
+      "DFPlayer_reserved": 0.0,
+      "MAX98357A_reserved": 0.0,
+      "5V_regulator_reserved": 0.0
+    },
+    "wire_carrier_overlap_mm3": 0.0,
+    "usb_service_cap_removed_overlap_mm3": 0.0,
+    "usb_with_rear_cap_overlap_mm3": 3332.605707699408,
+    "candidate_front_watertight": true,
+    "candidate_front_body_count": 1
+  },
+  "bays": [
+    {
+      "center_x": -32,
+      "stepped_pockets": [
+        {
+          "bounds_mm": [
+            [
+              -50,
+              -214,
+              27
+            ],
+            [
+              -14,
+              -143,
+              65
+            ]
+          ],
+          "expanded_outside_original_mm3": 0.0
+        },
+        {
+          "bounds_mm": [
+            [
+              -49.5,
+              -214,
+              64
+            ],
+            [
+              -14.5,
+              -155,
+              95
+            ]
+          ],
+          "expanded_outside_original_mm3": 0.0
+        },
+        {
+          "bounds_mm": [
+            [
+              -49.5,
+              -214,
+              27
+            ],
+            [
+              -14.5,
+              -192,
+              99.5
+            ]
+          ],
+          "expanded_outside_original_mm3": 0.0
+        }
+      ],
+      "wall_expansion_mm": 3.3
+    },
+    {
+      "center_x": 32,
+      "stepped_pockets": [
+        {
+          "bounds_mm": [
+            [
+              14,
+              -214,
+              27
+            ],
+            [
+              50,
+              -143,
+              65
+            ]
+          ],
+          "expanded_outside_original_mm3": 0.0
+        },
+        {
+          "bounds_mm": [
+            [
+              14.5,
+              -214,
+              64
+            ],
+            [
+              49.5,
+              -155,
+              95
+            ]
+          ],
+          "expanded_outside_original_mm3": 0.0
+        },
+        {
+          "bounds_mm": [
+            [
+              14.5,
+              -214,
+              27
+            ],
+            [
+              49.5,
+              -192,
+              99.5
+            ]
+          ],
+          "expanded_outside_original_mm3": 0.0
+        }
+      ],
+      "wall_expansion_mm": 3.3
+    }
+  ],
+  "modules": [
+    {
+      "name": "ESP32_with_vertical_headers",
+      "bounds_mm": [
+        [
+          -47,
+          -203,
+          34
+        ],
+        [
+          -17,
+          -145,
+          62
+        ]
+      ],
+      "note": "58x28 PCB plus provision, exact plugs UNVERIFIED",
+      "shell_overlap_mm3": 0.0,
+      "carrier_overlap_mm3": 0.0,
+      "continuous_insertion_overlap_mm3": 0.0
+    },
+    {
+      "name": "UBEC_reserved",
+      "bounds_mm": [
+        [
+          17,
+          -203,
+          34
+        ],
+        [
+          47,
+          -144,
+          62
+        ]
+      ],
+      "note": "HOBBYWING45x20x16.2 fits; purchased HENGE UNVERIFIED",
+      "shell_overlap_mm3": 0.0,
+      "carrier_overlap_mm3": 0.0,
+      "continuous_insertion_overlap_mm3": 0.0
+    },
+    {
+      "name": "DFPlayer_reserved",
+      "bounds_mm": [
+        [
+          -45,
+          -205,
+          70
+        ],
+        [
+          -19,
+          -179,
+          90
+        ]
+      ],
+      "note": "purchased header dimensions UNVERIFIED",
+      "shell_overlap_mm3": 0.0,
+      "carrier_overlap_mm3": 0.0,
+      "continuous_insertion_overlap_mm3": 0.0
+    },
+    {
+      "name": "MAX98357A_reserved",
+      "bounds_mm": [
+        [
+          -44,
+          -178,
+          70
+        ],
+        [
+          -20,
+          -156,
+          90
+        ]
+      ],
+      "note": "Adafruit board19.4x17.8 plus terminals provision",
+      "shell_overlap_mm3": 0.0,
+      "carrier_overlap_mm3": 0.0,
+      "continuous_insertion_overlap_mm3": 0.0
+    },
+    {
+      "name": "5V_regulator_reserved",
+      "bounds_mm": [
+        [
+          18,
+          -199,
+          70
+        ],
+        [
+          46,
+          -161,
+          90
+        ]
+      ],
+      "note": "mini560 exact version/heatsink UNVERIFIED",
+      "shell_overlap_mm3": 0.0,
+      "carrier_overlap_mm3": 0.0,
+      "continuous_insertion_overlap_mm3": 0.0
+    }
+  ],
+  "original_solid_volume_mm3": {
+    "front": 1956201.3636117522,
+    "back": 679935.3600967207
+  },
+  "peg_alignment": {
+    "back_translation_before_mm": [
+      0,
+      -235,
+      55
+    ],
+    "back_translation_after_mm": [
+      0,
+      -235,
+      48.69250297546387
+    ],
+    "back_delta_z_mm": -6.307497024536133,
+    "datum": "Front/Back lower bounds and two existing peg sockets",
+    "back_decorations": [
+      {
+        "key": "Cabin_RedLight_Large#back_left",
+        "source_stl": "Cabin_RedLight_Large.stl",
+        "frame": "robot",
+        "before_pos_mm": [
+          -36.972,
+          -258.343,
+          111.302
+        ],
+        "after_pos_mm": [
+          -36.972,
+          -258.343,
+          104.99450297546387
+        ]
+      },
+      {
+        "key": "Cabin_RedLight_Large#back_right",
+        "source_stl": "Cabin_RedLight_Large.stl",
+        "frame": "robot",
+        "before_pos_mm": [
+          36.973,
+          -250.209,
+          111.946
+        ],
+        "after_pos_mm": [
+          36.973,
+          -250.209,
+          105.63850297546387
+        ]
+      },
+      {
+        "key": "Cabin_RedLight_Small#back_left",
+        "source_stl": "Cabin_RedLight_Small.stl",
+        "frame": "robot",
+        "before_pos_mm": [
+          -20.943,
+          -258.623,
+          114.843
+        ],
+        "after_pos_mm": [
+          -20.943,
+          -258.623,
+          108.53550297546387
+        ]
+      },
+      {
+        "key": "Cabin_RedLight_Small#back_right",
+        "source_stl": "Cabin_RedLight_Small.stl",
+        "frame": "robot",
+        "before_pos_mm": [
+          20.943,
+          -258.249,
+          114.873
+        ],
+        "after_pos_mm": [
+          20.943,
+          -258.249,
+          108.56550297546387
+        ]
+      },
+      {
+        "key": "Cabin_Spinnarette_Grey#back_left",
+        "source_stl": "Cabin_Spinnarette_Grey.stl",
+        "frame": "robot",
+        "before_pos_mm": [
+          -24.731,
+          -246.682,
+          -31.527
+        ],
+        "after_pos_mm": [
+          -24.731,
+          -246.682,
+          -37.834497024536134
+        ]
+      },
+      {
+        "key": "Cabin_Spinnarette_Grey#back_right",
+        "source_stl": "Cabin_Spinnarette_Grey.stl",
+        "frame": "robot",
+        "before_pos_mm": [
+          24.732,
+          -251.168,
+          -31.882
+        ],
+        "after_pos_mm": [
+          24.732,
+          -251.168,
+          -38.18949702453614
+        ]
+      }
+    ],
+    "pegs": [
+      {
+        "name": "lower",
+        "source_stl": "Cabin_Peg_x2.stl",
+        "count": 1,
+        "frame": "robot",
+        "position_normalized_scaled_mm": [
+          0,
+          -211.0932502746582,
+          9.95
+        ],
+        "R_axis_deg": [
+          [
+            "x",
+            90
+          ]
+        ],
+        "raw_to_chassis_matrix": [
+          [
+            1.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            9.184850993605148e-17,
+            -1.5,
+            -211.0932502746582
+          ],
+          [
+            0.0,
+            1.5,
+            9.184850993605148e-17,
+            9.95
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "normalized_scaled_to_chassis_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            6.123233995736766e-17,
+            -1.0,
+            -211.0932502746582
+          ],
+          [
+            0.0,
+            1.0,
+            6.123233995736766e-17,
+            9.95
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_bbox_center_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "original_color": "UNVERIFIED (STL stores no material)",
+        "display_color_rgba": [
+          150,
+          150,
+          155,
+          255
+        ],
+        "corrected_shell_overlap_mm3": 0.0,
+        "current_shell_overlap_same_peg_mm3": 2944.5125084365636,
+        "clearance_0p1mm_expanded_overlap_mm3": 0.0,
+        "zero_overlap_z_range_sampled_0p05mm": [
+          9.500000000000021,
+          10.250000000000032
+        ]
+      },
+      {
+        "name": "upper",
+        "source_stl": "Cabin_Peg_x2.stl",
+        "count": 1,
+        "frame": "robot",
+        "position_normalized_scaled_mm": [
+          0,
+          -211.0932502746582,
+          94.05
+        ],
+        "R_axis_deg": [
+          [
+            "x",
+            90
+          ],
+          [
+            "y",
+            90
+          ]
+        ],
+        "raw_to_chassis_matrix": [
+          [
+            9.184850993605148e-17,
+            1.5,
+            9.184850993605148e-17,
+            0.0
+          ],
+          [
+            0.0,
+            9.184850993605148e-17,
+            -1.5,
+            -211.0932502746582
+          ],
+          [
+            -1.5,
+            9.184850993605148e-17,
+            5.624099184981966e-33,
+            94.05
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "normalized_scaled_to_chassis_matrix": [
+          [
+            6.123233995736766e-17,
+            1.0,
+            6.123233995736766e-17,
+            0.0
+          ],
+          [
+            0.0,
+            6.123233995736766e-17,
+            -1.0,
+            -211.0932502746582
+          ],
+          [
+            -1.0,
+            6.123233995736766e-17,
+            3.749399456654644e-33,
+            94.05
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_bbox_center_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "original_color": "UNVERIFIED (STL stores no material)",
+        "display_color_rgba": [
+          150,
+          150,
+          155,
+          255
+        ],
+        "corrected_shell_overlap_mm3": 0.0,
+        "current_shell_overlap_same_peg_mm3": 782.678271812178,
+        "clearance_0p1mm_expanded_overlap_mm3": 0.0,
+        "zero_overlap_z_range_sampled_0p05mm": [
+          92.59999999999991,
+          95.44999999999975
+        ]
+      }
+    ]
+  }
+}

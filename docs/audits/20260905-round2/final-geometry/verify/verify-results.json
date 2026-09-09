@@ -1,0 +1,315 @@
+{
+  "date": "2026-09-05T17:11:59.752721+09:00",
+  "phase": "verify",
+  "results": [
+    {
+      "name": "coxa-sweep",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_coxa_sweep.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-geometry/verify/coxa-sweep.json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 3.447,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/coxa-sweep.log",
+      "log_sha256": "5df6ec84b7b0aa0b5efed824ff50f747105fe13fb4ed6679e118cb17750d2d69"
+    },
+    {
+      "name": "static-assembly",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_static_assembly.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-geometry/verify/static-all-pairs.json"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 6.638,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/static-assembly.log",
+      "log_sha256": "eb1681c99facd0aa3a8ff87e41c63baea893024856511fe0846d3c25ee881641"
+    },
+    {
+      "name": "sim-gait",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/sim_gait.py",
+        "--output",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-geometry/verify/gait.png"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 2.045,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/sim-gait.log",
+      "log_sha256": "d88625ce4e405b5687c510a062eba5977e8c5f1cb96410a4311e9c0ea3df71d2"
+    },
+    {
+      "name": "check-screw-bosses",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_screw_bosses.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 1.389,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-screw-bosses.log",
+      "log_sha256": "3f3bafc54e2572913e45c7b38fdae3eff1a655c657a5655810b316557950e3fe"
+    },
+    {
+      "name": "check-leg-link-strength",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_leg_link_strength.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 1.175,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-leg-link-strength.log",
+      "log_sha256": "584ae260cdd8b20b065de325431c6c518374a03da418274093afcf0f59e3cd52"
+    },
+    {
+      "name": "check-arm",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_arm.py"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 31.972,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-arm.log",
+      "log_sha256": "8ef39ee6d5f4c1edc2cdab98b570ecca2990b138f8d27664f321c04d2411f29e"
+    },
+    {
+      "name": "check-eye",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_eye.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.536,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-eye.log",
+      "log_sha256": "998e0d035716592cb6a77b71cb5b0683f46ee960f529f91ce281ce0d3cb90293"
+    },
+    {
+      "name": "check-audio",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_audio.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 5.898,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-audio.log",
+      "log_sha256": "387b0bca21bdc4f1ef8f2422cf95e95ff660e4aa6215b845140dd42d0926aa1d"
+    },
+    {
+      "name": "check-leg-assembly",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_leg_assembly.py",
+        "--output",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-geometry/verify/leg-assembly.png"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 53.37,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-leg-assembly.log",
+      "log_sha256": "f2685e4dbd512d179ee72139244e9a9d01760b44c208b4d1d178e86faba1fab4"
+    },
+    {
+      "name": "check-camera",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_camera.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 8.013,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-camera.log",
+      "log_sha256": "0ac035b1abe87f2d047a1dc45b6adb845e0bcd318fc6bb2b6a68599002edb601"
+    },
+    {
+      "name": "check-head-pod-clearance",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_head_pod_clearance.py"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 0.769,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-head-pod-clearance.log",
+      "log_sha256": "d7d87760a7ffb60213e405daca89a546e105aa42fc9db814c7239e260ae7d7d1"
+    },
+    {
+      "name": "check-pod-neck-strength",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_pod_neck_strength.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 1.09,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-pod-neck-strength.log",
+      "log_sha256": "8531445df4cdc3687973ddd54a9316ba00882c4b18eb7b97dd898c38a3a8e4b2"
+    },
+    {
+      "name": "check-urdf",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_urdf.py"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 23.42,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-urdf.log",
+      "log_sha256": "2bfc3f0395b905f7199a30cfc09add5b323ba85e26b2554b7d53bb391ae864a4"
+    },
+    {
+      "name": "check-print-artifacts",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_print_artifacts.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-geometry/verify/check_print_artifacts.json"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 6.004,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-print-artifacts.log",
+      "log_sha256": "fcb0c379c8552cb3cd22294b6ddc63422713977af452abf359f4802f6584ec07"
+    },
+    {
+      "name": "check-toe-contact",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_toe_contact.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-geometry/verify/check_toe_contact.json"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 17.564,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-toe-contact.log",
+      "log_sha256": "f8ae894e8f27deae174052a477778da2f28cba03f3c857c31baabe9c15bc8bea"
+    },
+    {
+      "name": "check-print-strength-sensitivity",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_print_strength_sensitivity.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-geometry/verify/check_print_strength_sensitivity.json"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 5.473,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-print-strength-sensitivity.log",
+      "log_sha256": "5a1a97aa093316cc84ead966185a06c059a2d9f698c9488d770b7ce63d1de95e"
+    },
+    {
+      "name": "check-mouth-chassis",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_mouth_chassis.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-geometry/verify/check_mouth_chassis.json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 21.28,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-mouth-chassis.log",
+      "log_sha256": "f510fcd88a2b06649d4a0ba80227e528870969c832a84d0295987e7aa5d4bdb6"
+    },
+    {
+      "name": "check-kit-transforms",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_kit_transforms.py",
+        "--json",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-geometry/verify/check_kit_transforms.json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.813,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-kit-transforms.log",
+      "log_sha256": "c2428caec6814c408d758fb15b741e223ed695ddf8351a3a032405d80a53cbed"
+    },
+    {
+      "name": "power-budget",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_power_budget.py",
+        "--output",
+        "/Users/uratayuuki/Documents/Tachikoma/docs/audits/20260905-round2/final-geometry/verify/power-budget.json"
+      ],
+      "returncode": 2,
+      "status": "UNVERIFIED",
+      "seconds": 0.105,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/power-budget.log",
+      "log_sha256": "f198b0ac53065501ad16f6d4fd516f9f0018ad88cc961c964ef641759393dc05"
+    },
+    {
+      "name": "firmware-host-and-build",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/tests/firmware_run.py",
+        "--build"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 39.094,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/firmware-host-and-build.log",
+      "log_sha256": "e93229f35719463bd2281564c6f1450b6eed17ef7ecb11acd537e2223dc13c0f"
+    },
+    {
+      "name": "check-shin-arm-leg",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/check_shin_arm_leg.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 132.101,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/check-shin-arm-leg.log",
+      "log_sha256": "dbd34f40c2c1ea89f6645fa61b2510af9bb12a263db5da564ae597c065686c09"
+    },
+    {
+      "name": "simulation-regression",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "/Users/uratayuuki/Documents/Tachikoma/tools/tests/simulation_regression.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 11.634,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/simulation-regression.log",
+      "log_sha256": "f66ce0cd2b56f4b1f2c9fda49e85622c99d794c12196ec173ab85d19675d4394"
+    },
+    {
+      "name": "regression",
+      "command": [
+        "/Users/uratayuuki/Documents/Tachikoma/.venv/bin/python",
+        "-m",
+        "unittest",
+        "tools.tests.test_audit_gates",
+        "tools.tests.test_issue_sync",
+        "tools.tests.test_print_artifacts",
+        "tools.tests.test_render_contracts",
+        "tools.tests.test_extract_meshes",
+        "tools.tests.test_mesh_checks",
+        "tools.tests.test_coxa_sweep",
+        "tools.tests.test_integration_audit",
+        "tools.tests.test_stl_export",
+        "tools.tests.test_export_stl",
+        "-v"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 43.824,
+      "log": "docs/audits/20260905-round2/final-geometry/verify/regression.log",
+      "log_sha256": "bdda38c6c30d28631453bababb7f291e3c12704230a1136c3c8663b6c82384ba"
+    }
+  ]
+}

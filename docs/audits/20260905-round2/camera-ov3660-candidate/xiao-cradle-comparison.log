@@ -1,0 +1,692 @@
+{
+  "status": "CANDIDATE ONLY: 現物FPC入口/曲率/基板revision/ストラップ/装着順未検証",
+  "coordinate_frame": "全てchassis座標。従来camera候補5STLはcamera局所座標なので混同しない。",
+  "selected": {
+    "center_mm": [
+      0,
+      45.0,
+      23.0
+    ],
+    "pitch_deg": 0,
+    "frame_flat_to_chassis": [
+      [
+        6.123233995736766e-17,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.0,
+        6.123233995736766e-17,
+        0.0,
+        45.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        23.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "connector_center_mm": [
+      -0.03167809710800957,
+      53.260754782519044,
+      25.410000000000007
+    ],
+    "opening_candidates_mm": [
+      [
+        -0.03167809710800975,
+        56.260754782519044,
+        25.410000000000007
+      ],
+      [
+        -0.03167809710800939,
+        50.260754782519044,
+        25.410000000000007
+      ]
+    ],
+    "straight_line_from_flex_start_mm": [
+      8.115783972510984,
+      13.356512664300581
+    ],
+    "intersections_mm3": {
+      "eye_pod_camera_base_ov3660_candidate": 129.23001607655775
+    },
+    "total_intersection_mm3": 129.23001607655775
+  },
+  "body_clearance_each_side_mm": 0.3,
+  "flex_curve_length_mm": 9.1999999999999,
+  "minimum_curve_radius_mm": 3.3160227703515366,
+  "flex_curve_control_length_mm": 3.2359850924872786,
+  "flex_start_mm": [
+    0.0,
+    62.63829487111535,
+    30.429156144709673
+  ],
+  "assumed_connector_opening_mm": [
+    0.0,
+    56.260754782519044,
+    25.410000000000007
+  ],
+  "base_removed_mm3": 175.8447286868231,
+  "base_removed_bounds_camera_local_mm": [
+    [
+      -14.0,
+      -13.062252573778972,
+      -2.0869199133244365e-06
+    ],
+    [
+      9.899495124816895,
+      13.932587238138915,
+      3.178757094065901
+    ]
+  ],
+  "parts": {
+    "camera_base_with_xiao_cradle_candidate": {
+      "watertight": true,
+      "components": 1,
+      "volume_mm3": 4849.57304582744
+    },
+    "XIAO_envelope_head_candidate": {
+      "watertight": true,
+      "components": 1,
+      "volume_mm3": 3252.66072026331
+    },
+    "OV3660_FPC_bent_candidate": {
+      "watertight": true,
+      "components": 1,
+      "volume_mm3": 17.939926307120913
+    }
+  },
+  "intersections_mm3": {
+    "camera_base_with_xiao_cradle_candidate": {},
+    "XIAO_envelope_head_candidate": {},
+    "OV3660_FPC_bent_candidate": {}
+  },
+  "candidate_board_intersection_mm3": 0.0,
+  "candidate_cable_intersection_mm3": 0.0,
+  "board_insertion": {
+    "method": "FPCを外した基板包絡をchassis -Yへ35mm引き出す連続逆挿入。0.25mm刻み。頭の蓋を外した整備工程を想定。",
+    "samples": 141,
+    "maximum_cradle_intersection_mm3": 0.0,
+    "rows": [
+      {
+        "withdraw_back_mm": 0.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 0.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 0.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 0.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 1.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 1.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 1.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 1.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 2.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 2.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 2.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 2.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 3.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 3.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 3.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 3.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 4.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 4.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 4.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 4.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 5.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 5.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 5.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 5.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 6.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 6.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 6.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 6.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 7.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 7.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 7.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 7.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 8.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 8.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 8.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 8.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 9.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 9.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 9.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 9.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 10.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 10.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 10.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 10.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 11.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 11.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 11.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 11.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 12.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 12.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 12.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 12.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 13.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 13.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 13.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 13.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 14.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 14.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 14.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 14.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 15.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 15.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 15.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 15.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 16.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 16.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 16.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 16.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 17.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 17.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 17.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 17.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 18.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 18.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 18.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 18.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 19.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 19.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 19.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 19.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 20.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 20.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 20.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 20.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 21.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 21.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 21.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 21.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 22.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 22.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 22.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 22.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 23.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 23.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 23.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 23.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 24.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 24.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 24.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 24.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 25.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 25.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 25.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 25.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 26.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 26.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 26.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 26.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 27.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 27.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 27.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 27.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 28.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 28.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 28.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 28.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 29.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 29.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 29.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 29.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 30.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 30.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 30.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 30.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 31.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 31.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 31.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 31.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 32.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 32.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 32.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 32.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 33.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 33.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 33.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 33.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 34.0,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 34.25,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 34.5,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 34.75,
+        "cradle_intersection_mm3": 0.0
+      },
+      {
+        "withdraw_back_mm": 35.0,
+        "cradle_intersection_mm3": 0.0
+      }
+    ]
+  },
+  "limitations": [
+    "21.2mm全長のうちセンサー8mm/接点4mmを除く9.2mmで曲線を構成。許容曲率はメーカー未確認。",
+    "全厚包絡トレーは下面を支持するが、基板端/はんだ部の荷重許容と非導電ストラップ装着は現物確認が必要。",
+    "Wi-Fiアンテナ/IPXケーブル/USBプラグの常設包絡は未追加。USBを使う整備時は頭部を開ける。",
+    "本体基板の収納ができても、同じ頭内の20サーボ干渉は別問題として残る。"
+  ],
+  "geometry_pass": true
+}

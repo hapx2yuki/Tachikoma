@@ -28,11 +28,12 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import imageio.v2 as imageio
 
 ROOT = Path(__file__).resolve().parent.parent
+OUTPUT_DIR = ROOT / "docs"
 sys.path.insert(0, str(ROOT / "hardware" / "src"))
 sys.path.insert(0, str(ROOT / "tools"))
 import config as C  # noqa: E402
 from sim_gait import (leg_ik, foot_target, ORIGIN, MOUNT, STANCE_R, BODY_H,  # noqa: E402
-                      PHASE_OFF, DUTY, _LEGS as LEG_NAMES)
+                      PHASE_OFF, DUTY, MAX_STEP, BODY_H_RANGE, _LEGS as LEG_NAMES)
 import kit_assembly as KIT  # noqa: E402
 import make_camera as CAM  # noqa: E402
 
@@ -90,7 +91,7 @@ COL = {"coxa": "#5577cc", "femur": "#cc7755", "tibia": "#55aa77",
 # 用レンダだけ追従せず古い位置のまま描画されるドリフトの恐れ)。上記と同じ
 # 一元化パターンを適用し、該当箇所は全て C.ARM_MOUNT_HUB_Y を直接参照する
 # よう修正済み (値そのものは 12.0 のまま不変)。
-HEAD_TOP_Z_OFFSET = 57.7
+HEAD_TOP_Z_OFFSET = C.HEAD_TOP_Z_OFFSET
 
 # 左右目 (eye_pod, index 0=右/2=左) の取付ロール補正 (ソケット法線まわり、
 # align_vectors([0,0,1], n) の後に追加で乗せる角度)。eyes_video() と
@@ -248,8 +249,9 @@ def frame_axes(ax, pts, zfloor=None, pad=1.05):
     r = float((hi - lo).max()) / 2 * pad
     ax.set_xlim(c[0] - r, c[0] + r)
     ax.set_ylim(c[1] - r, c[1] + r)
-    ax.set_zlim(0 if zfloor is not None else c[2] - r,
-                (2 * r) if zfloor is not None else c[2] + r)
+    # 床より下にある部品を切り捨てると、先行接地や貫通が図から消える。
+    zmin = min(float(zfloor), c[2] - r) if zfloor is not None else c[2] - r
+    ax.set_zlim(zmin, zmin + 2 * r)
     ax.set_box_aspect([1, 1, 1])
     ax.axis("off")
 
@@ -269,10 +271,13 @@ _MESH_CACHE = {}
 
 
 def load(name, source=STL):
-    key = (source, name)
-    if key not in _MESH_CACHE:
-        _MESH_CACHE[key] = trimesh.load(source / f"{name}.stl")
-    return _MESH_CACHE[key].copy()
+    path = (Path(source) / f"{name}.stl").resolve()
+    stat = path.stat()
+    stamp = (stat.st_mtime_ns, stat.st_size)
+    cached = _MESH_CACHE.get(path)
+    if cached is None or cached[0] != stamp:
+        _MESH_CACHE[path] = (stamp, trimesh.load(path))
+    return _MESH_CACHE[path][1].copy()
 
 
 # ---------------------------------------------------------------- 分解図
@@ -334,7 +339,7 @@ def exploded_leg():
     ax.set_title("脚 1 本の分解図 (M3: サーボタブ / M2.6: ホーン共締め / ホーン片持ち結合)",
                  fontsize=12)
     fig.tight_layout()
-    fig.savefig(ROOT / "docs" / "vis_exploded_leg.png", dpi=120, facecolor="white")
+    fig.savefig(OUTPUT_DIR / "vis_exploded_leg.png", dpi=120, facecolor="white")
     plt.close(fig)
     print("saved vis_exploded_leg.png")
 
@@ -404,7 +409,7 @@ def exploded_arm():
                  "チップは元キット無加工パーツを両腕共通で使用)",
                  fontsize=13)
     fig.tight_layout()
-    fig.savefig(ROOT / "docs" / "vis_exploded_arm.png", dpi=120, facecolor="white")
+    fig.savefig(OUTPUT_DIR / "vis_exploded_arm.png", dpi=120, facecolor="white")
     plt.close(fig)
     print("saved vis_exploded_arm.png")
 
@@ -453,7 +458,7 @@ def elbow_detail_still():
                  "灰カバーで肘サーボ箱 (upper_arm 側に固定) が隠れているか確認用",
                  fontsize=12)
     fig.tight_layout(rect=(0, 0, 1, 0.94))
-    fig.savefig(ROOT / "docs" / "vis_elbow_detail.png", dpi=130, facecolor="white")
+    fig.savefig(OUTPUT_DIR / "vis_elbow_detail.png", dpi=130, facecolor="white")
     plt.close(fig)
     print("saved vis_elbow_detail.png")
 
@@ -504,7 +509,7 @@ def hand_detail_still():
                  "三つ叉爪のシルエットが完成図サムネイルと一致するか目視用",
                  fontsize=12)
     fig.tight_layout(rect=(0, 0, 1, 0.94))
-    fig.savefig(ROOT / "docs" / "vis_hand_detail.png", dpi=130, facecolor="white")
+    fig.savefig(OUTPUT_DIR / "vis_hand_detail.png", dpi=130, facecolor="white")
     plt.close(fig)
     print("saved vis_hand_detail.png")
 
@@ -526,7 +531,7 @@ def chassis_layout():
     fp(0, 1, 25.4, 62.5, "PCA9685 ×2\n(縦・スタック)", "#ffd48a")
     # ESP32: 2026-07-28 腕マウント移設で旧位置 (y=40) が腕サーボケース開口と
     # 実体衝突するため C.ESP32_Y0 (=-12.5) へ再配置済み (make_chassis.py 参照)
-    fp(0, C.ESP32_Y0, 55, 28, "ESP32", "#a8d8ff")
+    fp(0, C.ESP32_Y0, 55, 28, "ESP32 旧位置\n(頭内不成立・要移設)", "#a8d8ff")
     fp(0, -6, 34, 80, "2S LiPo 2200\n(プレート下面\nクレードル)", "#c9f0c9")
     fp(30, -58, 30, 18, "UBEC 6V", "#f0b9b9")
     fp(-30, -58, 30, 18, "DC-DC 5V", "#f0b9b9")
@@ -562,7 +567,7 @@ def chassis_layout():
                  "330° + 後方ポッドネック / LiPo は下面吊り / SPK はポッド内)",
                  fontsize=11)
     fig.tight_layout()
-    fig.savefig(ROOT / "docs" / "vis_chassis_layout.png", dpi=120, facecolor="white")
+    fig.savefig(OUTPUT_DIR / "vis_chassis_layout.png", dpi=120, facecolor="white")
     plt.close(fig)
     print("saved vis_chassis_layout.png")
 
@@ -647,20 +652,26 @@ def arm_meshes(side, pose, plate_bottom_z, swing=0.0, body_h=115.0, dress=False)
         Mx = np.diag([-1.0, 1.0, 1.0, 1.0])
         for m, _, _ in out:
             m.apply_transform(Mx)
-            m.invert()  # 反射で裏返った面法線を戻す
+            # trimesh.apply_transform 自体が反射時の面順を補正する。
     return out
 
 
 # ---------------------------------------------------------------- 姿勢構築 (共通)
 def robot_meshes(phase, vx, vy, wz, body_h, body_xyz=(0, 0, 0), body_yaw=0.0,
-                 arms=ARM_TUCK, arm_swing=0.0, dress=False):
+                 arms=ARM_TUCK, arm_swing=0.0, dress=False, *, holding=None):
     """1 フレーム分のメッシュ (world 座標)。body_xyz は体の world 位置。
 
     arms = (ヨー, ピッチ, 肘, グリップ) or None (腕なし)。既定は TUCK。
     dress=True: 意匠シェルを不透明・キット配色で描画するフルドレスモード
     (kit_assembly.py 経由。脚はガード+トゥ、腕は肩ガード+肘カバー+指先チップ
     ([arm_meshes] 側)、頭/砲身/ポッドは kit_dress_static() が担当)。
+    holding=None は無移動指令を保持姿勢として描く。停止途中を描く際は
+    holding=False を明示する。これは運動学表示で、物理接触・実サーボ追従を解かない。
     """
+    if holding is None:
+        holding = abs(vx) + abs(vy) + abs(wz) <= 0.05
+    if holding:
+        phase = 0.0  # Gaitの保持状態は全脚を接地させ、phase=0を使う。
     HIP_DROP = C.HIP_DROP
     zb = body_h + HIP_DROP   # プレート下面 (kit_assembly の z0 基準はここ)
     meshes = []
@@ -686,15 +697,10 @@ def robot_meshes(phase, vx, vy, wz, body_h, body_xyz=(0, 0, 0), body_yaw=0.0,
             m.apply_transform(Tb)
             meshes.append((m, c, a))
     for leg in range(4):
-        lx, ly, lz = foot_target(leg, phase, vx, vy, wz)
-        lz = lz + (BODY_H - body_h)  # 体高変更
+        lx, ly, lz = foot_target(leg, phase, vx, vy, wz, body_h, holding=holding)
         a = leg_ik(lx, ly, lz)
         if a is None:
-            from sim_gait import neutral_xy   # STANCE_OFF 込みの中立 (gait.h と同一)
-            nx, ny = neutral_xy(leg)
-            gx, gy = nx - ORIGIN[leg, 0], ny - ORIGIN[leg, 1]
-            c_, s_ = np.cos(-MOUNT[leg]), np.sin(-MOUNT[leg])
-            a = leg_ik(gx * c_ - gy * s_, gx * s_ + gy * c_, -body_h) or (0, -20, 20)
+            raise ValueError(f"描画姿勢のIK不成立: leg={LEG_NAMES[leg]}, target={(lx, ly, lz)}")
         yaw_d, pitch_d, knee_d = a
         mnt = np.degrees(MOUNT[leg])
         leg_name = LEG_NAMES[leg]             # "FR"/"FL"/"RL"/"RR"
@@ -717,6 +723,8 @@ def robot_meshes(phase, vx, vy, wz, body_h, body_xyz=(0, 0, 0), body_yaw=0.0,
         T_foot = T_knee @ trans(0, 0, -C.TIBIA_LEN)
         ft = load("leg_foot_bored"); ft.apply_transform(T_foot)
         meshes.append((ft, COL["foot"], 1.0))
+        pad = load("foot_pad"); pad.apply_transform(T_foot)
+        meshes.append((pad, COL["tip"], 1.0))
         # 脛シェル: 印刷向き (上端平面が z=0) → 機能向き (上端 z=-16)
         T_shin = T_knee @ trans(0, 0, -16) @ rot(180, "x")
         sh = load(f"shin_shell{sfx}")
@@ -777,7 +785,6 @@ def robot_meshes(phase, vx, vy, wz, body_h, body_xyz=(0, 0, 0), body_yaw=0.0,
                     # embed / median 1.585mm / max float 6.552mm に一致。修正前は
                     # 26.7% embed / max float 15.97mm まで悪化していた)
                     m.apply_transform(np.diag([1.0, -1.0, 1.0, 1.0]))
-                    m.invert()  # 反射で裏返った面法線を戻す
                 m.apply_transform(T_knee)
                 meshes.append((m, p.color, 0.95))
             for p in KIT.by_link(KIT_PLACEMENTS, "leg_foot_bored"):
@@ -797,7 +804,7 @@ def robot_meshes(phase, vx, vy, wz, body_h, body_xyz=(0, 0, 0), body_yaw=0.0,
 # ---------------------------------------------------------------- 組立ステップ 4 コマ
 def assembly_steps():
     fig = plt.figure(figsize=(15, 12))
-    HIP_DROP = 17.8
+    HIP_DROP = C.HIP_DROP
 
     # step1: シャーシ + ヨーサーボ
     ax = fig.add_subplot(2, 2, 1, projection="3d")
@@ -805,7 +812,7 @@ def assembly_steps():
     pts = [ch.vertices]; draw_mesh(ax, ch, COL["chassis"])
     for leg in range(4):
         sv = servo_box()
-        sv.apply_transform(rot(np.degrees(MOUNT[leg]), "z"))
+        # ケースは全脚ともX平行。脚の放射角はホーン以降に適用する。
         sv.apply_transform(trans(ORIGIN[leg][0], ORIGIN[leg][1], BODY_H + HIP_DROP + 18))
         draw_mesh(ax, sv, COL["servo"]); pts.append(sv.vertices)
     frame_axes(ax, np.vstack(pts)); ax.view_init(18, -55)
@@ -835,31 +842,18 @@ def assembly_steps():
 
     # step4: ボディシェル (イメージ)
     ax = fig.add_subplot(2, 2, 4, projection="3d")
-    ms = robot_meshes(0.1, 0, 0, 0, 115, arms=ARM_TUCK)
+    ms = robot_meshes(0.1, 0, 0, 0, BODY_H, arms=ARM_TUCK, dress=True)
     pts = []
     for m, c, a in ms:
         draw_mesh(ax, m, c, 0.9 if c != COL["shell"] else 0.5)
         pts.append(m.vertices)
-    # Cabin (140%) をイメージ配置
-    cab = load("Cabin_Front_Blue", MODEL)
-    cab.apply_scale(1.4)
-    cab.apply_transform(rot(-90, "x"))
-    lo, hi = cab.bounds
-    cab.apply_transform(trans(-(lo[0] + hi[0]) / 2, -(lo[1] + hi[1]) / 2 + 8,
-                              -lo[2] + BODY_H + 17.8 + 4))
-    draw_mesh(ax, cab, "#2d55b8", 0.5); pts.append(cab.vertices)
-    hd = load("Head_Top_Blue", MODEL); hd.apply_scale(1.4)
-    lo, hi = hd.bounds
-    hd.apply_transform(trans(-(lo[0] + hi[0]) / 2, -(lo[1] + hi[1]) / 2 + 118,
-                             -lo[2] + BODY_H - 20))
-    draw_mesh(ax, hd, "#2d55b8", 0.5); pts.append(hd.vertices)
     frame_axes(ax, np.vstack(pts), zfloor=0); ax.view_init(12, -55)
     ax.set_title("STEP 4: 電装配線 → ボディ/頭部シェルをタブへ固定 (配置イメージ)",
                  fontsize=11)
 
-    fig.suptitle("組立ステップ (骨格は実 STL、ボディシェルは配置イメージ)", fontsize=14)
+    fig.suptitle("組立ステップ (現行STL・150%意匠配置。組立経路/接地は別検査)", fontsize=14)
     fig.tight_layout()
-    fig.savefig(ROOT / "docs" / "vis_assembly_steps.png", dpi=110, facecolor="white")
+    fig.savefig(OUTPUT_DIR / "vis_assembly_steps.png", dpi=110, facecolor="white")
     plt.close(fig)
     print("saved vis_assembly_steps.png")
 
@@ -874,7 +868,7 @@ def eyes_video(out=None, fps=15, dur=8.0):
     index 1 (中央) は 2026-07-28 以降固定カメラ目 (eye_pod_camera) に
     置換済み — 回転せず、視線ドットも描かない (make_camera.CAM2_* 参照)。
     """
-    out = out or (ROOT / "docs" / "vis_eyes.mp4")
+    out = out or (OUTPUT_DIR / "vis_eyes.mp4")
     rng = np.random.default_rng(7)
     dome = load("Head_Top_Eyecut")   # ボア加工済み (150% スケール済み)
 
@@ -971,16 +965,19 @@ def eyes_video(out=None, fps=15, dur=8.0):
 
 # ---------------------------------------------------------------- 動画
 def walk_video(out=None, fps=15):
-    out = out or (ROOT / "docs" / "vis_walk.mp4")
+    """運動学デモ。体の移動は表示用で、接触・トルク・転倒を解かない。"""
+    out = out or (OUTPUT_DIR / "vis_walk.mp4")
     frames = []
-    CYCLE_T = 1.6
+    import re
+    fw = (ROOT / "firmware/src/config.h").read_text()
+    CYCLE_T = float(re.search(r"CYCLE_T\s*=\s*([0-9.]+)f", fw).group(1))
 
     # シーン定義: (説明, 秒数, vx, vy, wz, body_h の関数, 腕ポーズの関数)
     def h_const(t):
         return 115.0
 
     def h_wave(t):
-        return 117.5 + 12.5 * np.sin(2 * np.pi * t / 4.0)
+        return np.mean(BODY_H_RANGE) + np.ptp(BODY_H_RANGE) / 2 * np.sin(2 * np.pi * t / 4.0)
 
     def a_tuck(t):
         return ARM_TUCK
@@ -990,7 +987,7 @@ def walk_video(out=None, fps=15):
         return tuple(a + (b - a) * u for a, b in zip(p, q))
 
     def a_seq(t):
-        """腕デモ: 構え → リーチ → バイバイ → つかむ (firmware プリセット準拠)"""
+        """腕デモ: 構え → リーチ → バイバイ → 構え (固定爪)"""
         if t < 1.2:
             return lerp(ARM_TUCK, ARM_READY, t / 1.2)
         if t < 2.4:
@@ -1006,19 +1003,14 @@ def walk_video(out=None, fps=15):
         if t < 7.0:                      # リーチへ戻す
             return lerp((12.0 * np.sin(3.0 * 6.0), -10.0, 45.0, 0.0),
                         ARM_REACH, (t - 6.2) / 0.8)
-        if t < 8.2:                      # つかむ (グリップ 0→60, 指先可動)
-            g = 60.0 * min((t - 7.0) / 1.0, 1.0)
-            return (ARM_REACH[0], ARM_REACH[1], ARM_REACH[2], g)
-        # つかんだまま構えへ
-        p = lerp(ARM_REACH, ARM_READY, (t - 8.2) / 1.4)
-        return (p[0], p[1], p[2], 60.0)
+        return lerp(ARM_REACH, ARM_READY, (t - 7.0) / 2.6)
 
     scenes = [
-        ("前進 (クロール歩容)", 6.4, 1.0, 0.0, 0.0, h_const, a_tuck),
+        ("前進 (クロール歩容)", 6.4, 0.0, 1.0, 0.0, h_const, a_tuck),
         ("その場旋回", 4.8, 0.0, 0.0, 1.0, h_const, a_tuck),
-        ("横歩き (全方向移動)", 4.8, 0.0, 1.0, 0.0, h_const, a_tuck),
+        ("横歩き (全方向移動)", 4.8, 1.0, 0.0, 0.0, h_const, a_tuck),
         ("体高変更 (しゃがみ/伸び)", 4.0, 0.0, 0.0, 0.0, h_wave, a_tuck),
-        ("腕: 構え→リーチ→バイバイ→つかむ (指先可動)", 9.6, 0.0, 0.0, 0.0,
+        ("腕: 構え→リーチ→バイバイ→構え (固定爪)", 9.6, 0.0, 0.0, 0.0,
          h_const, a_seq),
     ]
 
@@ -1034,8 +1026,8 @@ def walk_video(out=None, fps=15):
             swing = 0.0
             if moving:
                 phase = (phase + dt / CYCLE_T) % 1.0
-                # 実移動: 1 周期あたり歩幅ぶん進む (stance で送る量)
-                mnt_step = 30.0  # MAX_STEP
+                # 表示用の移動軌跡。物理シムの測定値ではない
+                mnt_step = MAX_STEP
                 dxy = np.array([vx, vy]) * mnt_step * dt / CYCLE_T
                 cy, sy = np.cos(body_yaw * np.pi / 180), np.sin(body_yaw * np.pi / 180)
                 body += np.array([dxy[0] * cy - dxy[1] * sy,
@@ -1072,7 +1064,7 @@ def walk_video(out=None, fps=15):
             # 腕シーンは正面右斜め上から (前=+Y → azim 65 が前方右)
             ax.view_init(elev=14 if arm_scene else 18,
                          azim=65 if arm_scene else -55)
-            ax.text2D(0.5, 0.94, label, transform=ax.transAxes, ha="center",
+            ax.text2D(0.5, 0.94, "運動学デモ: " + label, transform=ax.transAxes, ha="center",
                       fontsize=13, weight="bold")
             ax.text2D(0.5, 0.02,
                       "腕: 頭部ソケット直下 (正面±40°) から吊り下げ・中立は放射外向き"
@@ -1177,12 +1169,12 @@ def shell_ghosts(zb, alpha=0.10):
     # 保持) で world 化すると RedLight back Z≈+111〜+112, Spinnarette back
     # Z≈-32 となり Front 側と数 mm 差で一致する。座標中心 (bbox center) は
     # 元々 local 軸ごとに対称なため、この回転変更で t=(0,-235,zb+55) や
-    # Front/Back のシーム位置 (Y=-211, 0.08mm gap) は不変 — 並進は変更不要。
+    # Front/Back の旧シーム説明。2026-09-05にBackの高さを-6.3075mm訂正した。
     # X 符号も反転するため、Back 側の RedLight/Spinnarette 各ペアは
     # left/right ラベルを入れ替えた (JSON 側で対応済み)。
     defs = [
-        ("Cabin_Front_Blue", rot(180, "z") @ rot(90, "x"), (0, -156, zb + 55)),
-        ("Cabin_Back_Blue_Repaired", rot(180, "y") @ rot(90, "x"), (0, -235, zb + 55)),
+        (name, KIT.cabin_transform(name), (0, 0, zb)) for name in C.CABIN_POSES
+    ] + [
         ("Head_Bottom_Blue", rot(180, "z"), (0, C.ARM_MOUNT_HUB_Y, zb - 3)),
         ("Head_Top_Blue", rot(180, "z"), (0, C.ARM_MOUNT_HUB_Y, zb + HEAD_TOP_Z_OFFSET)),
         ("Mouth_Cannon_Grey", rot(C.MOUTH_CANNON_ROT_X_DEG, "x"),
@@ -1194,13 +1186,7 @@ def shell_ghosts(zb, alpha=0.10):
         # OVERRIDE と同じ差し替え。hardware/stl/ の加工版は既に bbox 中心化
         # ×SCALE 済み [KIT.PRESCALED] のため、ここだけ元キット STL 用の
         # bbox中心化+スケールを飛ばして直接読む — 二重スケール防止)
-        render_name = KIT.STL_RENDER_OVERRIDE.get(name, name)
-        if render_name in KIT.PRESCALED:
-            m = trimesh.load(STL / f"{render_name}.stl")
-        else:
-            m = trimesh.load(MODEL / f"{render_name}.stl")
-            m.apply_translation(-(m.bounds[0] + m.bounds[1]) / 2)
-            m.apply_scale(C.SCALE)
+        m = KIT.normalized_mesh("Head_Top_Eyecut" if name == "Head_Top_Blue" else name)
         m.apply_transform(R)
         m.apply_translation(t)
         out.append((m, COL["shell"], alpha))
@@ -1218,8 +1204,7 @@ def pod_dress_shells(zb, alpha=0.95):
     shell_ghosts() のコメント参照)。
     """
     defs = [
-        ("Cabin_Front_Blue", rot(180, "z") @ rot(90, "x"), (0, -156, zb + 55)),
-        ("Cabin_Back_Blue_Repaired", rot(180, "y") @ rot(90, "x"), (0, -235, zb + 55)),
+        (name, KIT.cabin_transform(name), (0, 0, zb)) for name in C.CABIN_POSES
     ]
     out = []
     for name, R, t in defs:
@@ -1258,9 +1243,7 @@ def kit_dress_static(zb, alpha=0.95):
     # config.py を共通で参照しドリフト防止」という従来コメントは kit_dress_static
     # に関して誤りだった)。ここで明示的に T_mouth で描き、下のループでは
     # JSON 側の値を使わないよう Mouth_Cannon_Grey を除外する
-    _m = trimesh.load(MODEL / "Mouth_Cannon_Grey.stl")
-    _m.apply_translation(-(_m.bounds[0] + _m.bounds[1]) / 2)
-    _m.apply_scale(C.SCALE)
+    _m = KIT.normalized_mesh("Mouth_Cannon_Grey")
     _m.apply_transform(T_mouth)
     items.append((_m, KIT.kit_color("Mouth_Cannon_Grey"), alpha))
     for p in KIT_PLACEMENTS:
@@ -1347,7 +1330,7 @@ def proportions_still():
         fig.text(0.5, 0.005, "\n".join(wrapped),
                  ha="center", va="bottom", fontsize=6.5, color="#888")
     fig.tight_layout(rect=(0, 0.16, 1, 0.94))
-    fig.savefig(ROOT / "docs" / "vis_proportions.png", dpi=110,
+    fig.savefig(OUTPUT_DIR / "vis_proportions.png", dpi=110,
                 facecolor="white")
     plt.close(fig)
     print("saved vis_proportions.png")
@@ -1360,8 +1343,10 @@ def _tp(T, v):
 
 def _leg_wire_route(leg, body_h, plate_top, board0):
     """脚 1 本の 3 線バンドル経路: 膝箱→femur ウェブ→coxa→配線穴→board0。"""
-    lx, ly, lz = foot_target(leg, 0.0, 0.0, 0.0, 0.0)
-    a = leg_ik(lx, ly, lz + (BODY_H - body_h)) or (0.0, -20.0, 20.0)
+    lx, ly, lz = foot_target(leg, 0.0, 0.0, 0.0, 0.0, body_h, holding=True)
+    a = leg_ik(lx, ly, lz)
+    if a is None:
+        raise ValueError(f"配線表示のIK不成立: leg={leg}, target={(lx, ly, lz)}")
     yaw_d, pitch_d, _ = a
     ox, oy = ORIGIN[leg][0], ORIGIN[leg][1]
     mnt = np.degrees(MOUNT[leg])
@@ -1415,7 +1400,7 @@ def wiring_video(out=None, fps=15):
     経路・チャンネルは docs/wiring.md と一致。電装ボックス位置と頭部/LED の
     取付点はイメージ (組立時に現物合わせ)。
     """
-    out = out or (ROOT / "docs" / "vis_wiring.mp4")
+    out = out or (OUTPUT_DIR / "vis_wiring.mp4")
     body_h = 115.0
     zb = body_h + C.HIP_DROP                 # プレート下面
     zt = zb + C.CHASSIS_T                    # プレート上面
@@ -1446,7 +1431,7 @@ def wiring_video(out=None, fps=15):
     boxes = [
         ("2S LiPo (下面)", (34, 105, 24), (0, -6, zb - 16), "#7ec87e"),
         # 2026-07-28: 腕マウント移設に伴い C.ESP32_Y0 (=-12.5) へ再配置済み
-        ("ESP32", (55, 28, 10), (0, C.ESP32_Y0, zt + 5), "#7db8e8"),
+        ("ESP32 旧位置/要移設", (55, 28, 10), (0, C.ESP32_Y0, zt + 5), "#7db8e8"),
         ("PCA9685 0x40", (25.4, 62.5, 8), (0, 1, zt + 4), "#e8b860"),
         ("PCA9685 0x41", (25.4, 62.5, 8), (0, 1, zt + 16), "#e8b860"),
         ("UBEC 6V/10A", (30, 18, 12), (30, -58, zt + 6), "#e88888"),
@@ -1494,7 +1479,7 @@ def wiring_video(out=None, fps=15):
         mx, my = C.ARM_MOUNT_XY
         W.append((np.array([(s * 60, 0, zt + 3), (s * 45, 50, zt + 3),
                             (s * mx, my, zt + 2)]), "#aa3333", 2.2))
-    W.append((np.array([(0, -6, zb - 8), (-16, -6, zb - 2), (-16, -6, zt + 4),
+    W.append((np.array([(48, 28, zt + 7), (-16, -6, zt + 4),
                         (-30, -58, zt + 9)]), "#dd6622", 2.4))
     W.append((np.array([(-30, -58, zt + 9), (-40, -10, zt + 6),
                         (0, 40, zt + 8)]), "#dd6622", 2.4))
@@ -1507,13 +1492,11 @@ def wiring_video(out=None, fps=15):
     for leg in range(4):
         wires["leg"].append((_leg_wire_route(leg, body_h, zt, board0),
                              "#e0a020", 1.8))
-    wires["leg"].append((np.array([(0, C.ARM_MOUNT_HUB_Y, zb + 5), (0, 0, zt + 8),
-                                   board0]), "#9098a8", 1.4))  # 頭部ヨー SG90
 
     for s in (1, -1):
         wires["arm"].append((_arm_wire_route(s, ARM_READY, zb, zt, board1,
                                              body_h), "#00a0a8", 2.0))
-    for sk in sockets:
+    for sk in (sockets[0], sockets[2]):
         wires["arm"].append((np.array([sk, (sk[0] * 0.6, 20, zb + 20),
                                        (sk[0] * 0.25, -10, zt + 26),
                                        board1]), "#cc44aa", 1.5))
@@ -1548,12 +1531,12 @@ def wiring_video(out=None, fps=15):
          "leg", 6.0, 24, -60, 20,
          "膝→股→coxa の順に沿わせ可動域全域で張らない長さを確保 / "
          "電源線はサーボ直近でバスへ分岐し信号+GND のみ PCA へ"),
-        ("腕 6ch (固定爪化で ch19/23 未使用) + 目 3ch → PCA9685 board1 "
+        ("腕 6ch (固定爪化で ch19/23 未使用) + 目 2ch → PCA9685 board1 "
          "(0x41, A0 ジャンパ)",
          "arm", 6.0, 16, 115, 55,
          "肘→肩ブラケット背面→MICRO 開口から内部へ (forearm/claw_mount/爪+指"
-         "は電装なしの受動パーツ) / 目 3 線は首の回転部を"
-         "避けて胴へ (頭部ヨー ±25° で張らない長さ)"),
+         "は電装なしの受動パーツ) / 左右目の線はタブ間隙間から胴へ"
+         " (頭部固定・中央目はカメラ)"),
         ("ロジック: I2C ×2枚 / WS2812 チェーン / DFPlayer+SPK / 電圧監視",
          "logic", 6.0, 38, -20, -95,
          "WS2812 順: メインアイ→頭部目×3→赤ランプ / GPIO4→74AHCT125→DIN / "
@@ -1615,7 +1598,17 @@ def wiring_video(out=None, fps=15):
 
 if __name__ == "__main__":
     import japanize_matplotlib  # noqa: F401  (日本語ラベル)
-    which = sys.argv[1] if len(sys.argv) > 1 else "all"
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("which", nargs="?", choices=("all", "stills", "video", "eyes", "wiring"), default="all")
+    parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
+    parser.add_argument("--fps", type=int, default=15)
+    opts = parser.parse_args()
+    if opts.fps <= 0:
+        parser.error("--fps は正の整数")
+    OUTPUT_DIR = opts.output_dir
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    which = opts.which
     if which in ("all", "stills"):
         exploded_leg()
         exploded_arm()
@@ -1625,8 +1618,8 @@ if __name__ == "__main__":
         assembly_steps()
         proportions_still()
     if which in ("all", "video"):
-        walk_video()
+        walk_video(fps=opts.fps)
     if which in ("all", "eyes"):
-        eyes_video()
+        eyes_video(fps=opts.fps)
     if which in ("all", "wiring"):
-        wiring_video()
+        wiring_video(fps=opts.fps)

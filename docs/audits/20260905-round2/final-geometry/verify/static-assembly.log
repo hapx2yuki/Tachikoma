@@ -1,0 +1,832 @@
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: divide by zero encountered in divide
+  center_mass = integrated[1:4] / volume
+/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+{
+  "parts": 152,
+  "parts_per_link": {
+    "base_link": 58,
+    "eye_pod_camera": 2,
+    "camera_optical_frame": 0,
+    "eye_r_pod": 1,
+    "eye_l_pod": 1,
+    "leg_fr_coxa": 2,
+    "leg_fr_femur": 4,
+    "leg_fr_tibia": 8,
+    "leg_fl_coxa": 2,
+    "leg_fl_femur": 4,
+    "leg_fl_tibia": 8,
+    "leg_rl_coxa": 2,
+    "leg_rl_femur": 4,
+    "leg_rl_tibia": 8,
+    "leg_rr_coxa": 2,
+    "leg_rr_femur": 4,
+    "leg_rr_tibia": 8,
+    "arm_r_shoulder": 2,
+    "arm_r_upper": 6,
+    "arm_r_forearm": 9,
+    "arm_l_shoulder": 2,
+    "arm_l_upper": 6,
+    "arm_l_forearm": 9
+  },
+  "all_pairs": 1898,
+  "tested_aabb_pairs": 191,
+  "intersection_tolerance_mm3": 0.01,
+  "intersections": [
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Eye_White#single"
+      ],
+      "intersection_mm3": 7784.868782437443
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "pod_neck",
+        "Head_TailJoint_Blue_Optional_Cross#single"
+      ],
+      "intersection_mm3": 3281.7411766610808
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_TailJoint_Blue_Optional_Cross#single",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 3016.282946541561
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "leg_fl_yaw_servo_case",
+        "eye_r_servo_case"
+      ],
+      "intersection_mm3": 2456.55410606332
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "pod_neck",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 2047.6050308862777
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "leg_fr_yaw_servo_case",
+        "eye_l_servo_case"
+      ],
+      "intersection_mm3": 2033.397495588455
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "eye_carrier#l",
+        "leg_fr_yaw_servo_case"
+      ],
+      "intersection_mm3": 1791.8043797622329
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "eye_carrier#r",
+        "leg_fl_yaw_servo_case"
+      ],
+      "intersection_mm3": 1578.2101962128988
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_rr_yaw_servo_case"
+      ],
+      "intersection_mm3": 1277.3459158053313
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_rl_yaw_servo_case"
+      ],
+      "intersection_mm3": 1276.0713472083628
+    },
+    {
+      "link": "leg_fr_femur",
+      "parts": [
+        "thigh_cap",
+        "Leg_Thigh_Guard_Blue_x4#FR"
+      ],
+      "intersection_mm3": 1211.9438607093705
+    },
+    {
+      "link": "leg_fl_femur",
+      "parts": [
+        "thigh_cap",
+        "Leg_Thigh_Guard_Blue_x4#FL"
+      ],
+      "intersection_mm3": 1211.9438607093705
+    },
+    {
+      "link": "leg_rl_femur",
+      "parts": [
+        "thigh_cap",
+        "Leg_Thigh_Guard_Blue_x4#RL"
+      ],
+      "intersection_mm3": 1211.9438607093705
+    },
+    {
+      "link": "leg_rr_femur",
+      "parts": [
+        "thigh_cap",
+        "Leg_Thigh_Guard_Blue_x4#RR"
+      ],
+      "intersection_mm3": 1211.9438607093705
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "pod_neck",
+        "Cabin_Front_Blue"
+      ],
+      "intersection_mm3": 1199.5520073678779
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 1152.8017193271533
+    },
+    {
+      "link": "leg_fr_tibia",
+      "parts": [
+        "shin_shell_m",
+        "Leg_Shin_Guard_Grey_x4#FR"
+      ],
+      "intersection_mm3": 1146.758289622245
+    },
+    {
+      "link": "leg_rl_tibia",
+      "parts": [
+        "shin_shell_m",
+        "Leg_Shin_Guard_Grey_x4#RL"
+      ],
+      "intersection_mm3": 1146.758289622245
+    },
+    {
+      "link": "leg_fl_tibia",
+      "parts": [
+        "shin_shell",
+        "Leg_Shin_Guard_Grey_x4#FL"
+      ],
+      "intersection_mm3": 1146.7582866059586
+    },
+    {
+      "link": "leg_rr_tibia",
+      "parts": [
+        "shin_shell",
+        "Leg_Shin_Guard_Grey_x4#RR"
+      ],
+      "intersection_mm3": 1146.7582866059586
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "pod_neck",
+        "Cabin_Eye_White#single"
+      ],
+      "intersection_mm3": 878.342330392286
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Eye_White#single",
+        "Head_TailJoint_Ball_Grey_Optional_Cross#single"
+      ],
+      "intersection_mm3": 836.4139405575721
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Left_Black#single"
+      ],
+      "intersection_mm3": 637.5792667415316
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Right_Black#single"
+      ],
+      "intersection_mm3": 634.4368738373772
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Bottom_Wide_Black#single"
+      ],
+      "intersection_mm3": 626.8043969708829
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_fr_yaw_servo_case"
+      ],
+      "intersection_mm3": 597.0211859220339
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "leg_fl_yaw_servo_case"
+      ],
+      "intersection_mm3": 596.5392933970367
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Back_Black#left"
+      ],
+      "intersection_mm3": 468.75429340616375
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Back_Black#right"
+      ],
+      "intersection_mm3": 465.9977857139647
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_RedLight_Large#back_right"
+      ],
+      "intersection_mm3": 317.25387735773074
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Spinnarette_Grey#front_left"
+      ],
+      "intersection_mm3": 229.7681396102195
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Spinnarette_Grey#back_left"
+      ],
+      "intersection_mm3": 229.7585938480353
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Front_Black#single"
+      ],
+      "intersection_mm3": 212.75810637653183
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Eye_White#single",
+        "Head_TailJoint_Blue_Optional_Cross#single"
+      ],
+      "intersection_mm3": 195.23999111511762
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Turrent_Right_Grey#single",
+        "Cabin_Turret_Peg#right"
+      ],
+      "intersection_mm3": 155.05283771401082
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "arm_l_yaw_servo_case"
+      ],
+      "intersection_mm3": 153.1479278502493
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "arm_r_yaw_servo_case"
+      ],
+      "intersection_mm3": 147.45031199512064
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "Head_Insert_Black_x4#1_measured"
+      ],
+      "intersection_mm3": 128.2452980856924
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Spinnarette_Grey#front_right"
+      ],
+      "intersection_mm3": 94.77494639703461
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Spinnarette_Grey#back_right"
+      ],
+      "intersection_mm3": 94.72571664289217
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "pod_neck",
+        "Head_Top_Eyecut#single"
+      ],
+      "intersection_mm3": 89.22988833709617
+    },
+    {
+      "link": "leg_fr_tibia",
+      "parts": [
+        "tibia_link_m",
+        "Leg_Shin_Guard_Grey_x4#FR"
+      ],
+      "intersection_mm3": 65.41333851171505
+    },
+    {
+      "link": "leg_rl_tibia",
+      "parts": [
+        "tibia_link_m",
+        "Leg_Shin_Guard_Grey_x4#RL"
+      ],
+      "intersection_mm3": 65.41333851171505
+    },
+    {
+      "link": "leg_fl_tibia",
+      "parts": [
+        "tibia_link",
+        "Leg_Shin_Guard_Grey_x4#FL"
+      ],
+      "intersection_mm3": 65.4133382736865
+    },
+    {
+      "link": "leg_rr_tibia",
+      "parts": [
+        "tibia_link",
+        "Leg_Shin_Guard_Grey_x4#RR"
+      ],
+      "intersection_mm3": 65.4133382736865
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Turrent_Left_Grey#single",
+        "Cabin_Turret_Peg#left"
+      ],
+      "intersection_mm3": 62.76838624134992
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "Head_Insert_Black_x4#2_estimated"
+      ],
+      "intersection_mm3": 32.822277221643596
+    },
+    {
+      "link": "leg_fr_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#FR_1"
+      ],
+      "intersection_mm3": 29.585044186945186
+    },
+    {
+      "link": "leg_fl_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#FL_1"
+      ],
+      "intersection_mm3": 29.585044186945186
+    },
+    {
+      "link": "leg_rl_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#RL_1"
+      ],
+      "intersection_mm3": 29.585044186945186
+    },
+    {
+      "link": "leg_rr_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#RR_1"
+      ],
+      "intersection_mm3": 29.585044186945186
+    },
+    {
+      "link": "leg_fr_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#FR_0"
+      ],
+      "intersection_mm3": 29.358947500764597
+    },
+    {
+      "link": "leg_fl_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#FL_0"
+      ],
+      "intersection_mm3": 29.358947500764597
+    },
+    {
+      "link": "leg_rl_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#RL_0"
+      ],
+      "intersection_mm3": 29.358947500764597
+    },
+    {
+      "link": "leg_rr_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#RR_0"
+      ],
+      "intersection_mm3": 29.358947500764597
+    },
+    {
+      "link": "leg_fr_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#FR_2"
+      ],
+      "intersection_mm3": 29.018958832642284
+    },
+    {
+      "link": "leg_fl_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#FL_2"
+      ],
+      "intersection_mm3": 29.018958832642284
+    },
+    {
+      "link": "leg_rl_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#RL_2"
+      ],
+      "intersection_mm3": 29.018958832642284
+    },
+    {
+      "link": "leg_rr_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "Leg_Toe_Black_x12#RR_2"
+      ],
+      "intersection_mm3": 29.018958832642284
+    },
+    {
+      "link": "arm_r_forearm",
+      "parts": [
+        "Arm_Left_Finger_Black_x3#1",
+        "Arm_Left_FingerTip_Grey_x3#1"
+      ],
+      "intersection_mm3": 17.07088875819242
+    },
+    {
+      "link": "arm_l_forearm",
+      "parts": [
+        "Arm_Left_Finger_Black_x3#1",
+        "Arm_Left_FingerTip_Grey_x3#1"
+      ],
+      "intersection_mm3": 17.070888758192382
+    },
+    {
+      "link": "arm_r_forearm",
+      "parts": [
+        "Arm_Left_Finger_Black_x3#2",
+        "Arm_Left_FingerTip_Grey_x3#2"
+      ],
+      "intersection_mm3": 17.07088348640529
+    },
+    {
+      "link": "arm_l_forearm",
+      "parts": [
+        "Arm_Left_Finger_Black_x3#2",
+        "Arm_Left_FingerTip_Grey_x3#2"
+      ],
+      "intersection_mm3": 17.070883486405062
+    },
+    {
+      "link": "arm_r_forearm",
+      "parts": [
+        "Arm_Left_Finger_Black_x3#0",
+        "Arm_Left_FingerTip_Grey_x3#0"
+      ],
+      "intersection_mm3": 17.070865132011704
+    },
+    {
+      "link": "arm_l_forearm",
+      "parts": [
+        "Arm_Left_Finger_Black_x3#0",
+        "Arm_Left_FingerTip_Grey_x3#0"
+      ],
+      "intersection_mm3": 17.070865132011665
+    },
+    {
+      "link": "leg_fr_femur",
+      "parts": [
+        "femur_link_m",
+        "Leg_Thigh_Guard_Blue_x4#FR"
+      ],
+      "intersection_mm3": 17.02994873095738
+    },
+    {
+      "link": "leg_rl_femur",
+      "parts": [
+        "femur_link_m",
+        "Leg_Thigh_Guard_Blue_x4#RL"
+      ],
+      "intersection_mm3": 17.02994873095738
+    },
+    {
+      "link": "arm_r_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_FingerTip_Grey_x3#0"
+      ],
+      "intersection_mm3": 15.88057075690197
+    },
+    {
+      "link": "arm_l_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_FingerTip_Grey_x3#0"
+      ],
+      "intersection_mm3": 15.880570756901951
+    },
+    {
+      "link": "arm_r_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_FingerTip_Grey_x3#1"
+      ],
+      "intersection_mm3": 15.878609463823864
+    },
+    {
+      "link": "arm_l_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_FingerTip_Grey_x3#1"
+      ],
+      "intersection_mm3": 15.878609463823864
+    },
+    {
+      "link": "arm_l_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_FingerTip_Grey_x3#2"
+      ],
+      "intersection_mm3": 15.878475408485466
+    },
+    {
+      "link": "arm_r_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_FingerTip_Grey_x3#2"
+      ],
+      "intersection_mm3": 15.878475408485448
+    },
+    {
+      "link": "leg_fl_femur",
+      "parts": [
+        "femur_link",
+        "Leg_Thigh_Guard_Blue_x4#FL"
+      ],
+      "intersection_mm3": 9.193632741934849
+    },
+    {
+      "link": "leg_rr_femur",
+      "parts": [
+        "femur_link",
+        "Leg_Thigh_Guard_Blue_x4#RR"
+      ],
+      "intersection_mm3": 9.193632741934849
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Top_Eyecut#single",
+        "Head_Screw_Grey_x2#2_estimated_mirror"
+      ],
+      "intersection_mm3": 8.72324019074055
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Screw_Grey_x2#1_measured",
+        "arm_r_yaw_servo_case"
+      ],
+      "intersection_mm3": 5.400390208145965
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Bottom_Long_Black#left"
+      ],
+      "intersection_mm3": 5.01682739533183
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Front_Insert_Bottom_Long_Black#right"
+      ],
+      "intersection_mm3": 4.875832319465592
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turret_Peg#left"
+      ],
+      "intersection_mm3": 4.7867824088688735
+    },
+    {
+      "link": "arm_r_forearm",
+      "parts": [
+        "claw_mount",
+        "Arm_Left_Claw_Grey"
+      ],
+      "intersection_mm3": 4.628434472912431
+    },
+    {
+      "link": "arm_l_forearm",
+      "parts": [
+        "claw_mount",
+        "Arm_Left_Claw_Grey"
+      ],
+      "intersection_mm3": 4.6284344667240775
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Head_Screw_Grey_x2#2_estimated_mirror",
+        "arm_l_yaw_servo_case"
+      ],
+      "intersection_mm3": 3.7920143737623193
+    },
+    {
+      "link": "leg_fr_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "foot_pad"
+      ],
+      "intersection_mm3": 1.0740746327083908
+    },
+    {
+      "link": "leg_fl_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "foot_pad"
+      ],
+      "intersection_mm3": 1.0740746327083908
+    },
+    {
+      "link": "leg_rl_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "foot_pad"
+      ],
+      "intersection_mm3": 1.0740746327083908
+    },
+    {
+      "link": "leg_rr_tibia",
+      "parts": [
+        "leg_foot_bored",
+        "foot_pad"
+      ],
+      "intersection_mm3": 1.0740746327083908
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turret_Peg#right"
+      ],
+      "intersection_mm3": 0.6168723760494039
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turrent_Right_Grey#single"
+      ],
+      "intersection_mm3": 0.5720815972648173
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Head_TailJoint_Blue_Optional_Cross#single"
+      ],
+      "intersection_mm3": 0.40430647061017316
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Cabin_Front_Blue",
+        "Cabin_Turrent_Left_Grey#single"
+      ],
+      "intersection_mm3": 0.3580358388426248
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Mouth_Cannon_Grey",
+        "Mouth_Key_Grey#single"
+      ],
+      "intersection_mm3": 0.2749305538760547
+    },
+    {
+      "link": "arm_r_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_Finger_Black_x3#0"
+      ],
+      "intersection_mm3": 0.07566280414821829
+    },
+    {
+      "link": "arm_l_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_Finger_Black_x3#0"
+      ],
+      "intersection_mm3": 0.07566280414821829
+    },
+    {
+      "link": "base_link",
+      "parts": [
+        "Mouth_Cap_Grey#single",
+        "Mouth_Key_Grey#single"
+      ],
+      "intersection_mm3": 0.07012044321022003
+    },
+    {
+      "link": "arm_r_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_Finger_Black_x3#1"
+      ],
+      "intersection_mm3": 0.06129193843463554
+    },
+    {
+      "link": "arm_l_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_Finger_Black_x3#1"
+      ],
+      "intersection_mm3": 0.06129193843461659
+    },
+    {
+      "link": "arm_l_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_Finger_Black_x3#2"
+      ],
+      "intersection_mm3": 0.05825082529895553
+    },
+    {
+      "link": "arm_r_forearm",
+      "parts": [
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_Finger_Black_x3#2"
+      ],
+      "intersection_mm3": 0.058250823301326214
+    }
+  ],
+  "errors": [],
+  "pass": false,
+  "interpretation": "全リンクそれぞれの同一剛体内部を検査する。動的接触では検出できない装飾と支持梁を含む。購入電装の仮位置箱は含めない。嵌合・数値近似・物理的に不可能な体積共有を個別解釈し、交差を自動的に除去しない。終了1は未解釈を含む交差あり。"
+}

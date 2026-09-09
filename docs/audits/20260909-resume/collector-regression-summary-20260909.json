@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-09-08T18:48:02Z",
+  "scope": "print-first component collector の二重列挙修正と、通常構成への回帰確認。",
+  "source_sha256": {
+    "tools/sim_collision.py": "a6a0e300b6aa42fdb9df4f9c2bec1e8d211fd28e4014ed7bf47ecd29b0d061e1",
+    "tools/check_print_first_body.py": "ca27e7cb1f0f1cd745dd9442ba14727a46e7c83f157eccf6e609a233526569e1",
+    "tools/check_print_first_t0_mesh.py": "cf7a4f928d8636121fa98ed8a9de6051b454fa8c1dafa158ec76ef77e4ecd2d1",
+    "tools/render_print_first.py": "78be2e0121c9087e25fac75231d1dc367d5bb3d7dbbe84a3161df9be90a8d048",
+    "tools/sim_self_collision.py": "9cf1ac0574c5e4223804fce897dbf4baa42c04cbcfbd1697988141aa319d417d",
+    "tools/tests/test_print_first_t0_contracts.py": "468ccdb4dcdcc54cfb709a65a48d9b92d8910adda03ce576fe43b653f8b25026"
+  },
+  "collector_contract": {
+    "active_component_rows_added_once": true,
+    "include_components_false_exact_component_exclusion": true,
+    "duplicate_link_name_rows_fail_explicitly": true,
+    "legacy_export_urdf_collision_path_unchanged": true
+  },
+  "runs": {
+    "focused_collector_tests": {
+      "command": [
+        ".venv/bin/python",
+        "tools/tests/test_print_first_t0_contracts.py",
+        "-v"
+      ],
+      "status": "PASS",
+      "tests": 11
+    },
+    "print_first_generation": {
+      "command": [
+        ".venv/bin/python",
+        "tools/generate_print_first.py"
+      ],
+      "status": "GENERATED",
+      "exit_code": 0,
+      "run_id": "d93022334ee143b68ee0d06646e8f40e",
+      "output_counts": {
+        "total_parts": 86,
+        "mesh_reference_count": 80,
+        "visual": 56,
+        "collision": 24
+      }
+    },
+    "print_first_validate_only": {
+      "command": [
+        ".venv/bin/python",
+        "tools/generate_print_first.py",
+        "--validate-only"
+      ],
+      "status": "VALIDATED_READ_ONLY",
+      "exit_code": 0,
+      "run_id": "d93022334ee143b68ee0d06646e8f40e"
+    },
+    "native_trace": {
+      "command": [
+        ".venv/bin/python",
+        "tools/export_print_first_native_trace.py",
+        "--profile-mode",
+        "frozen_print_first",
+        "--trace-mode",
+        "production"
+      ],
+      "status": "GENERATED_NATIVE_TRACE",
+      "exit_code": 0,
+      "row_count": 1141,
+      "segments": 12,
+      "axes": 20,
+      "trace_sha256": "ab6c519f07a3b871996115604d015bb190a45d4b2a300315bcd4a88287ebfba9"
+    },
+    "print_first_final_mesh": {
+      "command": [
+        ".venv/bin/python",
+        "tools/check_print_first_body.py",
+        "--mode",
+        "final"
+      ],
+      "status": "DYNAMIC_PASS",
+      "exit_code": 0,
+      "pose_rows_checked": 1141,
+      "fixed_intersections": 0,
+      "dynamic_intersections": 0,
+      "report_sha256": "76a750c9672c4196c8263ff58600bd3df9bd5fea9cfe4fcf3dd1b2131e1ca08a"
+    },
+    "legacy_verify": {
+      "command": [
+        ".venv/bin/python",
+        "tools/run_design_audit.py",
+        "--phase",
+        "verify"
+      ],
+      "parallel_workers": 2,
+      "exit_code": 1,
+      "status_counts": {
+        "PASS": 14,
+        "FAIL": 8,
+        "UNVERIFIED": 1
+      },
+      "previous_status_counts": {
+        "PASS": 13,
+        "FAIL": 9,
+        "UNVERIFIED": 1
+      },
+      "status_changes": [
+        {
+          "check": "regression",
+          "before": "FAIL",
+          "after": "PASS"
+        }
+      ],
+      "legacy_regression_evidence": {
+        "regression_tests": 59,
+        "regression_status": "PASS",
+        "simulation_regression": "PASS",
+        "firmware_host_and_build": "PASS"
+      }
+    }
+  },
+  "judgement": {
+    "collector_change_legacy_regression": "NONE_DETECTED",
+    "print_first_fixed_duplicate_regression": "RESOLVED",
+    "usual_configuration_failures": "RETAINED_AND_REPORTED_SEPARATELY"
+  },
+  "limits": [
+    "通常構成 verify の8 FAIL/1 UNVERIFIEDは既存設計・実機未検証を含むため合格へ昇格していない。",
+    "native checker の正式 PASS_FINITE_TRACE audit schema は body DYNAMIC_PASS と別契約で、adapterは追加していない。",
+    "正式 VHACD self-collision audit と全物理simはこの作業では実行していない。",
+    "source編集は未コミットで保持し、git add/commit/pushは実行していない。"
+  ]
+}

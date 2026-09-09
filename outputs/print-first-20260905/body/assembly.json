@@ -1,0 +1,2946 @@
+{
+  "status": "GEOMETRY_GENERATED_NOT_YET_FULL_ASSEMBLY_VALIDATED",
+  "config": {
+    "hip_r": 85.0,
+    "yaw_face_z": 17.1,
+    "yaw_face_z_lift": 6.0,
+    "head_top_lift": 33.0,
+    "pitch_face_y": 17.5,
+    "yaw_riser_outer_d": 34.0,
+    "yaw_riser_inner_d": 26.6,
+    "yaw_riser_base_overlap": 0.5,
+    "yaw_riser_adapter_overlap": 0.5,
+    "yaw_case_angles": {
+      "FR": 180.0,
+      "FL": 0.0,
+      "RL": 0.0,
+      "RR": 180.0
+    },
+    "arm_mount_y_offset": 3.0,
+    "central_radius": 62.0,
+    "frame_thickness": 4.0,
+    "head_seat_gap": 0.25,
+    "head_support_xy_mm": [
+      [
+        -56.0,
+        -10.0
+      ],
+      [
+        -56.0,
+        35.0
+      ],
+      [
+        56.0,
+        -10.0
+      ],
+      [
+        56.0,
+        35.0
+      ]
+    ],
+    "head_support_width": 8.0,
+    "head_strap_y": -4.0,
+    "head_strap_tab_depth": 28.0,
+    "head_strap_slot_width": 22.0,
+    "head_strap_slot_x": 4.0,
+    "ld_case_fit_clear": 0.5,
+    "tibia_cap_escape_x": [
+      -9.5,
+      -4.3
+    ],
+    "tibia_cap_escape_y": [
+      14.7,
+      15.6
+    ],
+    "tibia_cap_escape_z": [
+      -24.75,
+      -17.25
+    ],
+    "tibia_cap_escape_knee_limit_deg": 44.0,
+    "tibia_cap_escape_sweep_step_deg": 0.5,
+    "deck_y": -80.0,
+    "deck_z": 48.0,
+    "deck_width": 138.0,
+    "deck_depth": 38.0,
+    "deck_t": 3.0,
+    "deck_slot_width": 21.0,
+    "deck_slot_height": 3.0,
+    "cabin_rail_x": 35.0,
+    "cabin_rail_width": 8.0,
+    "cabin_rail_pad_t": 6.0,
+    "cabin_rail_pad_overlap": 0.5,
+    "cabin_rail_screw_length": 10.0,
+    "cabin_rail_screw_head_d": 6.4,
+    "cabin_rail_screw_head_depth": 1.4,
+    "cabin_rail_screw_tool_clear_d": 8.0,
+    "cabin_rail_clearance_d": 3.2,
+    "cabin_rail_z": -48.0,
+    "cabin_rail_y0": -258.0,
+    "cabin_rail_y1": -94.0,
+    "cabin_bolt_y": [
+      -61.0,
+      -87.0
+    ],
+    "cabin_fit_gap": 0.3,
+    "cabin_load_kg": 0.7,
+    "design_acceleration_g": 2.0,
+    "shelf_screw_clear_d": 3.0,
+    "shelf_screw_tap_d": 2.2,
+    "shelf_screw_head_d": 5.2,
+    "shelf_screw_head_depth": 0.8,
+    "shelf_bolt_y": [
+      -96.2,
+      -63.8
+    ],
+    "electronics_support_pad_width_mm": 4.0,
+    "electronics_support_pad_depth_mm": 4.0,
+    "electronics_support_edge_inset_mm": 5.0,
+    "electronics_support_shelf_edge_clearance_mm": 0.5,
+    "electronics_support_overlap_into_component_mm": 0.5,
+    "electronics_support_central_cut_width_mm": 116.0,
+    "electronics_support_central_cut_depth_mm": 20.0,
+    "electronics_support_base_overlap_mm": 0.2
+  },
+  "parts": [
+    {
+      "name": "pf_chassis",
+      "stl": "outputs/print-first-20260905/body/pf_chassis.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [
+        "chassis"
+      ],
+      "color": "#286bb1",
+      "sha256": "2a90ad5f5953c9cba9428714b00b392c937295f0134fa1ef8626385db3f0bf23",
+      "bbox_mm": [
+        241.2073974609375,
+        161.7659912109375,
+        45.400001525878906
+      ],
+      "volume_mm3": 142899.72079828626,
+      "solid_pla_g_upper_bound": 177.19565378987494,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_head_top_clearanced",
+      "stl": "outputs/print-first-20260905/body/pf_head_top_clearanced.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [
+        "Head_Top_Eyecut#single"
+      ],
+      "color": "#2d55b8",
+      "sha256": "b6024dda92eca4f52312a951876f3e4150cb9baaae6dbbdb7aafeb9b5a189ba9",
+      "bbox_mm": [
+        123.66651153564453,
+        125.34599304199219,
+        96.02700519561768
+      ],
+      "volume_mm3": 49246.09359642703,
+      "solid_pla_g_upper_bound": 61.06515605956952,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_ld220_yaw_cap_fr",
+      "stl": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_fr.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#607d8b",
+      "sha256": "00953418fbc707bad71b46d579f01cc18c2acc1a3ecc8eb051509cab396923d8",
+      "bbox_mm": [
+        19.5,
+        27.039999961853027,
+        4.0000001192092896
+      ],
+      "volume_mm3": 2010.6240669352044,
+      "solid_pla_g_upper_bound": 2.4931738429996537,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_ld220_yaw_cap_fl",
+      "stl": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_fl.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#607d8b",
+      "sha256": "21d01e4f2e5632bb14c18e646646e3f78c0903b08c5b0c5c7d35ec5356cdd90e",
+      "bbox_mm": [
+        19.5,
+        27.039999961853027,
+        4.0000001192092896
+      ],
+      "volume_mm3": 2010.6240669351973,
+      "solid_pla_g_upper_bound": 2.493173842999645,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_ld220_yaw_cap_rl",
+      "stl": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_rl.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#607d8b",
+      "sha256": "f62d58443bf8c64147c1e78e8fd9f2689e6ef4491da233e07480d517799e859c",
+      "bbox_mm": [
+        19.5,
+        27.040000915527344,
+        4.0000001192092896
+      ],
+      "volume_mm3": 2010.6241364952891,
+      "solid_pla_g_upper_bound": 2.493173929254158,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_ld220_yaw_cap_rr",
+      "stl": "outputs/print-first-20260905/body/pf_ld220_yaw_cap_rr.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#607d8b",
+      "sha256": "043b2d70ad563c29d3a81dd9defc1c6e2d8094be95b1822e4b9b26419b8498f3",
+      "bbox_mm": [
+        19.5,
+        27.040000915527344,
+        4.0000001192092896
+      ],
+      "volume_mm3": 2010.6241364952878,
+      "solid_pla_g_upper_bound": 2.493173929254157,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_cabin_rail_l",
+      "stl": "outputs/print-first-20260905/body/pf_cabin_rail_l.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#286bb1",
+      "sha256": "fe8716efba0267128afaf4c9647b6e8a958799c077fc8e139fab0d16e791d951",
+      "bbox_mm": [
+        43.0,
+        209.0,
+        166.0
+      ],
+      "volume_mm3": 51150.66310579347,
+      "solid_pla_g_upper_bound": 63.42682225118391,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_cabin_rail_r",
+      "stl": "outputs/print-first-20260905/body/pf_cabin_rail_r.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#286bb1",
+      "sha256": "5f29a29d12cd2727e3079c73c0e0e46d5a787813765da00f1837ef27b2aa69ae",
+      "bbox_mm": [
+        43.0,
+        209.0,
+        166.0
+      ],
+      "volume_mm3": 51160.39847383671,
+      "solid_pla_g_upper_bound": 63.438894107557516,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_electronics_shelf_0",
+      "stl": "outputs/print-first-20260905/body/pf_electronics_shelf_0.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#286bb1",
+      "sha256": "d2a76e6cf2e81b3b52c33cdd12d34bc65e067714673c3cb2a840b0aa727461ac",
+      "bbox_mm": [
+        138.0,
+        38.0,
+        6.0
+      ],
+      "volume_mm3": 8438.694796200063,
+      "solid_pla_g_upper_bound": 10.463981547288078,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_electronics_shelf_1",
+      "stl": "outputs/print-first-20260905/body/pf_electronics_shelf_1.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#286bb1",
+      "sha256": "48c6ed88a6d6bfe83b3454f8722536271f7d9f7e038f504782b20661f0646b80",
+      "bbox_mm": [
+        138.0,
+        38.0,
+        6.0
+      ],
+      "volume_mm3": 8437.094574248262,
+      "solid_pla_g_upper_bound": 10.461997272067846,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_electronics_shelf_2",
+      "stl": "outputs/print-first-20260905/body/pf_electronics_shelf_2.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          27.6
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#286bb1",
+      "sha256": "607899e17f3d1ef1614bf106bb4d5e7942d81eee4570bfc20a424d1210c61c8a",
+      "bbox_mm": [
+        138.0,
+        38.0,
+        6.0
+      ],
+      "volume_mm3": 8662.658687323832,
+      "solid_pla_g_upper_bound": 10.741696772281552,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_mouth_key",
+      "stl": "outputs/print-first-20260905/body/pf_mouth_key.stl",
+      "exists": true,
+      "link": "base_link",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [
+        "Mouth_Key_Grey#single"
+      ],
+      "color": "#888888",
+      "sha256": "83991c14042213c970ad0ebbe465cff0411506c9ca827659cb8a11324ca45593",
+      "bbox_mm": [
+        29.984265327453613,
+        15.149925231933594,
+        7.169719219207764
+      ],
+      "volume_mm3": 868.7732990442851,
+      "solid_pla_g_upper_bound": 1.0772788908149133,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_camera_carrier",
+      "stl": "outputs/print-first-20260905/body/pf_camera_carrier.stl",
+      "exists": true,
+      "link": "eye_pod_camera",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [
+        "camera_carrier"
+      ],
+      "color": "#888888",
+      "sha256": "9b2ff67a5a5512b4b354d5874dcfdd43da539093a1f9290bb85b28577543281c",
+      "bbox_mm": [
+        26.0,
+        21.027525424957275,
+        34.63772964477539
+      ],
+      "volume_mm3": 2321.4960676754654,
+      "solid_pla_g_upper_bound": 2.878655123917577,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "xiao_holder_integration": {
+        "variant": "xiao_assembly_with_sd",
+        "candidate_status": "CANDIDATE_ONLY_UNVERIFIED_HARDWARE",
+        "status": "PASS",
+        "clearance_each_side_mm": 0.2,
+        "head_source_clearance_applied": true,
+        "board_source_clearance_applied": true,
+        "holder_parts_integrated": [
+          "xiao_tray_floor_candidate",
+          "xiao_tray_rib_left_candidate",
+          "xiao_tray_rib_right_candidate"
+        ],
+        "connection_beam_count": 2,
+        "connection_beam_overlap_with_carrier_mm3": [
+          8.093270098814457,
+          8.09327024494995
+        ],
+        "connection_beam_overlap_with_tray_floor_mm3": [
+          9.184569648195154,
+          9.184569253639655
+        ],
+        "connection_beam_overlap_with_board_mm3": [
+          0.0,
+          0.0
+        ],
+        "direct_final_carrier_board_intersection_mm3": 0.0,
+        "serialized_union_components": 1,
+        "serialized_union": {
+          "watertight": true,
+          "winding_consistent": true,
+          "is_volume": true,
+          "volume_mm3": 2321.4960676754654
+        },
+        "board_nonintersection_status": "PASS",
+        "holder_z_offset_mm": 4.0,
+        "board_and_camera_occupancy_remains_separate_collision_candidate": true,
+        "fpc_integration": {
+          "camera_endpoint_fixed": true,
+          "board_connector_endpoint_lift_camera_z_mm": 4.0,
+          "fpc_start_camera_mm": [
+            -0.0,
+            -8.942016826768242,
+            9.528182268509106
+          ],
+          "connector_center_camera_mm": [
+            0.03167809710800957,
+            -5.579169007667769,
+            3.437521186906043
+          ],
+          "straight_line_distance_before_lift_mm": 10.63631468225926,
+          "straight_line_distance_after_lift_mm": 6.957434970390984,
+          "free_length_mm": 9.2,
+          "straight_line_reserve_after_lift_mm": 2.2425650296090156,
+          "straight_line_geometric_fit_after_lift": true,
+          "physical_fit_status": "UNVERIFIED_FPC_BEND_RADIUS_CONNECTOR_AND_STRAIN_RELIEF"
+        },
+        "retention": {
+          "retention_method": "one_existing_nonconductive_tie_through_two_floor_slots",
+          "standalone_helper_mesh_status": "UNSLOTTED_BASELINE_HELPER_OUTPUT",
+          "final_slot_integration_owner": "tools/print_first_assembly.py::_xiao_add_strap_slots",
+          "final_slot_application_count": 1,
+          "slot_application_rule": "helper floor/rib geometry is consumed as a baseline; final carrier floor/holder union is cut once here, and the helper STL/union is not counted alongside it",
+          "strap_count": 1,
+          "slot_count": 2,
+          "strap_width_candidate_mm": 2.6,
+          "strap_width_status": "UNVERIFIED_EXISTING_TIE_DIMENSION",
+          "slots": [
+            {
+              "index": 1,
+              "board_local_center_y_mm": -5.5,
+              "width_mm": 3.0,
+              "length_mm": 1.0,
+              "camera_bounds_mm": [
+                [
+                  5.0,
+                  -6.756807175187667,
+                  -9.706625496393592
+                ],
+                [
+                  6.0,
+                  -2.378349998325575,
+                  -5.320327930638565
+                ]
+              ]
+            },
+            {
+              "index": 2,
+              "board_local_center_y_mm": 5.5,
+              "width_mm": 3.0,
+              "length_mm": 1.0,
+              "camera_bounds_mm": [
+                [
+                  -6.0,
+                  -6.756807175187667,
+                  -9.706625496393592
+                ],
+                [
+                  -5.0,
+                  -2.378349998325575,
+                  -5.320327930638565
+                ]
+              ]
+            }
+          ],
+          "floor_watertight": true,
+          "holder_union_watertight": true,
+          "holder_union_components": 1,
+          "board_intersection_with_holder_union_mm3": 0.0,
+          "board_intersection_with_slotted_floor_mm3": 0.0,
+          "board_nonintersection_status": "PASS",
+          "usb_sd_service_side_status": "UNVERIFIED_PURCHASED_PORT_SIDE_AND_PLUG_ENVELOPE",
+          "fpc_service_clearance_status": "UNVERIFIED_FPC_LOCK_AND_BEND_ROUTE",
+          "candidate_service_rule": "slots remain inside board footprint; both board-local Y sides remain open",
+          "physical_retention_status": "UNVERIFIED_ONE_UNIT_TIE_AND_PULL_TEST_REQUIRED"
+        },
+        "physical_fit_status": "UNVERIFIED_ONE_UNIT_TRIAL_REQUIRED"
+      },
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_eye_pod_camera_clearanced",
+      "stl": "outputs/print-first-20260905/body/pf_eye_pod_camera_clearanced.stl",
+      "exists": true,
+      "link": "eye_pod_camera",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [
+        "eye_pod_camera"
+      ],
+      "color": "#f4f3f0",
+      "sha256": "1688de600f2ccdea8ef5004e0631bb98ee4459737b96394f22c0d58b73406812",
+      "bbox_mm": [
+        37.7279167175293,
+        37.72964286804199,
+        23.669429779052734
+      ],
+      "volume_mm3": 10022.5385423928,
+      "solid_pla_g_upper_bound": 12.427947792567073,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "clearance_integration": {
+        "status": "PASS",
+        "clearance_each_side_mm": 0.2,
+        "base_volume_mm3": 10718.134674213683,
+        "result_volume_before_component_selection_mm3": 10054.325298274087,
+        "result_volume_selected_mm3": 10022.54341817113,
+        "result_component_count_before_selection": 3,
+        "positive_component_count_before_selection": 3,
+        "discarded_disconnected_component_count": 2,
+        "discarded_disconnected_component_volumes_mm3": [
+          15.890939442610405,
+          15.890940660347438
+        ],
+        "discarded_disconnected_volume_mm3": 31.781880102957842,
+        "positive_component_geometry": [
+          {
+            "positive_component_index": 0,
+            "volume_mm3": 15.890939442610405,
+            "selected": false,
+            "bounds_mm": [
+              [
+                -10.533480644226074,
+                -13.06225299835205,
+                1.6864722967147827
+              ],
+              [
+                -5.0,
+                -9.199999809265137,
+                7.898700714111328
+              ]
+            ]
+          },
+          {
+            "positive_component_index": 1,
+            "volume_mm3": 10022.54341817113,
+            "selected": true,
+            "bounds_mm": [
+              [
+                -18.863075256347656,
+                -18.86640167236328,
+                0.0
+              ],
+              [
+                18.86484146118164,
+                18.86324119567871,
+                23.669429779052734
+              ]
+            ]
+          },
+          {
+            "positive_component_index": 2,
+            "volume_mm3": 15.890940660347438,
+            "selected": false,
+            "bounds_mm": [
+              [
+                5.0,
+                -13.06225299835205,
+                1.6864722967147827
+              ],
+              [
+                10.533480644226074,
+                -9.199999809265137,
+                7.898700714111328
+              ]
+            ]
+          }
+        ],
+        "component_selection_rule": "largest_positive_finite_component; discarded components are recorded explicitly",
+        "subtractions": [
+          {
+            "obstacle": "xiao_all_boards_occupancy",
+            "clearance_each_side_mm": 0.2,
+            "base_intersection_before_mm3": 469.7791367704981,
+            "expanded_obstacle_volume_mm3": 4105.617925216063,
+            "remaining_volume_after_mm3": 10196.93461863907
+          },
+          {
+            "obstacle": "camera_child_lens_occupancy",
+            "clearance_each_side_mm": 0.2,
+            "base_intersection_before_mm3": 53.08174891250355,
+            "expanded_obstacle_volume_mm3": 795.5203930903361,
+            "remaining_volume_after_mm3": 10123.655303725305
+          },
+          {
+            "obstacle": "pf_camera_carrier",
+            "clearance_each_side_mm": 0.2,
+            "base_intersection_before_mm3": 60.755806020271805,
+            "expanded_obstacle_volume_mm3": 3231.3834203274114,
+            "remaining_volume_after_mm3": 10054.325298274087
+          }
+        ],
+        "final_raw_obstacle_intersections": [
+          {
+            "obstacle": "xiao_all_boards_occupancy",
+            "intersection_mm3": 0.0,
+            "status": "PASS"
+          },
+          {
+            "obstacle": "camera_child_lens_occupancy",
+            "intersection_mm3": 0.0,
+            "status": "PASS"
+          },
+          {
+            "obstacle": "pf_camera_carrier",
+            "intersection_mm3": 0.0,
+            "status": "PASS"
+          }
+        ],
+        "serialized_candidate": {
+          "watertight": true,
+          "winding_consistent": true,
+          "is_volume": true,
+          "positive_volume_mm3": 10022.5385423928
+        }
+      },
+      "physical_fit_status": "UNVERIFIED_ONE_UNIT_TRIAL_REQUIRED",
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_fixed_claw_r",
+      "stl": "outputs/print-first-20260905/body/pf_fixed_claw_r.stl",
+      "exists": true,
+      "link": "arm_r_forearm",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [
+        "claw_mount",
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_Finger_Black_x3#0",
+        "Arm_Left_FingerTip_Grey_x3#0",
+        "Arm_Left_Finger_Black_x3#1",
+        "Arm_Left_FingerTip_Grey_x3#1",
+        "Arm_Left_Finger_Black_x3#2",
+        "Arm_Left_FingerTip_Grey_x3#2"
+      ],
+      "color": "#555555",
+      "sha256": "2d578b4538247820dad31059d7e7947074eb0cf5d4aa64743fca19e90fb06ff3",
+      "bbox_mm": [
+        31.689308166503906,
+        28.341384887695312,
+        27.32240867614746
+      ],
+      "volume_mm3": 4281.063543801517,
+      "solid_pla_g_upper_bound": 5.308518794313881,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "name": "pf_fixed_claw_l",
+      "stl": "outputs/print-first-20260905/body/pf_fixed_claw_l.stl",
+      "exists": true,
+      "link": "arm_l_forearm",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [
+        "claw_mount",
+        "Arm_Left_Claw_Grey",
+        "Arm_Left_Finger_Black_x3#0",
+        "Arm_Left_FingerTip_Grey_x3#0",
+        "Arm_Left_Finger_Black_x3#1",
+        "Arm_Left_FingerTip_Grey_x3#1",
+        "Arm_Left_Finger_Black_x3#2",
+        "Arm_Left_FingerTip_Grey_x3#2"
+      ],
+      "color": "#555555",
+      "sha256": "4130138afb72d18e2b533fefd812586c0d51d432376d5c36603035a6cfbec2d7",
+      "bbox_mm": [
+        31.689308166503906,
+        28.341384887695312,
+        27.32240867614746
+      ],
+      "volume_mm3": 4281.064880165276,
+      "solid_pla_g_upper_bound": 5.3085204514049416,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "is_volume": true,
+      "source": "hardware/src/make_print_first_body.py",
+      "source_sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    }
+  ],
+  "head_seats": [
+    {
+      "xy_mm": [
+        -56.0,
+        -10.0
+      ],
+      "first_shell_z_mm": 12.750000181652045,
+      "generated_top_mm": 16.750000181652045,
+      "removed_disconnected_cut_fragments": 0
+    },
+    {
+      "xy_mm": [
+        -56.0,
+        35.0
+      ],
+      "first_shell_z_mm": 9.686495780944824,
+      "generated_top_mm": 13.686495780944824,
+      "removed_disconnected_cut_fragments": 0
+    },
+    {
+      "xy_mm": [
+        56.0,
+        -10.0
+      ],
+      "first_shell_z_mm": 12.750000181652045,
+      "generated_top_mm": 16.750000181652045,
+      "removed_disconnected_cut_fragments": 0
+    },
+    {
+      "xy_mm": [
+        56.0,
+        35.0
+      ],
+      "first_shell_z_mm": 9.686495780944824,
+      "generated_top_mm": 13.686495780944824,
+      "removed_disconnected_cut_fragments": 0
+    }
+  ],
+  "stored_decorative_prefixes": [
+    "Head_TailJoint_",
+    "Head_Insert_",
+    "Head_Screw_",
+    "Cabin_Eye_",
+    "Cabin_Turret_Peg",
+    "Cabin_RedLight_",
+    "Cabin_Spinnarette_",
+    "Cabin_Front_Insert_",
+    "Leg_Thigh_Guard_",
+    "Leg_Shin_Guard_",
+    "thigh_cap",
+    "Arm_Right_Guard_Grey",
+    "Mouth_Peg_Grey"
+  ],
+  "cabin_storage_policy": {
+    "status": "INITIAL_WALKING_STORE_ALL_CABIN_KIT_PARTS",
+    "stored_source_prefixes": [
+      "Cabin_"
+    ],
+    "retained_source_parts": [
+      "battery_cradle"
+    ],
+    "retained_generated_parts": [
+      "pf_chassis",
+      "pf_cabin_rail_l",
+      "pf_cabin_rail_r",
+      "pf_electronics_shelf_0",
+      "pf_electronics_shelf_1",
+      "pf_electronics_shelf_2"
+    ],
+    "rail_includes_electronics_posts": true,
+    "source_mesh_required_for_generated_false": true,
+    "additional_prints_required": false,
+    "original_and_printed_parts_preserved": true,
+    "mass_basis": "runtime E.part_mass_item on collected Cabin_ rows; subtract the rows already selected by the legacy stored prefixes once",
+    "physical_status": "UNVERIFIED_EXPOSED_FASTENERS_WIRING_AND_PRINTED_STRENGTH",
+    "runtime": {
+      "collection_mode": "generated_false_source_for_body_generator",
+      "storage_filter_applied": false,
+      "source_mesh_retained_for_body_generation": true,
+      "source_part_count": 29,
+      "source_part_names": [
+        "Cabin_Front_Blue",
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Eye_White#single",
+        "Cabin_Turrent_Left_Grey#single",
+        "Cabin_Turrent_Right_Grey#single",
+        "Cabin_Turret_Peg#left",
+        "Cabin_Turret_Peg#right",
+        "Cabin_RedLight_Large#front_left",
+        "Cabin_RedLight_Large#front_right",
+        "Cabin_RedLight_Large#back_left",
+        "Cabin_RedLight_Large#back_right",
+        "Cabin_RedLight_Small#front_left",
+        "Cabin_RedLight_Small#front_right",
+        "Cabin_RedLight_Small#back_left",
+        "Cabin_RedLight_Small#back_right",
+        "Cabin_Spinnarette_Grey#front_left",
+        "Cabin_Spinnarette_Grey#front_right",
+        "Cabin_Spinnarette_Grey#back_left",
+        "Cabin_Spinnarette_Grey#back_right",
+        "Cabin_Front_Insert_Front_Black#single",
+        "Cabin_Front_Insert_Left_Black#single",
+        "Cabin_Front_Insert_Right_Black#single",
+        "Cabin_Front_Insert_Back_Black#left",
+        "Cabin_Front_Insert_Back_Black#right",
+        "Cabin_Front_Insert_Bottom_Long_Black#left",
+        "Cabin_Front_Insert_Bottom_Long_Black#right",
+        "Cabin_Front_Insert_Bottom_Wide_Black#single",
+        "Cabin_Peg_x2#lower",
+        "Cabin_Peg_x2#upper"
+      ],
+      "already_stored_source_part_names": [
+        "Cabin_Eye_White#single",
+        "Cabin_Turret_Peg#left",
+        "Cabin_Turret_Peg#right",
+        "Cabin_RedLight_Large#front_left",
+        "Cabin_RedLight_Large#front_right",
+        "Cabin_RedLight_Large#back_left",
+        "Cabin_RedLight_Large#back_right",
+        "Cabin_RedLight_Small#front_left",
+        "Cabin_RedLight_Small#front_right",
+        "Cabin_RedLight_Small#back_left",
+        "Cabin_RedLight_Small#back_right",
+        "Cabin_Spinnarette_Grey#front_left",
+        "Cabin_Spinnarette_Grey#front_right",
+        "Cabin_Spinnarette_Grey#back_left",
+        "Cabin_Spinnarette_Grey#back_right",
+        "Cabin_Front_Insert_Front_Black#single",
+        "Cabin_Front_Insert_Left_Black#single",
+        "Cabin_Front_Insert_Right_Black#single",
+        "Cabin_Front_Insert_Back_Black#left",
+        "Cabin_Front_Insert_Back_Black#right",
+        "Cabin_Front_Insert_Bottom_Long_Black#left",
+        "Cabin_Front_Insert_Bottom_Long_Black#right",
+        "Cabin_Front_Insert_Bottom_Wide_Black#single"
+      ],
+      "newly_stored_source_part_names": [
+        "Cabin_Front_Blue",
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Turrent_Left_Grey#single",
+        "Cabin_Turrent_Right_Grey#single",
+        "Cabin_Peg_x2#lower",
+        "Cabin_Peg_x2#upper"
+      ],
+      "source_total_mass_g": 587.3919603718443,
+      "already_stored_mass_g": 18.655951386932827,
+      "additional_stored_mass_g": 568.7360089849115,
+      "additional_mass_accounted_once": true,
+      "mass_rows": [
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Blue",
+          "mass_g": 362.75715886227414
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Back_Blue_Repaired",
+          "mass_g": 171.09697485579557
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Eye_White#single",
+          "mass_g": 5.625831147252939
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Turrent_Left_Grey#single",
+          "mass_g": 7.765074369415429
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Turrent_Right_Grey#single",
+          "mass_g": 7.808781671088659
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Turret_Peg#left",
+          "mass_g": 0.7609724617268024
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Turret_Peg#right",
+          "mass_g": 0.7609724617268024
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Large#front_left",
+          "mass_g": 0.7540503336906528
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Large#front_right",
+          "mass_g": 0.7540503336906532
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Large#back_left",
+          "mass_g": 0.754050333690652
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Large#back_right",
+          "mass_g": 0.7540503336906516
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Small#front_left",
+          "mass_g": 0.1442939490458236
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Small#front_right",
+          "mass_g": 0.14429394904582304
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Small#back_left",
+          "mass_g": 0.14429394904582396
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_RedLight_Small#back_right",
+          "mass_g": 0.14429394904582274
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Spinnarette_Grey#front_left",
+          "mass_g": 0.4276255879962189
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Spinnarette_Grey#front_right",
+          "mass_g": 0.4276255879962186
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Spinnarette_Grey#back_left",
+          "mass_g": 0.42762558799621886
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Spinnarette_Grey#back_right",
+          "mass_g": 0.4276255879962185
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Front_Black#single",
+          "mass_g": 0.6968857120812239
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Left_Black#single",
+          "mass_g": 0.8178529878783588
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Right_Black#single",
+          "mass_g": 0.8178529567298491
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Back_Black#left",
+          "mass_g": 1.1047163381717024
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Back_Black#right",
+          "mass_g": 1.104716338171703
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Bottom_Long_Black#left",
+          "mass_g": 0.4425163556990242
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Bottom_Long_Black#right",
+          "mass_g": 0.4425163556990242
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Front_Insert_Bottom_Wide_Black#single",
+          "mass_g": 0.7772387888646212
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Peg_x2#lower",
+          "mass_g": 9.654009613168817
+        },
+        {
+          "link": "base_link",
+          "name": "Cabin_Peg_x2#upper",
+          "mass_g": 9.654009613168821
+        }
+      ],
+      "retained_after_filter_source_part_names": [
+        "Cabin_Front_Blue",
+        "Cabin_Back_Blue_Repaired",
+        "Cabin_Turrent_Left_Grey#single",
+        "Cabin_Turrent_Right_Grey#single",
+        "Cabin_Peg_x2#lower",
+        "Cabin_Peg_x2#upper"
+      ]
+    }
+  },
+  "head_clearance": {
+    "status": "PASS",
+    "clearance_each_side_mm": 0.2,
+    "base_volume_mm3": 51534.97567744585,
+    "result_volume_before_component_selection_mm3": 49246.03857372893,
+    "result_volume_selected_mm3": 49246.03857372893,
+    "result_component_count_before_selection": 1,
+    "positive_component_count_before_selection": 1,
+    "discarded_disconnected_component_count": 0,
+    "discarded_disconnected_component_volumes_mm3": [],
+    "discarded_disconnected_volume_mm3": 0.0,
+    "positive_component_geometry": [
+      {
+        "positive_component_index": 0,
+        "volume_mm3": 49246.03857372893,
+        "selected": true,
+        "bounds_mm": [
+          [
+            -61.83127975463867,
+            -51.672996520996094,
+            9.686495780944824
+          ],
+          [
+            61.83523178100586,
+            73.6729965209961,
+            105.7135009765625
+          ]
+        ]
+      }
+    ],
+    "component_selection_rule": "largest_positive_finite_component; discarded components are recorded explicitly",
+    "subtractions": [
+      {
+        "obstacle": "eye_r_servo_case",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 385.91788099882456,
+        "expanded_obstacle_volume_mm3": 2981.4012080809975,
+        "remaining_volume_after_mm3": 51089.59456250541
+      },
+      {
+        "obstacle": "eye_l_servo_case",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 560.7060211013617,
+        "expanded_obstacle_volume_mm3": 2981.4015120514932,
+        "remaining_volume_after_mm3": 50466.323936230176
+      },
+      {
+        "obstacle": "arm_r_yaw_servo_case",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 309.0949557652501,
+        "expanded_obstacle_volume_mm3": 5960.448710540774,
+        "remaining_volume_after_mm3": 50120.080785418955
+      },
+      {
+        "obstacle": "arm_l_yaw_servo_case",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 314.7056048766677,
+        "expanded_obstacle_volume_mm3": 5960.448710540774,
+        "remaining_volume_after_mm3": 49768.20541779315
+      },
+      {
+        "obstacle": "leg_fr_yaw_ld220_case",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 215.7652286472273,
+        "expanded_obstacle_volume_mm3": 41011.92136865063,
+        "remaining_volume_after_mm3": 49532.24696021734
+      },
+      {
+        "obstacle": "leg_fl_yaw_ld220_case",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 215.65160892792773,
+        "expanded_obstacle_volume_mm3": 41011.92136865062,
+        "remaining_volume_after_mm3": 49296.41677758479
+      },
+      {
+        "obstacle": "leg_rl_yaw_ld220_case",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 0.0,
+        "expanded_obstacle_volume_mm3": 41011.921258398295,
+        "remaining_volume_after_mm3": 49296.41677758479
+      },
+      {
+        "obstacle": "leg_rr_yaw_ld220_case",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 0.0,
+        "expanded_obstacle_volume_mm3": 41011.921258398295,
+        "remaining_volume_after_mm3": 49296.41677758479
+      },
+      {
+        "obstacle": "pf_camera_carrier",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 37.674817015214096,
+        "expanded_obstacle_volume_mm3": 3111.32720895724,
+        "remaining_volume_after_mm3": 49246.03857372893
+      },
+      {
+        "obstacle": "xiao_all_boards_occupancy",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 0.0,
+        "expanded_obstacle_volume_mm3": 4006.7584597552304,
+        "remaining_volume_after_mm3": 49246.03857372893
+      },
+      {
+        "obstacle": "camera_child_lens_occupancy",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 0.0,
+        "expanded_obstacle_volume_mm3": 821.4685598044193,
+        "remaining_volume_after_mm3": 49246.03857372893
+      }
+    ],
+    "final_raw_obstacle_intersections": [
+      {
+        "obstacle": "eye_r_servo_case",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "eye_l_servo_case",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "arm_r_yaw_servo_case",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "arm_l_yaw_servo_case",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "leg_fr_yaw_ld220_case",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "leg_fl_yaw_ld220_case",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "leg_rl_yaw_ld220_case",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "leg_rr_yaw_ld220_case",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "pf_camera_carrier",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "xiao_all_boards_occupancy",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "camera_child_lens_occupancy",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      }
+    ],
+    "serialized_candidate": {
+      "watertight": true,
+      "winding_consistent": true,
+      "is_volume": true,
+      "positive_volume_mm3": 49246.09359642703
+    }
+  },
+  "eye_pod_camera_clearance": {
+    "status": "PASS",
+    "clearance_each_side_mm": 0.2,
+    "base_volume_mm3": 10718.134674213683,
+    "result_volume_before_component_selection_mm3": 10054.325298274087,
+    "result_volume_selected_mm3": 10022.54341817113,
+    "result_component_count_before_selection": 3,
+    "positive_component_count_before_selection": 3,
+    "discarded_disconnected_component_count": 2,
+    "discarded_disconnected_component_volumes_mm3": [
+      15.890939442610405,
+      15.890940660347438
+    ],
+    "discarded_disconnected_volume_mm3": 31.781880102957842,
+    "positive_component_geometry": [
+      {
+        "positive_component_index": 0,
+        "volume_mm3": 15.890939442610405,
+        "selected": false,
+        "bounds_mm": [
+          [
+            -10.533480644226074,
+            -13.06225299835205,
+            1.6864722967147827
+          ],
+          [
+            -5.0,
+            -9.199999809265137,
+            7.898700714111328
+          ]
+        ]
+      },
+      {
+        "positive_component_index": 1,
+        "volume_mm3": 10022.54341817113,
+        "selected": true,
+        "bounds_mm": [
+          [
+            -18.863075256347656,
+            -18.86640167236328,
+            0.0
+          ],
+          [
+            18.86484146118164,
+            18.86324119567871,
+            23.669429779052734
+          ]
+        ]
+      },
+      {
+        "positive_component_index": 2,
+        "volume_mm3": 15.890940660347438,
+        "selected": false,
+        "bounds_mm": [
+          [
+            5.0,
+            -13.06225299835205,
+            1.6864722967147827
+          ],
+          [
+            10.533480644226074,
+            -9.199999809265137,
+            7.898700714111328
+          ]
+        ]
+      }
+    ],
+    "component_selection_rule": "largest_positive_finite_component; discarded components are recorded explicitly",
+    "subtractions": [
+      {
+        "obstacle": "xiao_all_boards_occupancy",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 469.7791367704981,
+        "expanded_obstacle_volume_mm3": 4105.617925216063,
+        "remaining_volume_after_mm3": 10196.93461863907
+      },
+      {
+        "obstacle": "camera_child_lens_occupancy",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 53.08174891250355,
+        "expanded_obstacle_volume_mm3": 795.5203930903361,
+        "remaining_volume_after_mm3": 10123.655303725305
+      },
+      {
+        "obstacle": "pf_camera_carrier",
+        "clearance_each_side_mm": 0.2,
+        "base_intersection_before_mm3": 60.755806020271805,
+        "expanded_obstacle_volume_mm3": 3231.3834203274114,
+        "remaining_volume_after_mm3": 10054.325298274087
+      }
+    ],
+    "final_raw_obstacle_intersections": [
+      {
+        "obstacle": "xiao_all_boards_occupancy",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "camera_child_lens_occupancy",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      },
+      {
+        "obstacle": "pf_camera_carrier",
+        "intersection_mm3": 0.0,
+        "status": "PASS"
+      }
+    ],
+    "serialized_candidate": {
+      "watertight": true,
+      "winding_consistent": true,
+      "is_volume": true,
+      "positive_volume_mm3": 10022.5385423928
+    }
+  },
+  "pf_camera_carrier_clearance": {
+    "status": "PASS",
+    "clearance_each_side_mm": 0.2,
+    "head_source_clearance_applied": true,
+    "board_source_clearance_applied": true,
+    "holder_parts_integrated": [
+      "xiao_tray_floor_candidate",
+      "xiao_tray_rib_left_candidate",
+      "xiao_tray_rib_right_candidate"
+    ],
+    "connection_beam_count": 2,
+    "connection_beam_overlap_with_carrier_mm3": [
+      8.093270098814457,
+      8.09327024494995
+    ],
+    "connection_beam_overlap_with_tray_floor_mm3": [
+      9.184569648195154,
+      9.184569253639655
+    ],
+    "connection_beam_overlap_with_board_mm3": [
+      0.0,
+      0.0
+    ],
+    "direct_final_carrier_board_intersection_mm3": 0.0,
+    "serialized_union_components": 1,
+    "serialized_union": {
+      "watertight": true,
+      "winding_consistent": true,
+      "is_volume": true,
+      "volume_mm3": 2321.4960676754654
+    },
+    "board_nonintersection_status": "PASS"
+  },
+  "electronics_shelf_fastener": {
+    "screw_type": "M2.6x8_existing_stock_candidate",
+    "screw_length_interpretation": "head_underside_to_tip_nominal_shank_length_mm",
+    "insertion_direction": "shelf_top_to_lower_post_bottom_along_minus_Z",
+    "shelf_thickness_mm": 3.0,
+    "shelf_head_seat_depth_mm": 0.8,
+    "effective_shelf_remaining_thickness_mm": 2.2,
+    "lower_post_thread_length_mm": 4.0,
+    "nominal_stack_mm": 6.2,
+    "nominal_thread_engagement_mm": 4.0,
+    "tip_protrusion_below_post_mm": 1.7999999999999998,
+    "shaft_envelope_d_mm": 2.2,
+    "head_envelope_d_mm": 5.2,
+    "head_seat_depth_mm": 0.8,
+    "head_height_candidate_mm": null,
+    "head_height_candidate_basis": "actual_pan_head_height_unmeasured; 3mm component gap used only as conservative envelope limit",
+    "head_projection_above_shelf_top_candidate_mm": 3.0,
+    "head_projection_above_shelf_top_limit_mm": 3.0,
+    "head_projection_limit_basis": "configured component bottom clearance; actual pan-head height must be measured on one screw",
+    "configured_component_bottom_clearance_mm": 3.0,
+    "component_shelf_clearances": [
+      {
+        "component": "component_pca9685_0",
+        "bottom_z_mm": 81.6,
+        "top_z_mm": 105.6,
+        "clearance_above_lower_shelf_mm": 3.0,
+        "clearance_below_next_shelf_mm": 4.0
+      },
+      {
+        "component": "component_pca9685_1",
+        "bottom_z_mm": 81.6,
+        "top_z_mm": 105.6,
+        "clearance_above_lower_shelf_mm": 3.0,
+        "clearance_below_next_shelf_mm": 4.0
+      },
+      {
+        "component": "component_esp32_devkit",
+        "bottom_z_mm": 115.6,
+        "top_z_mm": 131.6,
+        "clearance_above_lower_shelf_mm": 3.0,
+        "clearance_below_next_shelf_mm": 10.0
+      },
+      {
+        "component": "component_henge_ubec",
+        "bottom_z_mm": 115.6,
+        "top_z_mm": 137.6,
+        "clearance_above_lower_shelf_mm": 3.0,
+        "clearance_below_next_shelf_mm": 4.0
+      },
+      {
+        "component": "component_mini560_logic",
+        "bottom_z_mm": 147.6,
+        "top_z_mm": 162.6,
+        "clearance_above_lower_shelf_mm": 3.0,
+        "clearance_below_next_shelf_mm": null
+      },
+      {
+        "component": "component_mini560_servos",
+        "bottom_z_mm": 147.6,
+        "top_z_mm": 162.6,
+        "clearance_above_lower_shelf_mm": 3.0,
+        "clearance_below_next_shelf_mm": null
+      },
+      {
+        "component": "component_max98357a",
+        "bottom_z_mm": 147.6,
+        "top_z_mm": 161.6,
+        "clearance_above_lower_shelf_mm": 3.0,
+        "clearance_below_next_shelf_mm": null
+      }
+    ],
+    "component_shelf_clearance_status": "PASS",
+    "support_method": "four_corner_edge_pads_per_component_with_configured_3mm_clearance",
+    "support_pad_rows": [
+      {
+        "component": "pca9685_0",
+        "level": 0,
+        "component_center_mm": [
+          -35.0,
+          -80.0,
+          66.0
+        ],
+        "component_size_mm": [
+          64.0,
+          26.0,
+          24.0
+        ],
+        "component_bottom_z_mm": 54.0,
+        "shelf_top_z_mm": 51.0,
+        "clearance_above_shelf_mm": 3.0,
+        "support_height_mm": 3.2,
+        "support_base_overlap_mm": 0.2,
+        "pad_width_mm": 4.0,
+        "pad_depth_mm": 4.0,
+        "edge_inset_mm": 5.0,
+        "shelf_edge_clearance_mm": 0.5,
+        "component_edge_overlap_mm": 0.5,
+        "pad_centers_xy_mm": [
+          [
+            -60.0,
+            -91.5
+          ],
+          [
+            -10.0,
+            -91.5
+          ],
+          [
+            -60.0,
+            -68.5
+          ],
+          [
+            -10.0,
+            -68.5
+          ]
+        ],
+        "pads": [
+          {
+            "index": 1,
+            "center_xy_mm": [
+              -60.0,
+              -91.5
+            ],
+            "bounds_mm": [
+              [
+                -62.0,
+                -93.5,
+                78.4
+              ],
+              [
+                -58.0,
+                -89.5,
+                81.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 0.2792360097775961
+          },
+          {
+            "index": 2,
+            "center_xy_mm": [
+              -10.0,
+              -91.5
+            ],
+            "bounds_mm": [
+              [
+                -12.0,
+                -93.5,
+                78.4
+              ],
+              [
+                -8.0,
+                -89.5,
+                81.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 48.471420579419956
+          },
+          {
+            "index": 3,
+            "center_xy_mm": [
+              -60.0,
+              -68.5
+            ],
+            "bounds_mm": [
+              [
+                -62.0,
+                -70.5,
+                78.4
+              ],
+              [
+                -58.0,
+                -66.5,
+                81.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 0.2792360097775961
+          },
+          {
+            "index": 4,
+            "center_xy_mm": [
+              -10.0,
+              -68.5
+            ],
+            "bounds_mm": [
+              [
+                -12.0,
+                -70.5,
+                78.4
+              ],
+              [
+                -8.0,
+                -66.5,
+                81.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 48.471420579419956
+          }
+        ]
+      },
+      {
+        "component": "pca9685_1",
+        "level": 0,
+        "component_center_mm": [
+          35.0,
+          -80.0,
+          66.0
+        ],
+        "component_size_mm": [
+          64.0,
+          26.0,
+          24.0
+        ],
+        "component_bottom_z_mm": 54.0,
+        "shelf_top_z_mm": 51.0,
+        "clearance_above_shelf_mm": 3.0,
+        "support_height_mm": 3.2,
+        "support_base_overlap_mm": 0.2,
+        "pad_width_mm": 4.0,
+        "pad_depth_mm": 4.0,
+        "edge_inset_mm": 5.0,
+        "shelf_edge_clearance_mm": 0.5,
+        "component_edge_overlap_mm": 0.5,
+        "pad_centers_xy_mm": [
+          [
+            10.0,
+            -91.5
+          ],
+          [
+            60.0,
+            -91.5
+          ],
+          [
+            10.0,
+            -68.5
+          ],
+          [
+            60.0,
+            -68.5
+          ]
+        ],
+        "pads": [
+          {
+            "index": 1,
+            "center_xy_mm": [
+              10.0,
+              -91.5
+            ],
+            "bounds_mm": [
+              [
+                8.0,
+                -93.5,
+                78.4
+              ],
+              [
+                12.0,
+                -89.5,
+                81.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 48.471420579419956
+          },
+          {
+            "index": 2,
+            "center_xy_mm": [
+              60.0,
+              -91.5
+            ],
+            "bounds_mm": [
+              [
+                58.0,
+                -93.5,
+                78.4
+              ],
+              [
+                62.0,
+                -89.5,
+                81.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 0.2792360097775961
+          },
+          {
+            "index": 3,
+            "center_xy_mm": [
+              10.0,
+              -68.5
+            ],
+            "bounds_mm": [
+              [
+                8.0,
+                -70.5,
+                78.4
+              ],
+              [
+                12.0,
+                -66.5,
+                81.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 48.471420579419956
+          },
+          {
+            "index": 4,
+            "center_xy_mm": [
+              60.0,
+              -68.5
+            ],
+            "bounds_mm": [
+              [
+                58.0,
+                -70.5,
+                78.4
+              ],
+              [
+                62.0,
+                -66.5,
+                81.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 0.2792360097775961
+          }
+        ]
+      },
+      {
+        "component": "esp32_devkit",
+        "level": 1,
+        "component_center_mm": [
+          -35.0,
+          -80.0,
+          96.0
+        ],
+        "component_size_mm": [
+          58.0,
+          30.0,
+          16.0
+        ],
+        "component_bottom_z_mm": 88.0,
+        "shelf_top_z_mm": 85.0,
+        "clearance_above_shelf_mm": 3.0,
+        "support_height_mm": 3.2,
+        "support_base_overlap_mm": 0.2,
+        "pad_width_mm": 4.0,
+        "pad_depth_mm": 4.0,
+        "edge_inset_mm": 5.0,
+        "shelf_edge_clearance_mm": 0.5,
+        "component_edge_overlap_mm": 0.5,
+        "pad_centers_xy_mm": [
+          [
+            -57.0,
+            -92.5
+          ],
+          [
+            -13.0,
+            -92.5
+          ],
+          [
+            -57.0,
+            -67.5
+          ],
+          [
+            -13.0,
+            -67.5
+          ]
+        ],
+        "pads": [
+          {
+            "index": 1,
+            "center_xy_mm": [
+              -57.0,
+              -92.5
+            ],
+            "bounds_mm": [
+              [
+                -59.0,
+                -94.5,
+                112.4
+              ],
+              [
+                -55.0,
+                -90.5,
+                115.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 1.7462627624201477
+          },
+          {
+            "index": 2,
+            "center_xy_mm": [
+              -13.0,
+              -92.5
+            ],
+            "bounds_mm": [
+              [
+                -15.0,
+                -94.5,
+                112.4
+              ],
+              [
+                -11.0,
+                -90.5,
+                115.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 45.430094732365454
+          },
+          {
+            "index": 3,
+            "center_xy_mm": [
+              -57.0,
+              -67.5
+            ],
+            "bounds_mm": [
+              [
+                -59.0,
+                -69.5,
+                112.4
+              ],
+              [
+                -55.0,
+                -65.5,
+                115.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 1.7462627624201477
+          },
+          {
+            "index": 4,
+            "center_xy_mm": [
+              -13.0,
+              -67.5
+            ],
+            "bounds_mm": [
+              [
+                -15.0,
+                -69.5,
+                112.4
+              ],
+              [
+                -11.0,
+                -65.5,
+                115.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 45.430094732365454
+          }
+        ]
+      },
+      {
+        "component": "henge_ubec",
+        "level": 1,
+        "component_center_mm": [
+          35.0,
+          -80.0,
+          99.0
+        ],
+        "component_size_mm": [
+          60.0,
+          30.0,
+          22.0
+        ],
+        "component_bottom_z_mm": 88.0,
+        "shelf_top_z_mm": 85.0,
+        "clearance_above_shelf_mm": 3.0,
+        "support_height_mm": 3.2,
+        "support_base_overlap_mm": 0.2,
+        "pad_width_mm": 4.0,
+        "pad_depth_mm": 4.0,
+        "edge_inset_mm": 5.0,
+        "shelf_edge_clearance_mm": 0.5,
+        "component_edge_overlap_mm": 0.5,
+        "pad_centers_xy_mm": [
+          [
+            12.0,
+            -92.5
+          ],
+          [
+            58.0,
+            -92.5
+          ],
+          [
+            12.0,
+            -67.5
+          ],
+          [
+            58.0,
+            -67.5
+          ]
+        ],
+        "pads": [
+          {
+            "index": 1,
+            "center_xy_mm": [
+              12.0,
+              -92.5
+            ],
+            "bounds_mm": [
+              [
+                10.0,
+                -94.5,
+                112.4
+              ],
+              [
+                14.0,
+                -90.5,
+                115.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 46.42948092729516
+          },
+          {
+            "index": 2,
+            "center_xy_mm": [
+              58.0,
+              -92.5
+            ],
+            "bounds_mm": [
+              [
+                56.0,
+                -94.5,
+                112.4
+              ],
+              [
+                60.0,
+                -90.5,
+                115.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 0.8481879299133346
+          },
+          {
+            "index": 3,
+            "center_xy_mm": [
+              12.0,
+              -67.5
+            ],
+            "bounds_mm": [
+              [
+                10.0,
+                -69.5,
+                112.4
+              ],
+              [
+                14.0,
+                -65.5,
+                115.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 46.42948092729516
+          },
+          {
+            "index": 4,
+            "center_xy_mm": [
+              58.0,
+              -67.5
+            ],
+            "bounds_mm": [
+              [
+                56.0,
+                -69.5,
+                112.4
+              ],
+              [
+                60.0,
+                -65.5,
+                115.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 0.8481879299133346
+          }
+        ]
+      },
+      {
+        "component": "mini560_logic",
+        "level": 2,
+        "component_center_mm": [
+          -42.0,
+          -80.0,
+          127.5
+        ],
+        "component_size_mm": [
+          40.0,
+          20.0,
+          15.0
+        ],
+        "component_bottom_z_mm": 120.0,
+        "shelf_top_z_mm": 117.0,
+        "clearance_above_shelf_mm": 3.0,
+        "support_height_mm": 3.2,
+        "support_base_overlap_mm": 0.2,
+        "pad_width_mm": 4.0,
+        "pad_depth_mm": 4.0,
+        "edge_inset_mm": 5.0,
+        "shelf_edge_clearance_mm": 0.5,
+        "component_edge_overlap_mm": 0.5,
+        "pad_centers_xy_mm": [
+          [
+            -55.0,
+            -88.5
+          ],
+          [
+            -29.0,
+            -88.5
+          ],
+          [
+            -55.0,
+            -71.5
+          ],
+          [
+            -29.0,
+            -71.5
+          ]
+        ],
+        "pads": [
+          {
+            "index": 1,
+            "center_xy_mm": [
+              -55.0,
+              -88.5
+            ],
+            "bounds_mm": [
+              [
+                -57.0,
+                -90.5,
+                144.4
+              ],
+              [
+                -53.0,
+                -86.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 5.6758685344802355
+          },
+          {
+            "index": 2,
+            "center_xy_mm": [
+              -29.0,
+              -88.5
+            ],
+            "bounds_mm": [
+              [
+                -31.0,
+                -90.5,
+                144.4
+              ],
+              [
+                -27.0,
+                -86.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 29.90369209797558
+          },
+          {
+            "index": 3,
+            "center_xy_mm": [
+              -55.0,
+              -71.5
+            ],
+            "bounds_mm": [
+              [
+                -57.0,
+                -73.5,
+                144.4
+              ],
+              [
+                -53.0,
+                -69.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 5.6758685344802355
+          },
+          {
+            "index": 4,
+            "center_xy_mm": [
+              -29.0,
+              -71.5
+            ],
+            "bounds_mm": [
+              [
+                -31.0,
+                -73.5,
+                144.4
+              ],
+              [
+                -27.0,
+                -69.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 29.90369209797558
+          }
+        ]
+      },
+      {
+        "component": "mini560_servos",
+        "level": 2,
+        "component_center_mm": [
+          7.0,
+          -80.0,
+          127.5
+        ],
+        "component_size_mm": [
+          40.0,
+          20.0,
+          15.0
+        ],
+        "component_bottom_z_mm": 120.0,
+        "shelf_top_z_mm": 117.0,
+        "clearance_above_shelf_mm": 3.0,
+        "support_height_mm": 3.2,
+        "support_base_overlap_mm": 0.2,
+        "pad_width_mm": 4.0,
+        "pad_depth_mm": 4.0,
+        "edge_inset_mm": 5.0,
+        "shelf_edge_clearance_mm": 0.5,
+        "component_edge_overlap_mm": 0.5,
+        "pad_centers_xy_mm": [
+          [
+            -6.0,
+            -88.5
+          ],
+          [
+            20.0,
+            -88.5
+          ],
+          [
+            -6.0,
+            -71.5
+          ],
+          [
+            20.0,
+            -71.5
+          ]
+        ],
+        "pads": [
+          {
+            "index": 1,
+            "center_xy_mm": [
+              -6.0,
+              -88.5
+            ],
+            "bounds_mm": [
+              [
+                -8.0,
+                -90.5,
+                144.4
+              ],
+              [
+                -4.0,
+                -86.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 52.6945747790866
+          },
+          {
+            "index": 2,
+            "center_xy_mm": [
+              20.0,
+              -88.5
+            ],
+            "bounds_mm": [
+              [
+                18.0,
+                -90.5,
+                144.4
+              ],
+              [
+                22.0,
+                -86.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 38.794323282305264
+          },
+          {
+            "index": 3,
+            "center_xy_mm": [
+              -6.0,
+              -71.5
+            ],
+            "bounds_mm": [
+              [
+                -8.0,
+                -73.5,
+                144.4
+              ],
+              [
+                -4.0,
+                -69.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 52.6945747790866
+          },
+          {
+            "index": 4,
+            "center_xy_mm": [
+              20.0,
+              -71.5
+            ],
+            "bounds_mm": [
+              [
+                18.0,
+                -73.5,
+                144.4
+              ],
+              [
+                22.0,
+                -69.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 38.794323282305264
+          }
+        ]
+      },
+      {
+        "component": "max98357a",
+        "level": 2,
+        "component_center_mm": [
+          46.0,
+          -80.0,
+          127.0
+        ],
+        "component_size_mm": [
+          24.0,
+          20.0,
+          14.0
+        ],
+        "component_bottom_z_mm": 120.0,
+        "shelf_top_z_mm": 117.0,
+        "clearance_above_shelf_mm": 3.0,
+        "support_height_mm": 3.2,
+        "support_base_overlap_mm": 0.2,
+        "pad_width_mm": 4.0,
+        "pad_depth_mm": 4.0,
+        "edge_inset_mm": 5.0,
+        "shelf_edge_clearance_mm": 0.5,
+        "component_edge_overlap_mm": 0.5,
+        "pad_centers_xy_mm": [
+          [
+            41.0,
+            -88.5
+          ],
+          [
+            51.0,
+            -88.5
+          ],
+          [
+            41.0,
+            -71.5
+          ],
+          [
+            51.0,
+            -71.5
+          ]
+        ],
+        "pads": [
+          {
+            "index": 1,
+            "center_xy_mm": [
+              41.0,
+              -88.5
+            ],
+            "bounds_mm": [
+              [
+                39.0,
+                -90.5,
+                144.4
+              ],
+              [
+                43.0,
+                -86.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 18.196393918177257
+          },
+          {
+            "index": 2,
+            "center_xy_mm": [
+              51.0,
+              -88.5
+            ],
+            "bounds_mm": [
+              [
+                49.0,
+                -90.5,
+                144.4
+              ],
+              [
+                53.0,
+                -86.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 8.910430052782566
+          },
+          {
+            "index": 3,
+            "center_xy_mm": [
+              41.0,
+              -71.5
+            ],
+            "bounds_mm": [
+              [
+                39.0,
+                -73.5,
+                144.4
+              ],
+              [
+                43.0,
+                -69.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 18.196393918177257
+          },
+          {
+            "index": 4,
+            "center_xy_mm": [
+              51.0,
+              -71.5
+            ],
+            "bounds_mm": [
+              [
+                49.0,
+                -73.5,
+                144.4
+              ],
+              [
+                53.0,
+                -69.5,
+                147.6
+              ]
+            ],
+            "component_intersection_mm3": 0.0,
+            "minimum_xy_clearance_to_head_candidate_mm": 8.910430052782566
+          }
+        ]
+      }
+    ],
+    "support_pad_count": 28,
+    "support_component_intersections": [],
+    "support_component_clearance_status": "PASS",
+    "support_shelf_contact_status": "PASS_CONFIGURED_TOP_TOUCH_WITH_0.2MM_BASE_OVERLAP",
+    "support_minimum_xy_clearance_to_head_candidate_mm": 0.2792360097775961,
+    "support_screw_head_clearance_status": "PASS",
+    "support_service_face_status": "UNVERIFIED_USB_TERMINAL_AND_SOLDER_SIDE_FROM_REAL_HARDWARE",
+    "static_component_pairs_checked": 2,
+    "static_component_intersections": [],
+    "static_component_clearance_status": "PASS",
+    "wiring_clearance_status": "UNVERIFIED_WIRING_NOT_SOLID_MODELED",
+    "physical_head_height_and_tap_fit_status": "UNVERIFIED_ONE_UNIT_TRIAL_REQUIRED"
+  },
+  "cabin_rail_fastener": {
+    "screw_type": "M3x10_existing_stock_candidate",
+    "screw_length_interpretation": "countersunk_total_head_top_to_tip_candidate",
+    "insertion_direction": "rail_top_to_chassis_bottom_along_minus_Z",
+    "rail_pad_thickness_mm": 6.0,
+    "chassis_thickness_mm": 4.0,
+    "nominal_grip_mm": 10.0,
+    "screw_length_mm": 10.0,
+    "nominal_chassis_thread_engagement_mm": 4.0,
+    "thread_engagement_shortfall_mm": 0.0,
+    "tip_protrusion_below_chassis_mm": 0.0,
+    "rail_clearance_d_mm": 3.2,
+    "countersunk_head_d_mm": 6.4,
+    "countersunk_head_depth_mm": 1.4,
+    "tool_envelope_d_mm": 8.0,
+    "tip_battery_wiring_clearance_status": "GEOMETRIC_CANDIDATE_REQUIRES_STATIC_ASSEMBLY_CHECK",
+    "physical_head_axis_and_driver_fit_status": "UNVERIFIED",
+    "static_assembly_check": {
+      "shaft_component_intersections": [],
+      "shaft_component_clearance_status": "PASS",
+      "tool_envelope_d_mm": 8.0,
+      "tool_envelope_world_z_mm": [
+        37.6,
+        148.6
+      ],
+      "tool_shelf_intersections": [
+        {
+          "side": "left",
+          "y_mm": -61.0,
+          "shelf": "pf_electronics_shelf_0",
+          "intersection_mm3": 75.27716947447698
+        },
+        {
+          "side": "left",
+          "y_mm": -61.0,
+          "shelf": "pf_electronics_shelf_1",
+          "intersection_mm3": 75.27716947447698
+        },
+        {
+          "side": "left",
+          "y_mm": -61.0,
+          "shelf": "pf_electronics_shelf_2",
+          "intersection_mm3": 75.27716947447698
+        },
+        {
+          "side": "left",
+          "y_mm": -87.0,
+          "shelf": "pf_electronics_shelf_0",
+          "intersection_mm3": 10.824333448457764
+        },
+        {
+          "side": "left",
+          "y_mm": -87.0,
+          "shelf": "pf_electronics_shelf_1",
+          "intersection_mm3": 10.824333448457764
+        },
+        {
+          "side": "left",
+          "y_mm": -87.0,
+          "shelf": "pf_electronics_shelf_2",
+          "intersection_mm3": 10.824333448457764
+        },
+        {
+          "side": "right",
+          "y_mm": -61.0,
+          "shelf": "pf_electronics_shelf_0",
+          "intersection_mm3": 75.27716947447698
+        },
+        {
+          "side": "right",
+          "y_mm": -61.0,
+          "shelf": "pf_electronics_shelf_1",
+          "intersection_mm3": 75.27716947447698
+        },
+        {
+          "side": "right",
+          "y_mm": -61.0,
+          "shelf": "pf_electronics_shelf_2",
+          "intersection_mm3": 75.27716947447698
+        },
+        {
+          "side": "right",
+          "y_mm": -87.0,
+          "shelf": "pf_electronics_shelf_0",
+          "intersection_mm3": 10.824333448457764
+        },
+        {
+          "side": "right",
+          "y_mm": -87.0,
+          "shelf": "pf_electronics_shelf_1",
+          "intersection_mm3": 10.824333448457764
+        },
+        {
+          "side": "right",
+          "y_mm": -87.0,
+          "shelf": "pf_electronics_shelf_2",
+          "intersection_mm3": 10.824333448457764
+        }
+      ],
+      "tool_component_intersections": [
+        {
+          "side": "left",
+          "y_mm": -87.0,
+          "component": "component_pca9685_0",
+          "intersection_mm3": 1204.4348538658815
+        },
+        {
+          "side": "left",
+          "y_mm": -87.0,
+          "component": "component_esp32_devkit",
+          "intersection_mm3": 802.9569521234498
+        },
+        {
+          "side": "left",
+          "y_mm": -87.0,
+          "component": "component_mini560_logic",
+          "intersection_mm3": 46.57667411137663
+        },
+        {
+          "side": "right",
+          "y_mm": -87.0,
+          "component": "component_pca9685_1",
+          "intersection_mm3": 1204.4348538658815
+        },
+        {
+          "side": "right",
+          "y_mm": -87.0,
+          "component": "component_henge_ubec",
+          "intersection_mm3": 1104.0656655899204
+        },
+        {
+          "side": "right",
+          "y_mm": -87.0,
+          "component": "component_max98357a",
+          "intersection_mm3": 30.242975835004472
+        }
+      ],
+      "tool_access_with_shelves_installed_status": "BLOCKED_BY_SHELVES_OR_CANDIDATE_ELECTRONICS",
+      "recommended_assembly_order": "固定M3x10レールを棚/電装の取付前に行う",
+      "wiring_clearance_status": "UNVERIFIED_WIRING_NOT_SOLID_MODELED"
+    }
+  },
+  "source_sha256": {
+    "hardware/src/make_print_first_body.py": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408",
+    "hardware/src/config.py": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95",
+    "tools/print_first_assembly.py": "4f69d67b646393e0a25e39f611686d3429d54190a238a30d062ef77493ee33fd",
+    "tools/print_first_components.py": "878227ee9bc0c6cf6bee3446418f17223f9b8322b291d2ea60f0435db89bc950",
+    "tools/xiao_retention_plan.py": "9d3d1020c01b84ba8e8d2e0df7f162c6fa31ada01e24180848613996bdfa8ec4",
+    "tools/export_urdf.py": "8a226b0c48f3bb907573aff0749f1d13f57b66303c2762ca11e39166d3457be8",
+    "hardware/src/make_ld220_adapter.py": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7",
+    "hardware/src/make_print_first_leg.py": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c",
+    "docs/audits/20260905-round2/xiao-retention-plan.json": "21980af4bd10f0314784f81b759bdd4f0767563f283772a88034a0d4d8ad34ed"
+  },
+  "source_files": [
+    {
+      "path": "hardware/src/make_print_first_body.py",
+      "exists": true,
+      "sha256": "87e283b6eb7efbce3ca6b82c644ef6649ff95f6eeee72661fac116f71c467408"
+    },
+    {
+      "path": "hardware/src/config.py",
+      "exists": true,
+      "sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95"
+    },
+    {
+      "path": "tools/print_first_assembly.py",
+      "exists": true,
+      "sha256": "4f69d67b646393e0a25e39f611686d3429d54190a238a30d062ef77493ee33fd"
+    },
+    {
+      "path": "tools/print_first_components.py",
+      "exists": true,
+      "sha256": "878227ee9bc0c6cf6bee3446418f17223f9b8322b291d2ea60f0435db89bc950"
+    },
+    {
+      "path": "tools/xiao_retention_plan.py",
+      "exists": true,
+      "sha256": "9d3d1020c01b84ba8e8d2e0df7f162c6fa31ada01e24180848613996bdfa8ec4"
+    },
+    {
+      "path": "tools/export_urdf.py",
+      "exists": true,
+      "sha256": "8a226b0c48f3bb907573aff0749f1d13f57b66303c2762ca11e39166d3457be8"
+    },
+    {
+      "path": "hardware/src/make_ld220_adapter.py",
+      "exists": true,
+      "sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7"
+    },
+    {
+      "path": "hardware/src/make_print_first_leg.py",
+      "exists": true,
+      "sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "docs/audits/20260905-round2/xiao-retention-plan.json",
+      "exists": true,
+      "sha256": "21980af4bd10f0314784f81b759bdd4f0767563f283772a88034a0d4d8ad34ed"
+    }
+  ]
+}

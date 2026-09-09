@@ -1,0 +1,8 @@
+forward_distance_during_walk_phase_m = 0.1651
+net_xy_distance_start_to_end_m = 0.2126
+max_abs_roll_deg = 3.29  max_abs_pitch_deg = 1.66
+fell = False  fell_time_s = None
+ik_fallback_count = 0
+arm_leg_yaw_gate fire_fraction_overall: r=0.079 l=0.079
+success (>=0.3m, not fell) = False
+metrics saved -> docs/audits/20260905/simulation/baseline.json

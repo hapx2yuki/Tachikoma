@@ -1,0 +1,878 @@
+{
+  "status": "GEOMETRY_CANDIDATE_PHYSICAL_FIT_UNVERIFIED",
+  "dimensions_mm": {
+    "case": [
+      39.78,
+      20.04,
+      40.0
+    ],
+    "axis_length_with_horns": 51.4,
+    "main_projection_candidate": 6.4,
+    "shaft_from_case_end_candidate": 10.0,
+    "pitch_axis_face": 17.5,
+    "yaw_axis_face": 23.1,
+    "yaw_face_z_lift": 6.0
+  },
+  "tibia_cap_escape": {
+    "x_mm": [
+      -9.5,
+      -4.3
+    ],
+    "y_mm": [
+      14.7,
+      15.6
+    ],
+    "z_mm": [
+      -24.75,
+      -17.25
+    ],
+    "clearance_status": "GEOMETRIC_CANDIDATE_SWEEP_PLUS_0.2MM",
+    "physical_strength_status": "UNVERIFIED"
+  },
+  "parts": [
+    {
+      "path": "outputs/print-first-20260905/legs/pf_coxa_bracket.stl",
+      "exists": true,
+      "sha256": "a474dfab4c3f29ec4e6b171dac257862a94a3b377e92a42cb0fd3a25db97f630",
+      "bbox_mm": [
+        65.0,
+        50.400001525878906,
+        38.81999969482422
+      ],
+      "volume_mm3": 35894.94075455894,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "components": 1,
+      "zero_volume_artifacts_removed": 0,
+      "solid_pla_g_upper_bound": 44.50972653565309,
+      "name": "pf_coxa_bracket",
+      "role": "link_structure",
+      "link_kind": "coxa",
+      "link_kinds": [
+        "coxa"
+      ],
+      "legs": [
+        "FL",
+        "RR"
+      ],
+      "replaces": [
+        "coxa_bracket"
+      ],
+      "color": "#286bb1",
+      "adapter_integrated": true,
+      "adapter_orientation": "yaw",
+      "material_rule": {
+        "config_key": "PRINT_FIRST_MATERIALS['pf_coxa_bracket']",
+        "prefix": "pf_coxa_bracket",
+        "material": "PLA",
+        "wall_mm": 2.4,
+        "infill_fraction": 0.5,
+        "density_g_cm3": 1.24,
+        "strength_rule": {
+          "material": "PLA",
+          "density_g_cm3": 1.24,
+          "infill_fraction": 0.5,
+          "allowable_bending_mpa": 55.0,
+          "required_safety_factor": 2.0,
+          "base_load_kgf": 1.9,
+          "load_kgf": 3.8,
+          "dynamic_factor": 2.0,
+          "load_includes_dynamic_factor": true,
+          "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+          "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+          "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+          "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+          "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+        },
+        "status": "CONFIG_EXPLICIT_UNVERIFIED_PRINTED_STRENGTH"
+      },
+      "yaw_riser_connection": {
+        "status": "GEOMETRIC_CANDIDATE_UNVERIFIED_PHYSICAL_STRENGTH",
+        "ring_bbox_mm": [
+          [
+            -17.0,
+            -17.0,
+            16.399999618530273
+          ],
+          [
+            17.0,
+            17.0,
+            19.600000381469727
+          ]
+        ],
+        "post_cut_ring_volume_mm3": 1125.2430440803378,
+        "post_cut_ring_components": 1,
+        "base_overlap_volume_mm3": 62.646717320174005,
+        "adapter_overlap_volume_mm3": 175.81922563755313,
+        "base_overlap_z_mm": 0.5,
+        "adapter_overlap_z_mm": 0.5,
+        "post_cut_section_area_min_mm2": 351.63844368143475,
+        "post_cut_section_area_max_mm2": 351.6384436814353,
+        "post_cut_section_samples": 9,
+        "serialized_positive_components_required": 1,
+        "serialized_positive_components": 1,
+        "connection_status": "PASS"
+      },
+      "source": "hardware/src/make_print_first_leg.py",
+      "source_sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_femur_link.stl",
+      "exists": true,
+      "sha256": "3f729432232121f9facea5dd4c86baee9e5e4cc48aa36c4fd12f6b48c80d9013",
+      "bbox_mm": [
+        106.0,
+        53.900001525878906,
+        36.0
+      ],
+      "volume_mm3": 33923.98096311558,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "components": 1,
+      "zero_volume_artifacts_removed": 0,
+      "solid_pla_g_upper_bound": 42.06573639426332,
+      "name": "pf_femur_link",
+      "role": "link_structure",
+      "link_kind": "femur",
+      "link_kinds": [
+        "femur"
+      ],
+      "legs": [
+        "FL",
+        "RR"
+      ],
+      "replaces": [
+        "femur_link"
+      ],
+      "color": "#286bb1",
+      "adapter_integrated": true,
+      "adapter_orientation": "pitch",
+      "material_rule": {
+        "config_key": "PRINT_FIRST_MATERIALS['pf_femur_link']",
+        "prefix": "pf_femur_link",
+        "material": "PLA",
+        "wall_mm": 2.4,
+        "infill_fraction": 0.5,
+        "density_g_cm3": 1.24,
+        "strength_rule": {
+          "material": "PLA",
+          "density_g_cm3": 1.24,
+          "infill_fraction": 0.5,
+          "allowable_bending_mpa": 55.0,
+          "required_safety_factor": 2.0,
+          "base_load_kgf": 1.9,
+          "load_kgf": 3.8,
+          "dynamic_factor": 2.0,
+          "load_includes_dynamic_factor": true,
+          "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+          "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+          "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+          "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+          "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+        },
+        "status": "CONFIG_EXPLICIT_UNVERIFIED_PRINTED_STRENGTH"
+      },
+      "source": "hardware/src/make_print_first_leg.py",
+      "source_sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_tibia_link.stl",
+      "exists": true,
+      "sha256": "8cde6a079275f5326a9fff1f464b9e6a07fa08e0b969013953ab038c12a3e526",
+      "bbox_mm": [
+        36.0,
+        34.89999961853027,
+        153.0
+      ],
+      "volume_mm3": 35404.04942148759,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "components": 1,
+      "zero_volume_artifacts_removed": 0,
+      "solid_pla_g_upper_bound": 43.90102128264461,
+      "name": "pf_tibia_link",
+      "role": "link_structure",
+      "link_kind": "tibia",
+      "link_kinds": [
+        "tibia"
+      ],
+      "legs": [
+        "FL",
+        "RR"
+      ],
+      "replaces": [
+        "tibia_link"
+      ],
+      "color": "#286bb1",
+      "adapter_integrated": true,
+      "adapter_orientation": "knee",
+      "material_rule": {
+        "config_key": "PRINT_FIRST_MATERIALS['pf_tibia_link']",
+        "prefix": "pf_tibia_link",
+        "material": "PLA",
+        "wall_mm": 2.4,
+        "infill_fraction": 0.5,
+        "density_g_cm3": 1.24,
+        "strength_rule": {
+          "material": "PLA",
+          "density_g_cm3": 1.24,
+          "infill_fraction": 0.5,
+          "allowable_bending_mpa": 55.0,
+          "required_safety_factor": 2.0,
+          "base_load_kgf": 1.9,
+          "load_kgf": 3.8,
+          "dynamic_factor": 2.0,
+          "load_includes_dynamic_factor": true,
+          "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+          "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+          "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+          "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+          "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+        },
+        "status": "CONFIG_EXPLICIT_UNVERIFIED_PRINTED_STRENGTH"
+      },
+      "tibia_cap_escape_validation": {
+        "status": "PASS",
+        "angle_min_deg": -44.0,
+        "angle_max_deg": 44.0,
+        "angle_step_deg": 0.5,
+        "sample_count": 177,
+        "max_intersection_mm3": 0.0,
+        "negative_volume_samples": [],
+        "negative_volume_tolerance_mm3": 1e-06,
+        "hit_count_over_0_001mm3": 0,
+        "escape_bounds_mm": {
+          "x": [
+            -9.5,
+            -4.3
+          ],
+          "y": [
+            14.7,
+            15.6
+          ],
+          "z": [
+            -24.75,
+            -17.25
+          ]
+        },
+        "serialized_components_required": 1,
+        "final_tibia_components": 1,
+        "physical_strength_status": "UNVERIFIED"
+      },
+      "source": "hardware/src/make_print_first_leg.py",
+      "source_sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_ld220_coxa_cap.stl",
+      "exists": true,
+      "sha256": "f846205a3feab20b969869090029091fb902ff3c89bbc1b7956c99c8cc599fbe",
+      "bbox_mm": [
+        19.5,
+        4.0,
+        27.040000915527344
+      ],
+      "volume_mm3": 1550.7929655120322,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "components": 1,
+      "zero_volume_artifacts_removed": 4,
+      "solid_pla_g_upper_bound": 1.9229832772349198,
+      "name": "pf_ld220_coxa_cap",
+      "role": "removable_case_cap",
+      "link_kind": "coxa",
+      "link_kinds": [
+        "coxa"
+      ],
+      "legs": [
+        "FL",
+        "RR"
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#607d8b",
+      "fasteners_per_servo": 2,
+      "fastener": "既購入M3x10皿タッピング候補",
+      "intentional_overlap_mm3": 0.0,
+      "material_rule": {
+        "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_coxa_cap']",
+        "prefix": "pf_ld220_coxa_cap",
+        "material": "PLA",
+        "wall_mm": 2.4,
+        "infill_fraction": 0.5,
+        "density_g_cm3": 1.24,
+        "strength_rule": null,
+        "status": "CONFIG_EXPLICIT_UNVERIFIED_PRINTED_STRENGTH"
+      },
+      "source": "hardware/src/make_print_first_leg.py",
+      "source_sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_ld220_femur_cap.stl",
+      "exists": true,
+      "sha256": "129177deabd8873e7709dd1d6da81f2af480f0f0a47480eee4d693571d147a54",
+      "bbox_mm": [
+        19.5,
+        4.0,
+        27.040000915527344
+      ],
+      "volume_mm3": 1351.3354838261603,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "components": 1,
+      "zero_volume_artifacts_removed": 0,
+      "solid_pla_g_upper_bound": 1.6756559999444387,
+      "name": "pf_ld220_femur_cap",
+      "role": "removable_case_cap",
+      "link_kind": "femur",
+      "link_kinds": [
+        "femur"
+      ],
+      "legs": [
+        "FL",
+        "RR"
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#607d8b",
+      "fasteners_per_servo": 2,
+      "fastener": "既購入M3x10皿タッピング候補",
+      "intentional_overlap_mm3": 0.0,
+      "material_rule": {
+        "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_femur_cap']",
+        "prefix": "pf_ld220_femur_cap",
+        "material": "PLA",
+        "wall_mm": 2.4,
+        "infill_fraction": 0.5,
+        "density_g_cm3": 1.24,
+        "strength_rule": null,
+        "status": "CONFIG_EXPLICIT_UNVERIFIED_PRINTED_STRENGTH"
+      },
+      "source": "hardware/src/make_print_first_leg.py",
+      "source_sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_coxa_bracket_m.stl",
+      "exists": true,
+      "sha256": "66959b69c4224c80b1c5d32c884b848c234f4ef63c9389edadeeab96e74ad664",
+      "bbox_mm": [
+        65.0,
+        50.400001525878906,
+        38.81999969482422
+      ],
+      "volume_mm3": 35894.94133994829,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "components": 1,
+      "zero_volume_artifacts_removed": 0,
+      "solid_pla_g_upper_bound": 44.50972726153587,
+      "name": "pf_coxa_bracket_m",
+      "role": "link_structure",
+      "link_kind": "coxa",
+      "link_kinds": [
+        "coxa"
+      ],
+      "legs": [
+        "FR",
+        "RL"
+      ],
+      "replaces": [
+        "coxa_bracket_m"
+      ],
+      "color": "#286bb1",
+      "adapter_integrated": true,
+      "adapter_orientation": "yaw",
+      "material_rule": {
+        "config_key": "PRINT_FIRST_MATERIALS['pf_coxa_bracket']",
+        "prefix": "pf_coxa_bracket",
+        "material": "PLA",
+        "wall_mm": 2.4,
+        "infill_fraction": 0.5,
+        "density_g_cm3": 1.24,
+        "strength_rule": {
+          "material": "PLA",
+          "density_g_cm3": 1.24,
+          "infill_fraction": 0.5,
+          "allowable_bending_mpa": 55.0,
+          "required_safety_factor": 2.0,
+          "base_load_kgf": 1.9,
+          "load_kgf": 3.8,
+          "dynamic_factor": 2.0,
+          "load_includes_dynamic_factor": true,
+          "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+          "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+          "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+          "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+          "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+        },
+        "status": "CONFIG_EXPLICIT_UNVERIFIED_PRINTED_STRENGTH"
+      },
+      "yaw_riser_connection": {
+        "status": "GEOMETRIC_CANDIDATE_UNVERIFIED_PHYSICAL_STRENGTH",
+        "ring_bbox_mm": [
+          [
+            -17.0,
+            -17.0,
+            16.399999618530273
+          ],
+          [
+            17.0,
+            17.0,
+            19.600000381469727
+          ]
+        ],
+        "post_cut_ring_volume_mm3": 1125.2430440803378,
+        "post_cut_ring_components": 1,
+        "base_overlap_volume_mm3": 62.64671732017403,
+        "adapter_overlap_volume_mm3": 175.81922563755302,
+        "base_overlap_z_mm": 0.5,
+        "adapter_overlap_z_mm": 0.5,
+        "post_cut_section_area_min_mm2": 351.63844368143486,
+        "post_cut_section_area_max_mm2": 351.6384436814352,
+        "post_cut_section_samples": 9,
+        "serialized_positive_components_required": 1,
+        "serialized_positive_components": 1,
+        "connection_status": "PASS"
+      },
+      "source": "hardware/src/make_print_first_leg.py",
+      "source_sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_femur_link_m.stl",
+      "exists": true,
+      "sha256": "805d0ad692ce46baa6cff99958423502466c4cca9caf4aa80fe84ca39a82e88b",
+      "bbox_mm": [
+        106.0,
+        53.900001525878906,
+        36.0
+      ],
+      "volume_mm3": 33923.98089743,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "components": 1,
+      "zero_volume_artifacts_removed": 0,
+      "solid_pla_g_upper_bound": 42.06573631281321,
+      "name": "pf_femur_link_m",
+      "role": "link_structure",
+      "link_kind": "femur",
+      "link_kinds": [
+        "femur"
+      ],
+      "legs": [
+        "FR",
+        "RL"
+      ],
+      "replaces": [
+        "femur_link_m"
+      ],
+      "color": "#286bb1",
+      "adapter_integrated": true,
+      "adapter_orientation": "pitch",
+      "material_rule": {
+        "config_key": "PRINT_FIRST_MATERIALS['pf_femur_link']",
+        "prefix": "pf_femur_link",
+        "material": "PLA",
+        "wall_mm": 2.4,
+        "infill_fraction": 0.5,
+        "density_g_cm3": 1.24,
+        "strength_rule": {
+          "material": "PLA",
+          "density_g_cm3": 1.24,
+          "infill_fraction": 0.5,
+          "allowable_bending_mpa": 55.0,
+          "required_safety_factor": 2.0,
+          "base_load_kgf": 1.9,
+          "load_kgf": 3.8,
+          "dynamic_factor": 2.0,
+          "load_includes_dynamic_factor": true,
+          "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+          "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+          "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+          "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+          "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+        },
+        "status": "CONFIG_EXPLICIT_UNVERIFIED_PRINTED_STRENGTH"
+      },
+      "source": "hardware/src/make_print_first_leg.py",
+      "source_sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_tibia_link_m.stl",
+      "exists": true,
+      "sha256": "8e7d4664c39f92f22c93064e0a7e0231270c7dd4a2ea091b21d733b637661159",
+      "bbox_mm": [
+        36.0,
+        34.89999961853027,
+        153.0
+      ],
+      "volume_mm3": 35404.0504833547,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "components": 1,
+      "zero_volume_artifacts_removed": 0,
+      "solid_pla_g_upper_bound": 43.90102259935983,
+      "name": "pf_tibia_link_m",
+      "role": "link_structure",
+      "link_kind": "tibia",
+      "link_kinds": [
+        "tibia"
+      ],
+      "legs": [
+        "FR",
+        "RL"
+      ],
+      "replaces": [
+        "tibia_link_m"
+      ],
+      "color": "#286bb1",
+      "adapter_integrated": true,
+      "adapter_orientation": "knee",
+      "material_rule": {
+        "config_key": "PRINT_FIRST_MATERIALS['pf_tibia_link']",
+        "prefix": "pf_tibia_link",
+        "material": "PLA",
+        "wall_mm": 2.4,
+        "infill_fraction": 0.5,
+        "density_g_cm3": 1.24,
+        "strength_rule": {
+          "material": "PLA",
+          "density_g_cm3": 1.24,
+          "infill_fraction": 0.5,
+          "allowable_bending_mpa": 55.0,
+          "required_safety_factor": 2.0,
+          "base_load_kgf": 1.9,
+          "load_kgf": 3.8,
+          "dynamic_factor": 2.0,
+          "load_includes_dynamic_factor": true,
+          "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+          "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+          "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+          "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+          "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+        },
+        "status": "CONFIG_EXPLICIT_UNVERIFIED_PRINTED_STRENGTH"
+      },
+      "tibia_cap_escape_validation": {
+        "status": "PASS",
+        "angle_min_deg": -44.0,
+        "angle_max_deg": 44.0,
+        "angle_step_deg": 0.5,
+        "sample_count": 177,
+        "max_intersection_mm3": 0.0,
+        "negative_volume_samples": [],
+        "negative_volume_tolerance_mm3": 1e-06,
+        "hit_count_over_0_001mm3": 0,
+        "escape_bounds_mm": {
+          "x": [
+            -9.5,
+            -4.3
+          ],
+          "y": [
+            14.7,
+            15.6
+          ],
+          "z": [
+            -24.75,
+            -17.25
+          ]
+        },
+        "serialized_components_required": 1,
+        "final_tibia_components": 1,
+        "physical_strength_status": "UNVERIFIED"
+      },
+      "source": "hardware/src/make_print_first_leg.py",
+      "source_sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_ld220_coxa_cap_m.stl",
+      "exists": true,
+      "sha256": "a0ed92195ddf5db13d7ea6311a3073a67df0370f7343e88fe03e464b6d2cf7b1",
+      "bbox_mm": [
+        19.5,
+        4.0,
+        27.040000915527344
+      ],
+      "volume_mm3": 1550.7986333436538,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "components": 1,
+      "zero_volume_artifacts_removed": 4,
+      "solid_pla_g_upper_bound": 1.9229903053461308,
+      "name": "pf_ld220_coxa_cap_m",
+      "role": "removable_case_cap",
+      "link_kind": "coxa",
+      "link_kinds": [
+        "coxa"
+      ],
+      "legs": [
+        "FR",
+        "RL"
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#607d8b",
+      "fasteners_per_servo": 2,
+      "fastener": "既購入M3x10皿タッピング候補",
+      "intentional_overlap_mm3": 0.0,
+      "material_rule": {
+        "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_coxa_cap']",
+        "prefix": "pf_ld220_coxa_cap",
+        "material": "PLA",
+        "wall_mm": 2.4,
+        "infill_fraction": 0.5,
+        "density_g_cm3": 1.24,
+        "strength_rule": null,
+        "status": "CONFIG_EXPLICIT_UNVERIFIED_PRINTED_STRENGTH"
+      },
+      "source": "hardware/src/make_print_first_leg.py",
+      "source_sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "outputs/print-first-20260905/legs/pf_ld220_femur_cap_m.stl",
+      "exists": true,
+      "sha256": "b91ecfbae3be91c4d8f37ca9dd61d0f7074ec051e415d37753924fbf5b0b6d61",
+      "bbox_mm": [
+        19.5,
+        4.0,
+        27.040000915527344
+      ],
+      "volume_mm3": 1351.3355139383693,
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_components": 1,
+      "components": 1,
+      "zero_volume_artifacts_removed": 0,
+      "solid_pla_g_upper_bound": 1.6756560372835778,
+      "name": "pf_ld220_femur_cap_m",
+      "role": "removable_case_cap",
+      "link_kind": "femur",
+      "link_kinds": [
+        "femur"
+      ],
+      "legs": [
+        "FR",
+        "RL"
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "replaces": [],
+      "color": "#607d8b",
+      "fasteners_per_servo": 2,
+      "fastener": "既購入M3x10皿タッピング候補",
+      "intentional_overlap_mm3": 0.0,
+      "material_rule": {
+        "config_key": "PRINT_FIRST_MATERIALS['pf_ld220_femur_cap']",
+        "prefix": "pf_ld220_femur_cap",
+        "material": "PLA",
+        "wall_mm": 2.4,
+        "infill_fraction": 0.5,
+        "density_g_cm3": 1.24,
+        "strength_rule": null,
+        "status": "CONFIG_EXPLICIT_UNVERIFIED_PRINTED_STRENGTH"
+      },
+      "source": "hardware/src/make_print_first_leg.py",
+      "source_sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    }
+  ],
+  "material_policy": {
+    "structural_parts": [
+      "pf_coxa_bracket",
+      "pf_coxa_bracket_m",
+      "pf_femur_link",
+      "pf_femur_link_m",
+      "pf_tibia_link",
+      "pf_tibia_link_m"
+    ],
+    "config_source": "hardware/src/config.py:PRINT_FIRST_MATERIALS",
+    "strength_rule": {
+      "material": "PLA",
+      "density_g_cm3": 1.24,
+      "infill_fraction": 0.5,
+      "allowable_bending_mpa": 55.0,
+      "required_safety_factor": 2.0,
+      "base_load_kgf": 1.9,
+      "load_kgf": 3.8,
+      "dynamic_factor": 2.0,
+      "load_includes_dynamic_factor": true,
+      "load_case": "check_leg_link_strength.py nominal 1.9kgf x dynamic_factor 2.0 = 3.8kgf envelope",
+      "load_basis": "load_kgf already includes base_load_kgf * dynamic_factor; do not apply dynamic_factor again",
+      "allowable_basis": "literature candidate only; printed material, layer direction, and specimen strength are unmeasured",
+      "physical_acceptance": "UNVERIFIED_NO_PRINTED_STRENGTH_GUARANTEE",
+      "status": "UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+    },
+    "density_basis": "hardware/src/config.py:MATERIAL_DENSITY_G_CM3['PLA']; export_urdf.RHO derives from it",
+    "status": "EXPLICIT_RULE_UNVERIFIED_PRINTED_MATERIAL_AND_LAYER_STRENGTH"
+  },
+  "legs": {
+    "FL": {
+      "suffix": "",
+      "source": "pf_*"
+    },
+    "RR": {
+      "suffix": "",
+      "source": "pf_*"
+    },
+    "FR": {
+      "suffix": "_m",
+      "source": "pf_*_m"
+    },
+    "RL": {
+      "suffix": "_m",
+      "source": "pf_*_m"
+    }
+  },
+  "mass_policy": "LDサーボアセンブリ公称66gを12台へ1回だけ計上。旧STD60gケースは置換し、付属ホーン/配線が66gへ含まれるかは未確認。adapterはリンクSTLへ一体化し、蓋/リンクの最終STL体積から印刷上限を別計上する。",
+  "new_hardware": false,
+  "unverified": [
+    "全14台の実ケース角/軸端位置/ケーブル出口の個体差",
+    "付属金属円盤ホーンの径・PCD・穴径・ねじ径/長さ/本数",
+    "樹脂adapterと金属ホーンの実締結トルク/ねじ引抜き",
+    "主面6.4mm・軸端10mmは公式図にない候補値",
+    "従側円盤の外面は主面から51.4mm（pitchの候補位置Y=-33.9）だが、実径/厚み/ケース後壁との適合は未測定",
+    "PLA層間強度・ケージ壁の動荷重・6V連続トルク",
+    "1脚の適合試作・全脚の組立/動的干渉"
+  ],
+  "assembly_order": [
+    "付属の主/従金属ホーンを外し、中心ねじを保管",
+    "ケースをケーブル溝へ逃がし、LDケージへ開口側から差し込む",
+    "蓋を既購入M3x10皿タッピング2本で固定（実皿頭は要確認）",
+    "金属ホーンを元の中心ねじで軸へ固定",
+    "金属円盤のPCD/ねじを実測し、リンク一体adapterの長穴位置を1個だけ試す",
+    "軸を手で全域回し、締結/ケーブル/ケース抜けを確認してから通電"
+  ],
+  "source_sha256": {
+    "hardware/src/make_print_first_leg.py": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c",
+    "hardware/src/config.py": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95",
+    "hardware/src/make_leg.py": "19513866a9a1beb5c5cfbf4f8d5c9dbe6729263b16b1b3efb1a7a23b0fda789e",
+    "hardware/src/make_ld220_adapter.py": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7"
+  },
+  "source_files": [
+    {
+      "path": "hardware/src/make_print_first_leg.py",
+      "exists": true,
+      "sha256": "9977608c616d5257dfe4121ba0161371a06acfee9fc689451d1acd01900f897c"
+    },
+    {
+      "path": "hardware/src/config.py",
+      "exists": true,
+      "sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95"
+    },
+    {
+      "path": "hardware/src/make_leg.py",
+      "exists": true,
+      "sha256": "19513866a9a1beb5c5cfbf4f8d5c9dbe6729263b16b1b3efb1a7a23b0fda789e"
+    },
+    {
+      "path": "hardware/src/make_ld220_adapter.py",
+      "exists": true,
+      "sha256": "b8b4af21535b8026d249411975a7a5d7abd64097666fc23845d9a527c5733bd7"
+    }
+  ]
+}

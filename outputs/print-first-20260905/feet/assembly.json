@@ -1,0 +1,667 @@
+{
+  "status": "BENCH_CANDIDATE: CAD検査と実物試験を区別する",
+  "dimensions": {
+    "clearance": 0.3,
+    "seat_gap": 0.1,
+    "sole_radius": 19.0,
+    "sole_depth": 14.0,
+    "ear_inner_y": 15.2,
+    "ear_thickness": 3.0,
+    "ear_width": 22.0,
+    "bolt_z": 35.0,
+    "ear_top_z": 46.0,
+    "bore_d": 8.4,
+    "counterbore_d": 12.4,
+    "counterbore_floor_y": 16.2,
+    "spacer_inner_y": 8.05,
+    "spacer_barrel_d": 8.0,
+    "spacer_flange_d": 12.0,
+    "spacer_flange_t": 1.2,
+    "screw_clearance_d": 3.4,
+    "sweep_height": 65.0,
+    "frame": "leg_foot_bored local, mm, +Z=tibia",
+    "screw_grip_mm": 34.8,
+    "hardware_per_leg": {
+      "M3x40_pan_machine_screw": 2,
+      "M3_nylon_lock_nut": 2
+    },
+    "removed_and_saved": [
+      "Leg_Toe_Black_x12: 3/leg",
+      "foot_pad: 1/leg"
+    ],
+    "shin_shell_policy": "既存殻を保持。上下ボルト座面周囲を局所的に逃がした別名STL/切除工具を参照し、全長・外形を保持。",
+    "leg_count": 4,
+    "shoe_count": 4,
+    "spacer_count": 16,
+    "upper_bolt_z": 75.0
+  },
+  "outputs": {
+    "tpu_shoe": {
+      "path": "outputs/print-first-20260905/feet/tpu_shoe_foot_frame.stl",
+      "sha256": "d4d23df508f2ec98fd823b214b9acb392d6c4f956bd9dc3bbd96976084137bbc",
+      "exists": true,
+      "volume_mm3": 24236.53756526715,
+      "bounds_mm": [
+        [
+          -26.720428466796875,
+          -30.0,
+          -14.0
+        ],
+        [
+          26.720428466796875,
+          19.0,
+          46.0
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    },
+    "pla_spacer_positive_y": {
+      "path": "outputs/print-first-20260905/feet/pla_spacer_positive_y_foot_frame.stl",
+      "sha256": "0583fa0905eb4d3b2e411cb5923b17a0151996f23562be9b29846f68f034f0ac",
+      "exists": true,
+      "volume_mm3": 459.7504965997189,
+      "bounds_mm": [
+        [
+          -6.0,
+          8.050000190734863,
+          29.0
+        ],
+        [
+          6.0,
+          17.399999618530273,
+          41.0
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    },
+    "pla_spacer_negative_y": {
+      "path": "outputs/print-first-20260905/feet/pla_spacer_negative_y_foot_frame.stl",
+      "sha256": "e08791bff267a072581ea2dd7314782a82409a65a3cc672d12964e6a1f7b68bf",
+      "exists": true,
+      "volume_mm3": 459.7504965997189,
+      "bounds_mm": [
+        [
+          -6.0,
+          -17.399999618530273,
+          29.0
+        ],
+        [
+          6.0,
+          -8.050000190734863,
+          41.0
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    },
+    "pla_spacer_upper_positive_y": {
+      "path": "outputs/print-first-20260905/feet/pla_spacer_upper_positive_y_foot_frame.stl",
+      "sha256": "37f0b6e83f49be5eba95eddcdc5c5baa6944e87c2d9f9930ebb9f97cedebcce1",
+      "exists": true,
+      "volume_mm3": 459.7505457007116,
+      "bounds_mm": [
+        [
+          -6.0,
+          8.050000190734863,
+          69.0
+        ],
+        [
+          6.0,
+          17.399999618530273,
+          81.0
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    },
+    "pla_spacer_upper_negative_y": {
+      "path": "outputs/print-first-20260905/feet/pla_spacer_upper_negative_y_foot_frame.stl",
+      "sha256": "94322de634b33db81ab2ce0bc85f4c88f1444d443a81cb2c82bef1e551afaf03",
+      "exists": true,
+      "volume_mm3": 459.7505457007116,
+      "bounds_mm": [
+        [
+          -6.0,
+          -17.399999618530273,
+          69.0
+        ],
+        [
+          6.0,
+          -8.050000190734863,
+          81.0
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    },
+    "shin_shell_retained": {
+      "path": "outputs/print-first-20260905/feet/shin_shell_retained_foot_frame.stl",
+      "sha256": "7e662fb53a2117158eec0f5948e96ca7e0a030a0f912a539a611970d330cd8b4",
+      "exists": true,
+      "volume_mm3": 69806.63383618464,
+      "bounds_mm": [
+        [
+          -14.536470413208008,
+          -25.49950408935547,
+          3.0
+        ],
+        [
+          28.444501876831055,
+          25.49839210510254,
+          110.465576171875
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    },
+    "shin_shell_retained_print": {
+      "path": "outputs/print-first-20260905/feet/shin_shell_retained_print.stl",
+      "sha256": "fa2237b8b20f02470b8bdd355ff300a7708cf6cf45a52639115c4d88b47cb151",
+      "exists": true,
+      "volume_mm3": 69806.63272094601,
+      "bounds_mm": [
+        [
+          -14.536470413208008,
+          -25.49839210510254,
+          8.534423828125
+        ],
+        [
+          28.444501876831055,
+          25.49950408935547,
+          116.0
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    },
+    "shin_shell_retained_m": {
+      "path": "outputs/print-first-20260905/feet/shin_shell_retained_m_foot_frame.stl",
+      "sha256": "2297ae9a4e669341dfee1442b805e7c2cb38a411351eabb4ddaa11e899003aef",
+      "exists": true,
+      "volume_mm3": 69806.32202410286,
+      "bounds_mm": [
+        [
+          -14.536470413208008,
+          -25.49839210510254,
+          3.0
+        ],
+        [
+          28.444501876831055,
+          25.49950408935547,
+          110.465576171875
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    },
+    "shin_shell_retained_m_print": {
+      "path": "outputs/print-first-20260905/feet/shin_shell_retained_m_print.stl",
+      "sha256": "c15cc32f52eff4f61bc9852ac69c1c151236d208b4acb2edba719e00ed1e9d68",
+      "exists": true,
+      "volume_mm3": 69806.32099870063,
+      "bounds_mm": [
+        [
+          -14.536470413208008,
+          -25.49950408935547,
+          8.534423828125
+        ],
+        [
+          28.444501876831055,
+          25.49839210510254,
+          116.0
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    },
+    "tpu_shoe_print": {
+      "path": "outputs/print-first-20260905/feet/tpu_shoe_print.stl",
+      "sha256": "a47d91a5d082a88bd710b0816ccb9d9e48b5dd3ea138d761a02246414a7b6b95",
+      "exists": true,
+      "volume_mm3": 24236.537592662546,
+      "bounds_mm": [
+        [
+          -26.720428466796875,
+          -30.0,
+          0.0
+        ],
+        [
+          26.720428466796875,
+          19.0,
+          60.0
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    },
+    "pla_spacer_print": {
+      "path": "outputs/print-first-20260905/feet/pla_spacer_print.stl",
+      "sha256": "c24de9e2659a8fcf7b5dc08dc9108afe03a4b36153e99aaac805e9c59bbfd767",
+      "exists": true,
+      "volume_mm3": 459.75058540316036,
+      "bounds_mm": [
+        [
+          -6.0,
+          -6.0,
+          -3.552713678800501e-15
+        ],
+        [
+          6.0,
+          6.0,
+          9.350000381469727
+        ]
+      ],
+      "watertight": true,
+      "solid_components": 1,
+      "role": "printable_or_assembly"
+    }
+  },
+  "print_to_foot_frame": {
+    "tpu_shoe": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        -14.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "pla_spacer_positive_y": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        6.123233995736766e-17,
+        -1.0,
+        17.4
+      ],
+      [
+        0.0,
+        1.0,
+        6.123233995736766e-17,
+        35.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "install_to_tibia_link": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      -135.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "sources": [
+    {
+      "path": "hardware/src/make_print_first_feet.py",
+      "sha256": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+      "exists": true
+    },
+    {
+      "path": "hardware/src/config.py",
+      "sha256": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95",
+      "exists": true
+    },
+    {
+      "path": "hardware/stl/leg_foot_bored.stl",
+      "sha256": "38d87915b8e96e1caf55139ea98dafab86f1550bb5bff0ee15d603d2e7176739",
+      "exists": true
+    },
+    {
+      "path": "hardware/stl/tibia_link.stl",
+      "sha256": "25efbbaf125428a074f483e3639960cb24cdd3a6b1e15fafb6d9cec7838627d1",
+      "exists": true
+    },
+    {
+      "path": "hardware/stl/shin_shell.stl",
+      "sha256": "192e365f1114b29457f804734b41a6a7d3dc7e8e0f1650ce3ec0e58665a30e6a",
+      "exists": true
+    },
+    {
+      "path": "hardware/stl/shin_shell_m.stl",
+      "sha256": "a2901e1a70d3e1de33419382868314a5500b84491f14a72fc25bf046698c94f8",
+      "exists": true
+    }
+  ],
+  "source_sha256": {
+    "hardware/src/make_print_first_feet.py": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+    "hardware/src/config.py": "76edae8c753bca26cef6bbfd392c867f57e3f1274215960dab9497b967248b95",
+    "hardware/stl/leg_foot_bored.stl": "38d87915b8e96e1caf55139ea98dafab86f1550bb5bff0ee15d603d2e7176739",
+    "hardware/stl/tibia_link.stl": "25efbbaf125428a074f483e3639960cb24cdd3a6b1e15fafb6d9cec7838627d1",
+    "hardware/stl/shin_shell.stl": "192e365f1114b29457f804734b41a6a7d3dc7e8e0f1650ce3ec0e58665a30e6a",
+    "hardware/stl/shin_shell_m.stl": "a2901e1a70d3e1de33419382868314a5500b84491f14a72fc25bf046698c94f8"
+  },
+  "parts": [
+    {
+      "name": "tpu_shoe",
+      "stl": "outputs/print-first-20260905/feet/tpu_shoe_foot_frame.stl",
+      "exists": true,
+      "sha256": "d4d23df508f2ec98fd823b214b9acb392d6c4f956bd9dc3bbd96976084137bbc",
+      "source": "hardware/src/make_print_first_feet.py",
+      "source_sha256": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": "#20252a",
+      "material": "TPU"
+    },
+    {
+      "name": "pla_spacer_positive_y",
+      "stl": "outputs/print-first-20260905/feet/pla_spacer_positive_y_foot_frame.stl",
+      "exists": true,
+      "sha256": "0583fa0905eb4d3b2e411cb5923b17a0151996f23562be9b29846f68f034f0ac",
+      "source": "hardware/src/make_print_first_feet.py",
+      "source_sha256": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": "#888888",
+      "material": "PLA"
+    },
+    {
+      "name": "pla_spacer_negative_y",
+      "stl": "outputs/print-first-20260905/feet/pla_spacer_negative_y_foot_frame.stl",
+      "exists": true,
+      "sha256": "e08791bff267a072581ea2dd7314782a82409a65a3cc672d12964e6a1f7b68bf",
+      "source": "hardware/src/make_print_first_feet.py",
+      "source_sha256": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": "#888888",
+      "material": "PLA"
+    },
+    {
+      "name": "pla_spacer_upper_positive_y",
+      "stl": "outputs/print-first-20260905/feet/pla_spacer_upper_positive_y_foot_frame.stl",
+      "exists": true,
+      "sha256": "37f0b6e83f49be5eba95eddcdc5c5baa6944e87c2d9f9930ebb9f97cedebcce1",
+      "source": "hardware/src/make_print_first_feet.py",
+      "source_sha256": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": "#888888",
+      "material": "PLA"
+    },
+    {
+      "name": "pla_spacer_upper_negative_y",
+      "stl": "outputs/print-first-20260905/feet/pla_spacer_upper_negative_y_foot_frame.stl",
+      "exists": true,
+      "sha256": "94322de634b33db81ab2ce0bc85f4c88f1444d443a81cb2c82bef1e551afaf03",
+      "source": "hardware/src/make_print_first_feet.py",
+      "source_sha256": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": "#888888",
+      "material": "PLA"
+    },
+    {
+      "name": "shin_shell_retained",
+      "stl": "outputs/print-first-20260905/feet/shin_shell_retained_foot_frame.stl",
+      "exists": true,
+      "sha256": "7e662fb53a2117158eec0f5948e96ca7e0a030a0f912a539a611970d330cd8b4",
+      "source": "hardware/src/make_print_first_feet.py",
+      "source_sha256": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": "#248aca",
+      "material": "PLA",
+      "legs": [
+        "FL",
+        "RR"
+      ]
+    },
+    {
+      "name": "shin_shell_retained_m",
+      "stl": "outputs/print-first-20260905/feet/shin_shell_retained_m_foot_frame.stl",
+      "exists": true,
+      "sha256": "2297ae9a4e669341dfee1442b805e7c2cb38a411351eabb4ddaa11e899003aef",
+      "source": "hardware/src/make_print_first_feet.py",
+      "source_sha256": "753e102f5051b03ff21463e6d3333b708222eae2c1804e3287c47cc9b60eea0a",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": "#248aca",
+      "material": "PLA",
+      "legs": [
+        "FR",
+        "RL"
+      ]
+    }
+  ],
+  "replace_prefixes": [
+    "foot_pad",
+    "Leg_Toe_Black_x12",
+    "shin_shell"
+  ],
+  "insertion_flex": {
+    "open_angle_deg": 30,
+    "bend_length_mm": 15,
+    "ear_center_abs_y_mm": 16.7,
+    "maximum_nominal_fibre_strain": 0.05235987755982988,
+    "case_relief_angular_step_deg": 0.5,
+    "case_relief_clearance_mm": 0.3,
+    "limitation": "一定曲率による経路計算。実TPU/積層で5.24%の曲げひずみを許容できるか試験する。"
+  }
+}

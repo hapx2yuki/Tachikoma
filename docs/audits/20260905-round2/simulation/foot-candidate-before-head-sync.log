@@ -1,0 +1,5 @@
+toe_shoe_forward_mu0.35 PASS roll 3.42 pitch 1.9 power {'mean': 1.251593550431427, 'max': 33.59157905718621, 'p95': 4.090251142669876} self initial mm 0
+toe_shoe_forward_mu0.6 PASS roll 3.77 pitch 2.06 power {'mean': 1.2474191862273183, 'max': 34.01099040853938, 'p95': 4.173078655614522} self initial mm 0
+toe_shoe_forward_mu1.0 PASS roll 4.16 pitch 2.36 power {'mean': 1.310373632028087, 'max': 35.2235243529906, 'p95': 4.417459594975098} self initial mm 0
+toe_shoe_right_mu0.6 PASS roll 3.86 pitch 1.95 power {'mean': 1.3415231915189736, 'max': 34.28199036769845, 'p95': 4.563490827820178} self initial mm 0
+SCENARIO RESULTS: {'PASS': 4}

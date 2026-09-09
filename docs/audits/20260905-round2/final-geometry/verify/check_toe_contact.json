@@ -1,0 +1,1326 @@
+{
+  "phase_samples": 360,
+  "interpretation": "負のtoe-padは同一脚のトゥ先行接地。平面剛体近似、実機UNVERIFIED。",
+  "results": [
+    {
+      "height_mm": 110,
+      "case": "holding",
+      "min_toe_world_z_mm": -13.718745344675938,
+      "min_pad_world_z_mm": 8.623142499026216,
+      "min_toe_minus_pad_z_mm": -22.341887843702153,
+      "samples": 4,
+      "stance_samples": 4,
+      "min_rigid_foot_minus_pad_z_mm": -4.073494140927984,
+      "pad_local_axis_extension_lower_bound_mm": 24.10998975636528,
+      "stance_toe_lower_count": 4,
+      "stance_rigid_foot_lower_count": 4,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -29.567342896266783,
+        "knee_deg": 7.488146506752589,
+        "stance": true,
+        "toe_z_mm": -13.718745344675938,
+        "pad_z_mm": 8.623142499026216,
+        "rigid_foot_z_mm": 4.549648358098231
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -29.567342896266783,
+        "knee_deg": 7.488146506752589,
+        "stance": true,
+        "toe_z_mm": -13.718745344675938,
+        "pad_z_mm": 8.623142499026216,
+        "rigid_foot_z_mm": 4.549648358098231
+      }
+    },
+    {
+      "height_mm": 110,
+      "case": "active_sway_zero_stride",
+      "min_toe_world_z_mm": -19.55359987695362,
+      "min_pad_world_z_mm": 7.024329332266358,
+      "min_toe_minus_pad_z_mm": -26.57792920921998,
+      "samples": 1440,
+      "stance_samples": 1080,
+      "min_rigid_foot_minus_pad_z_mm": -7.026529463138937,
+      "pad_local_axis_extension_lower_bound_mm": 32.84965218544338,
+      "stance_toe_lower_count": 1080,
+      "stance_rigid_foot_lower_count": 816,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -13.381174185642513,
+        "knee_deg": -22.61288371055789,
+        "stance": true,
+        "toe_z_mm": -19.55359987695362,
+        "pad_z_mm": 7.02432933226636,
+        "rigid_foot_z_mm": -0.0022001308725769775
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -13.381174185642513,
+        "knee_deg": -22.61288371055789,
+        "stance": true,
+        "toe_z_mm": -19.55359987695362,
+        "pad_z_mm": 7.02432933226636,
+        "rigid_foot_z_mm": -0.0022001308725769775
+      }
+    },
+    {
+      "height_mm": 110,
+      "case": "command_gain_0.167",
+      "min_toe_world_z_mm": -19.91926790609469,
+      "min_pad_world_z_mm": 6.89134354390421,
+      "min_toe_minus_pad_z_mm": -26.8106114499989,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.208821698144924,
+      "pad_local_axis_extension_lower_bound_mm": 33.54365293476084,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8965,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.11666666666666665,
+          -0.11666666666666665,
+          0.0
+        ],
+        "pitch_deg": -12.098035699476053,
+        "knee_deg": -24.841015232316987,
+        "stance": true,
+        "toe_z_mm": -19.91926790609469,
+        "pad_z_mm": 6.89134354390421,
+        "rigid_foot_z_mm": -0.3174781542407139
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.11666666666666665,
+          0.11666666666666665,
+          0.0
+        ],
+        "pitch_deg": -12.098035699476053,
+        "knee_deg": -24.841015232316987,
+        "stance": false,
+        "toe_z_mm": -19.91926790609469,
+        "pad_z_mm": 6.89134354390421,
+        "rigid_foot_z_mm": -0.3174781542407139
+      }
+    },
+    {
+      "height_mm": 110,
+      "case": "command_gain_0.333",
+      "min_toe_world_z_mm": -20.28815168349638,
+      "min_pad_world_z_mm": 6.749214505680559,
+      "min_toe_minus_pad_z_mm": -27.03736618917694,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.389496185533236,
+      "pad_local_axis_extension_lower_bound_mm": 34.267438914397246,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8966,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.2333333333333333,
+          -0.2333333333333333,
+          0.0
+        ],
+        "pitch_deg": -10.760965858923814,
+        "knee_deg": -27.145904991429187,
+        "stance": true,
+        "toe_z_mm": -20.28815168349638,
+        "pad_z_mm": 6.749214505680559,
+        "rigid_foot_z_mm": -0.6402816798526771
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.2333333333333333,
+          0.2333333333333333,
+          0.0
+        ],
+        "pitch_deg": -10.760965858923814,
+        "knee_deg": -27.145904991429187,
+        "stance": false,
+        "toe_z_mm": -20.28815168349638,
+        "pad_z_mm": 6.749214505680559,
+        "rigid_foot_z_mm": -0.6402816798526771
+      }
+    },
+    {
+      "height_mm": 110,
+      "case": "command_gain_0.667",
+      "min_toe_world_z_mm": -21.037856992985652,
+      "min_pad_world_z_mm": 6.447012686916398,
+      "min_toe_minus_pad_z_mm": -27.48486967990205,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.759025796035335,
+      "pad_local_axis_extension_lower_bound_mm": 35.838522956393895,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8997,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.4666666666666666,
+          -0.4666666666666666,
+          0.0
+        ],
+        "pitch_deg": -7.901055609785349,
+        "knee_deg": -32.02185917093801,
+        "stance": true,
+        "toe_z_mm": -21.037856992985652,
+        "pad_z_mm": 6.447012686916398,
+        "rigid_foot_z_mm": -1.3120131091189364
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.4666666666666666,
+          0.4666666666666666,
+          0.0
+        ],
+        "pitch_deg": -7.901055609785349,
+        "knee_deg": -32.02185917093801,
+        "stance": false,
+        "toe_z_mm": -21.037856992985652,
+        "pad_z_mm": 6.447012686916398,
+        "rigid_foot_z_mm": -1.3120131091189364
+      }
+    },
+    {
+      "height_mm": 110,
+      "case": "command_gain_1.000",
+      "min_toe_world_z_mm": -21.81250246444293,
+      "min_pad_world_z_mm": 6.11596900274535,
+      "min_toe_minus_pad_z_mm": -27.92847146718828,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -8.14248806553987,
+      "pad_local_axis_extension_lower_bound_mm": 37.6245211159353,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 9010,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.7,
+          -0.7,
+          0
+        ],
+        "pitch_deg": -4.738917500827,
+        "knee_deg": -37.333850430886095,
+        "stance": true,
+        "toe_z_mm": -21.81250246444293,
+        "pad_z_mm": 6.11596900274535,
+        "rigid_foot_z_mm": -2.02651906279452
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.7,
+          0.7,
+          0
+        ],
+        "pitch_deg": -4.738917500827,
+        "knee_deg": -37.333850430886095,
+        "stance": false,
+        "toe_z_mm": -21.81250246444293,
+        "pad_z_mm": 6.11596900274535,
+        "rigid_foot_z_mm": -2.02651906279452
+      }
+    },
+    {
+      "height_mm": 115,
+      "case": "holding",
+      "min_toe_world_z_mm": -13.334664929896412,
+      "min_pad_world_z_mm": 8.699216521228117,
+      "min_toe_minus_pad_z_mm": -22.03388145112453,
+      "samples": 4,
+      "stance_samples": 4,
+      "min_rigid_foot_minus_pad_z_mm": -3.875227622802761,
+      "pad_local_axis_extension_lower_bound_mm": 23.63681956929312,
+      "stance_toe_lower_count": 4,
+      "stance_rigid_foot_lower_count": 4,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -25.741822219465085,
+        "knee_deg": 4.519793222939119,
+        "stance": true,
+        "toe_z_mm": -13.334664929896412,
+        "pad_z_mm": 8.699216521228117,
+        "rigid_foot_z_mm": 4.823988898425355
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -25.741822219465085,
+        "knee_deg": 4.519793222939119,
+        "stance": true,
+        "toe_z_mm": -13.334664929896412,
+        "pad_z_mm": 8.699216521228117,
+        "rigid_foot_z_mm": 4.823988898425355
+      }
+    },
+    {
+      "height_mm": 115,
+      "case": "active_sway_zero_stride",
+      "min_toe_world_z_mm": -19.396503328887675,
+      "min_pad_world_z_mm": 7.079449339307734,
+      "min_toe_minus_pad_z_mm": -26.47595266819541,
+      "samples": 1440,
+      "stance_samples": 1080,
+      "min_rigid_foot_minus_pad_z_mm": -6.948192767284249,
+      "pad_local_axis_extension_lower_bound_mm": 32.55781571448947,
+      "stance_toe_lower_count": 1080,
+      "stance_rigid_foot_lower_count": 794,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -9.74017405759447,
+        "knee_deg": -25.850247844039487,
+        "stance": true,
+        "toe_z_mm": -19.396503328887675,
+        "pad_z_mm": 7.079449339307734,
+        "rigid_foot_z_mm": 0.13125657202348506
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -9.74017405759447,
+        "knee_deg": -25.850247844039487,
+        "stance": true,
+        "toe_z_mm": -19.396503328887675,
+        "pad_z_mm": 7.079449339307734,
+        "rigid_foot_z_mm": 0.13125657202348506
+      }
+    },
+    {
+      "height_mm": 115,
+      "case": "command_gain_0.167",
+      "min_toe_world_z_mm": -19.778389343943147,
+      "min_pad_world_z_mm": 6.944541337998624,
+      "min_toe_minus_pad_z_mm": -26.72293068194177,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.140010430033145,
+      "pad_local_axis_extension_lower_bound_mm": 33.274935461895076,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8754,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.11666666666666665,
+          -0.11666666666666665,
+          0.0
+        ],
+        "pitch_deg": -8.433865741832713,
+        "knee_deg": -28.139466866627597,
+        "stance": true,
+        "toe_z_mm": -19.778389343943147,
+        "pad_z_mm": 6.944541337998624,
+        "rigid_foot_z_mm": -0.19546909203452145
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.11666666666666665,
+          0.11666666666666665,
+          0.0
+        ],
+        "pitch_deg": -8.433865741832713,
+        "knee_deg": -28.139466866627597,
+        "stance": false,
+        "toe_z_mm": -19.778389343943147,
+        "pad_z_mm": 6.944541337998624,
+        "rigid_foot_z_mm": -0.19546909203452145
+      }
+    },
+    {
+      "height_mm": 115,
+      "case": "command_gain_0.333",
+      "min_toe_world_z_mm": -20.16497797760374,
+      "min_pad_world_z_mm": 6.797136101128306,
+      "min_toe_minus_pad_z_mm": -26.962114078732046,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.329086262634288,
+      "pad_local_axis_extension_lower_bound_mm": 34.022410819052396,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8749,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.2333333333333333,
+          -0.2333333333333333,
+          0.0
+        ],
+        "pitch_deg": -7.0662511639322165,
+        "knee_deg": -30.515775990907837,
+        "stance": true,
+        "toe_z_mm": -20.16497797760374,
+        "pad_z_mm": 6.797136101128306,
+        "rigid_foot_z_mm": -0.5319501615059821
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.2333333333333333,
+          0.2333333333333333,
+          0.0
+        ],
+        "pitch_deg": -7.0662511639322165,
+        "knee_deg": -30.515775990907837,
+        "stance": false,
+        "toe_z_mm": -20.16497797760374,
+        "pad_z_mm": 6.797136101128306,
+        "rigid_foot_z_mm": -0.5319501615059821
+      }
+    },
+    {
+      "height_mm": 115,
+      "case": "command_gain_0.667",
+      "min_toe_world_z_mm": -20.953122659621457,
+      "min_pad_world_z_mm": 6.482107507237185,
+      "min_toe_minus_pad_z_mm": -27.43523016685864,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.717096059204113,
+      "pad_local_axis_extension_lower_bound_mm": 35.65360648086754,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8736,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.4666666666666666,
+          -0.4666666666666666,
+          0.0
+        ],
+        "pitch_deg": -4.117090509094937,
+        "knee_deg": -35.57445261993426,
+        "stance": true,
+        "toe_z_mm": -20.953122659621457,
+        "pad_z_mm": 6.482107507237185,
+        "rigid_foot_z_mm": -1.2349885519669286
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.4666666666666666,
+          0.4666666666666666,
+          0.0
+        ],
+        "pitch_deg": -4.117090509094937,
+        "knee_deg": -35.57445261993426,
+        "stance": false,
+        "toe_z_mm": -20.953122659621457,
+        "pad_z_mm": 6.482107507237185,
+        "rigid_foot_z_mm": -1.2349885519669286
+      }
+    },
+    {
+      "height_mm": 115,
+      "case": "command_gain_1.000",
+      "min_toe_world_z_mm": -21.771702507431115,
+      "min_pad_world_z_mm": 6.133873112867068,
+      "min_toe_minus_pad_z_mm": -27.905575620298183,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -8.122290982940427,
+      "pad_local_axis_extension_lower_bound_mm": 37.52586025171068,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8764,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.7,
+          -0.7,
+          0
+        ],
+        "pitch_deg": -0.812254241797364,
+        "knee_deg": -41.1456821025174,
+        "stance": true,
+        "toe_z_mm": -21.771702507431115,
+        "pad_z_mm": 6.133873112867068,
+        "rigid_foot_z_mm": -1.9884178700733592
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.7,
+          0.7,
+          0
+        ],
+        "pitch_deg": -0.812254241797364,
+        "knee_deg": -41.1456821025174,
+        "stance": false,
+        "toe_z_mm": -21.771702507431115,
+        "pad_z_mm": 6.133873112867068,
+        "rigid_foot_z_mm": -1.9884178700733592
+      }
+    },
+    {
+      "height_mm": 120,
+      "case": "holding",
+      "min_toe_world_z_mm": -12.999343595221738,
+      "min_pad_world_z_mm": 8.76357958258114,
+      "min_toe_minus_pad_z_mm": -21.76292317780288,
+      "samples": 4,
+      "stance_samples": 4,
+      "min_rigid_foot_minus_pad_z_mm": -3.702675769568554,
+      "pad_local_axis_extension_lower_bound_mm": 23.231129906701533,
+      "stance_toe_lower_count": 4,
+      "stance_rigid_foot_lower_count": 4,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -21.911401464461296,
+        "knee_deg": 1.432326997433448,
+        "stance": true,
+        "toe_z_mm": -12.999343595221738,
+        "pad_z_mm": 8.76357958258114,
+        "rigid_foot_z_mm": 5.060903813012587
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -21.911401464461296,
+        "knee_deg": 1.432326997433448,
+        "stance": true,
+        "toe_z_mm": -12.999343595221738,
+        "pad_z_mm": 8.76357958258114,
+        "rigid_foot_z_mm": 5.060903813012587
+      }
+    },
+    {
+      "height_mm": 120,
+      "case": "active_sway_zero_stride",
+      "min_toe_world_z_mm": -19.286136143954025,
+      "min_pad_world_z_mm": 7.1179342470461116,
+      "min_toe_minus_pad_z_mm": -26.404070391000136,
+      "samples": 1440,
+      "stance_samples": 1080,
+      "min_rigid_foot_minus_pad_z_mm": -6.8930765147113995,
+      "pad_local_axis_extension_lower_bound_mm": 32.35529996393626,
+      "stance_toe_lower_count": 1080,
+      "stance_rigid_foot_lower_count": 780,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -5.9778046647191125,
+        "knee_deg": -29.329261856800045,
+        "stance": true,
+        "toe_z_mm": -19.286136143954025,
+        "pad_z_mm": 7.1179342470461116,
+        "rigid_foot_z_mm": 0.22485773233471207
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -5.9778046647191125,
+        "knee_deg": -29.329261856800045,
+        "stance": true,
+        "toe_z_mm": -19.286136143954025,
+        "pad_z_mm": 7.1179342470461116,
+        "rigid_foot_z_mm": 0.22485773233471207
+      }
+    },
+    {
+      "height_mm": 120,
+      "case": "command_gain_0.167",
+      "min_toe_world_z_mm": -19.685054762328463,
+      "min_pad_world_z_mm": 6.977886960252526,
+      "min_toe_minus_pad_z_mm": -26.66294172258099,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.092900303436075,
+      "pad_local_axis_extension_lower_bound_mm": 33.097178050492765,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8573,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.11666666666666665,
+          -0.11666666666666665,
+          0.0
+        ],
+        "pitch_deg": -4.63521233203268,
+        "knee_deg": -31.696970687236842,
+        "stance": true,
+        "toe_z_mm": -19.685054762328463,
+        "pad_z_mm": 6.977886960252526,
+        "rigid_foot_z_mm": -0.1150133431835485
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.11666666666666665,
+          0.11666666666666665,
+          0.0
+        ],
+        "pitch_deg": -4.63521233203268,
+        "knee_deg": -31.696970687236842,
+        "stance": false,
+        "toe_z_mm": -19.685054762328463,
+        "pad_z_mm": 6.977886960252526,
+        "rigid_foot_z_mm": -0.1150133431835485
+      }
+    },
+    {
+      "height_mm": 120,
+      "case": "command_gain_0.333",
+      "min_toe_world_z_mm": -20.090762734395575,
+      "min_pad_world_z_mm": 6.825784142048374,
+      "min_toe_minus_pad_z_mm": -26.91654687644395,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.292727280680605,
+      "pad_local_axis_extension_lower_bound_mm": 33.876419380391994,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8613,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.2333333333333333,
+          -0.2333333333333333,
+          0.0
+        ],
+        "pitch_deg": -3.22178856321483,
+        "knee_deg": -34.165333329484184,
+        "stance": true,
+        "toe_z_mm": -20.090762734395575,
+        "pad_z_mm": 6.825784142048374,
+        "rigid_foot_z_mm": -0.4669431386322316
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.2333333333333333,
+          0.2333333333333333,
+          0.0
+        ],
+        "pitch_deg": -3.22178856321483,
+        "knee_deg": -34.165333329484184,
+        "stance": false,
+        "toe_z_mm": -20.090762734395575,
+        "pad_z_mm": 6.825784142048374,
+        "rigid_foot_z_mm": -0.4669431386322316
+      }
+    },
+    {
+      "height_mm": 120,
+      "case": "command_gain_0.667",
+      "min_toe_world_z_mm": -20.921513162282324,
+      "min_pad_world_z_mm": 6.495136271085661,
+      "min_toe_minus_pad_z_mm": -27.416649433367986,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.701465524058937,
+      "pad_local_axis_extension_lower_bound_mm": 35.58513151151186,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8688,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.4666666666666666,
+          -0.4666666666666666,
+          0.0
+        ],
+        "pitch_deg": -0.14337298914191235,
+        "knee_deg": -39.46209701045622,
+        "stance": true,
+        "toe_z_mm": -20.921513162282324,
+        "pad_z_mm": 6.495136271085661,
+        "rigid_foot_z_mm": -1.2063292529732763
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.4666666666666666,
+          0.4666666666666666,
+          0.0
+        ],
+        "pitch_deg": -0.14337298914191235,
+        "knee_deg": -39.46209701045622,
+        "stance": false,
+        "toe_z_mm": -20.921513162282324,
+        "pad_z_mm": 6.495136271085661,
+        "rigid_foot_z_mm": -1.2063292529732763
+      }
+    },
+    {
+      "height_mm": 120,
+      "case": "command_gain_1.000",
+      "min_toe_world_z_mm": -21.47981712410929,
+      "min_pad_world_z_mm": 6.260151713444856,
+      "min_toe_minus_pad_z_mm": -27.739968837554144,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.97810592253297,
+      "pad_local_axis_extension_lower_bound_mm": 36.836111330658674,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8786,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -1,
+          0,
+          0
+        ],
+        "pitch_deg": 2.077013315712875,
+        "knee_deg": -43.22047453605364,
+        "stance": true,
+        "toe_z_mm": -21.47981712410929,
+        "pad_z_mm": 6.260151713444857,
+        "rigid_foot_z_mm": -1.7179542090881128
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -1,
+          0,
+          0
+        ],
+        "pitch_deg": 2.077013315712875,
+        "knee_deg": -43.22047453605364,
+        "stance": true,
+        "toe_z_mm": -21.47981712410929,
+        "pad_z_mm": 6.260151713444857,
+        "rigid_foot_z_mm": -1.7179542090881128
+      }
+    },
+    {
+      "height_mm": 125,
+      "case": "holding",
+      "min_toe_world_z_mm": -12.714253993192216,
+      "min_pad_world_z_mm": 8.816824997414631,
+      "min_toe_minus_pad_z_mm": -21.531078990606847,
+      "samples": 4,
+      "stance_samples": 4,
+      "min_rigid_foot_minus_pad_z_mm": -3.556364016113619,
+      "pad_local_axis_extension_lower_bound_mm": 22.891334405842585,
+      "stance_toe_lower_count": 4,
+      "stance_rigid_foot_lower_count": 4,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -18.0689694049439,
+        "knee_deg": -1.7822272226299023,
+        "stance": true,
+        "toe_z_mm": -12.714253993192216,
+        "pad_z_mm": 8.816824997414631,
+        "rigid_foot_z_mm": 5.260460981301012
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -18.0689694049439,
+        "knee_deg": -1.7822272226299023,
+        "stance": true,
+        "toe_z_mm": -12.714253993192216,
+        "pad_z_mm": 8.816824997414631,
+        "rigid_foot_z_mm": 5.260460981301012
+      }
+    },
+    {
+      "height_mm": 125,
+      "case": "active_sway_zero_stride",
+      "min_toe_world_z_mm": -19.227261337810674,
+      "min_pad_world_z_mm": 7.138325955491657,
+      "min_toe_minus_pad_z_mm": -26.365587293302333,
+      "samples": 1440,
+      "stance_samples": 1080,
+      "min_rigid_foot_minus_pad_z_mm": -6.863702304720709,
+      "pad_local_axis_extension_lower_bound_mm": 32.24819897279051,
+      "stance_toe_lower_count": 1080,
+      "stance_rigid_foot_lower_count": 824,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -2.0685283652024,
+        "knee_deg": -33.08787726693814,
+        "stance": true,
+        "toe_z_mm": -19.227261337810674,
+        "pad_z_mm": 7.138325955491657,
+        "rigid_foot_z_mm": 0.2746236507709483
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -2.0685283652024,
+        "knee_deg": -33.08787726693814,
+        "stance": true,
+        "toe_z_mm": -19.227261337810674,
+        "pad_z_mm": 7.138325955491657,
+        "rigid_foot_z_mm": 0.2746236507709483
+      }
+    },
+    {
+      "height_mm": 125,
+      "case": "command_gain_0.167",
+      "min_toe_world_z_mm": -19.645422425226023,
+      "min_pad_world_z_mm": 6.99194001743826,
+      "min_toe_minus_pad_z_mm": -26.637362442664283,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.072879709584214,
+      "pad_local_axis_extension_lower_bound_mm": 33.02219040876238,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 9034,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.11666666666666665,
+          -0.11666666666666665,
+          0.0
+        ],
+        "pitch_deg": -0.672280129977099,
+        "knee_deg": -35.55777620396111,
+        "stance": true,
+        "toe_z_mm": -19.645422425226023,
+        "pad_z_mm": 6.99194001743826,
+        "rigid_foot_z_mm": -0.08093969214595376
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.11666666666666665,
+          0.11666666666666665,
+          0.0
+        ],
+        "pitch_deg": -0.672280129977099,
+        "knee_deg": -35.55777620396111,
+        "stance": false,
+        "toe_z_mm": -19.645422425226023,
+        "pad_z_mm": 6.99194001743826,
+        "rigid_foot_z_mm": -0.08093969214595376
+      }
+    },
+    {
+      "height_mm": 125,
+      "case": "command_gain_0.333",
+      "min_toe_world_z_mm": -20.07248110550318,
+      "min_pad_world_z_mm": 6.832815245945444,
+      "min_toe_minus_pad_z_mm": -26.905296351448623,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.2837753996326065,
+      "pad_local_axis_extension_lower_bound_mm": 33.84064334563306,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 9025,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.2333333333333333,
+          -0.2333333333333333,
+          0.0
+        ],
+        "pitch_deg": 0.8076935451058911,
+        "knee_deg": -38.14689752369735,
+        "stance": true,
+        "toe_z_mm": -20.07248110550318,
+        "pad_z_mm": 6.832815245945444,
+        "rigid_foot_z_mm": -0.4509601536871628
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.2333333333333333,
+          0.2333333333333333,
+          0.0
+        ],
+        "pitch_deg": 0.8076935451058911,
+        "knee_deg": -38.14689752369735,
+        "stance": false,
+        "toe_z_mm": -20.07248110550318,
+        "pad_z_mm": 6.832815245945444,
+        "rigid_foot_z_mm": -0.4509601536871628
+      }
+    },
+    {
+      "height_mm": 125,
+      "case": "command_gain_0.667",
+      "min_toe_world_z_mm": -20.870260312651936,
+      "min_pad_world_z_mm": 6.516189324651508,
+      "min_toe_minus_pad_z_mm": -27.386449637303443,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.676134216855138,
+      "pad_local_axis_extension_lower_bound_mm": 35.47467997859644,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8989,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RR",
+        "phase": 0.7472222222222222,
+        "command": [
+          -0.4666666666666666,
+          0.4666666666666666,
+          0.0
+        ],
+        "pitch_deg": 3.754294513040979,
+        "knee_deg": -43.22047453605354,
+        "stance": true,
+        "toe_z_mm": -20.870260312651922,
+        "pad_z_mm": 6.516189324651521,
+        "rigid_foot_z_mm": -1.1599448922036117
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.4666666666666666,
+          0.4666666666666666,
+          0.0
+        ],
+        "pitch_deg": 3.7542945130410104,
+        "knee_deg": -43.22047453605359,
+        "stance": false,
+        "toe_z_mm": -20.870260312651936,
+        "pad_z_mm": 6.516189324651508,
+        "rigid_foot_z_mm": -1.1599448922036295
+      }
+    },
+    {
+      "height_mm": 125,
+      "case": "command_gain_1.000",
+      "min_toe_world_z_mm": -20.87026031265195,
+      "min_pad_world_z_mm": 6.516189324651494,
+      "min_toe_minus_pad_z_mm": -27.38644963730345,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.676134216855145,
+      "pad_local_axis_extension_lower_bound_mm": 35.47467997859646,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 8989,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RR",
+        "phase": 0.725,
+        "command": [
+          -0.7,
+          0.7,
+          0
+        ],
+        "pitch_deg": 3.754294513041036,
+        "knee_deg": -43.22047453605364,
+        "stance": true,
+        "toe_z_mm": -20.870260312651922,
+        "pad_z_mm": 6.516189324651526,
+        "rigid_foot_z_mm": -1.1599448922036188
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.7333333333333333,
+        "command": [
+          -0.7,
+          0.7,
+          0
+        ],
+        "pitch_deg": 3.7542945130410295,
+        "knee_deg": -43.220474536053615,
+        "stance": true,
+        "toe_z_mm": -20.87026031265195,
+        "pad_z_mm": 6.516189324651494,
+        "rigid_foot_z_mm": -1.1599448922036437
+      }
+    },
+    {
+      "height_mm": 130,
+      "case": "holding",
+      "min_toe_world_z_mm": -12.480917511790615,
+      "min_pad_world_z_mm": 8.85702933465914,
+      "min_toe_minus_pad_z_mm": -21.337946846449753,
+      "samples": 4,
+      "stance_samples": 4,
+      "min_rigid_foot_minus_pad_z_mm": -3.434493950553451,
+      "pad_local_axis_extension_lower_bound_mm": 22.614029223133503,
+      "stance_toe_lower_count": 4,
+      "stance_rigid_foot_lower_count": 4,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -14.205673688168675,
+        "knee_deg": -5.13411388225016,
+        "stance": true,
+        "toe_z_mm": -12.480917511790615,
+        "pad_z_mm": 8.85702933465914,
+        "rigid_foot_z_mm": 5.422535384105689
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": -14.205673688168675,
+        "knee_deg": -5.13411388225016,
+        "stance": true,
+        "toe_z_mm": -12.480917511790615,
+        "pad_z_mm": 8.85702933465914,
+        "rigid_foot_z_mm": 5.422535384105689
+      }
+    },
+    {
+      "height_mm": 130,
+      "case": "active_sway_zero_stride",
+      "min_toe_world_z_mm": -19.226918179459226,
+      "min_pad_world_z_mm": 7.138444531493192,
+      "min_toe_minus_pad_z_mm": -26.365362710952418,
+      "samples": 1440,
+      "stance_samples": 1080,
+      "min_rigid_foot_minus_pad_z_mm": -6.863531149127503,
+      "pad_local_axis_extension_lower_bound_mm": 32.24757659449177,
+      "stance_toe_lower_count": 1080,
+      "stance_rigid_foot_lower_count": 840,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": 2.023771995791286,
+        "knee_deg": -37.17930048131314,
+        "stance": true,
+        "toe_z_mm": -19.226918179459226,
+        "pad_z_mm": 7.138444531493192,
+        "rigid_foot_z_mm": 0.2749133823656891
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "pitch_deg": 2.023771995791286,
+        "knee_deg": -37.17930048131314,
+        "stance": true,
+        "toe_z_mm": -19.226918179459226,
+        "pad_z_mm": 7.138444531493192,
+        "rigid_foot_z_mm": 0.2749133823656891
+      }
+    },
+    {
+      "height_mm": 130,
+      "case": "command_gain_0.167",
+      "min_toe_world_z_mm": -19.667631428925283,
+      "min_pad_world_z_mm": 6.984070486828994,
+      "min_toe_minus_pad_z_mm": -26.651701915754277,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.084097650524626,
+      "pad_local_axis_extension_lower_bound_mm": 33.064172930352036,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 9222,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.11666666666666665,
+          -0.11666666666666665,
+          0.0
+        ],
+        "pitch_deg": 3.4978584769136933,
+        "knee_deg": -39.785124302580094,
+        "stance": true,
+        "toe_z_mm": -19.667631428925283,
+        "pad_z_mm": 6.984070486828994,
+        "rigid_foot_z_mm": -0.10002716369563203
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.11666666666666665,
+          0.11666666666666665,
+          0.0
+        ],
+        "pitch_deg": 3.4978584769136933,
+        "knee_deg": -39.785124302580094,
+        "stance": false,
+        "toe_z_mm": -19.667631428925283,
+        "pad_z_mm": 6.984070486828994,
+        "rigid_foot_z_mm": -0.10002716369563203
+      }
+    },
+    {
+      "height_mm": 130,
+      "case": "command_gain_0.333",
+      "min_toe_world_z_mm": -20.11962044800339,
+      "min_pad_world_z_mm": 6.814664734199104,
+      "min_toe_minus_pad_z_mm": -26.934285182202494,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.306861532901047,
+      "pad_local_axis_extension_lower_bound_mm": 33.93304156172866,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 9230,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.25,
+        "command": [
+          -0.2333333333333333,
+          -0.2333333333333333,
+          0.0
+        ],
+        "pitch_deg": 5.07418081399425,
+        "knee_deg": -42.5370166505886,
+        "stance": true,
+        "toe_z_mm": -20.11962044800339,
+        "pad_z_mm": 6.814664734199104,
+        "rigid_foot_z_mm": -0.49219679870194355
+      },
+      "lowest_toe_pose": {
+        "leg": "RR",
+        "phase": 0.75,
+        "command": [
+          -0.2333333333333333,
+          0.2333333333333333,
+          0.0
+        ],
+        "pitch_deg": 5.07418081399425,
+        "knee_deg": -42.5370166505886,
+        "stance": false,
+        "toe_z_mm": -20.11962044800339,
+        "pad_z_mm": 6.814664734199104,
+        "rigid_foot_z_mm": -0.49219679870194355
+      }
+    },
+    {
+      "height_mm": 130,
+      "case": "command_gain_0.667",
+      "min_toe_world_z_mm": -20.22941568557497,
+      "min_pad_world_z_mm": 6.772124873348837,
+      "min_toe_minus_pad_z_mm": -27.001540558923807,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.360679143247356,
+      "pad_local_axis_extension_lower_bound_mm": 34.15016633418625,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 9219,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RL",
+        "phase": 0.2722222222222222,
+        "command": [
+          -0.6666666666666666,
+          0.0,
+          0.0
+        ],
+        "pitch_deg": 5.468720938704506,
+        "knee_deg": -43.220474536053615,
+        "stance": true,
+        "toe_z_mm": -20.22941568557497,
+        "pad_z_mm": 6.772124873348837,
+        "rigid_foot_z_mm": -0.5885542698985198
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.2722222222222222,
+        "command": [
+          -0.6666666666666666,
+          0.0,
+          0.0
+        ],
+        "pitch_deg": 5.468720938704506,
+        "knee_deg": -43.220474536053615,
+        "stance": true,
+        "toe_z_mm": -20.22941568557497,
+        "pad_z_mm": 6.772124873348837,
+        "rigid_foot_z_mm": -0.5885542698985198
+      }
+    },
+    {
+      "height_mm": 130,
+      "case": "command_gain_1.000",
+      "min_toe_world_z_mm": -20.22941568557497,
+      "min_pad_world_z_mm": 6.772124873348837,
+      "min_toe_minus_pad_z_mm": -27.00154055892381,
+      "samples": 15840,
+      "stance_samples": 11880,
+      "min_rigid_foot_minus_pad_z_mm": -7.3606791432473635,
+      "pad_local_axis_extension_lower_bound_mm": 34.15016633418627,
+      "stance_toe_lower_count": 11880,
+      "stance_rigid_foot_lower_count": 9198,
+      "ik_failures": 0,
+      "worst_toe_vs_pad_pose": {
+        "leg": "RR",
+        "phase": 0.7027777777777777,
+        "command": [
+          -0.7,
+          0.7,
+          0
+        ],
+        "pitch_deg": 5.468720938704513,
+        "knee_deg": -43.22047453605364,
+        "stance": true,
+        "toe_z_mm": -20.229415685574942,
+        "pad_z_mm": 6.772124873348869,
+        "rigid_foot_z_mm": -0.5885542698984949
+      },
+      "lowest_toe_pose": {
+        "leg": "RL",
+        "phase": 0.25555555555555554,
+        "command": [
+          -1,
+          0,
+          0
+        ],
+        "pitch_deg": 5.468720938704506,
+        "knee_deg": -43.220474536053615,
+        "stance": true,
+        "toe_z_mm": -20.22941568557497,
+        "pad_z_mm": 6.772124873348837,
+        "rigid_foot_z_mm": -0.5885542698985198
+      }
+    }
+  ]
+}

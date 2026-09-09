@@ -1,0 +1,50 @@
+== labels ==
+== milestones ==
+== issues ==
+  + issue RV-08: RV-08 [機構不具合] マイクの挿入経路とBall–Neckの実体干渉を直す
+  + issue RV-09: RV-09 [機構不具合] 頭部内の実サーボケースとポッド梁の干渉を解消する
+  + issue RV-10: RV-10 [機構不具合] 腕と脚の隣接部品同士の自己干渉を取り除く
+  + issue RV-11: RV-11 [電装] 部品の実型番・電源収支・停止回路・測定手順を整合させる
+  + issue RV-12: RV-12 [検証] 表示用モデルと全ファイルの検査記録を実設計に合わせる
+  ~ body/meta PR-06 (#24): ['body']
+  ~ body/meta PR-07 (#25): ['body']
+  ~ body/meta PR-08 (#26): ['body']
+  ~ body/meta L-02 (#37): ['body']
+  ~ body/meta L-09 (#44): ['body']
+  ~ body/meta L-10 (#45): ['body']
+  ~ body/meta EL-09 (#75): ['body']
+  ~ body/meta L-11 (#77): ['title']
+  ~ body/meta A-01 (#46): ['body']
+  ~ body/meta A-02 (#47): ['body']
+  ~ body/meta H-02 (#51): ['body']
+  ~ body/meta H-03 (#52): ['body']
+  ~ body/meta H-04 (#53): ['body']
+  ~ body/meta H-05 (#54): ['body']
+  ~ body/meta H-06 (#55): ['body', 'labels', 'title']
+  ~ body/meta H-07 (#56): ['body']
+  ~ body/meta S-03 (#62): ['body']
+  ~ body/meta S-05 (#64): ['body']
+  ~ body/meta RV-05 (#85): ['body']
+== relations ==
+  blocked #24 (PR-06) by #91 (RV-10)
+  blocked #25 (PR-07) by #89 (RV-08)
+  blocked #26 (PR-08) by #90 (RV-09)
+  blocked #46 (A-01) by #91 (RV-10)
+  blocked #47 (A-02) by #91 (RV-10)
+  blocked #52 (H-03) by #89 (RV-08)
+  blocked #54 (H-05) by #89 (RV-08)
+  blocked #62 (S-03) by #90 (RV-09)
+  blocked #64 (S-05) by #55 (H-06)
+  blocked #85 (RV-05) by #89 (RV-08)
+  blocked #85 (RV-05) by #90 (RV-09)
+  blocked #85 (RV-05) by #91 (RV-10)
+  blocked #85 (RV-05) by #92 (RV-11)
+  blocked #85 (RV-05) by #93 (RV-12)
+  blocked #85 (RV-05) by #55 (H-06)
+  parent  #89 (RV-08) <- #8 (E6)
+  parent  #90 (RV-09) <- #9 (E7)
+  parent  #91 (RV-10) <- #7 (E5)
+  parent  #92 (RV-11) <- #5 (E3)
+  parent  #93 (RV-12) <- #80 (E9)
+  wrote tools/issues/issue_map.json
+  wrote docs/build_plan.md

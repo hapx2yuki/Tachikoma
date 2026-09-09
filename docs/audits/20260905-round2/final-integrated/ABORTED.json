@@ -1,0 +1,9 @@
+{
+  "status": "ABORTED_BEFORE_FINAL",
+  "reason": "保存後chassisが非閉体。全体は最終検証に使わず、修正後別ディレクトリで再実行。",
+  "runner_pid": 82868,
+  "stopped_child_pids": [
+    83367,
+    83566
+  ]
+}

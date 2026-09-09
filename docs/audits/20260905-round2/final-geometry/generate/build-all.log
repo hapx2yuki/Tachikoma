@@ -1,0 +1,81 @@
+[leg parts]
+  coxa_bracket                   60.7 x   26.2 x   30.0 mm  watertight=True  vol=18.7cm3
+  femur_link                    103.0 x   34.0 x   30.0 mm  watertight=True  vol=21.9cm3
+  tibia_link                     30.0 x   34.9 x  150.0 mm  watertight=True  vol=34.3cm3
+  leg_foot_bored                 34.2 x   29.7 x   15.9 mm  watertight=True  vol=2.6cm3
+  foot_pad                        9.5 x    9.5 x    8.0 mm  watertight=True  vol=0.3cm3
+[leg parts (FR/RL, mirrored)]
+  coxa_bracket_m                 60.7 x   26.2 x   30.0 mm  watertight=True  vol=18.7cm3
+  femur_link_m                  103.0 x   34.0 x   30.0 mm  watertight=True  vol=21.9cm3
+  tibia_link_m                   30.0 x   34.9 x  150.0 mm  watertight=True  vol=34.3cm3
+[chassis]
+  chassis                       151.1 x  164.7 x    9.0 mm  watertight=True  vol=54.6cm3
+  pod_neck                       36.0 x   65.0 x   30.0 mm  watertight=True  vol=16.3cm3
+  battery_cradle                 44.0 x   40.0 x   32.0 mm  watertight=True  vol=13.7cm3
+[shells]
+  shin_shell                     43.0 x   51.1 x  107.5 mm  watertight=True  vol=82.0cm3
+  shin_shell_m                   43.0 x   51.1 x  107.5 mm  watertight=True  vol=82.0cm3
+  thigh_cap                      38.4 x   30.3 x   16.7 mm  watertight=True  vol=9.2cm3
+[arm parts] (右腕。*_L は build_all.py がミラー出力)
+  shoulder_bracket               44.7 x   24.0 x   22.3 mm  watertight=True  vol=7.5cm3
+  upper_arm                      77.7 x   21.7 x   22.0 mm  watertight=True  vol=8.4cm3
+  forearm                        27.0 x   26.0 x   22.0 mm  watertight=True  vol=2.8cm3
+  claw_mount                      2.5 x   20.0 x   20.0 mm  watertight=True  vol=0.8cm3
+[arm shells] (元 Arm パーツ加工。右腕。*_L は build_all.py がミラー)
+  arm_pod_upper: 孤立片 1 個 (108mm3) を除去
+  arm_pod_upper                  40.1 x   29.2 x   19.2 mm  watertight=True  vol=5.9cm3
+  arm_pod_lower                  23.9 x   34.3 x   19.2 mm  watertight=True  vol=4.3cm3
+  elbow_shell                    22.1 x   16.6 x   25.1 mm  watertight=True  vol=1.5cm3
+[arm parts (left, mirrored)]
+  shoulder_bracket_L             44.7 x   24.0 x   22.3 mm  watertight=True  vol=7.5cm3
+  upper_arm_L                    77.7 x   21.7 x   22.0 mm  watertight=True  vol=8.4cm3
+  forearm_L                      27.0 x   26.0 x   22.0 mm  watertight=True  vol=2.8cm3
+  claw_mount_L                    2.5 x   20.0 x   20.0 mm  watertight=True  vol=0.8cm3
+  arm_pod_upper: 孤立片 1 個 (108mm3) を除去
+  arm_pod_upper_L                40.1 x   29.2 x   19.2 mm  watertight=True  vol=5.9cm3
+  arm_pod_lower_L                23.9 x   34.3 x   19.2 mm  watertight=True  vol=4.3cm3
+  elbow_shell_L                  22.1 x   16.6 x   25.1 mm  watertight=True  vol=1.5cm3
+[eye parts] (3 目共通。eye_pod=白 / carrier=PETG)
+  eye_pod                        37.7 x   37.7 x   23.7 mm  watertight=True  vol=14.1cm3
+  eye_carrier                    48.0 x   20.0 x    5.0 mm  watertight=True  vol=2.7cm3
+[audio cradle] (Mouth 一式の内部ボーリング + 保持パーツ)
+  Mouth_Cannon_Bored             30.2 x   41.9 x   30.2 mm  watertight=True  vol=7.3cm3
+  Mouth_Neck_Bored               24.7 x   15.2 x   24.7 mm  watertight=True  vol=1.5cm3
+  Mouth_Ball_Bored               25.1 x   24.4 x   25.1 mm  watertight=True  vol=7.4cm3
+  audio_cradle_mic               16.4 x   11.2 x   17.0 mm  watertight=True  vol=1.8cm3
+  audio_cradle_spk               19.4 x    1.8 x   19.4 mm  watertight=True  vol=0.2cm3
+[camera] (中央目カメラ化: eye_pod_camera [参照] + 印刷用分割 shell/base + camera_carrier)
+  eye_pod_camera                 37.7 x   37.7 x   23.7 mm  watertight=True  vol=10.7cm3
+  eye_pod_camera_shell           37.7 x   37.7 x   15.7 mm  watertight=True  vol=7.0cm3
+  eye_pod_camera_base            28.0 x   27.1 x    9.8 mm  watertight=True  vol=3.6cm3
+  camera_carrier                 23.3 x   17.3 x   16.1 mm  watertight=True  vol=1.2cm3
+[head] Head_Bottom_Armcut (腕ソケット拡口+マウス配線受け穴, shoulder_bracket 依存のため腕生成後)
+  Head_Bottom_Armcut            109.3 x  106.7 x   15.2 mm  watertight=True  vol=26.0cm3
+
+必要数:
+  脚: coxa_bracket/femur_link/tibia_link/shin_shell 標準 ×2 (FL,RR) +
+      ミラー版 _m ×2 (FR,RL)。leg_foot_bored(PLA灰)/foot_pad(TPU)/thigh_cap
+      は対称なので共通 ×4。Leg_Toe_Black_x12 (元キット STL 150%, 無加工)
+      ×3/脚=12。現行は根元嵌合と先行接地が未成立 (RV-06)。組立前に改修が必要
+  胴: chassis / pod_neck / battery_cradle 各1
+  腕: shoulder_bracket/upper_arm/forearm/claw_mount/arm_pod_upper/
+      arm_pod_lower/elbow_shell 右用+_L 各1 (固定爪化, 2026-07-29)。
+      爪ハブ = 元 Arm_Left_Claw_Grey ×2 (鏡映使用) / 指 = 元
+      Arm_Left_Finger_Black_x3 ×6 (3本×2腕, 差込) / 指先 = 元
+      Arm_Left_FingerTip_Grey_x3 ×6 (接着) — いずれも 3MF プレートから
+      無加工 150% で印刷 (docs/printing.md)
+  目: eye_pod (白, 元キット形状) / eye_carrier 各2 (左右キョロキョロ) +
+      eye_pod_camera (中央目, 固定カメラ) / camera_carrier (完全内蔵の
+      隠しパーツ) 各1
+  マウス砲: Mouth_Cannon_Bored/Mouth_Neck_Bored/Mouth_Ball_Bored 各1 (元パーツと
+      差し替え) / audio_cradle_mic/audio_cradle_spk 各1 (完全内蔵の隠しパーツ)
+  カメラ: 上記 eye_pod_camera/camera_carrier 参照 (2026-07-28 設計変更で
+      ポッドのメインアイではなく頭部中央目へ移設。ポッドのメインアイは
+      元パーツ Cabin_Eye_White をそのまま無加工で使う)
+  頭部: Head_Bottom_Armcut を Head_Bottom_Blue の代わりに1個印刷 (2026-07-30
+      追加。腕ソケットを肩ヨー可動域全域で干渉しないよう拡口済み+マウス
+      ソケット奥に配線受け穴を焼き込み済み。他の Head一式は無加工のまま
+      従来どおり)
+  ポッドネック: pod_neck 先端 NECK_TAPER_LEN 区間を丸ポストへ絞り込み済み
+      (2026-07-30, TailJoint_Blue/Ball は無加工のまま被せるだけでよい —
+      旧「梁先端4隅を現物合わせで面取り」は不要)

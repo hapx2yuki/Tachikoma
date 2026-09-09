@@ -12,6 +12,7 @@
 struct JointAngles { float yaw, pitch, knee; };
 
 inline bool legIK(float x, float y, float z, JointAngles& out) {
+  if (!isfinite(x) || !isfinite(y) || !isfinite(z)) return false;
   const float yaw = atan2f(y, x);
   const float r = sqrtf(x * x + y * y) - COXA_LEN;
   const float d = -z;  // 下向き正

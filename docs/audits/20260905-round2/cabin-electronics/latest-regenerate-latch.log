@@ -1,0 +1,72 @@
+lower {'name': 'lower', 'watertight': True, 'body_count': 1, 'volume_mm3': 18598.816178525358, 'front_half_changed_mm3': 0.0, 'closed_cap_overlap_mm3': 0.0, 'front_overlap_mm3': 0.0, 'fully_deflected_continuous_travel_overlap_mm3': 0.0, 'deflected_front_overlap_mm3': 0.0, 'maximum_required_tip_deflection_mm': 0.65078125}
+upper {'name': 'upper', 'watertight': True, 'body_count': 1, 'volume_mm3': 18599.175960317305, 'front_half_changed_mm3': 0.0, 'closed_cap_overlap_mm3': 0.0, 'front_overlap_mm3': 0.0, 'fully_deflected_continuous_travel_overlap_mm3': 0.0, 'deflected_front_overlap_mm3': 0.0, 'maximum_required_tip_deflection_mm': 0.697265625}
+{
+  "status": "DESIGN_CANDIDATE_NOT_PRINT_RELEASE",
+  "frame": "chassis plate bottom z=0",
+  "mesh_simplification_tolerance_mm": 0.015,
+  "design": {
+    "beam_active_length_mm": 15.0,
+    "beam_width_mm": 7.0,
+    "beam_thickness_mm": 1.6,
+    "nominal_engagement_mm": 0.6,
+    "insertion_cam_deg": 30,
+    "release_cam_deg": 60,
+    "recess_clearance_mm": 0.2,
+    "maximum_geometry_deflection_mm": 0.85,
+    "peg_front_half": "original unchanged; bond only into Front",
+    "rear_cap_removal": "straight rearward pull; no outside holes or tools"
+  },
+  "checks": {
+    "back_added_outside_original_mm3": 1.8292397062241214e-06,
+    "detent_removed_mm3": 14.14336718339473,
+    "back_watertight": true,
+    "back_body_count": 1,
+    "back_remaining_volume_mm3": 670292.2201935949,
+    "cap_front_collision_mm3": 0.0
+  },
+  "analytical_estimate": {
+    "model": "Euler-Bernoulli cantilever, point load at free end, friction omitted, all four beams engaged; not a force measurement",
+    "max_required_deflection_mm": 0.697265625,
+    "max_surface_strain_fraction": 0.007437500000000001,
+    "modulus_sensitivity_MPa": [
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "estimates": [
+      {
+        "E_MPa": 800,
+        "radial_N_each": 1.1847111111111115,
+        "insertion_N_four": 2.735973115647763,
+        "release_N_four": 8.207919346943287
+      },
+      {
+        "E_MPa": 1200,
+        "radial_N_each": 1.777066666666667,
+        "insertion_N_four": 4.1039596734716435,
+        "release_N_four": 12.31187902041493
+      },
+      {
+        "E_MPa": 1600,
+        "radial_N_each": 2.369422222222223,
+        "insertion_N_four": 5.471946231295526,
+        "release_N_four": 16.415838693886574
+      },
+      {
+        "E_MPa": 2000,
+        "radial_N_each": 2.9617777777777783,
+        "insertion_N_four": 6.8399327891194055,
+        "release_N_four": 20.519798367358216
+      }
+    ],
+    "UNVERIFIED": [
+      "actual printed modulus and layer direction",
+      "notch stress concentration",
+      "friction and dimensional error",
+      "fatigue and creep",
+      "minimum retention force under walking shock",
+      "adhesive bond on Front half"
+    ]
+  }
+}

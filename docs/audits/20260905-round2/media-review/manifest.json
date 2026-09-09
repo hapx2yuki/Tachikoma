@@ -1,0 +1,821 @@
+[
+  {
+    "path": "hardware/urdf/render_ref_stand.png",
+    "sha256": "a60417883f46d130e8e8e24cb87caa5f34dd3f5e1469104ae090687550d1b8e7",
+    "size": [
+      770,
+      770
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "hardware/urdf/render_urdf_stand.png",
+    "sha256": "ccf0fe929bad117b967d8bc40cdca1962fa5bbc5dbe9b063825cc89d6817d2b2",
+    "size": [
+      770,
+      770
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "hardware/urdf/render_shin_before.png",
+    "sha256": "f560318c4ff72eedb69570747213bc3a0ded6de52eb13638fb8d77bace74262e",
+    "size": [
+      1200,
+      1200
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "hardware/urdf/render_shin_after.png",
+    "sha256": "217e7030aff6313cfbf9724cadf612b89363d7267328da90378b64cd4200739f",
+    "size": [
+      1200,
+      1200
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "tachikoma_urdf_20260731/hardware/urdf/render_ref_stand.png",
+    "sha256": "df0fadfca921d0fbf9e3b546d6f07d4faced15be93ccc384fa28a3fec51d2b09",
+    "size": [
+      770,
+      770
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "tachikoma_urdf_20260731/hardware/urdf/render_urdf_stand.png",
+    "sha256": "c294b05496c6c3ce06d7d22bdb83314e79f4612b138f9a7d5522f632cc84a374",
+    "size": [
+      770,
+      770
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "tachikoma_urdf_20260731/hardware/urdf/render_shin_before.png",
+    "sha256": "f560318c4ff72eedb69570747213bc3a0ded6de52eb13638fb8d77bace74262e",
+    "size": [
+      1200,
+      1200
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "tachikoma_urdf_20260731/hardware/urdf/render_shin_after.png",
+    "sha256": "217e7030aff6313cfbf9724cadf612b89363d7267328da90378b64cd4200739f",
+    "size": [
+      1200,
+      1200
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_chassis_layout.png",
+    "sha256": "33000e9dbc0c416b3c3bf5e96adb67915a1d54eb366048db8bb5b498a38bd082",
+    "size": [
+      1080,
+      1200
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_walk.mp4",
+    "sha256": "5c757427d9138d59f9ad48f958d019a6538e4cc37a8fbe63c862a014383af2d6",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.64001f",
+          "width": 800,
+          "height": 608,
+          "coded_width": 800,
+          "coded_height": 608,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "15/1",
+          "avg_frame_rate": "15/1",
+          "time_base": "1/15360",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 454656,
+          "duration": "29.600000",
+          "bit_rate": "1015104",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "444",
+          "extradata_size": 45,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc61.19.100 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "docs/vis_walk.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "29.600000",
+        "size": "3762006",
+        "bit_rate": "1016758",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf61.7.100"
+        }
+      }
+    },
+    "method": "ffprobe全ストリーム構造 + 5/50/90%地点の画像",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_shin_shell_detail.png",
+    "sha256": "086bbc39cce31a230950527c6cebfb09a51a78383f0ff0bf858119cd8254d531",
+    "size": [
+      1430,
+      715
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/preview_leg_parts.png",
+    "sha256": "d5d04338471df006db5d181d45b81bf3adcaecc55877bdc04f52036a774316d0",
+    "size": [
+      1650,
+      2200
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_head_center_sweep3.png",
+    "sha256": "a8587812b30bbe158a1455c4c365b24eb70c8db76707f4b3465c1279d4e3431f",
+    "size": [
+      2700,
+      1050
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/preview_arm_parts.png",
+    "sha256": "a2ea952eeb4c4d03f852affe6c61610068ba2196accf42550383ad8e6a51f410",
+    "size": [
+      1650,
+      3850
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_eyes.mp4",
+    "sha256": "54c2c27bf72e0423fc2dde9c43e73ea0157dc410e80a889285ad8886cd418418",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.64001f",
+          "width": 800,
+          "height": 608,
+          "coded_width": 800,
+          "coded_height": 608,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "15/1",
+          "avg_frame_rate": "15/1",
+          "time_base": "1/15360",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 122880,
+          "duration": "8.000000",
+          "bit_rate": "216442",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "120",
+          "extradata_size": 45,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc61.19.100 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "docs/vis_eyes.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "8.000000",
+        "size": "218731",
+        "bit_rate": "218731",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf61.7.100"
+        }
+      }
+    },
+    "method": "ffprobe全ストリーム構造 + 5/50/90%地点の画像",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/preview_shells.png",
+    "sha256": "632257bb844904fa418533c566bd05ab989d53bb7a86a7d885cf418096f33a94",
+    "size": [
+      1650,
+      1650
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_mouth_cannon_pose_before_after.png",
+    "sha256": "1785fb4a703c36297227224ec3499e578abd86ba4a96b8819af599898c6e2f1b",
+    "size": [
+      1800,
+      1800
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_exploded_leg.png",
+    "sha256": "f92a9ed4e693003583cdaf90241f39d57d419abd9ea94d3faa364d0383d4b9a4",
+    "size": [
+      1560,
+      960
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/preview_leg_assembly.png",
+    "sha256": "9fd62e48cd38249eeff73e86405db46c9c42c2f71fdc775931ecad1ed7ece4cd",
+    "size": [
+      1650,
+      550
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/preview_chassis.png",
+    "sha256": "346f9155d6084a2a3cee22179db6632b66b962b877dad7bb71e68ea0d02e5662",
+    "size": [
+      1650,
+      550
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/preview_gait.png",
+    "sha256": "70473756bcf55787bd0936f1a2c397ac7a8f23679b3d6e481535672b3615dd3a",
+    "size": [
+      1320,
+      495
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/preview_robot.png",
+    "sha256": "12a4ac767de61e86d56940a5e9ff6c8d6a1620bc47cd7c2fbca035242fe30f2c",
+    "size": [
+      1650,
+      605
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_elbow_detail.png",
+    "sha256": "a2a28515291e7f03176441a53fcfcb1f9fb2f62b78b9e1fa16b8d7f4875fceed",
+    "size": [
+      1430,
+      715
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_proportions.png",
+    "sha256": "5870587d01d9ef7f828568509571160b82d329f10d46d9c6dda0c5dd6036a4b4",
+    "size": [
+      1650,
+      660
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_physics_walk.mp4",
+    "sha256": "767135d10381b4873328daac34d4800be105bab8d7bdd2553a1c093d77977ba8",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.64001f",
+          "width": 1280,
+          "height": 720,
+          "coded_width": 1280,
+          "coded_height": 720,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 199680,
+          "duration": "13.000000",
+          "bit_rate": "4268900",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "390",
+          "extradata_size": 46,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc62.28.102 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "docs/vis_physics_walk.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "13.000000",
+        "size": "6942587",
+        "bit_rate": "4272361",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf62.12.102"
+        }
+      }
+    },
+    "method": "ffprobe全ストリーム構造 + 5/50/90%地点の画像",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_shin_orientation_check.png",
+    "sha256": "6859c5e0959ab5786feb025b80fa2f2dcfc6d5d4e19c2f4964193d6f6c04d557",
+    "size": [
+      845,
+      845
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_hand_detail.png",
+    "sha256": "6401b1118d2fcf7021df1b861dc407e7613f7cef1cc5dbb25983ffb1fc3742f8",
+    "size": [
+      1430,
+      715
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_shin_shell_relief_removed.png",
+    "sha256": "7981dd298ca5394e6d459ced81be458284a9a28af87509fbb71a468e1cc172f1",
+    "size": [
+      1820,
+      910
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_wiring.mp4",
+    "sha256": "2fffd58da1115e569adefe17e6b781bcfa72d34fbc46e747d382c77ffca45b53",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.64001f",
+          "width": 800,
+          "height": 608,
+          "coded_width": 800,
+          "coded_height": 608,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "15/1",
+          "avg_frame_rate": "15/1",
+          "time_base": "1/15360",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 445440,
+          "duration": "29.000000",
+          "bit_rate": "1431224",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "435",
+          "extradata_size": 45,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc61.19.100 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "docs/vis_wiring.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "29.000000",
+        "size": "5194297",
+        "bit_rate": "1432909",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf61.7.100"
+        }
+      }
+    },
+    "method": "ffprobe全ストリーム構造 + 5/50/90%地点の画像",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_head_center_before_after.png",
+    "sha256": "122cd83b7751d9f58fe7bda6f97b1c468e65821ab98953cecd7d92e3589a286f",
+    "size": [
+      1950,
+      1050
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_exploded_arm.png",
+    "sha256": "cbdb095990866de186a568c5222ecc5b405dde1aa34b9552bddd696c923e970d",
+    "size": [
+      1680,
+      1080
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/vis_assembly_steps.png",
+    "sha256": "8c4a655175a31326cbfaa156b40e7edd237fc0b65358100319a6be08f7193338",
+    "size": [
+      1650,
+      1320
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/audits/20260905/foot_contact_115mm.png",
+    "sha256": "f2ad2d0512ec3e80962d266948cd4ae07029f4ebb8a4bb2bd440ee2baab1b728",
+    "size": [
+      2340,
+      1260
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/audits/20260905/preview_leg_assembly.png",
+    "sha256": "4e37d0809e6f7834046128d82dfb7fc6e6e5dd9d11dcff71deffd6d288bf3de9",
+    "size": [
+      1650,
+      550
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/audits/20260905/preview_gait.png",
+    "sha256": "40cba1d5d89a70440a12d0c381f26aa7382954c19348167c81907c02561a3e4e",
+    "size": [
+      1320,
+      495
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/audits/20260905/final-check_leg_assembly.png",
+    "sha256": "4e37d0809e6f7834046128d82dfb7fc6e6e5dd9d11dcff71deffd6d288bf3de9",
+    "size": [
+      1650,
+      550
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/audits/20260905/final-sim_gait.png",
+    "sha256": "40cba1d5d89a70440a12d0c381f26aa7382954c19348167c81907c02561a3e4e",
+    "size": [
+      1320,
+      495
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/audits/20260905/simulation/forward_nominal_5s.png",
+    "sha256": "4cf12dbe8be11eee0d3cfcdc74116a02d22eedd8e290b8afc8d8e59e142375d8",
+    "size": [
+      960,
+      540
+    ],
+    "method": "全画像デコード + 一覧画像目視",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  },
+  {
+    "path": "docs/audits/20260905/simulation/forward_nominal.mp4",
+    "sha256": "78a071ede60564dbbb26315dca107fe2e8345de2655fc1b07ddb91e4201ca887",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.64001f",
+          "width": 960,
+          "height": 540,
+          "coded_width": 960,
+          "coded_height": 540,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 199680,
+          "duration": "13.000000",
+          "bit_rate": "2655325",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "390",
+          "extradata_size": 46,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc62.28.102 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "docs/audits/20260905/simulation/forward_nominal.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "13.000000",
+        "size": "4320407",
+        "bit_rate": "2658712",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf62.12.102"
+        }
+      }
+    },
+    "method": "ffprobe全ストリーム構造 + 5/50/90%地点の画像",
+    "status": "reviewed",
+    "finding": "旧成果物として保全。現在の加工形状・体高・支持/接触条件を証明しない。生成ソースも確認。"
+  }
+]

@@ -1,0 +1,8 @@
+r78 90 head_axis [] near 2.6864959716796903
+r78 30 head_axis [] near 5.949751412502634
+r78 150 head_axis [] near 5.908801965796048
+r78 210 head_axis [] near 17.595640561248825
+r78 330 head_axis [] near 17.621007481244053
+r78 245 head_axis [] near 17.565130987001623
+r78 295 head_axis [] near 17.577716182080813
+cap [{'leg': 'FR', 'surface_samples_inside_chassis': 532, 'upward_surface_samples_inside_chassis': 532, 'intersection_mm3': 116.06587423465437, 'intersection_radial_range_mm': [69.3521340969317, 84.8301840121517]}, {'leg': 'FL', 'surface_samples_inside_chassis': 519, 'upward_surface_samples_inside_chassis': 519, 'intersection_mm3': 116.15335342809219, 'intersection_radial_range_mm': [69.3507767701876, 84.83138109606676]}, {'leg': 'RL', 'surface_samples_inside_chassis': 1278, 'upward_surface_samples_inside_chassis': 612, 'intersection_mm3': 411.0498149217771, 'intersection_radial_range_mm': [72.02804694420257, 87.10041133677741]}, {'leg': 'RR', 'surface_samples_inside_chassis': 1290, 'upward_surface_samples_inside_chassis': 624, 'intersection_mm3': 411.01638806277543, 'intersection_radial_range_mm': [72.02756926553633, 87.10041133677741]}]

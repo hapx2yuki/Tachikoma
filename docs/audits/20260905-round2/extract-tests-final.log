@@ -1,0 +1,10 @@
+test_conflicting_duplicate_refuses_entire_batch (tools.tests.test_extract_meshes.ExtractMeshesTests.test_conflicting_duplicate_refuses_entire_batch) ... ok
+test_existing_part_is_not_overwritten (tools.tests.test_extract_meshes.ExtractMeshesTests.test_existing_part_is_not_overwritten) ... ok
+test_meaningful_part_number_is_preserved (tools.tests.test_extract_meshes.ExtractMeshesTests.test_meaningful_part_number_is_preserved) ... ok
+test_xml_attribute_order_single_quotes_and_units (tools.tests.test_extract_meshes.ExtractMeshesTests.test_xml_attribute_order_single_quotes_and_units) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK
+Peg                                              10.0 x   10.0 x   10.0 mm  watertight=True

@@ -1,0 +1,31 @@
+  coxa tab#0: fill  74.3%  OK
+  coxa tab#1: fill  74.3%  OK
+  coxa tab#2: fill  99.2%  OK
+  coxa tab#3: fill  99.2%  OK
+  femur tab#0: fill  74.3%  OK
+  femur tab#1: fill  74.3%  OK
+  femur tab#2: fill  99.2%  OK
+  femur tab#3: fill  99.2%  OK
+  coxa_m tab#0: fill  74.3%  OK
+  coxa_m tab#1: fill  74.3%  OK
+  coxa_m tab#2: fill  99.2%  OK
+  coxa_m tab#3: fill  99.2%  OK
+  femur_m tab#0: fill  74.3%  OK
+  femur_m tab#1: fill  74.3%  OK
+  femur_m tab#2: fill  99.2%  OK
+  femur_m tab#3: fill  99.2%  OK
+Traceback (most recent call last):
+  File "/Users/uratayuuki/Documents/Tachikoma/tools/check_screw_bosses.py", line 111, in <module>
+    main()
+  File "/Users/uratayuuki/Documents/Tachikoma/tools/check_screw_bosses.py", line 82, in main
+    ok &= probe(chassis, pos, "-z", 6.5, f"chassis tab({leg})")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uratayuuki/Documents/Tachikoma/tools/check_screw_bosses.py", line 43, in probe
+    inter = trimesh.boolean.intersection([mesh, an], engine="manifold")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/boolean.py", line 114, in intersection
+    return _engines[engine](
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/uratayuuki/Documents/Tachikoma/.venv/lib/python3.11/site-packages/trimesh/boolean.py", line 142, in boolean_manifold
+    raise ValueError("Not all meshes are volumes!")
+ValueError: Not all meshes are volumes!

@@ -25,6 +25,7 @@ meta.frame_definition) に従って正規化した Placement のフラットな�
 from __future__ import annotations
 
 import json
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
@@ -33,11 +34,13 @@ import numpy as np
 import trimesh
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "hardware/src"))
+import config as C
 DATA = ROOT / "tools" / "data"
 MODEL = ROOT / "model"
 STL = ROOT / "hardware" / "stl"
 
-SCALE = 1.5  # hardware/src/config.py C.SCALE と一致 (両 JSON の "scale":1.5)
+SCALE = C.SCALE
 
 # model/*.stl ではなく hardware/stl/*.stl (加工済み出力) から読む必要がある
 # パーツ。tools/make_head_eyecut.py が示す通り、これらは既に
@@ -66,6 +69,14 @@ PRESCALED = {"Head_Top_Eyecut", "Head_Bottom_Armcut"}
 # 以後この STL を bbox 再中心化して置くと z+5.1mm ずれる — PRESCALED の
 # 「正規化スキップ」を必ず経由すること (check_arm.py で実際に起きかけた)。
 STL_RENDER_OVERRIDE: dict[str, str] = {"Head_Bottom_Blue": "Head_Bottom_Armcut"}
+
+# make_audio は原型座標を保ってSCALEだけ掛ける。加工後のbboxで中心を
+# 取り直すと、非対称な球面座や開口によって組立位置がずれるため原型の中心を使う。
+AUDIO_RENDER_OVERRIDE = {
+    "Mouth_Cannon_Grey": "Mouth_Cannon_Bored",
+    "Mouth_Neck_Blue": "Mouth_Neck_Bored",
+    "Mouth_Ball_Grey": "Mouth_Ball_Bored",
+}
 
 # rear JSON の "outward_normal" 整列は既定でパーツの局所 +Z を法線へ向ける
 # (_iter_rear 参照)。これは長さ方向が Z のパーツにのみ正しい。2026-07-29
@@ -208,6 +219,8 @@ class Placement:
 def _iter_front(path: Path):
     data = json.loads(path.read_text())
     for entry in data["parts"]:
+        if entry.get("assembly_used") is False:
+            continue
         name = entry["name"]
         stl_stem, _ = _resolve_stl(name)
         color = kit_color(stl_stem)
@@ -220,6 +233,14 @@ def _iter_front(path: Path):
         matrix0 = _matrix4(entry["matrix"]) if "matrix" in entry else None
         R0 = _compose_R(entry.get("R_axis_deg", []))
         t0 = np.array(entry["t"], dtype=float) if entry.get("t") is not None else None
+        # JSONは原型の配置記録。頭の前後位置は機構設計のconfigを正とする。
+        # 旧t.y=12のままでは、眼・肩・検査のy=11と外殻だけが1mmずれていた。
+        if name in ("Head_Top_Eyecut", "Head_Bottom_Blue") and frame == "robot":
+            if t0 is None or matrix0 is not None:
+                raise ValueError(f"頭部基準の配置形式が不正: {name}")
+            t0[1] = C.ARM_MOUNT_HUB_Y
+            if name == "Head_Top_Eyecut":
+                t0[2] = C.HEAD_TOP_Z_OFFSET
         # entry 自身が明示的に "unresolved": true を持つ場合 (例:
         # Leg_Toe_Black_x12 — t は入っているが "reasoned design estimate
         # only" と明記) は、t が存在していても unresolved 扱いにする。
@@ -277,11 +298,29 @@ def _iter_front(path: Path):
 
 def _iter_rear(path: Path):
     data = json.loads(path.read_text())
+    references = data["meta"]["shell_translation_reference_20260905"]
     for key, entry in data["parts"].items():
+        if entry.get("assembly_used") is False:
+            continue
         part = key.split("#", 1)[0]
         stl_stem, _ = _resolve_stl(Path(entry["source_stl"]).stem)
         color = kit_color(stl_stem)
         instance = key.split("#", 1)[1] if "#" in key else "single"
+        if entry.get("config_peg_pose"):
+            pose = C.CABIN_PEG_POSES[entry["config_peg_pose"]]
+            R = np.eye(4)
+            for axis, deg in pose["rotations"]:
+                R = rot(deg, axis) @ R
+            yield Placement(part=part, instance=instance, stl_stem=stl_stem,
+                            frame="robot", link=None, R=R,
+                            t=np.asarray(pose["translation"]), matrix=None,
+                            color=color, confidence=entry["confidence"],
+                            unresolved=False, source="rear")
+            continue
+        mount = entry.get("shell_mount")
+        shift = np.zeros(3)
+        if mount in C.CABIN_POSES:
+            shift = np.asarray(C.CABIN_POSES[mount]["translation"]) - np.asarray(references[mount])
         # "matrix" がある場合 (2026-07-29 追加、Cabin_Turrent_Left/Right_Grey
         # 用): raw STL 頂点に直接適用する 4x4 (front JSON の Head_Eye_White_x3
         # と同じ規約 — SCALE は 3x3 ブロックに焼き込み済み)。bbox 中心化を
@@ -291,14 +330,16 @@ def _iter_rear(path: Path):
         # そのケースでは「フランジ中心の参考値」として JSON に残すのみで
         # 描画には使わない。
         if "matrix" in entry:
+            matrix = _matrix4(entry["matrix"])
+            matrix[:3, 3] += shift
             yield Placement(
                 part=part, instance=instance, stl_stem=stl_stem, frame="robot",
-                link=None, R=None, t=None, matrix=_matrix4(entry["matrix"]),
+                link=None, R=None, t=None, matrix=matrix,
                 color=color, confidence=entry.get("confidence", ""),
                 unresolved=False, source="rear")
             continue
         pos = entry.get("pos_mm")
-        t = np.array(pos, dtype=float) if pos is not None else None
+        t = np.array(pos, dtype=float) + shift if pos is not None else None
         # rear JSON は基本的に回転情報を持たない (ring 抽出はメッシュ自体の
         # bbox 中心化×1.5 済みローカル座標系での位置のみを与える)。
         # "outward_normal" がある場合のみ、ローカル +Z (LOCAL_AXIS_OVERRIDE
@@ -351,6 +392,30 @@ def robot_only(placements: list[Placement]) -> list[Placement]:
     return [p for p in placements if p.frame == "robot" and not p.unresolved]
 
 
+def cabin_transform(stem: str) -> np.ndarray:
+    """配置定数からCabinの原型中心化座標→プレート下面座標を作る。"""
+    pose = C.CABIN_POSES[stem]
+    rotation = np.eye(4)
+    for axis, deg in pose["rotations"]:
+        rotation = rotation @ rot(deg, axis)
+    return trans(*pose["translation"]) @ rotation
+
+
+def normalized_mesh(stem: str) -> trimesh.Trimesh:
+    """配置前の150%ローカル形状。加工部品も原型の基準座標を維持する。"""
+    resolved, path = _resolve_stl(stem)
+    if stem in AUDIO_RENDER_OVERRIDE:
+        original = trimesh.load(path, force="mesh")
+        mesh = trimesh.load(STL / f"{AUDIO_RENDER_OVERRIDE[stem]}.stl", force="mesh")
+        mesh.apply_translation(-original.bounds.mean(axis=0) * SCALE)
+        return mesh
+    mesh = trimesh.load(path, force="mesh")
+    if resolved not in PRESCALED:
+        mesh.apply_translation(-mesh.bounds.mean(axis=0))
+        mesh.apply_scale(SCALE)
+    return mesh
+
+
 def oriented_mesh(p: Placement) -> trimesh.Trimesh:
     """p のローカル座標系でのメッシュを返す。
 
@@ -358,16 +423,17 @@ def oriented_mesh(p: Placement) -> trimesh.Trimesh:
     呼び出し側で加える)。frame=="link" なら p.link のローカル座標系
     (呼び出し側がさらにキャリア変換を 1 回適用してロボット座標へ運ぶ)。
     """
-    _, path = _resolve_stl(p.stl_stem)
-    tm = trimesh.load(path)
     if p.matrix is not None:
+        # matrixは原型RAW頂点向け。音声加工品のSCALEを一度戻してから適用する。
+        if p.stl_stem in AUDIO_RENDER_OVERRIDE:
+            tm = trimesh.load(STL / f"{AUDIO_RENDER_OVERRIDE[p.stl_stem]}.stl", force="mesh")
+            tm.apply_scale(1 / SCALE)
+        else:
+            _, path = _resolve_stl(p.stl_stem)
+            tm = trimesh.load(path, force="mesh")
         tm.apply_transform(p.matrix)
-    elif p.stl_stem in PRESCALED:
-        tm.apply_transform(trans(*p.t) @ p.R)
     else:
-        lo, hi = tm.bounds
-        tm.apply_translation(-(lo + hi) / 2)
-        tm.apply_scale(SCALE)
+        tm = normalized_mesh(p.stl_stem)
         tm.apply_transform(trans(*p.t) @ p.R)
     return tm
 

@@ -1,0 +1,22 @@
+before: legIK(NaN) success=0 pitch=nan
+before: softStart after 100ms PWM writes=0
+before: writeDeg(NaN) pulse=500us
+before: I2S bits_per_chan=0 (0 defaults to sample_bits=16)
+before: PCM overflow pop byte count=16383
+evalmachine.<anonymous>:48
+b('eyeBtn').onclick=()=>{
+^
+
+ReferenceError: Cannot access 'b' before initialization
+    at evalmachine.<anonymous>:48:1
+    at Script.runInContext (node:vm:149:12)
+    at Object.runInContext (node:vm:301:6)
+    at Object.<anonymous> (/Users/uratayuuki/Documents/Tachikoma/tools/tests/firmware_ui_test.cjs:21:4)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+    at Module.load (node:internal/modules/cjs/loader:1552:32)
+    at Module._load (node:internal/modules/cjs/loader:1354:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+
+Node.js v26.0.0

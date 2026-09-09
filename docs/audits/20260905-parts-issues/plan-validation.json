@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-09-05T18:25:26.967115+09:00",
+  "issues": 96,
+  "unique_bodies": 96,
+  "titles_changed": 24,
+  "dependencies": 156,
+  "dependencies_added": 23,
+  "dependencies_removed": 40,
+  "changed_dependency_issues": 30,
+  "status_proposals": {
+    "Todo": 8,
+    "Ready": 15,
+    "Blocked": 55,
+    "In Progress": 13,
+    "Done": 5
+  },
+  "closed_preserved": [
+    81,
+    82,
+    83,
+    84,
+    93
+  ],
+  "purchase_items": 134,
+  "purchase_refs": 410,
+  "modern_links_checked": 1198,
+  "missing_links": [],
+  "historical_links_preserved": 46,
+  "sha256": {
+    "tools/issues/plan.py": "a85b6c426b4c9f4aff283be56e5c2f6d2f186c5712af970a38e63dbc1fad0ff0",
+    "tools/issues/audit_plan_data.py": "a1a292a78739a7659fe5cce6422bc54fdc8d1f39c3b7d9e6f6abc7122af61072",
+    "docs/issues-audit-20260905.md": "4478e5002251e59415e2591dc545ff237cda10c7f02c204c17107f31d991b37e"
+  },
+  "result": "PASS"
+}

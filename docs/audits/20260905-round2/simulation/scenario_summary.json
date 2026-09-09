@@ -1,0 +1,2646 @@
+{
+  "created_utc": "2026-09-05T08:12:57.519323+00:00",
+  "case_count": 71,
+  "all_planned_cases_executed": true,
+  "all_input_hashes_match_current": true,
+  "all_cases_match_plan": true,
+  "status_counts": {
+    "PASS": 58,
+    "FALL": 3,
+    "FAIL": 2,
+    "INVALID_INITIAL_CONTACT_MODEL": 8
+  },
+  "timestep_comparison": {
+    "nominal_distance_m": 0.16814208560877214,
+    "half_step_distance_m": 0.16598218876971196,
+    "relative_difference": 0.01284566461299736,
+    "threshold": 0.05,
+    "status": "PASS"
+  },
+  "physical_readiness": "FAIL: known geometric intersections and unsupported TPU contact; remaining actuator/electrical properties unmeasured",
+  "cases": [
+    {
+      "name": "native_nominal",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.231662751011065,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.8991553499738
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3019356906578614,
+        "max": 35.67716552223175,
+        "p95": 4.4148253425843915
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16814208560877214,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/native_nominal.json"
+    },
+    {
+      "name": "back",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.297129208740318,
+      "max_pitch_deg": 3.0008524476317326,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.9227548213196
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0068,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.369558350083542,
+        "max": 35.89320898721796,
+        "p95": 4.455208149383013
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.0833670316725064,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/back.json"
+    },
+    {
+      "name": "right",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.172181953953985,
+      "max_pitch_deg": 2.11261338329627,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.6932251023171
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0064,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.4051165707873543,
+        "max": 35.51706785327474,
+        "p95": 4.558993692917891
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.15719231465314373,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/right.json"
+    },
+    {
+      "name": "left",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.277623546095746,
+      "max_pitch_deg": 1.7882731292436567,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.32833543156534
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0078,
+      "max_arm_saturation": 0.0,
+      "positive_mechanical_power_W": {
+        "mean": 1.3879993829954373,
+        "max": 35.73422709038306,
+        "p95": 4.458883173281377
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.12322629546074754,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/left.json"
+    },
+    {
+      "name": "turn_ccw",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.3655558336085285,
+      "max_pitch_deg": 1.9679852665302437,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.72065215867667
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0066,
+      "max_arm_saturation": 0.0,
+      "positive_mechanical_power_W": {
+        "mean": 1.194999583869192,
+        "max": 36.316299813605724,
+        "p95": 3.720670911843687
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.0,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/turn_ccw.json"
+    },
+    {
+      "name": "turn_cw",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.4458317361377455,
+      "max_pitch_deg": 1.9455302232430114,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.44766183209396
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.008,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.4052334961524966,
+        "max": 35.46900187688286,
+        "p95": 4.524908288328109
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.0,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/turn_cw.json"
+    },
+    {
+      "name": "compound",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.349087225504466,
+      "max_pitch_deg": 2.208087593402057,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.39151624313433
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0062,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2564002174990743,
+        "max": 35.86626048185754,
+        "p95": 3.9855861794224943
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.12672134877425026,
+        "stop": 0.0
+      },
+      "before_cad_status": "FAIL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/compound.json"
+    },
+    {
+      "name": "height_110",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.07965188344892,
+      "max_pitch_deg": 2.392901719356148,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.0437236129172
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0076,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3129007415993224,
+        "max": 36.55292545089805,
+        "p95": 4.487418760693995
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16566379019694324,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/height_110.json"
+    },
+    {
+      "name": "height_120",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.211986539022739,
+      "max_pitch_deg": 2.206461548311917,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.88730822561126
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0072,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2881826409670796,
+        "max": 34.92389231048758,
+        "p95": 4.415347879142197
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1753345972721166,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/height_120.json"
+    },
+    {
+      "name": "height_125",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.431740766032352,
+      "max_pitch_deg": 2.072879637595296,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.80911897981434
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.007,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2907689823250863,
+        "max": 34.36522821704078,
+        "p95": 4.390831623705723
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.17947291159671286,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/height_125.json"
+    },
+    {
+      "name": "height_130",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.701681651729551,
+      "max_pitch_deg": 1.8273098991230479,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.75294595913425
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.007,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3078803132482213,
+        "max": 34.70885368938675,
+        "p95": 4.364117272164342
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.18035134047580753,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/height_130.json"
+    },
+    {
+      "name": "height_changes",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 16.0,
+      "integrated_time_s": 16.0,
+      "max_roll_deg": 4.073118528774944,
+      "max_pitch_deg": 2.5652597892011055,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 422.4012492194719
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003875,
+      "max_arm_saturation": 0.0275,
+      "positive_mechanical_power_W": {
+        "mean": 1.6010350668853943,
+        "max": 34.54137631085334,
+        "p95": 4.617726844279341
+      },
+      "commanded_paths_m": {
+        "height_115": 0.06931699721649869,
+        "height_130": 0.07769982703364058,
+        "height_110": 0.06601735098800532,
+        "height_125": 0.0768080504611428
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/height_changes.json"
+    },
+    {
+      "name": "abrupt_reverse",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 21.2,
+      "integrated_time_s": 21.2,
+      "max_roll_deg": 4.124658138966783,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 562.0909041570167
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0026415094339622643,
+      "max_arm_saturation": 0.012452830188679246,
+      "positive_mechanical_power_W": {
+        "mean": 1.5112005083341107,
+        "max": 23.49676121008973,
+        "p95": 4.500554174972732
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "forward": 0.09735542494150935,
+        "backward": 0.051938339612810476,
+        "ccw": 0.0,
+        "cw": 0.0,
+        "right": 0.09113250407004415,
+        "left": 0.05014632656454987
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/abrupt_reverse.json"
+    },
+    {
+      "name": "zero_direct",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.2311570635702935,
+      "max_pitch_deg": 2.2986211607782803,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.0471424436218
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0102,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.4023518076390988,
+        "max": 35.620584612795916,
+        "p95": 4.600222256654343
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16810214758712003,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/zero_direct.json"
+    },
+    {
+      "name": "zero_sequential",
+      "status": "FALL",
+      "failed_checks": [
+        "no_fall",
+        "no_nonleg_contact"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 11.200000000000001,
+      "integrated_time_s": 11.200000000000001,
+      "max_roll_deg": 44.92301247139839,
+      "max_pitch_deg": 17.71777046460688,
+      "fell_time_s": 0.454,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 297.09547584650085
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0475,
+      "max_arm_saturation": 0.020535714285714286,
+      "positive_mechanical_power_W": {
+        "mean": 1.54577565378672,
+        "max": 35.884523072806324,
+        "p95": 4.783103247368463
+      },
+      "commanded_paths_m": {
+        "startup": 0.0,
+        "walk": 0.29067078374812105,
+        "stop": 0.0
+      },
+      "before_cad_status": "FALL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/zero_sequential.json"
+    },
+    {
+      "name": "stop_phase_00",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 8.4,
+      "integrated_time_s": 8.4,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 222.57305746945858
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.009285714285714286,
+      "max_arm_saturation": 0.015476190476190477,
+      "positive_mechanical_power_W": {
+        "mean": 1.357886721977407,
+        "max": 32.72320990542193,
+        "p95": 4.681772255933893
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.061977489380530285,
+        "stop": 0.0,
+        "restart": 0.0869988436162514,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_00.json"
+    },
+    {
+      "name": "stop_phase_01",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 8.5,
+      "integrated_time_s": 8.5,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.2991422593587902,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 225.24231521480996
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0042352941176470585,
+      "max_arm_saturation": 0.02047058823529412,
+      "positive_mechanical_power_W": {
+        "mean": 1.2308439417838875,
+        "max": 22.892129722105793,
+        "p95": 4.239096639106368
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.05989671833348691,
+        "stop": 0.0,
+        "restart": 0.06844260064133474,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_01.json"
+    },
+    {
+      "name": "stop_phase_02",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 8.6,
+      "integrated_time_s": 8.6,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.2991140155474707,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 227.88154408777402
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004186046511627907,
+      "max_arm_saturation": 0.020232558139534885,
+      "positive_mechanical_power_W": {
+        "mean": 1.2304564133846987,
+        "max": 22.892129722105793,
+        "p95": 4.199932466021649
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.056072294435561734,
+        "stop": 0.0,
+        "restart": 0.07196523222510444,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_02.json"
+    },
+    {
+      "name": "stop_phase_03",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 8.700000000000001,
+      "integrated_time_s": 8.700000000000001,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.2988659223658066,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 230.61662078103052
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004137931034482759,
+      "max_arm_saturation": 0.018620689655172412,
+      "positive_mechanical_power_W": {
+        "mean": 1.2228121083343784,
+        "max": 22.892129722105793,
+        "p95": 4.200232781767326
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.05262271499380722,
+        "stop": 0.0,
+        "restart": 0.07652968698162445,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_03.json"
+    },
+    {
+      "name": "stop_phase_04",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 8.8,
+      "integrated_time_s": 8.8,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 233.1764855300733
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004318181818181818,
+      "max_arm_saturation": 0.015,
+      "positive_mechanical_power_W": {
+        "mean": 1.2205264597613008,
+        "max": 22.892129722105793,
+        "p95": 4.2447063364793225
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.044775900254844944,
+        "stop": 0.0,
+        "restart": 0.07115906224839198,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_04.json"
+    },
+    {
+      "name": "stop_phase_05",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 8.9,
+      "integrated_time_s": 8.9,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 235.9282786878243
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004044943820224719,
+      "max_arm_saturation": 0.014831460674157304,
+      "positive_mechanical_power_W": {
+        "mean": 1.2181816628040343,
+        "max": 22.892129722105793,
+        "p95": 4.194346635386806
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.03635184031962432,
+        "stop": 0.0,
+        "restart": 0.07030514220573979,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_05.json"
+    },
+    {
+      "name": "stop_phase_06",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 9.0,
+      "integrated_time_s": 9.0,
+      "max_roll_deg": 4.398552771494469,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 238.67817729341996
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004222222222222222,
+      "max_arm_saturation": 0.014666666666666666,
+      "positive_mechanical_power_W": {
+        "mean": 1.2046733990701686,
+        "max": 22.892129722105793,
+        "p95": 4.171063111241723
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.030033733121782265,
+        "stop": 0.0,
+        "restart": 0.0715218972343535,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_06.json"
+    },
+    {
+      "name": "stop_phase_07",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 9.100000000000001,
+      "integrated_time_s": 9.1,
+      "max_roll_deg": 4.4737114060591185,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 241.32185740498414
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004835164835164835,
+      "max_arm_saturation": 0.014505494505494506,
+      "positive_mechanical_power_W": {
+        "mean": 1.211210012205281,
+        "max": 22.892129722105793,
+        "p95": 4.211044210030215
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.03151425180633165,
+        "stop": 0.0,
+        "restart": 0.07610342386964691,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_07.json"
+    },
+    {
+      "name": "stop_phase_08",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 9.200000000000001,
+      "integrated_time_s": 9.200000000000001,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 243.89607886252602
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.004130434782608695,
+      "max_arm_saturation": 0.014347826086956521,
+      "positive_mechanical_power_W": {
+        "mean": 1.2334681444716589,
+        "max": 22.892129722105793,
+        "p95": 4.261661667833305
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.02758046631789208,
+        "stop": 0.0,
+        "restart": 0.0720673375732151,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_08.json"
+    },
+    {
+      "name": "stop_phase_09",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 9.3,
+      "integrated_time_s": 9.3,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 246.5221562397751
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003870967741935484,
+      "max_arm_saturation": 0.0189247311827957,
+      "positive_mechanical_power_W": {
+        "mean": 1.2490530200083947,
+        "max": 22.892129722105793,
+        "p95": 4.255550835050113
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.028595918155021893,
+        "stop": 0.0,
+        "restart": 0.06724335355347912,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_09.json"
+    },
+    {
+      "name": "stop_phase_10",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 9.4,
+      "integrated_time_s": 9.4,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 249.21439061610795
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003829787234042553,
+      "max_arm_saturation": 0.01872340425531915,
+      "positive_mechanical_power_W": {
+        "mean": 1.249693932757782,
+        "max": 22.892129722105793,
+        "p95": 4.191473350914619
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.03897066187850068,
+        "stop": 0.0,
+        "restart": 0.06655377660095388,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_10.json"
+    },
+    {
+      "name": "stop_phase_11",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 9.5,
+      "integrated_time_s": 9.5,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 251.8819158627914
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003789473684210526,
+      "max_arm_saturation": 0.018526315789473686,
+      "positive_mechanical_power_W": {
+        "mean": 1.251711689680281,
+        "max": 22.892129722105793,
+        "p95": 4.19851169818505
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.048433175045658194,
+        "stop": 0.0,
+        "restart": 0.07070760426912871,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_11.json"
+    },
+    {
+      "name": "stop_phase_12",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 9.600000000000001,
+      "integrated_time_s": 9.6,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 254.30918454322642
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003958333333333334,
+      "max_arm_saturation": 0.018333333333333333,
+      "positive_mechanical_power_W": {
+        "mean": 1.263973703081471,
+        "max": 22.892129722105793,
+        "p95": 4.300744487507969
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.05993989123014712,
+        "stop": 0.0,
+        "restart": 0.0718035816831005,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_12.json"
+    },
+    {
+      "name": "stop_phase_13",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 9.700000000000001,
+      "integrated_time_s": 9.700000000000001,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.2994338340073845,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 256.93661049225966
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.003711340206185567,
+      "max_arm_saturation": 0.018144329896907216,
+      "positive_mechanical_power_W": {
+        "mean": 1.2672342099536875,
+        "max": 22.892129722105793,
+        "p95": 4.291654751709976
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.06932864274934339,
+        "stop": 0.0,
+        "restart": 0.06662168628945916,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_13.json"
+    },
+    {
+      "name": "stop_phase_14",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 9.8,
+      "integrated_time_s": 9.8,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 259.69947338899544
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0038775510204081634,
+      "max_arm_saturation": 0.017959183673469388,
+      "positive_mechanical_power_W": {
+        "mean": 1.2468953673465866,
+        "max": 22.892129722105793,
+        "p95": 4.197669775352407
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.08321964419668572,
+        "stop": 0.0,
+        "restart": 0.06915538017735631,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_14.json"
+    },
+    {
+      "name": "stop_phase_15",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 9.9,
+      "integrated_time_s": 9.9,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 262.3206258681029
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0036363636363636364,
+      "max_arm_saturation": 0.017777777777777778,
+      "positive_mechanical_power_W": {
+        "mean": 1.2485268831030616,
+        "max": 22.892129722105793,
+        "p95": 4.246475664115264
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "phase_setup": 0.09034753505958545,
+        "stop": 0.0,
+        "restart": 0.07360014956941807,
+        "stop2": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/stop_phase_15.json"
+    },
+    {
+      "name": "slope_-10",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 18.863683378751062,
+      "max_pitch_deg": 4.295953007803986,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 260.9361323907748
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.007,
+      "max_arm_saturation": 0.0168,
+      "positive_mechanical_power_W": {
+        "mean": 1.291451326929987,
+        "max": 34.488566655926576,
+        "p95": 4.142959015415688
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.24696154072087725,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/slope_-10.json"
+    },
+    {
+      "name": "slope_-5",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 10.390190775623289,
+      "max_pitch_deg": 2.8403827502719374,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 263.8956665066146
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2933167496301048,
+        "max": 35.06577535271845,
+        "p95": 4.253948629046485
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.21079681706250736,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/slope_-5.json"
+    },
+    {
+      "name": "slope_5",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 7.381091649337918,
+      "max_pitch_deg": 2.952362384225364,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 263.8058061235329
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0072,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3466538785109152,
+        "max": 35.53074424715957,
+        "p95": 4.54624223992617
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1232824752194298,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/slope_5.json"
+    },
+    {
+      "name": "slope_10",
+      "status": "FALL",
+      "failed_checks": [
+        "no_fall",
+        "no_nonleg_contact",
+        "translation_progress"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 56.82279322102767,
+      "max_pitch_deg": 8.25408727898107,
+      "fell_time_s": 0.372,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 260.23200708922667
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.037,
+      "max_arm_saturation": 0.0208,
+      "positive_mechanical_power_W": {
+        "mean": 1.6505896778109548,
+        "max": 34.075774058925056,
+        "p95": 5.280978362241304
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": -0.059177952558071685,
+        "stop": 0.0
+      },
+      "before_cad_status": "FALL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/slope_10.json"
+    },
+    {
+      "name": "step_2",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.7694744371546
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0072,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3017718487460446,
+        "max": 35.443558554687755,
+        "p95": 4.429372211106227
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16295039621451102,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/step_2.json"
+    },
+    {
+      "name": "step_5",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.305546024543623,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.7124049056673
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0072,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3225418592256184,
+        "max": 35.22783236520406,
+        "p95": 4.424974811439183
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1507164315732891,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/step_5.json"
+    },
+    {
+      "name": "step_10",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 6.739202289241213,
+      "max_pitch_deg": 2.7086988054054055,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.4338618496302
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0066,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3451361622013278,
+        "max": 33.886062283099385,
+        "p95": 4.45965413803497
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.14360303282138526,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/step_10.json"
+    },
+    {
+      "name": "push_2N",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.231538251368452,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.89809055817614
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.303367143117944,
+        "max": 35.67631650228713,
+        "p95": 4.419837624705934
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1678502470802536,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/push_2N.json"
+    },
+    {
+      "name": "push_5N",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.2311702175503845,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.8737585992639
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3044302218208264,
+        "max": 35.67300744089301,
+        "p95": 4.414833802733517
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.168169407998177,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/push_5N.json"
+    },
+    {
+      "name": "push_10N",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.230475390899947,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.8464859612964
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3016297835514532,
+        "max": 35.61822261498903,
+        "p95": 4.340447602508862
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1660426426464146,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/push_10N.json"
+    },
+    {
+      "name": "mass_scale_0.7",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 1.9084451735999997,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.854666469128837,
+      "max_pitch_deg": 2.190570157787433,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 185.01952614639796
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0046,
+      "max_arm_saturation": 0.0168,
+      "positive_mechanical_power_W": {
+        "mean": 1.0526649065161076,
+        "max": 34.933518861316614,
+        "p95": 3.97090433084116
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1695762404038911,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/mass_scale_0.7.json"
+    },
+    {
+      "name": "mass_scale_1.3",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 3.5442553224000006,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.6928132838669825,
+      "max_pitch_deg": 2.2370714252901256,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 344.9289867529299
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0088,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.5423212472109398,
+        "max": 34.988620932998515,
+        "p95": 4.953614868319485
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16826978627240163,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/mass_scale_1.3.json"
+    },
+    {
+      "name": "effort_scale_0.5",
+      "status": "FAIL",
+      "failed_checks": [
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.589598482535216,
+      "max_pitch_deg": 2.2355415278165527,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.33516085712756
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.1816,
+      "max_arm_saturation": 0.0408,
+      "positive_mechanical_power_W": {
+        "mean": 1.258020009532043,
+        "max": 17.19617285864579,
+        "p95": 4.120335301314472
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16427725726873713,
+        "stop": 0.0
+      },
+      "before_cad_status": "FAIL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/effort_scale_0.5.json"
+    },
+    {
+      "name": "effort_scale_0.7",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.298180660827985,
+      "max_pitch_deg": 2.3001456669219023,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.234135633139
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0264,
+      "max_arm_saturation": 0.028,
+      "positive_mechanical_power_W": {
+        "mean": 1.2792007337909148,
+        "max": 24.366499533312226,
+        "p95": 4.316284067826378
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16823691746164024,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/effort_scale_0.7.json"
+    },
+    {
+      "name": "effort_scale_0.9",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.020277267013039,
+      "max_pitch_deg": 2.2986831667963323,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.94985619035384
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0084,
+      "max_arm_saturation": 0.02,
+      "positive_mechanical_power_W": {
+        "mean": 1.2977370310107303,
+        "max": 32.20282981620414,
+        "p95": 4.378653341176059
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1677272200738156,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/effort_scale_0.9.json"
+    },
+    {
+      "name": "velocity_scale_0.5",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.397630412401697,
+      "max_pitch_deg": 2.30015702386215,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.1156193457724
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0414,
+      "max_arm_saturation": 0.028,
+      "positive_mechanical_power_W": {
+        "mean": 1.2573320130610006,
+        "max": 19.983211992432548,
+        "p95": 4.294032614542582
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16640426202177783,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/velocity_scale_0.5.json"
+    },
+    {
+      "name": "velocity_scale_0.75",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.085740225666851,
+      "max_pitch_deg": 2.2986316340328448,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.9845815851022
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.01,
+      "max_arm_saturation": 0.0206,
+      "positive_mechanical_power_W": {
+        "mean": 1.2893236321642039,
+        "max": 31.36167861152334,
+        "p95": 4.396741091358445
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16807058418952903,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/velocity_scale_0.75.json"
+    },
+    {
+      "name": "friction_0",
+      "status": "FALL",
+      "failed_checks": [
+        "no_fall",
+        "no_nonleg_contact",
+        "leg_saturation_le_5pct",
+        "translation_progress"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 179.80123210364798,
+      "max_pitch_deg": 88.97389544343066,
+      "fell_time_s": 0.07,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 1457.752817040034
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.204,
+      "max_arm_saturation": 0.1012,
+      "positive_mechanical_power_W": {
+        "mean": 1.844018097677948,
+        "max": 36.303386525315986,
+        "p95": 7.975886883199607
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": -0.7419037804585716,
+        "stop": 0.0
+      },
+      "before_cad_status": "NUMERICAL_FAILURE",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/friction_0.json"
+    },
+    {
+      "name": "friction_0.15",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 2.7144308366275274,
+      "max_pitch_deg": 1.6609889108502933,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.4135718267898
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0042,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.290291986295947,
+        "max": 34.35187833209229,
+        "p95": 3.9837254683028864
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.13891645027540947,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/friction_0.15.json"
+    },
+    {
+      "name": "friction_0.3",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.1401982199391867,
+      "max_pitch_deg": 1.7858927290788162,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 265.3223421846535
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0042,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2559621982930063,
+        "max": 35.712040139235654,
+        "p95": 4.028556665989723
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.15228715577355523,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/friction_0.3.json"
+    },
+    {
+      "name": "friction_0.6",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.8086200198791147,
+      "max_pitch_deg": 2.039349976251431,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.95746236513696
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0052,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.244008999170178,
+        "max": 34.10958774449316,
+        "p95": 4.19221711207814
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16669748396252482,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/friction_0.6.json"
+    },
+    {
+      "name": "combined_stress",
+      "status": "FAIL",
+      "failed_checks": [
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 3.5442553224000006,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 2.5324664482389556,
+      "max_pitch_deg": 1.7591149344354777,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 345.6241834288916
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.239,
+      "max_arm_saturation": 0.032,
+      "positive_mechanical_power_W": {
+        "mean": 1.4779883383341264,
+        "max": 21.16597182878455,
+        "p95": 4.196102595763755
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1423424881535095,
+        "stop": 0.0
+      },
+      "before_cad_status": "FAIL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/combined_stress.json"
+    },
+    {
+      "name": "long_60",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 64.0,
+      "integrated_time_s": 64.0,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.299528944650372,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 1691.5769148211184
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0005625,
+      "max_arm_saturation": 0.0254375,
+      "positive_mechanical_power_W": {
+        "mean": 1.4476752963167647,
+        "max": 22.892129722105793,
+        "p95": 4.376095338411294
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 1.3014212918226389,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/long_60.json"
+    },
+    {
+      "name": "long_180",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 184.0,
+      "integrated_time_s": 184.0,
+      "max_roll_deg": 3.9942744569890727,
+      "max_pitch_deg": 2.301788115009302,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 4861.358759557449
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0001956521739130435,
+      "max_arm_saturation": 0.026782608695652174,
+      "positive_mechanical_power_W": {
+        "mean": 1.461110427620017,
+        "max": 22.892129722105793,
+        "p95": 4.403956974529286
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 3.9467066611625,
+        "stop": 0.0
+      },
+      "before_cad_status": "FAIL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/long_180.json"
+    },
+    {
+      "name": "timestep_half",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.288244706298308,
+      "max_pitch_deg": 2.2876363144182745,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 266.10585664652314
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0073,
+      "max_arm_saturation": 0.0172,
+      "positive_mechanical_power_W": {
+        "mean": 1.279245198693427,
+        "max": 32.79500629792601,
+        "p95": 4.262083803779708
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16598218876971196,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/timestep_half.json"
+    },
+    {
+      "name": "self_linked-hulls_nonparent",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 3.9983802385305767,
+      "max_pitch_deg": 1.0749935462077331,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 5.40523641988598
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.88,
+      "max_arm_saturation": 0.0,
+      "positive_mechanical_power_W": {
+        "mean": 0.1611836835399022,
+        "max": 0.729382525561623,
+        "p95": 0.4780445190615993
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_linked-hulls_nonparent.json"
+    },
+    {
+      "name": "self_linked-hulls_all",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 4.775763809371386,
+      "max_pitch_deg": 0.6378611380572808,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 5.375264871309218
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.92,
+      "max_arm_saturation": 0.91,
+      "positive_mechanical_power_W": {
+        "mean": 0.39450885526305746,
+        "max": 1.4509126403981107,
+        "p95": 1.0247999805528678
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_linked-hulls_all.json"
+    },
+    {
+      "name": "self_parts_nonparent",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 83.54465244861596,
+      "max_pitch_deg": 2.197436516451539,
+      "fell_time_s": 0.078,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 8.025103866992223
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.38,
+      "positive_mechanical_power_W": {
+        "mean": 3.294632772739048,
+        "max": 13.781288855912633,
+        "p95": 9.993714741622087
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_parts_nonparent.json"
+    },
+    {
+      "name": "self_parts_all",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 178.5149053974734,
+      "max_pitch_deg": 76.59927691454881,
+      "fell_time_s": 0.044000000000000004,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 13.45892997077303
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.99,
+      "positive_mechanical_power_W": {
+        "mean": 13.092552857273484,
+        "max": 82.0194705348732,
+        "p95": 61.1912397318663
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_parts_all.json"
+    },
+    {
+      "name": "self_vhacd_nonparent",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 90.17816157290218,
+      "max_pitch_deg": 10.220092656746358,
+      "fell_time_s": 0.07200000000000001,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 4.98835173087736
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.0,
+      "positive_mechanical_power_W": {
+        "mean": 3.1430508969609012,
+        "max": 12.163329039446154,
+        "p95": 9.587913081836673
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_vhacd_nonparent.json"
+    },
+    {
+      "name": "self_vhacd_all",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 44.20522323232778,
+      "max_pitch_deg": 8.038040658085485,
+      "fell_time_s": 0.14,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 3.739195752340978
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.15,
+      "positive_mechanical_power_W": {
+        "mean": 0.9267412497713675,
+        "max": 6.410933052326816,
+        "p95": 4.996222575484308
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": "INVALID_INITIAL_CONTACT_MODEL",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/self_vhacd_all.json"
+    },
+    {
+      "name": "contact_parts",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.094208399251166,
+      "max_pitch_deg": 1.8875889163821522,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 265.6460705766624
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0042,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2431774103064221,
+        "max": 33.624994796948876,
+        "p95": 4.198025989494618
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16704300668567512,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/contact_parts.json"
+    },
+    {
+      "name": "contact_parts_uniform",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.520967729347626,
+      "max_pitch_deg": 2.3983044291339968,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 265.89962581655806
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.007,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3061292444246866,
+        "max": 35.84819920667099,
+        "p95": 4.425252761700305
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1662338710346525,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/contact_parts_uniform.json"
+    },
+    {
+      "name": "contact_vhacd",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.1095340213487033,
+      "max_pitch_deg": 1.8953208178134522,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 265.4030029073161
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0042,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.2431290111416478,
+        "max": 33.627123090925664,
+        "p95": 4.186949928509366
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1664375892622419,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/contact_vhacd.json"
+    },
+    {
+      "name": "contact_vhacd_uniform",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.4739245541159915,
+      "max_pitch_deg": 2.405367430193547,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 265.841048116296
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.007,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3065542222089912,
+        "max": 35.99126050706005,
+        "p95": 4.422922281731175
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1663784795923205,
+        "stop": 0.0
+      },
+      "before_cad_status": "PASS",
+      "file": "docs/audits/20260905-round2/simulation/stress-final/contact_vhacd_uniform.json"
+    },
+    {
+      "name": "voltage_5.0",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 3.972409557775598,
+      "max_pitch_deg": 2.2985182878775308,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.9715259446722
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0088,
+      "max_arm_saturation": 0.0224,
+      "positive_mechanical_power_W": {
+        "mean": 1.2954078588389877,
+        "max": 31.475371139769333,
+        "p95": 4.371310117259231
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.1676017710503011,
+        "stop": 0.0
+      },
+      "before_cad_status": null,
+      "file": "docs/audits/20260905-round2/simulation/stress-final/voltage_5.0.json"
+    },
+    {
+      "name": "voltage_5.5",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.116634977757484,
+      "max_pitch_deg": 2.298639666372216,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.9464240791596
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0082,
+      "max_arm_saturation": 0.02,
+      "positive_mechanical_power_W": {
+        "mean": 1.2987293933995336,
+        "max": 33.734166871600934,
+        "p95": 4.381048016665063
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16826660766495793,
+        "stop": 0.0
+      },
+      "before_cad_status": null,
+      "file": "docs/audits/20260905-round2/simulation/stress-final/voltage_5.5.json"
+    },
+    {
+      "name": "voltage_6.0",
+      "status": "PASS",
+      "failed_checks": [],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 10.0,
+      "integrated_time_s": 10.0,
+      "max_roll_deg": 4.231662751011065,
+      "max_pitch_deg": 2.298807758895938,
+      "fell_time_s": null,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "MIXED": 264.8991553499738
+        },
+        "fraction": null,
+        "status": "UNVERIFIED",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.0074,
+      "max_arm_saturation": 0.0176,
+      "positive_mechanical_power_W": {
+        "mean": 1.3019356906578614,
+        "max": 35.67716552223175,
+        "p95": 4.4148253425843915
+      },
+      "commanded_paths_m": {
+        "settle": 0.0,
+        "walk": 0.16814208560877214,
+        "stop": 0.0
+      },
+      "before_cad_status": null,
+      "file": "docs/audits/20260905-round2/simulation/stress-final/voltage_6.0.json"
+    },
+    {
+      "name": "servos_self_parts",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 86.11068711146164,
+      "max_pitch_deg": 15.230931913882133,
+      "fell_time_s": 0.060000000000000005,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 16.557562532370945
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.99,
+      "positive_mechanical_power_W": {
+        "mean": 9.537849074055968,
+        "max": 102.9433937591186,
+        "p95": 47.42414529090039
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": null,
+      "file": "docs/audits/20260905-round2/simulation/stress-final/servos_self_parts.json"
+    },
+    {
+      "name": "servos_self_vhacd",
+      "status": "INVALID_INITIAL_CONTACT_MODEL",
+      "failed_checks": [
+        "no_fall",
+        "initial_self_penetration_le_0p1mm",
+        "leg_saturation_le_5pct"
+      ],
+      "input_hashes_match_current": true,
+      "case_matches_plan": true,
+      "changed_input_files": [],
+      "mass_kg": 2.726350248,
+      "requested_time_s": 0.2,
+      "integrated_time_s": 0.2,
+      "max_roll_deg": 40.0544097783901,
+      "max_pitch_deg": 10.526636958856688,
+      "fell_time_s": 0.154,
+      "tpu_support": {
+        "normal_impulse_Ns": {
+          "PLA": 3.779850843045286
+        },
+        "fraction": 0.0,
+        "status": "FAIL",
+        "threshold_fraction": 0.95
+      },
+      "max_leg_saturation": 0.99,
+      "max_arm_saturation": 0.99,
+      "positive_mechanical_power_W": {
+        "mean": 1.3995047866668002,
+        "max": 7.2988839422617655,
+        "p95": 5.918278906629249
+      },
+      "commanded_paths_m": {
+        "hold": 0.0
+      },
+      "before_cad_status": null,
+      "file": "docs/audits/20260905-round2/simulation/stress-final/servos_self_vhacd.json"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "path": "/Users/uratayuuki/Documents/Tachikoma/TACHIKOMA_Phase0_PETG.3mf",
+    "objects": [
+      {
+        "id": "2",
+        "name": "tibia_link.stl",
+        "instances": 1,
+        "vertex_distance_mm": null,
+        "relative_volume_difference": 0.06848170409506014,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      },
+      {
+        "id": "4",
+        "name": "femur_link.stl",
+        "instances": 1,
+        "vertex_distance_mm": 7.596055597276679,
+        "relative_volume_difference": 0.02097105417942366,
+        "filament_slot": 4,
+        "material": "PETG",
+        "wall_loops": "4",
+        "infill": "40%"
+      }
+    ],
+    "errors": [
+      "SHAPE_REVIEW: tibia_link.stl distance=infmm volume=6.848%",
+      "SHAPE_REVIEW: femur_link.stl distance=7.596mm volume=2.097%"
+    ],
+    "warnings": [
+      "UNMANAGED_PLATE: 単発3MF。全数計画の数量とは照合しない"
+    ],
+    "actual_quantities": {
+      "tibia_link.stl": 1,
+      "femur_link.stl": 1
+    }
+  }
+]

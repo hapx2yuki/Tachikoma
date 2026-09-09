@@ -1,0 +1,44 @@
+armature_0.0001_dt0.00025 PASS roll 4.31 pitch 2.18 power {'mean': 1.2086494276655628, 'max': 32.4150885776538, 'p95': 3.9238656410063455} self initial mm 0
+armature_0_dt0.00025 PASS roll 4.21 pitch 2.19 power {'mean': 1.203336782120998, 'max': 32.93899568747883, 'p95': 3.881091832184993} self initial mm 0
+[
+  {
+    "name": "armature_0.0001_dt0.00025",
+    "status": "PASS",
+    "comparison": {
+      "coarser_timestep_s": 0.0005,
+      "finer_timestep_s": 0.00025,
+      "coarser_distance_m": 0.16479351207858323,
+      "finer_distance_m": 0.16208405028777742,
+      "relative_difference": 0.01644155620346131,
+      "threshold": 0.05,
+      "status": "PASS",
+      "reference_sha256": "a0e0838bb4685b21e907824e333da1971d37a93f524c910098f088b7a1eae085"
+    },
+    "positive_mechanical_power_W": {
+      "mean": 1.2086494276655628,
+      "max": 32.4150885776538,
+      "p95": 3.9238656410063455
+    },
+    "input_hashes_match_current": true
+  },
+  {
+    "name": "armature_0_dt0.00025",
+    "status": "PASS",
+    "comparison": {
+      "coarser_timestep_s": 0.0005,
+      "finer_timestep_s": 0.00025,
+      "coarser_distance_m": 0.1664476925250956,
+      "finer_distance_m": 0.1627472083092323,
+      "relative_difference": 0.0222321148447603,
+      "threshold": 0.05,
+      "status": "PASS",
+      "reference_sha256": "f1cc905c52e2bdb15dea5056a6e317d598854565239797708666e028d3e59023"
+    },
+    "positive_mechanical_power_W": {
+      "mean": 1.203336782120998,
+      "max": 32.93899568747883,
+      "p95": 3.881091832184993
+    },
+    "input_hashes_match_current": true
+  }
+]
