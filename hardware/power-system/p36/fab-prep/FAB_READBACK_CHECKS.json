@@ -1,0 +1,88 @@
+{
+  "checks": {
+    "F_copper_primitive_count": 120,
+    "B_copper_primitive_count": 119,
+    "nets_connected": 15,
+    "different_nets_short": false,
+    "fuse_bypassed": false,
+    "minimum_copper_gap_mm": 0.33999999999999897,
+    "holes": 82,
+    "plated_holes": 78,
+    "nonplated_holes": 4,
+    "min_annular_ring_mm": 0.275,
+    "min_hole_web_mm": 0.9999999999999991,
+    "terminal_xy_max_change_mm": 3.552713678800501e-15,
+    "terminal_count": 54,
+    "terminal_Z_unchanged": "P35 component meshes retained; fabrication file defines XY only",
+    "F_mask_openings": 56,
+    "B_mask_openings": 54,
+    "outline_mm": [
+      25.4,
+      62.5
+    ],
+    "independent_external_DFM": "NOT_RUN",
+    "KiCad_DRC": "NOT_RUN - custom primitive/network checks only"
+  },
+  "connectivity": {
+    "GND": {
+      "components": 1,
+      "features": 65
+    },
+    "LEG_VBUS": {
+      "components": 1,
+      "features": 40
+    },
+    "POWER_IN": {
+      "components": 1,
+      "features": 40
+    },
+    "PWM_L0": {
+      "components": 1,
+      "features": 8
+    },
+    "PWM_L1": {
+      "components": 1,
+      "features": 7
+    },
+    "PWM_L10": {
+      "components": 1,
+      "features": 10
+    },
+    "PWM_L11": {
+      "components": 1,
+      "features": 10
+    },
+    "PWM_L2": {
+      "components": 1,
+      "features": 5
+    },
+    "PWM_L3": {
+      "components": 1,
+      "features": 7
+    },
+    "PWM_L4": {
+      "components": 1,
+      "features": 10
+    },
+    "PWM_L5": {
+      "components": 1,
+      "features": 10
+    },
+    "PWM_L6": {
+      "components": 1,
+      "features": 8
+    },
+    "PWM_L7": {
+      "components": 1,
+      "features": 7
+    },
+    "PWM_L8": {
+      "components": 1,
+      "features": 5
+    },
+    "PWM_L9": {
+      "components": 1,
+      "features": 7
+    }
+  }
+}

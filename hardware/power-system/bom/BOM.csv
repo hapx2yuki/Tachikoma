@@ -1,0 +1,6 @@
+part_id,revision_id,name,make_buy,manufacturer,manufacturer_part_number,quantity,unit,occurrence_reference,status,installed_quantity,stock_quantity,order_quantity
+TACHIKOMA-LEG-DISTRIBUTOR-PCB,P36-S1-SILK-R1,脚サーボ12系統 電源・PWM分配基板（裸基板）,make,,,1,個,PCB1,DESIGN_PROPOSAL,,,
+KEYSTONE-3568,MPN-3568,MINIヒューズホルダー,buy,Keystone,3568,1,個,F1 HOLDER,DESIGN_PROPOSAL,,,
+LITTELFUSE-0297015-L,MPN-0297015.L,15A MINIヒューズ（暫定選定）,buy,Littelfuse,0297015.L,1,個,F1 INSERT,DESIGN_PROPOSAL,,,
+SAMTEC-HTSW-103-07-L-S,MPN-HTSW-103-07-L-S,サーボ出力 1x3 2.54mmピンヘッダ,buy,Samtec,HTSW-103-07-L-S,12,個,J0..J11,DESIGN_PROPOSAL,,,
+SAMTEC-HTSW-107-07-L-D,MPN-HTSW-107-07-L-D,PWM/GND入力 2x7 2.54mmピンヘッダ,buy,Samtec,HTSW-107-07-L-D,1,個,J_IN,DESIGN_PROPOSAL,,,

@@ -1,0 +1,49 @@
+{
+  "F_minimum_legend_to_opening_mm": 0.41500000000000337,
+  "B_minimum_legend_to_opening_mm": 0.23499999999999888,
+  "F_stroke_count": 183,
+  "B_stroke_count": 142,
+  "unchanged_manufacturing_layers": [
+    "P36.GBL",
+    "P36.GTL",
+    "P36-NPTH.drl",
+    "P36.GBS",
+    "P36.GKO",
+    "P36-PTH.drl",
+    "P36.GTS"
+  ],
+  "font_height_mm": 1.0,
+  "stroke_width_mm": 0.15,
+  "back_map_rows_top_to_bottom": [
+    [
+      "G",
+      "G"
+    ],
+    [
+      "11",
+      "5"
+    ],
+    [
+      "10",
+      "4"
+    ],
+    [
+      "9",
+      "3"
+    ],
+    [
+      "8",
+      "2"
+    ],
+    [
+      "7",
+      "1"
+    ],
+    [
+      "6",
+      "0"
+    ]
+  ],
+  "coordinate_datum": "Back view: power-pad end up; back print mirrored in Gerber",
+  "silk_only_revision": true
+}

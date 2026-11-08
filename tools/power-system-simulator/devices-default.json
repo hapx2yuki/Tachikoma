@@ -1,0 +1,16 @@
+{
+  "version": "p15.devices.v1",
+  "selection": {
+    "legServo": "ld220mg",
+    "armServo": "mg90s",
+    "battery": "zeee2200",
+    "armRegulator": "henge8a",
+    "logicRegulator": "mini560_unknown",
+    "controller": "esp32devkitc",
+    "pwm": "pca9685",
+    "switch": "kiligen_unknown",
+    "fuse": "ac292_unknown",
+    "relay": "g5le_reference"
+  },
+  "custom": {}
+}

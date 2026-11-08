@@ -1,0 +1,4498 @@
+{
+  "configuration": "P14_FLAT_HARNESS_REVIEW",
+  "units": "mm",
+  "source_model": "P12_ELECTRONICS_REFERENCE.blend",
+  "body_placement": "paused unchanged",
+  "components": [
+    {
+      "id": "BAT",
+      "object": "P14_BAT",
+      "location": [
+        -335.0,
+        -70.0,
+        0.0
+      ]
+    },
+    {
+      "id": "FUSE",
+      "object": "P14_FUSE",
+      "location": [
+        -235.0,
+        -70.0,
+        0.0
+      ]
+    },
+    {
+      "id": "SWITCH",
+      "object": "P14_SWITCH",
+      "location": [
+        -235.0,
+        -175.0,
+        4.018901824951172
+      ]
+    },
+    {
+      "id": "RELAY",
+      "object": "P14_RELAY",
+      "location": [
+        -340.0,
+        -200.0,
+        0.0
+      ]
+    },
+    {
+      "id": "UBEC",
+      "object": "P14_UBEC",
+      "location": [
+        -95.0,
+        -105.0,
+        0.0
+      ]
+    },
+    {
+      "id": "DC5",
+      "object": "P14_DC5",
+      "location": [
+        -95.0,
+        -10.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ESP",
+      "object": "P14_ESP",
+      "location": [
+        25.0,
+        -10.0,
+        5.099999904632568
+      ]
+    },
+    {
+      "id": "LEGS",
+      "object": "P14_LEGS",
+      "location": [
+        0.0,
+        100.0,
+        1.2999999523162842
+      ]
+    },
+    {
+      "id": "ARMS",
+      "object": "P14_ARMS",
+      "location": [
+        170.0,
+        -95.0,
+        1.2999999523162842
+      ]
+    },
+    {
+      "id": "L0",
+      "object": "P14_L0",
+      "location": [
+        -330.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L1",
+      "object": "P14_L1",
+      "location": [
+        -270.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L2",
+      "object": "P14_L2",
+      "location": [
+        -210.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L3",
+      "object": "P14_L3",
+      "location": [
+        -150.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L4",
+      "object": "P14_L4",
+      "location": [
+        -90.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L5",
+      "object": "P14_L5",
+      "location": [
+        -30.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L6",
+      "object": "P14_L6",
+      "location": [
+        30.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L7",
+      "object": "P14_L7",
+      "location": [
+        90.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L8",
+      "object": "P14_L8",
+      "location": [
+        150.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L9",
+      "object": "P14_L9",
+      "location": [
+        210.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L10",
+      "object": "P14_L10",
+      "location": [
+        270.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L11",
+      "object": "P14_L11",
+      "location": [
+        330.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "A0",
+      "object": "P14_A0",
+      "location": [
+        70.0,
+        -240.0,
+        18.0
+      ]
+    },
+    {
+      "id": "A3",
+      "object": "P14_A3",
+      "location": [
+        135.0,
+        -240.0,
+        18.0
+      ]
+    },
+    {
+      "id": "A4",
+      "object": "P14_A4",
+      "location": [
+        200.0,
+        -240.0,
+        18.0
+      ]
+    },
+    {
+      "id": "A7",
+      "object": "P14_A7",
+      "location": [
+        265.0,
+        -240.0,
+        18.0
+      ]
+    }
+  ],
+  "endpoints": {
+    "BAT+": {
+      "object": "P14_BAT__XT60_F_CONTACT_BAT_RAW",
+      "point": [
+        -347.6000061035156,
+        -98.0,
+        18.0
+      ],
+      "net": "BAT_RAW",
+      "kind": "component_terminal"
+    },
+    "BAT-": {
+      "object": "P14_BAT__XT60_F_CONTACT_GND",
+      "point": [
+        -340.3999938964844,
+        -98.0,
+        18.0
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "FUSE_IN": {
+      "object": "P14_FUSE__FUSE_END_BAT_RAW",
+      "point": [
+        -247.0,
+        -89.0,
+        3.0
+      ],
+      "net": "BAT_RAW",
+      "kind": "component_terminal"
+    },
+    "FUSE_OUT": {
+      "object": "P14_FUSE__FUSE_END_BAT_FUSED",
+      "point": [
+        -223.0,
+        -89.0,
+        3.0
+      ],
+      "net": "BAT_FUSED",
+      "kind": "component_terminal"
+    },
+    "UBEC_IN+": {
+      "object": "P14_UBEC__HENGE_INPUT_END_SWITCHED",
+      "point": [
+        -123.0,
+        -126.0,
+        2.0
+      ],
+      "net": "SWITCHED",
+      "kind": "component_terminal"
+    },
+    "UBEC_IN-": {
+      "object": "P14_UBEC__HENGE_INPUT_END_GND",
+      "point": [
+        -123.0,
+        -129.0,
+        2.0
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "UBEC_OUT+": {
+      "object": "P14_UBEC__HENGE_OUTPUT_END_ARM_SUPPLY",
+      "point": [
+        -72.0,
+        -127.0,
+        2.0
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "UBEC_OUT-": {
+      "object": "P14_UBEC__HENGE_OUTPUT_END_GND",
+      "point": [
+        -72.0,
+        -130.0,
+        2.0
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "DC_IN+": {
+      "object": "P14_DC5__MINI560_PAD_SWITCHED",
+      "point": [
+        -108.19999694824219,
+        -14.800000190734863,
+        1.25
+      ],
+      "net": "SWITCHED",
+      "kind": "component_terminal"
+    },
+    "DC_IN-": {
+      "object": "P14_DC5__MINI560_PAD_GND",
+      "point": [
+        -108.19999694824219,
+        -3.0,
+        1.25
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "DC_OUT+": {
+      "object": "P14_DC5__MINI560_PAD_5V_LOGIC",
+      "point": [
+        -81.80000305175781,
+        -14.800000190734863,
+        1.25
+      ],
+      "net": "5V_LOGIC",
+      "kind": "component_terminal"
+    },
+    "DC_OUT-": {
+      "object": "P14_DC5__MINI560_PAD_GND.002",
+      "point": [
+        -81.80000305175781,
+        -3.0,
+        1.25
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "ESP_5V": {
+      "object": "P14_ESP__ESP32_J2_5V",
+      "point": [
+        12.300003051757812,
+        -32.87999725341797,
+        4.0
+      ],
+      "net": "5V_LOGIC",
+      "kind": "component_terminal"
+    },
+    "ESP_GND": {
+      "object": "P14_ESP__ESP32_J2_GND",
+      "point": [
+        12.300003051757812,
+        -20.18000030517578,
+        4.0
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "ESP_3V3": {
+      "object": "P14_ESP__ESP32_J2_3V3",
+      "point": [
+        12.300003051757812,
+        12.839996337890625,
+        4.0
+      ],
+      "net": "3V3_LOGIC",
+      "kind": "component_terminal"
+    },
+    "ESP_SDA": {
+      "object": "P14_ESP__ESP32_J3_21",
+      "point": [
+        37.69999694824219,
+        0.1399993896484375,
+        4.0
+      ],
+      "net": "SDA",
+      "kind": "component_terminal"
+    },
+    "ESP_SCL": {
+      "object": "P14_ESP__ESP32_J3_22",
+      "point": [
+        37.69999694824219,
+        7.760002136230469,
+        4.0
+      ],
+      "net": "SCL",
+      "kind": "component_terminal"
+    },
+    "LEGS_GND": {
+      "object": "P14_LEGS__PCA_LEGS_BEND_GND",
+      "point": [
+        30.5,
+        106.3499984741211,
+        2.299999952316284
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "LEGS_VCC": {
+      "object": "P14_LEGS__PCA_LEGS_BEND_VCC",
+      "point": [
+        30.5,
+        96.19000244140625,
+        2.299999952316284
+      ],
+      "net": "3V3_LOGIC",
+      "kind": "component_terminal"
+    },
+    "LEGS_SDA": {
+      "object": "P14_LEGS__PCA_LEGS_BEND_SDA",
+      "point": [
+        30.5,
+        98.72999572753906,
+        2.299999952316284
+      ],
+      "net": "SDA",
+      "kind": "component_terminal"
+    },
+    "LEGS_SCL": {
+      "object": "P14_LEGS__PCA_LEGS_BEND_SCL",
+      "point": [
+        30.5,
+        101.2699966430664,
+        2.299999952316284
+      ],
+      "net": "SCL",
+      "kind": "component_terminal"
+    },
+    "ARMS_GND": {
+      "object": "P14_ARMS__PCA_ARMS_BEND_GND",
+      "point": [
+        200.5,
+        -88.6500015258789,
+        2.299999952316284
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "ARMS_VCC": {
+      "object": "P14_ARMS__PCA_ARMS_BEND_VCC",
+      "point": [
+        200.5,
+        -98.80999755859375,
+        2.299999952316284
+      ],
+      "net": "3V3_LOGIC",
+      "kind": "component_terminal"
+    },
+    "ARMS_SDA": {
+      "object": "P14_ARMS__PCA_ARMS_BEND_SDA",
+      "point": [
+        200.5,
+        -96.27000427246094,
+        2.299999952316284
+      ],
+      "net": "SDA",
+      "kind": "component_terminal"
+    },
+    "ARMS_SCL": {
+      "object": "P14_ARMS__PCA_ARMS_BEND_SCL",
+      "point": [
+        200.5,
+        -93.7300033569336,
+        2.299999952316284
+      ],
+      "net": "SCL",
+      "kind": "component_terminal"
+    },
+    "PWM_L0_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH00_PWM",
+      "point": [
+        -25.400001525878906,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L0",
+      "kind": "component_terminal"
+    },
+    "PWM_L0_SERVO": {
+      "object": "P14_L0__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -327.4599914550781,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L0",
+      "kind": "component_terminal"
+    },
+    "L0_POWER": {
+      "object": "P14_L0__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -330.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L0_GND": {
+      "object": "P14_L0__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -332.5400085449219,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L1_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH01_PWM",
+      "point": [
+        -22.860000610351562,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L1",
+      "kind": "component_terminal"
+    },
+    "PWM_L1_SERVO": {
+      "object": "P14_L1__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -267.4599914550781,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L1",
+      "kind": "component_terminal"
+    },
+    "L1_POWER": {
+      "object": "P14_L1__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -270.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L1_GND": {
+      "object": "P14_L1__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -272.5400085449219,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L2_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH02_PWM",
+      "point": [
+        -20.31999969482422,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L2",
+      "kind": "component_terminal"
+    },
+    "PWM_L2_SERVO": {
+      "object": "P14_L2__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -207.45999145507812,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L2",
+      "kind": "component_terminal"
+    },
+    "L2_POWER": {
+      "object": "P14_L2__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -210.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L2_GND": {
+      "object": "P14_L2__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -212.54000854492188,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L3_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH03_PWM",
+      "point": [
+        -17.779998779296875,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L3",
+      "kind": "component_terminal"
+    },
+    "PWM_L3_SERVO": {
+      "object": "P14_L3__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -147.45999145507812,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L3",
+      "kind": "component_terminal"
+    },
+    "L3_POWER": {
+      "object": "P14_L3__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -150.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L3_GND": {
+      "object": "P14_L3__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -152.54000854492188,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L4_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH04_PWM",
+      "point": [
+        -12.699996948242188,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L4",
+      "kind": "component_terminal"
+    },
+    "PWM_L4_SERVO": {
+      "object": "P14_L4__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -87.45999908447266,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L4",
+      "kind": "component_terminal"
+    },
+    "L4_POWER": {
+      "object": "P14_L4__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -90.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L4_GND": {
+      "object": "P14_L4__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -92.54000091552734,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L5_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH05_PWM",
+      "point": [
+        -10.160003662109375,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L5",
+      "kind": "component_terminal"
+    },
+    "PWM_L5_SERVO": {
+      "object": "P14_L5__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -27.459999084472656,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L5",
+      "kind": "component_terminal"
+    },
+    "L5_POWER": {
+      "object": "P14_L5__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -30.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L5_GND": {
+      "object": "P14_L5__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -32.540000915527344,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L6_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH06_PWM",
+      "point": [
+        -7.620002746582031,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L6",
+      "kind": "component_terminal"
+    },
+    "PWM_L6_SERVO": {
+      "object": "P14_L6__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        32.540000915527344,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L6",
+      "kind": "component_terminal"
+    },
+    "L6_POWER": {
+      "object": "P14_L6__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        30.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L6_GND": {
+      "object": "P14_L6__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        27.459999084472656,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L7_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH07_PWM",
+      "point": [
+        -5.0800018310546875,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L7",
+      "kind": "component_terminal"
+    },
+    "PWM_L7_SERVO": {
+      "object": "P14_L7__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        92.54000091552734,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L7",
+      "kind": "component_terminal"
+    },
+    "L7_POWER": {
+      "object": "P14_L7__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        90.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L7_GND": {
+      "object": "P14_L7__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        87.45999908447266,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L8_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH08_PWM",
+      "point": [
+        0.0,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L8",
+      "kind": "component_terminal"
+    },
+    "PWM_L8_SERVO": {
+      "object": "P14_L8__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        152.54000854492188,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L8",
+      "kind": "component_terminal"
+    },
+    "L8_POWER": {
+      "object": "P14_L8__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        150.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L8_GND": {
+      "object": "P14_L8__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        147.45999145507812,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L9_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH09_PWM",
+      "point": [
+        2.5400009155273438,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L9",
+      "kind": "component_terminal"
+    },
+    "PWM_L9_SERVO": {
+      "object": "P14_L9__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        212.54000854492188,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L9",
+      "kind": "component_terminal"
+    },
+    "L9_POWER": {
+      "object": "P14_L9__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        210.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L9_GND": {
+      "object": "P14_L9__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        207.45999145507812,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L10_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH10_PWM",
+      "point": [
+        5.0800018310546875,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L10",
+      "kind": "component_terminal"
+    },
+    "PWM_L10_SERVO": {
+      "object": "P14_L10__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        272.5400085449219,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L10",
+      "kind": "component_terminal"
+    },
+    "L10_POWER": {
+      "object": "P14_L10__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        270.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L10_GND": {
+      "object": "P14_L10__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        267.4599914550781,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L11_SOURCE": {
+      "object": "P14_LEGS__PCA_LEGS_CH11_PWM",
+      "point": [
+        7.620002746582031,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L11",
+      "kind": "component_terminal"
+    },
+    "PWM_L11_SERVO": {
+      "object": "P14_L11__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        332.5400085449219,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L11",
+      "kind": "component_terminal"
+    },
+    "L11_POWER": {
+      "object": "P14_L11__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        330.0,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "L11_GND": {
+      "object": "P14_L11__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        327.4599914550781,
+        205.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_A0_SOURCE": {
+      "object": "P14_ARMS__PCA_ARMS_CH00_PWM",
+      "point": [
+        144.60000610351562,
+        -90.19999694824219,
+        5.300000190734863
+      ],
+      "net": "PWM_A0",
+      "kind": "component_terminal"
+    },
+    "PWM_A0_SERVO": {
+      "object": "P14_A0__MG90S_CAD_CONNECTOR_2",
+      "point": [
+        72.54000091552734,
+        -265.0,
+        5.5
+      ],
+      "net": "PWM_A0",
+      "kind": "component_terminal"
+    },
+    "A0_POWER": {
+      "object": "P14_A0__MG90S_CAD_CONNECTOR_1",
+      "point": [
+        70.0,
+        -265.0,
+        5.5
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "A0_GND": {
+      "object": "P14_A0__MG90S_CAD_CONNECTOR_0",
+      "point": [
+        67.45999908447266,
+        -265.0,
+        5.5
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_A3_SOURCE": {
+      "object": "P14_ARMS__PCA_ARMS_CH03_PWM",
+      "point": [
+        152.22000122070312,
+        -90.19999694824219,
+        5.300000190734863
+      ],
+      "net": "PWM_A3",
+      "kind": "component_terminal"
+    },
+    "PWM_A3_SERVO": {
+      "object": "P14_A3__MG90S_CAD_CONNECTOR_2",
+      "point": [
+        137.5399932861328,
+        -265.0,
+        5.5
+      ],
+      "net": "PWM_A3",
+      "kind": "component_terminal"
+    },
+    "A3_POWER": {
+      "object": "P14_A3__MG90S_CAD_CONNECTOR_1",
+      "point": [
+        135.0,
+        -265.0,
+        5.5
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "A3_GND": {
+      "object": "P14_A3__MG90S_CAD_CONNECTOR_0",
+      "point": [
+        132.4600067138672,
+        -265.0,
+        5.5
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_A4_SOURCE": {
+      "object": "P14_ARMS__PCA_ARMS_CH04_PWM",
+      "point": [
+        157.3000030517578,
+        -90.19999694824219,
+        5.300000190734863
+      ],
+      "net": "PWM_A4",
+      "kind": "component_terminal"
+    },
+    "PWM_A4_SERVO": {
+      "object": "P14_A4__MG90S_CAD_CONNECTOR_2",
+      "point": [
+        202.5399932861328,
+        -265.0,
+        5.5
+      ],
+      "net": "PWM_A4",
+      "kind": "component_terminal"
+    },
+    "A4_POWER": {
+      "object": "P14_A4__MG90S_CAD_CONNECTOR_1",
+      "point": [
+        200.0,
+        -265.0,
+        5.5
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "A4_GND": {
+      "object": "P14_A4__MG90S_CAD_CONNECTOR_0",
+      "point": [
+        197.4600067138672,
+        -265.0,
+        5.5
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_A7_SOURCE": {
+      "object": "P14_ARMS__PCA_ARMS_CH07_PWM",
+      "point": [
+        164.9199981689453,
+        -90.19999694824219,
+        5.300000190734863
+      ],
+      "net": "PWM_A7",
+      "kind": "component_terminal"
+    },
+    "PWM_A7_SERVO": {
+      "object": "P14_A7__MG90S_CAD_CONNECTOR_2",
+      "point": [
+        267.5400085449219,
+        -265.0,
+        5.5
+      ],
+      "net": "PWM_A7",
+      "kind": "component_terminal"
+    },
+    "A7_POWER": {
+      "object": "P14_A7__MG90S_CAD_CONNECTOR_1",
+      "point": [
+        265.0,
+        -265.0,
+        5.5
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "A7_GND": {
+      "object": "P14_A7__MG90S_CAD_CONNECTOR_0",
+      "point": [
+        262.4599914550781,
+        -265.0,
+        5.5
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "SW_IN_UNRESOLVED": {
+      "object": "P14_NODE_SW_IN_UNRESOLVED",
+      "point": [
+        -255,
+        -125,
+        3
+      ],
+      "net": "BAT_FUSED",
+      "kind": "diagram_junction"
+    },
+    "SW_OUT_UNRESOLVED": {
+      "object": "P14_NODE_SW_OUT_UNRESOLVED",
+      "point": [
+        -205,
+        -125,
+        3
+      ],
+      "net": "SWITCHED",
+      "kind": "diagram_junction"
+    },
+    "MAIN_DIST": {
+      "object": "P14_NODE_MAIN_DIST",
+      "point": [
+        -175,
+        25,
+        3
+      ],
+      "net": "SWITCHED",
+      "kind": "diagram_junction"
+    },
+    "COMMON_GND": {
+      "object": "P14_NODE_COMMON_GND",
+      "point": [
+        -185,
+        -30,
+        3
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "BUS_SDA": {
+      "object": "P14_NODE_BUS_SDA",
+      "point": [
+        80,
+        45,
+        5
+      ],
+      "net": "SDA",
+      "kind": "diagram_junction"
+    },
+    "BUS_SCL": {
+      "object": "P14_NODE_BUS_SCL",
+      "point": [
+        86,
+        45,
+        6
+      ],
+      "net": "SCL",
+      "kind": "diagram_junction"
+    },
+    "BUS_VCC": {
+      "object": "P14_NODE_BUS_VCC",
+      "point": [
+        92,
+        45,
+        7
+      ],
+      "net": "3V3_LOGIC",
+      "kind": "diagram_junction"
+    },
+    "BUS_GND": {
+      "object": "P14_NODE_BUS_GND",
+      "point": [
+        98,
+        45,
+        8
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "LEG_FEED": {
+      "object": "P14_NODE_LEG_FEED",
+      "point": [
+        -365,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "LEG_RETURN": {
+      "object": "P14_NODE_LEG_RETURN",
+      "point": [
+        -365,
+        175,
+        4
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "ARM_FEED": {
+      "object": "P14_NODE_ARM_FEED",
+      "point": [
+        320,
+        -185,
+        4
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "ARM_RETURN": {
+      "object": "P14_NODE_ARM_RETURN",
+      "point": [
+        320,
+        -195,
+        4
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L0+": {
+      "object": "P14_NODE_SPLICE_L0+",
+      "point": [
+        -330.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L0-": {
+      "object": "P14_NODE_SPLICE_L0-",
+      "point": [
+        -332.5400085449219,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L1+": {
+      "object": "P14_NODE_SPLICE_L1+",
+      "point": [
+        -270.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L1-": {
+      "object": "P14_NODE_SPLICE_L1-",
+      "point": [
+        -272.5400085449219,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L2+": {
+      "object": "P14_NODE_SPLICE_L2+",
+      "point": [
+        -210.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L2-": {
+      "object": "P14_NODE_SPLICE_L2-",
+      "point": [
+        -212.54000854492188,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L3+": {
+      "object": "P14_NODE_SPLICE_L3+",
+      "point": [
+        -150.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L3-": {
+      "object": "P14_NODE_SPLICE_L3-",
+      "point": [
+        -152.54000854492188,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L4+": {
+      "object": "P14_NODE_SPLICE_L4+",
+      "point": [
+        -90.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L4-": {
+      "object": "P14_NODE_SPLICE_L4-",
+      "point": [
+        -92.54000091552734,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L5+": {
+      "object": "P14_NODE_SPLICE_L5+",
+      "point": [
+        -30.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L5-": {
+      "object": "P14_NODE_SPLICE_L5-",
+      "point": [
+        -32.540000915527344,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L6+": {
+      "object": "P14_NODE_SPLICE_L6+",
+      "point": [
+        30.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L6-": {
+      "object": "P14_NODE_SPLICE_L6-",
+      "point": [
+        27.459999084472656,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L7+": {
+      "object": "P14_NODE_SPLICE_L7+",
+      "point": [
+        90.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L7-": {
+      "object": "P14_NODE_SPLICE_L7-",
+      "point": [
+        87.45999908447266,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L8+": {
+      "object": "P14_NODE_SPLICE_L8+",
+      "point": [
+        150.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L8-": {
+      "object": "P14_NODE_SPLICE_L8-",
+      "point": [
+        147.45999145507812,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L9+": {
+      "object": "P14_NODE_SPLICE_L9+",
+      "point": [
+        210.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L9-": {
+      "object": "P14_NODE_SPLICE_L9-",
+      "point": [
+        207.45999145507812,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L10+": {
+      "object": "P14_NODE_SPLICE_L10+",
+      "point": [
+        270.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L10-": {
+      "object": "P14_NODE_SPLICE_L10-",
+      "point": [
+        267.4599914550781,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L11+": {
+      "object": "P14_NODE_SPLICE_L11+",
+      "point": [
+        330.0,
+        185,
+        4
+      ],
+      "net": "LEG_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_L11-": {
+      "object": "P14_NODE_SPLICE_L11-",
+      "point": [
+        327.4599914550781,
+        175,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A7+": {
+      "object": "P14_NODE_SPLICE_A7+",
+      "point": [
+        265.0,
+        -185,
+        4
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A7-": {
+      "object": "P14_NODE_SPLICE_A7-",
+      "point": [
+        262.4599914550781,
+        -195,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A4+": {
+      "object": "P14_NODE_SPLICE_A4+",
+      "point": [
+        200.0,
+        -185,
+        4
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A4-": {
+      "object": "P14_NODE_SPLICE_A4-",
+      "point": [
+        197.4600067138672,
+        -195,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A3+": {
+      "object": "P14_NODE_SPLICE_A3+",
+      "point": [
+        135.0,
+        -185,
+        4
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A3-": {
+      "object": "P14_NODE_SPLICE_A3-",
+      "point": [
+        132.4600067138672,
+        -195,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A0+": {
+      "object": "P14_NODE_SPLICE_A0+",
+      "point": [
+        70.0,
+        -185,
+        4
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A0-": {
+      "object": "P14_NODE_SPLICE_A0-",
+      "point": [
+        67.45999908447266,
+        -195,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    }
+  },
+  "harnesses": [
+    {
+      "id": "battery_fuse",
+      "source": "BAT+",
+      "destination": "FUSE_IN",
+      "net": "BAT_RAW",
+      "curve_object": "P14_W_battery_fuse",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -347.6000061035156,
+          -98.0,
+          18.0
+        ],
+        [
+          -347.6,
+          -112,
+          4
+        ],
+        [
+          -247,
+          -112,
+          4
+        ],
+        [
+          -247.0,
+          -89.0,
+          3.0
+        ]
+      ]
+    },
+    {
+      "id": "fuse_to_unknown_switch",
+      "source": "FUSE_OUT",
+      "destination": "SW_IN_UNRESOLVED",
+      "net": "BAT_FUSED",
+      "curve_object": "P14_W_fuse_to_unknown_switch",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -223.0,
+          -89.0,
+          3.0
+        ],
+        [
+          -223,
+          -111,
+          4
+        ],
+        [
+          -255,
+          -111,
+          4
+        ],
+        [
+          -255,
+          -125,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "unknown_switch_to_distribution",
+      "source": "SW_OUT_UNRESOLVED",
+      "destination": "MAIN_DIST",
+      "net": "SWITCHED",
+      "curve_object": "P14_W_unknown_switch_to_distribution",
+      "status": "INFERENCE_CANDIDATE",
+      "path_mm": [
+        [
+          -205,
+          -125,
+          3
+        ],
+        [
+          -175,
+          -125,
+          4
+        ],
+        [
+          -175,
+          25,
+          4
+        ],
+        [
+          -175,
+          25,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "battery_common_return",
+      "source": "BAT-",
+      "destination": "COMMON_GND",
+      "net": "GND",
+      "curve_object": "P14_W_battery_common_return",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -340.3999938964844,
+          -98.0,
+          18.0
+        ],
+        [
+          -340.4,
+          -117,
+          5
+        ],
+        [
+          -185,
+          -117,
+          5
+        ],
+        [
+          -185,
+          -30,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "input_ubec",
+      "source": "MAIN_DIST",
+      "destination": "UBEC_IN+",
+      "net": "SWITCHED",
+      "curve_object": "P14_W_input_ubec",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -175,
+          25,
+          3
+        ],
+        [
+          -155,
+          25,
+          4
+        ],
+        [
+          -155,
+          -126,
+          4
+        ],
+        [
+          -123.0,
+          -126.0,
+          2.0
+        ]
+      ]
+    },
+    {
+      "id": "input_dc5",
+      "source": "MAIN_DIST",
+      "destination": "DC_IN+",
+      "net": "SWITCHED",
+      "curve_object": "P14_W_input_dc5",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -175,
+          25,
+          3
+        ],
+        [
+          -145,
+          25,
+          5
+        ],
+        [
+          -145,
+          -14.8,
+          5
+        ],
+        [
+          -108.19999694824219,
+          -14.800000190734863,
+          1.25
+        ]
+      ]
+    },
+    {
+      "id": "ubec_return",
+      "source": "COMMON_GND",
+      "destination": "UBEC_IN-",
+      "net": "GND",
+      "curve_object": "P14_W_ubec_return",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -185,
+          -30,
+          3
+        ],
+        [
+          -165,
+          -30,
+          6
+        ],
+        [
+          -165,
+          -135,
+          6
+        ],
+        [
+          -123,
+          -135,
+          6
+        ],
+        [
+          -123.0,
+          -129.0,
+          2.0
+        ]
+      ]
+    },
+    {
+      "id": "dc_return",
+      "source": "COMMON_GND",
+      "destination": "DC_IN-",
+      "net": "GND",
+      "curve_object": "P14_W_dc_return",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -185,
+          -30,
+          3
+        ],
+        [
+          -145,
+          -30,
+          7
+        ],
+        [
+          -145,
+          -3,
+          7
+        ],
+        [
+          -108.19999694824219,
+          -3.0,
+          1.25
+        ]
+      ]
+    },
+    {
+      "id": "logic5v",
+      "source": "DC_OUT+",
+      "destination": "ESP_5V",
+      "net": "5V_LOGIC",
+      "curve_object": "P14_W_logic5v",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -81.80000305175781,
+          -14.800000190734863,
+          1.25
+        ],
+        [
+          -60,
+          -14.8,
+          5
+        ],
+        [
+          -60,
+          -52,
+          5
+        ],
+        [
+          2,
+          -52,
+          5
+        ],
+        [
+          2,
+          -32.88,
+          5
+        ],
+        [
+          12.300003051757812,
+          -32.87999725341797,
+          4.0
+        ]
+      ]
+    },
+    {
+      "id": "logic_return",
+      "source": "DC_OUT-",
+      "destination": "ESP_GND",
+      "net": "GND",
+      "curve_object": "P14_W_logic_return",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -81.80000305175781,
+          -3.0,
+          1.25
+        ],
+        [
+          -50,
+          -3,
+          6
+        ],
+        [
+          -50,
+          -45,
+          6
+        ],
+        [
+          -2,
+          -45,
+          6
+        ],
+        [
+          -2,
+          -20.18,
+          6
+        ],
+        [
+          12.300003051757812,
+          -20.18000030517578,
+          4.0
+        ]
+      ]
+    },
+    {
+      "id": "esp_bus_SDA",
+      "source": "ESP_SDA",
+      "destination": "BUS_SDA",
+      "net": "SDA",
+      "curve_object": "P14_W_esp_bus_SDA",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          37.69999694824219,
+          0.1399993896484375,
+          4.0
+        ],
+        [
+          37.69999694824219,
+          30,
+          10
+        ],
+        [
+          80,
+          30,
+          10
+        ],
+        [
+          80,
+          45,
+          5
+        ]
+      ]
+    },
+    {
+      "id": "bus_legs_SDA",
+      "source": "BUS_SDA",
+      "destination": "LEGS_SDA",
+      "net": "SDA",
+      "curve_object": "P14_W_bus_legs_SDA",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          80,
+          45,
+          5
+        ],
+        [
+          80,
+          98.72999572753906,
+          8
+        ],
+        [
+          30.5,
+          98.72999572753906,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "bus_arms_SDA",
+      "source": "BUS_SDA",
+      "destination": "ARMS_SDA",
+      "net": "SDA",
+      "curve_object": "P14_W_bus_arms_SDA",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          80,
+          45,
+          5
+        ],
+        [
+          225,
+          45,
+          8
+        ],
+        [
+          225,
+          -96.27000427246094,
+          8
+        ],
+        [
+          200.5,
+          -96.27000427246094,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "esp_bus_SCL",
+      "source": "ESP_SCL",
+      "destination": "BUS_SCL",
+      "net": "SCL",
+      "curve_object": "P14_W_esp_bus_SCL",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          37.69999694824219,
+          7.760002136230469,
+          4.0
+        ],
+        [
+          37.69999694824219,
+          26,
+          11
+        ],
+        [
+          86,
+          26,
+          11
+        ],
+        [
+          86,
+          45,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "bus_legs_SCL",
+      "source": "BUS_SCL",
+      "destination": "LEGS_SCL",
+      "net": "SCL",
+      "curve_object": "P14_W_bus_legs_SCL",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          86,
+          45,
+          6
+        ],
+        [
+          86,
+          101.2699966430664,
+          9
+        ],
+        [
+          30.5,
+          101.2699966430664,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "bus_arms_SCL",
+      "source": "BUS_SCL",
+      "destination": "ARMS_SCL",
+      "net": "SCL",
+      "curve_object": "P14_W_bus_arms_SCL",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          86,
+          45,
+          6
+        ],
+        [
+          231,
+          45,
+          9
+        ],
+        [
+          231,
+          -93.7300033569336,
+          9
+        ],
+        [
+          200.5,
+          -93.7300033569336,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "esp_bus_VCC",
+      "source": "ESP_3V3",
+      "destination": "BUS_VCC",
+      "net": "3V3_LOGIC",
+      "curve_object": "P14_W_esp_bus_VCC",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          12.300003051757812,
+          12.839996337890625,
+          4.0
+        ],
+        [
+          12.300003051757812,
+          22,
+          12
+        ],
+        [
+          92,
+          22,
+          12
+        ],
+        [
+          92,
+          45,
+          7
+        ]
+      ]
+    },
+    {
+      "id": "bus_legs_VCC",
+      "source": "BUS_VCC",
+      "destination": "LEGS_VCC",
+      "net": "3V3_LOGIC",
+      "curve_object": "P14_W_bus_legs_VCC",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          92,
+          45,
+          7
+        ],
+        [
+          92,
+          96.19000244140625,
+          10
+        ],
+        [
+          30.5,
+          96.19000244140625,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "bus_arms_VCC",
+      "source": "BUS_VCC",
+      "destination": "ARMS_VCC",
+      "net": "3V3_LOGIC",
+      "curve_object": "P14_W_bus_arms_VCC",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          92,
+          45,
+          7
+        ],
+        [
+          237,
+          45,
+          10
+        ],
+        [
+          237,
+          -98.80999755859375,
+          10
+        ],
+        [
+          200.5,
+          -98.80999755859375,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "esp_bus_GND",
+      "source": "ESP_GND",
+      "destination": "BUS_GND",
+      "net": "GND",
+      "curve_object": "P14_W_esp_bus_GND",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          12.300003051757812,
+          -20.18000030517578,
+          4.0
+        ],
+        [
+          12.300003051757812,
+          18,
+          13
+        ],
+        [
+          98,
+          18,
+          13
+        ],
+        [
+          98,
+          45,
+          8
+        ]
+      ]
+    },
+    {
+      "id": "bus_legs_GND",
+      "source": "BUS_GND",
+      "destination": "LEGS_GND",
+      "net": "GND",
+      "curve_object": "P14_W_bus_legs_GND",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          98,
+          45,
+          8
+        ],
+        [
+          98,
+          106.3499984741211,
+          11
+        ],
+        [
+          30.5,
+          106.3499984741211,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "bus_arms_GND",
+      "source": "BUS_GND",
+      "destination": "ARMS_GND",
+      "net": "GND",
+      "curve_object": "P14_W_bus_arms_GND",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          98,
+          45,
+          8
+        ],
+        [
+          243,
+          45,
+          11
+        ],
+        [
+          243,
+          -88.6500015258789,
+          11
+        ],
+        [
+          200.5,
+          -88.6500015258789,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "leg_supply_option",
+      "source": "MAIN_DIST",
+      "destination": "LEG_FEED",
+      "net": "SWITCHED",
+      "curve_object": "P14_W_leg_supply_option",
+      "status": "INFERENCE_CANDIDATE",
+      "path_mm": [
+        [
+          -175,
+          25,
+          3
+        ],
+        [
+          -365,
+          25,
+          4
+        ],
+        [
+          -365,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "leg_return_trunk",
+      "source": "COMMON_GND",
+      "destination": "LEG_RETURN",
+      "net": "GND",
+      "curve_object": "P14_W_leg_return_trunk",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -185,
+          -30,
+          3
+        ],
+        [
+          -385,
+          -30,
+          5
+        ],
+        [
+          -385,
+          175,
+          5
+        ],
+        [
+          -365,
+          175,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "arm_supply_trunk",
+      "source": "UBEC_OUT+",
+      "destination": "ARM_FEED",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P14_W_arm_supply_trunk",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -72.0,
+          -127.0,
+          2.0
+        ],
+        [
+          -60,
+          -150,
+          5
+        ],
+        [
+          320,
+          -150,
+          5
+        ],
+        [
+          320,
+          -185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "arm_return_trunk",
+      "source": "UBEC_OUT-",
+      "destination": "ARM_RETURN",
+      "net": "GND",
+      "curve_object": "P14_W_arm_return_trunk",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -72.0,
+          -130.0,
+          2.0
+        ],
+        [
+          -65,
+          -155,
+          6
+        ],
+        [
+          330,
+          -155,
+          6
+        ],
+        [
+          330,
+          -195,
+          6
+        ],
+        [
+          320,
+          -195,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L0",
+      "source": "LEG_FEED",
+      "destination": "SPLICE_L0+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -365,
+          185,
+          4
+        ],
+        [
+          -330.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L0",
+      "source": "LEG_RETURN",
+      "destination": "SPLICE_L0-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -365,
+          175,
+          4
+        ],
+        [
+          -332.5400085449219,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L0",
+      "source": "SPLICE_L0+",
+      "destination": "L0_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -330.0,
+          185,
+          4
+        ],
+        [
+          -330.0,
+          205.0,
+          4
+        ],
+        [
+          -330.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L0",
+      "source": "SPLICE_L0-",
+      "destination": "L0_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -332.5400085449219,
+          175,
+          6
+        ],
+        [
+          -332.5400085449219,
+          205.0,
+          6
+        ],
+        [
+          -332.5400085449219,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L0",
+      "source": "PWM_L0_SOURCE",
+      "destination": "PWM_L0_SERVO",
+      "net": "PWM_L0",
+      "curve_object": "P14_W_signal_L0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -25.400001525878906,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -25.400001525878906,
+          128.0,
+          9
+        ],
+        [
+          -327.4599914550781,
+          128.0,
+          9
+        ],
+        [
+          -327.4599914550781,
+          205.0,
+          9
+        ],
+        [
+          -327.4599914550781,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L1",
+      "source": "SPLICE_L0+",
+      "destination": "SPLICE_L1+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L1",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -330.0,
+          185,
+          4
+        ],
+        [
+          -270.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L1",
+      "source": "SPLICE_L0-",
+      "destination": "SPLICE_L1-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L1",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -332.5400085449219,
+          175,
+          6
+        ],
+        [
+          -272.5400085449219,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L1",
+      "source": "SPLICE_L1+",
+      "destination": "L1_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L1",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -270.0,
+          185,
+          4
+        ],
+        [
+          -270.0,
+          205.0,
+          4
+        ],
+        [
+          -270.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L1",
+      "source": "SPLICE_L1-",
+      "destination": "L1_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L1",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -272.5400085449219,
+          175,
+          6
+        ],
+        [
+          -272.5400085449219,
+          205.0,
+          6
+        ],
+        [
+          -272.5400085449219,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L1",
+      "source": "PWM_L1_SOURCE",
+      "destination": "PWM_L1_SERVO",
+      "net": "PWM_L1",
+      "curve_object": "P14_W_signal_L1",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -22.860000610351562,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -22.860000610351562,
+          131.3,
+          9
+        ],
+        [
+          -267.4599914550781,
+          131.3,
+          9
+        ],
+        [
+          -267.4599914550781,
+          205.0,
+          9
+        ],
+        [
+          -267.4599914550781,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L2",
+      "source": "SPLICE_L1+",
+      "destination": "SPLICE_L2+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L2",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -270.0,
+          185,
+          4
+        ],
+        [
+          -210.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L2",
+      "source": "SPLICE_L1-",
+      "destination": "SPLICE_L2-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L2",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -272.5400085449219,
+          175,
+          6
+        ],
+        [
+          -212.54000854492188,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L2",
+      "source": "SPLICE_L2+",
+      "destination": "L2_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L2",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -210.0,
+          185,
+          4
+        ],
+        [
+          -210.0,
+          205.0,
+          4
+        ],
+        [
+          -210.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L2",
+      "source": "SPLICE_L2-",
+      "destination": "L2_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L2",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -212.54000854492188,
+          175,
+          6
+        ],
+        [
+          -212.54000854492188,
+          205.0,
+          6
+        ],
+        [
+          -212.54000854492188,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L2",
+      "source": "PWM_L2_SOURCE",
+      "destination": "PWM_L2_SERVO",
+      "net": "PWM_L2",
+      "curve_object": "P14_W_signal_L2",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -20.31999969482422,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -20.31999969482422,
+          134.6,
+          9
+        ],
+        [
+          -207.45999145507812,
+          134.6,
+          9
+        ],
+        [
+          -207.45999145507812,
+          205.0,
+          9
+        ],
+        [
+          -207.45999145507812,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L3",
+      "source": "SPLICE_L2+",
+      "destination": "SPLICE_L3+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -210.0,
+          185,
+          4
+        ],
+        [
+          -150.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L3",
+      "source": "SPLICE_L2-",
+      "destination": "SPLICE_L3-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -212.54000854492188,
+          175,
+          6
+        ],
+        [
+          -152.54000854492188,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L3",
+      "source": "SPLICE_L3+",
+      "destination": "L3_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -150.0,
+          185,
+          4
+        ],
+        [
+          -150.0,
+          205.0,
+          4
+        ],
+        [
+          -150.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L3",
+      "source": "SPLICE_L3-",
+      "destination": "L3_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -152.54000854492188,
+          175,
+          6
+        ],
+        [
+          -152.54000854492188,
+          205.0,
+          6
+        ],
+        [
+          -152.54000854492188,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L3",
+      "source": "PWM_L3_SOURCE",
+      "destination": "PWM_L3_SERVO",
+      "net": "PWM_L3",
+      "curve_object": "P14_W_signal_L3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -17.779998779296875,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -17.779998779296875,
+          137.9,
+          9
+        ],
+        [
+          -147.45999145507812,
+          137.9,
+          9
+        ],
+        [
+          -147.45999145507812,
+          205.0,
+          9
+        ],
+        [
+          -147.45999145507812,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L4",
+      "source": "SPLICE_L3+",
+      "destination": "SPLICE_L4+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -150.0,
+          185,
+          4
+        ],
+        [
+          -90.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L4",
+      "source": "SPLICE_L3-",
+      "destination": "SPLICE_L4-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -152.54000854492188,
+          175,
+          6
+        ],
+        [
+          -92.54000091552734,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L4",
+      "source": "SPLICE_L4+",
+      "destination": "L4_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -90.0,
+          185,
+          4
+        ],
+        [
+          -90.0,
+          205.0,
+          4
+        ],
+        [
+          -90.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L4",
+      "source": "SPLICE_L4-",
+      "destination": "L4_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -92.54000091552734,
+          175,
+          6
+        ],
+        [
+          -92.54000091552734,
+          205.0,
+          6
+        ],
+        [
+          -92.54000091552734,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L4",
+      "source": "PWM_L4_SOURCE",
+      "destination": "PWM_L4_SERVO",
+      "net": "PWM_L4",
+      "curve_object": "P14_W_signal_L4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -12.699996948242188,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -12.699996948242188,
+          141.2,
+          9
+        ],
+        [
+          -87.45999908447266,
+          141.2,
+          9
+        ],
+        [
+          -87.45999908447266,
+          205.0,
+          9
+        ],
+        [
+          -87.45999908447266,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L5",
+      "source": "SPLICE_L4+",
+      "destination": "SPLICE_L5+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L5",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -90.0,
+          185,
+          4
+        ],
+        [
+          -30.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L5",
+      "source": "SPLICE_L4-",
+      "destination": "SPLICE_L5-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L5",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -92.54000091552734,
+          175,
+          6
+        ],
+        [
+          -32.540000915527344,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L5",
+      "source": "SPLICE_L5+",
+      "destination": "L5_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L5",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -30.0,
+          185,
+          4
+        ],
+        [
+          -30.0,
+          205.0,
+          4
+        ],
+        [
+          -30.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L5",
+      "source": "SPLICE_L5-",
+      "destination": "L5_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L5",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -32.540000915527344,
+          175,
+          6
+        ],
+        [
+          -32.540000915527344,
+          205.0,
+          6
+        ],
+        [
+          -32.540000915527344,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L5",
+      "source": "PWM_L5_SOURCE",
+      "destination": "PWM_L5_SERVO",
+      "net": "PWM_L5",
+      "curve_object": "P14_W_signal_L5",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -10.160003662109375,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -10.160003662109375,
+          144.5,
+          9
+        ],
+        [
+          -27.459999084472656,
+          144.5,
+          9
+        ],
+        [
+          -27.459999084472656,
+          205.0,
+          9
+        ],
+        [
+          -27.459999084472656,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L6",
+      "source": "SPLICE_L5+",
+      "destination": "SPLICE_L6+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L6",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -30.0,
+          185,
+          4
+        ],
+        [
+          30.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L6",
+      "source": "SPLICE_L5-",
+      "destination": "SPLICE_L6-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L6",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -32.540000915527344,
+          175,
+          6
+        ],
+        [
+          27.459999084472656,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L6",
+      "source": "SPLICE_L6+",
+      "destination": "L6_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L6",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          30.0,
+          185,
+          4
+        ],
+        [
+          30.0,
+          205.0,
+          4
+        ],
+        [
+          30.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L6",
+      "source": "SPLICE_L6-",
+      "destination": "L6_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L6",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          27.459999084472656,
+          175,
+          6
+        ],
+        [
+          27.459999084472656,
+          205.0,
+          6
+        ],
+        [
+          27.459999084472656,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L6",
+      "source": "PWM_L6_SOURCE",
+      "destination": "PWM_L6_SERVO",
+      "net": "PWM_L6",
+      "curve_object": "P14_W_signal_L6",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -7.620002746582031,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -7.620002746582031,
+          147.8,
+          9
+        ],
+        [
+          32.540000915527344,
+          147.8,
+          9
+        ],
+        [
+          32.540000915527344,
+          205.0,
+          9
+        ],
+        [
+          32.540000915527344,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L7",
+      "source": "SPLICE_L6+",
+      "destination": "SPLICE_L7+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          30.0,
+          185,
+          4
+        ],
+        [
+          90.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L7",
+      "source": "SPLICE_L6-",
+      "destination": "SPLICE_L7-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          27.459999084472656,
+          175,
+          6
+        ],
+        [
+          87.45999908447266,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L7",
+      "source": "SPLICE_L7+",
+      "destination": "L7_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          90.0,
+          185,
+          4
+        ],
+        [
+          90.0,
+          205.0,
+          4
+        ],
+        [
+          90.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L7",
+      "source": "SPLICE_L7-",
+      "destination": "L7_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          87.45999908447266,
+          175,
+          6
+        ],
+        [
+          87.45999908447266,
+          205.0,
+          6
+        ],
+        [
+          87.45999908447266,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L7",
+      "source": "PWM_L7_SOURCE",
+      "destination": "PWM_L7_SERVO",
+      "net": "PWM_L7",
+      "curve_object": "P14_W_signal_L7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -5.0800018310546875,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -5.0800018310546875,
+          151.1,
+          9
+        ],
+        [
+          92.54000091552734,
+          151.1,
+          9
+        ],
+        [
+          92.54000091552734,
+          205.0,
+          9
+        ],
+        [
+          92.54000091552734,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L8",
+      "source": "SPLICE_L7+",
+      "destination": "SPLICE_L8+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L8",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          90.0,
+          185,
+          4
+        ],
+        [
+          150.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L8",
+      "source": "SPLICE_L7-",
+      "destination": "SPLICE_L8-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L8",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          87.45999908447266,
+          175,
+          6
+        ],
+        [
+          147.45999145507812,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L8",
+      "source": "SPLICE_L8+",
+      "destination": "L8_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L8",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          150.0,
+          185,
+          4
+        ],
+        [
+          150.0,
+          205.0,
+          4
+        ],
+        [
+          150.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L8",
+      "source": "SPLICE_L8-",
+      "destination": "L8_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L8",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          147.45999145507812,
+          175,
+          6
+        ],
+        [
+          147.45999145507812,
+          205.0,
+          6
+        ],
+        [
+          147.45999145507812,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L8",
+      "source": "PWM_L8_SOURCE",
+      "destination": "PWM_L8_SERVO",
+      "net": "PWM_L8",
+      "curve_object": "P14_W_signal_L8",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          0.0,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          0.0,
+          154.4,
+          9
+        ],
+        [
+          152.54000854492188,
+          154.4,
+          9
+        ],
+        [
+          152.54000854492188,
+          205.0,
+          9
+        ],
+        [
+          152.54000854492188,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L9",
+      "source": "SPLICE_L8+",
+      "destination": "SPLICE_L9+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L9",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          150.0,
+          185,
+          4
+        ],
+        [
+          210.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L9",
+      "source": "SPLICE_L8-",
+      "destination": "SPLICE_L9-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L9",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          147.45999145507812,
+          175,
+          6
+        ],
+        [
+          207.45999145507812,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L9",
+      "source": "SPLICE_L9+",
+      "destination": "L9_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L9",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          210.0,
+          185,
+          4
+        ],
+        [
+          210.0,
+          205.0,
+          4
+        ],
+        [
+          210.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L9",
+      "source": "SPLICE_L9-",
+      "destination": "L9_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L9",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          207.45999145507812,
+          175,
+          6
+        ],
+        [
+          207.45999145507812,
+          205.0,
+          6
+        ],
+        [
+          207.45999145507812,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L9",
+      "source": "PWM_L9_SOURCE",
+      "destination": "PWM_L9_SERVO",
+      "net": "PWM_L9",
+      "curve_object": "P14_W_signal_L9",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          2.5400009155273438,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          2.5400009155273438,
+          157.7,
+          9
+        ],
+        [
+          212.54000854492188,
+          157.7,
+          9
+        ],
+        [
+          212.54000854492188,
+          205.0,
+          9
+        ],
+        [
+          212.54000854492188,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L10",
+      "source": "SPLICE_L9+",
+      "destination": "SPLICE_L10+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L10",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          210.0,
+          185,
+          4
+        ],
+        [
+          270.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L10",
+      "source": "SPLICE_L9-",
+      "destination": "SPLICE_L10-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L10",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          207.45999145507812,
+          175,
+          6
+        ],
+        [
+          267.4599914550781,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L10",
+      "source": "SPLICE_L10+",
+      "destination": "L10_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L10",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          270.0,
+          185,
+          4
+        ],
+        [
+          270.0,
+          205.0,
+          4
+        ],
+        [
+          270.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L10",
+      "source": "SPLICE_L10-",
+      "destination": "L10_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L10",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          267.4599914550781,
+          175,
+          6
+        ],
+        [
+          267.4599914550781,
+          205.0,
+          6
+        ],
+        [
+          267.4599914550781,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L10",
+      "source": "PWM_L10_SOURCE",
+      "destination": "PWM_L10_SERVO",
+      "net": "PWM_L10",
+      "curve_object": "P14_W_signal_L10",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          5.0800018310546875,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          5.0800018310546875,
+          161.0,
+          9
+        ],
+        [
+          272.5400085449219,
+          161.0,
+          9
+        ],
+        [
+          272.5400085449219,
+          205.0,
+          9
+        ],
+        [
+          272.5400085449219,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_L11",
+      "source": "SPLICE_L10+",
+      "destination": "SPLICE_L11+",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_trunk_L11",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          270.0,
+          185,
+          4
+        ],
+        [
+          330.0,
+          185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_L11",
+      "source": "SPLICE_L10-",
+      "destination": "SPLICE_L11-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_L11",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          267.4599914550781,
+          175,
+          6
+        ],
+        [
+          327.4599914550781,
+          175,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_L11",
+      "source": "SPLICE_L11+",
+      "destination": "L11_POWER",
+      "net": "LEG_SUPPLY",
+      "curve_object": "P14_W_power_branch_L11",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          330.0,
+          185,
+          4
+        ],
+        [
+          330.0,
+          205.0,
+          4
+        ],
+        [
+          330.0,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_L11",
+      "source": "SPLICE_L11-",
+      "destination": "L11_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_L11",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          327.4599914550781,
+          175,
+          6
+        ],
+        [
+          327.4599914550781,
+          205.0,
+          6
+        ],
+        [
+          327.4599914550781,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "signal_L11",
+      "source": "PWM_L11_SOURCE",
+      "destination": "PWM_L11_SERVO",
+      "net": "PWM_L11",
+      "curve_object": "P14_W_signal_L11",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          7.620002746582031,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          7.620002746582031,
+          164.3,
+          9
+        ],
+        [
+          332.5400085449219,
+          164.3,
+          9
+        ],
+        [
+          332.5400085449219,
+          205.0,
+          9
+        ],
+        [
+          332.5400085449219,
+          205.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_A7",
+      "source": "ARM_FEED",
+      "destination": "SPLICE_A7+",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P14_W_power_trunk_A7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          320,
+          -185,
+          4
+        ],
+        [
+          265.0,
+          -185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_A7",
+      "source": "ARM_RETURN",
+      "destination": "SPLICE_A7-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_A7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          320,
+          -195,
+          4
+        ],
+        [
+          262.4599914550781,
+          -195,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_A7",
+      "source": "SPLICE_A7+",
+      "destination": "A7_POWER",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P14_W_power_branch_A7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          265.0,
+          -185,
+          4
+        ],
+        [
+          265.0,
+          -265.0,
+          4
+        ],
+        [
+          265.0,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_A7",
+      "source": "SPLICE_A7-",
+      "destination": "A7_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_A7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          262.4599914550781,
+          -195,
+          6
+        ],
+        [
+          262.4599914550781,
+          -265.0,
+          6
+        ],
+        [
+          262.4599914550781,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "signal_A7",
+      "source": "PWM_A7_SOURCE",
+      "destination": "PWM_A7_SERVO",
+      "net": "PWM_A7",
+      "curve_object": "P14_W_signal_A7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          164.9199981689453,
+          -90.19999694824219,
+          5.300000190734863
+        ],
+        [
+          164.9199981689453,
+          -68,
+          16
+        ],
+        [
+          157,
+          -68,
+          16
+        ],
+        [
+          157,
+          -230,
+          16
+        ],
+        [
+          267.5400085449219,
+          -230,
+          16
+        ],
+        [
+          267.5400085449219,
+          -265.0,
+          16
+        ],
+        [
+          267.5400085449219,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_A4",
+      "source": "SPLICE_A7+",
+      "destination": "SPLICE_A4+",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P14_W_power_trunk_A4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          265.0,
+          -185,
+          4
+        ],
+        [
+          200.0,
+          -185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_A4",
+      "source": "SPLICE_A7-",
+      "destination": "SPLICE_A4-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_A4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          262.4599914550781,
+          -195,
+          6
+        ],
+        [
+          197.4600067138672,
+          -195,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_A4",
+      "source": "SPLICE_A4+",
+      "destination": "A4_POWER",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P14_W_power_branch_A4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          200.0,
+          -185,
+          4
+        ],
+        [
+          200.0,
+          -265.0,
+          4
+        ],
+        [
+          200.0,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_A4",
+      "source": "SPLICE_A4-",
+      "destination": "A4_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_A4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          197.4600067138672,
+          -195,
+          6
+        ],
+        [
+          197.4600067138672,
+          -265.0,
+          6
+        ],
+        [
+          197.4600067138672,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "signal_A4",
+      "source": "PWM_A4_SOURCE",
+      "destination": "PWM_A4_SERVO",
+      "net": "PWM_A4",
+      "curve_object": "P14_W_signal_A4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          157.3000030517578,
+          -90.19999694824219,
+          5.300000190734863
+        ],
+        [
+          157.3000030517578,
+          -68,
+          14
+        ],
+        [
+          153,
+          -68,
+          14
+        ],
+        [
+          153,
+          -225,
+          14
+        ],
+        [
+          202.5399932861328,
+          -225,
+          14
+        ],
+        [
+          202.5399932861328,
+          -265.0,
+          14
+        ],
+        [
+          202.5399932861328,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_A3",
+      "source": "SPLICE_A4+",
+      "destination": "SPLICE_A3+",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P14_W_power_trunk_A3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          200.0,
+          -185,
+          4
+        ],
+        [
+          135.0,
+          -185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_A3",
+      "source": "SPLICE_A4-",
+      "destination": "SPLICE_A3-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_A3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          197.4600067138672,
+          -195,
+          6
+        ],
+        [
+          132.4600067138672,
+          -195,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_A3",
+      "source": "SPLICE_A3+",
+      "destination": "A3_POWER",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P14_W_power_branch_A3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          135.0,
+          -185,
+          4
+        ],
+        [
+          135.0,
+          -265.0,
+          4
+        ],
+        [
+          135.0,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_A3",
+      "source": "SPLICE_A3-",
+      "destination": "A3_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_A3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          132.4600067138672,
+          -195,
+          6
+        ],
+        [
+          132.4600067138672,
+          -265.0,
+          6
+        ],
+        [
+          132.4600067138672,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "signal_A3",
+      "source": "PWM_A3_SOURCE",
+      "destination": "PWM_A3_SERVO",
+      "net": "PWM_A3",
+      "curve_object": "P14_W_signal_A3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          152.22000122070312,
+          -90.19999694824219,
+          5.300000190734863
+        ],
+        [
+          152.22000122070312,
+          -68,
+          12
+        ],
+        [
+          149,
+          -68,
+          12
+        ],
+        [
+          149,
+          -220,
+          12
+        ],
+        [
+          137.5399932861328,
+          -220,
+          12
+        ],
+        [
+          137.5399932861328,
+          -265.0,
+          12
+        ],
+        [
+          137.5399932861328,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_A0",
+      "source": "SPLICE_A3+",
+      "destination": "SPLICE_A0+",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P14_W_power_trunk_A0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          135.0,
+          -185,
+          4
+        ],
+        [
+          70.0,
+          -185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_A0",
+      "source": "SPLICE_A3-",
+      "destination": "SPLICE_A0-",
+      "net": "GND",
+      "curve_object": "P14_W_ground_trunk_A0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          132.4600067138672,
+          -195,
+          6
+        ],
+        [
+          67.45999908447266,
+          -195,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_A0",
+      "source": "SPLICE_A0+",
+      "destination": "A0_POWER",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P14_W_power_branch_A0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          70.0,
+          -185,
+          4
+        ],
+        [
+          70.0,
+          -265.0,
+          4
+        ],
+        [
+          70.0,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_A0",
+      "source": "SPLICE_A0-",
+      "destination": "A0_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ground_branch_A0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          67.45999908447266,
+          -195,
+          6
+        ],
+        [
+          67.45999908447266,
+          -265.0,
+          6
+        ],
+        [
+          67.45999908447266,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "signal_A0",
+      "source": "PWM_A0_SOURCE",
+      "destination": "PWM_A0_SERVO",
+      "net": "PWM_A0",
+      "curve_object": "P14_W_signal_A0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          144.60000610351562,
+          -90.19999694824219,
+          5.300000190734863
+        ],
+        [
+          144.60000610351562,
+          -68,
+          10
+        ],
+        [
+          145,
+          -68,
+          10
+        ],
+        [
+          145,
+          -215,
+          10
+        ],
+        [
+          72.54000091552734,
+          -215,
+          10
+        ],
+        [
+          72.54000091552734,
+          -265.0,
+          10
+        ],
+        [
+          72.54000091552734,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "ubec_output_common_reference",
+      "source": "UBEC_OUT-",
+      "destination": "COMMON_GND",
+      "net": "GND",
+      "curve_object": "P14_W_ubec_output_common_reference",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -72.0,
+          -130.0,
+          2.0
+        ],
+        [
+          -80,
+          -140,
+          3
+        ],
+        [
+          -190,
+          -140,
+          3
+        ],
+        [
+          -190,
+          -30,
+          3
+        ],
+        [
+          -185,
+          -30,
+          3
+        ]
+      ]
+    }
+  ],
+  "internal_links": [
+    [
+      "UBEC_IN-",
+      "UBEC_OUT-",
+      "GND"
+    ],
+    [
+      "DC_IN-",
+      "DC_OUT-",
+      "GND"
+    ]
+  ],
+  "checks": {
+    "wire_endpoint_errors": [],
+    "wire_count": 107,
+    "servo_pwm_channels": 16,
+    "leg_pwm_channel_mapping": "GitHub docs/wiring.md CH0..11",
+    "arm_pwm_channel_mapping": "proposal 0,3,4,7 / firmware requires change",
+    "PCA_VPLUS_connected": false,
+    "main_switch_pinout": "unknown; disconnected boundary",
+    "relay": "unselected, disconnected",
+    "electrical_load_test": "NOT_RUN",
+    "physical_connector_polarity": "NOT_VERIFIED",
+    "physical_harness_lengths": "NOT_DESIGNED",
+    "common_ground_external_reference": "UBEC output and input negatives tied to common GND explicitly",
+    "common_ground_graph_unreachable": []
+  },
+  "unknowns": [
+    {
+      "id": "U_SWITCH",
+      "target": "Kiligen B083NGXQ13",
+      "missing": "3 prewired lead functions and DC load rating; actual-unit pin/continuity identification required",
+      "render": "gray, disconnected at SW_IN/OUT boundaries"
+    },
+    {
+      "id": "U_RELAY",
+      "target": "G5LE reference",
+      "missing": "purchased relay/module identity, coil voltage, driver and suppression circuit",
+      "render": "unconnected reference"
+    },
+    {
+      "id": "U_LEG_SUPPLY",
+      "target": "LD220MG x12",
+      "missing": "2S direct versus regulated branch decision and load/protection sizing",
+      "render": "dashed input path"
+    },
+    {
+      "id": "U_ARM_VOLTAGE",
+      "target": "HENGE / MG90S",
+      "missing": "purchased UBEC revision/output selection and actual servo voltage rating",
+      "render": "5/6V TBD label"
+    },
+    {
+      "id": "U_ARM_CHANNEL",
+      "target": "new four-servo arms",
+      "missing": "firmware adaptation; proposed0,3,4,7 differ from old six-axis arms"
+    },
+    {
+      "id": "U_CONNECTOR_ORIENTATION",
+      "target": "servo connector samples",
+      "missing": "physical mating view and purchased connector orientation; wire function assignments are not housing-polarity verification"
+    },
+    {
+      "id": "U_RETENTION",
+      "target": "all flat-layout modules",
+      "missing": "this is harness topology, no packaging or fixation work"
+    }
+  ],
+  "approved": false,
+  "physical_validation": "NOT_RUN",
+  "wire_gauges_and_cut_lengths": "NOT_DESIGNED"
+}

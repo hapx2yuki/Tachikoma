@@ -1,0 +1,749 @@
+{
+  "terminals": [
+    {
+      "id": "J0.S",
+      "net": "PWM_L0",
+      "xyz": [
+        -3.81,
+        -15.24,
+        8.6
+      ]
+    },
+    {
+      "id": "J0.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        -6.35,
+        -15.24,
+        8.6
+      ]
+    },
+    {
+      "id": "J0.G",
+      "net": "GND",
+      "xyz": [
+        -8.89,
+        -15.24,
+        8.6
+      ]
+    },
+    {
+      "id": "J1.S",
+      "net": "PWM_L1",
+      "xyz": [
+        -3.81,
+        -8.89,
+        8.6
+      ]
+    },
+    {
+      "id": "J1.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        -6.35,
+        -8.89,
+        8.6
+      ]
+    },
+    {
+      "id": "J1.G",
+      "net": "GND",
+      "xyz": [
+        -8.89,
+        -8.89,
+        8.6
+      ]
+    },
+    {
+      "id": "J2.S",
+      "net": "PWM_L2",
+      "xyz": [
+        -3.81,
+        -2.540000000000001,
+        8.6
+      ]
+    },
+    {
+      "id": "J2.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        -6.35,
+        -2.540000000000001,
+        8.6
+      ]
+    },
+    {
+      "id": "J2.G",
+      "net": "GND",
+      "xyz": [
+        -8.89,
+        -2.540000000000001,
+        8.6
+      ]
+    },
+    {
+      "id": "J3.S",
+      "net": "PWM_L3",
+      "xyz": [
+        -3.81,
+        3.809999999999997,
+        8.6
+      ]
+    },
+    {
+      "id": "J3.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        -6.35,
+        3.809999999999997,
+        8.6
+      ]
+    },
+    {
+      "id": "J3.G",
+      "net": "GND",
+      "xyz": [
+        -8.89,
+        3.809999999999997,
+        8.6
+      ]
+    },
+    {
+      "id": "J4.S",
+      "net": "PWM_L4",
+      "xyz": [
+        -3.81,
+        10.159999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J4.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        -6.35,
+        10.159999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J4.G",
+      "net": "GND",
+      "xyz": [
+        -8.89,
+        10.159999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J5.S",
+      "net": "PWM_L5",
+      "xyz": [
+        -3.81,
+        16.509999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J5.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        -6.35,
+        16.509999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J5.G",
+      "net": "GND",
+      "xyz": [
+        -8.89,
+        16.509999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J6.S",
+      "net": "PWM_L6",
+      "xyz": [
+        3.81,
+        -15.24,
+        8.6
+      ]
+    },
+    {
+      "id": "J6.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        6.35,
+        -15.24,
+        8.6
+      ]
+    },
+    {
+      "id": "J6.G",
+      "net": "GND",
+      "xyz": [
+        8.89,
+        -15.24,
+        8.6
+      ]
+    },
+    {
+      "id": "J7.S",
+      "net": "PWM_L7",
+      "xyz": [
+        3.81,
+        -8.89,
+        8.6
+      ]
+    },
+    {
+      "id": "J7.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        6.35,
+        -8.89,
+        8.6
+      ]
+    },
+    {
+      "id": "J7.G",
+      "net": "GND",
+      "xyz": [
+        8.89,
+        -8.89,
+        8.6
+      ]
+    },
+    {
+      "id": "J8.S",
+      "net": "PWM_L8",
+      "xyz": [
+        3.81,
+        -2.540000000000001,
+        8.6
+      ]
+    },
+    {
+      "id": "J8.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        6.35,
+        -2.540000000000001,
+        8.6
+      ]
+    },
+    {
+      "id": "J8.G",
+      "net": "GND",
+      "xyz": [
+        8.89,
+        -2.540000000000001,
+        8.6
+      ]
+    },
+    {
+      "id": "J9.S",
+      "net": "PWM_L9",
+      "xyz": [
+        3.81,
+        3.809999999999997,
+        8.6
+      ]
+    },
+    {
+      "id": "J9.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        6.35,
+        3.809999999999997,
+        8.6
+      ]
+    },
+    {
+      "id": "J9.G",
+      "net": "GND",
+      "xyz": [
+        8.89,
+        3.809999999999997,
+        8.6
+      ]
+    },
+    {
+      "id": "J10.S",
+      "net": "PWM_L10",
+      "xyz": [
+        3.81,
+        10.159999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J10.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        6.35,
+        10.159999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J10.G",
+      "net": "GND",
+      "xyz": [
+        8.89,
+        10.159999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J11.S",
+      "net": "PWM_L11",
+      "xyz": [
+        3.81,
+        16.509999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J11.V",
+      "net": "LEG_VBUS",
+      "xyz": [
+        6.35,
+        16.509999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J11.G",
+      "net": "GND",
+      "xyz": [
+        8.89,
+        16.509999999999998,
+        8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM0",
+      "net": "PWM_L0",
+      "xyz": [
+        -1.27,
+        -7.62,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM1",
+      "net": "PWM_L1",
+      "xyz": [
+        -1.27,
+        -5.08,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM2",
+      "net": "PWM_L2",
+      "xyz": [
+        -1.27,
+        -2.54,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM3",
+      "net": "PWM_L3",
+      "xyz": [
+        -1.27,
+        0.0,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM4",
+      "net": "PWM_L4",
+      "xyz": [
+        -1.27,
+        2.54,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM5",
+      "net": "PWM_L5",
+      "xyz": [
+        -1.27,
+        5.079999999999999,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.G-1",
+      "net": "GND",
+      "xyz": [
+        -1.27,
+        7.62,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM6",
+      "net": "PWM_L6",
+      "xyz": [
+        1.27,
+        -7.62,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM7",
+      "net": "PWM_L7",
+      "xyz": [
+        1.27,
+        -5.08,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM8",
+      "net": "PWM_L8",
+      "xyz": [
+        1.27,
+        -2.54,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM9",
+      "net": "PWM_L9",
+      "xyz": [
+        1.27,
+        0.0,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM10",
+      "net": "PWM_L10",
+      "xyz": [
+        1.27,
+        2.54,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.PWM11",
+      "net": "PWM_L11",
+      "xyz": [
+        1.27,
+        5.079999999999999,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_IN.G1",
+      "net": "GND",
+      "xyz": [
+        1.27,
+        7.62,
+        -8.6
+      ]
+    },
+    {
+      "id": "J_POWER.PLUS",
+      "net": "POWER_IN",
+      "xyz": [
+        -3.5,
+        25,
+        0.9
+      ]
+    },
+    {
+      "id": "J_POWER.MINUS",
+      "net": "GND",
+      "xyz": [
+        3.5,
+        25,
+        0.9
+      ]
+    },
+    {
+      "id": "F1.IN",
+      "net": "POWER_IN",
+      "xyz": [
+        -4.95,
+        -22.2,
+        0.8
+      ]
+    },
+    {
+      "id": "F1.OUT",
+      "net": "LEG_VBUS",
+      "xyz": [
+        4.95,
+        -22.2,
+        0.8
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "F1.OUT",
+      "J0.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J0.G"
+    ],
+    [
+      "F1.OUT",
+      "J1.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J1.G"
+    ],
+    [
+      "F1.OUT",
+      "J2.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J2.G"
+    ],
+    [
+      "F1.OUT",
+      "J3.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J3.G"
+    ],
+    [
+      "F1.OUT",
+      "J4.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J4.G"
+    ],
+    [
+      "F1.OUT",
+      "J5.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J5.G"
+    ],
+    [
+      "F1.OUT",
+      "J6.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J6.G"
+    ],
+    [
+      "F1.OUT",
+      "J7.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J7.G"
+    ],
+    [
+      "F1.OUT",
+      "J8.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J8.G"
+    ],
+    [
+      "F1.OUT",
+      "J9.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J9.G"
+    ],
+    [
+      "F1.OUT",
+      "J10.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J10.G"
+    ],
+    [
+      "F1.OUT",
+      "J11.V"
+    ],
+    [
+      "J_POWER.MINUS",
+      "J11.G"
+    ],
+    [
+      "J_IN.PWM0",
+      "J0.S"
+    ],
+    [
+      "J_IN.PWM1",
+      "J1.S"
+    ],
+    [
+      "J_IN.PWM2",
+      "J2.S"
+    ],
+    [
+      "J_IN.PWM3",
+      "J3.S"
+    ],
+    [
+      "J_IN.PWM4",
+      "J4.S"
+    ],
+    [
+      "J_IN.PWM5",
+      "J5.S"
+    ],
+    [
+      "J_IN.G-1",
+      "J_POWER.MINUS"
+    ],
+    [
+      "J_IN.PWM6",
+      "J6.S"
+    ],
+    [
+      "J_IN.PWM7",
+      "J7.S"
+    ],
+    [
+      "J_IN.PWM8",
+      "J8.S"
+    ],
+    [
+      "J_IN.PWM9",
+      "J9.S"
+    ],
+    [
+      "J_IN.PWM10",
+      "J10.S"
+    ],
+    [
+      "J_IN.PWM11",
+      "J11.S"
+    ],
+    [
+      "J_IN.G1",
+      "J_POWER.MINUS"
+    ],
+    [
+      "J_POWER.PLUS",
+      "F1.IN"
+    ]
+  ],
+  "board_mm": [
+    25.4,
+    62.5,
+    1.6
+  ],
+  "mount_holes_mm": [
+    [
+      -9.525,
+      -27.94,
+      3.2
+    ],
+    [
+      -9.525,
+      27.94,
+      3.2
+    ],
+    [
+      9.525,
+      -27.94,
+      3.2
+    ],
+    [
+      9.525,
+      27.94,
+      3.2
+    ]
+  ],
+  "power_topology": "Existing inline main fuse retained in body study; onboard F1 is a candidate leg branch fuse. Replacing shared main fuse requires separate review.",
+  "unknown": [
+    "servo peak current",
+    "fuse rating and trip curve",
+    "pin header vendor and contact current",
+    "press-fit vs solder process",
+    "copper thickness and route design",
+    "EMI and voltage-drop",
+    "mechanical support of new PCB"
+  ],
+  "current_cases_A": [
+    1.2,
+    12,
+    18,
+    24,
+    36
+  ],
+  "current_cases_status": "1.2 A is 12x manufacturer no-load 0.1A; others are sensitivity assumptions, not measured demand",
+  "copper_proposal": {
+    "layers": 2,
+    "finished_copper_um_per_face": 140,
+    "total_trunk_min_width_mm_proposed": 5,
+    "six_servo_branch_min_width_mm_proposed": 2,
+    "servo_branch_min_width_mm_proposed": 1,
+    "status": "quote not submitted; final copper tolerance and actual route not checked",
+    "supplier_finished_option_oz": 4.5,
+    "supplier_min_track_space_mm": [
+      0.3,
+      0.3
+    ],
+    "source": "https://jlcpcb.com/capabilities/Capabilities"
+  },
+  "components": [
+    {
+      "ref": "F1",
+      "type": "replaceable_fuse",
+      "pins": [
+        "F1.IN",
+        "F1.OUT"
+      ],
+      "rating_A": null,
+      "rule": "all LEG_VBUS power must traverse F1; exact rating and clearing coordination pending"
+    }
+  ],
+  "netlist_checks": {
+    "terminal_ids_unique": true,
+    "edge_endpoints_defined": true,
+    "twelve_unique_pwm_mappings": true,
+    "all_twelve_V_from_F1_OUT": true,
+    "direct_input_to_fused_output_bypass": false,
+    "note": "logical connectivity checks only; PCB routing DRC NOT RUN"
+  },
+  "revision": "P35",
+  "power_input": {
+    "kind": "direct wire solder pads",
+    "pad_mm": [
+      5,
+      8
+    ],
+    "center_mm": [
+      [
+        -3.5,
+        25
+      ],
+      [
+        3.5,
+        25
+      ]
+    ],
+    "gap_mm": 2,
+    "through_holes": false,
+    "soldermask_opening": "1:1",
+    "strain_relief": "required in actual harness, not added to this PCB revision"
+  }
+}

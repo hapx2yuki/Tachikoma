@@ -1,0 +1,116 @@
+{
+  "method": "Gerber copper merged by geometric contact WITHOUT net-name filtering; front/back merged only at parsed PTH locations; terminal IDs assigned after component extraction",
+  "physical_components": 15,
+  "PWM_independent_components": 12,
+  "PWM_to_GND_connection": false,
+  "channels": [
+    {
+      "ch": 0,
+      "connected_terminals": [
+        "J0.S",
+        "J_IN.PWM0"
+      ],
+      "nearest_other_copper_mm": 0.3850000000000001,
+      "route_face": "F"
+    },
+    {
+      "ch": 1,
+      "connected_terminals": [
+        "J1.S",
+        "J_IN.PWM1"
+      ],
+      "nearest_other_copper_mm": 0.3850000000000002,
+      "route_face": "B"
+    },
+    {
+      "ch": 2,
+      "connected_terminals": [
+        "J2.S",
+        "J_IN.PWM2"
+      ],
+      "nearest_other_copper_mm": 0.5900000000000007,
+      "route_face": "F"
+    },
+    {
+      "ch": 3,
+      "connected_terminals": [
+        "J3.S",
+        "J_IN.PWM3"
+      ],
+      "nearest_other_copper_mm": 0.34723426914791905,
+      "route_face": "B"
+    },
+    {
+      "ch": 4,
+      "connected_terminals": [
+        "J4.S",
+        "J_IN.PWM4"
+      ],
+      "nearest_other_copper_mm": 0.347234269147919,
+      "route_face": "F"
+    },
+    {
+      "ch": 5,
+      "connected_terminals": [
+        "J5.S",
+        "J_IN.PWM5"
+      ],
+      "nearest_other_copper_mm": 0.36669858502235714,
+      "route_face": "B"
+    },
+    {
+      "ch": 6,
+      "connected_terminals": [
+        "J6.S",
+        "J_IN.PWM6"
+      ],
+      "nearest_other_copper_mm": 0.3850000000000019,
+      "route_face": "F"
+    },
+    {
+      "ch": 7,
+      "connected_terminals": [
+        "J7.S",
+        "J_IN.PWM7"
+      ],
+      "nearest_other_copper_mm": 0.38500000000000195,
+      "route_face": "B"
+    },
+    {
+      "ch": 8,
+      "connected_terminals": [
+        "J8.S",
+        "J_IN.PWM8"
+      ],
+      "nearest_other_copper_mm": 0.589999999999999,
+      "route_face": "F"
+    },
+    {
+      "ch": 9,
+      "connected_terminals": [
+        "J9.S",
+        "J_IN.PWM9"
+      ],
+      "nearest_other_copper_mm": 0.3472342691479206,
+      "route_face": "B"
+    },
+    {
+      "ch": 10,
+      "connected_terminals": [
+        "J10.S",
+        "J_IN.PWM10"
+      ],
+      "nearest_other_copper_mm": 0.34723426914792055,
+      "route_face": "F"
+    },
+    {
+      "ch": 11,
+      "connected_terminals": [
+        "J11.S",
+        "J_IN.PWM11"
+      ],
+      "nearest_other_copper_mm": 0.36669858502235714,
+      "route_face": "B"
+    }
+  ]
+}

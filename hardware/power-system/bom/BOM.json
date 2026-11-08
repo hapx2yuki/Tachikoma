@@ -1,0 +1,551 @@
+{
+  "config_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+  "registered_date": "2026-11-08",
+  "registration": "LOCAL_ENGINEERING_CONFIGURATION",
+  "status": "DESIGN_PROPOSAL",
+  "scope": "one leg-power/PWM distribution PCB subassembly; 12 outputs; not a whole-robot BOM",
+  "authority": "BOM登録して",
+  "manufacturing_release": false,
+  "as_built": false,
+  "items": [
+    {
+      "part_id": "TACHIKOMA-LEG-DISTRIBUTOR-PCB",
+      "revision_id": "P36-S1-SILK-R1",
+      "name": "脚サーボ12系統 電源・PWM分配基板（裸基板）",
+      "make_buy": "make",
+      "manufacturer": null,
+      "manufacturer_part_number": null,
+      "quantity": 1,
+      "unit": "個",
+      "status": "DESIGN_PROPOSAL",
+      "installed_quantity": null,
+      "stock_quantity": null,
+      "order_quantity": null,
+      "quantity_basis": "per one P36 S1 distribution PCB assembly; not Blender object count",
+      "occurrence_reference": "PCB1",
+      "authority_source": "Owner: 基板にプリントが必要 / BOM登録して",
+      "physical_validation": "NOT_RUN",
+      "fabrication": {
+        "original": "../p36/P36_SILK_R1_JLCPCB_PROTOTYPE.zip",
+        "path": "objects/sha256/f0/f09412bf2320b9131e6dd3be8064264ec12394061712f45ec7b36dbca719cbb0.zip",
+        "sha256": "f09412bf2320b9131e6dd3be8064264ec12394061712f45ec7b36dbca719cbb0",
+        "bytes": 6326,
+        "role": "prototype_fabrication_zip"
+      },
+      "model": {
+        "assembly": {
+          "original": "../p36/fab-prep/P36_DISTRIBUTOR.blend",
+          "path": "objects/sha256/e4/e45054cd1380b83975eadd08be58f91ae830baf8175e3391945701d135e4b0ed.blend",
+          "sha256": "e45054cd1380b83975eadd08be58f91ae830baf8175e3391945701d135e4b0ed",
+          "bytes": 421129,
+          "role": "P36_assembly_geometry_preexisting"
+        },
+        "silkscreen": {
+          "original": "../p36/P36_SILK_R1.blend",
+          "path": "objects/sha256/65/65ee3a5214e81fb5e8448fda744e6a978bca8e4eca2a688f83b56c13ed147278.blend",
+          "sha256": "65ee3a5214e81fb5e8448fda744e6a978bca8e4eca2a688f83b56c13ed147278",
+          "bytes": 157778,
+          "role": "S1_silkscreen_review_geometry"
+        }
+      },
+      "dimensions_mm": [
+        62.5,
+        25.4,
+        1.6
+      ],
+      "layers": 2,
+      "finished_copper_oz_per_face": 4.5,
+      "included_subcomponents": [
+        "5x8mm power solder pads x2",
+        "copper routing",
+        "plated vias",
+        "silkscreen"
+      ],
+      "excludes": [
+        "header pins",
+        "fuse holder",
+        "fuse insert"
+      ]
+    },
+    {
+      "part_id": "KEYSTONE-3568",
+      "revision_id": "MPN-3568",
+      "name": "MINIヒューズホルダー",
+      "make_buy": "buy",
+      "manufacturer": "Keystone",
+      "manufacturer_part_number": "3568",
+      "quantity": 1,
+      "unit": "個",
+      "status": "DESIGN_PROPOSAL",
+      "installed_quantity": null,
+      "stock_quantity": null,
+      "order_quantity": null,
+      "quantity_basis": "per one P36 S1 distribution PCB assembly; not Blender object count",
+      "occurrence_reference": "F1 HOLDER",
+      "authority_source": "https://www.keyelco.com/product.cfm/product_id/306",
+      "physical_validation": "NOT_RUN"
+    },
+    {
+      "part_id": "LITTELFUSE-0297015-L",
+      "revision_id": "MPN-0297015.L",
+      "name": "15A MINIヒューズ（暫定選定）",
+      "make_buy": "buy",
+      "manufacturer": "Littelfuse",
+      "manufacturer_part_number": "0297015.L",
+      "quantity": 1,
+      "unit": "個",
+      "status": "DESIGN_PROPOSAL",
+      "installed_quantity": null,
+      "stock_quantity": null,
+      "order_quantity": null,
+      "quantity_basis": "per one P36 S1 distribution PCB assembly; not Blender object count",
+      "occurrence_reference": "F1 INSERT",
+      "authority_source": "https://www.littelfuse.com/assetdocs/littelfuse-datasheet-297-mini32v?assetguid=42c9dd21-a88e-4328-8e67-2f832444faf1",
+      "physical_validation": "NOT_RUN",
+      "selection_note": "15A candidate only; final load and protection coordination unresolved; does not replace existing main fuse"
+    },
+    {
+      "part_id": "SAMTEC-HTSW-103-07-L-S",
+      "revision_id": "MPN-HTSW-103-07-L-S",
+      "name": "サーボ出力 1x3 2.54mmピンヘッダ",
+      "make_buy": "buy",
+      "manufacturer": "Samtec",
+      "manufacturer_part_number": "HTSW-103-07-L-S",
+      "quantity": 12,
+      "unit": "個",
+      "status": "DESIGN_PROPOSAL",
+      "installed_quantity": null,
+      "stock_quantity": null,
+      "order_quantity": null,
+      "quantity_basis": "per one P36 S1 distribution PCB assembly; not Blender object count",
+      "occurrence_reference": "J0..J11",
+      "authority_source": "https://www.samtec.com/products/htsw-103-07-l-s",
+      "physical_validation": "NOT_RUN"
+    },
+    {
+      "part_id": "SAMTEC-HTSW-107-07-L-D",
+      "revision_id": "MPN-HTSW-107-07-L-D",
+      "name": "PWM/GND入力 2x7 2.54mmピンヘッダ",
+      "make_buy": "buy",
+      "manufacturer": "Samtec",
+      "manufacturer_part_number": "HTSW-107-07-L-D",
+      "quantity": 1,
+      "unit": "個",
+      "status": "DESIGN_PROPOSAL",
+      "installed_quantity": null,
+      "stock_quantity": null,
+      "order_quantity": null,
+      "quantity_basis": "per one P36 S1 distribution PCB assembly; not Blender object count",
+      "occurrence_reference": "J_IN",
+      "authority_source": "https://www.samtec.com/products/htsw-107-07-l-d",
+      "physical_validation": "NOT_RUN"
+    }
+  ],
+  "occurrences": [
+    {
+      "occurrence_id": "PCB1",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "TACHIKOMA-LEG-DISTRIBUTOR-PCB",
+      "child_revision_id": "P36-S1-SILK-R1",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "F1 HOLDER",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "KEYSTONE-3568",
+      "child_revision_id": "MPN-3568",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "F1 INSERT",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "LITTELFUSE-0297015-L",
+      "child_revision_id": "MPN-0297015.L",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J0",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J1",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J2",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J3",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J4",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J5",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J6",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J7",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J8",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J9",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J10",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J11",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-103-07-L-S",
+      "child_revision_id": "MPN-HTSW-103-07-L-S",
+      "quantity": 1,
+      "unit": "個"
+    },
+    {
+      "occurrence_id": "J_IN",
+      "parent_assembly_id": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "child_part_id": "SAMTEC-HTSW-107-07-L-D",
+      "child_revision_id": "MPN-HTSW-107-07-L-D",
+      "quantity": 1,
+      "unit": "個"
+    }
+  ],
+  "native_artifacts": [
+    {
+      "original": "../p36/fab-prep/P36_DISTRIBUTOR.blend",
+      "path": "objects/sha256/e4/e45054cd1380b83975eadd08be58f91ae830baf8175e3391945701d135e4b0ed.blend",
+      "sha256": "e45054cd1380b83975eadd08be58f91ae830baf8175e3391945701d135e4b0ed",
+      "bytes": 421129,
+      "role": "P36_assembly_geometry_preexisting"
+    },
+    {
+      "original": "../p36/P36_SILK_R1.blend",
+      "path": "objects/sha256/65/65ee3a5214e81fb5e8448fda744e6a978bca8e4eca2a688f83b56c13ed147278.blend",
+      "sha256": "65ee3a5214e81fb5e8448fda744e6a978bca8e4eca2a688f83b56c13ed147278",
+      "bytes": 157778,
+      "role": "S1_silkscreen_review_geometry"
+    }
+  ],
+  "source_files": [
+    {
+      "original": "../p36/P36_SILK_R1_JLCPCB_PROTOTYPE.zip",
+      "path": "objects/sha256/f0/f09412bf2320b9131e6dd3be8064264ec12394061712f45ec7b36dbca719cbb0.zip",
+      "sha256": "f09412bf2320b9131e6dd3be8064264ec12394061712f45ec7b36dbca719cbb0",
+      "bytes": 6326,
+      "role": "prototype_fabrication_zip"
+    },
+    {
+      "original": "../p36/fab-prep/P36_DISTRIBUTOR.blend",
+      "path": "objects/sha256/e4/e45054cd1380b83975eadd08be58f91ae830baf8175e3391945701d135e4b0ed.blend",
+      "sha256": "e45054cd1380b83975eadd08be58f91ae830baf8175e3391945701d135e4b0ed",
+      "bytes": 421129,
+      "role": "P36_assembly_geometry_preexisting"
+    },
+    {
+      "original": "../p36/P36_SILK_R1.blend",
+      "path": "objects/sha256/65/65ee3a5214e81fb5e8448fda744e6a978bca8e4eca2a688f83b56c13ed147278.blend",
+      "sha256": "65ee3a5214e81fb5e8448fda744e6a978bca8e4eca2a688f83b56c13ed147278",
+      "bytes": 157778,
+      "role": "S1_silkscreen_review_geometry"
+    },
+    {
+      "original": "../p36/P36_SILK_R1_FRONT_BACK.png",
+      "path": "objects/sha256/fe/fee952603dbfde4823f53eb0525d99f5a12a260f6e5a06603577a43568c19398.png",
+      "sha256": "fee952603dbfde4823f53eb0525d99f5a12a260f6e5a06603577a43568c19398",
+      "bytes": 2444488,
+      "role": "silkscreen_preview"
+    },
+    {
+      "original": "../p36/servo-wiring/P36_PCA9685_12_SERVO_WIRING.png",
+      "path": "objects/sha256/bf/bf7a901522b305f970cc55bdf78c0352d75ee79e25871bdcb2e2454c6f93e73a.png",
+      "sha256": "bf7a901522b305f970cc55bdf78c0352d75ee79e25871bdcb2e2454c6f93e73a",
+      "bytes": 314578,
+      "role": "wiring_diagram"
+    },
+    {
+      "original": "../p36/SILK_CHECKS.json",
+      "path": "objects/sha256/b9/b9d0483fabec21263aa2f0d2e0a9cf28157b2e6f9f5647ad693de28f4c3b80ee.json",
+      "sha256": "b9d0483fabec21263aa2f0d2e0a9cf28157b2e6f9f5647ad693de28f4c3b80ee",
+      "bytes": 767,
+      "role": "silk_sources_and_evidence"
+    },
+    {
+      "original": "../p36/README.md",
+      "path": "objects/sha256/4a/4a47b3de382f322da058929e1a7887307a38a1250431d5f33bc2ac5eaff7051b.md",
+      "sha256": "4a47b3de382f322da058929e1a7887307a38a1250431d5f33bc2ac5eaff7051b",
+      "bytes": 1163,
+      "role": "silk_sources_and_evidence"
+    },
+    {
+      "original": "../p36/ORDER_NOTES.md",
+      "path": "objects/sha256/2a/2a37f46f9451da7f1fd80c2f2ad51687b7f20a6e85e0888e1eb7d9cf39832fcc.md",
+      "sha256": "2a37f46f9451da7f1fd80c2f2ad51687b7f20a6e85e0888e1eb7d9cf39832fcc",
+      "bytes": 3319,
+      "role": "silk_sources_and_evidence"
+    },
+    {
+      "original": "../p36/CURRENT_FUSE_REVIEW.md",
+      "path": "objects/sha256/5b/5ba0d7b8b8fa410863f9310fa78986581ce3cc3a12561e99d2e0e0b5d1d03ca8.md",
+      "sha256": "5ba0d7b8b8fa410863f9310fa78986581ce3cc3a12561e99d2e0e0b5d1d03ca8",
+      "bytes": 6481,
+      "role": "silk_sources_and_evidence"
+    },
+    {
+      "original": "../p36/CIRCUIT_AND_PINMAP.md",
+      "path": "objects/sha256/9e/9e3df379b6df05397d2f06e708fc3d15b04e27769d2044a8206cd3d427557d7e.md",
+      "sha256": "9e3df379b6df05397d2f06e708fc3d15b04e27769d2044a8206cd3d427557d7e",
+      "bytes": 2526,
+      "role": "silk_sources_and_evidence"
+    },
+    {
+      "original": "../p36/p36_silk_r1.py",
+      "path": "objects/sha256/a8/a840f0e04fecf7bf4999557ee4cf3e6464dbc95a55ae9bf84eb341f4663712db.py",
+      "sha256": "a840f0e04fecf7bf4999557ee4cf3e6464dbc95a55ae9bf84eb341f4663712db",
+      "bytes": 3972,
+      "role": "silk_sources_and_evidence"
+    },
+    {
+      "original": "../p36/fab-prep/route_candidate.json",
+      "path": "objects/sha256/88/880c689e1707b9ca2b76984b3ba803ec5647628d8333c2da440dba1b821c762a.json",
+      "sha256": "880c689e1707b9ca2b76984b3ba803ec5647628d8333c2da440dba1b821c762a",
+      "bytes": 48544,
+      "role": "electrical_sources_and_evidence"
+    },
+    {
+      "original": "../p36/fab-prep/FAB_READBACK_CHECKS.json",
+      "path": "objects/sha256/1d/1dc137035112eed8cbc7fe72e26d32ea423cc9dc41b4c76a185166c1962a323a.json",
+      "sha256": "1dc137035112eed8cbc7fe72e26d32ea423cc9dc41b4c76a185166c1962a323a",
+      "bytes": 1792,
+      "role": "electrical_sources_and_evidence"
+    },
+    {
+      "original": "../p36/fab-prep/BLENDER_READBACK.json",
+      "path": "objects/sha256/b3/b3f7d6676a7c4a4c0a70a222ab77d39c49bade4892610f07dcaaf6a4409cdb7e.json",
+      "sha256": "b3f7d6676a7c4a4c0a70a222ab77d39c49bade4892610f07dcaaf6a4409cdb7e",
+      "bytes": 508,
+      "role": "electrical_sources_and_evidence"
+    },
+    {
+      "original": "../p36/fab-prep/CURRENT_SCREENING.json",
+      "path": "objects/sha256/7f/7f42a0ed5786525f3feaef45b2fb91553955522fa5d439defa3cfa0df1641079.json",
+      "sha256": "7f42a0ed5786525f3feaef45b2fb91553955522fa5d439defa3cfa0df1641079",
+      "bytes": 6003,
+      "role": "electrical_sources_and_evidence"
+    },
+    {
+      "original": "../p36/fab-prep/CURRENT_SCREENING.csv",
+      "path": "objects/sha256/7d/7de56f51e49924713a93ff0b7a720cdcd18c2aafb8a21d56f6eb0b191152e0a8.csv",
+      "sha256": "7de56f51e49924713a93ff0b7a720cdcd18c2aafb8a21d56f6eb0b191152e0a8",
+      "bytes": 1948,
+      "role": "electrical_sources_and_evidence"
+    },
+    {
+      "original": "../p36/pwm-review/PWM_PHYSICAL_CONNECTIVITY.json",
+      "path": "objects/sha256/ef/ef9f28cf893b560d911747df81eca61260a5a385e5423da83f34de593f4402c5.json",
+      "sha256": "ef9f28cf893b560d911747df81eca61260a5a385e5423da83f34de593f4402c5",
+      "bytes": 2484,
+      "role": "independent_net_contact_audit"
+    },
+    {
+      "original": "../p36/servo-wiring/P36_PCA9685_12_SERVO_WIRING.svg",
+      "path": "objects/sha256/74/74f558a2a9154e33aed2f2fad1c380576f461cf9925b4dc692f290b93121c481.svg",
+      "sha256": "74f558a2a9154e33aed2f2fad1c380576f461cf9925b4dc692f290b93121c481",
+      "bytes": 119124,
+      "role": "wiring_sources"
+    },
+    {
+      "original": "../p36/servo-wiring/CONNECTIONS.csv",
+      "path": "objects/sha256/ff/ffec3d72aa9d08461cf20d4fe1d9780bdc3d709aa1ff4d7c27a830bbbf1cf677.csv",
+      "sha256": "ffec3d72aa9d08461cf20d4fe1d9780bdc3d709aa1ff4d7c27a830bbbf1cf677",
+      "bytes": 1673,
+      "role": "wiring_sources"
+    },
+    {
+      "original": "../p36/servo-wiring/README.md",
+      "path": "objects/sha256/64/64d15a6f0d17ada8bab17ec385b6e32b3fc92f4520648a568db2a71aa2ad237b.md",
+      "sha256": "64d15a6f0d17ada8bab17ec385b6e32b3fc92f4520648a568db2a71aa2ad237b",
+      "bytes": 1112,
+      "role": "wiring_sources"
+    },
+    {
+      "original": "../p36/gerber/P36-NPTH.drl",
+      "path": "objects/sha256/3e/3eeb8a9e22c19312a28c093c52774991b4015e1b51dbd0fb12755f3765294f2c.drl",
+      "sha256": "3eeb8a9e22c19312a28c093c52774991b4015e1b51dbd0fb12755f3765294f2c",
+      "bytes": 189,
+      "role": "manufacturing_layer"
+    },
+    {
+      "original": "../p36/gerber/P36-PTH.drl",
+      "path": "objects/sha256/e2/e27ebc15b6cc569e38bab0d02fe824193761910aef191c75f30217ec79a399fd.drl",
+      "sha256": "e27ebc15b6cc569e38bab0d02fe824193761910aef191c75f30217ec79a399fd",
+      "bytes": 1751,
+      "role": "manufacturing_layer"
+    },
+    {
+      "original": "../p36/gerber/P36.GBL",
+      "path": "objects/sha256/36/36f3876fd15c2b9e3386f517c5ae816de1d1ac91de87b7fb19f02a6b792a25d4.GBL",
+      "sha256": "36f3876fd15c2b9e3386f517c5ae816de1d1ac91de87b7fb19f02a6b792a25d4",
+      "bytes": 4456,
+      "role": "manufacturing_layer"
+    },
+    {
+      "original": "../p36/gerber/P36.GBO",
+      "path": "objects/sha256/cb/cb50cd1f0a90446c6022354fb449f78b9f21293cb7390c1c1eab6f1dc7cf6857.GBO",
+      "sha256": "cb50cd1f0a90446c6022354fb449f78b9f21293cb7390c1c1eab6f1dc7cf6857",
+      "bytes": 7271,
+      "role": "manufacturing_layer"
+    },
+    {
+      "original": "../p36/gerber/P36.GBS",
+      "path": "objects/sha256/b4/b4666552964346d288c12ced3c4e58932abce4946a1f76345f351826ebac0347.GBS",
+      "sha256": "b4666552964346d288c12ced3c4e58932abce4946a1f76345f351826ebac0347",
+      "bytes": 1687,
+      "role": "manufacturing_layer"
+    },
+    {
+      "original": "../p36/gerber/P36.GKO",
+      "path": "objects/sha256/a6/a6ab75fd73857aff7823eb7b99093427becceb8add2ecca73557896ac0625eec.GKO",
+      "sha256": "a6ab75fd73857aff7823eb7b99093427becceb8add2ecca73557896ac0625eec",
+      "bytes": 303,
+      "role": "manufacturing_layer"
+    },
+    {
+      "original": "../p36/gerber/P36.GTL",
+      "path": "objects/sha256/15/15bd07640db9180ddb96a36735aa54a7cfa2ea95948a64b093923adb59aeb865.GTL",
+      "sha256": "15bd07640db9180ddb96a36735aa54a7cfa2ea95948a64b093923adb59aeb865",
+      "bytes": 4524,
+      "role": "manufacturing_layer"
+    },
+    {
+      "original": "../p36/gerber/P36.GTO",
+      "path": "objects/sha256/bc/bc17362e7c4553c6d9e64af268b7c3229e3fddbfe3b93a5c94851710f2620b95.GTO",
+      "sha256": "bc17362e7c4553c6d9e64af268b7c3229e3fddbfe3b93a5c94851710f2620b95",
+      "bytes": 9262,
+      "role": "manufacturing_layer"
+    },
+    {
+      "original": "../p36/gerber/P36.GTS",
+      "path": "objects/sha256/9b/9b3704a401f33c5c47601f8ac15c3e203536aa0e234633b7e38240e613e5eaf9.GTS",
+      "sha256": "9b3704a401f33c5c47601f8ac15c3e203536aa0e234633b7e38240e613e5eaf9",
+      "bytes": 1770,
+      "role": "manufacturing_layer"
+    },
+    {
+      "original": "../p36/fab-prep/source/p36_route_prepare.py",
+      "path": "objects/sha256/d1/d1acb2019b1392972ce7edd91b28a458a9ab0a13c873e65b4863aee386be24ef.py",
+      "sha256": "d1acb2019b1392972ce7edd91b28a458a9ab0a13c873e65b4863aee386be24ef",
+      "bytes": 6715,
+      "role": "source_script"
+    },
+    {
+      "original": "../p36/fab-prep/source/p36_fabricate.py",
+      "path": "objects/sha256/58/58e92f448eadafa7114b2689a41c17d26614ca5d108ffd62cd7b6b7c3e4b97c7.py",
+      "sha256": "58e92f448eadafa7114b2689a41c17d26614ca5d108ffd62cd7b6b7c3e4b97c7",
+      "bytes": 11166,
+      "role": "source_script"
+    },
+    {
+      "original": "../p36/fab-prep/source/p36_current_review.py",
+      "path": "objects/sha256/cb/cb4ca8d66fe2b1d28453e334e46bec3b3d802446ad517261039c81e438ecafab.py",
+      "sha256": "cb4ca8d66fe2b1d28453e334e46bec3b3d802446ad517261039c81e438ecafab",
+      "bytes": 3359,
+      "role": "source_script"
+    },
+    {
+      "original": "../p36/fab-prep/source/p36_visual.py",
+      "path": "objects/sha256/0b/0b24ae8d15c15110c5abe31672582c930ecd3e9cc484f479c337a530715e0826.py",
+      "sha256": "0b24ae8d15c15110c5abe31672582c930ecd3e9cc484f479c337a530715e0826",
+      "bytes": 8105,
+      "role": "source_script"
+    }
+  ],
+  "related_configuration": "TACHIKOMA-ELECTRONICS-P21-20261108-R1",
+  "external_interfaces": [
+    {
+      "name": "PCA9685 legs",
+      "count": 1,
+      "included_in_this_bom": false
+    },
+    {
+      "name": "LD-220MG",
+      "count": 12,
+      "included_in_this_bom": false
+    },
+    {
+      "name": "battery / existing main fuse / harness",
+      "count": null,
+      "included_in_this_bom": false
+    }
+  ],
+  "unresolved": [
+    "measured load/peak current and thermal qualification",
+    "final fuse rating and protection coordination",
+    "supplier DFM",
+    "actual servo mating connector and 3.3V PWM input threshold",
+    "harness wire gauge and strain relief",
+    "installed stock/order quantities unknown"
+  ],
+  "reuse_policy": "Reuse immutable source_files by SHA256. The main assembly model is P36; S1 fabrication differs only in legend layers. Do not infer printed geometry is integrated into the older assembly model.",
+  "baseline_preservation": "Existing whole robot, arm variants and electronic component master pointers unchanged."
+}

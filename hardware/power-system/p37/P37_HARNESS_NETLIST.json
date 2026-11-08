@@ -1,0 +1,5602 @@
+{
+  "configuration": "P37_COLOR_HARNESS_P36_S1",
+  "units": "mm",
+  "source_model": "P21_CURRENT_WIRING + P36_DISTRIBUTOR_NATIVE + S1 legend",
+  "body_placement": "paused unchanged",
+  "components": [
+    {
+      "id": "BAT",
+      "object": "P14_BAT",
+      "location": [
+        -335.0,
+        -70.0,
+        0.0
+      ]
+    },
+    {
+      "id": "FUSE",
+      "object": "P14_FUSE",
+      "location": [
+        -235.0,
+        -70.0,
+        0.0
+      ]
+    },
+    {
+      "id": "UBEC",
+      "object": "P14_UBEC",
+      "location": [
+        -95.0,
+        -105.0,
+        0.0
+      ]
+    },
+    {
+      "id": "DC5",
+      "object": "P14_DC5",
+      "location": [
+        -95.0,
+        -10.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ESP",
+      "object": "P14_ESP",
+      "location": [
+        25.0,
+        -10.0,
+        5.099999904632568
+      ]
+    },
+    {
+      "id": "LEGS",
+      "object": "P14_LEGS",
+      "location": [
+        0.0,
+        100.0,
+        1.2999999523162842
+      ]
+    },
+    {
+      "id": "ARMS",
+      "object": "P14_ARMS",
+      "location": [
+        170.0,
+        -95.0,
+        1.2999999523162842
+      ]
+    },
+    {
+      "id": "L0",
+      "object": "P14_L0",
+      "location": [
+        -330.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L1",
+      "object": "P14_L1",
+      "location": [
+        -270.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L2",
+      "object": "P14_L2",
+      "location": [
+        -210.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L3",
+      "object": "P14_L3",
+      "location": [
+        -150.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L4",
+      "object": "P14_L4",
+      "location": [
+        -90.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L5",
+      "object": "P14_L5",
+      "location": [
+        -30.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L6",
+      "object": "P14_L6",
+      "location": [
+        30.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L7",
+      "object": "P14_L7",
+      "location": [
+        90.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L8",
+      "object": "P14_L8",
+      "location": [
+        150.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L9",
+      "object": "P14_L9",
+      "location": [
+        210.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L10",
+      "object": "P14_L10",
+      "location": [
+        270.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "L11",
+      "object": "P14_L11",
+      "location": [
+        330.0,
+        230.0,
+        25.600006103515625
+      ]
+    },
+    {
+      "id": "A0",
+      "object": "P14_A0",
+      "location": [
+        70.0,
+        -240.0,
+        18.0
+      ]
+    },
+    {
+      "id": "A3",
+      "object": "P14_A3",
+      "location": [
+        135.0,
+        -240.0,
+        18.0
+      ]
+    },
+    {
+      "id": "A4",
+      "object": "P14_A4",
+      "location": [
+        200.0,
+        -240.0,
+        18.0
+      ]
+    },
+    {
+      "id": "A7",
+      "object": "P14_A7",
+      "location": [
+        265.0,
+        -240.0,
+        18.0
+      ]
+    },
+    {
+      "id": "XT60_INTERFACE",
+      "representation": "Existing battery XT60 and schematic mating contacts; not a new inline switch"
+    },
+    {
+      "id": "P36_S1",
+      "bom_config": "TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1",
+      "quantity": 1
+    }
+  ],
+  "endpoints": {
+    "BAT+": {
+      "object": "P37_P14_BAT__XT60_F_CONTACT_BAT_RAW.001",
+      "point": [
+        -347.6000061035156,
+        -98.0,
+        18.0
+      ],
+      "net": "BAT_RAW",
+      "kind": "component_terminal"
+    },
+    "BAT-": {
+      "object": "P37_P14_BAT__XT60_F_CONTACT_GND.001",
+      "point": [
+        -340.3999938964844,
+        -98.0,
+        18.0
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "FUSE_IN": {
+      "object": "P37_P14_FUSE__FUSE_END_BAT_RAW",
+      "point": [
+        -247.0,
+        -89.0,
+        3.0
+      ],
+      "net": "BAT_RAW",
+      "kind": "component_terminal"
+    },
+    "FUSE_OUT": {
+      "object": "P37_P14_FUSE__FUSE_END_BAT_FUSED",
+      "point": [
+        -223.0,
+        -89.0,
+        3.0
+      ],
+      "net": "BAT_FUSED",
+      "kind": "component_terminal"
+    },
+    "UBEC_IN+": {
+      "object": "P37_P14_UBEC__HENGE_INPUT_END_SWITCHED",
+      "point": [
+        -123.0,
+        -126.0,
+        2.0
+      ],
+      "net": "BAT_FUSED",
+      "kind": "component_terminal"
+    },
+    "UBEC_IN-": {
+      "object": "P37_P14_UBEC__HENGE_INPUT_END_GND",
+      "point": [
+        -123.0,
+        -129.0,
+        2.0
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "UBEC_OUT+": {
+      "object": "P37_P14_UBEC__HENGE_OUTPUT_END_ARM_SUPPLY",
+      "point": [
+        -72.0,
+        -127.0,
+        2.0
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "UBEC_OUT-": {
+      "object": "P37_P14_UBEC__HENGE_OUTPUT_END_GND",
+      "point": [
+        -72.0,
+        -130.0,
+        2.0
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "DC_IN+": {
+      "object": "P37_P14_DC5__MINI560_PAD_SWITCHED",
+      "point": [
+        -108.19999694824219,
+        -14.800000190734863,
+        1.25
+      ],
+      "net": "BAT_FUSED",
+      "kind": "component_terminal"
+    },
+    "DC_IN-": {
+      "object": "P37_P14_DC5__MINI560_PAD_GND",
+      "point": [
+        -108.19999694824219,
+        -3.0,
+        1.25
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "DC_OUT+": {
+      "object": "P37_P14_DC5__MINI560_PAD_5V_LOGIC",
+      "point": [
+        -81.80000305175781,
+        -14.800000190734863,
+        1.25
+      ],
+      "net": "5V_LOGIC",
+      "kind": "component_terminal"
+    },
+    "DC_OUT-": {
+      "object": "P37_P14_DC5__MINI560_PAD_GND.002",
+      "point": [
+        -81.80000305175781,
+        -3.0,
+        1.25
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "ESP_5V": {
+      "object": "P37_P14_ESP__ESP32_J2_5V",
+      "point": [
+        12.300003051757812,
+        -32.87999725341797,
+        4.0
+      ],
+      "net": "5V_LOGIC",
+      "kind": "component_terminal"
+    },
+    "ESP_GND": {
+      "object": "P37_P14_ESP__ESP32_J2_GND",
+      "point": [
+        12.300003051757812,
+        -20.18000030517578,
+        4.0
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "ESP_3V3": {
+      "object": "P37_P14_ESP__ESP32_J2_3V3",
+      "point": [
+        12.300003051757812,
+        12.839996337890625,
+        4.0
+      ],
+      "net": "3V3_LOGIC",
+      "kind": "component_terminal"
+    },
+    "ESP_SDA": {
+      "object": "P37_P14_ESP__ESP32_J3_21",
+      "point": [
+        37.69999694824219,
+        0.1399993896484375,
+        4.0
+      ],
+      "net": "SDA",
+      "kind": "component_terminal"
+    },
+    "ESP_SCL": {
+      "object": "P37_P14_ESP__ESP32_J3_22",
+      "point": [
+        37.69999694824219,
+        7.760002136230469,
+        4.0
+      ],
+      "net": "SCL",
+      "kind": "component_terminal"
+    },
+    "LEGS_GND": {
+      "object": "P37_P14_LEGS__PCA_LEGS_BEND_GND",
+      "point": [
+        30.5,
+        106.3499984741211,
+        2.299999952316284
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "LEGS_VCC": {
+      "object": "P37_P14_LEGS__PCA_LEGS_BEND_VCC",
+      "point": [
+        30.5,
+        96.19000244140625,
+        2.299999952316284
+      ],
+      "net": "3V3_LOGIC",
+      "kind": "component_terminal"
+    },
+    "LEGS_SDA": {
+      "object": "P37_P14_LEGS__PCA_LEGS_BEND_SDA",
+      "point": [
+        30.5,
+        98.72999572753906,
+        2.299999952316284
+      ],
+      "net": "SDA",
+      "kind": "component_terminal"
+    },
+    "LEGS_SCL": {
+      "object": "P37_P14_LEGS__PCA_LEGS_BEND_SCL",
+      "point": [
+        30.5,
+        101.2699966430664,
+        2.299999952316284
+      ],
+      "net": "SCL",
+      "kind": "component_terminal"
+    },
+    "ARMS_GND": {
+      "object": "P37_P14_ARMS__PCA_ARMS_BEND_GND",
+      "point": [
+        200.5,
+        -88.6500015258789,
+        2.299999952316284
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "ARMS_VCC": {
+      "object": "P37_P14_ARMS__PCA_ARMS_BEND_VCC",
+      "point": [
+        200.5,
+        -98.80999755859375,
+        2.299999952316284
+      ],
+      "net": "3V3_LOGIC",
+      "kind": "component_terminal"
+    },
+    "ARMS_SDA": {
+      "object": "P37_P14_ARMS__PCA_ARMS_BEND_SDA",
+      "point": [
+        200.5,
+        -96.27000427246094,
+        2.299999952316284
+      ],
+      "net": "SDA",
+      "kind": "component_terminal"
+    },
+    "ARMS_SCL": {
+      "object": "P37_P14_ARMS__PCA_ARMS_BEND_SCL",
+      "point": [
+        200.5,
+        -93.7300033569336,
+        2.299999952316284
+      ],
+      "net": "SCL",
+      "kind": "component_terminal"
+    },
+    "PWM_L0_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH00_PWM",
+      "point": [
+        -25.400001525878906,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L0",
+      "kind": "component_terminal"
+    },
+    "PWM_L0_SERVO": {
+      "object": "P37_P14_L0__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -252.45999145507812,
+        120.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L0",
+      "kind": "component_terminal"
+    },
+    "L0_POWER": {
+      "object": "P37_P14_L0__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -255.0,
+        120.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L0_GND": {
+      "object": "P37_P14_L0__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -257.5400085449219,
+        120.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L1_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH01_PWM",
+      "point": [
+        -22.860000610351562,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L1",
+      "kind": "component_terminal"
+    },
+    "PWM_L1_SERVO": {
+      "object": "P37_P14_L1__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -252.45999145507812,
+        175.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L1",
+      "kind": "component_terminal"
+    },
+    "L1_POWER": {
+      "object": "P37_P14_L1__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -255.0,
+        175.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L1_GND": {
+      "object": "P37_P14_L1__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -257.5400085449219,
+        175.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L2_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH02_PWM",
+      "point": [
+        -20.31999969482422,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L2",
+      "kind": "component_terminal"
+    },
+    "PWM_L2_SERVO": {
+      "object": "P37_P14_L2__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -252.45999145507812,
+        230.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L2",
+      "kind": "component_terminal"
+    },
+    "L2_POWER": {
+      "object": "P37_P14_L2__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -255.0,
+        230.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L2_GND": {
+      "object": "P37_P14_L2__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -257.5400085449219,
+        230.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L3_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH03_PWM",
+      "point": [
+        -17.779998779296875,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L3",
+      "kind": "component_terminal"
+    },
+    "PWM_L3_SERVO": {
+      "object": "P37_P14_L3__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -252.45999145507812,
+        285.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L3",
+      "kind": "component_terminal"
+    },
+    "L3_POWER": {
+      "object": "P37_P14_L3__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -255.0,
+        285.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L3_GND": {
+      "object": "P37_P14_L3__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -257.5400085449219,
+        285.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L4_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH04_PWM",
+      "point": [
+        -12.699996948242188,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L4",
+      "kind": "component_terminal"
+    },
+    "PWM_L4_SERVO": {
+      "object": "P37_P14_L4__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -252.45999145507812,
+        340.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L4",
+      "kind": "component_terminal"
+    },
+    "L4_POWER": {
+      "object": "P37_P14_L4__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -255.0,
+        340.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L4_GND": {
+      "object": "P37_P14_L4__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -257.5400085449219,
+        340.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L5_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH05_PWM",
+      "point": [
+        -10.160003662109375,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L5",
+      "kind": "component_terminal"
+    },
+    "PWM_L5_SERVO": {
+      "object": "P37_P14_L5__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        -252.45999145507812,
+        395.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L5",
+      "kind": "component_terminal"
+    },
+    "L5_POWER": {
+      "object": "P37_P14_L5__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        -255.0,
+        395.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L5_GND": {
+      "object": "P37_P14_L5__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        -257.5400085449219,
+        395.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L6_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH06_PWM",
+      "point": [
+        -7.620002746582031,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L6",
+      "kind": "component_terminal"
+    },
+    "PWM_L6_SERVO": {
+      "object": "P37_P14_L6__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        257.5400085449219,
+        120.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L6",
+      "kind": "component_terminal"
+    },
+    "L6_POWER": {
+      "object": "P37_P14_L6__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        255.0,
+        120.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L6_GND": {
+      "object": "P37_P14_L6__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        252.45999145507812,
+        120.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L7_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH07_PWM",
+      "point": [
+        -5.0800018310546875,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L7",
+      "kind": "component_terminal"
+    },
+    "PWM_L7_SERVO": {
+      "object": "P37_P14_L7__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        257.5400085449219,
+        175.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L7",
+      "kind": "component_terminal"
+    },
+    "L7_POWER": {
+      "object": "P37_P14_L7__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        255.0,
+        175.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L7_GND": {
+      "object": "P37_P14_L7__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        252.45999145507812,
+        175.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L8_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH08_PWM",
+      "point": [
+        0.0,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L8",
+      "kind": "component_terminal"
+    },
+    "PWM_L8_SERVO": {
+      "object": "P37_P14_L8__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        257.5400085449219,
+        230.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L8",
+      "kind": "component_terminal"
+    },
+    "L8_POWER": {
+      "object": "P37_P14_L8__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        255.0,
+        230.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L8_GND": {
+      "object": "P37_P14_L8__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        252.45999145507812,
+        230.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L9_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH09_PWM",
+      "point": [
+        2.5400009155273438,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L9",
+      "kind": "component_terminal"
+    },
+    "PWM_L9_SERVO": {
+      "object": "P37_P14_L9__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        257.5400085449219,
+        285.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L9",
+      "kind": "component_terminal"
+    },
+    "L9_POWER": {
+      "object": "P37_P14_L9__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        255.0,
+        285.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L9_GND": {
+      "object": "P37_P14_L9__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        252.45999145507812,
+        285.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L10_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH10_PWM",
+      "point": [
+        5.0800018310546875,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L10",
+      "kind": "component_terminal"
+    },
+    "PWM_L10_SERVO": {
+      "object": "P37_P14_L10__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        257.5400085449219,
+        340.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L10",
+      "kind": "component_terminal"
+    },
+    "L10_POWER": {
+      "object": "P37_P14_L10__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        255.0,
+        340.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L10_GND": {
+      "object": "P37_P14_L10__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        252.45999145507812,
+        340.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_L11_SOURCE": {
+      "object": "P37_P14_LEGS__PCA_LEGS_CH11_PWM",
+      "point": [
+        7.620002746582031,
+        104.80000305175781,
+        5.300000190734863
+      ],
+      "net": "PWM_L11",
+      "kind": "component_terminal"
+    },
+    "PWM_L11_SERVO": {
+      "object": "P37_P14_L11__LD220MG_CAD_CONNECTOR_2",
+      "point": [
+        257.5400085449219,
+        395.0,
+        11.100006103515625
+      ],
+      "net": "PWM_L11",
+      "kind": "component_terminal"
+    },
+    "L11_POWER": {
+      "object": "P37_P14_L11__LD220MG_CAD_CONNECTOR_1",
+      "point": [
+        255.0,
+        395.0,
+        11.100006103515625
+      ],
+      "net": "LEG_VBUS",
+      "kind": "component_terminal"
+    },
+    "L11_GND": {
+      "object": "P37_P14_L11__LD220MG_CAD_CONNECTOR_0",
+      "point": [
+        252.45999145507812,
+        395.0,
+        11.100006103515625
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_A0_SOURCE": {
+      "object": "P37_P14_ARMS__PCA_ARMS_CH00_PWM",
+      "point": [
+        144.60000610351562,
+        -90.19999694824219,
+        5.300000190734863
+      ],
+      "net": "PWM_A0",
+      "kind": "component_terminal"
+    },
+    "PWM_A0_SERVO": {
+      "object": "P37_P14_A0__MG90S_CAD_CONNECTOR_2",
+      "point": [
+        72.54000091552734,
+        -265.0,
+        5.5
+      ],
+      "net": "PWM_A0",
+      "kind": "component_terminal"
+    },
+    "A0_POWER": {
+      "object": "P37_P14_A0__MG90S_CAD_CONNECTOR_1",
+      "point": [
+        70.0,
+        -265.0,
+        5.5
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "A0_GND": {
+      "object": "P37_P14_A0__MG90S_CAD_CONNECTOR_0",
+      "point": [
+        67.45999908447266,
+        -265.0,
+        5.5
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_A3_SOURCE": {
+      "object": "P37_P14_ARMS__PCA_ARMS_CH03_PWM",
+      "point": [
+        152.22000122070312,
+        -90.19999694824219,
+        5.300000190734863
+      ],
+      "net": "PWM_A3",
+      "kind": "component_terminal"
+    },
+    "PWM_A3_SERVO": {
+      "object": "P37_P14_A3__MG90S_CAD_CONNECTOR_2",
+      "point": [
+        137.5399932861328,
+        -265.0,
+        5.5
+      ],
+      "net": "PWM_A3",
+      "kind": "component_terminal"
+    },
+    "A3_POWER": {
+      "object": "P37_P14_A3__MG90S_CAD_CONNECTOR_1",
+      "point": [
+        135.0,
+        -265.0,
+        5.5
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "A3_GND": {
+      "object": "P37_P14_A3__MG90S_CAD_CONNECTOR_0",
+      "point": [
+        132.4600067138672,
+        -265.0,
+        5.5
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_A4_SOURCE": {
+      "object": "P37_P14_ARMS__PCA_ARMS_CH04_PWM",
+      "point": [
+        157.3000030517578,
+        -90.19999694824219,
+        5.300000190734863
+      ],
+      "net": "PWM_A4",
+      "kind": "component_terminal"
+    },
+    "PWM_A4_SERVO": {
+      "object": "P37_P14_A4__MG90S_CAD_CONNECTOR_2",
+      "point": [
+        202.5399932861328,
+        -265.0,
+        5.5
+      ],
+      "net": "PWM_A4",
+      "kind": "component_terminal"
+    },
+    "A4_POWER": {
+      "object": "P37_P14_A4__MG90S_CAD_CONNECTOR_1",
+      "point": [
+        200.0,
+        -265.0,
+        5.5
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "A4_GND": {
+      "object": "P37_P14_A4__MG90S_CAD_CONNECTOR_0",
+      "point": [
+        197.4600067138672,
+        -265.0,
+        5.5
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "PWM_A7_SOURCE": {
+      "object": "P37_P14_ARMS__PCA_ARMS_CH07_PWM",
+      "point": [
+        164.9199981689453,
+        -90.19999694824219,
+        5.300000190734863
+      ],
+      "net": "PWM_A7",
+      "kind": "component_terminal"
+    },
+    "PWM_A7_SERVO": {
+      "object": "P37_P14_A7__MG90S_CAD_CONNECTOR_2",
+      "point": [
+        267.5400085449219,
+        -265.0,
+        5.5
+      ],
+      "net": "PWM_A7",
+      "kind": "component_terminal"
+    },
+    "A7_POWER": {
+      "object": "P37_P14_A7__MG90S_CAD_CONNECTOR_1",
+      "point": [
+        265.0,
+        -265.0,
+        5.5
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "component_terminal"
+    },
+    "A7_GND": {
+      "object": "P37_P14_A7__MG90S_CAD_CONNECTOR_0",
+      "point": [
+        262.4599914550781,
+        -265.0,
+        5.5
+      ],
+      "net": "GND",
+      "kind": "component_terminal"
+    },
+    "MAIN_DIST": {
+      "object": "P37_P14_NODE_MAIN_DIST",
+      "point": [
+        -175,
+        25,
+        3
+      ],
+      "net": "BAT_FUSED",
+      "kind": "diagram_junction"
+    },
+    "COMMON_GND": {
+      "object": "P37_P14_NODE_COMMON_GND",
+      "point": [
+        -185,
+        -30,
+        3
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "BUS_SDA": {
+      "object": "P37_P14_NODE_BUS_SDA",
+      "point": [
+        80,
+        45,
+        5
+      ],
+      "net": "SDA",
+      "kind": "diagram_junction"
+    },
+    "BUS_SCL": {
+      "object": "P37_P14_NODE_BUS_SCL",
+      "point": [
+        86,
+        45,
+        6
+      ],
+      "net": "SCL",
+      "kind": "diagram_junction"
+    },
+    "BUS_VCC": {
+      "object": "P37_P14_NODE_BUS_VCC",
+      "point": [
+        92,
+        45,
+        7
+      ],
+      "net": "3V3_LOGIC",
+      "kind": "diagram_junction"
+    },
+    "BUS_GND": {
+      "object": "P37_P14_NODE_BUS_GND",
+      "point": [
+        98,
+        45,
+        8
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "ARM_FEED": {
+      "object": "P37_P14_NODE_ARM_FEED",
+      "point": [
+        320,
+        -185,
+        4
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "ARM_RETURN": {
+      "object": "P37_P14_NODE_ARM_RETURN",
+      "point": [
+        320,
+        -195,
+        4
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A7+": {
+      "object": "P37_P14_NODE_SPLICE_A7+",
+      "point": [
+        265.0,
+        -185,
+        4
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A7-": {
+      "object": "P37_P14_NODE_SPLICE_A7-",
+      "point": [
+        262.4599914550781,
+        -195,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A4+": {
+      "object": "P37_P14_NODE_SPLICE_A4+",
+      "point": [
+        200.0,
+        -185,
+        4
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A4-": {
+      "object": "P37_P14_NODE_SPLICE_A4-",
+      "point": [
+        197.4600067138672,
+        -195,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A3+": {
+      "object": "P37_P14_NODE_SPLICE_A3+",
+      "point": [
+        135.0,
+        -185,
+        4
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A3-": {
+      "object": "P37_P14_NODE_SPLICE_A3-",
+      "point": [
+        132.4600067138672,
+        -195,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A0+": {
+      "object": "P37_P14_NODE_SPLICE_A0+",
+      "point": [
+        70.0,
+        -185,
+        4
+      ],
+      "net": "ARM_SUPPLY",
+      "kind": "diagram_junction"
+    },
+    "SPLICE_A0-": {
+      "object": "P37_P14_NODE_SPLICE_A0-",
+      "point": [
+        67.45999908447266,
+        -195,
+        6
+      ],
+      "net": "GND",
+      "kind": "diagram_junction"
+    },
+    "XT60_MACHINE_PLUS": {
+      "object": "P37_NODE_XT60_MACHINE_PLUS",
+      "point": [
+        -347.6,
+        -105,
+        18
+      ],
+      "net": "BAT_RAW",
+      "kind": "schematic_mating_contact"
+    },
+    "XT60_MACHINE_MINUS": {
+      "object": "P37_NODE_XT60_MACHINE_MINUS",
+      "point": [
+        -340.4,
+        -105,
+        18
+      ],
+      "net": "GND",
+      "kind": "schematic_mating_contact"
+    },
+    "D_IN_0": {
+      "point": [
+        -1.2699999809265137,
+        270.3800048828125,
+        13.40000057220459
+      ],
+      "net": "PWM_L0",
+      "object": "P37_DIST_P36_IN_PWM0",
+      "kind": "component_terminal"
+    },
+    "D_0_S": {
+      "point": [
+        -3.809999942779541,
+        262.760009765625,
+        30.599998474121094
+      ],
+      "net": "PWM_L0",
+      "object": "P37_DIST_P36_OUT_00_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_0_V": {
+      "point": [
+        -6.349999904632568,
+        262.760009765625,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_00_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_0_G": {
+      "point": [
+        -8.890000343322754,
+        262.760009765625,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_00_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_1": {
+      "point": [
+        -1.2699999809265137,
+        272.9200134277344,
+        13.40000057220459
+      ],
+      "net": "PWM_L1",
+      "object": "P37_DIST_P36_IN_PWM1",
+      "kind": "component_terminal"
+    },
+    "D_1_S": {
+      "point": [
+        -3.809999942779541,
+        269.1099853515625,
+        30.599998474121094
+      ],
+      "net": "PWM_L1",
+      "object": "P37_DIST_P36_OUT_01_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_1_V": {
+      "point": [
+        -6.349999904632568,
+        269.1099853515625,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_01_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_1_G": {
+      "point": [
+        -8.890000343322754,
+        269.1099853515625,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_01_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_2": {
+      "point": [
+        -1.2699999809265137,
+        275.4599914550781,
+        13.40000057220459
+      ],
+      "net": "PWM_L2",
+      "object": "P37_DIST_P36_IN_PWM2",
+      "kind": "component_terminal"
+    },
+    "D_2_S": {
+      "point": [
+        -3.809999942779541,
+        275.4599914550781,
+        30.599998474121094
+      ],
+      "net": "PWM_L2",
+      "object": "P37_DIST_P36_OUT_02_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_2_V": {
+      "point": [
+        -6.349999904632568,
+        275.4599914550781,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_02_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_2_G": {
+      "point": [
+        -8.890000343322754,
+        275.4599914550781,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_02_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_3": {
+      "point": [
+        -1.2699999809265137,
+        278.0,
+        13.40000057220459
+      ],
+      "net": "PWM_L3",
+      "object": "P37_DIST_P36_IN_PWM3",
+      "kind": "component_terminal"
+    },
+    "D_3_S": {
+      "point": [
+        -3.809999942779541,
+        281.80999755859375,
+        30.599998474121094
+      ],
+      "net": "PWM_L3",
+      "object": "P37_DIST_P36_OUT_03_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_3_V": {
+      "point": [
+        -6.349999904632568,
+        281.80999755859375,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_03_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_3_G": {
+      "point": [
+        -8.890000343322754,
+        281.80999755859375,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_03_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_4": {
+      "point": [
+        -1.2699999809265137,
+        280.5400085449219,
+        13.40000057220459
+      ],
+      "net": "PWM_L4",
+      "object": "P37_DIST_P36_IN_PWM4",
+      "kind": "component_terminal"
+    },
+    "D_4_S": {
+      "point": [
+        -3.809999942779541,
+        288.1600036621094,
+        30.599998474121094
+      ],
+      "net": "PWM_L4",
+      "object": "P37_DIST_P36_OUT_04_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_4_V": {
+      "point": [
+        -6.349999904632568,
+        288.1600036621094,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_04_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_4_G": {
+      "point": [
+        -8.890000343322754,
+        288.1600036621094,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_04_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_5": {
+      "point": [
+        -1.2699999809265137,
+        283.0799865722656,
+        13.40000057220459
+      ],
+      "net": "PWM_L5",
+      "object": "P37_DIST_P36_IN_PWM5",
+      "kind": "component_terminal"
+    },
+    "D_5_S": {
+      "point": [
+        -3.809999942779541,
+        294.510009765625,
+        30.599998474121094
+      ],
+      "net": "PWM_L5",
+      "object": "P37_DIST_P36_OUT_05_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_5_V": {
+      "point": [
+        -6.349999904632568,
+        294.510009765625,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_05_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_5_G": {
+      "point": [
+        -8.890000343322754,
+        294.510009765625,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_05_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_6": {
+      "point": [
+        1.2699999809265137,
+        270.3800048828125,
+        13.40000057220459
+      ],
+      "net": "PWM_L6",
+      "object": "P37_DIST_P36_IN_PWM6",
+      "kind": "component_terminal"
+    },
+    "D_6_S": {
+      "point": [
+        3.809999942779541,
+        262.760009765625,
+        30.599998474121094
+      ],
+      "net": "PWM_L6",
+      "object": "P37_DIST_P36_OUT_06_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_6_V": {
+      "point": [
+        6.349999904632568,
+        262.760009765625,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_06_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_6_G": {
+      "point": [
+        8.890000343322754,
+        262.760009765625,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_06_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_7": {
+      "point": [
+        1.2699999809265137,
+        272.9200134277344,
+        13.40000057220459
+      ],
+      "net": "PWM_L7",
+      "object": "P37_DIST_P36_IN_PWM7",
+      "kind": "component_terminal"
+    },
+    "D_7_S": {
+      "point": [
+        3.809999942779541,
+        269.1099853515625,
+        30.599998474121094
+      ],
+      "net": "PWM_L7",
+      "object": "P37_DIST_P36_OUT_07_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_7_V": {
+      "point": [
+        6.349999904632568,
+        269.1099853515625,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_07_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_7_G": {
+      "point": [
+        8.890000343322754,
+        269.1099853515625,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_07_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_8": {
+      "point": [
+        1.2699999809265137,
+        275.4599914550781,
+        13.40000057220459
+      ],
+      "net": "PWM_L8",
+      "object": "P37_DIST_P36_IN_PWM8",
+      "kind": "component_terminal"
+    },
+    "D_8_S": {
+      "point": [
+        3.809999942779541,
+        275.4599914550781,
+        30.599998474121094
+      ],
+      "net": "PWM_L8",
+      "object": "P37_DIST_P36_OUT_08_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_8_V": {
+      "point": [
+        6.349999904632568,
+        275.4599914550781,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_08_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_8_G": {
+      "point": [
+        8.890000343322754,
+        275.4599914550781,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_08_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_9": {
+      "point": [
+        1.2699999809265137,
+        278.0,
+        13.40000057220459
+      ],
+      "net": "PWM_L9",
+      "object": "P37_DIST_P36_IN_PWM9",
+      "kind": "component_terminal"
+    },
+    "D_9_S": {
+      "point": [
+        3.809999942779541,
+        281.80999755859375,
+        30.599998474121094
+      ],
+      "net": "PWM_L9",
+      "object": "P37_DIST_P36_OUT_09_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_9_V": {
+      "point": [
+        6.349999904632568,
+        281.80999755859375,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_09_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_9_G": {
+      "point": [
+        8.890000343322754,
+        281.80999755859375,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_09_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_10": {
+      "point": [
+        1.2699999809265137,
+        280.5400085449219,
+        13.40000057220459
+      ],
+      "net": "PWM_L10",
+      "object": "P37_DIST_P36_IN_PWM10",
+      "kind": "component_terminal"
+    },
+    "D_10_S": {
+      "point": [
+        3.809999942779541,
+        288.1600036621094,
+        30.599998474121094
+      ],
+      "net": "PWM_L10",
+      "object": "P37_DIST_P36_OUT_10_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_10_V": {
+      "point": [
+        6.349999904632568,
+        288.1600036621094,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_10_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_10_G": {
+      "point": [
+        8.890000343322754,
+        288.1600036621094,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_10_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_IN_11": {
+      "point": [
+        1.2699999809265137,
+        283.0799865722656,
+        13.40000057220459
+      ],
+      "net": "PWM_L11",
+      "object": "P37_DIST_P36_IN_PWM11",
+      "kind": "component_terminal"
+    },
+    "D_11_S": {
+      "point": [
+        3.809999942779541,
+        294.510009765625,
+        30.599998474121094
+      ],
+      "net": "PWM_L11",
+      "object": "P37_DIST_P36_OUT_11_S_PIN",
+      "kind": "component_terminal"
+    },
+    "D_11_V": {
+      "point": [
+        6.349999904632568,
+        294.510009765625,
+        30.599998474121094
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_OUT_11_V_PIN",
+      "kind": "component_terminal"
+    },
+    "D_11_G": {
+      "point": [
+        8.890000343322754,
+        294.510009765625,
+        30.599998474121094
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_OUT_11_G_PIN",
+      "kind": "component_terminal"
+    },
+    "D_REF0": {
+      "point": [
+        -1.2699999809265137,
+        285.6199951171875,
+        13.40000057220459
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_IN_G-1",
+      "kind": "component_terminal"
+    },
+    "D_REF1": {
+      "point": [
+        1.2699999809265137,
+        285.6199951171875,
+        13.40000057220459
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_IN_G1",
+      "kind": "component_terminal"
+    },
+    "D_PLUS": {
+      "point": [
+        -3.5,
+        303,
+        22.85
+      ],
+      "net": "BAT_FUSED",
+      "object": "P37_DIST_P36_PCB",
+      "kind": "component_terminal"
+    },
+    "D_MINUS": {
+      "point": [
+        3.5,
+        303,
+        22.85
+      ],
+      "net": "GND",
+      "object": "P37_DIST_P36_PCB",
+      "kind": "component_terminal"
+    },
+    "D_FUSED": {
+      "point": [
+        4.95,
+        255.8,
+        22.85
+      ],
+      "net": "LEG_VBUS",
+      "object": "P37_DIST_P36_PCB",
+      "kind": "component_terminal"
+    }
+  },
+  "harnesses": [
+    {
+      "id": "battery_fuse",
+      "source": "XT60_MACHINE_PLUS",
+      "destination": "FUSE_IN",
+      "net": "BAT_RAW",
+      "curve_object": "P37_W_battery_fuse",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -347.6,
+          -105,
+          18
+        ],
+        [
+          -347.6,
+          -112,
+          4
+        ],
+        [
+          -247,
+          -112,
+          4
+        ],
+        [
+          -247.0,
+          -89.0,
+          3.0
+        ]
+      ]
+    },
+    {
+      "id": "battery_common_return",
+      "source": "XT60_MACHINE_MINUS",
+      "destination": "COMMON_GND",
+      "net": "GND",
+      "curve_object": "P37_W_battery_common_return",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -340.4,
+          -105,
+          18
+        ],
+        [
+          -340.4,
+          -117,
+          5
+        ],
+        [
+          -185,
+          -117,
+          5
+        ],
+        [
+          -185,
+          -30,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "input_ubec",
+      "source": "MAIN_DIST",
+      "destination": "UBEC_IN+",
+      "net": "BAT_FUSED",
+      "curve_object": "P37_W_input_ubec",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -175,
+          25,
+          3
+        ],
+        [
+          -155,
+          25,
+          4
+        ],
+        [
+          -155,
+          -126,
+          4
+        ],
+        [
+          -123.0,
+          -126.0,
+          2.0
+        ]
+      ]
+    },
+    {
+      "id": "input_dc5",
+      "source": "MAIN_DIST",
+      "destination": "DC_IN+",
+      "net": "BAT_FUSED",
+      "curve_object": "P37_W_input_dc5",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -175,
+          25,
+          3
+        ],
+        [
+          -145,
+          25,
+          5
+        ],
+        [
+          -145,
+          -14.8,
+          5
+        ],
+        [
+          -108.19999694824219,
+          -14.800000190734863,
+          1.25
+        ]
+      ]
+    },
+    {
+      "id": "ubec_return",
+      "source": "COMMON_GND",
+      "destination": "UBEC_IN-",
+      "net": "GND",
+      "curve_object": "P37_W_ubec_return",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -185,
+          -30,
+          3
+        ],
+        [
+          -165,
+          -30,
+          6
+        ],
+        [
+          -165,
+          -135,
+          6
+        ],
+        [
+          -123,
+          -135,
+          6
+        ],
+        [
+          -123.0,
+          -129.0,
+          2.0
+        ]
+      ]
+    },
+    {
+      "id": "dc_return",
+      "source": "COMMON_GND",
+      "destination": "DC_IN-",
+      "net": "GND",
+      "curve_object": "P37_W_dc_return",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -185,
+          -30,
+          3
+        ],
+        [
+          -145,
+          -30,
+          7
+        ],
+        [
+          -145,
+          -3,
+          7
+        ],
+        [
+          -108.19999694824219,
+          -3.0,
+          1.25
+        ]
+      ]
+    },
+    {
+      "id": "logic5v",
+      "source": "DC_OUT+",
+      "destination": "ESP_5V",
+      "net": "5V_LOGIC",
+      "curve_object": "P37_W_logic5v",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -81.80000305175781,
+          -14.800000190734863,
+          1.25
+        ],
+        [
+          -60,
+          -14.8,
+          5
+        ],
+        [
+          -60,
+          -52,
+          5
+        ],
+        [
+          2,
+          -52,
+          5
+        ],
+        [
+          2,
+          -32.88,
+          5
+        ],
+        [
+          12.300003051757812,
+          -32.87999725341797,
+          4.0
+        ]
+      ]
+    },
+    {
+      "id": "logic_return",
+      "source": "DC_OUT-",
+      "destination": "ESP_GND",
+      "net": "GND",
+      "curve_object": "P37_W_logic_return",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -81.80000305175781,
+          -3.0,
+          1.25
+        ],
+        [
+          -50,
+          -3,
+          6
+        ],
+        [
+          -50,
+          -45,
+          6
+        ],
+        [
+          -2,
+          -45,
+          6
+        ],
+        [
+          -2,
+          -20.18,
+          6
+        ],
+        [
+          12.300003051757812,
+          -20.18000030517578,
+          4.0
+        ]
+      ]
+    },
+    {
+      "id": "esp_bus_SDA",
+      "source": "ESP_SDA",
+      "destination": "BUS_SDA",
+      "net": "SDA",
+      "curve_object": "P37_W_esp_bus_SDA",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          37.69999694824219,
+          0.1399993896484375,
+          4.0
+        ],
+        [
+          37.69999694824219,
+          30,
+          10
+        ],
+        [
+          80,
+          30,
+          10
+        ],
+        [
+          80,
+          45,
+          5
+        ]
+      ]
+    },
+    {
+      "id": "bus_legs_SDA",
+      "source": "BUS_SDA",
+      "destination": "LEGS_SDA",
+      "net": "SDA",
+      "curve_object": "P37_W_bus_legs_SDA",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          80,
+          45,
+          5
+        ],
+        [
+          80,
+          98.72999572753906,
+          8
+        ],
+        [
+          30.5,
+          98.72999572753906,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "bus_arms_SDA",
+      "source": "BUS_SDA",
+      "destination": "ARMS_SDA",
+      "net": "SDA",
+      "curve_object": "P37_W_bus_arms_SDA",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          80,
+          45,
+          5
+        ],
+        [
+          225,
+          45,
+          8
+        ],
+        [
+          225,
+          -96.27000427246094,
+          8
+        ],
+        [
+          200.5,
+          -96.27000427246094,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "esp_bus_SCL",
+      "source": "ESP_SCL",
+      "destination": "BUS_SCL",
+      "net": "SCL",
+      "curve_object": "P37_W_esp_bus_SCL",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          37.69999694824219,
+          7.760002136230469,
+          4.0
+        ],
+        [
+          37.69999694824219,
+          26,
+          11
+        ],
+        [
+          86,
+          26,
+          11
+        ],
+        [
+          86,
+          45,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "bus_legs_SCL",
+      "source": "BUS_SCL",
+      "destination": "LEGS_SCL",
+      "net": "SCL",
+      "curve_object": "P37_W_bus_legs_SCL",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          86,
+          45,
+          6
+        ],
+        [
+          86,
+          101.2699966430664,
+          9
+        ],
+        [
+          30.5,
+          101.2699966430664,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "bus_arms_SCL",
+      "source": "BUS_SCL",
+      "destination": "ARMS_SCL",
+      "net": "SCL",
+      "curve_object": "P37_W_bus_arms_SCL",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          86,
+          45,
+          6
+        ],
+        [
+          231,
+          45,
+          9
+        ],
+        [
+          231,
+          -93.7300033569336,
+          9
+        ],
+        [
+          200.5,
+          -93.7300033569336,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "esp_bus_VCC",
+      "source": "ESP_3V3",
+      "destination": "BUS_VCC",
+      "net": "3V3_LOGIC",
+      "curve_object": "P37_W_esp_bus_VCC",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          12.300003051757812,
+          12.839996337890625,
+          4.0
+        ],
+        [
+          12.300003051757812,
+          22,
+          12
+        ],
+        [
+          92,
+          22,
+          12
+        ],
+        [
+          92,
+          45,
+          7
+        ]
+      ]
+    },
+    {
+      "id": "bus_legs_VCC",
+      "source": "BUS_VCC",
+      "destination": "LEGS_VCC",
+      "net": "3V3_LOGIC",
+      "curve_object": "P37_W_bus_legs_VCC",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          92,
+          45,
+          7
+        ],
+        [
+          92,
+          96.19000244140625,
+          10
+        ],
+        [
+          30.5,
+          96.19000244140625,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "bus_arms_VCC",
+      "source": "BUS_VCC",
+      "destination": "ARMS_VCC",
+      "net": "3V3_LOGIC",
+      "curve_object": "P37_W_bus_arms_VCC",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          92,
+          45,
+          7
+        ],
+        [
+          237,
+          45,
+          10
+        ],
+        [
+          237,
+          -98.80999755859375,
+          10
+        ],
+        [
+          200.5,
+          -98.80999755859375,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "esp_bus_GND",
+      "source": "ESP_GND",
+      "destination": "BUS_GND",
+      "net": "GND",
+      "curve_object": "P37_W_esp_bus_GND",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          12.300003051757812,
+          -20.18000030517578,
+          4.0
+        ],
+        [
+          12.300003051757812,
+          18,
+          13
+        ],
+        [
+          98,
+          18,
+          13
+        ],
+        [
+          98,
+          45,
+          8
+        ]
+      ]
+    },
+    {
+      "id": "bus_legs_GND",
+      "source": "BUS_GND",
+      "destination": "LEGS_GND",
+      "net": "GND",
+      "curve_object": "P37_W_bus_legs_GND",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          98,
+          45,
+          8
+        ],
+        [
+          98,
+          106.3499984741211,
+          11
+        ],
+        [
+          30.5,
+          106.3499984741211,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "bus_arms_GND",
+      "source": "BUS_GND",
+      "destination": "ARMS_GND",
+      "net": "GND",
+      "curve_object": "P37_W_bus_arms_GND",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          98,
+          45,
+          8
+        ],
+        [
+          243,
+          45,
+          11
+        ],
+        [
+          243,
+          -88.6500015258789,
+          11
+        ],
+        [
+          200.5,
+          -88.6500015258789,
+          2.299999952316284
+        ]
+      ]
+    },
+    {
+      "id": "arm_supply_trunk",
+      "source": "UBEC_OUT+",
+      "destination": "ARM_FEED",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P37_W_arm_supply_trunk",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -72.0,
+          -127.0,
+          2.0
+        ],
+        [
+          -60,
+          -150,
+          5
+        ],
+        [
+          320,
+          -150,
+          5
+        ],
+        [
+          320,
+          -185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "arm_return_trunk",
+      "source": "UBEC_OUT-",
+      "destination": "ARM_RETURN",
+      "net": "GND",
+      "curve_object": "P37_W_arm_return_trunk",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -72.0,
+          -130.0,
+          2.0
+        ],
+        [
+          -65,
+          -155,
+          6
+        ],
+        [
+          330,
+          -155,
+          6
+        ],
+        [
+          330,
+          -195,
+          6
+        ],
+        [
+          320,
+          -195,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_A7",
+      "source": "ARM_FEED",
+      "destination": "SPLICE_A7+",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P37_W_power_trunk_A7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          320,
+          -185,
+          4
+        ],
+        [
+          265.0,
+          -185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_A7",
+      "source": "ARM_RETURN",
+      "destination": "SPLICE_A7-",
+      "net": "GND",
+      "curve_object": "P37_W_ground_trunk_A7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          320,
+          -195,
+          4
+        ],
+        [
+          262.4599914550781,
+          -195,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_A7",
+      "source": "SPLICE_A7+",
+      "destination": "A7_POWER",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P37_W_power_branch_A7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          265.0,
+          -185,
+          4
+        ],
+        [
+          265.0,
+          -265.0,
+          4
+        ],
+        [
+          265.0,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_A7",
+      "source": "SPLICE_A7-",
+      "destination": "A7_GND",
+      "net": "GND",
+      "curve_object": "P37_W_ground_branch_A7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          262.4599914550781,
+          -195,
+          6
+        ],
+        [
+          262.4599914550781,
+          -265.0,
+          6
+        ],
+        [
+          262.4599914550781,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "signal_A7",
+      "source": "PWM_A7_SOURCE",
+      "destination": "PWM_A7_SERVO",
+      "net": "PWM_A7",
+      "curve_object": "P37_W_signal_A7",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          164.9199981689453,
+          -90.19999694824219,
+          5.300000190734863
+        ],
+        [
+          164.9199981689453,
+          -68,
+          16
+        ],
+        [
+          157,
+          -68,
+          16
+        ],
+        [
+          157,
+          -230,
+          16
+        ],
+        [
+          267.5400085449219,
+          -230,
+          16
+        ],
+        [
+          267.5400085449219,
+          -265.0,
+          16
+        ],
+        [
+          267.5400085449219,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_A4",
+      "source": "SPLICE_A7+",
+      "destination": "SPLICE_A4+",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P37_W_power_trunk_A4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          265.0,
+          -185,
+          4
+        ],
+        [
+          200.0,
+          -185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_A4",
+      "source": "SPLICE_A7-",
+      "destination": "SPLICE_A4-",
+      "net": "GND",
+      "curve_object": "P37_W_ground_trunk_A4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          262.4599914550781,
+          -195,
+          6
+        ],
+        [
+          197.4600067138672,
+          -195,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_A4",
+      "source": "SPLICE_A4+",
+      "destination": "A4_POWER",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P37_W_power_branch_A4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          200.0,
+          -185,
+          4
+        ],
+        [
+          200.0,
+          -265.0,
+          4
+        ],
+        [
+          200.0,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_A4",
+      "source": "SPLICE_A4-",
+      "destination": "A4_GND",
+      "net": "GND",
+      "curve_object": "P37_W_ground_branch_A4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          197.4600067138672,
+          -195,
+          6
+        ],
+        [
+          197.4600067138672,
+          -265.0,
+          6
+        ],
+        [
+          197.4600067138672,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "signal_A4",
+      "source": "PWM_A4_SOURCE",
+      "destination": "PWM_A4_SERVO",
+      "net": "PWM_A4",
+      "curve_object": "P37_W_signal_A4",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          157.3000030517578,
+          -90.19999694824219,
+          5.300000190734863
+        ],
+        [
+          157.3000030517578,
+          -68,
+          14
+        ],
+        [
+          153,
+          -68,
+          14
+        ],
+        [
+          153,
+          -225,
+          14
+        ],
+        [
+          202.5399932861328,
+          -225,
+          14
+        ],
+        [
+          202.5399932861328,
+          -265.0,
+          14
+        ],
+        [
+          202.5399932861328,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_A3",
+      "source": "SPLICE_A4+",
+      "destination": "SPLICE_A3+",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P37_W_power_trunk_A3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          200.0,
+          -185,
+          4
+        ],
+        [
+          135.0,
+          -185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_A3",
+      "source": "SPLICE_A4-",
+      "destination": "SPLICE_A3-",
+      "net": "GND",
+      "curve_object": "P37_W_ground_trunk_A3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          197.4600067138672,
+          -195,
+          6
+        ],
+        [
+          132.4600067138672,
+          -195,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_A3",
+      "source": "SPLICE_A3+",
+      "destination": "A3_POWER",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P37_W_power_branch_A3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          135.0,
+          -185,
+          4
+        ],
+        [
+          135.0,
+          -265.0,
+          4
+        ],
+        [
+          135.0,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_A3",
+      "source": "SPLICE_A3-",
+      "destination": "A3_GND",
+      "net": "GND",
+      "curve_object": "P37_W_ground_branch_A3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          132.4600067138672,
+          -195,
+          6
+        ],
+        [
+          132.4600067138672,
+          -265.0,
+          6
+        ],
+        [
+          132.4600067138672,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "signal_A3",
+      "source": "PWM_A3_SOURCE",
+      "destination": "PWM_A3_SERVO",
+      "net": "PWM_A3",
+      "curve_object": "P37_W_signal_A3",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          152.22000122070312,
+          -90.19999694824219,
+          5.300000190734863
+        ],
+        [
+          152.22000122070312,
+          -68,
+          12
+        ],
+        [
+          149,
+          -68,
+          12
+        ],
+        [
+          149,
+          -220,
+          12
+        ],
+        [
+          137.5399932861328,
+          -220,
+          12
+        ],
+        [
+          137.5399932861328,
+          -265.0,
+          12
+        ],
+        [
+          137.5399932861328,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "power_trunk_A0",
+      "source": "SPLICE_A3+",
+      "destination": "SPLICE_A0+",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P37_W_power_trunk_A0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          135.0,
+          -185,
+          4
+        ],
+        [
+          70.0,
+          -185,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ground_trunk_A0",
+      "source": "SPLICE_A3-",
+      "destination": "SPLICE_A0-",
+      "net": "GND",
+      "curve_object": "P37_W_ground_trunk_A0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          132.4600067138672,
+          -195,
+          6
+        ],
+        [
+          67.45999908447266,
+          -195,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "power_branch_A0",
+      "source": "SPLICE_A0+",
+      "destination": "A0_POWER",
+      "net": "ARM_SUPPLY",
+      "curve_object": "P37_W_power_branch_A0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          70.0,
+          -185,
+          4
+        ],
+        [
+          70.0,
+          -265.0,
+          4
+        ],
+        [
+          70.0,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "ground_branch_A0",
+      "source": "SPLICE_A0-",
+      "destination": "A0_GND",
+      "net": "GND",
+      "curve_object": "P37_W_ground_branch_A0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          67.45999908447266,
+          -195,
+          6
+        ],
+        [
+          67.45999908447266,
+          -265.0,
+          6
+        ],
+        [
+          67.45999908447266,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "signal_A0",
+      "source": "PWM_A0_SOURCE",
+      "destination": "PWM_A0_SERVO",
+      "net": "PWM_A0",
+      "curve_object": "P37_W_signal_A0",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          144.60000610351562,
+          -90.19999694824219,
+          5.300000190734863
+        ],
+        [
+          144.60000610351562,
+          -68,
+          10
+        ],
+        [
+          145,
+          -68,
+          10
+        ],
+        [
+          145,
+          -215,
+          10
+        ],
+        [
+          72.54000091552734,
+          -215,
+          10
+        ],
+        [
+          72.54000091552734,
+          -265.0,
+          10
+        ],
+        [
+          72.54000091552734,
+          -265.0,
+          5.5
+        ]
+      ]
+    },
+    {
+      "id": "ubec_output_common_reference",
+      "source": "UBEC_OUT-",
+      "destination": "COMMON_GND",
+      "net": "GND",
+      "curve_object": "P37_W_ubec_output_common_reference",
+      "status": "PIN_FUNCTION_MATCHED_PROPOSED_HARNESS",
+      "path_mm": [
+        [
+          -72.0,
+          -130.0,
+          2.0
+        ],
+        [
+          -80,
+          -140,
+          3
+        ],
+        [
+          -190,
+          -140,
+          3
+        ],
+        [
+          -190,
+          -30,
+          3
+        ],
+        [
+          -185,
+          -30,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "fuse_to_distribution",
+      "source": "FUSE_OUT",
+      "destination": "MAIN_DIST",
+      "net": "BAT_FUSED",
+      "curve_object": "P37_W_fuse_to_distribution",
+      "status": "USER_ADOPTED_POWER_TOPOLOGY",
+      "path_mm": [
+        [
+          -223.0,
+          -89.0,
+          3.0
+        ],
+        [
+          -195,
+          -89,
+          5
+        ],
+        [
+          -195,
+          25,
+          5
+        ],
+        [
+          -175,
+          25,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "xt60_plus",
+      "source": "BAT+",
+      "destination": "XT60_MACHINE_PLUS",
+      "net": "BAT_RAW",
+      "curve_object": "P37_W_xt60_plus",
+      "status": "CONDITIONAL_XT60_MATED",
+      "condition": "XT60_MATED",
+      "path_mm": [
+        [
+          -347.6000061035156,
+          -98.0,
+          18.0
+        ],
+        [
+          -347.6,
+          -105,
+          18
+        ]
+      ]
+    },
+    {
+      "id": "xt60_minus",
+      "source": "BAT-",
+      "destination": "XT60_MACHINE_MINUS",
+      "net": "GND",
+      "curve_object": "P37_W_xt60_minus",
+      "status": "CONDITIONAL_XT60_MATED",
+      "condition": "XT60_MATED",
+      "path_mm": [
+        [
+          -340.3999938964844,
+          -98.0,
+          18.0
+        ],
+        [
+          -340.4,
+          -105,
+          18
+        ]
+      ]
+    },
+    {
+      "id": "distributor_power",
+      "source": "MAIN_DIST",
+      "destination": "D_PLUS",
+      "net": "BAT_FUSED",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_distributor_power",
+      "path_mm": [
+        [
+          -175,
+          25,
+          3
+        ],
+        [
+          -190,
+          35,
+          5
+        ],
+        [
+          -190,
+          445,
+          5
+        ],
+        [
+          -3.5,
+          445,
+          5
+        ],
+        [
+          -3.5,
+          303,
+          36
+        ],
+        [
+          -3.5,
+          303,
+          22.85
+        ]
+      ]
+    },
+    {
+      "id": "distributor_return",
+      "source": "COMMON_GND",
+      "destination": "D_MINUS",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_distributor_return",
+      "path_mm": [
+        [
+          -185,
+          -30,
+          3
+        ],
+        [
+          -200,
+          -30,
+          5
+        ],
+        [
+          -200,
+          455,
+          5
+        ],
+        [
+          3.5,
+          455,
+          5
+        ],
+        [
+          3.5,
+          303,
+          36
+        ],
+        [
+          3.5,
+          303,
+          22.85
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_0",
+      "source": "PWM_L0_SOURCE",
+      "destination": "D_IN_0",
+      "net": "PWM_L0",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_0",
+      "path_mm": [
+        [
+          -25.400001525878906,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -25.400001525878906,
+          120.0,
+          5
+        ],
+        [
+          -34,
+          155.0,
+          5
+        ],
+        [
+          -34,
+          270.3800048828125,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          270.3800048828125,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          270.3800048828125,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_0_G",
+      "source": "D_0_G",
+      "destination": "L0_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_0_G",
+      "path_mm": [
+        [
+          -8.890000343322754,
+          262.760009765625,
+          30.599998474121094
+        ],
+        [
+          -8.890000343322754,
+          262.760009765625,
+          35
+        ],
+        [
+          -32,
+          262.760009765625,
+          35
+        ],
+        [
+          -195,
+          111.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          111.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          120.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_0_V",
+      "source": "D_0_V",
+      "destination": "L0_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_0_V",
+      "path_mm": [
+        [
+          -6.349999904632568,
+          262.760009765625,
+          30.599998474121094
+        ],
+        [
+          -6.349999904632568,
+          262.760009765625,
+          37
+        ],
+        [
+          -35,
+          262.760009765625,
+          37
+        ],
+        [
+          -198,
+          114.0,
+          37
+        ],
+        [
+          -255.0,
+          114.0,
+          37
+        ],
+        [
+          -255.0,
+          120.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_0_S",
+      "source": "D_0_S",
+      "destination": "PWM_L0_SERVO",
+      "net": "PWM_L0",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_0_S",
+      "path_mm": [
+        [
+          -3.809999942779541,
+          262.760009765625,
+          30.599998474121094
+        ],
+        [
+          -3.809999942779541,
+          262.760009765625,
+          39
+        ],
+        [
+          -38,
+          262.760009765625,
+          39
+        ],
+        [
+          -201,
+          117.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          117.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          120.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_1",
+      "source": "PWM_L1_SOURCE",
+      "destination": "D_IN_1",
+      "net": "PWM_L1",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_1",
+      "path_mm": [
+        [
+          -22.860000610351562,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -22.860000610351562,
+          120.8,
+          5
+        ],
+        [
+          -31,
+          155.8,
+          5
+        ],
+        [
+          -31,
+          272.9200134277344,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          272.9200134277344,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          272.9200134277344,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_1_G",
+      "source": "D_1_G",
+      "destination": "L1_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_1_G",
+      "path_mm": [
+        [
+          -8.890000343322754,
+          269.1099853515625,
+          30.599998474121094
+        ],
+        [
+          -8.890000343322754,
+          269.1099853515625,
+          35
+        ],
+        [
+          -32,
+          269.1099853515625,
+          35
+        ],
+        [
+          -195,
+          166.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          166.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          175.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_1_V",
+      "source": "D_1_V",
+      "destination": "L1_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_1_V",
+      "path_mm": [
+        [
+          -6.349999904632568,
+          269.1099853515625,
+          30.599998474121094
+        ],
+        [
+          -6.349999904632568,
+          269.1099853515625,
+          37
+        ],
+        [
+          -35,
+          269.1099853515625,
+          37
+        ],
+        [
+          -198,
+          169.0,
+          37
+        ],
+        [
+          -255.0,
+          169.0,
+          37
+        ],
+        [
+          -255.0,
+          175.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_1_S",
+      "source": "D_1_S",
+      "destination": "PWM_L1_SERVO",
+      "net": "PWM_L1",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_1_S",
+      "path_mm": [
+        [
+          -3.809999942779541,
+          269.1099853515625,
+          30.599998474121094
+        ],
+        [
+          -3.809999942779541,
+          269.1099853515625,
+          39
+        ],
+        [
+          -38,
+          269.1099853515625,
+          39
+        ],
+        [
+          -201,
+          172.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          172.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          175.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_2",
+      "source": "PWM_L2_SOURCE",
+      "destination": "D_IN_2",
+      "net": "PWM_L2",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_2",
+      "path_mm": [
+        [
+          -20.31999969482422,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -20.31999969482422,
+          121.6,
+          5
+        ],
+        [
+          -28,
+          156.6,
+          5
+        ],
+        [
+          -28,
+          275.4599914550781,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          275.4599914550781,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          275.4599914550781,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_2_G",
+      "source": "D_2_G",
+      "destination": "L2_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_2_G",
+      "path_mm": [
+        [
+          -8.890000343322754,
+          275.4599914550781,
+          30.599998474121094
+        ],
+        [
+          -8.890000343322754,
+          275.4599914550781,
+          35
+        ],
+        [
+          -32,
+          275.4599914550781,
+          35
+        ],
+        [
+          -195,
+          221.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          221.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          230.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_2_V",
+      "source": "D_2_V",
+      "destination": "L2_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_2_V",
+      "path_mm": [
+        [
+          -6.349999904632568,
+          275.4599914550781,
+          30.599998474121094
+        ],
+        [
+          -6.349999904632568,
+          275.4599914550781,
+          37
+        ],
+        [
+          -35,
+          275.4599914550781,
+          37
+        ],
+        [
+          -198,
+          224.0,
+          37
+        ],
+        [
+          -255.0,
+          224.0,
+          37
+        ],
+        [
+          -255.0,
+          230.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_2_S",
+      "source": "D_2_S",
+      "destination": "PWM_L2_SERVO",
+      "net": "PWM_L2",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_2_S",
+      "path_mm": [
+        [
+          -3.809999942779541,
+          275.4599914550781,
+          30.599998474121094
+        ],
+        [
+          -3.809999942779541,
+          275.4599914550781,
+          39
+        ],
+        [
+          -38,
+          275.4599914550781,
+          39
+        ],
+        [
+          -201,
+          227.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          227.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          230.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_3",
+      "source": "PWM_L3_SOURCE",
+      "destination": "D_IN_3",
+      "net": "PWM_L3",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_3",
+      "path_mm": [
+        [
+          -17.779998779296875,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -17.779998779296875,
+          122.4,
+          5
+        ],
+        [
+          -25,
+          157.4,
+          5
+        ],
+        [
+          -25,
+          278.0,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          278.0,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          278.0,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_3_G",
+      "source": "D_3_G",
+      "destination": "L3_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_3_G",
+      "path_mm": [
+        [
+          -8.890000343322754,
+          281.80999755859375,
+          30.599998474121094
+        ],
+        [
+          -8.890000343322754,
+          281.80999755859375,
+          35
+        ],
+        [
+          -32,
+          281.80999755859375,
+          35
+        ],
+        [
+          -195,
+          276.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          276.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          285.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_3_V",
+      "source": "D_3_V",
+      "destination": "L3_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_3_V",
+      "path_mm": [
+        [
+          -6.349999904632568,
+          281.80999755859375,
+          30.599998474121094
+        ],
+        [
+          -6.349999904632568,
+          281.80999755859375,
+          37
+        ],
+        [
+          -35,
+          281.80999755859375,
+          37
+        ],
+        [
+          -198,
+          279.0,
+          37
+        ],
+        [
+          -255.0,
+          279.0,
+          37
+        ],
+        [
+          -255.0,
+          285.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_3_S",
+      "source": "D_3_S",
+      "destination": "PWM_L3_SERVO",
+      "net": "PWM_L3",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_3_S",
+      "path_mm": [
+        [
+          -3.809999942779541,
+          281.80999755859375,
+          30.599998474121094
+        ],
+        [
+          -3.809999942779541,
+          281.80999755859375,
+          39
+        ],
+        [
+          -38,
+          281.80999755859375,
+          39
+        ],
+        [
+          -201,
+          282.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          282.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          285.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_4",
+      "source": "PWM_L4_SOURCE",
+      "destination": "D_IN_4",
+      "net": "PWM_L4",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_4",
+      "path_mm": [
+        [
+          -12.699996948242188,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -12.699996948242188,
+          123.2,
+          5
+        ],
+        [
+          -22,
+          158.2,
+          5
+        ],
+        [
+          -22,
+          280.5400085449219,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          280.5400085449219,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          280.5400085449219,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_4_G",
+      "source": "D_4_G",
+      "destination": "L4_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_4_G",
+      "path_mm": [
+        [
+          -8.890000343322754,
+          288.1600036621094,
+          30.599998474121094
+        ],
+        [
+          -8.890000343322754,
+          288.1600036621094,
+          35
+        ],
+        [
+          -32,
+          288.1600036621094,
+          35
+        ],
+        [
+          -195,
+          331.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          331.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          340.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_4_V",
+      "source": "D_4_V",
+      "destination": "L4_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_4_V",
+      "path_mm": [
+        [
+          -6.349999904632568,
+          288.1600036621094,
+          30.599998474121094
+        ],
+        [
+          -6.349999904632568,
+          288.1600036621094,
+          37
+        ],
+        [
+          -35,
+          288.1600036621094,
+          37
+        ],
+        [
+          -198,
+          334.0,
+          37
+        ],
+        [
+          -255.0,
+          334.0,
+          37
+        ],
+        [
+          -255.0,
+          340.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_4_S",
+      "source": "D_4_S",
+      "destination": "PWM_L4_SERVO",
+      "net": "PWM_L4",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_4_S",
+      "path_mm": [
+        [
+          -3.809999942779541,
+          288.1600036621094,
+          30.599998474121094
+        ],
+        [
+          -3.809999942779541,
+          288.1600036621094,
+          39
+        ],
+        [
+          -38,
+          288.1600036621094,
+          39
+        ],
+        [
+          -201,
+          337.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          337.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          340.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_5",
+      "source": "PWM_L5_SOURCE",
+      "destination": "D_IN_5",
+      "net": "PWM_L5",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_5",
+      "path_mm": [
+        [
+          -10.160003662109375,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -10.160003662109375,
+          124.0,
+          5
+        ],
+        [
+          -19,
+          159.0,
+          5
+        ],
+        [
+          -19,
+          283.0799865722656,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          283.0799865722656,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          283.0799865722656,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_5_G",
+      "source": "D_5_G",
+      "destination": "L5_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_5_G",
+      "path_mm": [
+        [
+          -8.890000343322754,
+          294.510009765625,
+          30.599998474121094
+        ],
+        [
+          -8.890000343322754,
+          294.510009765625,
+          35
+        ],
+        [
+          -32,
+          294.510009765625,
+          35
+        ],
+        [
+          -195,
+          386.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          386.0,
+          35
+        ],
+        [
+          -257.5400085449219,
+          395.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_5_V",
+      "source": "D_5_V",
+      "destination": "L5_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_5_V",
+      "path_mm": [
+        [
+          -6.349999904632568,
+          294.510009765625,
+          30.599998474121094
+        ],
+        [
+          -6.349999904632568,
+          294.510009765625,
+          37
+        ],
+        [
+          -35,
+          294.510009765625,
+          37
+        ],
+        [
+          -198,
+          389.0,
+          37
+        ],
+        [
+          -255.0,
+          389.0,
+          37
+        ],
+        [
+          -255.0,
+          395.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_5_S",
+      "source": "D_5_S",
+      "destination": "PWM_L5_SERVO",
+      "net": "PWM_L5",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_5_S",
+      "path_mm": [
+        [
+          -3.809999942779541,
+          294.510009765625,
+          30.599998474121094
+        ],
+        [
+          -3.809999942779541,
+          294.510009765625,
+          39
+        ],
+        [
+          -38,
+          294.510009765625,
+          39
+        ],
+        [
+          -201,
+          392.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          392.0,
+          39
+        ],
+        [
+          -252.45999145507812,
+          395.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_6",
+      "source": "PWM_L6_SOURCE",
+      "destination": "D_IN_6",
+      "net": "PWM_L6",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_6",
+      "path_mm": [
+        [
+          -7.620002746582031,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -7.620002746582031,
+          124.8,
+          5
+        ],
+        [
+          -16,
+          159.8,
+          5
+        ],
+        [
+          -16,
+          270.3800048828125,
+          5
+        ],
+        [
+          1.2699999809265137,
+          270.3800048828125,
+          5
+        ],
+        [
+          1.2699999809265137,
+          270.3800048828125,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_6_G",
+      "source": "D_6_G",
+      "destination": "L6_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_6_G",
+      "path_mm": [
+        [
+          8.890000343322754,
+          262.760009765625,
+          30.599998474121094
+        ],
+        [
+          8.890000343322754,
+          262.760009765625,
+          35
+        ],
+        [
+          32,
+          262.760009765625,
+          35
+        ],
+        [
+          195,
+          111.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          111.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          120.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_6_V",
+      "source": "D_6_V",
+      "destination": "L6_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_6_V",
+      "path_mm": [
+        [
+          6.349999904632568,
+          262.760009765625,
+          30.599998474121094
+        ],
+        [
+          6.349999904632568,
+          262.760009765625,
+          37
+        ],
+        [
+          35,
+          262.760009765625,
+          37
+        ],
+        [
+          198,
+          114.0,
+          37
+        ],
+        [
+          255.0,
+          114.0,
+          37
+        ],
+        [
+          255.0,
+          120.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_6_S",
+      "source": "D_6_S",
+      "destination": "PWM_L6_SERVO",
+      "net": "PWM_L6",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_6_S",
+      "path_mm": [
+        [
+          3.809999942779541,
+          262.760009765625,
+          30.599998474121094
+        ],
+        [
+          3.809999942779541,
+          262.760009765625,
+          39
+        ],
+        [
+          38,
+          262.760009765625,
+          39
+        ],
+        [
+          201,
+          117.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          117.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          120.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_7",
+      "source": "PWM_L7_SOURCE",
+      "destination": "D_IN_7",
+      "net": "PWM_L7",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_7",
+      "path_mm": [
+        [
+          -5.0800018310546875,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          -5.0800018310546875,
+          125.6,
+          5
+        ],
+        [
+          -13,
+          160.6,
+          5
+        ],
+        [
+          -13,
+          272.9200134277344,
+          5
+        ],
+        [
+          1.2699999809265137,
+          272.9200134277344,
+          5
+        ],
+        [
+          1.2699999809265137,
+          272.9200134277344,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_7_G",
+      "source": "D_7_G",
+      "destination": "L7_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_7_G",
+      "path_mm": [
+        [
+          8.890000343322754,
+          269.1099853515625,
+          30.599998474121094
+        ],
+        [
+          8.890000343322754,
+          269.1099853515625,
+          35
+        ],
+        [
+          32,
+          269.1099853515625,
+          35
+        ],
+        [
+          195,
+          166.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          166.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          175.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_7_V",
+      "source": "D_7_V",
+      "destination": "L7_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_7_V",
+      "path_mm": [
+        [
+          6.349999904632568,
+          269.1099853515625,
+          30.599998474121094
+        ],
+        [
+          6.349999904632568,
+          269.1099853515625,
+          37
+        ],
+        [
+          35,
+          269.1099853515625,
+          37
+        ],
+        [
+          198,
+          169.0,
+          37
+        ],
+        [
+          255.0,
+          169.0,
+          37
+        ],
+        [
+          255.0,
+          175.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_7_S",
+      "source": "D_7_S",
+      "destination": "PWM_L7_SERVO",
+      "net": "PWM_L7",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_7_S",
+      "path_mm": [
+        [
+          3.809999942779541,
+          269.1099853515625,
+          30.599998474121094
+        ],
+        [
+          3.809999942779541,
+          269.1099853515625,
+          39
+        ],
+        [
+          38,
+          269.1099853515625,
+          39
+        ],
+        [
+          201,
+          172.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          172.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          175.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_8",
+      "source": "PWM_L8_SOURCE",
+      "destination": "D_IN_8",
+      "net": "PWM_L8",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_8",
+      "path_mm": [
+        [
+          0.0,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          0.0,
+          126.4,
+          5
+        ],
+        [
+          -10,
+          161.4,
+          5
+        ],
+        [
+          -10,
+          275.4599914550781,
+          5
+        ],
+        [
+          1.2699999809265137,
+          275.4599914550781,
+          5
+        ],
+        [
+          1.2699999809265137,
+          275.4599914550781,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_8_G",
+      "source": "D_8_G",
+      "destination": "L8_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_8_G",
+      "path_mm": [
+        [
+          8.890000343322754,
+          275.4599914550781,
+          30.599998474121094
+        ],
+        [
+          8.890000343322754,
+          275.4599914550781,
+          35
+        ],
+        [
+          32,
+          275.4599914550781,
+          35
+        ],
+        [
+          195,
+          221.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          221.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          230.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_8_V",
+      "source": "D_8_V",
+      "destination": "L8_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_8_V",
+      "path_mm": [
+        [
+          6.349999904632568,
+          275.4599914550781,
+          30.599998474121094
+        ],
+        [
+          6.349999904632568,
+          275.4599914550781,
+          37
+        ],
+        [
+          35,
+          275.4599914550781,
+          37
+        ],
+        [
+          198,
+          224.0,
+          37
+        ],
+        [
+          255.0,
+          224.0,
+          37
+        ],
+        [
+          255.0,
+          230.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_8_S",
+      "source": "D_8_S",
+      "destination": "PWM_L8_SERVO",
+      "net": "PWM_L8",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_8_S",
+      "path_mm": [
+        [
+          3.809999942779541,
+          275.4599914550781,
+          30.599998474121094
+        ],
+        [
+          3.809999942779541,
+          275.4599914550781,
+          39
+        ],
+        [
+          38,
+          275.4599914550781,
+          39
+        ],
+        [
+          201,
+          227.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          227.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          230.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_9",
+      "source": "PWM_L9_SOURCE",
+      "destination": "D_IN_9",
+      "net": "PWM_L9",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_9",
+      "path_mm": [
+        [
+          2.5400009155273438,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          2.5400009155273438,
+          127.2,
+          5
+        ],
+        [
+          -7,
+          162.2,
+          5
+        ],
+        [
+          -7,
+          278.0,
+          5
+        ],
+        [
+          1.2699999809265137,
+          278.0,
+          5
+        ],
+        [
+          1.2699999809265137,
+          278.0,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_9_G",
+      "source": "D_9_G",
+      "destination": "L9_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_9_G",
+      "path_mm": [
+        [
+          8.890000343322754,
+          281.80999755859375,
+          30.599998474121094
+        ],
+        [
+          8.890000343322754,
+          281.80999755859375,
+          35
+        ],
+        [
+          32,
+          281.80999755859375,
+          35
+        ],
+        [
+          195,
+          276.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          276.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          285.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_9_V",
+      "source": "D_9_V",
+      "destination": "L9_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_9_V",
+      "path_mm": [
+        [
+          6.349999904632568,
+          281.80999755859375,
+          30.599998474121094
+        ],
+        [
+          6.349999904632568,
+          281.80999755859375,
+          37
+        ],
+        [
+          35,
+          281.80999755859375,
+          37
+        ],
+        [
+          198,
+          279.0,
+          37
+        ],
+        [
+          255.0,
+          279.0,
+          37
+        ],
+        [
+          255.0,
+          285.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_9_S",
+      "source": "D_9_S",
+      "destination": "PWM_L9_SERVO",
+      "net": "PWM_L9",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_9_S",
+      "path_mm": [
+        [
+          3.809999942779541,
+          281.80999755859375,
+          30.599998474121094
+        ],
+        [
+          3.809999942779541,
+          281.80999755859375,
+          39
+        ],
+        [
+          38,
+          281.80999755859375,
+          39
+        ],
+        [
+          201,
+          282.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          282.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          285.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_10",
+      "source": "PWM_L10_SOURCE",
+      "destination": "D_IN_10",
+      "net": "PWM_L10",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_10",
+      "path_mm": [
+        [
+          5.0800018310546875,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          5.0800018310546875,
+          128.0,
+          5
+        ],
+        [
+          -4,
+          163.0,
+          5
+        ],
+        [
+          -4,
+          280.5400085449219,
+          5
+        ],
+        [
+          1.2699999809265137,
+          280.5400085449219,
+          5
+        ],
+        [
+          1.2699999809265137,
+          280.5400085449219,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_10_G",
+      "source": "D_10_G",
+      "destination": "L10_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_10_G",
+      "path_mm": [
+        [
+          8.890000343322754,
+          288.1600036621094,
+          30.599998474121094
+        ],
+        [
+          8.890000343322754,
+          288.1600036621094,
+          35
+        ],
+        [
+          32,
+          288.1600036621094,
+          35
+        ],
+        [
+          195,
+          331.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          331.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          340.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_10_V",
+      "source": "D_10_V",
+      "destination": "L10_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_10_V",
+      "path_mm": [
+        [
+          6.349999904632568,
+          288.1600036621094,
+          30.599998474121094
+        ],
+        [
+          6.349999904632568,
+          288.1600036621094,
+          37
+        ],
+        [
+          35,
+          288.1600036621094,
+          37
+        ],
+        [
+          198,
+          334.0,
+          37
+        ],
+        [
+          255.0,
+          334.0,
+          37
+        ],
+        [
+          255.0,
+          340.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_10_S",
+      "source": "D_10_S",
+      "destination": "PWM_L10_SERVO",
+      "net": "PWM_L10",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_10_S",
+      "path_mm": [
+        [
+          3.809999942779541,
+          288.1600036621094,
+          30.599998474121094
+        ],
+        [
+          3.809999942779541,
+          288.1600036621094,
+          39
+        ],
+        [
+          38,
+          288.1600036621094,
+          39
+        ],
+        [
+          201,
+          337.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          337.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          340.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "pwm_input_11",
+      "source": "PWM_L11_SOURCE",
+      "destination": "D_IN_11",
+      "net": "PWM_L11",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_pwm_input_11",
+      "path_mm": [
+        [
+          7.620002746582031,
+          104.80000305175781,
+          5.300000190734863
+        ],
+        [
+          7.620002746582031,
+          128.8,
+          5
+        ],
+        [
+          -1,
+          163.8,
+          5
+        ],
+        [
+          -1,
+          283.0799865722656,
+          5
+        ],
+        [
+          1.2699999809265137,
+          283.0799865722656,
+          5
+        ],
+        [
+          1.2699999809265137,
+          283.0799865722656,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "servo_11_G",
+      "source": "D_11_G",
+      "destination": "L11_GND",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_11_G",
+      "path_mm": [
+        [
+          8.890000343322754,
+          294.510009765625,
+          30.599998474121094
+        ],
+        [
+          8.890000343322754,
+          294.510009765625,
+          35
+        ],
+        [
+          32,
+          294.510009765625,
+          35
+        ],
+        [
+          195,
+          386.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          386.0,
+          35
+        ],
+        [
+          252.45999145507812,
+          395.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_11_V",
+      "source": "D_11_V",
+      "destination": "L11_POWER",
+      "net": "LEG_VBUS",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_11_V",
+      "path_mm": [
+        [
+          6.349999904632568,
+          294.510009765625,
+          30.599998474121094
+        ],
+        [
+          6.349999904632568,
+          294.510009765625,
+          37
+        ],
+        [
+          35,
+          294.510009765625,
+          37
+        ],
+        [
+          198,
+          389.0,
+          37
+        ],
+        [
+          255.0,
+          389.0,
+          37
+        ],
+        [
+          255.0,
+          395.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "servo_11_S",
+      "source": "D_11_S",
+      "destination": "PWM_L11_SERVO",
+      "net": "PWM_L11",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_servo_11_S",
+      "path_mm": [
+        [
+          3.809999942779541,
+          294.510009765625,
+          30.599998474121094
+        ],
+        [
+          3.809999942779541,
+          294.510009765625,
+          39
+        ],
+        [
+          38,
+          294.510009765625,
+          39
+        ],
+        [
+          201,
+          392.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          392.0,
+          39
+        ],
+        [
+          257.5400085449219,
+          395.0,
+          11.100006103515625
+        ]
+      ]
+    },
+    {
+      "id": "distributor_reference_0",
+      "source": "LEGS_GND",
+      "destination": "D_REF0",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_distributor_reference_0",
+      "path_mm": [
+        [
+          30.5,
+          106.3499984741211,
+          2.299999952316284
+        ],
+        [
+          45,
+          112,
+          5
+        ],
+        [
+          45,
+          295,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          295,
+          5
+        ],
+        [
+          -1.2699999809265137,
+          285.6199951171875,
+          13.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "distributor_reference_1",
+      "source": "LEGS_GND",
+      "destination": "D_REF1",
+      "net": "GND",
+      "status": "DESIGN_CONNECTION",
+      "curve_object": "P37_W_distributor_reference_1",
+      "path_mm": [
+        [
+          30.5,
+          106.3499984741211,
+          2.299999952316284
+        ],
+        [
+          48,
+          112,
+          5
+        ],
+        [
+          48,
+          295,
+          5
+        ],
+        [
+          1.2699999809265137,
+          295,
+          5
+        ],
+        [
+          1.2699999809265137,
+          285.6199951171875,
+          13.40000057220459
+        ]
+      ]
+    }
+  ],
+  "internal_links": [
+    [
+      "UBEC_IN-",
+      "UBEC_OUT-",
+      "GND"
+    ],
+    [
+      "DC_IN-",
+      "DC_OUT-",
+      "GND"
+    ],
+    [
+      "D_IN_0",
+      "D_0_S",
+      "PWM_L0"
+    ],
+    [
+      "D_FUSED",
+      "D_0_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_0_G",
+      "GND"
+    ],
+    [
+      "D_IN_1",
+      "D_1_S",
+      "PWM_L1"
+    ],
+    [
+      "D_FUSED",
+      "D_1_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_1_G",
+      "GND"
+    ],
+    [
+      "D_IN_2",
+      "D_2_S",
+      "PWM_L2"
+    ],
+    [
+      "D_FUSED",
+      "D_2_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_2_G",
+      "GND"
+    ],
+    [
+      "D_IN_3",
+      "D_3_S",
+      "PWM_L3"
+    ],
+    [
+      "D_FUSED",
+      "D_3_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_3_G",
+      "GND"
+    ],
+    [
+      "D_IN_4",
+      "D_4_S",
+      "PWM_L4"
+    ],
+    [
+      "D_FUSED",
+      "D_4_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_4_G",
+      "GND"
+    ],
+    [
+      "D_IN_5",
+      "D_5_S",
+      "PWM_L5"
+    ],
+    [
+      "D_FUSED",
+      "D_5_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_5_G",
+      "GND"
+    ],
+    [
+      "D_IN_6",
+      "D_6_S",
+      "PWM_L6"
+    ],
+    [
+      "D_FUSED",
+      "D_6_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_6_G",
+      "GND"
+    ],
+    [
+      "D_IN_7",
+      "D_7_S",
+      "PWM_L7"
+    ],
+    [
+      "D_FUSED",
+      "D_7_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_7_G",
+      "GND"
+    ],
+    [
+      "D_IN_8",
+      "D_8_S",
+      "PWM_L8"
+    ],
+    [
+      "D_FUSED",
+      "D_8_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_8_G",
+      "GND"
+    ],
+    [
+      "D_IN_9",
+      "D_9_S",
+      "PWM_L9"
+    ],
+    [
+      "D_FUSED",
+      "D_9_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_9_G",
+      "GND"
+    ],
+    [
+      "D_IN_10",
+      "D_10_S",
+      "PWM_L10"
+    ],
+    [
+      "D_FUSED",
+      "D_10_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_10_G",
+      "GND"
+    ],
+    [
+      "D_IN_11",
+      "D_11_S",
+      "PWM_L11"
+    ],
+    [
+      "D_FUSED",
+      "D_11_V",
+      "LEG_VBUS"
+    ],
+    [
+      "D_MINUS",
+      "D_11_G",
+      "GND"
+    ],
+    [
+      "D_MINUS",
+      "D_REF0",
+      "GND"
+    ],
+    [
+      "D_MINUS",
+      "D_REF1",
+      "GND"
+    ]
+  ],
+  "checks": {
+    "curve_count": 98,
+    "curve_endpoint_mismatches": [],
+    "leg_connector_contacts": 36,
+    "PWM_channels_independent": [
+      {
+        "channel": 0,
+        "pins": [
+          "D_0_S",
+          "D_IN_0",
+          "PWM_L0_SERVO",
+          "PWM_L0_SOURCE"
+        ]
+      },
+      {
+        "channel": 1,
+        "pins": [
+          "D_1_S",
+          "D_IN_1",
+          "PWM_L1_SERVO",
+          "PWM_L1_SOURCE"
+        ]
+      },
+      {
+        "channel": 2,
+        "pins": [
+          "D_2_S",
+          "D_IN_2",
+          "PWM_L2_SERVO",
+          "PWM_L2_SOURCE"
+        ]
+      },
+      {
+        "channel": 3,
+        "pins": [
+          "D_3_S",
+          "D_IN_3",
+          "PWM_L3_SERVO",
+          "PWM_L3_SOURCE"
+        ]
+      },
+      {
+        "channel": 4,
+        "pins": [
+          "D_4_S",
+          "D_IN_4",
+          "PWM_L4_SERVO",
+          "PWM_L4_SOURCE"
+        ]
+      },
+      {
+        "channel": 5,
+        "pins": [
+          "D_5_S",
+          "D_IN_5",
+          "PWM_L5_SERVO",
+          "PWM_L5_SOURCE"
+        ]
+      },
+      {
+        "channel": 6,
+        "pins": [
+          "D_6_S",
+          "D_IN_6",
+          "PWM_L6_SERVO",
+          "PWM_L6_SOURCE"
+        ]
+      },
+      {
+        "channel": 7,
+        "pins": [
+          "D_7_S",
+          "D_IN_7",
+          "PWM_L7_SERVO",
+          "PWM_L7_SOURCE"
+        ]
+      },
+      {
+        "channel": 8,
+        "pins": [
+          "D_8_S",
+          "D_IN_8",
+          "PWM_L8_SERVO",
+          "PWM_L8_SOURCE"
+        ]
+      },
+      {
+        "channel": 9,
+        "pins": [
+          "D_9_S",
+          "D_IN_9",
+          "PWM_L9_SERVO",
+          "PWM_L9_SOURCE"
+        ]
+      },
+      {
+        "channel": 10,
+        "pins": [
+          "D_10_S",
+          "D_IN_10",
+          "PWM_L10_SERVO",
+          "PWM_L10_SOURCE"
+        ]
+      },
+      {
+        "channel": 11,
+        "pins": [
+          "D_11_S",
+          "D_IN_11",
+          "PWM_L11_SERVO",
+          "PWM_L11_SOURCE"
+        ]
+      }
+    ],
+    "XT60_main_fuse_and_F1_break_leg_power": true,
+    "UBEC_output_not_shorted_to_battery": true,
+    "common_GND_present": true,
+    "physical_tests": "NOT_RUN",
+    "board_fuse": "15A candidate, not validated",
+    "body_assembly_changed": false
+  },
+  "unknowns": [
+    {
+      "id": "U_ARM_VOLTAGE",
+      "target": "HENGE / MG90S",
+      "missing": "purchased UBEC revision/output selection and actual servo voltage rating",
+      "render": "5/6V TBD label"
+    },
+    {
+      "id": "U_ARM_CHANNEL",
+      "target": "new four-servo arms",
+      "missing": "firmware adaptation; proposed0,3,4,7 differ from old six-axis arms"
+    },
+    {
+      "id": "U_CONNECTOR_ORIENTATION",
+      "target": "servo connector samples",
+      "missing": "physical mating view and purchased connector orientation; wire function assignments are not housing-polarity verification"
+    },
+    {
+      "id": "U_RETENTION",
+      "target": "all flat-layout modules",
+      "missing": "this is harness topology, no packaging or fixation work"
+    },
+    {
+      "id": "U_FUSE_WIRE_RATINGS",
+      "target": "fuse and power harness",
+      "missing": "fuse current rating, conductor gauge and load/protection validation"
+    },
+    {
+      "id": "U_BATTERY_MONITOR",
+      "status": "DEFERRED_BY_USER"
+    },
+    {
+      "id": "U_STOP_BEHAVIOR",
+      "status": "DEFERRED_BY_USER"
+    }
+  ],
+  "approved": false,
+  "physical_validation": "NOT_RUN",
+  "wire_gauges_and_cut_lengths": "NOT_DESIGNED",
+  "supersedes": "P14_FLAT_HARNESS/P14_HARNESS_NETLIST.json (historical source; not included)",
+  "topology_decisions": {
+    "leg_power": "2S battery through XT60 and fuse, no regulator",
+    "arm_power": "HENGE UBEC step-down, output setting unresolved",
+    "main_disconnect": "XT60 mate/unmate both power conductors",
+    "battery_monitoring": "DEFERRED",
+    "stop_behavior": "DEFERRED"
+  },
+  "approval_scope": "User adopted power topology; physical pinout, ratings and build release are not validated",
+  "conditional_internal_links": [
+    {
+      "source": "FUSE_IN",
+      "destination": "FUSE_OUT",
+      "condition": "FUSE_INTACT",
+      "kind": "component_conduction"
+    },
+    {
+      "source": "D_PLUS",
+      "destination": "D_FUSED",
+      "condition": "D_F1_INTACT",
+      "kind": "onboard_fuse"
+    }
+  ],
+  "manufacturing_release": false,
+  "representation": "Flat wiring topology, paths not manufacturing lengths"
+}

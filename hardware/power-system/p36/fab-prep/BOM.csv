@@ -1,0 +1,7 @@
+Reference,Quantity,Manufacturer,MPN_or_spec,Mount_side,Status
+PCB,1,JLCPCB,P36 62.5x25.4x1.6mm 2-layer 4.5oz finished,NA,Prototype candidate; DFM and thermal qualification pending
+F1 holder,1,Keystone,3568,Front,Official footprint checked; physical sample fit untested
+F1 insert,1,Littelfuse,0297015.L 15A 32V MINI 297,Front,Provisional; replaceable; no final protection coordination
+J0-J11,12,Samtec,HTSW-103-07-L-S 1x3 2.54mm,Front,Footprint-compatible candidate; verify actual servo mating connector
+J_IN,1,Samtec,HTSW-107-07-L-D 2x7 2.54mm,Back,Footprint-compatible candidate; custom PCA harness required
+J_POWER,2,NA,Direct-wire 5x8mm exposed solder pad,Front,Wire gauge and strain relief to qualify with harness

@@ -1,0 +1,88 @@
+{
+  "baseline": {
+    "name": "P14_FLAT_HARNESS_REVIEW",
+    "netlist": "test-fixtures/p14-harness-netlist.json",
+    "sha256": "4c49cd2e5d79e0f46f7afac04c1f2cd0d3ea6aa141d2895d0ed88724383da4c2",
+    "scope": "Topology only. No CAD read/import or placement modification."
+  },
+  "catalog": [
+    {
+      "part": "LD-220MG",
+      "url": "https://www.hiwonder.com/products/ld-220mg",
+      "values": {
+        "voltage_range_V": [
+          6,
+          8.4
+        ],
+        "stall_torque_kgf_cm_at_7p4V": 20,
+        "sec_per_60deg_at_7p4V": 0.16,
+        "no_load_A": 0.1,
+        "period_s": 0.02,
+        "pulse_us": [
+          500,
+          2500
+        ]
+      },
+      "boundary": "Stall torque is not a continuous operating torque. Stall current not published in this source."
+    },
+    {
+      "part": "MG90S",
+      "url": "https://towerpro.com.tw/product/mg90s-3/",
+      "values": {
+        "reference_voltage_V": 4.8,
+        "stall_torque_kgf_cm_at_4p8V": 1.8,
+        "sec_per_60deg_at_4p8V": 0.1
+      },
+      "boundary": "Published voltage/torque variants conflict; only4.8V reference used. Purchased unit identity unverified."
+    },
+    {
+      "part": "HENGE8A",
+      "url": "https://www.flyingtech.co.uk/wp-content/uploads/2021/02/201751721654.pdf",
+      "values": {
+        "continuous_A_reference": 8
+      },
+      "boundary": "Reference manual, exact purchased revision and current-limit behavior unconfirmed."
+    },
+    {
+      "part": "PCA9685",
+      "url": "https://www.nxp.com/docs/en/data-sheet/PCA9685.pdf",
+      "values": {
+        "resolution_bits": 12
+      },
+      "boundary": "50Hz simulation uses4.8828125us quantization. No actual register/I2C hardware used."
+    }
+  ],
+  "assumptions": {
+    "battery": "OCV piecewise linear[(SOC0,6V),(.1,6.8),(.5,7.6),(1,8.4)]. R=.06ohm. Capacity2.2Ah user pack label. OCV/R unmeasured.",
+    "LD_stall_current_A": 3,
+    "MG_stall_current_A": 0.85,
+    "MG_idle_current_A": 0.04,
+    "leg_J_kgm2": 0.004,
+    "arm_J_kgm2": 0.00012,
+    "PD_leg_kp_kd": [
+      4,
+      0.16
+    ],
+    "PD_arm_kp_kd": [
+      0.45,
+      0.009
+    ],
+    "leg_static_load_Nm_yaw_hip_knee": [
+      0.035,
+      0.35,
+      0.45
+    ],
+    "shoulder_load_Nm": 0.012,
+    "claw_spring_load_Nm": ".012+.045*clamp(q/50deg,0,1); generic equivalent, not saved claw spring geometry",
+    "regulator": "Per-device model fields in device-catalog.json; efficiency/dropout/current limit behavior generally unmeasured. Published continuous rating is not a trip threshold.",
+    "MCU": "Stop threshold on5V input4.5V, recovery+0.15V; not measured ESP brownout behavior",
+    "PCA": "25MHz typical / prescale121 =>4.88us tick; underpowered PCA clears external PWM; unknown oscillator variation and full-register behavior.",
+    "fuse": "Optional excess(I²-Irated²) integral with20s relaxation;120A²s threshold. NOT actual fuse trip curve.",
+    "motor_bus_current": "Conservative magnitude/torque proportional approximation; no PWM duty-resolved electrical winding model",
+    "angles": "Test-relative axes, not R69 joint zeros or actual kinematic mapping. All axes bounded±80deg by virtual stops.",
+    "limits": "No geometry, contact, walking stability, temperature, regeneration, switching ripple, EMI, real firmware timing, hardware I/O."
+  },
+  "hardware_validation": "NOT_RUN",
+  "latest_device_authority": "device-catalog.json",
+  "spec_review": "SPEC_REVIEW.md"
+}
