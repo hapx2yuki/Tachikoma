@@ -1,0 +1,661 @@
+{
+  "package": "Tachikoma power-system proposal P36 S1 and P37",
+  "source_revision": "Tachikoma source study 2026-11-08; source paths are relative to the study root",
+  "binary_policy": "Native Blender files and images are unmodified copies.",
+  "path_policy": "Absolute personal paths in copied text are replaced by package-relative or source-root-relative references.",
+  "artifact_count": 82,
+  "artifacts": [
+    {
+      "package_path": "hardware/power-system/bom/BOM.csv",
+      "source_path": "source-root/project/bom/TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1/BOM.csv",
+      "source_sha256": "d314f38295ea6053adff06aac1643efb710ff0f46771ddc7e7940f2d4f280c16",
+      "package_sha256": "d314f38295ea6053adff06aac1643efb710ff0f46771ddc7e7940f2d4f280c16",
+      "size_bytes": 837,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/bom/BOM.json",
+      "source_path": "source-root/project/bom/TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1/BOM.json",
+      "source_sha256": "9437f009099f0717718ad04ee5106f9c0ff54fdf8c1464f9a230f99325960bd1",
+      "package_sha256": "39b13fe59d86dbdd7065d50e1bd25b1b47a51a290a618884a7f0b87ec970575d",
+      "size_bytes": 21783,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "hardware/power-system/bom/BOM.md",
+      "source_path": "source-root/project/bom/TACHIKOMA-LEG-DISTRIBUTOR-P36-S1-20261108-R1/BOM.md",
+      "source_sha256": "e04eea38277f2a40abfb73a9f587175f98a08cc9655bf7e60b331f98f85cc2a6",
+      "package_sha256": "e04eea38277f2a40abfb73a9f587175f98a08cc9655bf7e60b331f98f85cc2a6",
+      "size_bytes": 1598,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/BOM.csv",
+      "source_path": "source-root/P36_SILK_R1/BOM.csv",
+      "source_sha256": "ae4355719efd860bbaa6e72c7f9df506b108577c76d74640a3e422b6c79011f6",
+      "package_sha256": "ae4355719efd860bbaa6e72c7f9df506b108577c76d74640a3e422b6c79011f6",
+      "size_bytes": 725,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/CIRCUIT_AND_PINMAP.md",
+      "source_path": "source-root/P36_SILK_R1/CIRCUIT_AND_PINMAP.md",
+      "source_sha256": "9e3df379b6df05397d2f06e708fc3d15b04e27769d2044a8206cd3d427557d7e",
+      "package_sha256": "9e3df379b6df05397d2f06e708fc3d15b04e27769d2044a8206cd3d427557d7e",
+      "size_bytes": 2526,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/CURRENT_FUSE_REVIEW.md",
+      "source_path": "source-root/P36_SILK_R1/CURRENT_FUSE_REVIEW.md",
+      "source_sha256": "5ba0d7b8b8fa410863f9310fa78986581ce3cc3a12561e99d2e0e0b5d1d03ca8",
+      "package_sha256": "5ba0d7b8b8fa410863f9310fa78986581ce3cc3a12561e99d2e0e0b5d1d03ca8",
+      "size_bytes": 6481,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/ORDER_NOTES.md",
+      "source_path": "source-root/P36_SILK_R1/ORDER_NOTES.md",
+      "source_sha256": "2a37f46f9451da7f1fd80c2f2ad51687b7f20a6e85e0888e1eb7d9cf39832fcc",
+      "package_sha256": "2a37f46f9451da7f1fd80c2f2ad51687b7f20a6e85e0888e1eb7d9cf39832fcc",
+      "size_bytes": 3319,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/P36_SILK_R1.blend",
+      "source_path": "source-root/P36_SILK_R1/P36_SILK_R1.blend",
+      "source_sha256": "65ee3a5214e81fb5e8448fda744e6a978bca8e4eca2a688f83b56c13ed147278",
+      "package_sha256": "65ee3a5214e81fb5e8448fda744e6a978bca8e4eca2a688f83b56c13ed147278",
+      "size_bytes": 157778,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/P36_SILK_R1_FRONT_BACK.png",
+      "source_path": "source-root/P36_SILK_R1/P36_SILK_R1_FRONT_BACK.png",
+      "source_sha256": "fee952603dbfde4823f53eb0525d99f5a12a260f6e5a06603577a43568c19398",
+      "package_sha256": "fee952603dbfde4823f53eb0525d99f5a12a260f6e5a06603577a43568c19398",
+      "size_bytes": 2444488,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/P36_SILK_R1_JLCPCB_PROTOTYPE.zip",
+      "source_path": "source-root/P36_SILK_R1/P36_SILK_R1_JLCPCB_PROTOTYPE.zip",
+      "source_sha256": "f09412bf2320b9131e6dd3be8064264ec12394061712f45ec7b36dbca719cbb0",
+      "package_sha256": "f09412bf2320b9131e6dd3be8064264ec12394061712f45ec7b36dbca719cbb0",
+      "size_bytes": 6326,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/README.md",
+      "source_path": "source-root/P36_SILK_R1/README.md",
+      "source_sha256": "4a47b3de382f322da058929e1a7887307a38a1250431d5f33bc2ac5eaff7051b",
+      "package_sha256": "4a47b3de382f322da058929e1a7887307a38a1250431d5f33bc2ac5eaff7051b",
+      "size_bytes": 1163,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/SILK_CHECKS.json",
+      "source_path": "source-root/P36_SILK_R1/SILK_CHECKS.json",
+      "source_sha256": "b9d0483fabec21263aa2f0d2e0a9cf28157b2e6f9f5647ad693de28f4c3b80ee",
+      "package_sha256": "b9d0483fabec21263aa2f0d2e0a9cf28157b2e6f9f5647ad693de28f4c3b80ee",
+      "size_bytes": 767,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/BLENDER_READBACK.json",
+      "source_path": "source-root/P36_PCB_FAB_PREP/BLENDER_READBACK.json",
+      "source_sha256": "b3f7d6676a7c4a4c0a70a222ab77d39c49bade4892610f07dcaaf6a4409cdb7e",
+      "package_sha256": "f8576522890d69e4944453ddaa8fae79951736d5a2c01dfa0a9bd37ce83d8bf4",
+      "size_bytes": 418,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/BOM.csv",
+      "source_path": "source-root/P36_PCB_FAB_PREP/BOM.csv",
+      "source_sha256": "ae4355719efd860bbaa6e72c7f9df506b108577c76d74640a3e422b6c79011f6",
+      "package_sha256": "ae4355719efd860bbaa6e72c7f9df506b108577c76d74640a3e422b6c79011f6",
+      "size_bytes": 725,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/CURRENT_SCREENING.csv",
+      "source_path": "source-root/P36_PCB_FAB_PREP/CURRENT_SCREENING.csv",
+      "source_sha256": "7de56f51e49924713a93ff0b7a720cdcd18c2aafb8a21d56f6eb0b191152e0a8",
+      "package_sha256": "7de56f51e49924713a93ff0b7a720cdcd18c2aafb8a21d56f6eb0b191152e0a8",
+      "size_bytes": 1948,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/CURRENT_SCREENING.json",
+      "source_path": "source-root/P36_PCB_FAB_PREP/CURRENT_SCREENING.json",
+      "source_sha256": "7f42a0ed5786525f3feaef45b2fb91553955522fa5d439defa3cfa0df1641079",
+      "package_sha256": "7f42a0ed5786525f3feaef45b2fb91553955522fa5d439defa3cfa0df1641079",
+      "size_bytes": 6003,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/FAB_READBACK_CHECKS.json",
+      "source_path": "source-root/P36_PCB_FAB_PREP/FAB_READBACK_CHECKS.json",
+      "source_sha256": "1dc137035112eed8cbc7fe72e26d32ea423cc9dc41b4c76a185166c1962a323a",
+      "package_sha256": "1dc137035112eed8cbc7fe72e26d32ea423cc9dc41b4c76a185166c1962a323a",
+      "size_bytes": 1792,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/FAB_READBACK_GEOMETRY.json",
+      "source_path": "source-root/P36_PCB_FAB_PREP/FAB_READBACK_GEOMETRY.json",
+      "source_sha256": "e7c6b92c5d1496046542e9e8c76ccc7e8d917e71c08324ab393b16934c74c06b",
+      "package_sha256": "e7c6b92c5d1496046542e9e8c76ccc7e8d917e71c08324ab393b16934c74c06b",
+      "size_bytes": 73413,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/NETLIST.csv",
+      "source_path": "source-root/P36_PCB_FAB_PREP/NETLIST.csv",
+      "source_sha256": "9bb2df85684bf824cce85a8dafd6a95c0f125e545feafd8c9e1b278c6b167037",
+      "package_sha256": "9bb2df85684bf824cce85a8dafd6a95c0f125e545feafd8c9e1b278c6b167037",
+      "size_bytes": 3596,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/P36_ASSEMBLY.png",
+      "source_path": "source-root/P36_PCB_FAB_PREP/P36_ASSEMBLY.png",
+      "source_sha256": "e9251cda3747df0ad65d524577f0f0e354ed46721b6d31b35f96d9d6682e35b8",
+      "package_sha256": "e9251cda3747df0ad65d524577f0f0e354ed46721b6d31b35f96d9d6682e35b8",
+      "size_bytes": 1469499,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/P36_COPPER_READBACK.png",
+      "source_path": "source-root/P36_PCB_FAB_PREP/P36_COPPER_READBACK.png",
+      "source_sha256": "61b886e892a86167ac18fdfca57c4c7069a29ed7d9e2a45eeb5f315089055b07",
+      "package_sha256": "61b886e892a86167ac18fdfca57c4c7069a29ed7d9e2a45eeb5f315089055b07",
+      "size_bytes": 1816301,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/P36_DISTRIBUTOR.blend",
+      "source_path": "source-root/P36_PCB_FAB_PREP/P36_DISTRIBUTOR.blend",
+      "source_sha256": "e45054cd1380b83975eadd08be58f91ae830baf8175e3391945701d135e4b0ed",
+      "package_sha256": "e45054cd1380b83975eadd08be58f91ae830baf8175e3391945701d135e4b0ed",
+      "size_bytes": 421129,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/README.md",
+      "source_path": "source-root/P36_PCB_FAB_PREP/README.md",
+      "source_sha256": "576251cf85cf479fd99e55de9ab1307f62f88b47a05516654c42bbbda6921594",
+      "package_sha256": "576251cf85cf479fd99e55de9ab1307f62f88b47a05516654c42bbbda6921594",
+      "size_bytes": 3042,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/REQUIREMENTS.md",
+      "source_path": "source-root/P36_PCB_FAB_PREP/REQUIREMENTS.md",
+      "source_sha256": "073e738bfb56ceed6b99ff451643fbfa00c5d40a821b875e53c6c8ca7228657e",
+      "package_sha256": "073e738bfb56ceed6b99ff451643fbfa00c5d40a821b875e53c6c8ca7228657e",
+      "size_bytes": 2024,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/STATUS.json",
+      "source_path": "source-root/P36_PCB_FAB_PREP/STATUS.json",
+      "source_sha256": "335dc5dfec0aa0eb435f8c918824e3d8ccf9811ee35856e355cb12bb2de832f1",
+      "package_sha256": "335dc5dfec0aa0eb435f8c918824e3d8ccf9811ee35856e355cb12bb2de832f1",
+      "size_bytes": 370,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/route_candidate.json",
+      "source_path": "source-root/P36_PCB_FAB_PREP/route_candidate.json",
+      "source_sha256": "880c689e1707b9ca2b76984b3ba803ec5647628d8333c2da440dba1b821c762a",
+      "package_sha256": "276279dc98b363fab8193671b3f0eefbe0db1eb12e9131bb73a570cf993ea490",
+      "size_bytes": 48456,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/route_drc.json",
+      "source_path": "source-root/P36_PCB_FAB_PREP/route_drc.json",
+      "source_sha256": "5ec0621e6caceddbb6766d445f0d0622962cedab4b71c47d3cc84448a50423d0",
+      "package_sha256": "5ec0621e6caceddbb6766d445f0d0622962cedab4b71c47d3cc84448a50423d0",
+      "size_bytes": 227,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/source/P35_CONNECTION_MODEL.json",
+      "source_path": "source-root/P35_SOLDER_PAD_DISTRIBUTOR/CONNECTION_MODEL.json",
+      "source_sha256": "ee3a6b5248917edfd53ad7733e0dd3799417c35d7cf8db578f661254c009263a",
+      "package_sha256": "ee3a6b5248917edfd53ad7733e0dd3799417c35d7cf8db578f661254c009263a",
+      "size_bytes": 11099,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/source/p36_current_review.py",
+      "source_path": "source-root/P36_PCB_FAB_PREP/source/p36_current_review.py",
+      "source_sha256": "cb4ca8d66fe2b1d28453e334e46bec3b3d802446ad517261039c81e438ecafab",
+      "package_sha256": "c5236f9508e9c527004b0433afa462d876ed1eb58794b313b3682c6e32ce2113",
+      "size_bytes": 3298,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/source/p36_fabricate.py",
+      "source_path": "source-root/P36_PCB_FAB_PREP/source/p36_fabricate.py",
+      "source_sha256": "58e92f448eadafa7114b2689a41c17d26614ca5d108ffd62cd7b6b7c3e4b97c7",
+      "package_sha256": "d9a21942bec2b0f2701a0c2356d4661ca22035b3206ff7d91850c9a116a3a95a",
+      "size_bytes": 11138,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/source/p36_route_prepare.py",
+      "source_path": "source-root/P36_PCB_FAB_PREP/source/p36_route_prepare.py",
+      "source_sha256": "d1acb2019b1392972ce7edd91b28a458a9ab0a13c873e65b4863aee386be24ef",
+      "package_sha256": "38802c2b767e093b512cd0d76163b1103993fee57de4d871736d9454b5f39460",
+      "size_bytes": 6593,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "hardware/power-system/p36/fab-prep/source/p36_visual.py",
+      "source_path": "source-root/P36_PCB_FAB_PREP/source/p36_visual.py",
+      "source_sha256": "0b24ae8d15c15110c5abe31672582c930ecd3e9cc484f479c337a530715e0826",
+      "package_sha256": "3f53ca94807c60e4e8f22c3a21ced06998d8e5e71d9a4796eef64a2cbae33412",
+      "size_bytes": 8044,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "hardware/power-system/p36/gerber/P36-NPTH.drl",
+      "source_path": "source-root/P36_SILK_R1/gerber/P36-NPTH.drl",
+      "source_sha256": "3eeb8a9e22c19312a28c093c52774991b4015e1b51dbd0fb12755f3765294f2c",
+      "package_sha256": "3eeb8a9e22c19312a28c093c52774991b4015e1b51dbd0fb12755f3765294f2c",
+      "size_bytes": 189,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/gerber/P36-PTH.drl",
+      "source_path": "source-root/P36_SILK_R1/gerber/P36-PTH.drl",
+      "source_sha256": "e27ebc15b6cc569e38bab0d02fe824193761910aef191c75f30217ec79a399fd",
+      "package_sha256": "e27ebc15b6cc569e38bab0d02fe824193761910aef191c75f30217ec79a399fd",
+      "size_bytes": 1751,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/gerber/P36.GBL",
+      "source_path": "source-root/P36_SILK_R1/gerber/P36.GBL",
+      "source_sha256": "36f3876fd15c2b9e3386f517c5ae816de1d1ac91de87b7fb19f02a6b792a25d4",
+      "package_sha256": "36f3876fd15c2b9e3386f517c5ae816de1d1ac91de87b7fb19f02a6b792a25d4",
+      "size_bytes": 4456,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/gerber/P36.GBO",
+      "source_path": "source-root/P36_SILK_R1/gerber/P36.GBO",
+      "source_sha256": "cb50cd1f0a90446c6022354fb449f78b9f21293cb7390c1c1eab6f1dc7cf6857",
+      "package_sha256": "cb50cd1f0a90446c6022354fb449f78b9f21293cb7390c1c1eab6f1dc7cf6857",
+      "size_bytes": 7271,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/gerber/P36.GBS",
+      "source_path": "source-root/P36_SILK_R1/gerber/P36.GBS",
+      "source_sha256": "b4666552964346d288c12ced3c4e58932abce4946a1f76345f351826ebac0347",
+      "package_sha256": "b4666552964346d288c12ced3c4e58932abce4946a1f76345f351826ebac0347",
+      "size_bytes": 1687,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/gerber/P36.GKO",
+      "source_path": "source-root/P36_SILK_R1/gerber/P36.GKO",
+      "source_sha256": "a6ab75fd73857aff7823eb7b99093427becceb8add2ecca73557896ac0625eec",
+      "package_sha256": "a6ab75fd73857aff7823eb7b99093427becceb8add2ecca73557896ac0625eec",
+      "size_bytes": 303,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/gerber/P36.GTL",
+      "source_path": "source-root/P36_SILK_R1/gerber/P36.GTL",
+      "source_sha256": "15bd07640db9180ddb96a36735aa54a7cfa2ea95948a64b093923adb59aeb865",
+      "package_sha256": "15bd07640db9180ddb96a36735aa54a7cfa2ea95948a64b093923adb59aeb865",
+      "size_bytes": 4524,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/gerber/P36.GTO",
+      "source_path": "source-root/P36_SILK_R1/gerber/P36.GTO",
+      "source_sha256": "bc17362e7c4553c6d9e64af268b7c3229e3fddbfe3b93a5c94851710f2620b95",
+      "package_sha256": "bc17362e7c4553c6d9e64af268b7c3229e3fddbfe3b93a5c94851710f2620b95",
+      "size_bytes": 9262,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/gerber/P36.GTS",
+      "source_path": "source-root/P36_SILK_R1/gerber/P36.GTS",
+      "source_sha256": "9b3704a401f33c5c47601f8ac15c3e203536aa0e234633b7e38240e613e5eaf9",
+      "package_sha256": "9b3704a401f33c5c47601f8ac15c3e203536aa0e234633b7e38240e613e5eaf9",
+      "size_bytes": 1770,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/p36_silk_r1.py",
+      "source_path": "source-root/P36_SILK_R1/p36_silk_r1.py",
+      "source_sha256": "a840f0e04fecf7bf4999557ee4cf3e6464dbc95a55ae9bf84eb341f4663712db",
+      "package_sha256": "5216fff67a354e7b300194df2e80536a5dc2a01fd9a9faeda0da5c0d12abf434",
+      "size_bytes": 3944,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "hardware/power-system/p36/pwm-review/P36_PWM_REVIEW.blend",
+      "source_path": "source-root/P36_PWM_REVIEW/P36_PWM_REVIEW.blend",
+      "source_sha256": "58857950556b92dad606b92d2f2980e6fc7bc2d1c87456ffe2ad4c8e82a07437",
+      "package_sha256": "58857950556b92dad606b92d2f2980e6fc7bc2d1c87456ffe2ad4c8e82a07437",
+      "size_bytes": 137922,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/pwm-review/PWM_CHANNELS_FRONT_BACK.png",
+      "source_path": "source-root/P36_PWM_REVIEW/PWM_CHANNELS_FRONT_BACK.png",
+      "source_sha256": "3de8e4d3477847b15de8bea532cdcf6fea1451df38d206a770ebadb7bc252c3d",
+      "package_sha256": "3de8e4d3477847b15de8bea532cdcf6fea1451df38d206a770ebadb7bc252c3d",
+      "size_bytes": 2192024,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/pwm-review/PWM_PHYSICAL_CONNECTIVITY.json",
+      "source_path": "source-root/P36_PWM_REVIEW/PWM_PHYSICAL_CONNECTIVITY.json",
+      "source_sha256": "ef9f28cf893b560d911747df81eca61260a5a385e5423da83f34de593f4402c5",
+      "package_sha256": "ef9f28cf893b560d911747df81eca61260a5a385e5423da83f34de593f4402c5",
+      "size_bytes": 2484,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/servo-wiring/CONNECTIONS.csv",
+      "source_path": "source-root/P36_SERVO_WIRING/CONNECTIONS.csv",
+      "source_sha256": "ffec3d72aa9d08461cf20d4fe1d9780bdc3d709aa1ff4d7c27a830bbbf1cf677",
+      "package_sha256": "ffec3d72aa9d08461cf20d4fe1d9780bdc3d709aa1ff4d7c27a830bbbf1cf677",
+      "size_bytes": 1673,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/servo-wiring/P36_PCA9685_12_SERVO_WIRING.png",
+      "source_path": "source-root/P36_SERVO_WIRING/P36_PCA9685_12_SERVO_WIRING.png",
+      "source_sha256": "bf7a901522b305f970cc55bdf78c0352d75ee79e25871bdcb2e2454c6f93e73a",
+      "package_sha256": "bf7a901522b305f970cc55bdf78c0352d75ee79e25871bdcb2e2454c6f93e73a",
+      "size_bytes": 314578,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/servo-wiring/P36_PCA9685_12_SERVO_WIRING.svg",
+      "source_path": "source-root/P36_SERVO_WIRING/P36_PCA9685_12_SERVO_WIRING.svg",
+      "source_sha256": "74f558a2a9154e33aed2f2fad1c380576f461cf9925b4dc692f290b93121c481",
+      "package_sha256": "74f558a2a9154e33aed2f2fad1c380576f461cf9925b4dc692f290b93121c481",
+      "size_bytes": 119124,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/servo-wiring/README.md",
+      "source_path": "source-root/P36_SERVO_WIRING/README.md",
+      "source_sha256": "64d15a6f0d17ada8bab17ec385b6e32b3fc92f4520648a568db2a71aa2ad237b",
+      "package_sha256": "64d15a6f0d17ada8bab17ec385b6e32b3fc92f4520648a568db2a71aa2ad237b",
+      "size_bytes": 1112,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p36/servo-wiring/draw_wiring.py",
+      "source_path": "source-root/P36_SERVO_WIRING/draw_wiring.py",
+      "source_sha256": "1c8d12b4685c26ba165421c3fd9ccac09d54cefbb4ba9049e0090f69fd48ae60",
+      "package_sha256": "1c8d12b4685c26ba165421c3fd9ccac09d54cefbb4ba9049e0090f69fd48ae60",
+      "size_bytes": 8548,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p37/CHECKS.json",
+      "source_path": "source-root/P37_COLOR_HARNESS/CHECKS.json",
+      "source_sha256": "1eabfea5fc47e2b94b94cbb826d99022433194ff3cf0c431b304a3eee60e541a",
+      "package_sha256": "1eabfea5fc47e2b94b94cbb826d99022433194ff3cf0c431b304a3eee60e541a",
+      "size_bytes": 2187,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p37/P37_COLOR_HARNESS.blend",
+      "source_path": "source-root/P37_COLOR_HARNESS/P37_COLOR_HARNESS.blend",
+      "source_sha256": "95697fd7d72d61b2da4e52b54a7f934c137834ea161aea355611af58e4450f14",
+      "package_sha256": "95697fd7d72d61b2da4e52b54a7f934c137834ea161aea355611af58e4450f14",
+      "size_bytes": 14785372,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p37/P37_COLOR_HARNESS.png",
+      "source_path": "source-root/P37_COLOR_HARNESS/P37_COLOR_HARNESS.png",
+      "source_sha256": "6a26138165468b839d75a31c5a46fc7e00e4a94bbed5a6cb04b4e640d5e651fa",
+      "package_sha256": "6a26138165468b839d75a31c5a46fc7e00e4a94bbed5a6cb04b4e640d5e651fa",
+      "size_bytes": 5484319,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p37/P37_HARNESS_NETLIST.json",
+      "source_path": "source-root/P37_COLOR_HARNESS/P37_HARNESS_NETLIST.json",
+      "source_sha256": "32921f187ba6e96fd51a301faa38d8938f9d84f4afc3410cfb18982ff6ed4f1d",
+      "package_sha256": "9680405941037a12ba405309c7f324af26f3cdb944f7154886f4e13ef48ef6fd",
+      "size_bytes": 108925,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "hardware/power-system/p37/P37_HARNESS_TABLE.csv",
+      "source_path": "source-root/P37_COLOR_HARNESS/P37_HARNESS_TABLE.csv",
+      "source_sha256": "f2aa5f7830d45ab41648d7ff0d1fd6d3d801e6ea17ff40b11a5554772adf2283",
+      "package_sha256": "f2aa5f7830d45ab41648d7ff0d1fd6d3d801e6ea17ff40b11a5554772adf2283",
+      "size_bytes": 3982,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p37/P37_LEG_DISTRIBUTOR.png",
+      "source_path": "source-root/P37_COLOR_HARNESS/P37_LEG_DISTRIBUTOR.png",
+      "source_sha256": "206ec53613b6df08525eec9034d929a0b527613051bc86117165d1f0fbaf55b9",
+      "package_sha256": "206ec53613b6df08525eec9034d929a0b527613051bc86117165d1f0fbaf55b9",
+      "size_bytes": 3154855,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p37/README.md",
+      "source_path": "source-root/P37_COLOR_HARNESS/README.md",
+      "source_sha256": "3f1c11191efaa8d9dcb16d908b27e7547e495a27b266089d7ebc4cca78e4834a",
+      "package_sha256": "3f1c11191efaa8d9dcb16d908b27e7547e495a27b266089d7ebc4cca78e4834a",
+      "size_bytes": 1326,
+      "content": "byte-identical"
+    },
+    {
+      "package_path": "hardware/power-system/p37/update_blender.py",
+      "source_path": "source-root/P37_COLOR_HARNESS/update_blender.py",
+      "source_sha256": "af50fe019a44b80cd348d5f0fae26e84c5210db3ff5de7a486f849d985a6083a",
+      "package_sha256": "549339ed64b4b9626754192a815c948ec0e085381ba2c61f5ef09ef51961e1e6",
+      "size_bytes": 10149,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "hardware/power-system/p37/verify_save.py",
+      "source_path": "source-root/P37_COLOR_HARNESS/verify_save.py",
+      "source_sha256": "7b0ac59ff15fbb71dc1b5e169234bbe72e5a82e8f5464a7799c7f054e9311cf6",
+      "package_sha256": "51476586c054cd4d85ae31ed6b18db62eded656a61b1cb104183f71cda044204",
+      "size_bytes": 6819,
+      "content": "path-only normalization in text copy"
+    },
+    {
+      "package_path": "tools/power-system-simulator/.gitignore",
+      "package_sha256": "f370ad043ec0c98a166fd98646c3b94280ed78bc996223b6cca2ba936f7c6781",
+      "size_bytes": 9,
+      "content": "packaged-source-or-document"
+    },
+    {
+      "package_path": "tools/power-system-simulator/INTERFACE.md",
+      "package_sha256": "d48e77ea0f1fc8753ea6d100d344c86cbf0d3670c2e3da2cc89f139fd5933885",
+      "size_bytes": 6469,
+      "content": "portable-copy",
+      "source_path": "source-root/power-motion-simulator-p15/INTERFACE.md",
+      "source_sha256": "dcd07b3c71719311ae7f7337d2162b31fc57d34e897f63f9ec8cef24966d4d2e"
+    },
+    {
+      "package_path": "tools/power-system-simulator/P15-standalone.html",
+      "package_sha256": "ade506f6425a929dd9c7563761b7470c90a8e01dc56fa9b8ef8780285b0d6b5f",
+      "size_bytes": 50763,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/P15-standalone.html",
+      "source_sha256": "ade506f6425a929dd9c7563761b7470c90a8e01dc56fa9b8ef8780285b0d6b5f"
+    },
+    {
+      "package_path": "tools/power-system-simulator/README.md",
+      "package_sha256": "76e5ed7689daec14911af11a815aea449f52d387e5152778c32a07e416ba7e03",
+      "size_bytes": 5495,
+      "content": "portable-copy",
+      "source_path": "source-root/power-motion-simulator-p15/README.md",
+      "source_sha256": "d97aaf118551bf3285f81afb64a2cc5d6e2f16c2e71bc9e30daa927586650b7a"
+    },
+    {
+      "package_path": "tools/power-system-simulator/SPEC_REVIEW.md",
+      "package_sha256": "77498515808cbd564753597ac09ff674de7097ec51ab594ac3dac6e5d71ff076",
+      "size_bytes": 4380,
+      "content": "portable-copy",
+      "source_path": "source-root/power-motion-simulator-p15/SPEC_REVIEW.md",
+      "source_sha256": "f3852574abc88e719967576b8ff3e8467c54c537ccf0956912f360250a9745d2"
+    },
+    {
+      "package_path": "tools/power-system-simulator/app.js",
+      "package_sha256": "9966df895c57d6d1282c73dfa7e18a188e9fa27fa3a9e843e8b6419c54966420",
+      "size_bytes": 9976,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/app.js",
+      "source_sha256": "9966df895c57d6d1282c73dfa7e18a188e9fa27fa3a9e843e8b6419c54966420"
+    },
+    {
+      "package_path": "tools/power-system-simulator/controller-example.py",
+      "package_sha256": "5072dcaf5c8fa514e7a694ba2f6b3996d4214345ed7e9ec4b71c86c088d99e05",
+      "size_bytes": 1775,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/controller-example.py",
+      "source_sha256": "5072dcaf5c8fa514e7a694ba2f6b3996d4214345ed7e9ec4b71c86c088d99e05"
+    },
+    {
+      "package_path": "tools/power-system-simulator/device-catalog.json",
+      "package_sha256": "617a2d10481c1c48cde28bc9169d01cf5b4a8b828fd1c961dcfeedad58d01814",
+      "size_bytes": 7815,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/device-catalog.json",
+      "source_sha256": "617a2d10481c1c48cde28bc9169d01cf5b4a8b828fd1c961dcfeedad58d01814"
+    },
+    {
+      "package_path": "tools/power-system-simulator/device-library.js",
+      "package_sha256": "d876d7a487ae75652ffc7d360e2edfe8b43f38f5b25ea114ca14423d0ede8754",
+      "size_bytes": 10281,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/device-library.js",
+      "source_sha256": "d876d7a487ae75652ffc7d360e2edfe8b43f38f5b25ea114ca14423d0ede8754"
+    },
+    {
+      "package_path": "tools/power-system-simulator/devices-default.json",
+      "package_sha256": "429fe46abb9eaeae20c90ed774b2bc5828fb71d7aac5d78a8085ec201c6d1d51",
+      "size_bytes": 370,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/devices-default.json",
+      "source_sha256": "429fe46abb9eaeae20c90ed774b2bc5828fb71d7aac5d78a8085ec201c6d1d51"
+    },
+    {
+      "package_path": "tools/power-system-simulator/engine.js",
+      "package_sha256": "38fd76c44ac65319e7bcbdcb2a6e1c95f1b5c42dffa87665c2ebf378cf2e04ce",
+      "size_bytes": 16005,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/engine.js",
+      "source_sha256": "38fd76c44ac65319e7bcbdcb2a6e1c95f1b5c42dffa87665c2ebf378cf2e04ce"
+    },
+    {
+      "package_path": "tools/power-system-simulator/index.html",
+      "package_sha256": "c56510e59e0fce04d68241383a02852f127bc540a54b52c2c6cfe8bb702b93fd",
+      "size_bytes": 7911,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/index.html",
+      "source_sha256": "c56510e59e0fce04d68241383a02852f127bc540a54b52c2c6cfe8bb702b93fd"
+    },
+    {
+      "package_path": "tools/power-system-simulator/monitor.html",
+      "package_sha256": "afd1271404641887852ba83b97405edd4625275d049cb1905c914d7126147bb5",
+      "size_bytes": 5379,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/monitor.html",
+      "source_sha256": "afd1271404641887852ba83b97405edd4625275d049cb1905c914d7126147bb5"
+    },
+    {
+      "package_path": "tools/power-system-simulator/monitor.js",
+      "package_sha256": "4691d70b80d26f5b65e98bb8a5fcee40d8d5237de71cda13eab10924627161cf",
+      "size_bytes": 6898,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/monitor.js",
+      "source_sha256": "4691d70b80d26f5b65e98bb8a5fcee40d8d5237de71cda13eab10924627161cf"
+    },
+    {
+      "package_path": "tools/power-system-simulator/pca-adapter.cjs",
+      "package_sha256": "cead2733921c825a5c12a3e660021b1b663168e63d6ceb8a1309b2e868cc5bcb",
+      "size_bytes": 1295,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/pca-adapter.cjs",
+      "source_sha256": "cead2733921c825a5c12a3e660021b1b663168e63d6ceb8a1309b2e868cc5bcb"
+    },
+    {
+      "package_path": "tools/power-system-simulator/requirements.json",
+      "package_sha256": "860f3099fc99167b07fca37f29a6cbe21a0d9c59f2a90e747d935e50b94339f3",
+      "size_bytes": 3637,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/requirements.json",
+      "source_sha256": "860f3099fc99167b07fca37f29a6cbe21a0d9c59f2a90e747d935e50b94339f3"
+    },
+    {
+      "package_path": "tools/power-system-simulator/server.cjs",
+      "package_sha256": "0fe405c1cffef41fbf246c2203757bf1aa74df34661f7eacb9ac350386e3a843",
+      "size_bytes": 5869,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/server.cjs",
+      "source_sha256": "0fe405c1cffef41fbf246c2203757bf1aa74df34661f7eacb9ac350386e3a843"
+    },
+    {
+      "package_path": "tools/power-system-simulator/sources.json",
+      "package_sha256": "752056e6eaa0043eba978ed6667233272b5a13bf6159577f5b3f712d0db49837",
+      "size_bytes": 3432,
+      "content": "portable-copy",
+      "source_path": "source-root/power-motion-simulator-p15/sources.json",
+      "source_sha256": "815e549d432d99a332df4e8e72b2afaa13216636e3b95d8b5123f2a345de93b7"
+    },
+    {
+      "package_path": "tools/power-system-simulator/style.css",
+      "package_sha256": "b329796a9758a3d414d6524fb0fc84d29ad7637c539754478b6390067b1134ca",
+      "size_bytes": 4683,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/style.css",
+      "source_sha256": "b329796a9758a3d414d6524fb0fc84d29ad7637c539754478b6390067b1134ca"
+    },
+    {
+      "package_path": "tools/power-system-simulator/test-fixtures/p14-harness-netlist.json",
+      "package_sha256": "4c49cd2e5d79e0f46f7afac04c1f2cd0d3ea6aa141d2895d0ed88724383da4c2",
+      "size_bytes": 89370,
+      "content": "packaged-source-or-document"
+    },
+    {
+      "package_path": "tools/power-system-simulator/tests/interface.cjs",
+      "package_sha256": "6e8b60b08eae9d945bef8c842481779960aee0b08ba3d870767ec7b250ff40df",
+      "size_bytes": 8195,
+      "content": "portable-copy",
+      "source_path": "source-root/power-motion-simulator-p15/tests/interface.cjs",
+      "source_sha256": "782e14465774758caa7fa803d5bede0b13f7183353dde4e2d0f962d1ede46116"
+    },
+    {
+      "package_path": "tools/power-system-simulator/tests/numerical.cjs",
+      "package_sha256": "8d63c1e3d53704b95094f92753adc502248a857a4fafef121e1cd1b650a89a4d",
+      "size_bytes": 6604,
+      "content": "portable-copy",
+      "source_path": "source-root/power-motion-simulator-p15/tests/numerical.cjs",
+      "source_sha256": "a72b0820d21f0aee55770df53f2c8068269495f876ddc8a095b2727f868b6071"
+    },
+    {
+      "package_path": "tools/power-system-simulator/waves.js",
+      "package_sha256": "07d28cc6eebc3392569e02e88ffedc8daba877462aac6f3fea9d57ea0b67ffab",
+      "size_bytes": 2000,
+      "content": "byte-identical",
+      "source_path": "source-root/power-motion-simulator-p15/waves.js",
+      "source_sha256": "07d28cc6eebc3392569e02e88ffedc8daba877462aac6f3fea9d57ea0b67ffab"
+    }
+  ]
+}

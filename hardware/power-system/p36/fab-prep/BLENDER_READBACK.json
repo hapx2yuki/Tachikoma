@@ -1,0 +1,9 @@
+{
+  "saved_blend": "P36_DISTRIBUTOR.blend",
+  "PCB_mesh_sha256": "929aa752bc8190b727bd7fe748cd0d225509be0149b10451c13161d76ba7ac7f",
+  "saved_PCB_mesh_readback_matches": true,
+  "existing_component_transforms_preserved": 121,
+  "board_has_drill_holes": 82,
+  "copper_source": "Parsed manufacturing Gerber files",
+  "component_meshes": "Unchanged P35 visual envelopes; exact manufacturer post heights not substituted"
+}

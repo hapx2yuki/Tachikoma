@@ -1,0 +1,13 @@
+{
+  "state": "PROTOTYPE_FAB_DATA_PREPARED",
+  "revision": "P36",
+  "base": "P35",
+  "zip": "P36_JLCPCB_PROTOTYPE_GERBER.zip",
+  "zip_roundtrip_bytes_verified": true,
+  "files_in_zip": 9,
+  "manufacturer_DFM": "NOT_RUN",
+  "order_placed": false,
+  "physical_fit": "NOT_RUN",
+  "thermal_qualification": "NOT_RUN",
+  "fuse": "15A candidate, not final protection approval"
+}

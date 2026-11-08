@@ -1,0 +1,13 @@
+{
+  "error_count": 0,
+  "errors": [],
+  "min_copper_clearance": [
+    0.34000000000000075,
+    [
+      "F",
+      "J0.V",
+      "J0.G"
+    ]
+  ],
+  "scope": "custom analytic primitive DRC inside BlenderMCP; not KiCad/JLC DFM"
+}

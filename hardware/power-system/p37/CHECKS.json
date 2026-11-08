@@ -1,0 +1,123 @@
+{
+  "curve_count": 98,
+  "curve_endpoint_mismatches": [],
+  "leg_connector_contacts": 36,
+  "PWM_channels_independent": [
+    {
+      "channel": 0,
+      "pins": [
+        "D_0_S",
+        "D_IN_0",
+        "PWM_L0_SERVO",
+        "PWM_L0_SOURCE"
+      ]
+    },
+    {
+      "channel": 1,
+      "pins": [
+        "D_1_S",
+        "D_IN_1",
+        "PWM_L1_SERVO",
+        "PWM_L1_SOURCE"
+      ]
+    },
+    {
+      "channel": 2,
+      "pins": [
+        "D_2_S",
+        "D_IN_2",
+        "PWM_L2_SERVO",
+        "PWM_L2_SOURCE"
+      ]
+    },
+    {
+      "channel": 3,
+      "pins": [
+        "D_3_S",
+        "D_IN_3",
+        "PWM_L3_SERVO",
+        "PWM_L3_SOURCE"
+      ]
+    },
+    {
+      "channel": 4,
+      "pins": [
+        "D_4_S",
+        "D_IN_4",
+        "PWM_L4_SERVO",
+        "PWM_L4_SOURCE"
+      ]
+    },
+    {
+      "channel": 5,
+      "pins": [
+        "D_5_S",
+        "D_IN_5",
+        "PWM_L5_SERVO",
+        "PWM_L5_SOURCE"
+      ]
+    },
+    {
+      "channel": 6,
+      "pins": [
+        "D_6_S",
+        "D_IN_6",
+        "PWM_L6_SERVO",
+        "PWM_L6_SOURCE"
+      ]
+    },
+    {
+      "channel": 7,
+      "pins": [
+        "D_7_S",
+        "D_IN_7",
+        "PWM_L7_SERVO",
+        "PWM_L7_SOURCE"
+      ]
+    },
+    {
+      "channel": 8,
+      "pins": [
+        "D_8_S",
+        "D_IN_8",
+        "PWM_L8_SERVO",
+        "PWM_L8_SOURCE"
+      ]
+    },
+    {
+      "channel": 9,
+      "pins": [
+        "D_9_S",
+        "D_IN_9",
+        "PWM_L9_SERVO",
+        "PWM_L9_SOURCE"
+      ]
+    },
+    {
+      "channel": 10,
+      "pins": [
+        "D_10_S",
+        "D_IN_10",
+        "PWM_L10_SERVO",
+        "PWM_L10_SOURCE"
+      ]
+    },
+    {
+      "channel": 11,
+      "pins": [
+        "D_11_S",
+        "D_IN_11",
+        "PWM_L11_SERVO",
+        "PWM_L11_SOURCE"
+      ]
+    }
+  ],
+  "XT60_main_fuse_and_F1_break_leg_power": true,
+  "UBEC_output_not_shorted_to_battery": true,
+  "common_GND_present": true,
+  "physical_tests": "NOT_RUN",
+  "board_fuse": "15A candidate, not validated",
+  "body_assembly_changed": false,
+  "saved_scene_readback_wire_count": 98,
+  "saved_blend_sha256": "95697fd7d72d61b2da4e52b54a7f934c137834ea161aea355611af58e4450f14"
+}
