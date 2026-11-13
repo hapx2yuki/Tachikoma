@@ -1,0 +1,24 @@
+{
+  "configuration": "CURRENT-ASSEMBLY-20261113",
+  "date": "2026-11-14",
+  "parts": [
+    {
+      "label": "A",
+      "part": "R69短縮太ももケース",
+      "file": "LEG-THIGH_2_mm.stl",
+      "quantity": 1,
+      "sha256": "cf06e788c612fc45bc7bd63ee4fc53c1636b6cf04a9ed85490447ff4994cbfb4",
+      "assembly_position": "RR (right rear)",
+      "revision": "CURRENT-SURFACE-MESH-REPAIR-20261113-R1"
+    },
+    {
+      "label": "B",
+      "part": "脛・ブリッジ/肩10mm修正版",
+      "file": "LEG-SHIN_1_mm.stl",
+      "quantity": 1,
+      "sha256": "6baf48a2d1ab34b3fe598e8e5d751eeea95fa6355395770c5aaf38e8126d4fce",
+      "assembly_position": "RR (right rear)",
+      "revision": "CURRENT-SURFACE-MESH-REPAIR-20261113-R1"
+    }
+  ]
+}
